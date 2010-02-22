@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class touchpad.conditioningBending</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">touchpad</FONT>
+<BR>Class conditioningBending</H2>
+<DL>
+<DT>public class <B>conditioningBending</B><DT>implements touchpad.conditioningInterface
+</DL>
+<DL><DD><p>Title: Ermittlung der MicroGesten via die Krümmung</p> <p>Description: Kreirt aus den Punkten, die vom TouchpadListener kommen MicroGesten. Unterhält eine Liste aller Gezeichneten Punken, damit sie dem Benutzer zur Visualisierung ausgegeben werden können.</p> <p>Copyright: Copyright (c) 2007 ZHW</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Daniel Fernandez</DD>
+<DD>David Kölbener</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<A NAME="addDot(touchpad.Dot)"></A>
+
+<H3>addDot</H3>
+<PRE>
+public void <B>addDot</B>(touchpad.Dot&nbsp;d)</PRE>
+<DL><DD>Punkt der aktuellen Messung hinzufügen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>d</CODE> - - Punkt der gespeichert werden soll</DD>
+</DL>
+<HR>
+
+<A NAME="addPos(int, int)"></A>
+
+<H3>addPos</H3>
+<PRE>
+private void <B>addPos</B>(int&nbsp;x,
+                    int&nbsp;y)</PRE>
+<DL><DD>aus X/Y-Koordinaten Vektoren erstellen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>x</CODE> - - X-Koordinate</DD>
+<DD><CODE>y</CODE> - - Y-Koordinate</DD>
+</DL>
+<HR>
+
+<A NAME="getDots()"></A>
+
+<H3>getDots</H3>
+<PRE>
+public touchpad.Dot[] <B>getDots</B>()</PRE>
+<DL><DD>Alle gespeicherten Punkte zurückgeben<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>Dot[] - Gespeicherte Punkte</DD>
+</DL>
+<HR>
+
+<A NAME="getDotCounter()"></A>
+
+<H3>getDotCounter</H3>
+<PRE>
+public int <B>getDotCounter</B>()</PRE>
+<DL><DD>Anzahl gespeicherter Punkte zurückgeben<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>int - Anzahl Punkte</DD>
+</DL>
+<HR>
+
+<A NAME="clearBuffer()"></A>
+
+<H3>clearBuffer</H3>
+<PRE>
+public void <B>clearBuffer</B>()</PRE>
+<DL><DD>Alle Buffer löschen, damit eine neue Messung erfolgen kann<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<A NAME="analyse()"></A>
+
+<H3>analyse</H3>
+<PRE>
+public touchpad.Measure <B>analyse</B>()</PRE>
+<DL><DD>Abgeschlossene Messung analysieren. Erfolgt in 3 Stufen: 1. Glättung der Vektoren 2. microGesten erstellen 3. Microgesten untersuchen, nicht sinnvolle Kombinationen zusammenschliessen, kleine Microgesten löschen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>Measure - Analysierte Messung</DD>
+</DL>
+<HR>
+
+<A NAME="setStartTime(long)"></A>
+
+<H3>setStartTime</H3>
+<PRE>
+public void <B>setStartTime</B>(long&nbsp;start)</PRE>
+<DL><DD>Startzeit der Messung wird in der Klasse Measure gespeichert. (conditioningBending dient als Facade)<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>start</CODE> - - Startzeit</DD>
+</DL>
+<HR>
+
+<A NAME="setEndTime(long)"></A>
+
+<H3>setEndTime</H3>
+<PRE>
+public void <B>setEndTime</B>(long&nbsp;end)</PRE>
+<DL><DD>Endzeit der Messung wird in der Klasse Measure gespeichert. (conditioningBending dient als Facade)<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>start</CODE> - - EndZeit</DD>
+</DL>
+<HR>
+
+<A NAME="calculateBending(int)"></A>
+
+<H3>calculateBending</H3>
+<PRE>
+private int <B>calculateBending</B>(int&nbsp;bending)</PRE>
+<DL><DD>Wage der Kümmungen, berechnet welche Krümmung die Oberhand hat<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>bending</CODE> - - übergabe einer Ermittelten Krümmung</DD>
+<DT><B>Returns:</B><DD>int - Krümmung, die momentan die Oberhand hat</DD>
+</DL>
+<HR>
+
+<A NAME="calculateLength(int, int)"></A>
+
+<H3>calculateLength</H3>
+<PRE>
+private double <B>calculateLength</B>(int&nbsp;startDot,
+                               int&nbsp;endDot)</PRE>
+<DL><DD>Länge einer MicroGeste berechnen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>startDot</CODE> - - Startpunkt der MicroGeste</DD>
+<DD><CODE>endDot</CODE> - - Endpunkt der MicroGeste</DD>
+<DT><B>Returns:</B><DD>double - Länge der MicroGeste</DD>
+</DL>
+<HR>
+
+<A NAME="resetBendingCounter(int)"></A>
+
+<H3>resetBendingCounter</H3>
+<PRE>
+private void <B>resetBendingCounter</B>(int&nbsp;except)</PRE>
+<DL><DD>Krümmungswage auf 0 setzen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>b</CODE> - - Krümmung, die ihr Gewicht behalten soll</DD>
+</DL>
+<HR>
+
+<A NAME="countAllBendings()"></A>
+
+<H3>countAllBendings</H3>
+<PRE>
+private int <B>countAllBendings</B>()</PRE>
+<DL><DD>Anzahl Krümmungen die auf der Wage sind Zählen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>int - Anzahl Krümmungen</DD>
+</DL>
+<HR>
+
+<A NAME="adjustGestures(java.util.LinkedList)"></A>
+
+<H3>adjustGestures</H3>
+<PRE>
+private java.util.LinkedList <B>adjustGestures</B>(java.util.LinkedList&nbsp;source)</PRE>
+<DL><DD>3. Microgesten untersuchen, nicht sinnvolle Kombinationen zusammenschliessen, kleine Microgesten löschen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>source</CODE> - - Zu untersuchende folge MicroGesten</DD>
+<DT><B>Returns:</B><DD>LinkedList - Untersuchte und nachbearbeitete Microgesten</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

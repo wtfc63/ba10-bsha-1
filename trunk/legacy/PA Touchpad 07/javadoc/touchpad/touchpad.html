@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class touchpad.touchpad</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">touchpad</FONT>
+<BR>Class touchpad</H2>
+<DL>
+<DT>public class <B>touchpad</B>
+</DL>
+<DL><DD><p>Title: Touchpad</p> <p>Description: Mainklasse vom Programm. Das Touchpad ist die Schnittstelle zwischen dem GUI und dem Programm. Sowie wird hier auch die Ermittlung von einem Zeichen durch den Graph gemacht.</p> <p>Copyright: Copyright (c) 2007 ZHW</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Daniel Fernandez</DD>
+<DD>David Kölbener</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Constructor Detail</B>
+</FONT></TD></TR></TABLE>
+
+<A NAME="touchpad()"></A>
+
+<H3>touchpad</H3>
+<PRE>
+public <B>touchpad</B>()</PRE>
+<DL><DD>Konstruktor, erstellt das GUI, und lät die Graphen aus der DB<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<A NAME="main(java.lang.String[])"></A>
+
+<H3>main</H3>
+<PRE>
+public static void <B>main</B>(java.lang.String[]&nbsp;args)</PRE>
+<DL><DD>Application entry point.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<A NAME="calculate()"></A>
+
+<H3>calculate</H3>
+<PRE>
+public void <B>calculate</B>()</PRE>
+<DL><DD>Die Methode Calculate wird vom touchpadListener aufgerufen, sobald er einen Timeout hat. Diese Methode verbindet die Analyse der Microgesten mit dem Ermitteln vom Zeichen.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<A NAME="findSign(touchpad.Measure)"></A>
+
+<H3>findSign</H3>
+<PRE>
+private java.lang.String <B>findSign</B>(touchpad.Measure&nbsp;m)</PRE>
+<DL><DD>Ermittelt aus der Messung ein Zeichen.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>m</CODE> - - Messung</DD>
+<DT><B>Returns:</B><DD>String - Das ermittelte Zeichen oder eine Fehlermeldung</DD>
+</DL>
+<HR>
+
+<A NAME="getDots()"></A>
+
+<H3>getDots</H3>
+<PRE>
+public touchpad.Dot[] <B>getDots</B>()</PRE>
+<DL><DD>Facade um alle Positionen von conditioningBending weiter an das touchpadFrame zu leiten.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>Dot - Array von Dot allen Positionen</DD>
+</DL>
+<HR>
+
+<A NAME="setStartTime(long)"></A>
+
+<H3>setStartTime</H3>
+<PRE>
+public void <B>setStartTime</B>(long&nbsp;start)</PRE>
+<DL><DD>Facade um die Startzeit vom touchpadFrame an conditioningBending weiterzuleiten.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>start</CODE> - - Startzeit</DD>
+</DL>
+<HR>
+
+<A NAME="setEndTime(long)"></A>
+
+<H3>setEndTime</H3>
+<PRE>
+public void <B>setEndTime</B>(long&nbsp;end)</PRE>
+<DL><DD>Facade um die Endzeit vom touchpadFrame an conditioningBending weiterzuleiten.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>start</CODE> - - Startzeit</DD>
+</DL>
+<HR>
+
+<A NAME="addDot(touchpad.Dot)"></A>
+
+<H3>addDot</H3>
+<PRE>
+public void <B>addDot</B>(touchpad.Dot&nbsp;d)</PRE>
+<DL><DD>Facade um ein Punkt vom touchpadFrame an conditioningBending weiterzuleiten.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>start</CODE> - - Startzeit</DD>
+</DL>
+<HR>
+
+<A NAME="getDotCounter()"></A>
+
+<H3>getDotCounter</H3>
+<PRE>
+public int <B>getDotCounter</B>()</PRE>
+<DL><DD>Facade um die anzahl Punkte von conditioningBending an touchpadFrame weiterzuleiten.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>int</DD>
+</DL>
+<HR>
+
+<A NAME="clearBuffer()"></A>
+
+<H3>clearBuffer</H3>
+<PRE>
+public void <B>clearBuffer</B>()</PRE>
+<DL><DD>Facade um den Buffer von conditioningBending zu Lehren, wenn eine neue Messung beginnt<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<A NAME="writeLog(java.lang.String)"></A>
+
+<H3>writeLog</H3>
+<PRE>
+private void <B>writeLog</B>(java.lang.String&nbsp;log)</PRE>
+<DL><DD>Funtkion um ein String ins Logfile zu schreiben.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>log</CODE> - String</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

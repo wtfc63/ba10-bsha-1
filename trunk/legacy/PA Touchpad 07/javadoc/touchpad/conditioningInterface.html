@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class touchpad.conditioningInterface</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">touchpad</FONT>
+<BR>Interface conditioningInterface</H2>
+<DL>
+<DT>public interface <B>conditioningInterface</B>
+</DL>
+<DL><DD><p>Title: Interface zur MicroGesten erstellung</p> <p>Description: Wenn die Klasse, die die MicroGesten erstellt diesem Interface entspricht, kann die Klasse einfach mit der "conditioningBending" ausgetauscht werden. Dazu muss nur bei der Klasse touchpad die Zeile 27 angepasst werden.</p> <p>Copyright: Copyright (c) 2007 ZHW</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Daniel Fernandez</DD>
+<DD>David Kölbener</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<A NAME="addDot(touchpad.Dot)"></A>
+
+<H3>addDot</H3>
+<PRE>
+public void <B>addDot</B>(touchpad.Dot&nbsp;d)</PRE>
+<DL><DD>addDot ist zum hinzufügen von einem Punkt, der vom MouseListener eingelesen wird.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>d</CODE> - - Dot der vom GUI eingelesen und übergeben wird.</DD>
+</DL>
+<HR>
+
+<A NAME="getDots()"></A>
+
+<H3>getDots</H3>
+<PRE>
+public touchpad.Dot[] <B>getDots</B>()</PRE>
+<DL><DD>getPos wird vom touchpadFrame aufgerufen und gibt alle Gespeicherten Punkte zur Anzeige zurück.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>Dot[]</DD>
+</DL>
+<HR>
+
+<A NAME="getDotCounter()"></A>
+
+<H3>getDotCounter</H3>
+<PRE>
+public int <B>getDotCounter</B>()</PRE>
+<DL><DD>getDotCounter wird vom touchpadFrame aufgerufen und gibt die anzahl gespeicherten Punkte zurück. Dies wird benötigt, da Dot[] eine fixe grösse hat.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>int</DD>
+</DL>
+<HR>
+
+<A NAME="clearBuffer()"></A>
+
+<H3>clearBuffer</H3>
+<PRE>
+public void <B>clearBuffer</B>()</PRE>
+<DL><DD>clearBuffer löscht im minimum alle Anzeigetaten. Dies kann nicht automatisch nach einer abgeschlossenen Messung und Analyse erfolgen, da evt. das Frame nochmals gezeichnet werden muss und so die Daten von Dot[] nochmals benötigt werden.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<A NAME="analyse()"></A>
+
+<H3>analyse</H3>
+<PRE>
+public touchpad.Measure <B>analyse</B>()</PRE>
+<DL><DD>analyse - wird von touchpad aufgerufen, nachdem der touchpadListener der Klasse touchpad mitgeteilt hat, dass die Messung zu ende ist, und die Analyse beginnen kann.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>Measure - wird aus der Analyse der Daten erstellt, und wird dann weiter vom touchpad benötigt, zur Ermittlung vom Zeichen.</DD>
+</DL>
+<HR>
+
+<A NAME="setStartTime(long)"></A>
+
+<H3>setStartTime</H3>
+<PRE>
+public void <B>setStartTime</B>(long&nbsp;start)</PRE>
+<DL><DD>setStartTime - setzt die Startzeit der Messung in der Klasse Messung(Facade)<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>start</CODE> - long</DD>
+</DL>
+<HR>
+
+<A NAME="setEndTime(long)"></A>
+
+<H3>setEndTime</H3>
+<PRE>
+public void <B>setEndTime</B>(long&nbsp;end)</PRE>
+<DL><DD>setEndTime - setzt die Endzeit der Messung in der Klasse Messung(Facade)<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>end</CODE> - long</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

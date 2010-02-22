@@ -1,0 +1,17 @@
+package ch.zhaw.ba10_bsha_1.fingerpad;
+
+import android.content.Context;
+import android.view.View;
+
+public class PadView extends View {
+
+	public PadView(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	public PadView(Context context, AttributeSet attrs, Map params) {
+		super(context, attrs, params);
+	}
+}
