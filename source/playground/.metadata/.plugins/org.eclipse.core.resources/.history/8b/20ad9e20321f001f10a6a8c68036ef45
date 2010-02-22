@@ -1,7 +1,0 @@
-package ch.zhaw.ba10_bsha_1.fingerpad;
-
-import android.view.View;
-
-public class PadView extends View {
-
-}

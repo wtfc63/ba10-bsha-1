@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename field &apos;bitmapPaint&apos; in &apos;ch.zhaw.ba10_bsha_1.fingerpad.PadView&apos; to &apos;bmPaint&apos;&#x0A;- Original project: &apos;FingerPad&apos;&#x0A;- Original element: &apos;ch.zhaw.ba10_bsha_1.fingerpad.PadView.bitmapPaint&apos;&#x0A;- Renamed element: &apos;ch.zhaw.ba10_bsha_1.fingerpad.PadView.bmPaint&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;bitmapPaint&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;ch.zhaw.ba10_bsha_1.fingerpad{PadView.java[PadView^bitmapPaint" name="bmPaint" references="true" setter="false" stamp="1266798208356" textual="false" version="1.0"/>
-</session>
