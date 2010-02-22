@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class touchpad.TouchpadListener</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">touchpad</FONT>
+<BR>Class TouchpadListener</H2>
+<DL>
+<DT>public class <B>TouchpadListener</B><DT>extends java.lang.Thread
+</DL>
+<DL><DD><p>Title: Touchpad Listener</p> <p>Description: Nimmt die Koordinaten vom touchpadFrame entgegen und dient als zwischenspeicher.</p> <p>Copyright: Copyright (c) 2007 ZHW</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Daniel Fernandez</DD>
+<DD>David Kölbener</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<A NAME="addPos(int, int)"></A>
+
+<H3>addPos</H3>
+<PRE>
+public synchronized void <B>addPos</B>(int&nbsp;x,
+                                int&nbsp;y)</PRE>
+<DL><DD>Position hinzufügen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>x</CODE> - - X-Koordinate</DD>
+<DD><CODE>y</CODE> - - Y-Koordinate</DD>
+</DL>
+<HR>
+
+<A NAME="run()"></A>
+
+<H3>run</H3>
+<PRE>
+public void <B>run</B>()</PRE>
+<DL><DD>Thread vom touchpadListener<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<A NAME="getPosition()"></A>
+
+<H3>getPosition</H3>
+<PRE>
+private synchronized touchpad.Dot <B>getPosition</B>()</PRE>
+<DL><DD>Position von der Queue nehmen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>Dot</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

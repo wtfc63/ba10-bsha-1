@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcsstatus version="1.0">
+<file status="chiw">classes/package cache/touchpad.dep2</file>
+<file status="chiw">classes/touchpad/AdjListGraph.class</file>
+<file status="chiw">classes/touchpad/Const.class</file>
+<file status="chiw">classes/touchpad/Persistence.class</file>
+<file status="chiw">classes/touchpad/Vector.class</file>
+<file status="chiw">classes/touchpad/Zeichen.class</file>
+<file status="chiw">classes/touchpad/conditioningBending.class</file>
+<file status="chiw">classes/touchpad/microGeste.class</file>
+<file status="chiw">classes/touchpad/touchpad$1.class</file>
+<file status="chiw">classes/touchpad/touchpad.class</file>
+<file status="chiw">classes/touchpad/touchpadFrame.class</file>
+<file status="chiw">touchpad/Const.java</file>
+<file status="chiw">touchpad/conditioningBending.java</file>
+<file status="chiw">touchpad/touchpadFrame.java</file>
+<file status="niw">touchpad.jpx</file>
+<file status="niw">touchpad.jpx.local</file>
+<file status="arnc">classes/touchpad/Dot.class</file>
+<file status="chiwr">classes/cache files/Vcs Status.xml</file>
+<file status="nir">bak/touchpad/AdjListGraph.java~1~</file>
+<file status="nir">bak/touchpad/AdjListGraph.java~2~</file>
+<file status="nir">bak/touchpad/AdjListGraph.java~3~</file>
+<file status="nir">bak/touchpad/AdjListGraph.java~4~</file>
+<file status="nir">bak/touchpad/Persistence.java~1~</file>
+<file status="nir">bak/touchpad/Persistence.java~2~</file>
+<file status="nir">bak/touchpad/Persistence.java~3~</file>
+<file status="nir">bak/touchpad/Persistence.java~4~</file>
+<file status="nir">bak/touchpad/Persistence.java~5~</file>
+<file status="nir">classes/touchpad/AdjListGraphInterface.class</file>
+<file status="nir">classes/touchpad/Geste.class</file>
+<file status="nir">classes/touchpad/directionVector.class</file>
+<file status="nir">classes/touchpad/microGesten.class</file>
+</vcsstatus>

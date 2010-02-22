@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class touchpad.SignContainer</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">touchpad</FONT>
+<BR>Class SignContainer</H2>
+<DL>
+<DT>public class <B>SignContainer</B><DT>implements java.lang.Comparable
+</DL>
+<DL><DD><p>Title: Kontainer für die Zeichen</p> <p>Description: Der Kontainer wird benötigt, da beim ermitteln des Buchstabens, das gleiche Zeichen auf mehreren Pfaden erreicht wird, und dadurch unterschiedliche Wahrscheinlichkeiten hat.</p> <p>Copyright: Copyright (c) 2007 ZHW</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Daniel Fernandez</DD>
+<DD>David Kölbener</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Constructor Detail</B>
+</FONT></TD></TR></TABLE>
+
+<A NAME="SignContainer(touchpad.Sign, double)"></A>
+
+<H3>SignContainer</H3>
+<PRE>
+public <B>SignContainer</B>(touchpad.Sign&nbsp;s,
+                     double&nbsp;probability)</PRE>
+<DL><DD>SignContainer<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>s</CODE> - - Zeichen</DD>
+<DD><CODE>probability</CODE> - - Wahrscheinlichkeit das es dieses Zeichen ist.</DD>
+</DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<A NAME="compareTo(touchpad.SignContainer)"></A>
+
+<H3>compareTo</H3>
+<PRE>
+public int <B>compareTo</B>(touchpad.SignContainer&nbsp;s)</PRE>
+<DL><DD>compareTo - Container lassen sich nach ihrer Wahrscheinlichkeit sortieren. Dadurch wird das Zeichen mit der grössten Wahrscheinlichkeit ermittelt.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>s</CODE> - SignContainer</DD>
+<DT><B>Returns:</B><DD>int</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

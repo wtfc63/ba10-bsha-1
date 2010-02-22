@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.mylyn.team.ui,3.3.1.v20091215-0000-e3x,"org.eclipse.mylyn.team.ui",1266417052591
+os,sysinfo,,,"linux",1266417052594
+arch,sysinfo,,,"x86",1266417052594
+ws,sysinfo,,,"gtk",1266417052594
+locale,sysinfo,,,"de_CH",1266417052594
+processors,sysinfo,,,"2",1266417052595
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1266417052595
+java.runtime.version,sysinfo,,,"1.6.0_16-b01",1266417052595
+java.specification.name,sysinfo,,,"Java Platform API Specification",1266417052595
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1266417052595
+java.specification.version,sysinfo,,,"1.6",1266417052595
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1266417052595
+java.version,sysinfo,,,"1.6.0_16",1266417052595
+java.vm.info,sysinfo,,,"mixed mode, sharing",1266417052595
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1266417052595
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1266417052595
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1266417052595
+java.vm.specification.version,sysinfo,,,"1.0",1266417052595
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1266417052595
+java.vm.version,sysinfo,,,"14.2-b01",1266417052595
+started,bundle,org.eclipse.debug.core,3.5.0.v20090526-1600,"org.eclipse.debug.core",1266417055732
+started,bundle,org.eclipse.jdt.launching,3.5.0.v20090527,"org.eclipse.jdt.launching",1266417055752
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1266417056730
+started,bundle,org.eclipse.core.filesystem,1.2.0.v20090507,"org.eclipse.core.filesystem",1266417070967
+started,bundle,com.android.ide.eclipse.ddms,0.9.5.v200911191123-20404,"com.android.ide.eclipse.ddms",1266417071938

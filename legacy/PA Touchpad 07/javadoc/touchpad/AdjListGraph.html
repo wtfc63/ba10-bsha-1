@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class touchpad.AdjListGraph</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">touchpad</FONT>
+<BR>Class AdjListGraph</H2>
+<DL>
+<DT>public class <B>AdjListGraph</B>
+</DL>
+<DL><DD><p>Title: Adjazenz List Graph</p> <p>Description: Enthält den Graphen, der zur Ermittlung von einem Zeichen Gebraucht wird. Die Knoten Stellen die Zeichen dar, microGesten dienen als Kanten. Eine Folge von MicroGesten führen so zu einem Zeichen</p> <p>Copyright: Copyright (c) 2007 ZHW</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Daniel Fernandez</DD>
+<DD>David Kölbener</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<A NAME="addSign(int, java.lang.String, boolean, boolean)"></A>
+
+<H3>addSign</H3>
+<PRE>
+public void <B>addSign</B>(int&nbsp;id,
+                    java.lang.String&nbsp;meaning,
+                    boolean&nbsp;ascender,
+                    boolean&nbsp;descender)</PRE>
+<DL><DD>Ein Zeichen zum Graphen hinzuführen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>id</CODE> - - ID vom Zeichen</DD>
+<DD><CODE>meaning</CODE> - - Bedeutung vom Zeichen</DD>
+<DD><CODE>ascender</CODE> - - ob das Zeichen eine Oberlänge hat</DD>
+<DD><CODE>descender</CODE> - - ob das Zeichen eine Unterlänge hat</DD>
+</DL>
+<HR>
+
+<A NAME="getRootSign()"></A>
+
+<H3>getRootSign</H3>
+<PRE>
+public touchpad.Sign <B>getRootSign</B>()</PRE>
+<DL><DD>Wurzel vom Graphen ermitteln<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>Sign - Wurzel vom Graph zurückgeben, als Einstiegspunkt für eine Suche</DD>
+</DL>
+<HR>
+
+<A NAME="addGeste(int, int, int, int, double)"></A>
+
+<H3>addGeste</H3>
+<PRE>
+public void <B>addGeste</B>(int&nbsp;sourceID,
+                     int&nbsp;destinationID,
+                     int&nbsp;type,
+                     int&nbsp;relLength,
+                     double&nbsp;probability)</PRE>
+<DL><DD>Geste zum Graphen hinzufügen, und 2 Knoten miteinander verbinden<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>sourceID</CODE> - - ID der Quelle</DD>
+<DD><CODE>destinationID</CODE> - - ID vom Ziel</DD>
+<DD><CODE>type</CODE> - - Art der MicroGeste</DD>
+<DD><CODE>relLength</CODE> - - Relative Länge der MicroGeste</DD>
+<DD><CODE>probability</CODE> - - Wahrscheinlichkeit für diesen Pfad</DD>
+</DL>
+<HR>
+
+<A NAME="toString()"></A>
+
+<H3>toString</H3>
+<PRE>
+public java.lang.String <B>toString</B>()</PRE>
+<DL><DD>Ausgabe des Graphen als String<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>String - Graph in Textform</DD>
+</DL>
+<HR>
+
+<A NAME="findSign(java.lang.String)"></A>
+
+<H3>findSign</H3>
+<PRE>
+private touchpad.Sign <B>findSign</B>(java.lang.String&nbsp;id)</PRE>
+<DL><DD>Ein Zeichen anhand der Bedeutung suchen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>id</CODE> - - Bedeutung vom gesuchten Zeichen</DD>
+<DT><B>Returns:</B><DD>Sign - Gefundenes Zeichen zurückgeben</DD>
+</DL>
+<HR>
+
+<A NAME="findSignByID(int)"></A>
+
+<H3>findSignByID</H3>
+<PRE>
+private touchpad.Sign <B>findSignByID</B>(int&nbsp;id)</PRE>
+<DL><DD>Ein Zeichen anhand der ID suchen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>id</CODE> - - ID vom gesuchten Zeichen</DD>
+<DT><B>Returns:</B><DD>Sign - Gefundenes Zeichen zurückgeben</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>

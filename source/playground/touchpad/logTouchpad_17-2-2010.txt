@@ -1,0 +1,132 @@
+Touchpad Log
+============
+
+Gross,Langsam
+From:1(start)  To: schwache Kr�mmung l->2()  | gerade->2()  | schwache Kr�mmung l->8()  | schwache Kr�mmung l->12(o)  | starke Kr�mmung l->13()  | 
+From:2()  To: starke Kr�mmung l->3()  | 
+From:3()  To: schwache Kr�mmung l->4(l)  | schwache Kr�mmung l->5(e)  | schwache Kr�mmung l->8()  | 
+From:4(l)  To: starke Kr�mmung l->4(l)  | starke Kr�mmung l->14(z)  | 
+From:5(e)  To: starke Kr�mmung l->5(e)  | 
+From:8()  To: starke Kr�mmung r->9(o)  | spitzkehre->9(o)  | 
+From:9(o)  To: schwache Kr�mmung l->10(a)  | schwache Kr�mmung l->11(o)  | 
+From:10(a)  To: 
+From:11(o)  To: 
+From:12(o)  To: starke Kr�mmung l->8()  | 
+From:13()  To: schwache Kr�mmung l->5(e)  | 
+From:14(z)  To: 
+
+Gross,Schnell
+From:1(start)  To: schwache Kr�mmung l->2()  | gerade->2()  | schwache Kr�mmung l->8()  | schwache Kr�mmung l->12(o)  | starke Kr�mmung l->13()  | 
+From:2()  To: starke Kr�mmung l->3()  | 
+From:3()  To: schwache Kr�mmung l->4(l)  | schwache Kr�mmung l->5(e)  | schwache Kr�mmung l->8()  | 
+From:4(l)  To: starke Kr�mmung l->4(l)  | starke Kr�mmung l->14(z)  | 
+From:5(e)  To: starke Kr�mmung l->5(e)  | 
+From:8()  To: starke Kr�mmung r->9(o)  | spitzkehre->9(o)  | 
+From:9(o)  To: schwache Kr�mmung l->10(a)  | schwache Kr�mmung l->11(o)  | 
+From:10(a)  To: 
+From:11(o)  To: 
+From:12(o)  To: starke Kr�mmung l->8()  | 
+From:13()  To: schwache Kr�mmung l->5(e)  | 
+From:14(z)  To: 
+
+Klein,Langsam
+From:1(start)  To: schwache Kr�mmung l->2()  | gerade->2()  | schwache Kr�mmung l->8()  | schwache Kr�mmung l->12(o)  | starke Kr�mmung l->13()  | 
+From:2()  To: starke Kr�mmung l->3()  | 
+From:3()  To: schwache Kr�mmung l->4(l)  | schwache Kr�mmung l->5(e)  | schwache Kr�mmung l->8()  | 
+From:4(l)  To: starke Kr�mmung l->4(l)  | starke Kr�mmung l->14(z)  | 
+From:5(e)  To: starke Kr�mmung l->5(e)  | 
+From:8()  To: starke Kr�mmung r->9(o)  | spitzkehre->9(o)  | 
+From:9(o)  To: schwache Kr�mmung l->10(a)  | schwache Kr�mmung l->11(o)  | 
+From:10(a)  To: 
+From:11(o)  To: 
+From:12(o)  To: starke Kr�mmung l->8()  | 
+From:13()  To: schwache Kr�mmung l->5(e)  | 
+From:14(z)  To: 
+
+Klein,Schnell
+From:1(start)  To: schwache Kr�mmung l->2()  | gerade->2()  | schwache Kr�mmung l->8()  | schwache Kr�mmung l->12(o)  | starke Kr�mmung l->13()  | 
+From:2()  To: starke Kr�mmung l->3()  | 
+From:3()  To: schwache Kr�mmung l->4(l)  | schwache Kr�mmung l->5(e)  | schwache Kr�mmung l->8()  | 
+From:4(l)  To: starke Kr�mmung l->4(l)  | starke Kr�mmung l->14(z)  | 
+From:5(e)  To: starke Kr�mmung l->5(e)  | 
+From:8()  To: starke Kr�mmung r->9(o)  | spitzkehre->9(o)  | 
+From:9(o)  To: schwache Kr�mmung l->10(a)  | schwache Kr�mmung l->11(o)  | 
+From:10(a)  To: 
+From:11(o)  To: 
+From:12(o)  To: starke Kr�mmung l->8()  | 
+From:13()  To: schwache Kr�mmung l->5(e)  | 
+From:14(z)  To: 
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Kr�mmung l; Relative L�nge:1; L�nge:56.99900416289932; startPointID:1
+ Art:starke Kr�mmung l; Relative L�nge:0; L�nge:19.0; startPointID:14
+ Art:schwache Kr�mmung l; Relative L�nge:1; L�nge:147.92517721504012; startPointID:19
+ Art:gerade; Relative L�nge:1; L�nge:59.59072496529649; startPointID:64
+hasAscender: true  hasDescender: false   Time: 1355ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level hight: 19(0.0777)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Kr�mmung l; Relative L�nge:1; L�nge:87.94400518204648; startPointID:7
+ Art:starke Kr�mmung l; Relative L�nge:1; L�nge:20.09994144925337; startPointID:28
+ Art:schwache Kr�mmung l; Relative L�nge:1; L�nge:223.50510438495184; startPointID:38
+ Art:spitzkehre; Relative L�nge:0; L�nge:17.848005547048654; startPointID:81
+hasAscender: true  hasDescender: true   Time: 1353ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 29(0.06) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level hight: 23(0.03885)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuf�hren
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Kr�mmung l; Relative L�nge:1; L�nge:39.60112615949154; startPointID:0
+hasAscender: false  hasDescender: false   Time: 762ms
+
+Graph:
+Level 0: 41(1.0)
+Level hight: 45(0.2) 62(0.15)
+
+Varianten:  a(0.15)
+Resultat: a(0.15)

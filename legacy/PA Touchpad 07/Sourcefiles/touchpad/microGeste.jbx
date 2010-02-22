@@ -1,0 +1,9 @@
+[PropertyInfo]
+name,int,false,false, , ,true,<default>
+wahrscheinlichkeit,double,false,false, , ,true,<default>
+ziel,touchpad.Zeichen,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

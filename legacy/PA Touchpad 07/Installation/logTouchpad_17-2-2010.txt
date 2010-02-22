@@ -1,0 +1,4622 @@
+Touchpad Log
+============
+
+Gross,Langsam
+From:1(start)  To: schwache Krümmung l->2()  | gerade->2()  | schwache Krümmung l->8()  | schwache Krümmung l->12(o)  | starke Krümmung l->13()  | 
+From:2()  To: starke Krümmung l->3()  | 
+From:3()  To: schwache Krümmung l->4(l)  | schwache Krümmung l->5(e)  | schwache Krümmung l->8()  | 
+From:4(l)  To: starke Krümmung l->4(l)  | starke Krümmung l->14(z)  | 
+From:5(e)  To: starke Krümmung l->5(e)  | 
+From:8()  To: starke Krümmung r->9(o)  | spitzkehre->9(o)  | 
+From:9(o)  To: schwache Krümmung l->10(a)  | schwache Krümmung l->11(o)  | 
+From:10(a)  To: 
+From:11(o)  To: 
+From:12(o)  To: starke Krümmung l->8()  | 
+From:13()  To: schwache Krümmung l->5(e)  | 
+From:14(z)  To: 
+
+Gross,Schnell
+From:1(start)  To: schwache Krümmung l->2()  | gerade->2()  | schwache Krümmung l->8()  | schwache Krümmung l->12(o)  | starke Krümmung l->13()  | 
+From:2()  To: starke Krümmung l->3()  | 
+From:3()  To: schwache Krümmung l->4(l)  | schwache Krümmung l->5(e)  | schwache Krümmung l->8()  | 
+From:4(l)  To: starke Krümmung l->4(l)  | starke Krümmung l->14(z)  | 
+From:5(e)  To: starke Krümmung l->5(e)  | 
+From:8()  To: starke Krümmung r->9(o)  | spitzkehre->9(o)  | 
+From:9(o)  To: schwache Krümmung l->10(a)  | schwache Krümmung l->11(o)  | 
+From:10(a)  To: 
+From:11(o)  To: 
+From:12(o)  To: starke Krümmung l->8()  | 
+From:13()  To: schwache Krümmung l->5(e)  | 
+From:14(z)  To: 
+
+Klein,Langsam
+From:1(start)  To: schwache Krümmung l->2()  | gerade->2()  | schwache Krümmung l->8()  | schwache Krümmung l->12(o)  | starke Krümmung l->13()  | 
+From:2()  To: starke Krümmung l->3()  | 
+From:3()  To: schwache Krümmung l->4(l)  | schwache Krümmung l->5(e)  | schwache Krümmung l->8()  | 
+From:4(l)  To: starke Krümmung l->4(l)  | starke Krümmung l->14(z)  | 
+From:5(e)  To: starke Krümmung l->5(e)  | 
+From:8()  To: starke Krümmung r->9(o)  | spitzkehre->9(o)  | 
+From:9(o)  To: schwache Krümmung l->10(a)  | schwache Krümmung l->11(o)  | 
+From:10(a)  To: 
+From:11(o)  To: 
+From:12(o)  To: starke Krümmung l->8()  | 
+From:13()  To: schwache Krümmung l->5(e)  | 
+From:14(z)  To: 
+
+Klein,Schnell
+From:1(start)  To: schwache Krümmung l->2()  | gerade->2()  | schwache Krümmung l->8()  | schwache Krümmung l->12(o)  | starke Krümmung l->13()  | 
+From:2()  To: starke Krümmung l->3()  | 
+From:3()  To: schwache Krümmung l->4(l)  | schwache Krümmung l->5(e)  | schwache Krümmung l->8()  | 
+From:4(l)  To: starke Krümmung l->4(l)  | starke Krümmung l->14(z)  | 
+From:5(e)  To: starke Krümmung l->5(e)  | 
+From:8()  To: starke Krümmung r->9(o)  | spitzkehre->9(o)  | 
+From:9(o)  To: schwache Krümmung l->10(a)  | schwache Krümmung l->11(o)  | 
+From:10(a)  To: 
+From:11(o)  To: 
+From:12(o)  To: starke Krümmung l->8()  | 
+From:13()  To: schwache Krümmung l->5(e)  | 
+From:14(z)  To: 
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:18.0; startPointID:0
+ Art:schwache Krümmung l; Relative Länge:1; Länge:67.05486939753881; startPointID:16
+ Art:spitzkehre; Relative Länge:0; Länge:13.06449510224598; startPointID:70
+hasAscender: false  hasDescender: false   Time: 1512ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:49.06449510224597; startPointID:1
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.650281539872886; startPointID:17
+ Art:schwache Krümmung l; Relative Länge:1; Länge:77.39642575646621; startPointID:26
+ Art:gerade; Relative Länge:0; Länge:12.537319187990756; startPointID:74
+ Art:spitzkehre; Relative Länge:1; Länge:20.47213595499958; startPointID:80
+hasAscender: false  hasDescender: false   Time: 1516ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3: 27(0.05) 14(0.0888)
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:38.48090296724472; startPointID:7
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.47213595499958; startPointID:30
+ Art:gerade; Relative Länge:0; Länge:15.94427190999916; startPointID:41
+ Art:starke Krümmung l; Relative Länge:1; Länge:20.30056307974577; startPointID:51
+ Art:gerade; Relative Länge:0; Länge:14.56062329783655; startPointID:65
+ Art:spitzkehre; Relative Länge:0; Länge:12.414213562373096; startPointID:70
+hasAscender: false  hasDescender: false   Time: 1053ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 15(0.03885)
+Level 4:
+Level 5:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 302ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:26.11969498940653; startPointID:5
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.773387165490547; startPointID:23
+ Art:gerade; Relative Länge:1; Länge:20.82842712474619; startPointID:30
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.53663105724556; startPointID:45
+ Art:gerade; Relative Länge:0; Länge:16.47213595499958; startPointID:53
+ Art:spitzkehre; Relative Länge:0; Länge:17.47213595499958; startPointID:61
+hasAscender: false  hasDescender: false   Time: 1207ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 15(0.03885)
+Level 4:
+Level 5:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:24.122417494872465; startPointID:5
+ Art:schwache Krümmung l; Relative Länge:1; Länge:78.21759204084772; startPointID:28
+ Art:gerade; Relative Länge:0; Länge:16.478708664619077; startPointID:75
+ Art:spitzkehre; Relative Länge:0; Länge:19.0; startPointID:85
+hasAscender: false  hasDescender: false   Time: 1053ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2:
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 305ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:77.37179081951615; startPointID:4
+ Art:gerade; Relative Länge:0; Länge:19.46284073991415; startPointID:56
+ Art:starke Krümmung r; Relative Länge:0; Länge:18.0; startPointID:67
+hasAscender: false  hasDescender: false   Time: 1505ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 153ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:0; Länge:11.950844619618653; startPointID:3
+ Art:spitzkehre; Relative Länge:0; Länge:14.0; startPointID:10
+hasAscender: false  hasDescender: false   Time: 301ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2)
+Level hight: 49(0.04000000000000001)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 452ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:22.957417329238154; startPointID:3
+ Art:starke Krümmung l; Relative Länge:0; Länge:18.650281539872886; startPointID:20
+hasAscender: false  hasDescender: false   Time: 1053ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level hight: 7(0.13999999999999999) 10(0.35000000000000003)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 602ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:15.60555127546399; startPointID:1
+ Art:starke Krümmung l; Relative Länge:0; Länge:11.242640687119286; startPointID:14
+ Art:schwache Krümmung l; Relative Länge:1; Länge:28.601126159491542; startPointID:24
+ Art:starke Krümmung l; Relative Länge:1; Länge:25.365058181991753; startPointID:45
+ Art:schwache Krümmung l; Relative Länge:1; Länge:22.055199887160548; startPointID:61
+ Art:spitzkehre; Relative Länge:0; Länge:15.47213595499958; startPointID:72
+ Art:schwache Krümmung l; Relative Länge:1; Länge:25.950844619618657; startPointID:84
+hasAscender: false  hasDescender: false   Time: 1504ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3: 27(0.05) 14(0.0888)
+Level 4: 20(0.0555)
+Level 5: 24(0.0444)
+Level 6: 26(0.0444)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:18.72134935173836; startPointID:5
+ Art:starke Krümmung r; Relative Länge:0; Länge:12.65685424949238; startPointID:18
+ Art:spitzkehre; Relative Länge:0; Länge:14.071067811865476; startPointID:37
+ Art:schwache Krümmung l; Relative Länge:1; Länge:35.00876701224514; startPointID:49
+ Art:starke Krümmung l; Relative Länge:1; Länge:33.83719413699133; startPointID:77
+ Art:gerade; Relative Länge:1; Länge:25.738768882709856; startPointID:100
+ Art:spitzkehre; Relative Länge:0; Länge:12.23606797749979; startPointID:111
+ Art:gerade; Relative Länge:1; Länge:35.008767012245144; startPointID:118
+hasAscender: false  hasDescender: false   Time: 1953ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2:
+Level 3:
+Level 4:
+Level 5:
+Level 6:
+Level 7:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:72.84981135339002; startPointID:4
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.122417494872465; startPointID:49
+ Art:gerade; Relative Länge:0; Länge:13.122417494872465; startPointID:57
+ Art:spitzkehre; Relative Länge:0; Länge:11.414213562373096; startPointID:64
+hasAscender: false  hasDescender: false   Time: 1207ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 15(0.03885)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:55.97275705110279; startPointID:4
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.94427190999916; startPointID:37
+ Art:schwache Krümmung l; Relative Länge:1; Länge:44.59183094440611; startPointID:47
+ Art:spitzkehre; Relative Länge:0; Länge:18.650281539872886; startPointID:67
+ Art:schwache Krümmung l; Relative Länge:1; Länge:32.171044672413515; startPointID:78
+hasAscender: false  hasDescender: false   Time: 1202ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level 4: 23(0.03885)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 151ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:33.963990038857645; startPointID:9
+ Art:schwache Krümmung l; Relative Länge:1; Länge:42.08052295485581; startPointID:37
+ Art:spitzkehre; Relative Länge:0; Länge:12.828427124746192; startPointID:59
+hasAscender: false  hasDescender: false   Time: 1205ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:21.23606797749979; startPointID:0
+ Art:starke Krümmung l; Relative Länge:1; Länge:25.94427190999916; startPointID:13
+ Art:gerade; Relative Länge:1; Länge:39.20005801635743; startPointID:28
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.594553449872045; startPointID:56
+ Art:gerade; Relative Länge:0; Länge:17.47213595499958; startPointID:65
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.82842712474619; startPointID:74
+ Art:schwache Krümmung l; Relative Länge:1; Länge:30.965541645124215; startPointID:88
+hasAscender: false  hasDescender: false   Time: 1508ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3:
+Level 4:
+Level 5:
+Level 6:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:37.16190046156804; startPointID:0
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.06449510224598; startPointID:26
+ Art:schwache Krümmung l; Relative Länge:1; Länge:26.13556291411146; startPointID:36
+ Art:starke Krümmung l; Relative Länge:1; Länge:35.05519988716055; startPointID:53
+ Art:schwache Krümmung l; Relative Länge:1; Länge:24.048627177541054; startPointID:80
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.656854249492381; startPointID:93
+hasAscender: false  hasDescender: false   Time: 1504ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level 4: 20(0.19425)
+Level 5: 24(0.1554)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:22.048627177541054; startPointID:6
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.99070478491457; startPointID:20
+ Art:spitzkehre; Relative Länge:1; Länge:26.773387165490547; startPointID:28
+hasAscender: false  hasDescender: false   Time: 902ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 42(0.1) 45(0.1)
+Level 2: 59(0.05) 48(0.034999999999999996)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:0; Länge:16.071067811865476; startPointID:4
+ Art:starke Krümmung l; Relative Länge:0; Länge:16.950844619618653; startPointID:17
+ Art:schwache Krümmung l; Relative Länge:1; Länge:23.071067811865476; startPointID:27
+ Art:gerade; Relative Länge:0; Länge:11.82842712474619; startPointID:49
+ Art:starke Krümmung l; Relative Länge:1; Länge:32.95084461961866; startPointID:56
+ Art:gerade; Relative Länge:0; Länge:15.285383285786041; startPointID:77
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.886349517372675; startPointID:84
+hasAscender: false  hasDescender: false   Time: 1653ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level 4: 19(0.0777)
+Level 5:
+Level 6:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 602ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:28.540527970377717; startPointID:3
+hasAscender: false  hasDescender: false   Time: 602ms
+
+Graph:
+Level 0: 41(1.0)
+Level hight: 45(0.2) 62(0.15)
+
+Varianten:  a(0.15)
+Resultat: a(0.15)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:22.478708664619077; startPointID:5
+ Art:starke Krümmung l; Relative Länge:0; Länge:12.064495102245981; startPointID:24
+ Art:gerade; Relative Länge:1; Länge:44.640986324787455; startPointID:33
+ Art:schwache Krümmung l; Relative Länge:1; Länge:24.605711203368898; startPointID:63
+ Art:starke Krümmung l; Relative Länge:1; Länge:21.226772762414363; startPointID:74
+hasAscender: false  hasDescender: false   Time: 1502ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:102.31435470381068; startPointID:1
+ Art:spitzkehre; Relative Länge:0; Länge:10.650281539872886; startPointID:66
+ Art:gerade; Relative Länge:1; Länge:33.071067811865476; startPointID:75
+hasAscender: false  hasDescender: false   Time: 1379ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 9(0.05)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:1; Länge:22.30056307974577; startPointID:0
+ Art:schwache Krümmung l; Relative Länge:0; Länge:10.94427190999916; startPointID:16
+hasAscender: false  hasDescender: false   Time: 904ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 43(0.1) 62(0.15)
+Level hight: 47(0.06)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:1; Länge:28.892922226992173; startPointID:10
+ Art:schwache Krümmung l; Relative Länge:1; Länge:39.413685359532806; startPointID:33
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.886349517372675; startPointID:58
+ Art:schwache Krümmung l; Relative Länge:0; Länge:19.950844619618653; startPointID:70
+hasAscender: false  hasDescender: false   Time: 1355ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1:
+Level 2:
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:0; Länge:12.892922226992171; startPointID:7
+ Art:starke Krümmung l; Relative Länge:1; Länge:21.194173437483137; startPointID:17
+ Art:schwache Krümmung l; Relative Länge:1; Länge:65.42025806915231; startPointID:30
+ Art:spitzkehre; Relative Länge:0; Länge:14.0; startPointID:77
+ Art:gerade; Relative Länge:0; Länge:12.414213562373096; startPointID:88
+ Art:starke Krümmung l; Relative Länge:0; Länge:16.99070478491457; startPointID:96
+hasAscender: false  hasDescender: false   Time: 1668ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 29(0.06) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level 4: 23(0.03885)
+Level 5: 26(0.03885)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:27.950844619618653; startPointID:17
+ Art:spitzkehre; Relative Länge:1; Länge:22.122417494872465; startPointID:34
+ Art:schwache Krümmung l; Relative Länge:0; Länge:17.128990204491963; startPointID:47
+ Art:schwache Krümmung r; Relative Länge:0; Länge:12.886349517372675; startPointID:60
+hasAscender: false  hasDescender: false   Time: 1203ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05)
+Level 3: 27(0.05)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:spitzkehre; Relative Länge:1; Länge:22.420743220670804; startPointID:0
+ Art:gerade; Relative Länge:0; Länge:12.23606797749979; startPointID:10
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.064495102245981; startPointID:19
+ Art:gerade; Relative Länge:0; Länge:12.414213562373096; startPointID:28
+ Art:starke Krümmung l; Relative Länge:1; Länge:39.25494674949016; startPointID:34
+hasAscender: false  hasDescender: false   Time: 1203ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1:
+Level 2:
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:16.650281539872886; startPointID:3
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.064495102245981; startPointID:16
+ Art:schwache Krümmung l; Relative Länge:0; Länge:15.12899020449196; startPointID:24
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.892922226992171; startPointID:33
+ Art:schwache Krümmung l; Relative Länge:1; Länge:34.89949493661167; startPointID:44
+ Art:spitzkehre; Relative Länge:0; Länge:14.0; startPointID:71
+ Art:gerade; Relative Länge:1; Länge:23.06449510224598; startPointID:85
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.65685424949238; startPointID:99
+hasAscender: false  hasDescender: false   Time: 1653ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3: 27(0.05) 14(0.0888)
+Level 4: 20(0.0555)
+Level 5: 24(0.0444)
+Level 6: 26(0.0444)
+Level 7:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:0; Länge:12.892922226992171; startPointID:2
+ Art:schwache Krümmung r; Relative Länge:0; Länge:11.071067811865476; startPointID:12
+ Art:starke Krümmung l; Relative Länge:0; Länge:11.23606797749979; startPointID:20
+ Art:schwache Krümmung l; Relative Länge:1; Länge:49.3290482208494; startPointID:30
+ Art:spitzkehre; Relative Länge:1; Länge:22.307135789365265; startPointID:70
+hasAscender: false  hasDescender: false   Time: 1523ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2:
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 3ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:50.785844453984346; startPointID:7
+ Art:starke Krümmung l; Relative Länge:0; Länge:12.47213595499958; startPointID:42
+hasAscender: false  hasDescender: false   Time: 602ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 42(0.1) 45(0.1)
+Level hight: 59(0.05) 48(0.034999999999999996)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 301ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:34.72134935173837; startPointID:4
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.06449510224598; startPointID:33
+ Art:spitzkehre; Relative Länge:0; Länge:17.32032791758285; startPointID:45
+ Art:schwache Krümmung l; Relative Länge:1; Länge:40.95741732923815; startPointID:56
+ Art:gerade; Relative Länge:0; Länge:19.0; startPointID:95
+hasAscender: false  hasDescender: false   Time: 1653ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:1; Länge:20.30056307974577; startPointID:0
+ Art:schwache Krümmung l; Relative Länge:1; Länge:24.119694989406533; startPointID:15
+ Art:spitzkehre; Relative Länge:1; Länge:23.23606797749979; startPointID:26
+hasAscender: false  hasDescender: false   Time: 903ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 43(0.1) 62(0.15)
+Level 2: 47(0.06) 62(0.04000000000000001)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:46.14213562373095; startPointID:2
+ Art:starke Krümmung l; Relative Länge:0; Länge:12.656854249492381; startPointID:42
+ Art:gerade; Relative Länge:1; Länge:20.048627177541054; startPointID:65
+ Art:spitzkehre; Relative Länge:0; Länge:13.0; startPointID:76
+ Art:schwache Krümmung l; Relative Länge:0; Länge:15.39834563766817; startPointID:87
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.0; startPointID:97
+hasAscender: false  hasDescender: false   Time: 1503ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 15(0.03885)
+Level 4:
+Level 5:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:18.650281539872886; startPointID:2
+ Art:starke Krümmung l; Relative Länge:0; Länge:11.650281539872886; startPointID:17
+ Art:gerade; Relative Länge:1; Länge:27.242640687119287; startPointID:27
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.242640687119286; startPointID:52
+ Art:schwache Krümmung l; Relative Länge:1; Länge:39.371630891611254; startPointID:64
+ Art:spitzkehre; Relative Länge:0; Länge:15.23606797749979; startPointID:92
+ Art:gerade; Relative Länge:0; Länge:10.828427124746192; startPointID:105
+hasAscender: false  hasDescender: false   Time: 1804ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3:
+Level 4:
+Level 5:
+Level 6:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 2ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:48.963990038857645; startPointID:5
+ Art:spitzkehre; Relative Länge:0; Länge:11.23606797749979; startPointID:44
+ Art:gerade; Relative Länge:0; Länge:12.123105625617661; startPointID:52
+hasAscender: false  hasDescender: false   Time: 1354ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 9(0.05)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:45.78584445398434; startPointID:2
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.65685424949238; startPointID:40
+ Art:schwache Krümmung l; Relative Länge:1; Länge:40.54977647648455; startPointID:52
+ Art:spitzkehre; Relative Länge:0; Länge:18.23606797749979; startPointID:83
+hasAscender: false  hasDescender: false   Time: 1661ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level hight: 23(0.03885)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:13.82842712474619; startPointID:4
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.0; startPointID:17
+ Art:schwache Krümmung l; Relative Länge:1; Länge:72.62303859097567; startPointID:30
+ Art:starke Krümmung l; Relative Länge:0; Länge:16.650281539872886; startPointID:81
+ Art:gerade; Relative Länge:0; Länge:12.414213562373096; startPointID:95
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.23606797749979; startPointID:104
+hasAscender: false  hasDescender: false   Time: 1653ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3: 27(0.05) 14(0.0888)
+Level 4: 20(0.0555)
+Level 5:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:45.89949493661167; startPointID:1
+ Art:starke Krümmung l; Relative Länge:0; Länge:11.828427124746192; startPointID:41
+ Art:schwache Krümmung l; Relative Länge:1; Länge:41.119694989406526; startPointID:51
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.576491222541476; startPointID:76
+hasAscender: false  hasDescender: false   Time: 1653ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3: 27(0.05) 14(0.0888)
+Level hight: 20(0.0555)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:0; Länge:15.77269903474535; startPointID:5
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.300563079745771; startPointID:15
+ Art:gerade; Relative Länge:1; Länge:37.957417329238154; startPointID:26
+ Art:starke Krümmung l; Relative Länge:1; Länge:22.886349517372675; startPointID:55
+hasAscender: false  hasDescender: false   Time: 1654ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 15(0.03885)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 151ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 3ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:49.29784057427984; startPointID:1
+ Art:schwache Krümmung l; Relative Länge:1; Länge:48.533908551779625; startPointID:46
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.650281539872886; startPointID:71
+ Art:schwache Krümmung l; Relative Länge:1; Länge:29.193485306737944; startPointID:85
+hasAscender: false  hasDescender: false   Time: 1502ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2:
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 32ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 451ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:59.53663105724556; startPointID:1
+ Art:starke Krümmung l; Relative Länge:0; Länge:12.828427124746192; startPointID:55
+ Art:spitzkehre; Relative Länge:1; Länge:28.009455142990337; startPointID:64
+ Art:gerade; Relative Länge:1; Länge:23.135562914111457; startPointID:78
+hasAscender: false  hasDescender: false   Time: 1506ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:24.950844619618657; startPointID:2
+ Art:starke Krümmung l; Relative Länge:0; Länge:11.478708664619075; startPointID:18
+ Art:schwache Krümmung l; Relative Länge:1; Länge:56.71424843927858; startPointID:26
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.650281539872886; startPointID:58
+ Art:gerade; Relative Länge:0; Länge:13.23606797749979; startPointID:71
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.064495102245981; startPointID:81
+hasAscender: false  hasDescender: false   Time: 1353ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level 4: 20(0.19425)
+Level 5:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:23.30713578936527; startPointID:3
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.22677276241436; startPointID:20
+ Art:schwache Krümmung l; Relative Länge:1; Länge:57.42971321214263; startPointID:30
+ Art:starke Krümmung l; Relative Länge:1; Länge:28.478708664619077; startPointID:53
+ Art:gerade; Relative Länge:0; Länge:15.242640687119287; startPointID:75
+hasAscender: false  hasDescender: false   Time: 1202ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level 4: 20(0.19425)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:19.414213562373096; startPointID:1
+ Art:starke Krümmung l; Relative Länge:1; Länge:22.06449510224598; startPointID:12
+ Art:schwache Krümmung l; Relative Länge:1; Länge:25.113122279787035; startPointID:29
+ Art:starke Krümmung l; Relative Länge:1; Länge:23.422980574618236; startPointID:43
+ Art:spitzkehre; Relative Länge:0; Länge:16.06449510224598; startPointID:54
+ Art:schwache Krümmung l; Relative Länge:1; Länge:31.464765826329728; startPointID:64
+ Art:starke Krümmung l; Relative Länge:1; Länge:29.640986324787455; startPointID:81
+hasAscender: false  hasDescender: false   Time: 1503ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3: 27(0.05) 14(0.0888)
+Level 4: 20(0.0555)
+Level 5:
+Level 6:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:28.60769886911104; startPointID:4
+ Art:starke Krümmung l; Relative Länge:0; Länge:19.478708664619074; startPointID:21
+ Art:gerade; Relative Länge:1; Länge:45.63169110970201; startPointID:33
+ Art:starke Krümmung l; Relative Länge:1; Länge:27.414213562373096; startPointID:56
+hasAscender: false  hasDescender: false   Time: 1352ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 15(0.03885)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 152ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 2ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:56.37382519423688; startPointID:6
+ Art:starke Krümmung l; Relative Länge:1; Länge:20.171732803158715; startPointID:40
+hasAscender: false  hasDescender: false   Time: 1053ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level hight: 7(0.13999999999999999) 29(0.06) 10(0.35000000000000003)
+
+Varianten:  a(0.06)
+Resultat: a(0.06)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.478708664619074; startPointID:8
+ Art:schwache Krümmung l; Relative Länge:1; Länge:65.85253385885596; startPointID:13
+hasAscender: false  hasDescender: false   Time: 1052ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:11.89292222699217; startPointID:7
+ Art:schwache Krümmung l; Relative Länge:1; Länge:51.59568114855966; startPointID:22
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.89292222699217; startPointID:47
+ Art:schwache Krümmung l; Relative Länge:1; Länge:23.567196007456047; startPointID:59
+hasAscender: false  hasDescender: false   Time: 1053ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2:
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 2ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:22.462840739914153; startPointID:6
+ Art:schwache Krümmung r; Relative Länge:0; Länge:16.670046377709973; startPointID:20
+ Art:schwache Krümmung l; Relative Länge:1; Länge:75.99349858338755; startPointID:30
+ Art:starke Krümmung l; Relative Länge:0; Länge:19.478708664619077; startPointID:70
+ Art:gerade; Relative Länge:0; Länge:18.414213562373096; startPointID:86
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.650281539872886; startPointID:99
+hasAscender: false  hasDescender: false   Time: 1503ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2:
+Level 3:
+Level 4:
+Level 5:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:45.76997652927942; startPointID:6
+ Art:spitzkehre; Relative Länge:1; Länge:28.065125855024345; startPointID:39
+ Art:schwache Krümmung l; Relative Länge:1; Länge:50.009630380104056; startPointID:49
+ Art:starke Krümmung l; Relative Länge:0; Länge:19.892922226992173; startPointID:62
+ Art:schwache Krümmung l; Relative Länge:0; Länge:11.70820393249937; startPointID:77
+hasAscender: false  hasDescender: false   Time: 1204ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05)
+Level 3: 27(0.05)
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:26.19348530673794; startPointID:9
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.82842712474619; startPointID:24
+ Art:schwache Krümmung l; Relative Länge:1; Länge:36.71424843927858; startPointID:33
+ Art:spitzkehre; Relative Länge:1; Länge:20.280109889280517; startPointID:52
+hasAscender: false  hasDescender: false   Time: 903ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2) 62(0.15)
+Level 2: 48(0.06999999999999999)
+Level 3: 62(0.041999999999999996)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:1; Länge:22.773387165490547; startPointID:1
+ Art:schwache Krümmung l; Relative Länge:0; Länge:14.307135789365267; startPointID:19
+ Art:starke Krümmung l; Relative Länge:0; Länge:12.82842712474619; startPointID:29
+ Art:spitzkehre; Relative Länge:0; Länge:18.064495102245978; startPointID:46
+ Art:schwache Krümmung l; Relative Länge:1; Länge:35.19348530673794; startPointID:58
+ Art:starke Krümmung l; Relative Länge:0; Länge:18.23606797749979; startPointID:84
+ Art:schwache Krümmung l; Relative Länge:1; Länge:20.63441361516796; startPointID:100
+hasAscender: false  hasDescender: false   Time: 1652ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1:
+Level 2:
+Level 3:
+Level 4:
+Level 5:
+Level 6:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 2ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.414213562373096; startPointID:3
+ Art:schwache Krümmung l; Relative Länge:1; Länge:83.91045625148246; startPointID:17
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.0; startPointID:72
+ Art:gerade; Relative Länge:1; Länge:26.892922226992173; startPointID:84
+hasAscender: false  hasDescender: false   Time: 1504ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1:
+Level 2:
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:36.37163089161125; startPointID:1
+ Art:starke Krümmung l; Relative Länge:0; Länge:16.48528137423857; startPointID:31
+ Art:gerade; Relative Länge:1; Länge:42.52733584216013; startPointID:45
+ Art:starke Krümmung l; Relative Länge:1; Länge:27.899494936611667; startPointID:65
+hasAscender: false  hasDescender: false   Time: 1505ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 15(0.03885)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 2ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:24.31370849898476; startPointID:4
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.242640687119286; startPointID:23
+ Art:schwache Krümmung l; Relative Länge:1; Länge:45.46888524669333; startPointID:31
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.064495102245981; startPointID:55
+ Art:gerade; Relative Länge:0; Länge:15.828427124746192; startPointID:65
+hasAscender: false  hasDescender: false   Time: 1352ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3: 27(0.05) 14(0.0888)
+Level 4: 20(0.0555)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 150ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 2ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:68.49132588101777; startPointID:6
+ Art:gerade; Relative Länge:0; Länge:11.886349517372675; startPointID:50
+hasAscender: false  hasDescender: false   Time: 751ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2) 62(0.15)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 151ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:0; Länge:11.828427124746192; startPointID:11
+ Art:gerade; Relative Länge:1; Länge:36.13556291411146; startPointID:22
+ Art:schwache Krümmung l; Relative Länge:1; Länge:31.43612599385723; startPointID:51
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.414213562373096; startPointID:72
+ Art:gerade; Relative Länge:1; Länge:23.414213562373096; startPointID:89
+hasAscender: false  hasDescender: false   Time: 1503ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1:
+Level 2:
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 2ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:10.414213562373096; startPointID:15
+ Art:spitzkehre; Relative Länge:0; Länge:15.064495102245981; startPointID:25
+ Art:schwache Krümmung l; Relative Länge:1; Länge:48.3290482208494; startPointID:38
+ Art:spitzkehre; Relative Länge:0; Länge:14.242640687119287; startPointID:72
+ Art:schwache Krümmung l; Relative Länge:1; Länge:25.122417494872465; startPointID:84
+hasAscender: false  hasDescender: false   Time: 1502ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05)
+Level 3: 27(0.05)
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:39.41421356237309; startPointID:0
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.828427124746192; startPointID:27
+ Art:schwache Krümmung l; Relative Länge:1; Länge:72.89458810489455; startPointID:38
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.0; startPointID:74
+ Art:schwache Krümmung l; Relative Länge:1; Länge:23.89292222699217; startPointID:90
+hasAscender: false  hasDescender: false   Time: 1502ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3: 27(0.05) 14(0.0888)
+Level 4: 20(0.0555)
+Level hight: 24(0.0444)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:48.71205413665293; startPointID:2
+ Art:spitzkehre; Relative Länge:0; Länge:11.0; startPointID:36
+ Art:gerade; Relative Länge:0; Länge:17.0; startPointID:45
+ Art:starke Krümmung l; Relative Länge:0; Länge:11.414213562373096; startPointID:61
+hasAscender: false  hasDescender: false   Time: 1203ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05)
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 5ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:spitzkehre; Relative Länge:0; Länge:12.828427124746192; startPointID:7
+ Art:schwache Krümmung l; Relative Länge:1; Länge:25.05519988716055; startPointID:17
+hasAscender: false  hasDescender: false   Time: 752ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:42.843766846610826; startPointID:5
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.242640687119286; startPointID:38
+ Art:schwache Krümmung l; Relative Länge:1; Länge:36.84109105012348; startPointID:50
+ Art:spitzkehre; Relative Länge:1; Länge:21.650281539872886; startPointID:66
+hasAscender: false  hasDescender: false   Time: 1203ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level hight: 23(0.03885)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 601ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:52.72134935173836; startPointID:0
+ Art:starke Krümmung l; Relative Länge:0; Länge:11.06449510224598; startPointID:42
+ Art:schwache Krümmung l; Relative Länge:1; Länge:44.51146791745521; startPointID:50
+ Art:starke Krümmung l; Relative Länge:0; Länge:18.414213562373096; startPointID:70
+hasAscender: false  hasDescender: false   Time: 1204ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3: 27(0.05) 14(0.0888)
+Level hight: 20(0.0555)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.650281539872886; startPointID:13
+ Art:gerade; Relative Länge:0; Länge:12.828427124746192; startPointID:26
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.82842712474619; startPointID:38
+ Art:schwache Krümmung l; Relative Länge:1; Länge:38.79241716360384; startPointID:47
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.23606797749979; startPointID:72
+hasAscender: false  hasDescender: false   Time: 1502ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1:
+Level 2:
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:spitzkehre; Relative Länge:0; Länge:12.0; startPointID:3
+ Art:gerade; Relative Länge:1; Länge:27.23606797749979; startPointID:12
+ Art:starke Krümmung l; Relative Länge:0; Länge:12.714776642118867; startPointID:29
+ Art:schwache Krümmung l; Relative Länge:1; Länge:79.92243077152207; startPointID:38
+ Art:starke Krümmung l; Relative Länge:0; Länge:19.82842712474619; startPointID:80
+ Art:schwache Krümmung l; Relative Länge:1; Länge:23.640986324787455; startPointID:96
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.650281539872886; startPointID:110
+hasAscender: false  hasDescender: false   Time: 1502ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1:
+Level 2:
+Level 3:
+Level 4:
+Level 5:
+Level 6:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 27ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 303ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:100.31318029614448; startPointID:2
+ Art:starke Krümmung l; Relative Länge:0; Länge:19.82842712474619; startPointID:73
+ Art:gerade; Relative Länge:0; Länge:17.82842712474619; startPointID:91
+hasAscender: false  hasDescender: false   Time: 1502ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 151ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:23.478708664619077; startPointID:2
+ Art:starke Krümmung l; Relative Länge:0; Länge:16.242640687119284; startPointID:20
+ Art:schwache Krümmung l; Relative Länge:1; Länge:55.52949473349109; startPointID:35
+ Art:starke Krümmung l; Relative Länge:1; Länge:34.46284073991415; startPointID:65
+ Art:gerade; Relative Länge:1; Länge:23.313708498984763; startPointID:90
+hasAscender: false  hasDescender: false   Time: 1504ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level 4: 20(0.19425)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:0; Länge:18.892922226992173; startPointID:1
+ Art:spitzkehre; Relative Länge:0; Länge:12.65685424949238; startPointID:17
+ Art:gerade; Relative Länge:1; Länge:51.57616073291973; startPointID:24
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.0; startPointID:54
+hasAscender: false  hasDescender: false   Time: 1203ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 9(0.05)
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:0; Länge:15.650281539872886; startPointID:3
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.828427124746192; startPointID:17
+ Art:gerade; Relative Länge:0; Länge:12.414213562373096; startPointID:31
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.656854249492381; startPointID:43
+ Art:schwache Krümmung l; Relative Länge:1; Länge:29.72134935173836; startPointID:52
+ Art:starke Krümmung l; Relative Länge:1; Länge:21.071067811865476; startPointID:75
+ Art:schwache Krümmung l; Relative Länge:1; Länge:23.48528137423857; startPointID:92
+hasAscender: false  hasDescender: false   Time: 1664ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05) 10(0.1)
+Level 3:
+Level 4:
+Level 5:
+Level 6:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 2ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:42.19348530673794; startPointID:1
+ Art:starke Krümmung l; Relative Länge:1; Länge:34.24264068711929; startPointID:24
+hasAscender: false  hasDescender: false   Time: 902ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 42(0.1) 45(0.1)
+Level hight: 59(0.05) 62(0.05) 48(0.034999999999999996) 62(0.034999999999999996)
+
+Varianten:  a(0.05) a(0.034999999999999996)
+Resultat: a(0.05)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: true  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: true  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:0; Länge:17.055211184844474; startPointID:10
+hasAscender: false  hasDescender: false   Time: 451ms
+
+Graph:
+Level 0: 41(1.0)
+Level hight: 45(0.2)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:23.284695155040843; startPointID:1
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.320327917582855; startPointID:14
+hasAscender: false  hasDescender: false   Time: 451ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2) 62(0.15)
+Level hight: 48(0.06999999999999999)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:29.85033955623032; startPointID:2
+ Art:spitzkehre; Relative Länge:0; Länge:13.714776642118863; startPointID:13
+ Art:schwache Krümmung l; Relative Länge:1; Länge:35.26679285561518; startPointID:23
+hasAscender: false  hasDescender: false   Time: 918ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2) 62(0.15)
+Level 2: 49(0.04000000000000001)
+Level hight: 53(0.04000000000000001)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:26.49206072074157; startPointID:2
+ Art:spitzkehre; Relative Länge:1; Länge:23.769976529279415; startPointID:12
+ Art:schwache Krümmung l; Relative Länge:1; Länge:22.77927174436485; startPointID:23
+hasAscender: false  hasDescender: false   Time: 902ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2) 62(0.15)
+Level 2: 49(0.04000000000000001)
+Level hight: 53(0.04000000000000001)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:0; Länge:13.048627177541055; startPointID:5
+ Art:starke Krümmung l; Relative Länge:1; Länge:29.812559200041264; startPointID:10
+hasAscender: false  hasDescender: false   Time: 912ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2)
+Level hight: 48(0.06999999999999999) 62(0.06999999999999999)
+
+Varianten:  a(0.06999999999999999)
+Resultat: a(0.06999999999999999)
+
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:59.26849674071418; startPointID:2
+hasAscender: false  hasDescender: false   Time: 603ms
+
+Graph:
+Level 0: 41(1.0)
+Level hight: 45(0.2) 62(0.15)
+
+Varianten:  a(0.15)
+Resultat: a(0.15)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:26.89292222699217; startPointID:8
+ Art:spitzkehre; Relative Länge:0; Länge:13.242640687119286; startPointID:30
+hasAscender: false  hasDescender: false   Time: 1052ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level hight: 18(0.05)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:1; Länge:25.549776476484553; startPointID:6
+ Art:schwache Krümmung l; Relative Länge:1; Länge:39.52560263832511; startPointID:22
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.23606797749979; startPointID:30
+hasAscender: false  hasDescender: false   Time: 902ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 43(0.1) 62(0.15)
+Level 2: 47(0.06) 62(0.04000000000000001)
+Level hight: 51(0.045)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:20.919108770208805; startPointID:3
+ Art:starke Krümmung l; Relative Länge:1; Länge:23.72134935173836; startPointID:11
+ Art:schwache Krümmung l; Relative Länge:0; Länge:11.358485472372255; startPointID:29
+ Art:starke Krümmung l; Relative Länge:0; Länge:15.06449510224598; startPointID:35
+hasAscender: false  hasDescender: false   Time: 755ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2) 62(0.15)
+Level 2: 48(0.06999999999999999) 62(0.06999999999999999)
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:25.277745246821006; startPointID:3
+ Art:starke Krümmung l; Relative Länge:0; Länge:12.414213562373096; startPointID:13
+ Art:schwache Krümmung l; Relative Länge:1; Länge:46.22600686239681; startPointID:22
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.0; startPointID:33
+hasAscender: false  hasDescender: false   Time: 902ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2) 62(0.15)
+Level 2: 48(0.06999999999999999)
+Level 3: 62(0.041999999999999996)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:28.30064043390071; startPointID:1
+ Art:starke Krümmung l; Relative Länge:0; Länge:12.307135789365265; startPointID:10
+ Art:schwache Krümmung l; Relative Länge:1; Länge:36.03360731148623; startPointID:18
+ Art:starke Krümmung l; Relative Länge:0; Länge:13.951532750363851; startPointID:33
+hasAscender: false  hasDescender: false   Time: 902ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2) 62(0.15)
+Level 2: 48(0.06999999999999999)
+Level 3: 62(0.041999999999999996)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:0; Länge:19.66562126173752; startPointID:2
+ Art:starke Krümmung l; Relative Länge:1; Länge:21.7993783695076; startPointID:8
+ Art:schwache Krümmung l; Relative Länge:0; Länge:18.30056307974577; startPointID:19
+hasAscender: false  hasDescender: false   Time: 752ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2)
+Level 2: 48(0.06999999999999999) 62(0.06999999999999999)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:20.02191243148413; startPointID:5
+ Art:spitzkehre; Relative Länge:0; Länge:10.414213562373096; startPointID:15
+ Art:schwache Krümmung l; Relative Länge:1; Länge:22.841779180868684; startPointID:25
+ Art:starke Krümmung l; Relative Länge:1; Länge:21.812559200041267; startPointID:34
+hasAscender: false  hasDescender: false   Time: 905ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 45(0.2) 62(0.15)
+Level 2: 49(0.04000000000000001)
+Level 3: 53(0.04000000000000001)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 2ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:23.793968769870403; startPointID:3
+hasAscender: false  hasDescender: false   Time: 601ms
+
+Graph:
+Level 0: 41(1.0)
+Level hight: 45(0.2) 62(0.15)
+
+Varianten:  a(0.15)
+Resultat: a(0.15)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:starke Krümmung l; Relative Länge:1; Länge:31.347487424897338; startPointID:8
+ Art:schwache Krümmung l; Relative Länge:1; Länge:109.09628992073345; startPointID:20
+ Art:spitzkehre; Relative Länge:0; Länge:11.0; startPointID:72
+hasAscender: true  hasDescender: false   Time: 902ms
+
+Graph:
+Level 0: 41(1.0)
+Level 1: 43(0.1) 62(0.15)
+Level 2: 47(0.06) 62(0.04000000000000001)
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:51.91333326965518; startPointID:3
+ Art:spitzkehre; Relative Länge:0; Länge:14.242640687119287; startPointID:24
+ Art:schwache Krümmung l; Relative Länge:1; Länge:80.30189741531689; startPointID:37
+ Art:gerade; Relative Länge:0; Länge:17.233345472033857; startPointID:83
+ Art:starke Krümmung l; Relative Länge:1; Länge:23.650281539872886; startPointID:92
+hasAscender: true  hasDescender: false   Time: 1653ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 9(0.05)
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:49.60342489569079; startPointID:4
+ Art:spitzkehre; Relative Länge:1; Länge:22.727968770336453; startPointID:22
+ Art:gerade; Relative Länge:1; Länge:62.015339721864635; startPointID:36
+ Art:starke Krümmung r; Relative Länge:0; Länge:14.886349517372675; startPointID:80
+ Art:starke Krümmung l; Relative Länge:0; Länge:10.886349517372675; startPointID:90
+ Art:schwache Krümmung l; Relative Länge:1; Länge:40.0126172163987; startPointID:96
+ Art:starke Krümmung l; Relative Länge:0; Länge:16.650281539872886; startPointID:119
+hasAscender: true  hasDescender: false   Time: 1954ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 9(0.05)
+Level 3:
+Level 4:
+Level 5:
+Level 6:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:67.21017887735402; startPointID:3
+ Art:spitzkehre; Relative Länge:1; Länge:28.077687230463567; startPointID:26
+ Art:gerade; Relative Länge:1; Länge:54.919796900954; startPointID:40
+ Art:starke Krümmung l; Relative Länge:0; Länge:14.414213562373096; startPointID:63
+ Art:schwache Krümmung r; Relative Länge:0; Länge:12.242640687119284; startPointID:73
+hasAscender: true  hasDescender: false   Time: 1352ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 9(0.05)
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:gerade; Relative Länge:1; Länge:75.54583749243722; startPointID:5
+ Art:spitzkehre; Relative Länge:0; Länge:14.359173603117451; startPointID:29
+ Art:schwache Krümmung l; Relative Länge:1; Länge:136.77421815428224; startPointID:36
+hasAscender: true  hasDescender: false   Time: 1202ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 2(0.1) 6(0.1)
+Level 2: 18(0.05)
+Level hight: 27(0.05)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: true  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: true  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:55.788038756609986; startPointID:4
+hasAscender: false  hasDescender: false   Time: 1053ms
+
+Graph:
+Level 0: 1(1.0)
+Level hight: 3(0.2) 5(0.4)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:70.33401522423814; startPointID:4
+ Art:starke Krümmung l; Relative Länge:0; Länge:12.414213562373096; startPointID:28
+ Art:schwache Krümmung l; Relative Länge:1; Länge:153.99564894509655; startPointID:37
+ Art:spitzkehre; Relative Länge:0; Länge:14.478708664619075; startPointID:100
+hasAscender: true  hasDescender: false   Time: 1502ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level hight: 23(0.03885)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:216.4148830677488; startPointID:4
+ Art:gerade; Relative Länge:0; Länge:13.65685424949238; startPointID:77
+ Art:starke Krümmung l; Relative Länge:0; Länge:18.414213562373096; startPointID:83
+hasAscender: true  hasDescender: false   Time: 1353ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung r; Relative Länge:0; Länge:19.85038626520892; startPointID:5
+ Art:schwache Krümmung l; Relative Länge:1; Länge:20.518238340293244; startPointID:13
+ Art:starke Krümmung l; Relative Länge:1; Länge:25.187600727863643; startPointID:23
+ Art:schwache Krümmung l; Relative Länge:1; Länge:97.35595418691855; startPointID:40
+ Art:gerade; Relative Länge:0; Länge:10.16227766016838; startPointID:80
+hasAscender: true  hasDescender: false   Time: 1504ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 4(0.2)
+Level 2:
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: true  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Zu wenig Zeichen um eine Analyse durchzuführen
+
+
+
+Messung:
+========
+Microgesten:
+hasAscender: true  hasDescender: false   Time: 0ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:27.659048552118026; startPointID:6
+ Art:gerade; Relative Länge:0; Länge:12.414213562373096; startPointID:28
+ Art:starke Krümmung l; Relative Länge:1; Länge:29.650281539872886; startPointID:38
+ Art:spitzkehre; Relative Länge:0; Länge:10.650281539872886; startPointID:56
+hasAscender: false  hasDescender: false   Time: 1053ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2:
+Level 3:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+hasAscender: false  hasDescender: false   Time: 1ms
+
+Graph:
+Level hight: 41(1.0)
+
+Varianten:  root(1.0)
+Resultat: root(1.0)
+
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:34.59320306529088; startPointID:1
+ Art:spitzkehre; Relative Länge:0; Länge:12.23606797749979; startPointID:15
+ Art:gerade; Relative Länge:1; Länge:79.14878312261736; startPointID:23
+ Art:schwache Krümmung l; Relative Länge:1; Länge:33.96842407849505; startPointID:59
+ Art:starke Krümmung l; Relative Länge:1; Länge:21.886349517372675; startPointID:73
+hasAscender: true  hasDescender: false   Time: 1207ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 9(0.05)
+Level 3:
+Level 4:
+Level hight:
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:52.29726755892156; startPointID:6
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.0; startPointID:21
+ Art:schwache Krümmung l; Relative Länge:1; Länge:135.56294534034652; startPointID:30
+ Art:spitzkehre; Relative Länge:0; Länge:14.414213562373096; startPointID:83
+hasAscender: true  hasDescender: false   Time: 1502ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level hight: 23(0.03885)
+
+Varianten: 
+Resultat: Zeichen nicht erkannt!
+
+
+Messung:
+========
+Microgesten:
+ Art:schwache Krümmung l; Relative Länge:1; Länge:55.632563880324646; startPointID:4
+ Art:starke Krümmung l; Relative Länge:0; Länge:17.478708664619077; startPointID:21
+ Art:schwache Krümmung l; Relative Länge:1; Länge:94.43129204822407; startPointID:35
+ Art:starke Krümmung l; Relative Länge:0; Länge:18.122417494872465; startPointID:82
+ Art:spitzkehre; Relative Länge:0; Länge:17.404918347287666; startPointID:93
+hasAscender: true  hasDescender: false   Time: 1506ms
+
+Graph:
+Level 0: 1(1.0)
+Level 1: 3(0.2) 5(0.4)
+Level 2: 7(0.13999999999999999) 10(0.35000000000000003)
+Level 3: 11(0.055999999999999994) 29(0.055999999999999994) 14(0.3108)
+Level 4: 20(0.19425)
+Level hight: 26(0.03885)
+
+Varianten:  b(0.03885)
+Resultat: b(0.03885)

@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class touchpad.conditioningAngle</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">touchpad</FONT>
+<BR>Class conditioningAngle</H2>
+<DL>
+<DT>public class <B>conditioningAngle</B><DT>implements touchpad.conditioningInterface
+</DL>
+<DL><DD><p>Title: Ermittlung der MicroGesten via den Winkel</p> <p>Description: Diese Klasse ist eine Alternative zu conditioningBending. Sie wurde nicht vollständig implementiert, sondern dient als Beispiel, wie eine alternative Klasse zur Ermittlung der MicroGesten aussehen kann.</p> <p>Copyright: Copyright (c) 2007 ZHW</p><DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0</DD>
+<DT><B>Author:</B><DD>Daniel Fernandez</DD>
+<DD>David Kölbener</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<A NAME="addDot(touchpad.Dot)"></A>
+
+<H3>addDot</H3>
+<PRE>
+public void <B>addDot</B>(touchpad.Dot&nbsp;d)</PRE>
+<DL><DD>Punkt für die Ausgabe zum Benutzer Speichern<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>d</CODE> - - Punkt der gespeichert werden soll</DD>
+</DL>
+<HR>
+
+<A NAME="getDots()"></A>
+
+<H3>getDots</H3>
+<PRE>
+public touchpad.Dot[] <B>getDots</B>()</PRE>
+<DL><DD>Alle gespeicherten Punkte zurückgeben<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>Dot[] - Gespeicherte Punkte</DD>
+</DL>
+<HR>
+
+<A NAME="getDotCounter()"></A>
+
+<H3>getDotCounter</H3>
+<PRE>
+public int <B>getDotCounter</B>()</PRE>
+<DL><DD>Anzahl gespeicherter Punkte zurückgeben<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>int - Anzahl Punkte</DD>
+</DL>
+<HR>
+
+<A NAME="addPos(int, int)"></A>
+
+<H3>addPos</H3>
+<PRE>
+private void <B>addPos</B>(int&nbsp;x,
+                    int&nbsp;y)</PRE>
+<DL><DD>X- und Y-Koordinaten, die vom TouchpadListener eingelesen werden übernehmen und Vektoren daraus erstellen<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>x</CODE> - - X-Koordinate</DD>
+<DD><CODE>y</CODE> - - Y-Koordinate</DD>
+</DL>
+<HR>
+
+<A NAME="clearBuffer()"></A>
+
+<H3>clearBuffer</H3>
+<PRE>
+public void <B>clearBuffer</B>()</PRE>
+<DL><DD>Alle Buffer löschen, damit eine neue Messung erfolgen kann<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<A NAME="analyse()"></A>
+
+<H3>analyse</H3>
+<PRE>
+public touchpad.Measure <B>analyse</B>()</PRE>
+<DL><DD>Abgeschlossene Messung analysieren. - (Diese Methode ist nicht voll implementiert worden, da bei dieser Variante von der MicroGesten-Bestimmung der Schreibwinkel berücksichtig werden muss.)<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Returns:</B><DD>Measure - Analysierte Messung</DD>
+</DL>
+<HR>
+
+<A NAME="setStartTime(long)"></A>
+
+<H3>setStartTime</H3>
+<PRE>
+public void <B>setStartTime</B>(long&nbsp;start)</PRE>
+<DL><DD>Startzeit der Messung wird in der Klasse Measure gespeichert. (conditioningBending dient als Facade)<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>start</CODE> - - Startzeit</DD>
+</DL>
+<HR>
+
+<A NAME="setEndTime(long)"></A>
+
+<H3>setEndTime</H3>
+<PRE>
+public void <B>setEndTime</B>(long&nbsp;end)</PRE>
+<DL><DD>Endzeit der Messung wird in der Klasse Measure gespeichert. (conditioningBending dient als Facade)<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>start</CODE> - - EndZeit</DD>
+</DL>
+<HR>
+
+</BODY>
+</HTML>
