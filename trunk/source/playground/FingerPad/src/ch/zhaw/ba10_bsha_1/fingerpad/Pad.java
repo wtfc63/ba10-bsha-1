@@ -5,8 +5,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-public class Pad extends Activity {
+
+public class Pad extends Activity implements IObserver {
 
 
     private static final int MENU_ITEM_INC    = Menu.FIRST;
@@ -15,6 +17,7 @@ public class Pad extends Activity {
     private static final int MENU_ITEM_CLEAR  = Menu.FIRST + 3;
     
 	private PadView padView;
+	private TextView textOut;
 	
 	
     /** Called when the activity is first created. */
@@ -23,6 +26,7 @@ public class Pad extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         padView = (PadView) findViewById(R.id.padView);
+        textOut = (TextView) findViewById(R.id.textOut);
     }
 
     @Override
@@ -59,4 +63,11 @@ public class Pad extends Activity {
         }
         return (super.onOptionsItemSelected(item));
     }
+
+	@Override
+	public void update(IObservable updater) {
+		if (updater instanceof PadView) {
+			textOut.setText(padView.getLastDetectionReport());
+		}
+	}
 }

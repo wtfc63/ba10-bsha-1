@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.util.AttributeSet;
 
-public class PadView extends View {
+public class PadView extends View implements IObservable {
 	
     
     private static final float MINP = 0.25f;
@@ -29,6 +29,11 @@ public class PadView extends View {
     private float lastX;
     private float lastY;
     
+    private ArrayList<IObserver> observers;
+    
+    private ArrayList<TouchInput> inputs;
+    private TouchInput currentInput;
+    
 
 	public PadView(Context context) {
 		super(context);
@@ -41,6 +46,10 @@ public class PadView extends View {
 	}
 	
 	private void init() {
+		observers = new ArrayList<IObserver>();
+		inputs = new ArrayList<TouchInput>();
+		currentInput = null;
+		
         paths  = new ArrayList<Path>();
         points = new ArrayList<Point>();
         bitmap = Bitmap.createBitmap(320, 480, Bitmap.Config.ARGB_8888);
@@ -129,6 +138,9 @@ public class PadView extends View {
     }
     
     private void touchStart(float x, float y) {
+    	currentInput = new TouchInput();
+    	currentInput.add(new TouchPoint(x, y));
+    	
     	Path path = new Path();
         path.reset();
         path.moveTo(x, y);
@@ -139,6 +151,8 @@ public class PadView extends View {
     }
     
     private void touchMove(float x, float y) {
+    	currentInput.add(new TouchPoint(x, y));
+    	
         float dx = Math.abs(x - lastX);
         float dy = Math.abs(y - lastY);
         if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
@@ -150,6 +164,11 @@ public class PadView extends View {
     }
     
     private void touchUp() {
+    	currentInput.startDetection();
+    	inputs.add(currentInput);
+    	currentInput = null;
+    	notifyObservers();
+    	
     	Path path = paths.get(paths.size() - 1);
     	path.lineTo(lastX, lastY);
         points.add(new Point((int) lastX, (int) lastY));
@@ -183,4 +202,29 @@ public class PadView extends View {
     	points.clear();
     	invalidate();
     }
+    
+    public String getLastDetectionReport() {
+    	String result = "none";
+    	if (inputs.size() > 0) {
+    		result = inputs.get(inputs.size() - 1).getDetectionReport();
+    	}
+    	return result;
+    }
+
+	@Override
+	public void attachObserver(IObserver observer) {
+		observers.add(observer);
+	}
+
+	@Override
+	public void detachObserver(IObserver observer) {
+		observers.remove(observer);
+	}
+
+	@Override
+	public void notifyObservers() {
+		for (IObserver observer : observers) {
+			observer.update(this);
+		}
+	}
 }
