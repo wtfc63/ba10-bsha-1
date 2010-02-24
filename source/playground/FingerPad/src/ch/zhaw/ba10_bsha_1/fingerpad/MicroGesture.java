@@ -4,6 +4,9 @@ package ch.zhaw.ba10_bsha_1.fingerpad;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Path;
 
 
@@ -101,6 +104,23 @@ public class MicroGesture {
 		} else {
 			return (new Path());
 		}
+	}
+	
+	public void paintPath(Canvas canvas, int color) {
+		Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setDither(true);
+        paint.setColor(color);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        
+        paint.setStrokeWidth(2);
+        canvas.drawPath(getPath(), paint);
+        
+        paint.setStrokeWidth(4);
+        canvas.drawPoint(points.get(0).x, points.get(0).y, paint);
+        canvas.drawPoint(points.get(points.size() - 1).x, points.get(points.size() - 1).y, paint);
 	}
 	
 	

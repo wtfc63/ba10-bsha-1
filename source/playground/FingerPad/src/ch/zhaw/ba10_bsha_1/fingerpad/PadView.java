@@ -15,7 +15,8 @@ public class PadView extends View implements IObservable {
     private static final float MAXP = 0.75f;
     private static final float TOUCH_TOLERANCE = 4;
     
-    private int[] colors = new int[] {Color.BLUE, Color.RED};
+    private int[] colors = new int[] {Color.CYAN, Color.BLUE, Color.GREEN, Color.WHITE};
+    private int currColor = 0;
     
     private boolean showPoints = false;
     private ArrayList<Point> points;
@@ -90,6 +91,13 @@ public class PadView extends View implements IObservable {
         		canvas.drawPoint(p.x, p.y, p_paint);
         	}
         }
+        if ((inputs != null) && (inputs.size() > 0) 
+        		&& (inputs.get(inputs.size() - 1) != null)) {
+        	currColor = 0;
+	        for (MicroGesture mg : inputs.get(inputs.size() - 1).getMicroGestures()) {
+				mg.paintPath(canvas, colors[currColor++ % 4]);
+			}
+        }
     }
     
     private void paintBaseLines(Canvas canvas) {
@@ -138,7 +146,7 @@ public class PadView extends View implements IObservable {
     }
     
     private void touchStart(float x, float y) {
-    	currentInput = new TouchInput();
+    	currentInput = new TouchInput(TouchInput.DETECTION_STRATEGY_PREDICTION);
     	currentInput.add(new TouchPoint(x, y));
     	
     	Path path = new Path();
@@ -200,6 +208,7 @@ public class PadView extends View implements IObservable {
     public void clear() {
     	paths.clear();
     	points.clear();
+    	inputs.clear();
     	invalidate();
     }
     

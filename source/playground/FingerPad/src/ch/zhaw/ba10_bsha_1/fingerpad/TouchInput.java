@@ -1,17 +1,17 @@
 package ch.zhaw.ba10_bsha_1.fingerpad;
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 
 import android.R.string;
 
+
 public class TouchInput {
 	
-	
-	public static final int DETECTION_STRATEGY_NONE = 0;
-	public static final IMicroGestureDetectionStrategy[] DETECTION_STRATEGIES = new IMicroGestureDetectionStrategy[] {
-		new MicroGestureDetectionStrategyNone()
-	};
+
+	public static final IMicroGestureDetectionStrategy DETECTION_STRATEGY_NONE = new MicroGestureDetectionStrategyNone();
+	public static final IMicroGestureDetectionStrategy DETECTION_STRATEGY_PREDICTION = new MicroGestureDetectionStrategyPreditction();
 	
 	private ArrayList<TouchPoint> points;
 	private Collection<MicroGesture> microGestures;
@@ -21,12 +21,11 @@ public class TouchInput {
 	public TouchInput() {
 		points = new ArrayList<TouchPoint>();
 		microGestures = null;
-		detectionStrategy = DETECTION_STRATEGIES[DETECTION_STRATEGY_NONE];
+		detectionStrategy = DETECTION_STRATEGY_NONE;
 	}
 	
 	public TouchInput(IMicroGestureDetectionStrategy detection_strategy) {
-		points = new ArrayList<TouchPoint>();
-		microGestures = null;
+		this();
 		detectionStrategy = detection_strategy;
 	}
 	
