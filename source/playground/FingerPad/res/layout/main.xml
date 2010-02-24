@@ -6,9 +6,7 @@
     >
 <TextView  
     android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@+id/textOut"
-    />
+    android:layout_height="wrap_content" android:id="@+id/textOut" android:text="@string/textOut_startup"/>
 <ch.zhaw.ba10_bsha_1.fingerpad.PadView 
 	android:layout_width="wrap_content" 
 	android:layout_height="wrap_content" 
