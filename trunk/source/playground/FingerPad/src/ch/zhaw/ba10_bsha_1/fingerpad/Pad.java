@@ -27,6 +27,7 @@ public class Pad extends Activity implements IObserver {
         setContentView(R.layout.main);
         padView = (PadView) findViewById(R.id.padView);
         textOut = (TextView) findViewById(R.id.textOut);
+        padView.attachObserver(this);
     }
 
     @Override
