@@ -34,6 +34,7 @@ public class MicroGestureDetectionStrategyPreditction implements IMicroGestureDe
 					float pred_y = curr.y + (curr.y - prev.y);
 					if ((Math.abs(next.x - pred_x) > predictionTolerance) 
 							&& (Math.abs(next.y - pred_y) > predictionTolerance)) {
+						curr_mg.addPoint(next);
 						result.add(curr_mg);
 						curr_mg = new MicroGesture();
 						first = true;
