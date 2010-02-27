@@ -2,6 +2,8 @@ package ch.zhaw.ba10_bsha_1.fingerpad;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +16,8 @@ public class Pad extends Activity implements IObserver {
     private static final int MENU_ITEM_INC    = Menu.FIRST;
     private static final int MENU_ITEM_DEC    = Menu.FIRST + 1;
     private static final int MENU_ITEM_POINTS = Menu.FIRST + 2;
-    private static final int MENU_ITEM_CLEAR  = Menu.FIRST + 3;
+    private static final int MENU_ITEM_DETECTION_STRATEGY = Menu.FIRST + 3;
+    private static final int MENU_ITEM_CLEAR  = Menu.FIRST + 4;
     
 	private PadView padView;
 	private TextView textOut;
@@ -36,7 +39,8 @@ public class Pad extends Activity implements IObserver {
         menu.add(0, MENU_ITEM_INC, 0, "Inc").setShortcut('1', 'i');
         menu.add(0, MENU_ITEM_DEC, 0, "Dec").setShortcut('2', 'd');
         menu.add(0, MENU_ITEM_POINTS, 0, "Points").setShortcut('3', 'p');
-        menu.add(0, MENU_ITEM_CLEAR, 0, "Clear").setShortcut('4', 'c');
+        menu.add(0, MENU_ITEM_DETECTION_STRATEGY, 0, "Strategy").setShortcut('4', 's');
+        menu.add(0, MENU_ITEM_CLEAR, 0, "Clear").setShortcut('5', 'c');
         return true;
     }
     
@@ -57,6 +61,33 @@ public class Pad extends Activity implements IObserver {
                 return true;
             case MENU_ITEM_POINTS:
                 padView.setToShowPoints(!padView.showsPoints());
+                return true;
+            case MENU_ITEM_DETECTION_STRATEGY:
+            	final CharSequence[] strategies = {"None", "Prediction"};
+            	int selected_strategy = -1;
+            	IMicroGestureDetectionStrategy active_strategy = padView.getDetectionStrategy(); 
+            	if (active_strategy instanceof MicroGestureDetectionStrategyNone) {
+            		selected_strategy = 0;
+            	} else if (active_strategy instanceof MicroGestureDetectionStrategyPreditction) {
+            		selected_strategy = 1;
+            	}
+            	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            	builder.setTitle("MicroGesture Detection Strategy");
+            	builder.setSingleChoiceItems(strategies, selected_strategy, new DialogInterface.OnClickListener() {
+            	    public void onClick(DialogInterface dialog, int item) {
+            	        switch (item) {
+            	        	case 0 :
+            	        		padView.setDetectionStrategy(TouchInput.DETECTION_STRATEGY_NONE, true);
+            	        		break;
+            	        	case 1 :
+            	        		padView.setDetectionStrategy(TouchInput.DETECTION_STRATEGY_PREDICTION, true);
+            	        		break;
+            	        }
+            	        dialog.dismiss();
+            	    }
+            	});
+            	AlertDialog alert = builder.create();
+            	alert.show();
                 return true;
             case MENU_ITEM_CLEAR:
             	padView.clear();

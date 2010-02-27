@@ -34,6 +34,7 @@ public class PadView extends View implements IObservable {
     
     private ArrayList<TouchInput> inputs;
     private TouchInput currentInput;
+    private IMicroGestureDetectionStrategy detectionStrategy;
     
 
 	public PadView(Context context) {
@@ -50,6 +51,7 @@ public class PadView extends View implements IObservable {
 		observers = new ArrayList<IObserver>();
 		inputs = new ArrayList<TouchInput>();
 		currentInput = null;
+		detectionStrategy = TouchInput.DETECTION_STRATEGY_PREDICTION;
 		
         paths  = new ArrayList<Path>();
         points = new ArrayList<Point>();
@@ -146,7 +148,7 @@ public class PadView extends View implements IObservable {
     }
     
     private void touchStart(float x, float y) {
-    	currentInput = new TouchInput(TouchInput.DETECTION_STRATEGY_PREDICTION);
+    	currentInput = new TouchInput(detectionStrategy);
     	currentInput.add(new TouchPoint(x, y));
     	
     	Path path = new Path();
@@ -210,6 +212,20 @@ public class PadView extends View implements IObservable {
     	points.clear();
     	inputs.clear();
     	invalidate();
+    }
+    
+    public IMicroGestureDetectionStrategy getDetectionStrategy() {
+    	return detectionStrategy;
+    }
+    
+    public void setDetectionStrategy(IMicroGestureDetectionStrategy detection_strategy, boolean redetect) {
+    	detectionStrategy = detection_strategy;
+    	if (redetect && (inputs.size() > 0)) {
+    		TouchInput last = inputs.get(inputs.size() - 1);
+    		last.setDetectionStrategy(detectionStrategy);
+    		last.startDetection();
+    		notifyObservers();
+    	}
     }
     
     public String getLastDetectionReport() {

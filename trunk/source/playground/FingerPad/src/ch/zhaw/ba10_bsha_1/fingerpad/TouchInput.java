@@ -34,6 +34,14 @@ public class TouchInput {
 		points.add(point);
 	}
 	
+	public IMicroGestureDetectionStrategy getDetectionStrategy() {
+		return detectionStrategy;
+	}
+
+	public void setDetectionStrategy(IMicroGestureDetectionStrategy detectionStrategy) {
+		this.detectionStrategy = detectionStrategy;
+	}
+
 	public void startDetection() {
 		microGestures = detectMicroGestures(detectionStrategy);
 	}
