@@ -12,6 +12,7 @@ public class TouchInput {
 
 	public static final IMicroGestureDetectionStrategy DETECTION_STRATEGY_NONE = new MicroGestureDetectionStrategyNone();
 	public static final IMicroGestureDetectionStrategy DETECTION_STRATEGY_PREDICTION = new MicroGestureDetectionStrategyPreditction();
+	public static final IMicroGestureDetectionStrategy DETECTION_STRATEGY_CURVATURE = new MicroGestureDetectionStrategyCurvature();
 	
 	private ArrayList<TouchPoint> points;
 	private Collection<MicroGesture> microGestures;
