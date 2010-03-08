@@ -63,13 +63,15 @@ public class Pad extends Activity implements IObserver {
                 padView.setToShowPoints(!padView.showsPoints());
                 return true;
             case MENU_ITEM_DETECTION_STRATEGY:
-            	final CharSequence[] strategies = {"None", "Prediction"};
+            	final CharSequence[] strategies = {"None", "Prediction", "Curvature"};
             	int selected_strategy = -1;
             	IMicroGestureDetectionStrategy active_strategy = padView.getDetectionStrategy(); 
             	if (active_strategy instanceof MicroGestureDetectionStrategyNone) {
             		selected_strategy = 0;
             	} else if (active_strategy instanceof MicroGestureDetectionStrategyPreditction) {
             		selected_strategy = 1;
+            	} else if (active_strategy instanceof MicroGestureDetectionStrategyCurvature) {
+            		selected_strategy = 2;
             	}
             	AlertDialog.Builder builder = new AlertDialog.Builder(this);
             	builder.setTitle("MicroGesture Detection Strategy");
@@ -81,6 +83,9 @@ public class Pad extends Activity implements IObserver {
             	        		break;
             	        	case 1 :
             	        		padView.setDetectionStrategy(TouchInput.DETECTION_STRATEGY_PREDICTION, true);
+            	        		break;
+            	        	case 2 :
+            	        		padView.setDetectionStrategy(TouchInput.DETECTION_STRATEGY_CURVATURE, true);
             	        		break;
             	        }
             	        dialog.dismiss();
