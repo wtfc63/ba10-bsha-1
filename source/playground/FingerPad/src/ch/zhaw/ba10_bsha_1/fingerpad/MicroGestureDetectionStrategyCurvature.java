@@ -7,14 +7,28 @@ import java.util.Iterator;
 import android.util.Log;
 
 public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDetectionStrategy {
-	private static final String TAG = "GestureTest"; 
+	private static final String TAG = "CurvatureStrategy"; 
 	
 	public Collection<MicroGesture> detectMicroGestures(Collection<TouchPoint> points) {
+		
+		// Remove points that are too close together
+		TouchPoint[] temp = new TouchPoint[points.size()];
+		temp = points.toArray(temp);
+		ArrayList<TouchPoint> tempResult = new ArrayList<TouchPoint>();
+		TouchPoint prev = temp[0];
+		for(int i = 1; i < temp.length; i++) {
+			double dist = Math.sqrt(Math.pow(prev.x - temp[i].x, 2) + Math.pow(prev.y - temp[i].y, 2));	
+			if(dist > 15) {
+				tempResult.add(temp[i]);
+				prev = temp[i];
+			}
+		}
 		ArrayList<MicroGesture> result = new ArrayList<MicroGesture>();
 		MicroGesture curr_mg = new MicroGesture();
-		if ((points != null) && (points.size() > 2)) {
-			TouchPoint[] pts = new TouchPoint[points.size()];
-			pts = points.toArray(pts);
+
+		if ((points != null) && (tempResult.size() > 2)) {
+			TouchPoint[] pts = new TouchPoint[tempResult.size()];
+			pts = tempResult.toArray(pts);
 			curr_mg.addPoint(pts[0]);
 			float lastCurve = 0;
 			for (int i = 1; i < pts.length-1; i++) {
