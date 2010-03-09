@@ -50,6 +50,10 @@ public class MicroGesture {
 		return type;
 	}
 	
+	public void setType(int type) {
+		this.type = type;
+	}
+	
 	
 	public float getDirection() {
 		return direction;
@@ -57,22 +61,26 @@ public class MicroGesture {
 	
 	public boolean directionIsUp() {
 		return (Math.abs(direction) <= Math.PI) 
-				? (Math.abs(direction) < (Math.PI / 2)) : false;
+				? (direction > 0) : false;
 	}
 	
 	public boolean directionIsDown() {
 		return (Math.abs(direction) <= Math.PI) 
-				? (Math.abs(direction) > (Math.PI / 2)) : false;
+				? (direction < 0) : false;
 	}
 	
 	public boolean directionIsRight() {
 		return (Math.abs(direction) <= Math.PI) 
-				? (direction < 0) : false;
+				? (Math.abs(direction) > (Math.PI / 2)) : false;
 	}
 	
 	public boolean directionIsLeft() {
 		return (Math.abs(direction) <= Math.PI) 
-				? (direction < 0) : false;
+				? (Math.abs(direction) < (Math.PI / 2)) : false;
+	}
+	
+	public void setDirection(float direction) {
+		this.direction = direction;
 	}
 	
 	
@@ -119,8 +127,11 @@ public class MicroGesture {
         canvas.drawPath(getPath(), paint);
         
         paint.setStrokeWidth(4);
-        canvas.drawPoint(points.get(0).x, points.get(0).y, paint);
-        canvas.drawPoint(points.get(points.size() - 1).x, points.get(points.size() - 1).y, paint);
+        for (TouchPoint point : points) {
+        	canvas.drawPoint(point.x, point.y, paint);
+        }
+        //canvas.drawPoint(points.get(0).x, points.get(0).y, paint);
+        //canvas.drawPoint(points.get(points.size() - 1).x, points.get(points.size() - 1).y, paint);
 	}
 	
 	

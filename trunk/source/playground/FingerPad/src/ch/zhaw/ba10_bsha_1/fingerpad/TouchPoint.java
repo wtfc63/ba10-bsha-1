@@ -42,5 +42,10 @@ public class TouchPoint extends PointF {
 		this.timeStamp = timeStamp;
 	}
 	
-	
+	public float distanceTo(TouchPoint second) {
+		float a = (float) Math.pow(Math.abs(x - second.x), 2);
+		float b = (float) Math.pow(Math.abs(y - second.y), 2);
+		float c = a + b;
+		return ((float) Math.sqrt(c));
+	}
 }

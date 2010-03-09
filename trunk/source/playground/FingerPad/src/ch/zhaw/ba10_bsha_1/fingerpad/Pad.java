@@ -31,6 +31,7 @@ public class Pad extends Activity implements IObserver {
         padView = (PadView) findViewById(R.id.padView);
         textOut = (TextView) findViewById(R.id.textOut);
         padView.attachObserver(this);
+        padView.setToShowPoints(true);
     }
 
     @Override
