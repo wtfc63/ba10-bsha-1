@@ -30,6 +30,7 @@ public class TouchInput {
 		mgDetectionStrategy = MG_DETECTION_STRATEGY_NONE;
 		mgDetectionStrategy.setFieldHeight(field_height);
 		charDetectionStrategy = CHAR_DETECTION_STRATEGY_NONE;
+		smoothingStrategy = new PathSmoothingStrategyBezier();
 	}
 	
 	public TouchInput(IMicroGestureDetectionStrategy mg_strategy, float field_height, ICharacterDetectionStrategy char_strategy) {
@@ -58,14 +59,8 @@ public class TouchInput {
 		return charDetectionStrategy;
 	}
 
-<<<<<<< .mine
 	public void setCharacterDetectionStrategy(ICharacterDetectionStrategy detectionStrategy) {
 		this.charDetectionStrategy = detectionStrategy;
-=======
-	public void startDetection() {
-		//points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));
-		microGestures = detectMicroGestures(detectionStrategy);
->>>>>>> .r32
 	}
 	
 	public Collection<MicroGesture> detectMicroGestures(IMicroGestureDetectionStrategy strategy) {
@@ -119,6 +114,7 @@ public class TouchInput {
 	}
 
 	public void startDetection() {
+		//points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));
 		microGestures = detectMicroGestures(mgDetectionStrategy);
 		characters = detectCharacters(charDetectionStrategy);
 	}
