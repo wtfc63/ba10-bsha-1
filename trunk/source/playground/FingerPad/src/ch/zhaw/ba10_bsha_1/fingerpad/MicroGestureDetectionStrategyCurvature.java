@@ -16,6 +16,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		temp = points.toArray(temp);
 		ArrayList<TouchPoint> tempResult = new ArrayList<TouchPoint>();
 		TouchPoint prev = temp[0];
+		tempResult.add(temp[0]);
 		for(int i = 1; i < temp.length; i++) {
 			double dist = Math.sqrt(Math.pow(prev.x - temp[i].x, 2) + Math.pow(prev.y - temp[i].y, 2));	
 			if(dist > 15) {
@@ -47,8 +48,11 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 				}
 				else if(Math.abs(zn - lastCurve) > 150) {
 					curr_mg.addPoint(pts[i+1]);
+					
 					setMicroGesture(curr_mg);
+					curr_mg.setDirection(analyseMicroGestureDirection(curr_mg));
 					result.add(curr_mg);
+					
 					curr_mg = new MicroGesture();
 					//Log.v(TAG, "New Gesture: old:" + lastCurve + ", new:" + zn);
 					lastCurve = 0;
@@ -57,11 +61,25 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 			curr_mg.addPoint(pts[pts.length -1]);
 			
 			setMicroGesture(curr_mg);
+			curr_mg.setDirection(analyseMicroGestureDirection(curr_mg));
 			result.add(curr_mg);
 		} else {
 			curr_mg = new MicroGesture(points);
 			result.add(curr_mg);
 		}
+		
+		for (int i = 1; i < result.size(); i++) {
+			MicroGesture current = result.get(i);
+			MicroGesture previous = result.get(i-1);
+			if (current.getDirection() == previous.getDirection() 
+					&& current.getType() == previous.getType()) {
+				ArrayList<TouchPoint> list = current.getPoints();
+				for (TouchPoint p : list) {
+					
+				}
+			}
+		}
+		
 		return result;
 	}
 
@@ -75,7 +93,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		return "Curvature";
 	}
 	
-	void setMicroGesture(MicroGesture mg) {
+	private void setMicroGesture(MicroGesture mg) {
 		ArrayList<TouchPoint> points = mg.getPoints();
 		// calculate slope from first to last point
 		TouchPoint a = points.get(0);
@@ -84,7 +102,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		double q = a.y - m * a.x;
 		
 		// calculate if left or right, 
-		// this will be decided on the point the furthest away from the line
+		// this will be decided on the point the farthest away from the line
 		double max = 0;
 		for(Iterator<TouchPoint> it = points.iterator(); it.hasNext(); ) {
 			TouchPoint temp = it.next();
@@ -112,14 +130,33 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		//
 	}
 	
-	double calculateDistance(TouchPoint a, double m1, double q1) {
+	private double calculateDistance(TouchPoint a, double m1, double q1) {
+		// Orthogonal line m2*x + q2
 		double m2 = -1 / m1;
+		
+		// Calculate offset so the line goes through the point a
 		double q2 = a.y - m2 * a.x;
+		
+		// Calculate crossing point between the two lines
 		double x = (q2 - q1) / (m1 - m2);
 		double y = m1 * x + q1;
 		x = x - a.x;
 		y = y - a.y;
+		
+		// Calculate the distance between point a and crossing point
 		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+	}
+	
+	private float analyseMicroGestureDirection(MicroGesture mg) {
+		float result = 0;
+		if (mg.getPoints().size() > 1) {
+			TouchPoint first  = mg.getPoints().get(0);
+			TouchPoint second = mg.getPoints().get(1);
+			float dx = first.x - second.x;
+			float dy = first.y - second.y;
+			result = (float) (StrictMath.atan2(dy, dx));// - (Math.PI / 2));
+		}
+		return result;
 	}
 
 	@Override
