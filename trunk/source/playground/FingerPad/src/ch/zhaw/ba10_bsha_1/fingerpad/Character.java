@@ -15,7 +15,7 @@ public class Character {
 
 	public Character() {
 		microGestures = new ArrayList<MicroGesture>();
-		detectedCharacter = '\n';
+		detectedCharacter = '\0';
 		detectionProbability = 0;
 	}
 	
@@ -53,7 +53,7 @@ public class Character {
 	
 	public String toString() {
 		StringBuffer result = new StringBuffer();
-		result.append((detectedCharacter != '\n') ? detectedCharacter : "none");
+		result.append((detectedCharacter != '\0') ? detectedCharacter : "none");
 		result.append(" (");
 		result.append(detectionProbability);
 		result.append(')');

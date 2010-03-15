@@ -175,6 +175,7 @@ public class PadView extends View implements IObservable {
     }
     
     private void touchUp() {
+    	currentInput.setToStretch((this.getHeight() / 2));
     	currentInput.startDetection();
     	inputs.add(currentInput);
     	currentInput = null;

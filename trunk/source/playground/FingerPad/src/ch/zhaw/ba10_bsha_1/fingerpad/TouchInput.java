@@ -17,6 +17,10 @@ public class TouchInput {
 	public static final ICharacterDetectionStrategy CHAR_DETECTION_STRATEGY_NONE = new CharacterDetectionStrategyNone();
 	
 	private ArrayList<TouchPoint> points;
+	private boolean stretch = true;
+	private float letterHeight;
+	private float upperMax;
+	private float lowerMax;
 	private Collection<MicroGesture> microGestures;
 	private Collection<Character> characters;
 	private IMicroGestureDetectionStrategy mgDetectionStrategy;
@@ -42,9 +46,23 @@ public class TouchInput {
 		smoothingStrategy = new PathSmoothingStrategyBezier();
 	}
 	
+	public void enableStretching(boolean stretch) {
+		this.stretch = stretch;
+	}
+	
+	public void setToStretch(float letter_height) {
+		stretch = true;
+		letterHeight = letter_height;
+	}
 	
 	public void add(TouchPoint point) {
 		points.add(point);
+		if ((point.y < upperMax) || (points.size() == 1)) {
+			upperMax = point.y;
+		}
+		if (point.y > lowerMax) {
+			lowerMax = point.y;
+		}
 	}
 	
 	public IMicroGestureDetectionStrategy getMicroGestureDetectionStrategy() {
@@ -65,6 +83,24 @@ public class TouchInput {
 	
 	public Collection<MicroGesture> detectMicroGestures(IMicroGestureDetectionStrategy strategy) {
 		return (new ArrayList<MicroGesture>(strategy.detectMicroGestures(points)));
+	}
+	
+	private void stretchToField(float field_height) {
+		float real_height = lowerMax - upperMax;
+		float corr = 0;
+		if (upperMax != lowerMax) { 
+			if (real_height > field_height) {
+				corr = field_height / real_height;
+			} else if ((real_height > (field_height * 2.0/3)) 
+					&& (real_height < (field_height * 5.0/6))) {
+				corr = (float) (field_height * 2.0/3) / real_height;
+			}
+		}
+		if (corr != 0) {
+			for (TouchPoint point : points) {
+				point.y = corr * point.y;
+			}
+		}
 	}
 	
 	public Collection<MicroGesture> getMicroGestures() {
@@ -115,6 +151,9 @@ public class TouchInput {
 
 	public void startDetection() {
 		//points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));
+		if (stretch) {
+			stretchToField(letterHeight);
+		}
 		microGestures = detectMicroGestures(mgDetectionStrategy);
 		characters = detectCharacters(charDetectionStrategy);
 	}

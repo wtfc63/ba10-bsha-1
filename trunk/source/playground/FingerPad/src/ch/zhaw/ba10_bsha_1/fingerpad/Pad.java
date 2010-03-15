@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -20,7 +21,8 @@ public class Pad extends Activity implements IObserver, OnClickListener {
     private static final int MENU_ITEM_DEC    = Menu.FIRST + 1;
     private static final int MENU_ITEM_POINTS = Menu.FIRST + 2;
     private static final int MENU_ITEM_DETECTION_STRATEGY = Menu.FIRST + 3;
-    private static final int MENU_ITEM_CLEAR  = Menu.FIRST + 4;
+    private static final int MENU_ITEM_LOG    = Menu.FIRST + 4;
+    private static final int MENU_ITEM_CLEAR  = Menu.FIRST + 5;
     
 	private PadView padView;
 	private TextView txtOut;
@@ -47,6 +49,48 @@ public class Pad extends Activity implements IObserver, OnClickListener {
 	@Override
 	public void onClick(View view) {
 		if (view.equals(tglBtnLog)) {
+			if (tglBtnLog.isChecked()) {
+				AlertDialog.Builder alert = new AlertDialog.Builder(this);  
+				  
+				alert.setTitle("Logging");  
+				alert.setMessage("Character to attempt:");  
+				  
+				// Set an EditText view to get user input   
+				final EditText input = new EditText(this);
+				if ((DetectionLogger.getInstance().getAttemptedChars() != null) 
+						&& (DetectionLogger.getInstance().getAttemptedChars().length > 0)) {
+					char[] chars = DetectionLogger.getInstance().getAttemptedChars();
+					String init_value = "";
+					for (int i = 0; i < chars.length; i++) {
+						init_value += chars[i];
+						if (i < (chars.length - 1)) {
+							init_value += ',';
+						}
+					}
+					input.setText(init_value);
+				}
+				alert.setView(input);  
+				  
+				alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {  
+				public void onClick(DialogInterface dialog, int whichButton) {
+						String value = input.getText().toString();
+						String[] splitted_value = value.split(",");
+						char[] chars = new char[splitted_value.length];
+						for (int i = 0; i < chars.length; i++) {
+							chars[i] = splitted_value[i].charAt(0);
+						}
+						DetectionLogger.getInstance().setAttemptedChars(chars);
+					}  
+				});  
+				  
+				alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {  
+					public void onClick(DialogInterface dialog, int whichButton) {
+						tglBtnLog.setChecked(false);
+					}  
+				});  
+				  
+				alert.show();
+			}
 			padView.enableLog(tglBtnLog.isChecked());
 		}
 	}
@@ -58,7 +102,8 @@ public class Pad extends Activity implements IObserver, OnClickListener {
         menu.add(0, MENU_ITEM_DEC, 0, "Dec").setShortcut('2', 'd');
         menu.add(0, MENU_ITEM_POINTS, 0, "Points").setShortcut('3', 'p');
         menu.add(0, MENU_ITEM_DETECTION_STRATEGY, 0, "Strategy").setShortcut('4', 's');
-        menu.add(0, MENU_ITEM_CLEAR, 0, "Clear").setShortcut('5', 'c');
+        menu.add(0, MENU_ITEM_LOG, 0, "Show Log").setShortcut('5', 'l');
+        menu.add(0, MENU_ITEM_CLEAR, 0, "Clear").setShortcut('6', 'c');
         return true;
     }
     
@@ -70,6 +115,7 @@ public class Pad extends Activity implements IObserver, OnClickListener {
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+    	AlertDialog.Builder builder;
         switch (item.getItemId()) {
             case MENU_ITEM_INC:
                 padView.incStrokeWidth(8);
@@ -91,7 +137,7 @@ public class Pad extends Activity implements IObserver, OnClickListener {
             	} else if (active_strategy instanceof MicroGestureDetectionStrategyCurvature) {
             		selected_strategy = 2;
             	}
-            	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            	builder = new AlertDialog.Builder(this);
             	builder.setTitle("MicroGesture Detection Strategy");
             	builder.setSingleChoiceItems(strategies, selected_strategy, new DialogInterface.OnClickListener() {
             	    public void onClick(DialogInterface dialog, int item) {
@@ -113,6 +159,13 @@ public class Pad extends Activity implements IObserver, OnClickListener {
             	AlertDialog alert = builder.create();
             	alert.show();
                 return true;
+            case MENU_ITEM_LOG:
+            	builder = new AlertDialog.Builder(this);
+                builder.setTitle("Log");
+                builder.setMessage(DetectionLogger.getInstance().getLog(true));
+                AlertDialog alert_log = builder.create();
+                alert_log.show();
+            	return true;
             case MENU_ITEM_CLEAR:
             	padView.clear();
             	return true;
