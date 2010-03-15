@@ -5,11 +5,40 @@
     android:layout_height="fill_parent"
     >
 <TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" android:id="@+id/textOut" android:text="@string/textOut_startup"/>
-<ch.zhaw.ba10_bsha_1.fingerpad.PadView 
+    android:id="@+id/txtOut" 
+    android:text="@string/textOut_startup" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"/>
+<RelativeLayout  
+	android:id="@+id/RelativeLayout"
 	android:layout_width="wrap_content" 
-	android:layout_height="wrap_content" 
+	android:layout_height="wrap_content">    
+	
+	<TextView  
+		android:id="@+id/txtDetectedChars" 
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content" 
+		android:layout_alignParentLeft="true" 
+		android:layout_alignParentTop="true" 
+		android:text="No Character detected yet"
+		android:layout_alignBottom="@+id/RelativeLayout" 
+		android:layout_centerVertical="true" />
+	<TextView 
+		android:id="@+id/lblLog" 
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content" 
+		android:text="Log:" 
+		android:layout_toLeftOf="@+id/tglBtnLog"  
+		android:layout_alignBottom="@+id/RelativeLayout" 
+		android:layout_centerVertical="true" />
+	<ToggleButton 
+		android:id="@+id/tglBtnLog" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:layout_alignParentRight="true" />
+</RelativeLayout>
+<ch.zhaw.ba10_bsha_1.fingerpad.PadView 
 	android:id="@+id/padView"
-	/>
+	android:layout_height="wrap_content" 
+	android:layout_width="fill_parent" />
 </LinearLayout>
