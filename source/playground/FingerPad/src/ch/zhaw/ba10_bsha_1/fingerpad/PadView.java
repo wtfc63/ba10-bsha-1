@@ -11,8 +11,6 @@ import android.util.AttributeSet;
 public class PadView extends View implements IObservable {
 	
     
-    private static final float MINP = 0.25f;
-    private static final float MAXP = 0.75f;
     private static final float TOUCH_TOLERANCE = 4;
     
     private int[] colors = new int[] {Color.CYAN, Color.BLUE, Color.GREEN, Color.WHITE};
@@ -31,10 +29,12 @@ public class PadView extends View implements IObservable {
     private float lastY;
     
     private ArrayList<IObserver> observers;
+    private boolean log;
     
     private ArrayList<TouchInput> inputs;
     private TouchInput currentInput;
-    private IMicroGestureDetectionStrategy detectionStrategy;
+    private IMicroGestureDetectionStrategy mgDetectionStrategy;
+    private ICharacterDetectionStrategy charDetectionStrategy;
     
 
 	public PadView(Context context) {
@@ -51,7 +51,8 @@ public class PadView extends View implements IObservable {
 		observers = new ArrayList<IObserver>();
 		inputs = new ArrayList<TouchInput>();
 		currentInput = null;
-		detectionStrategy = TouchInput.DETECTION_STRATEGY_PREDICTION;
+		mgDetectionStrategy = TouchInput.MG_DETECTION_STRATEGY_PREDICTION;
+		charDetectionStrategy = TouchInput.CHAR_DETECTION_STRATEGY_NONE;
 		
         paths  = new ArrayList<Path>();
         points = new ArrayList<Point>();
@@ -148,7 +149,7 @@ public class PadView extends View implements IObservable {
     }
     
     private void touchStart(float x, float y) {
-    	currentInput = new TouchInput(detectionStrategy);
+    	currentInput = new TouchInput(mgDetectionStrategy, (this.getHeight() / 2), charDetectionStrategy);
     	currentInput.add(new TouchPoint(x, y));
     	
     	Path path = new Path();
@@ -214,26 +215,52 @@ public class PadView extends View implements IObservable {
     	invalidate();
     }
     
-    public IMicroGestureDetectionStrategy getDetectionStrategy() {
-    	return detectionStrategy;
+    public IMicroGestureDetectionStrategy getMicroGestureDetectionStrategy() {
+    	return mgDetectionStrategy;
     }
     
-    public void setDetectionStrategy(IMicroGestureDetectionStrategy detection_strategy, boolean redetect) {
-    	detectionStrategy = detection_strategy;
+    public ICharacterDetectionStrategy getCharacterDetectionStrategy() {
+    	return charDetectionStrategy;
+    }
+    
+    public void setDetectionStrategies(
+    		IMicroGestureDetectionStrategy mg_strategy, 
+    		ICharacterDetectionStrategy char_strategy, 
+    		boolean redetect) {
+    	mgDetectionStrategy = mg_strategy;
+    	mgDetectionStrategy.setFieldHeight(this.getHeight() / 2);
+    	charDetectionStrategy = char_strategy;
     	if (redetect && (inputs.size() > 0)) {
     		TouchInput last = inputs.get(inputs.size() - 1);
-    		last.setDetectionStrategy(detectionStrategy);
+    		last.setMicroGestureDetectionStrategy(mgDetectionStrategy);
+    		last.setCharacterDetectionStrategy(char_strategy);
     		last.startDetection();
     		notifyObservers();
     	}
     }
     
-    public String getLastDetectionReport() {
+    public String getLastMicroGestureDetectionReport() {
     	String result = "none";
     	if (inputs.size() > 0) {
-    		result = inputs.get(inputs.size() - 1).getDetectionReport();
+    		result = inputs.get(inputs.size() - 1).getMicroGestureDetectionReport();
     	}
     	return result;
+    }
+    
+    public String getLastCharacterDetectionReport() {
+    	String result = "none";
+    	if (inputs.size() > 0) {
+    		result = inputs.get(inputs.size() - 1).getCharacterDetectionReport();
+    	}
+    	return result;
+    }
+    
+    public boolean logIsEnabled() {
+    	return log;
+    }
+    
+    public void enableLog(boolean enable_log) {
+    	log = enable_log;
     }
 
 	@Override
@@ -250,6 +277,9 @@ public class PadView extends View implements IObservable {
 	public void notifyObservers() {
 		for (IObserver observer : observers) {
 			observer.update(this);
+		}
+		if (log && (inputs != null) && (inputs.size() > 0)) {
+			DetectionLogger.getInstance().log(inputs.get(inputs.size() - 1).getCharacters());
 		}
 	}
 }

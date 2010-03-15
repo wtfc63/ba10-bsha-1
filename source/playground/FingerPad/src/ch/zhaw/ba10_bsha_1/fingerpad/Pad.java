@@ -7,10 +7,13 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 
-public class Pad extends Activity implements IObserver {
+public class Pad extends Activity implements IObserver, OnClickListener {
 
 
     private static final int MENU_ITEM_INC    = Menu.FIRST;
@@ -20,7 +23,9 @@ public class Pad extends Activity implements IObserver {
     private static final int MENU_ITEM_CLEAR  = Menu.FIRST + 4;
     
 	private PadView padView;
-	private TextView textOut;
+	private TextView txtOut;
+	private TextView txtDetectedChars;
+	private ToggleButton tglBtnLog;
 	
 	
     /** Called when the activity is first created. */
@@ -28,11 +33,23 @@ public class Pad extends Activity implements IObserver {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
         padView = (PadView) findViewById(R.id.padView);
-        textOut = (TextView) findViewById(R.id.textOut);
+        txtOut = (TextView) findViewById(R.id.txtOut);
+        txtDetectedChars = (TextView) findViewById(R.id.txtDetectedChars);
+        tglBtnLog = (ToggleButton) findViewById(R.id.tglBtnLog);
+        
         padView.attachObserver(this);
         padView.setToShowPoints(true);
+        tglBtnLog.setOnClickListener(this);
     }
+    
+	@Override
+	public void onClick(View view) {
+		if (view.equals(tglBtnLog)) {
+			padView.enableLog(tglBtnLog.isChecked());
+		}
+	}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,7 +83,7 @@ public class Pad extends Activity implements IObserver {
             case MENU_ITEM_DETECTION_STRATEGY:
             	final CharSequence[] strategies = {"None", "Prediction", "Curvature"};
             	int selected_strategy = -1;
-            	IMicroGestureDetectionStrategy active_strategy = padView.getDetectionStrategy(); 
+            	IMicroGestureDetectionStrategy active_strategy = padView.getMicroGestureDetectionStrategy(); 
             	if (active_strategy instanceof MicroGestureDetectionStrategyNone) {
             		selected_strategy = 0;
             	} else if (active_strategy instanceof MicroGestureDetectionStrategyPreditction) {
@@ -78,15 +95,16 @@ public class Pad extends Activity implements IObserver {
             	builder.setTitle("MicroGesture Detection Strategy");
             	builder.setSingleChoiceItems(strategies, selected_strategy, new DialogInterface.OnClickListener() {
             	    public void onClick(DialogInterface dialog, int item) {
+            	    	ICharacterDetectionStrategy old_strat = padView.getCharacterDetectionStrategy();
             	        switch (item) {
             	        	case 0 :
-            	        		padView.setDetectionStrategy(TouchInput.DETECTION_STRATEGY_NONE, true);
+            	        		padView.setDetectionStrategies(TouchInput.MG_DETECTION_STRATEGY_NONE, old_strat, true);
             	        		break;
             	        	case 1 :
-            	        		padView.setDetectionStrategy(TouchInput.DETECTION_STRATEGY_PREDICTION, true);
+            	        		padView.setDetectionStrategies(TouchInput.MG_DETECTION_STRATEGY_PREDICTION, old_strat, true);
             	        		break;
             	        	case 2 :
-            	        		padView.setDetectionStrategy(TouchInput.DETECTION_STRATEGY_CURVATURE, true);
+            	        		padView.setDetectionStrategies(TouchInput.MG_DETECTION_STRATEGY_CURVATURE, old_strat, true);
             	        		break;
             	        }
             	        dialog.dismiss();
@@ -105,7 +123,8 @@ public class Pad extends Activity implements IObserver {
 	@Override
 	public void update(IObservable updater) {
 		if (updater instanceof PadView) {
-			textOut.setText(padView.getLastDetectionReport());
+			txtOut.setText(padView.getLastMicroGestureDetectionReport());
+			txtDetectedChars.setText(padView.getLastCharacterDetectionReport());
 		}
 	}
 }
