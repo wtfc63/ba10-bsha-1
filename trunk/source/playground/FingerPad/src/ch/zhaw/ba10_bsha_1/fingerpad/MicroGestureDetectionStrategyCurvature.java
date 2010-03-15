@@ -121,4 +121,9 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		y = y - a.y;
 		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 	}
+
+	@Override
+	public void setFieldHeight(float field_height) {
+		//fieldHeight = field_height;
+	}
 }

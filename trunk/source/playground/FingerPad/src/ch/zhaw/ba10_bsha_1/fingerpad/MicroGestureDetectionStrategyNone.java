@@ -19,6 +19,9 @@ public class MicroGestureDetectionStrategyNone implements IMicroGestureDetection
 		return (microGesture.getType() == MicroGesture.TYPE_UNKNOWN);
 	}
 
+	@Override
+	public void setFieldHeight(float fieldHeight) {}
+
 	public String toString() {
 		return "None";
 	}

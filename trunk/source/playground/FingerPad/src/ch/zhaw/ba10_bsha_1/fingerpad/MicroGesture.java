@@ -96,6 +96,14 @@ public class MicroGesture {
 		points.add(point);
 	}
 	
+	public float getLength() {
+		float result = 0;
+		for (int i = 0; i < (points.size() - 1); i++) {
+			result += points.get(i).distanceTo(points.get(i + 1));
+		}
+		return result;
+	}
+	
 	public Path getPath() {
 		if ((points != null) && (points.size() > 0)) {
 			TouchPoint prev = points.get(0);

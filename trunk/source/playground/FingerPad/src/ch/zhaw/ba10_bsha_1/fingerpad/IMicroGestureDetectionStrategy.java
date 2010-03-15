@@ -7,5 +7,6 @@ import java.util.Collection;
 public interface IMicroGestureDetectionStrategy {
 	public Collection<MicroGesture> detectMicroGestures(Collection<TouchPoint> points);
 	public boolean validateMicroGesture(MicroGesture micro_gesture);
+	public void setFieldHeight(float field_height);
 	public String toString();
 }
