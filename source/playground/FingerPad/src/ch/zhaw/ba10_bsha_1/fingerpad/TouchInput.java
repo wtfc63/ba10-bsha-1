@@ -17,6 +17,7 @@ public class TouchInput {
 	private ArrayList<TouchPoint> points;
 	private Collection<MicroGesture> microGestures;
 	private IMicroGestureDetectionStrategy detectionStrategy;
+	private IPathSmoothingStrategy smoothingStrategy;
 	
 	
 	public TouchInput() {
@@ -28,6 +29,7 @@ public class TouchInput {
 	public TouchInput(IMicroGestureDetectionStrategy detection_strategy) {
 		this();
 		detectionStrategy = detection_strategy;
+		smoothingStrategy = new PathSmoothingStrategyBezier();
 	}
 	
 	
@@ -44,6 +46,7 @@ public class TouchInput {
 	}
 
 	public void startDetection() {
+		//points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));
 		microGestures = detectMicroGestures(detectionStrategy);
 	}
 	
