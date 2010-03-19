@@ -17,12 +17,13 @@ import android.widget.ToggleButton;
 public class Pad extends Activity implements IObserver, OnClickListener {
 
 
-    private static final int MENU_ITEM_INC    = Menu.FIRST;
-    private static final int MENU_ITEM_DEC    = Menu.FIRST + 1;
-    private static final int MENU_ITEM_POINTS = Menu.FIRST + 2;
-    private static final int MENU_ITEM_DETECTION_STRATEGY = Menu.FIRST + 3;
-    private static final int MENU_ITEM_LOG    = Menu.FIRST + 4;
-    private static final int MENU_ITEM_CLEAR  = Menu.FIRST + 5;
+    private static final int MENU_ITEM_DETECTION_STRATEGY = Menu.FIRST;
+    private static final int MENU_ITEM_LOG    = Menu.FIRST + 1;
+    private static final int MENU_ITEM_CLEAR  = Menu.FIRST + 2;
+    private static final int MENU_ITEM_SMOOTH = Menu.FIRST + 3;
+    private static final int MENU_ITEM_POINTS = Menu.FIRST + 4;
+    private static final int MENU_ITEM_DEC    = Menu.FIRST + 5;
+    private static final int MENU_ITEM_INC    = Menu.FIRST + 6;
     
 	private PadView padView;
 	private TextView txtOut;
@@ -98,12 +99,13 @@ public class Pad extends Activity implements IObserver, OnClickListener {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        menu.add(0, MENU_ITEM_INC, 0, "Inc").setShortcut('1', 'i');
-        menu.add(0, MENU_ITEM_DEC, 0, "Dec").setShortcut('2', 'd');
-        menu.add(0, MENU_ITEM_POINTS, 0, "Points").setShortcut('3', 'p');
-        menu.add(0, MENU_ITEM_DETECTION_STRATEGY, 0, "Strategy").setShortcut('4', 's');
-        menu.add(0, MENU_ITEM_LOG, 0, "Show Log").setShortcut('5', 'l');
-        menu.add(0, MENU_ITEM_CLEAR, 0, "Clear").setShortcut('6', 'c');
+        menu.add(0, MENU_ITEM_DETECTION_STRATEGY, 0, "Strategy").setShortcut('1', 's');
+        menu.add(0, MENU_ITEM_LOG, 0, "Show Log").setShortcut('2', 'l');
+        menu.add(0, MENU_ITEM_CLEAR, 0, "Clear").setShortcut('3', 'c');
+        menu.add(0, MENU_ITEM_SMOOTH, 0, "Smooth").setShortcut('4', 'o');
+        menu.add(0, MENU_ITEM_POINTS, 0, "Points").setShortcut('5', 'p');
+        menu.add(0, MENU_ITEM_DEC, 0, "Dec").setShortcut('6', 'd');
+        menu.add(0, MENU_ITEM_INC, 0, "Inc").setShortcut('7', 'i');
         return true;
     }
     
@@ -117,15 +119,6 @@ public class Pad extends Activity implements IObserver, OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
     	AlertDialog.Builder builder;
         switch (item.getItemId()) {
-            case MENU_ITEM_INC:
-                padView.incStrokeWidth(8);
-                return true;
-            case MENU_ITEM_DEC:
-                padView.incStrokeWidth(-8);
-                return true;
-            case MENU_ITEM_POINTS:
-                padView.setToShowPoints(!padView.showsPoints());
-                return true;
             case MENU_ITEM_DETECTION_STRATEGY:
             	final CharSequence[] strategies = {"None", "Prediction", "Curvature"};
             	int selected_strategy = -1;
@@ -169,6 +162,18 @@ public class Pad extends Activity implements IObserver, OnClickListener {
             case MENU_ITEM_CLEAR:
             	padView.clear();
             	return true;
+            case MENU_ITEM_SMOOTH:
+                padView.setToSmoothPoints(!padView.smoothsPoints());
+                return true;
+            case MENU_ITEM_POINTS:
+                padView.setToShowPoints(!padView.showsPoints());
+                return true;
+            case MENU_ITEM_INC:
+                padView.incStrokeWidth(8);
+                return true;
+            case MENU_ITEM_DEC:
+                padView.incStrokeWidth(-8);
+                return true;
         }
         return (super.onOptionsItemSelected(item));
     }
