@@ -17,6 +17,7 @@ public class PadView extends View implements IObservable {
     private int currColor = 0;
     
     private boolean showPoints = false;
+    private boolean smoothPoints = false;
     private ArrayList<Point> points;
     
     private Bitmap          bitmap;
@@ -151,6 +152,7 @@ public class PadView extends View implements IObservable {
     private void touchStart(float x, float y) {
     	currentInput = new TouchInput(mgDetectionStrategy, (this.getHeight() / 2), charDetectionStrategy);
     	currentInput.add(new TouchPoint(x, y));
+    	currentInput.enableSmoothing(smoothPoints);
     	
     	Path path = new Path();
         path.reset();
@@ -207,6 +209,14 @@ public class PadView extends View implements IObservable {
     public void setToShowPoints(boolean show_points) {
     	showPoints = show_points;
     	invalidate();
+    }
+    
+    public boolean smoothsPoints() {
+    	return smoothPoints;
+    }
+    
+    public void setToSmoothPoints(boolean smooth_points) {
+    	smoothPoints = smooth_points;
     }
     
     public void clear() {

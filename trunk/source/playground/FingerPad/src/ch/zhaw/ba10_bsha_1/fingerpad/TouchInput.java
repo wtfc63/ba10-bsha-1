@@ -18,6 +18,7 @@ public class TouchInput {
 	
 	private ArrayList<TouchPoint> points;
 	private boolean stretch = true;
+	private boolean smooth = false;
 	private float letterHeight;
 	private float upperMax;
 	private float lowerMax;
@@ -46,6 +47,10 @@ public class TouchInput {
 		smoothingStrategy = new PathSmoothingStrategyBezier();
 	}
 	
+	public boolean isToStretch() {
+		return stretch;
+	}
+	
 	public void enableStretching(boolean stretch) {
 		this.stretch = stretch;
 	}
@@ -53,6 +58,14 @@ public class TouchInput {
 	public void setToStretch(float letter_height) {
 		stretch = true;
 		letterHeight = letter_height;
+	}
+	
+	public boolean isToSmooth() {
+		return smooth;
+	}
+	
+	public void enableSmoothing(boolean smooth) {
+		this.smooth  = smooth;
 	}
 	
 	public void add(TouchPoint point) {
@@ -150,7 +163,9 @@ public class TouchInput {
 	}
 
 	public void startDetection() {
-		//points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));
+		if (smooth) {
+			points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));
+		}
 		if (stretch) {
 			stretchToField(letterHeight);
 		}
