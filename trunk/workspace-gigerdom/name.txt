@@ -1,0 +1,10 @@
+w: Wide Curve
+n: Narrow Curve
+l: Long line
+s: Short line
+u: None
+
+u - Up
+d - Down
+r - Right
+l - Left
