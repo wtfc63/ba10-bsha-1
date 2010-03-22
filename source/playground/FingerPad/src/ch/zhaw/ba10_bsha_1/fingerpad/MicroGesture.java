@@ -55,6 +55,23 @@ public class MicroGesture implements Cloneable {
 		return clone;
 	}
 	
+	public MicroGesture merge(MicroGesture other) {
+		if (canMergeWith(other)) {
+			while (other.points.size() > 0) {
+				TouchPoint point = other.points.get(0);
+				other.points.remove(point);
+				this.points.add(point);
+			}
+		}
+		return (this);
+	}
+	
+	public boolean canMergeWith(MicroGesture other) {
+		return (other != null) && (other != this)
+				&& (other.type == this.type) 
+				&& (Math.abs(other.direction - this.direction) < (Math.PI / 12));
+	}
+	
 	
 	public boolean hasKnownType() {
 		return (type >= 0);
