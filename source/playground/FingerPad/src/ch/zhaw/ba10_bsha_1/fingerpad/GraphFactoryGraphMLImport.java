@@ -1,5 +1,9 @@
 package ch.zhaw.ba10_bsha_1.fingerpad;
 
+import java.io.File;
+
+import android.os.Environment;
+
 
 public class GraphFactoryGraphMLImport implements IGraphFactory {
 
@@ -16,7 +20,9 @@ public class GraphFactoryGraphMLImport implements IGraphFactory {
 	public Node createRoot() {
 		Node root = null;
 		if (pathToFile != null) {
-			//TODO
+			GraphMLParser parser = new GraphMLParser();
+			File file = new File(pathToFile);
+			root = parser.readFile(file);
 		}
 		return root;
 	}
