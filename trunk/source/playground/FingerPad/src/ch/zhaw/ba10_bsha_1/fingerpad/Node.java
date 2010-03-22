@@ -123,6 +123,10 @@ public class Node {
 		outgoingEdges.add(conn);
 	}
 	
+	public void addOutgoingEdge(Edge edge) {
+		outgoingEdges.add(edge);
+	}
+	
 	public void removeOutgoingEdge(Edge edge) {
 		outgoingEdges.remove(edge);
 	}

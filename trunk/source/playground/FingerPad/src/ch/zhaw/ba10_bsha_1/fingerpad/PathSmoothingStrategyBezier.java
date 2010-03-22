@@ -46,7 +46,7 @@ public class PathSmoothingStrategyBezier implements IPathSmoothingStrategy {
 	}
 	
 	public String toString() {
-		return "Quadratic";
+		return "Bezier";
 	}
 	
 }
