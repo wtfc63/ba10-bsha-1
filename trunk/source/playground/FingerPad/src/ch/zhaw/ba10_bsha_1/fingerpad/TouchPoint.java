@@ -4,7 +4,7 @@ package ch.zhaw.ba10_bsha_1.fingerpad;
 import android.graphics.PointF;
 
 
-public class TouchPoint extends PointF {
+public class TouchPoint extends PointF implements Cloneable {
 
 	private float strength;
 	private long timeStamp;
@@ -22,6 +22,13 @@ public class TouchPoint extends PointF {
 	
 	public TouchPoint(float pos_x, float pos_y) {
 		this(new PointF(pos_x, pos_y), 1, System.currentTimeMillis());
+	}
+	
+	public Object clone() throws CloneNotSupportedException {
+		TouchPoint clone = (TouchPoint) super.clone();
+		clone.strength  = strength;
+		clone.timeStamp = timeStamp;
+		return clone;
 	}
 
 	

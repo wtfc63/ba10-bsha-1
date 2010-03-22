@@ -19,18 +19,25 @@ public class Character {
 		detectionProbability = 0;
 	}
 	
-	public Character(Collection<MicroGesture> micro_gestures) {
+	public Character(Collection<MicroGesture> micro_gestures, char character, float probability) {
 		this();
-		microGestures = new ArrayList<MicroGesture>(micro_gestures);
+		detectedCharacter    = character;
+		detectionProbability = probability;
+		setMicroGestures(micro_gestures);
 	}
 	
+	
+	public ArrayList<MicroGesture> getMicroGestures() {
+		return microGestures;
+	}
+	
+	public void setMicroGestures(Collection<MicroGesture> micro_gestures) {
+		microGestures = (micro_gestures != null) 
+			? new ArrayList<MicroGesture>(micro_gestures) : new ArrayList<MicroGesture>();
+	}
 	
 	public void addMicroGesture(MicroGesture micro_gesture) {
 		microGestures.add(micro_gesture);
-	}
-
-	public ArrayList<MicroGesture> getMicroGestures() {
-		return microGestures;
 	}
 
 

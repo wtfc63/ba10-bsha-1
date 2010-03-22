@@ -10,7 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 
 
-public class MicroGesture {
+public class MicroGesture implements Cloneable {
 
 	
 	public final static int TYPE_UNKNOWN = -1;
@@ -21,12 +21,14 @@ public class MicroGesture {
 	
 	private int type;
 	private float direction;
+	private boolean switchedDirection;
 	private ArrayList<TouchPoint> points;
 	
 	
 	public MicroGesture() {
 		type = TYPE_UNKNOWN;
 		direction = 0;
+		switchedDirection = false;
 		points = new ArrayList<TouchPoint>();
 	}
 	
@@ -39,6 +41,18 @@ public class MicroGesture {
 		this.type = type;
 		this.direction = direction;
 		this.points = new ArrayList<TouchPoint>(points);
+	}
+	
+	public Object clone() throws CloneNotSupportedException {
+		MicroGesture clone = (MicroGesture) super.clone();
+		clone.type      = type;
+		clone.direction = direction;
+		clone.switchedDirection = switchedDirection;
+		clone.points = new ArrayList<TouchPoint>(points.size());
+		for (TouchPoint point : points) {
+			clone.points.add((TouchPoint) point.clone());
+		}
+		return clone;
 	}
 	
 	
@@ -81,6 +95,15 @@ public class MicroGesture {
 	
 	public void setDirection(float direction) {
 		this.direction = direction;
+	}
+	
+	
+	public boolean directionHasSwitched() {
+		return switchedDirection;
+	}
+	
+	public void setDirectionSwitched(boolean switched_direction) {
+		switchedDirection = switched_direction;
 	}
 	
 	
@@ -175,6 +198,23 @@ public class MicroGesture {
 		} else if (directionIsLeft()) {
 			result.append('l');
 		}
+		if (switchedDirection) {
+			result.append('^');
+		}
 		return result.toString();
+	}
+	
+	public static int StrToType(String str) {
+		int type = TYPE_UNKNOWN;
+		if (str.contains("w")) {
+			type = TYPE_WIDE_CURVE;
+		} else if (str.contains("n")) {
+			type = TYPE_NARROW_CURVE;
+		} else if (str.contains("l")) {
+			type = TYPE_LONG_LINE;
+		} else if (str.contains("s")) {
+			type = TYPE_SHORT_LINE;
+		}
+		return type;
 	}
 }

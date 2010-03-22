@@ -16,6 +16,7 @@ public class TouchInput {
 	
 	public static final ICharacterDetectionStrategy CHAR_DETECTION_STRATEGY_NONE = new CharacterDetectionStrategyNone();
 	public static final ICharacterDetectionStrategy CHAR_DETECTION_STRATEGY_GRAPH = new CharacterDetectionStrategyGraph();
+	public static final ICharacterDetectionStrategy CHAR_DETECTION_STRATEGY_CUSTOM_GRAPH = new CharacterDetectionStrategyCustomGraph("");
 	
 	private ArrayList<TouchPoint> points;
 	private boolean stretch = true;
