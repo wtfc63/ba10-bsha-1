@@ -11,9 +11,9 @@ import java.util.Collection;
 import android.os.Environment;
 import android.util.Log;
 
-import edu.uci.ics.jung.graph.*;
-import edu.uci.ics.jung.graph.util.*;
-import edu.uci.ics.jung.io.GraphMLWriter;
+//import edu.uci.ics.jung.graph.*;
+//import edu.uci.ics.jung.graph.util.*;
+//import edu.uci.ics.jung.io.GraphMLWriter;
 
 
 public class CharacterDetectionStrategyGraph implements	ICharacterDetectionStrategy {
@@ -21,7 +21,7 @@ public class CharacterDetectionStrategyGraph implements	ICharacterDetectionStrat
 	
 	@Override
 	public Collection<Character> detectCharacter(Collection<MicroGesture> micro_gestures) {
-		ArrayList<MicroGesture> gestures = new ArrayList<MicroGesture>(micro_gestures);
+		/*<MicroGesture> gestures = new ArrayList<MicroGesture>(micro_gestures);
 		
 		// GRAPH TEST
 		Character n1 = new Character();
@@ -61,10 +61,11 @@ public class CharacterDetectionStrategyGraph implements	ICharacterDetectionStrat
 		Log.v(TAG, "The graph g2 = " + g2.toString());
         
 		
-		
-		Character no_char = new Character(micro_gestures);
+		*/
+		Character no_char = new Character();
 		ArrayList<Character> chars = new ArrayList<Character>();
 		chars.add(no_char);
+		
 		return chars;
 	}
 

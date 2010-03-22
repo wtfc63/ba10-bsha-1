@@ -9,7 +9,7 @@ public class CharacterDetectionStrategyNone implements	ICharacterDetectionStrate
 
 	@Override
 	public Collection<Character> detectCharacter(Collection<MicroGesture> micro_gestures) {
-		Character no_char = new Character(micro_gestures);
+		Character no_char = new Character(micro_gestures, '\0', 0);
 		ArrayList<Character> chars = new ArrayList<Character>();
 		chars.add(no_char);
 		return chars;
