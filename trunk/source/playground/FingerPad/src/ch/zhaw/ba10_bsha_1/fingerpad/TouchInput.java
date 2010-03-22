@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import android.R.string;
+import android.util.Log;
 
 
 public class TouchInput {
@@ -165,13 +166,17 @@ public class TouchInput {
 	}
 
 	public void startDetection() {
-		if (smooth) {
-			points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));
+		try {
+			if (smooth) {
+				points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));
+			}
+			if (stretch) {
+				stretchToField(letterHeight);
+			}
+			microGestures = detectMicroGestures(mgDetectionStrategy);
+			characters = detectCharacters(charDetectionStrategy);
+		} catch (Exception ex) {
+			Log.e("TouchInput.startDetection", Log.getStackTraceString(ex), ex);
 		}
-		if (stretch) {
-			stretchToField(letterHeight);
-		}
-		microGestures = detectMicroGestures(mgDetectionStrategy);
-		characters = detectCharacters(charDetectionStrategy);
 	}
 }

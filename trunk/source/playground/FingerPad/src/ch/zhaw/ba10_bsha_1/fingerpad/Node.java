@@ -69,13 +69,15 @@ public class Node {
 	
 	public Character consume(Collection<MicroGesture> micro_gestures) {
 		Character result = null;
+		Node node = null;
 		if ((micro_gestures != null) && (micro_gestures.size() > 0)) {
 			if (tester != null) {
 				MicroGesture mg = micro_gestures.iterator().next();
 				if (tester.validate(mg)) {
 					micro_gestures.remove(mg);
 					Iterator<Edge> itr = outgoingEdges.iterator();
-					for (Node node = itr.next().getDestination(); (result == null) && itr.hasNext(); node = itr.next().getDestination()) {
+					while ((result == null) && itr.hasNext()) {
+						node = itr.next().getDestination();
 						result = node.consume(micro_gestures);
 					}
 					if (result == null) {
@@ -84,7 +86,8 @@ public class Node {
 				}
 			} else {
 				Iterator<Edge> itr = outgoingEdges.iterator();
-				for (Node node = itr.next().getDestination(); (result == null) && itr.hasNext(); node = itr.next().getDestination()) {
+				while ((result == null) && itr.hasNext()) {
+					node = itr.next().getDestination();
 					result = node.consume(micro_gestures);
 				}
 			}

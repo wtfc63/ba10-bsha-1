@@ -10,6 +10,7 @@ public class MicroGestureDetectionStrategyPreditction implements IMicroGestureDe
 	
 	private float predictionTolerance = 5;
 	private float fieldHeight = 0;
+	private boolean mergeMicroGestures = true;
 	
 	
 	@Override
@@ -36,11 +37,12 @@ public class MicroGestureDetectionStrategyPreditction implements IMicroGestureDe
 					float pred_y = curr.y + (curr.y - prev.y);
 					if ((Math.abs(next.x - pred_x) > predictionTolerance) 
 							&& (Math.abs(next.y - pred_y) > predictionTolerance)) {
-						curr_mg.addPoint(next);
 						prev = curr;
-						result.add(curr_mg);
-						curr_mg.setDirection(analyseMicroGestureDirection(curr_mg));
-						curr_mg.setType(analyseMicroGestureType(curr_mg));
+						curr_mg.addPoint(next);
+						curr_mg = analyseMicroGesture(result, curr_mg);
+						if (!result.contains(curr_mg)) {
+							result.add(curr_mg);
+						}
 						curr_mg = new MicroGesture();
 						first = true;
 					} else if (curr.distanceTo(prev) >= (2 * predictionTolerance)) {
@@ -49,9 +51,10 @@ public class MicroGestureDetectionStrategyPreditction implements IMicroGestureDe
 					}
 				} else {
 					curr_mg.addPoint(curr);
-					curr_mg.setDirection(analyseMicroGestureDirection(curr_mg));
-					curr_mg.setType(analyseMicroGestureType(curr_mg));
-					result.add(curr_mg);
+					curr_mg = analyseMicroGesture(result, curr_mg);
+					if (!result.contains(curr_mg)) {
+						result.add(curr_mg);
+					}
 				}
 			}
 		} else {
@@ -59,6 +62,18 @@ public class MicroGestureDetectionStrategyPreditction implements IMicroGestureDe
 			result.add(curr_mg);
 		}
 		return result;
+	}
+	
+	private MicroGesture analyseMicroGesture(ArrayList<MicroGesture> list, MicroGesture mg) {
+		mg.setDirection(analyseMicroGestureDirection(mg));
+		mg.setType(analyseMicroGestureType(mg));
+		if (mergeMicroGestures && (list.size() > 0)) {
+			MicroGesture last = list.get(list.size() - 1);
+			if ((last != null) && last.canMergeWith(mg)) {
+				mg = last.merge(mg);
+			}
+		}
+		return mg;
 	}
 	
 	private float analyseMicroGestureDirection(MicroGesture mg) {
