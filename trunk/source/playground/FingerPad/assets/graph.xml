@@ -4,12 +4,12 @@
     xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
      http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
   <graph id="G" edgedefault="directed">
-    <node id="root"/>
-    <node id="0" test="l:dlr" character="l"/>
-    <node id="1" test="s:udr" character="L"/>
-    <node id="2" test="s:dlr" character="i"/>
-    <edge source="root" target="0"/>
-    <edge source="root" target="2"/>
+    <node id="0"/>
+    <node id="1" test="l:dlr" character="l"/>
+    <node id="2" test="s:udr" character="L"/>
+    <node id="3" test="s:dlr" character="i"/>
     <edge source="0" target="1"/>
+    <edge source="0" target="3"/>
+    <edge source="1" target="2"/>
   </graph>
 </graphml>

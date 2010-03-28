@@ -19,6 +19,7 @@ public class Node {
 		this.id = id;
 		this.tester = (test != null) ? new MicroGestureTester(test) : null;
 		this.character = character;
+		this.label = test;
 		incomingEdges = new ArrayList<Edge>();
 		outgoingEdges = new ArrayList<Edge>();
 	}
