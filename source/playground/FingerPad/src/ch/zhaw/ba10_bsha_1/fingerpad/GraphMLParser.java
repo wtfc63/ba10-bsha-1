@@ -43,7 +43,7 @@ public class GraphMLParser implements ContentHandler{
 			t.printStackTrace();
 		}
 		
-		return nodes.get("root");
+		return nodes.get("0");
 	}
 
 	@Override
