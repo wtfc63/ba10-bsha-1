@@ -53,7 +53,7 @@ public class PadView extends View implements IObservable {
 		observers = new ArrayList<IObserver>();
 		inputs = new ArrayList<TouchInput>();
 		currentInput = null;
-		mgDetectionStrategy = TouchInput.MG_DETECTION_STRATEGY_PREDICTION;
+		mgDetectionStrategy = TouchInput.MG_DETECTION_STRATEGY_CURVATURE;
 		charDetectionStrategy = TouchInput.CHAR_DETECTION_STRATEGY_CUSTOM_GRAPH;
 		
         paths  = new ArrayList<Path>();

@@ -44,6 +44,7 @@ public class Pad extends Activity implements IObserver, OnClickListener {
         
         padView.attachObserver(this);
         padView.setToShowPoints(true);
+		padView.enableAutoClear(true);
         tglBtnLog.setOnClickListener(this);
     }
     
@@ -99,7 +100,6 @@ public class Pad extends Activity implements IObserver, OnClickListener {
 				alert.show();
 			}
 			padView.enableLog(tglBtnLog.isChecked());
-			padView.enableAutoClear(padView.logIsEnabled());
 		}
 	}
 
