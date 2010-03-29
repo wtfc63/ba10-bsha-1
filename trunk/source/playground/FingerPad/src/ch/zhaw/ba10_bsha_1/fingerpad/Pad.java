@@ -75,7 +75,13 @@ public class Pad extends Activity implements IObserver, OnClickListener {
 				alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {  
 				public void onClick(DialogInterface dialog, int whichButton) {
 						String value = input.getText().toString();
-						String[] splitted_value = value.split(",");
+						String[] splitted_value;
+						if (value.contains(".")) {
+							splitted_value = value.split("\\.");
+							value = splitted_value[0];
+							DetectionLogger.getInstance().logComment(splitted_value[1]);
+						}
+						splitted_value = value.split(",");
 						char[] chars = new char[splitted_value.length];
 						for (int i = 0; i < chars.length; i++) {
 							chars[i] = splitted_value[i].charAt(0);
@@ -93,6 +99,7 @@ public class Pad extends Activity implements IObserver, OnClickListener {
 				alert.show();
 			}
 			padView.enableLog(tglBtnLog.isChecked());
+			padView.enableAutoClear(padView.logIsEnabled());
 		}
 	}
 

@@ -35,7 +35,7 @@ public class MicroGestureTester {
 		dir = micro_gesture.directionIsUp()        ? (char) (dir | MASK_DIRECTION_UP)     : dir;
 		dir = micro_gesture.directionIsDown()      ? (char) (dir | MASK_DIRECTION_DOWN)   : dir;
 		dir = micro_gesture.directionHasSwitched() ? (char) (dir | MASK_DIRECTION_SWITCH) : dir;
-		return ((type == micro_gesture.getType()) && ((dir & directionPattern) != 0));
+		return ((type == micro_gesture.getType()) && ((dir & directionPattern) == dir));
 	}
 	
 	
