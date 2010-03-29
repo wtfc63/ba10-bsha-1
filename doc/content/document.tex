@@ -1,0 +1,62 @@
+\begin{filecontents}{document.tex}
+\end{filecontents}
+\listfiles
+
+%\documentclass[a4paper,twopage,ngerman,12pt]{scrreprt}
+\documentclass[a4paper,twopage,ngerman,12pt]{scrreprt}
+
+\usepackage{pdfpages}
+\usepackage{a4}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[nonumberlist]{glossaries}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{bibgerm}
+\usepackage{svn}
+\usepackage{listings}
+
+\input{etc/glossary}
+
+\begin{document}
+	\input{etc/listings}
+
+	% Titelseite drucken
+	\input{titlepage}
+	\newpage
+
+	% Seitenzahl auf Römisch wechseln
+	\renewcommand{\thepage}{\Roman{page}}
+	\setcounter{page}{1}
+	% Abstract drucken
+	\input{abstract}
+	\newpage
+
+	%Erklärung Drucken...
+	\includepdf[pagecommand={\thispagestyle{plain}},scale=0.8]{inc/Erklaerung_BA.pdf}
+
+	% Inhaltsverzeichnis
+	\tableofcontents
+	\newpage
+	\nocite{*}
+	% Seitenzahl auf Arabisch wechseln
+	\renewcommand{\thepage}{\arabic{page}}
+	\setcounter{page}{1}
+	\part{Bericht}
+
+	\include{content/aufgabenstellung}
+	\include{content/beschreibung}
+	\include{content/verlauf}
+	\include{content/ausblick}
+
+	\part{Projektmanagement}
+	\include{content/zeitplan}
+	
+
+	\input{appendix}
+\end{document}
+
+
+

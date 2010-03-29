@@ -1,0 +1,18 @@
+DIRECTORIES
+----------------------------
+
+  * content      - Kapitel
+  * etc          - Latex Einstellungen
+  * img          - Bilder
+  * inc          - Extern eingebundene PDF's
+  * other        - DOBIN!!!
+  * proj         - Projektierung
+
+FILES
+----------------------------
+
+  * abstract.tex  - Abstract
+  * appendix.tex  - Appendix
+  * document.tex  - Maindocument
+  * titlepage.tex - Titelseite
+
