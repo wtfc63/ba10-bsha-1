@@ -31,6 +31,7 @@ public class PadView extends View implements IObservable {
     
     private ArrayList<IObserver> observers;
     private boolean log;
+    private boolean autoClear;
     
     private ArrayList<TouchInput> inputs;
     private TouchInput currentInput;
@@ -150,6 +151,10 @@ public class PadView extends View implements IObservable {
     }
     
     private void touchStart(float x, float y) {
+		if (autoClear) {
+			clear();
+		}
+		
     	currentInput = new TouchInput(mgDetectionStrategy, (this.getHeight() / 2), charDetectionStrategy);
     	currentInput.add(new TouchPoint(x, y));
     	currentInput.enableSmoothing(smoothPoints);
@@ -272,6 +277,14 @@ public class PadView extends View implements IObservable {
     
     public void enableLog(boolean enable_log) {
     	log = enable_log;
+    }
+    
+    public boolean isToAutoClear() {
+    	return autoClear;
+    }
+    
+    public void enableAutoClear(boolean auto_clear) {
+    	autoClear = auto_clear;
     }
 
 	@Override

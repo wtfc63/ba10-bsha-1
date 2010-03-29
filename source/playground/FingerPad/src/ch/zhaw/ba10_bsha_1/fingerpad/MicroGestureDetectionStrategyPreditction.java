@@ -67,6 +67,7 @@ public class MicroGestureDetectionStrategyPreditction implements IMicroGestureDe
 	private MicroGesture analyseMicroGesture(ArrayList<MicroGesture> list, MicroGesture mg) {
 		mg.setDirection(analyseMicroGestureDirection(mg));
 		mg.setType(analyseMicroGestureType(mg));
+		mg.enableStubMerging(true);
 		if (mergeMicroGestures && (list.size() > 0)) {
 			MicroGesture last = list.get(list.size() - 1);
 			if ((last != null) && last.canMergeWith(mg)) {

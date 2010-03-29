@@ -24,12 +24,15 @@ public class MicroGesture implements Cloneable {
 	private boolean switchedDirection;
 	private ArrayList<TouchPoint> points;
 	
+	private boolean mergeStubs; 
+	
 	
 	public MicroGesture() {
 		type = TYPE_UNKNOWN;
 		direction = 0;
 		switchedDirection = false;
 		points = new ArrayList<TouchPoint>();
+		mergeStubs = false;
 	}
 	
 	public MicroGesture(Collection<TouchPoint> points) {
@@ -55,6 +58,14 @@ public class MicroGesture implements Cloneable {
 		return clone;
 	}
 	
+	public boolean canMergeStubs() {
+		return mergeStubs;
+	}
+	
+	public void enableStubMerging(boolean merge_stubs) {
+		mergeStubs = merge_stubs;
+	}
+	
 	public MicroGesture merge(MicroGesture other) {
 		if (canMergeWith(other)) {
 			while (other.points.size() > 0) {
@@ -68,7 +79,7 @@ public class MicroGesture implements Cloneable {
 	
 	public boolean canMergeWith(MicroGesture other) {
 		return (other != null) && (other != this)
-				&& (other.type == this.type) 
+				&& ((other.type == this.type) || (mergeStubs && this.points.size() < 3)) 
 				&& (Math.abs(other.direction - this.direction) < (Math.PI / 12));
 	}
 	

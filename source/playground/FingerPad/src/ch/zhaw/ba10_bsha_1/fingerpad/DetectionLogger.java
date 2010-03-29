@@ -36,6 +36,48 @@ public class DetectionLogger {
 	}
 
 	public void log(Collection<Character> characters) {
+		StringBuffer att_chars = new StringBuffer();
+		int i;
+		if (attemptedChars != null) {
+			for (i = 0; i < attemptedChars.length; i++) {
+				att_chars.append(attemptedChars[i]);
+				if (i < (attemptedChars.length - 1)) {
+					att_chars.append(',');
+				}
+			}
+		} else {
+			att_chars.append('-');
+		}
+		i = 0;
+		for (Character character : characters) {
+			StringBuffer mgs = new StringBuffer();
+			Iterator<MicroGesture> itr = character.getMicroGestures().iterator();
+			while (itr.hasNext()) {
+				mgs.append(itr.next());
+				if (itr.hasNext()) {
+					mgs.append(',');
+				}
+			}
+			StringBuffer line = new StringBuffer();
+			line.append(i++);
+			line.append(';');
+			line.append(att_chars);
+			line.append(';');
+			line.append((character.getDetectedCharacter() != '\0') 
+					? character.getDetectedCharacter() : '-');
+			line.append(';');
+			line.append(character.getDetectionProbability());
+			line.append(';');
+			line.append(mgs);
+			writeLine(line.toString());
+		}
+	}
+	
+	public void logComment(String comment) {
+		writeLine("# " + comment);
+	}
+	
+	private void writeLine(String line) {
 		BufferedWriter writer = null;
 		try {
 		    File root = Environment.getExternalStorageDirectory();
@@ -44,34 +86,8 @@ public class DetectionLogger {
 				file.createNewFile();
 			}
 			writer = new BufferedWriter(new FileWriter(file, true));
-			
-			int i = -1;
-			if ((attemptedChars != null) 
-					&& (attemptedChars.length == characters.size())) {
-				i = 0;
-			}
-			for (Character character : characters) {
-				StringBuffer mgs = new StringBuffer();
-				Iterator<MicroGesture> itr = character.getMicroGestures().iterator();
-				while (itr.hasNext()) {
-					mgs.append(itr.next());
-					if (itr.hasNext()) {
-						mgs.append(',');
-					}
-				}
-				StringBuffer line = new StringBuffer();
-				line.append((i >= 0) ? attemptedChars[i++] : '-');
-				line.append(';');
-				line.append((character.getDetectedCharacter() != '\0') 
-						? character.getDetectedCharacter() : '-');
-				line.append(';');
-				line.append(character.getDetectionProbability());
-				line.append(';');
-				line.append(mgs);
-				line.append(System.getProperty("line.separator"));
-				writer.write(line.toString());
-				writer.flush();
-			}
+			writer.write(line + System.getProperty("line.separator"));
+			writer.flush();
 		} catch (Exception ex) {
 			Log.e(TAG, "Logger: Exception thrown", ex);
 			Log.e(TAG, "Logger: StackTrace\n" + Log.getStackTraceString(ex));
@@ -93,8 +109,14 @@ public class DetectionLogger {
 			reader = new BufferedReader(new InputStreamReader(stream));
 			String line = new String();
 			while ((line = reader.readLine()) != null) {
-				if (mark_line) {
+				if (mark_line && !line.startsWith("#")) {
+					if (line.startsWith("0;")) {
+						log.append("-----");
+						log.append(System.getProperty("line.separator"));
+					}
 					log.append("> ");
+				} else if (mark_line && line.startsWith("#")) {
+					log.append(System.getProperty("line.separator"));
 				}
 				log.append(line);
 				log.append(System.getProperty("line.separator"));

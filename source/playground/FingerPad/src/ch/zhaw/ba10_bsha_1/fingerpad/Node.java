@@ -29,7 +29,7 @@ public class Node {
 	}
 	
 	public Node(int id, String test) {
-		this(id, test, '\n');
+		this(id, test, '\0');
 	}
 
 
