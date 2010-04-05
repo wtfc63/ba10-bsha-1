@@ -1,8 +1,11 @@
 package ch.zhaw.ba10_bsha_1.fingerpad;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 import android.R.string;
 import android.util.Log;
@@ -175,8 +178,49 @@ public class TouchInput {
 			}
 			microGestures = detectMicroGestures(mgDetectionStrategy);
 			characters = detectCharacters(charDetectionStrategy);
+			addCharactersToGraph();
 		} catch (Exception ex) {
 			Log.e("TouchInput.startDetection", Log.getStackTraceString(ex), ex);
 		}
 	}
+	
+	// TEST
+	
+	private int id = 10;
+	
+	public void addCharactersToGraph() {
+		
+		for (Character c : characters) {
+			Node source = charDetectionStrategy.getRoot();
+			
+			Iterator<MicroGesture> itr = c.getMicroGestures().iterator();
+			while (itr.hasNext()) {
+				MicroGesture g = itr.next();
+				Node target;
+				if(itr.hasNext()) {
+					target = new Node(id++, g.toString());
+				}
+				else {
+					DetectionLogger l = DetectionLogger.getInstance();
+					target = new Node(id++, g.toString(), l.getAttemptedChars()[0]);
+				}
+				
+				source.addOutgoingEdge(target, 1);
+				source = target;
+			}
+		}
+		
+		File b = new File("/sdcard/out.xml");
+		GraphMLExport exp = new GraphMLExport();
+
+		try {
+			exp.writeFile(charDetectionStrategy.getRoot(), b);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	
 }

@@ -5,4 +5,5 @@ import java.util.Collection;
 public interface ICharacterDetectionStrategy {
 	public Collection<Character> detectCharacter(Collection<MicroGesture> micro_gestures);
 	public String toString();
+	public Node getRoot();
 }
