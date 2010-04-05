@@ -26,16 +26,6 @@ public class GraphFactoryGraphMLImport implements IGraphFactory {
 			root = parser.readFile(file);
 		}
 		
-		File b = new File("/sdcard/out.xml");
-		GraphMLExport exp = new GraphMLExport();
-
-		try {
-			exp.writeFile(root, b);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 		return root;
 	}
 

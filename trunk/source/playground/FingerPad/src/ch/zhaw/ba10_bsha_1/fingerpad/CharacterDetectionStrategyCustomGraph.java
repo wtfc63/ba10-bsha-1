@@ -18,6 +18,10 @@ public class CharacterDetectionStrategyCustomGraph implements ICharacterDetectio
 		root = factory.createRoot();
 	}
 	
+	public Node getRoot() {
+		return root;
+	}
+	
 
 	@Override
 	public Collection<Character> detectCharacter(Collection<MicroGesture> micro_gestures) {

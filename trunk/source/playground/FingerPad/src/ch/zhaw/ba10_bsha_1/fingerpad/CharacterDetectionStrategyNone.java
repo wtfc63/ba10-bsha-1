@@ -14,6 +14,10 @@ public class CharacterDetectionStrategyNone implements	ICharacterDetectionStrate
 		chars.add(no_char);
 		return chars;
 	}
+	
+	public Node getRoot() {
+		return null;
+	}
 
 	@Override
 	public String toString() {
