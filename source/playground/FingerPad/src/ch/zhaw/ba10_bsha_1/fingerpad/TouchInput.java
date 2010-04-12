@@ -176,9 +176,10 @@ public class TouchInput {
 			if (stretch) {
 				stretchToField(letterHeight);
 			}
+			
 			microGestures = detectMicroGestures(mgDetectionStrategy);
 			characters = detectCharacters(charDetectionStrategy);
-			addCharactersToGraph();
+			//addCharactersToGraph();
 		} catch (Exception ex) {
 			Log.e("TouchInput.startDetection", Log.getStackTraceString(ex), ex);
 		}
@@ -186,14 +187,14 @@ public class TouchInput {
 	
 	// TEST
 	
-	private int id = 10;
+	private static int id = 10;
 	
 	public void addCharactersToGraph() {
 		
-		for (Character c : characters) {
+		//for (Character c : characters) {
 			Node source = charDetectionStrategy.getRoot();
 			
-			Iterator<MicroGesture> itr = c.getMicroGestures().iterator();
+			Iterator<MicroGesture> itr = microGestures.iterator();//c.getMicroGestures().iterator();
 			while (itr.hasNext()) {
 				MicroGesture g = itr.next();
 				Node target;
@@ -205,10 +206,12 @@ public class TouchInput {
 					target = new Node(id++, g.toString(), l.getAttemptedChars()[0]);
 				}
 				
-				source.addOutgoingEdge(target, 1);
+				Edge temp = new Edge(source, target, 1);
+				source.addOutgoingEdge(temp);
+				target.addIncomingEdge(temp);
 				source = target;
 			}
-		}
+		//}
 		
 		File b = new File("/sdcard/out.xml");
 		GraphMLExport exp = new GraphMLExport();

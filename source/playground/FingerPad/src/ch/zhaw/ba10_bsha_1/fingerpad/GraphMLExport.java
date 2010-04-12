@@ -3,12 +3,20 @@ package ch.zhaw.ba10_bsha_1.fingerpad;
 import java.io.*;
 import java.util.ArrayList;
 
+import android.util.Log;
+
 public class GraphMLExport {
 	private static String header = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
 		"<graphml xmlns=\"http://graphml.graphdrawing.org/xmlns\"\n" +
 		"\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n" +
-		"\txsi:schemaLocation=\"http://graphml.graphdrawing.org/xmlns\n" +
+		"\txsi:schemaLcation=\"http://graphml.graphdrawing.org/xmlns\n" +
 		"\t http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd\">\n" +
+		"\t<key id=\"d0\" for=\"node\" attr.name=\"character\" attr.type=\"string\">\n" +
+		"\t\t<default></default>\n" +
+		"\t</key>\n" +
+		"\t<key id=\"d1\" for=\"node\" attr.name=\"test\" attr.type=\"string\">\n" +
+		"\t\t<default></default>\n" +
+		"\t</key>\n" +
 		"<graph id=\"G\" edgedefault=\"directed\">\n";
 	
 	private static String footer = "</graph>\n</graphml>";
@@ -34,20 +42,21 @@ public class GraphMLExport {
         finally {
             if (outputStream != null) {
                 outputStream.close();
+                Log.v("GraphStrategy", "Graph saved.");
             }
         }
 	}
 	
 	private void writeNode(Node n, PrintWriter stream) throws IOException {
 		if (!nodes.contains(n)) {
-			stream.write("<node id=\"" + n.getId() + "\"");
+			stream.write("<node id=\"" + n.getId() + "\">\n");
 			if (n.getLabel() != null)  {
-				stream.write(" test=\"" + n.getLabel() + "\"");
+				stream.write("\t<data key=\"d1\">" + n.getLabel() + "</data>\n");
 			}
 			if (n.getCharacter() != '\0') {
-				stream.write(" character=\"" + n.getCharacter() + "\"");
+				stream.write("\t<data key=\"d0\">" + n.getCharacter() + "</data>\n");
 			}
-			stream.write("/>\n");
+			stream.write("</node>\n");
 			nodes.add(n);
 			for (Edge e : n.outgoingEdges) {
 				writeEdge(e, stream);
