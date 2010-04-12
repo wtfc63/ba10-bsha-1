@@ -46,7 +46,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 				if(lastCurve == 0) {
 					lastCurve = zn;
 				}
-				else if(Math.abs(zn - lastCurve) > 150) {
+				else if(Math.abs(zn - lastCurve) > 170) {
 					curr_mg.addPoint(pts[i+1]);
 					
 					setMicroGesture(curr_mg);
@@ -63,24 +63,29 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 			setMicroGesture(curr_mg);
 			curr_mg.setDirection(analyseMicroGestureDirection(curr_mg));
 			result.add(curr_mg);
+			
 		} else {
 			curr_mg = new MicroGesture(points);
 			result.add(curr_mg);
 		}
 		
+		ArrayList<MicroGesture> result2 = new ArrayList<MicroGesture>();
+		result2.add(result.get(0));
 		for (int i = 1; i < result.size(); i++) {
 			MicroGesture current = result.get(i);
 			MicroGesture previous = result.get(i-1);
-			if (current.getDirection() == previous.getDirection() 
-					&& current.getType() == previous.getType()) {
+			if (current.toString().equals(previous.toString())) {
 				ArrayList<TouchPoint> list = current.getPoints();
 				for (TouchPoint p : list) {
-					
+					previous.addPoint(p);
 				}
+			}
+			else {
+				result2.add(current);
 			}
 		}
 		
-		return result;
+		return result2;
 	}
 
 	public boolean validateMicroGesture(MicroGesture microGesture) {
@@ -125,7 +130,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 			mg.setType(MicroGesture.TYPE_NARROW_CURVE);
 		}
 		
-		Log.v(TAG, "y = " + m + "x + " + q + "; abstand: " + max);
+		//Log.v(TAG, "y = " + m + "x + " + q + "; abstand: " + max);
 		
 		//
 	}

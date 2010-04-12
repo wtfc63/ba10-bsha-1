@@ -2,8 +2,10 @@ package ch.zhaw.ba10_bsha_1.fingerpad;
 
 import java.io.*;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.Vector;
+import java.util.Map.Entry;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -19,6 +21,11 @@ public class GraphMLParser implements ContentHandler{
 	private Vector<Pair> tempEdges;
 	
 	private int nodeID = 0;
+	
+	private enum Status { NODE, EDGE, DATATEST, DATACHARACTER, NONE };
+	private Status status = Status.NONE;
+	
+	private String nodeId, nodeTest, nodeCharacter;
 	
 	public class Pair {
 		public String first;
@@ -48,12 +55,20 @@ public class GraphMLParser implements ContentHandler{
 
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
-		// TODO Auto-generated method stub
-		
+		if (status == Status.DATACHARACTER) {
+			nodeCharacter = new String(ch, start, length);
+		}
+		else if (status == Status.DATATEST) {
+			nodeTest = new String(ch, start, length);
+		}
 	}
 
 	@Override
 	public void endDocument() throws SAXException {
+		Set<Entry<String, Node>> e = nodes.entrySet();
+		for (Entry<String, Node> n : e) {
+			Log.v(TAG, "Node: "+ n.getValue().getCharacter() + ", " + n.getValue().getLabel());
+		}
 		
 		for (Pair p : tempEdges) {
 			Node a = nodes.get(p.first);
@@ -61,12 +76,40 @@ public class GraphMLParser implements ContentHandler{
 			Edge temp = new Edge(a, b, 1);
 			a.addOutgoingEdge(temp);
 			b.addIncomingEdge(temp);
+			//Log.v(TAG, "Edge: " + p.first + "->" +p.second);
+			
 		}
 	}
 
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
-		// TODO Auto-generated method stub
+		if (status == Status.NODE && localName.equalsIgnoreCase("node")) {
+			status = Status.NONE;
+			Node temp;
+			if (nodeTest == null && nodeCharacter == null) {
+				temp = new Node(nodeID++);
+			}
+			else if (nodeCharacter == null) {
+				temp = new Node(nodeID++, nodeTest);
+			}
+			else {
+				temp = new Node(nodeID++, nodeTest, nodeCharacter.charAt(0));
+				//Log.v(TAG, "End " + localName + " " + nodeTest + " " + nodeCharacter);
+			}		
+			nodes.put(nodeId, temp);
+			nodeTest = null;
+			nodeCharacter = null;
+			nodeId = null;
+		}
+		else if (status == Status.EDGE && localName.equalsIgnoreCase("edge")) {
+			status = Status.NONE;
+		}
+		else if (status == Status.DATATEST && localName.equalsIgnoreCase("data")) {
+			status = Status.NODE;
+		}
+		else if (status == Status.DATACHARACTER && localName.equalsIgnoreCase("data")) {
+			status = Status.NODE;
+		}
 		
 	}
 
@@ -84,7 +127,7 @@ public class GraphMLParser implements ContentHandler{
 
 	@Override
 	public void processingInstruction(String target, String data) throws SAXException {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -103,48 +146,59 @@ public class GraphMLParser implements ContentHandler{
 	@Override
 	public void startDocument() throws SAXException {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
 		// TODO Auto-generated method stub
 		
-		if (localName.equalsIgnoreCase("edge")) {
-			String source = atts.getValue("source");
-			String target = atts.getValue("target");
-			Log.v(TAG, source + " -> " + target);
+		if (status == Status.NONE) { 
+			if (localName.equalsIgnoreCase("edge")) {
+				String source = atts.getValue("source");
+				String target = atts.getValue("target");
+				//Log.v(TAG, source + " -> " + target);
+				
+				if (source != null && target != null) {
+					Pair temp = new Pair(source, target);
+					tempEdges.add(temp);
+				}
+				else {
+					Log.e(TAG, "Malformed XML: " + localName);
+				}
+				status = status.EDGE;
+			}
+			else if (localName.equalsIgnoreCase("node")) {
+				String node = atts.getValue("id");
+				status = Status.NODE;
+				if (node != null) {
+					nodeId = node;
+				}
+				else {
+					Log.e(TAG, "Malformed XML: " + localName);
+				}
+			}
 			
-			if (source != null && target != null) {
-				Pair temp = new Pair(source, target);
-				tempEdges.add(temp);
-			}
-			else {
-				Log.e(TAG, "Malformed XML: " + localName);
+		}
+		else if (status == Status.NODE) {
+			if (localName.equalsIgnoreCase("data")) {
+				String key = atts.getValue("key");
+				if (key.equalsIgnoreCase("d0")) {
+					status = Status.DATACHARACTER;
+				}
+				else if (key.equalsIgnoreCase("d1")) {
+					status = Status.DATATEST;
+				}
+				else {
+					//Log.e(TAG, "Malformed XML: " + localName);
+				}
 			}
 		}
-		else if (localName.equalsIgnoreCase("node")) {
-			String node = atts.getValue("id");
-			String test = atts.getValue("test");
-			String character = atts.getValue("character");
-			Log.v(TAG, "Node: " + node);
-			Node temp;
-			if (test == null && character == null) {
-				temp = new Node(nodeID++);
-			}
-			else if (character == null) {
-				temp = new Node(nodeID++, test);
-			}
-			else {
-				temp = new Node(nodeID++, test, character.charAt(0));
-			}
-			nodes.put(node, temp);
-		}
-		else {
-			Log.v(TAG, "Element: " + localName + " " + qName + " " + uri);
+		else if (status == Status.EDGE) {
+			//Log.e(TAG, "Malformed XML: " + localName);
 		}
 		
-		
+		//Log.v(TAG, "Element: " + localName + " " + qName + " " + uri);
+
 	}
 
 	@Override
