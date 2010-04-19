@@ -28,11 +28,10 @@ public class PathSmoothingStrategyBezier implements IPathSmoothingStrategy {
 		///// Edge detection /////
 		Vector<Vector<TouchPoint>> lines = new Vector<Vector<TouchPoint>>();
 		
-		double tolerance = 350d;
+		double tolerance = 0.1d;
 		TouchPoint[] pts = new TouchPoint[points.size()];
 		pts = points.toArray(pts);
-		float lastCurve = 0;
-		float preLastCurve = 0;
+		double lastCurve = 0;
 		Vector<TouchPoint> temp = new Vector<TouchPoint>();
 		for (int i = 1; i < pts.length-1; i++) {
 			temp.add(pts[i]);
@@ -42,29 +41,27 @@ public class PathSmoothingStrategyBezier implements IPathSmoothingStrategy {
 			y1 = pts[i-1].y - pts[i].y;
 			x2 = pts[i+1].x - pts[i].x;
 			y2 = pts[i+1].y - pts[i].y;
-			float zn;		
-			zn = x1 * y2 - y1 * x2;
 			
 			//Winkel
 			double cos = (x1 * x2 + y1 * y2) / (Math.sqrt(x1*x1 + y1*y1) * Math.sqrt(x2*x2 + y2*y2));
+			
 			Log.v("NURBSSCHMURBS", "Winkel: " + cos);
 			if(lastCurve == 0) {
-				lastCurve = zn;
-				preLastCurve = zn;
+				lastCurve = cos;
 			}
-			//else if(Math.abs(zn - lastCurve) > tolerance && Math.abs(zn - preLastCurve) > tolerance) {
-			else if(cos > -0.5) {
+			else if(cos > -0.55 && Math.abs(cos - lastCurve) > tolerance) {
 				temp.add(pts[i+1]);
 
 				lines.add(temp);
 				
-				temp = new Vector<TouchPoint>();
+				if (i != pts.length-1) {
+					temp = new Vector<TouchPoint>();
+				}
 				//Log.v(TAG, "New Gesture: old:" + lastCurve + ", new:" + zn);
 				lastCurve = 0;
 			}
 			else {
-				preLastCurve = lastCurve;
-				lastCurve = zn;
+				lastCurve = cos;
 			}
 		}
 		temp.add(pts[pts.length -1]);
@@ -74,9 +71,10 @@ public class PathSmoothingStrategyBezier implements IPathSmoothingStrategy {
 		
 		Vector<TouchPoint> result = new Vector<TouchPoint>();
 		Log.v("NURBSSCHMURBS", "-----------------------");
+		Log.v("NURBSSCHMURBS", "Lines: " + lines.size());
 		for(Vector<TouchPoint> v : lines) {
-			Log.v("NURBSSCHMURBS", "NEW LINE HAHAHAHAHAHA");
-			int nCurvePoints = (int) 2 * v.size();
+			
+			int nCurvePoints = (int) 3 * v.size();
 			
 			TouchPoint[] controlPoints = new TouchPoint[v.size()];
 			controlPoints = v.toArray(controlPoints);
@@ -86,23 +84,24 @@ public class PathSmoothingStrategyBezier implements IPathSmoothingStrategy {
 			float[] weights = new float[nControlPoints];
 			for(int i=0; i < nControlPoints; i++) {
 				if (i == 0 || i == nControlPoints-1) {
-					weights[i] = 5f;
+					weights[i] = 10f;
 				}
 				else {
-					weights[i] = 0.5f;
+					weights[i] = 1f;
 				}
 				
 			}
 			
 			float[] knot = new float[nControlPoints + d];
 			for(int i=0; i < (nControlPoints + d); i++) {
-				knot[i] =  i*3f;
+				knot[i] =  i*1f;
 			}
 		
 			TouchPoint[] curvePoints = NURBS(controlPoints, nCurvePoints, knot, weights, nControlPoints, d);
 			//TouchPoint[] curvePoints = controlPoints;
 			
 			result.add(controlPoints[0]);
+			//result.add(new TouchPoint(0, 0));
 			for (int i = 1; i < curvePoints.length; i++) {
 				result.add(curvePoints[i]);
 			}

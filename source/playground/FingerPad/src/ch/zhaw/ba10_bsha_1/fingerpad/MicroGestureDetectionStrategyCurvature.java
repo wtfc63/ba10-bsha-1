@@ -11,7 +11,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 	
 	public Collection<MicroGesture> detectMicroGestures(Collection<TouchPoint> points) {
 		
-		float tolerance = 210;
+		float tolerance = 230;
 		
 		// Remove points that are too close together
 		TouchPoint[] temp = new TouchPoint[points.size()];
@@ -29,7 +29,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		ArrayList<MicroGesture> result = new ArrayList<MicroGesture>();
 		MicroGesture curr_mg = new MicroGesture();
 
-		if ((points != null) && (tempResult.size() > 2)) {
+		if ((points != null) && (tempResult.size() > 3)) {
 			TouchPoint[] pts = new TouchPoint[tempResult.size()];
 			pts = tempResult.toArray(pts);
 			curr_mg.addPoint(pts[0]);
@@ -79,7 +79,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		for (int i = 1; i < result.size(); i++) {
 			MicroGesture previous = result.get(i-1);
 			MicroGesture current = result.get(i);
-			if (current.getPoints().size() > 2) {
+			if (current.getPoints().size() > 3) {
 				if (current.toString().equals(previous.toString())) {
 					ArrayList<TouchPoint> list = current.getPoints();
 					for (TouchPoint p : list) {
