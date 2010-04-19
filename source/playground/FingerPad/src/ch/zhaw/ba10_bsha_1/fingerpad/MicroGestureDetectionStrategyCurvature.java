@@ -11,6 +11,8 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 	
 	public Collection<MicroGesture> detectMicroGestures(Collection<TouchPoint> points) {
 		
+		float tolerance = 210;
+		
 		// Remove points that are too close together
 		TouchPoint[] temp = new TouchPoint[points.size()];
 		temp = points.toArray(temp);
@@ -46,7 +48,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 				if(lastCurve == 0) {
 					lastCurve = zn;
 				}
-				else if(Math.abs(zn - lastCurve) > 170) {
+				else if(Math.abs(zn - lastCurve) > tolerance) {
 					curr_mg.addPoint(pts[i+1]);
 					
 					setMicroGesture(curr_mg);
@@ -56,6 +58,9 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 					curr_mg = new MicroGesture();
 					//Log.v(TAG, "New Gesture: old:" + lastCurve + ", new:" + zn);
 					lastCurve = 0;
+				}
+				else {
+					//lastCurve = zn;
 				}
 			}
 			curr_mg.addPoint(pts[pts.length -1]);
@@ -72,16 +77,24 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		ArrayList<MicroGesture> result2 = new ArrayList<MicroGesture>();
 		result2.add(result.get(0));
 		for (int i = 1; i < result.size(); i++) {
-			MicroGesture current = result.get(i);
 			MicroGesture previous = result.get(i-1);
-			if (current.toString().equals(previous.toString())) {
+			MicroGesture current = result.get(i);
+			if (current.getPoints().size() > 2) {
+				if (current.toString().equals(previous.toString())) {
+					ArrayList<TouchPoint> list = current.getPoints();
+					for (TouchPoint p : list) {
+						previous.addPoint(p);
+					}
+				}
+				else {
+					result2.add(current);
+				}
+			}
+			else {
 				ArrayList<TouchPoint> list = current.getPoints();
 				for (TouchPoint p : list) {
 					previous.addPoint(p);
 				}
-			}
-			else {
-				result2.add(current);
 			}
 		}
 		
