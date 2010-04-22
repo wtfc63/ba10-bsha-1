@@ -1,0 +1,45 @@
+<?xml-stylesheet type="text/xsl" href="graphml2svg.xslt"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLcation="http://graphml.graphdrawing.org/xmlns
+	 http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="node" attr.name="character" attr.type="string">
+    <default></default>
+  </key>
+  <key id="d1" for="node" attr.name="test" attr.type="string">
+    <default></default>
+  </key>
+  <key id="d2" for="edge" attr.name="weight" attr.type="float">
+    <default>0.75</default>
+  </key>
+<graph edgedefault="directed">
+  <node id="1">
+    <data key="d1">l:dlr</data>
+    <data key="d0">l</data>
+  </node>
+  <edge source="1" target="2">
+    <data key="d2">0.5</data>
+  </edge>
+  <edge source="1" target="3"/>
+  <edge source="1" target="5">
+    <data key="d2">0.25</data>
+  </edge>
+  <node id="2">
+    <data key="d1">s:udr</data>
+    <data key="d0">L</data>
+  </node>
+  <edge source="2" target="4">
+    <data key="d2">0.5</data>
+  </edge>
+  <node id="3">
+    <data key="d1">s:dlr</data>
+    <data key="d0">i</data>
+  </node>
+  <node id="4">
+    <data key="d1">w:ul</data>
+  </node>
+  <node id="5">
+    <data key="d1">w:dl</data>
+  </node>
+</graph>
+</graphml>
