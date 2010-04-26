@@ -8,7 +8,7 @@ public class GraphFactoryDummy implements IGraphFactory {
 
 		Node l = new Node(1, "l:dlr", 'l');
 		Node L = new Node(11, "s:udr", 'L');
-		l.addOutgoingEdge(L, 1);
+		l.addOutgoingEdge(L, (float) 0.75);
 		
 		Node i = new Node(2, "s:dlr", 'i');
 		Node i0 = new Node(20, "s:ur");
@@ -24,9 +24,9 @@ public class GraphFactoryDummy implements IGraphFactory {
 		Node a221 = new Node(3221, "s:dlr", 'a');
 		a22.addOutgoingEdge(a221, 1);
 		
-		root.addOutgoingEdge(l, 1);
-		root.addOutgoingEdge(i0, 1);
-		root.addOutgoingEdge(i, 1);
+		root.addOutgoingEdge(l, (float) 0.8);
+		root.addOutgoingEdge(i0, (float) 0.5);
+		root.addOutgoingEdge(i, (float) 0.75);
 		root.addOutgoingEdge(a1, 1);
 		
 		return root;

@@ -31,9 +31,8 @@ public class CharacterDetectionStrategyGraph implements	ICharacterDetectionStrat
 	
 	@Override
 	public Collection<Character> detectCharacter(Collection<MicroGesture> micro_gestures) {
-   
 		ArrayList<Character> chars = new ArrayList<Character>();
-		Character character = null;
+		//Character character = null;
 		Collection<MicroGesture> tmp = new ArrayList<MicroGesture>(micro_gestures.size());
 		try {
 			for (MicroGesture mg : micro_gestures) {
@@ -42,10 +41,11 @@ public class CharacterDetectionStrategyGraph implements	ICharacterDetectionStrat
 		} catch (CloneNotSupportedException ex) {
 			tmp = micro_gestures;
 		}
-		while ((character = root.consume(tmp)) != null) {
+		/*while ((character = root.consume(tmp)) != null) {
 			character.setMicroGestures(micro_gestures);
 			chars.add(character);
-		}
+		}*/
+		chars.addAll(root.consume(tmp, 1));
 		return chars;
 	}
 

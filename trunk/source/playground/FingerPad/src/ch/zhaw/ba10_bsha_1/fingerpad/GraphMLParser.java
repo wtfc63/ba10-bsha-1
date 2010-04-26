@@ -3,6 +3,7 @@ package ch.zhaw.ba10_bsha_1.fingerpad;
 import java.io.*;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 import java.util.TreeMap;
 import java.util.Vector;
 import java.util.Map.Entry;
@@ -18,14 +19,14 @@ public class GraphMLParser implements ContentHandler{
 	private static final String TAG = "GraphMLParser"; 
 	
 	private Map<String, Node> nodes;
-	private Vector<Pair> tempEdges;
+	private Stack<Pair> tempEdges;
 	
 	private int nodeID = 0;
 	
-	private enum Status { NODE, EDGE, DATATEST, DATACHARACTER, NONE };
+	private enum Status { NODE, EDGE, DATATEST, DATACHARACTER, DATAWEIGHT, NONE };
 	private Status status = Status.NONE;
 	
-	private String nodeId, nodeTest, nodeCharacter;
+	private String nodeId, nodeTest, nodeCharacter, edgeWeight;
 	
 	public class Pair {
 		public String first;
@@ -36,9 +37,17 @@ public class GraphMLParser implements ContentHandler{
 		}
 	}
 	
+	public class WeightedPair extends Pair {
+		public float weight;
+		public WeightedPair(String a, String b, float weight) {
+			super(a, b);
+			this.weight = weight; 
+		}
+	}
+	
 	public Node readFile(File file) {
 		nodes = new TreeMap<String, Node>();
-		tempEdges = new Vector<Pair>();
+		tempEdges = new Stack<Pair>();
 		try{
 			SAXParserFactory spf = SAXParserFactory.newInstance();
             SAXParser sp = spf.newSAXParser();
@@ -61,20 +70,24 @@ public class GraphMLParser implements ContentHandler{
 		else if (status == Status.DATATEST) {
 			nodeTest = new String(ch, start, length);
 		}
+		else if (status == Status.DATAWEIGHT) {
+			edgeWeight = new String(ch, start, length);
+		}
 	}
 
 	@Override
 	public void endDocument() throws SAXException {
 		Set<Entry<String, Node>> e = nodes.entrySet();
 		
-		for (Pair p : tempEdges) {
+		while (!tempEdges.empty()) {
+			Pair p = tempEdges.pop();
 			Node a = nodes.get(p.first);
 			Node b = nodes.get(p.second);
-			Edge temp = new Edge(a, b, 1);
+			float probability = (p instanceof WeightedPair) ? ((WeightedPair) p).weight : (float) 0.9;
+			Edge temp = new Edge(a, b, probability);
 			a.addOutgoingEdge(temp);
 			b.addIncomingEdge(temp);
-			//Log.v(TAG, "Edge: " + p.first + "->" +p.second);
-			
+			//Log.v(TAG, "Edge: " + p.first + "->" +p.second);			
 		}
 	}
 
@@ -100,12 +113,19 @@ public class GraphMLParser implements ContentHandler{
 		}
 		else if (status == Status.EDGE && localName.equalsIgnoreCase("edge")) {
 			status = Status.NONE;
+			edgeWeight = null;
 		}
 		else if (status == Status.DATATEST && localName.equalsIgnoreCase("data")) {
 			status = Status.NODE;
 		}
 		else if (status == Status.DATACHARACTER && localName.equalsIgnoreCase("data")) {
 			status = Status.NODE;
+		}
+		else if (status == Status.DATAWEIGHT && localName.equalsIgnoreCase("data")) {
+			Pair last = tempEdges.pop();
+			last = new WeightedPair(last.first, last.second, Float.parseFloat(edgeWeight));
+			tempEdges.push(last);
+			status = Status.EDGE;
 		}
 		
 	}
@@ -157,7 +177,7 @@ public class GraphMLParser implements ContentHandler{
 				
 				if (source != null && target != null) {
 					Pair temp = new Pair(source, target);
-					tempEdges.add(temp);
+					tempEdges.push(temp);
 				}
 				else {
 					Log.e(TAG, "Malformed XML: " + localName);
@@ -191,6 +211,12 @@ public class GraphMLParser implements ContentHandler{
 			}
 		}
 		else if (status == Status.EDGE) {
+			if (localName.equalsIgnoreCase("data")) {
+				String key = atts.getValue("key");
+				if (key.equalsIgnoreCase("d2")) {
+					status = Status.DATAWEIGHT;
+				}
+			}
 			//Log.e(TAG, "Malformed XML: " + localName);
 		}
 		

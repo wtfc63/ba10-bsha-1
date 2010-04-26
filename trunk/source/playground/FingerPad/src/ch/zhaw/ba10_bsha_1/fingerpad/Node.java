@@ -2,6 +2,7 @@ package ch.zhaw.ba10_bsha_1.fingerpad;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class Node {
@@ -68,31 +69,25 @@ public class Node {
 		this.character = character;
 	}
 	
-	public Character consume(Collection<MicroGesture> micro_gestures) {
-		Character result = null;
-		Node node = null;
+	public Collection<Character> consume(Collection<MicroGesture> micro_gestures, float probability) {
+		ArrayList<Character> result = new ArrayList<Character>();
 		if ((micro_gestures != null) && (micro_gestures.size() > 0)) {
 			if (tester != null) {
 				MicroGesture mg = micro_gestures.iterator().next();
 				if (tester.validate(mg)) {
 					micro_gestures.remove(mg);
-					Iterator<Edge> itr = outgoingEdges.iterator();
-					while ((result == null) && itr.hasNext()) {
-						node = itr.next().getDestination();
-						result = node.consume(micro_gestures);
-					}
-					if (result == null) {
-						result = new Character(null, character, 1);
+					result.add(new Character(null, character, probability));
+					for (Edge edge : outgoingEdges) {
+						result.addAll(edge.getDestination().consume(micro_gestures, (edge.getProbability() * probability)));
 					}
 				}
 			} else {
-				Iterator<Edge> itr = outgoingEdges.iterator();
-				while ((result == null) && itr.hasNext()) {
-					node = itr.next().getDestination();
-					result = node.consume(micro_gestures);
+				for (Edge edge : outgoingEdges) {
+					result.addAll(edge.getDestination().consume(micro_gestures, (edge.getProbability() * probability)));
 				}
 			}
 		}
+		Collections.sort(result);
 		return result;
 	}
 
