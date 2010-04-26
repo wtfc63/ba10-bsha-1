@@ -13,25 +13,12 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		
 		float tolerance = 230;
 		
-		// Remove points that are too close together
-		TouchPoint[] temp = new TouchPoint[points.size()];
-		temp = points.toArray(temp);
-		ArrayList<TouchPoint> tempResult = new ArrayList<TouchPoint>();
-		TouchPoint prev = temp[0];
-		tempResult.add(temp[0]);
-		for(int i = 1; i < temp.length; i++) {
-			double dist = Math.sqrt(Math.pow(prev.x - temp[i].x, 2) + Math.pow(prev.y - temp[i].y, 2));	
-			if(dist > 15) {
-				tempResult.add(temp[i]);
-				prev = temp[i];
-			}
-		}
 		ArrayList<MicroGesture> result = new ArrayList<MicroGesture>();
 		MicroGesture curr_mg = new MicroGesture();
 
-		if ((points != null) && (tempResult.size() > 3)) {
-			TouchPoint[] pts = new TouchPoint[tempResult.size()];
-			pts = tempResult.toArray(pts);
+		if ((points != null) && (points.size() > 3)) {
+			TouchPoint[] pts = new TouchPoint[points.size()];
+			pts = points.toArray(pts);
 			curr_mg.addPoint(pts[0]);
 			float lastCurve = 0;
 			for (int i = 1; i < pts.length-1; i++) {
@@ -74,7 +61,7 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 			result.add(curr_mg);
 		}
 		
-		ArrayList<MicroGesture> result2 = new ArrayList<MicroGesture>();
+		/*ArrayList<MicroGesture> result2 = new ArrayList<MicroGesture>();
 		result2.add(result.get(0));
 		for (int i = 1; i < result.size(); i++) {
 			MicroGesture previous = result.get(i-1);
@@ -96,9 +83,10 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 					previous.addPoint(p);
 				}
 			}
-		}
+		}*/
 		
-		return result2;
+		Log.v("Curvature", "Number of Microgestures: " + result.size());
+		return result;
 	}
 
 	public boolean validateMicroGesture(MicroGesture microGesture) {
@@ -133,8 +121,13 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		// Normalize distance by taking length of the curve into account
 		max = max / Math.sqrt(Math.pow(b.y - a.y, 2) + Math.pow(b.x - a.x, 2));
 		
-		if (max < 0.1) {
-			mg.setType(MicroGesture.TYPE_SHORT_LINE);
+		if (max < 0.15) {
+			if (Math.sqrt(Math.pow(b.y - a.y, 2) + Math.pow(b.x - a.x, 2)) > 110) {
+				mg.setType(MicroGesture.TYPE_LONG_LINE);
+			}
+			else {
+				mg.setType(MicroGesture.TYPE_SHORT_LINE);
+			}
 		}
 		else if (max < 0.5) {
 			mg.setType(MicroGesture.TYPE_WIDE_CURVE);

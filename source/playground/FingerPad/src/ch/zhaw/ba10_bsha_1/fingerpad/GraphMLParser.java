@@ -66,9 +66,6 @@ public class GraphMLParser implements ContentHandler{
 	@Override
 	public void endDocument() throws SAXException {
 		Set<Entry<String, Node>> e = nodes.entrySet();
-		for (Entry<String, Node> n : e) {
-			Log.v(TAG, "Node: "+ n.getValue().getCharacter() + ", " + n.getValue().getLabel());
-		}
 		
 		for (Pair p : tempEdges) {
 			Node a = nodes.get(p.first);
@@ -140,7 +137,7 @@ public class GraphMLParser implements ContentHandler{
 	@Override
 	public void skippedEntity(String name) throws SAXException {
 		// TODO Auto-generated method stub
-		Log.e(TAG, "Skipped: " + name);
+		//Log.e(TAG, "Skipped: " + name);
 	}
 
 	@Override
