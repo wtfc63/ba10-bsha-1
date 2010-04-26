@@ -3,6 +3,7 @@ package ch.zhaw.ba10_bsha_1.fingerpad;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -137,6 +138,21 @@ public class MicroGesture implements Cloneable {
 	
 	public ArrayList<TouchPoint> getPoints() {
 		return points;
+	}
+	
+	public String getPointList() {
+		StringBuffer list = new StringBuffer();
+		Iterator<TouchPoint> itr = points.iterator();
+		while (itr.hasNext()) {
+			TouchPoint point = itr.next();
+			list.append(point.x);
+			list.append('/');
+			list.append(point.y);
+			if (itr.hasNext()) {
+				list.append(',');
+			}
+		}
+		return list.toString();
 	}
 	
 	public void addPoint(float x, float y) {
