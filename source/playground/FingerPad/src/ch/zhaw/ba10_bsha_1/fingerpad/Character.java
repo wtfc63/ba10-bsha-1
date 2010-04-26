@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 
-public class Character {
+public class Character implements Comparable<Character> {
 
 	
 	private ArrayList<MicroGesture> microGestures;
@@ -65,5 +65,16 @@ public class Character {
 		result.append(detectionProbability);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public int compareTo(Character another) {
+		int result = 0;
+		if (detectionProbability > another.detectionProbability) {
+			result = -1;
+		} else if (detectionProbability < another.detectionProbability) {
+			result = 1;
+		}
+		return result;
 	}
 }
