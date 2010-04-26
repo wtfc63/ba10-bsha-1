@@ -21,7 +21,7 @@ public class CharacterDetectionStrategyGraph implements	ICharacterDetectionStrat
 	
 	public CharacterDetectionStrategyGraph() {
 		storePath = "/sdcard/test.xml";
-		IGraphFactory factory = new GraphFactoryGraphMLImport(storePath);//new GraphFactoryGraphMLImport(path);
+		IGraphFactory factory = new GraphFactoryGraphMLImport(storePath);
 		root = factory.createRoot();
 	}
 	

@@ -53,7 +53,11 @@ public class DetectionLogger {
 			StringBuffer mgs = new StringBuffer();
 			Iterator<MicroGesture> itr = character.getMicroGestures().iterator();
 			while (itr.hasNext()) {
-				mgs.append(itr.next());
+				MicroGesture mg = itr.next();
+				mgs.append(mg);
+				mgs.append('[');
+				mgs.append(mg.getPointList());
+				mgs.append(']');
 				if (itr.hasNext()) {
 					mgs.append(',');
 				}
