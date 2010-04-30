@@ -1,12 +1,14 @@
 \chapter{Backend}
 
+Bevor wir zur Besprechung der Umsetzung des eigentlichen Backends übergehen, wollen wir zuerst einige grundsätzliche Überlegungen zur Art des Prozesses, den wir für unser Backend einsetzen wollen, festhalten.
+
 \section{Art des Prozesses}
 
 \subsection{Prozesse unter Android}
 
 Da in der Entwicklung für das Android-Betriebssystem ein etwas erweitertes Vokabular für die Beschreibung des Applikations-Lebenszyklus verwendet wird, wollen wir zuerst kurz auf einige dieser Begriffe im Android-Kontext eingehen.
 
-Applikationen laufen unter Android grundsätzlich in einem eigenen Thread den das Betriebssystem als separaten Linux-Prozess startet und werden auch vom Betriebssystem wieder beendet. Sollen Komponenten in einem eigenen Prozess laufen, können weitere Threads gestartet werden\cite{adg_lifecycle}. Diese können über die standard Thread-Objekte von Java erzeugt werden, werden aber mit dem Applikations-Prozess terminiert, sollte Android entscheiden dass dieser nicht mehr benötigt wird. Um dies, wenn Ressourcen benötigt werden sollten, möglich effizient durchzuführen, werden Prozesse vom Betriebssystem einfach abgewürgt (ein kill-Signal wird gesendet) und keinerlei Aufräumfunktionen werden ausgeführt. Applikationen sind daher selbst dafür verantwortlich, ihren Status zu sichern, wenn sie in den Hintergrund geschickt werden\cite{adb_multitasking}.
+Applikationen laufen unter Android grundsätzlich in einem eigenen Thread den das Betriebssystem als separaten Linux-Prozess startet und werden auch vom Betriebssystem wieder beendet. Sollen Komponenten in einem eigenen Prozess laufen, können weitere Threads gestartet werden\cite{adglc}. Diese können über die standard Thread-Objekte von Java erzeugt werden, werden aber mit dem Applikations-Prozess terminiert, sollte Android entscheiden dass dieser nicht mehr benötigt wird. Um dies, wenn Ressourcen benötigt werden sollten, möglich effizient durchzuführen, werden Prozesse vom Betriebssystem einfach abgewürgt (ein kill-Signal wird gesendet) und keinerlei Aufräumfunktionen werden ausgeführt. Applikationen sind daher selbst dafür verantwortlich, ihren Status zu sichern, wenn sie in den Hintergrund geschickt werden\cite{adbmt}.
 
 Unser Erkennungs-Backend sollte nun aber auch unabhängig vom Frontend weiterlaufen. Grundsätzlich wäre das beenden des Backend-Threads beim Schliessen des Frontends kein grösseres Problem, da wir davon ausgehen können, dass eventuell erst nach Beendung des Frontend-Threads eintreffende Resultate für den Benutzer nicht mehr relevant sind und verworfen werden können bzw. nicht mehr fertig gerechnet werden müssen. Allerdings wäre es zu bevorzugen, wenn bei einem erneuten Aufruf des Frontends der Backend-Thread schon im Speicher vorhanden ist und nicht noch neu initialisert werden muss. Die Initialisierung des Backends kann je nach verwendeter Erkennungs-Methodik recht aufwendig sein. So muss etwa bei der Graphen-Methode zuerst die XML-Datei, in welcher der Graph gespeichert ist, eingelesen und der Graph aufgebaut werden. Der Benutzer erwartet möglichst schnell mit der Eingabe beginnen zu können und eine Initialisierung bei jeder Versuch dazu sollte ihm daher nicht zugemuted werden.
 
@@ -14,10 +16,29 @@ Neben den normalen Threads aus Java kennt Android noch spezialisierte Prozesse, 
 
 \subsubsection{Broadcast-Receiver}
 
-Broadcast-Receiver werden hauptsächlich dazu verwendet, im Hintergrund auf Ereignisse zu reagieren. Die Handhabung diese Ereignisses durch den Receiver muss innerhalb einer gegebenen Zeit erfolgen\footnote{Im Moment beträgt die zur Verfügung stehende Zeit 10 Sekunden, danach kann der Prozess jederzeit abgewürgt werden\cite{adb_multitasking}}, wodurch diese nur im Speicher gehalten werden müssen, wenn ein solches Ereigniss eintrifft. Broadcast-Receiver sind daher also gut geeignet um kurze Arbeiten als Reaktion auf eine externen Stimulus durchzuführen und werden etwa benutzt um auf Alarme oder Positions-Änderungen zu reagieren. Da sie aber nach Beendigung ihrer Aufgabe voraussichtlich wieder terminiert werden, würden sie für unseren Backend-Prozess keinen Vorteil darstellen, da sich die Frage der Reinitialisierung ebenfalls wieder stellen würde.
+Broadcast-Receiver werden hauptsächlich dazu verwendet, im Hintergrund auf Ereignisse zu reagieren. Die Handhabung diese Ereignisses durch den Receiver muss innerhalb einer gegebenen Zeit erfolgen\footnote{Im Moment beträgt die zur Verfügung stehende Zeit 10 Sekunden, danach kann der Prozess jederzeit abgewürgt werden\cite{adbmt}}, wodurch diese nur im Speicher gehalten werden müssen, wenn ein solches Ereigniss eintrifft. Broadcast-Receiver sind daher also gut geeignet um kurze Arbeiten als Reaktion auf eine externen Stimulus durchzuführen und werden etwa benutzt um auf Alarme oder Positions-Änderungen zu reagieren. Da sie aber nach Beendigung ihrer Aufgabe voraussichtlich wieder terminiert werden, würden sie für unseren Backend-Prozess keinen Vorteil darstellen, da sich die Frage der Reinitialisierung ebenfalls wieder stellen würde.
 
 \subsubsection{Services}
 
-Services FTW!!!11!!
+Services sind unter Android sehr vielseitig und durch sie können Applikationen langlaufende Operationen im Hintergrund ausführen. Grundsätzlich ist ihre Laufzeit nicht beschränkt und ihr Verhalten in dieser Zeit wird weitestgehend von der Applikation bestimmt. So können sie etwa vom restlichen Programm unabhängige Operationen ausführen, auf gemeinsame Singelton-Objekte zugreifen oder gar in einen eigenen Prozess ausgelagert werden.
 
+Services können allerdings vom Betriebssystem jederzeit abgeschossen werden, wenn es Ressourcen benötigen sollte. Allerdings wird sich Android merken, wenn es Services, die weiter laufen wollen, terminiert. Wenn wieder genug Arbeitsspeicher verfügbar ist, werden die beendeten Services wieder neu gestartet. Auch ist es möglich, dass Services beantragen, als Vordergrund-Prozesse behandelt zu werden und so recht gut vor dem Terminieren geschützt sind. Dies muss dem Benutzer allerdings angezeigt werden, damit sich dieser des laufenden Prozesses bewusst ist.
+
+Für unser Backend sollte ein Service also die am besten geeignete Prozess-Form sein, da wir den Backend-Service im Hintergrund weiter laufen lassen können, nachdem eine Eingabe getätig wurde. Eine Terminierung bei zu wenig vorhandenem Speicher können wir akzeptieren, da der Service danach wieder neu gestartet werden sollte und die Initialisierung vom Benutzer unbemerkt im Hintergrund stattfinden kann. Wir benötigen daher auch nicht die Privilegien eines Vordergrund-Prozesses.
+%================================================
+
+\section{Analyse}
+
+(Verhalten: Initialisierung, Phasen während der Erkennung, Verwendete Pattern usw)
+%================================================
+
+\section{Design}
+
+(Klassendiagramm, Sequenzdiagramm)
+%================================================
+
+\section{Implementation}
+
+(...)
+%================================================
 
