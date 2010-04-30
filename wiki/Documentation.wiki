@@ -1,5 +1,5 @@
 #summary Information on the projects documentation
-#labels Phase-Support
+#labels Phase-Support,Featured
 
 = Introduction =
 
@@ -8,11 +8,11 @@ The documentation of this project ist written in LaTEX.
 
 = Environment installation =
 
-For Ubuntu, the following packages are need in addition to TexLive:
+For Ubuntu, the following packages are need in addition to _Texlive_
  * glossaries
  * xfor
 
-TexLive and the additional packages can be install with the following commands:
+_Texlive_ and the additional packages can be install with the following commands:
 {{{
 sudo apt-get install texlive-latex-extra
 cd /usr/local/share/texmf/
