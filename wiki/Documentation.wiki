@@ -1,0 +1,24 @@
+#summary Information on the projects documentation
+#labels Phase-Support
+
+= Introduction =
+
+The documentation of this project ist written in LaTEX.
+
+
+= Environment installation =
+
+For Ubuntu, the following packages are need in addition to TexLive:
+ * glossaries
+ * xfor
+
+TexLive and the additional packages can be install with the following commands:
+{{{
+sudo apt-get install texlive-latex-extra
+cd /usr/local/share/texmf/
+sudo wget http://www.ctan.org/get/install/macros/latex/contrib/glossaries.tds.zip
+sudo wget http://www.ctan.org/get/install/macros/latex/contrib/xfor.tds.zip
+sudo unzip glossaries.tds.zip
+sudo unzip xfor.tds.zip
+sudo texhash
+}}}
