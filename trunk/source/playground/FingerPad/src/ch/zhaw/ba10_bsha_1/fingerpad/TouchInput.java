@@ -202,7 +202,9 @@ public class TouchInput {
 		///// Edge detection /////
 		Vector<Vector<TouchPoint>> lines = new Vector<Vector<TouchPoint>>();
 		
-		double tolerance = 0.1d;
+		points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));
+		
+		double tolerance = 0.2d;
 		TouchPoint[] pts = new TouchPoint[points.size()];
 		pts = points.toArray(pts);
 		double lastCurve = 0;
@@ -219,20 +221,19 @@ public class TouchInput {
 			
 			//Winkel
 			double cos = (x1 * x2 + y1 * y2) / (Math.sqrt(x1*x1 + y1*y1) * Math.sqrt(x2*x2 + y2*y2));
-			
-			//Log.v("NURBSSCHMURBS", "Winkel: " + cos);
+
 			if(lastCurve == 0) {
 				lastCurve = cos;
 			}
-			else if(cos > -0.55 && Math.abs(cos - lastCurve) > tolerance) {
-				temp2.add(pts[i+1]);
+			else if(cos > -0.1 && Math.abs(cos - lastCurve) > tolerance) {
+				temp2.add(pts[i]);
 
 				lines.add(temp2);
 				
 				if (i != pts.length-1) {
 					temp2 = new Vector<TouchPoint>();
+					temp2.add(pts[i]);
 				}
-				//Log.v(TAG, "New Gesture: old:" + lastCurve + ", new:" + zn);
 				lastCurve = 0;
 			}
 			else {
@@ -249,8 +250,8 @@ public class TouchInput {
 		microGestures = new ArrayList<MicroGesture>();
 		for(Vector<TouchPoint> v : lines) {
 			///// SMOOTHING //////
-			points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(v));
-			//points = new ArrayList<TouchPoint>(v);
+			//points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(v));
+			points = new ArrayList<TouchPoint>(v);
 			tempPoints.addAll(points);
 			///// ENDE SMOOTHING /////
 			
@@ -263,27 +264,55 @@ public class TouchInput {
 		
 		
 		///// COMBINE IDENTICAL MICRO GESTURES ////
+		
 		/*ArrayList<MicroGesture> result = new ArrayList<MicroGesture>(microGestures);
 		microGestures = new ArrayList<MicroGesture>();
-		microGestures.add(result.get(0));
-		for (int i = 1; i < result.size(); i++) {
-			MicroGesture previous = result.get(i-1);
-			MicroGesture current = result.get(i);
-			if (current.getPoints().size() > 3) {
-				if (current.toString().equals(previous.toString())) {
+		
+		if (result.size() > 0) {
+			microGestures.add(result.get(0));
+			MicroGesture previous = result.get(0);
+			for (int i = 1; i < result.size(); i++) {
+				MicroGesture current = result.get(i);
+				if (current.getPoints().size() > 4) {
+					if (current.getType() == previous.getType() && current.getDirection2() == previous.getDirection2()) {
+						ArrayList<TouchPoint> list = current.getPoints();
+						for (TouchPoint p : list) {
+							previous.addPoint(p);
+						}
+						new MicroGestureDetectionStrategyAwesome2().analyseMicroGestureDirection(previous);
+					}
+					else if ((current.getType() == MicroGesture.TYPE_LONG_LINE || 
+								current.getType() == MicroGesture.TYPE_SHORT_LINE) 
+							&& (previous.getType() == MicroGesture.TYPE_LONG_LINE ||
+									previous.getType() == MicroGesture.TYPE_SHORT_LINE)) {
+						ArrayList<TouchPoint> list = current.getPoints();
+						for (TouchPoint p : list) {
+							previous.addPoint(p);
+						}
+						new MicroGestureDetectionStrategyAwesome2().setMicroGesture(previous);
+						new MicroGestureDetectionStrategyAwesome2().analyseMicroGestureDirection(previous);
+					
+					}
+					else if ((current.getType() == MicroGesture.TYPE_HALFCIRCLE && previous.getType() == MicroGesture.TYPE_SHORT_LINE &&
+								current.getDirection2() == 3 && previous.getDirection2() == 0) ) {
+						ArrayList<TouchPoint> list = current.getPoints();
+						for (TouchPoint p : list) {
+							previous.addPoint(p);
+						}
+						previous.setType(MicroGesture.TYPE_HALFCIRCLE);
+						new MicroGestureDetectionStrategyAwesome2().analyseMicroGestureDirection(previous);
+
+					}
+					else {
+						microGestures.add(current);
+						previous = current;
+					}
+				}
+				else {
 					ArrayList<TouchPoint> list = current.getPoints();
 					for (TouchPoint p : list) {
 						previous.addPoint(p);
 					}
-				}
-				else {
-					microGestures.add(current);
-				}
-			}
-			else {
-				ArrayList<TouchPoint> list = current.getPoints();
-				for (TouchPoint p : list) {
-					previous.addPoint(p);
 				}
 			}
 		}*/

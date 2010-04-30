@@ -19,9 +19,12 @@ public class MicroGesture implements Cloneable {
 	public final static int TYPE_NARROW_CURVE = 1;
 	public final static int TYPE_LONG_LINE = 2;
 	public final static int TYPE_SHORT_LINE = 3;
+	public final static int TYPE_CIRCLE = 4;
+	public final static int TYPE_HALFCIRCLE = 5;
 	
 	private int type;
 	private float direction;
+	private int direction2;
 	private boolean switchedDirection;
 	private ArrayList<TouchPoint> points;
 	
@@ -103,27 +106,38 @@ public class MicroGesture implements Cloneable {
 	}
 	
 	public boolean directionIsUp() {
-		return (Math.abs(direction) <= Math.PI) 
-				? (direction > 0) : false;
+		return direction2 == 2 || direction2 == -1;
+		//return (Math.abs(direction) <= Math.PI) 
+		//		? (direction > 0) : false;
 	}
 	
 	public boolean directionIsDown() {
-		return (Math.abs(direction) <= Math.PI) 
-				? (direction < 0) : false;
+		return direction2 == 3 || direction2 == -1;
+		//return (Math.abs(direction) <= Math.PI) 
+		//		? (direction < 0) : false;
 	}
 	
 	public boolean directionIsRight() {
-		return (Math.abs(direction) <= Math.PI) 
-				? (Math.abs(direction) > (Math.PI / 2)) : false;
+		return direction2 == 1 || direction2 == -1;
+		//return (Math.abs(direction) <= Math.PI) 
+		//		? (Math.abs(direction) > (Math.PI / 2)) : false;
 	}
 	
 	public boolean directionIsLeft() {
-		return (Math.abs(direction) <= Math.PI) 
-				? (Math.abs(direction) < (Math.PI / 2)) : false;
+		return direction2 == 0 || direction2 == -1;
+		//return (Math.abs(direction) <= Math.PI) 
+		//		? (Math.abs(direction) < (Math.PI / 2)) : false;
 	}
 	
 	public void setDirection(float direction) {
 		this.direction = direction;
+	}
+	public void setDirection2(int direction) {
+		this.direction2 = direction;
+	}
+	
+	public int getDirection2() {
+		return this.direction2;
 	}
 	
 	
@@ -229,22 +243,16 @@ public class MicroGesture implements Cloneable {
 			case TYPE_SHORT_LINE :
 				result.append("s:");
 				break;
+			case TYPE_CIRCLE :
+				result.append("c:");
+				break;
+			case TYPE_HALFCIRCLE :
+				result.append("h:");
+				break;
 			default :
 				result.append("u:");
 		}
-		if (directionIsUp()) {
-			result.append('u');
-		} else if (directionIsDown()) {
-			result.append('d');
-		}
-		if (directionIsRight()) {
-			result.append('r');
-		} else if (directionIsLeft()) {
-			result.append('l');
-		}
-		if (switchedDirection) {
-			result.append('^');
-		}
+		result.append(Float.toString(direction2));
 		return result.toString();
 	}
 	
@@ -258,6 +266,10 @@ public class MicroGesture implements Cloneable {
 			type = TYPE_LONG_LINE;
 		} else if (str.contains("s")) {
 			type = TYPE_SHORT_LINE;
+		} else if (str.contains("c")) {
+			type = TYPE_CIRCLE;
+		} else if (str.contains("h")) {
+			type = TYPE_HALFCIRCLE;
 		}
 		return type;
 	}

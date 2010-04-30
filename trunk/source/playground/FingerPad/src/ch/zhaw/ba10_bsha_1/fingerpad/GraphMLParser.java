@@ -57,7 +57,7 @@ public class GraphMLParser implements ContentHandler{
 		}
 		catch(Throwable t){
 			t.printStackTrace();
-		}
+		}	
 		
 		return nodes.get("0");
 	}
