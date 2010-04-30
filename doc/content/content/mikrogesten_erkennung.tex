@@ -8,7 +8,7 @@ Neben einer Erkennung durch die Krümmungs- und die Winkel-Änderung zwischen Pu
 
 Als Resultat der Evaluation der beiden genannten Verfahren haben wir uns dazu entschieden, den Ansatz der Erkennung durch die Krümmungs-Änderung weiter zu verfolgen. Während der Evaluation stellte sich heraus dass das auf Voraussagen basierende Verfahren nicht tolerant genug auf kleine Änderungen innerhalb von Mirkogesten reagiert und daher dazu tendiert, diese aufzuteilen. Das Krümmungs-Verfahren wurde von uns als toleranter und daher besser für den mobilen Einsatz geeignet befunden.
 
-\subsection{Bewertungs-Kriterien}
+\section{Bewertungs-Kriterien}
 
 Kriterium:	Erkennungszuverlässigkeit
 Beschreibung:	Um eine verlässliche Erkennung der Mikrogesten zu ermöglichen, muss ein Ansatz natürlich gewährleisten, dass er die Auftrennung der Mirkogesten zuverlässig vornimmt.
@@ -23,28 +23,28 @@ Beschreibung:	Auf einem mobilen System ist der schonende Umgang mit den Systemre
 Wichtigkeit:	Sekundär
 %================================================
 
-\subsection{Ansatz: Krümmungs-Änderung}
+\section{Ansatz: Krümmungs-Änderung}
 
 %TODO
 
-\subsubsection{Verfahren}
+\subsection{Verfahren}
 
 %TODO - Flussdiagramm Krümmungs-Verfahren
 
-\subsubsection{Bewertung}
+\subsection{Bewertung}
 
 %TODO
 %================================================
 
-\subsection{Ansatz: Punkte-Voraussage}
+\section{Ansatz: Punkte-Voraussage}
 
 Grundlage des auf Voraussage des jeweils nächsten Punktes basierenden Ansatzes sollte die Annahme sein, dass man den als nächstes auf einen Punkt einer gleichmässig gekrümmten Kurve folgenden Punkt durch das Spiegeln des jeweils dem Ausgangspunkt vorangehenden Punktes an der Achse des Ausgangspunktes vorherbestimmen können müsste. Weicht der tatsächlich eingegebene Folgepunkt zu sehr vom vorausgesagten Folgepunkt ab, sollte nun angenommen werden, dass dieser Punkt nicht mehr zur aktuellen Mikrogeste gehören und als Ausgangspunkt einer neuen Mikrogeste genommen werden soll.
 
-\subsubsection{Verfahren}
+\subsection{Verfahren}
 
 %TODO - Flussdiagramm Prediction-Verfahren
 
-\subsubsection{Bewertung}
+\subsection{Bewertung}
 
 Die grundsätzliche Trennung der einzelnen Mikrogesten druch das auf Voraussagen basierende Verfahren wurde von uns als durchaus zufriedenstellend bewertet. Das Verfahren ermöglicht die Auftrennung der Eingabepunkte in verschiedene Mikrogesten. Allerdings erkennt das Verfahren unserer Meinung nach leider zu viele einzelne Mikrogesten und ist zu wenig tolerant gegenüber kleineren Abweichungen. Schon kleinere Änderungen in der Linienführung führen dabei zu einer Auftrennung von ansonsten durchaus zusammenhängenden Gesten.
 
@@ -55,25 +55,25 @@ Weiter haben wir mit diesem Verfahren Probleme mit zu nahe beieinander liegenden
 Diesen beiden Probleme, welche beide das als substantiell gewertete Bewertungskriterium der Toleranz beinträchtigen, steht steht nur eine gute Performanz durch die relativ simplen Berechnungen, die das Voraussage-Verfahren benötigt, gegenüber. Da das Toleranz-Kriterium von uns aber als signifikant wichtiger eingestuft wurde und vom Krümmungs-Verfahren weit besser erfüllt wird, mussten wir uns am Ende für das auf Krümmungs-Änderungen basierende Verfahren festlegen.
 %================================================
 
-\subsection{Erkennung der Mikrogesten-Art}
+\section{Erkennung der Mikrogesten-Art}
 
 %TODO
 %================================================
 
-\subsection{Erkennung der Ausrichtung einer Mikrogeste}
+\section{Erkennung der Ausrichtung einer Mikrogeste}
 
 %TODO
 %================================================
 
-\subsection{Allgemeine Optimierungen}
+\section{Allgemeine Optimierungen}
 
 %TODO
 
-\subsubsection{Zusammenfügen von minimalen Mikrogesten}
+\subsection{Zusammenfügen von minimalen Mikrogesten}
 
 %TODO
 
-\subsubsection{Glättung der Eingangspunkte}\label{sec:Glaettung}
+\subsection{Glättung der Eingangspunkte}\label{sec:Glaettung}
 
 %TODO - Verschiedene Verfahren, Optimierungen
 %================================================
