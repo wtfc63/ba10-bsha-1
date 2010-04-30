@@ -46,6 +46,11 @@ public class CharacterDetectionStrategyGraph implements	ICharacterDetectionStrat
 			chars.add(character);
 		}*/
 		chars.addAll(root.consume(tmp, 1));
+		for (Character c : chars) {
+			if (c.toString().equals("none")) {
+				chars.remove(c);
+			}
+		}
 		return chars;
 	}
 
