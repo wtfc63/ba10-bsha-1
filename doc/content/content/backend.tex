@@ -29,7 +29,34 @@ Für unser Backend sollte ein Service also die am besten geeignete Prozess-Form 
 
 \section{Analyse}
 
-(Verhalten: Initialisierung, Phasen während der Erkennung, Verwendete Pattern usw)
+\subsection{Initialisierung}
+
+\subsection{Ablauf der Erkennungs}
+
+Um den Ablauf der Erkennung möglichst flexibel zu machen, wurde dieser in mehrere Phasen aufgeteilt. Einige dieser Phasen sollen wiederum in mehrere Einzelschritte aufgeteilt werden.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[scale=0.75, bb=10 0 744 460]{img/erkennungs_ablauf.pdf} 
+   \caption{Erkennungs-Ablauf}
+   \label{fig:erkennungs_ablauf}
+\end{figure}
+
+Zuerst soll eine Vorverarbeitung der Eingabe-Punkte durchgeführt werden, in der etwa eine Normierung, eine Glättung, eine Filterung oder ähnliches dieser durchgeführt werden kann. Diese Verarbeitungs-Schritte sollen sich nicht gegenseitig ausschliessen, sollen aber auch optional sein, da einige der dazu möglichen Algorithmen sehr rechenaufwendig sind.
+
+Die zweite Phase soll die Erkennung der Mikrogesten sein. Auf diese soll in mehrere Erkennungs-Schritte aufgeteilt sein, die gegebenenfalls auch deaktiviert werden können.
+
+Als nächstes soll die Zeichen-Erkennung durchgeführt werden. Diese soll allerdings in sich geschlossen funktionieren und nicht zwingend weiter in Teil-Schritte aufgeteilt werden. Das Erkennungs-Verfahren als ganzes soll allerdings austauschbar sein.
+
+Die vierte und letzte Phase soll die Nachverarbeitung der erkannten Zeichen sein. Dies kann etwa bedeuten, das gewisse Zeichen wieder verworfen werden oder das die Gewichtung der Erkennungs-Wahrscheinlichkeit der Zeichen angepasst wird.
+
+\subsubsection{Vorverarbeitung}
+
+\subsubsection{Mikrogesten-Erkennung}
+
+\subsubsection{Zeichen-Erkennung}
+
+\subsubsection{Nachverarbeitung}
 %================================================
 
 \section{Design}
