@@ -4,7 +4,7 @@ document.pdf: document.toc document.bbl
 document.toc: $(wildcard *.tex) $(wildcard content/*.tex)
 	latex document
 
-document.bbl: etc/references.bib etc/bibliography.tex
+document.bbl: etc/bibliography.bib
 	latex document
 	bibtex document
 	latex document
