@@ -19,6 +19,7 @@
 \usepackage{listings}
 \usepackage{helvet}
 \usepackage[bf]{caption}
+\usepackage{color}
 
 %
 % Custom Commands
@@ -38,17 +39,27 @@
 % Document
 %
 \begin{document}
+
+	% Titelseite
 	\input{titlepage}
+	
 
 	% Abstract / Management Summary (ev. Abstract on Title-Page)
 	%\input{abstract}
 	\begin{abstract}
 	Dies ist das Abstract
 	\end{abstract}
+	
 
 	% BA Erklärung
-	\includepdf[pagecommand={\thispagestyle{plain}},scale=0.8]{inc/Erklaerung_BA.pdf}
+	\includepdf[pagecommand={\thispagestyle{plain}},scale=1.0]{inc/Erklaerung_BA.pdf}
 		
+
+	% Römische Seitenzahlen
+	\newpage
+	\renewcommand{\thepage}{\Roman{page}}
+	\setcounter{page}{1}
+	
 	% Content
 	\tableofcontents
 
@@ -58,43 +69,54 @@
 	% Tabellen
 	\listoftables
 	% Listings
-	\definecolor{listing}{HTML}{99CCCC}
+	\definecolor{listingbg}{HTML}{99CCCC}
 	\lstset{language=Java}
-	\lstset{backgroundcolor=\color{listing}, frame=single,framerule=0pt,firstnumber=auto, numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=8pt, captionpos=b}
+	\lstset{backgroundcolor=\color{listingbg}, frame=single,framerule=0pt,firstnumber=auto, numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=8pt, captionpos=b}
 	\lstlistoflistings
-
+	
 	% Begin Inhalt
+	% Seitenzahl auf Arabisch wechseln
+	\newpage
+	\renewcommand{\thepage}{\arabic{page}}
+	\setcounter{page}{1}
+	
+
 	\part{Einleitung}
 		\chapter{Aufgabenstellung}
-			\section{Ausgangslage}
-				\input{examples.tex}
-				
-			\section{Ziele}
-			
-		% Erreichte Ziele
 		
-		\chapter{Problem Lösung}
+		\chapter{Vorgehensweise}
 		
 		\chapter{Aufbau Report}
 
 	\part{Theoretischer Hintergrund}
+		\chapter{Mikro Gesten}
+		\section{Definition}
+		\section{Typen}
+		\section{Abbildung von Zeichen}
+
+		\chapter{Graph}
+		\section{Funktionsweise}
+		\section{Erkennung von Zeichen}
 
 	\part{Lösung}
 		% Verschiedene Ansätze beschreiben
-		\chapter{Anforderungen}
-		\chapter{Design Spezifikation}
-		\chapter{Implementation}
-		\chapter{Tests}
+		%\chapter{Prototyp}
+		\input{content/mikrogesten_erkennung}
+		\section{Vergleich der Ansätze}
+		\section{Probleme \& Lösungsvorschläge}
+		
+		\chapter{Zeichen-Erkennung}
+		%\input{content/character_erkennung}
+		\section{Vergleich der Ansätze}
+		\section{Probleme \& Lösungsvorschläge}
+		
+		%\chapter{Implementation}
+		\input{content/backend}
 
 	\part{Diskussion}
 		\chapter{Ausblick und Erweiterungen}
 		\chapter{Schlussfolgerung}
 
-	\part{Prototyp}
-	\include{content/mikrogesten_erkennung}
-
-	\part{Implementation}
-	\include{content/backend}
 
 	% Ende Inhalt
 
@@ -107,8 +129,8 @@
 	%\bibliographystyle{geralpha}
 	\bibliography{etc/bibliography}{}
 	
-
 	% Appendices
+	\appendix
 	\chapter{Projektplanung}
 		% Vorgehen
 		\section{SCRUM}
