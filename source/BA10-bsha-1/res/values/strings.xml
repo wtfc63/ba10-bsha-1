@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">HandwritingRecognition</string>
+<string name="service_started">Service started</string>
+
+<string name="service_not_running">Service is not running</string>
+<string name="service_bound">Service bound to App</string>
+<string name="service_unbound">Service unbound from App</string><string name="service_already_running">Service is already running</string><string name="service_stopped">Service stopped</string>
+
+</resources>
