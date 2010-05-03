@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content" android:orientation="vertical">
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal"><Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/start" android:text="Start Service"></Button><Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/stop" android:text="Stop Service"></Button></LinearLayout>
+
+
+
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv_control" android:text="Service: Not running"></TextView><LinearLayout android:id="@+id/LinearLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal"><Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/bind" android:text="Bind Service"></Button><Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/unbind" android:text="Unbind Service"></Button></LinearLayout>
+
+
+
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv_binding" android:text="Service: No binding attempted"></TextView>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/send" android:text="Send Test Samples"></Button>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv_result" android:text="Nothing received yet"></TextView>
+</LinearLayout>
