@@ -5,16 +5,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-import ch.zhaw.ba10_bsha_1.TouchPoint;
-
-import dalvik.system.PathClassLoader;
-
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import ch.zhaw.ba10_bsha_1.TouchPoint;
 
 
 public class MicroGesture implements Cloneable, Parcelable {

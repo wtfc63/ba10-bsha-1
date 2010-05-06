@@ -108,8 +108,9 @@ public class ServiceTest extends Activity {
         public void onClick(View v) {
             if (!serviceIsRunning) {
             	startService(new Intent("ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"));
-            	Toast.makeText(ServiceTest.this, R.string.service_started, Toast.LENGTH_SHORT).show();
             	serviceIsRunning = true;
+            	Toast.makeText(ServiceTest.this, R.string.service_started, Toast.LENGTH_SHORT).show();
+            	txtViewControl.setText(R.string.service_started);
             } else {
             	Toast.makeText(ServiceTest.this, R.string.service_already_running, Toast.LENGTH_SHORT).show();
             }
@@ -119,8 +120,9 @@ public class ServiceTest extends Activity {
     private OnClickListener serviceStopListener = new OnClickListener() {
         public void onClick(View v) {
             stopService(new Intent("ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"));
-            Toast.makeText(ServiceTest.this, R.string.service_stopped, Toast.LENGTH_SHORT).show();
             serviceIsRunning = false;
+            Toast.makeText(ServiceTest.this, R.string.service_stopped, Toast.LENGTH_SHORT).show();
+        	txtViewControl.setText(R.string.service_stopped);
         }
     };
 

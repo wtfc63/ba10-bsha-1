@@ -11,7 +11,7 @@ import ch.zhaw.ba10_bsha_1.Character;
  */
 oneway interface IReturnRecognisedCharacters {
     /**
-     * Called when the service has a new value for you.
+     * Return recognised Characters
      */
     void recognisedCharacters(out List<Character> characters);
 }
