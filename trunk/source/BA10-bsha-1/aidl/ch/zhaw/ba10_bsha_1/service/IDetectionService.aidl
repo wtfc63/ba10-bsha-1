@@ -24,4 +24,14 @@ interface IDetectionService {
      * Add TouchPoints to detection queue
      */
     void addTouchPoints(in List<TouchPoint> points);
+    
+    /**
+     * Add a TouchPoint to detection queue
+     */
+    void addTouchPoint(float pos_x, float pos_y, float strength, long timestamp);
+    
+    /**
+     * End sample (Touch-up)
+     */
+    void endSample();
 }

@@ -21,12 +21,14 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.PointF;
 import android.os.RemoteException;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Process;
 import android.os.RemoteCallbackList;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -57,8 +59,12 @@ public class DetectionService extends Service {
      * that it can be accessed more efficiently from inner classes.
      */
     final RemoteCallbackList<IReturnRecognisedCharacters> mCallbacks = new RemoteCallbackList<IReturnRecognisedCharacters>();
+
+    static final int BUFFER_SIZE = 10;
     
     private ArrayList<TouchPoint> inputPoints;
+    private RingBuffer<TouchPoint> buffer;
+    
     private PriorityQueue<IPreprocessingStrategy> preprocessingSteps;
     private PriorityQueue<IMicroGestureDetectionStrategy> mgDetectionSteps;
     private ICharacterDetectionStrategy charDetectionStrategy;
@@ -99,6 +105,7 @@ public class DetectionService extends Service {
     
     private void initDetection() {
         inputPoints = new ArrayList<TouchPoint>();
+        buffer = new RingBuffer<TouchPoint>(BUFFER_SIZE);
     	
         preprocessingSteps = new PriorityQueue<IPreprocessingStrategy>();
     	preprocessingSteps.add(PreprocessingStrategyManager.getInstance().getStrategy("Spline"));
@@ -163,7 +170,28 @@ public class DetectionService extends Service {
 		
 		@Override
 		public void addTouchPoints(List<TouchPoint> points)	throws RemoteException {
-			inputPoints.addAll(points);
+			if (points != null) {
+				inputPoints.addAll(points);
+			} else {
+				Log.e("T3H_FAIL", "oh nose...");
+			}
+			startDetection();
+		}
+		
+		@Override
+		public void addTouchPoint(float pos_x, float pos_y, float strength, long timestamp) {
+			buffer.add(new TouchPoint(new PointF(pos_x, pos_y), strength, timestamp));
+			startDetection();
+		}
+		
+		@Override
+		public void endSample() {
+			while (!buffer.isEmpty()) {
+				TouchPoint point = buffer.get();
+				if (point != null) {
+					inputPoints.add(point);
+				}
+			}
 			startDetection();
 		}
     };

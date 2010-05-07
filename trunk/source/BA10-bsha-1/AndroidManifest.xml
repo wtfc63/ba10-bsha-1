@@ -4,17 +4,20 @@
       android:versionCode="1"
       android:versionName="1.0">
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
-
-
-    <activity android:label="ServiceTest" android:name=".ime.ServiceTest"><intent-filter><action android:name="android.intent.action.MAIN"></action>
-
-<category android:name="android.intent.category.LAUNCHER"></category>
-</intent-filter>
-</activity>
-<service android:label="DetectionService" android:name=".service.DetectionService" android:process=":remote"><intent-filter><action android:name="ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"></action>
-</intent-filter>
-</service>
-</application>
+	    <activity android:label="ServiceTest" android:name=".ime.ServiceTest">
+	    	<intent-filter>
+	    		<action android:name="android.intent.action.MAIN"></action>
+				<category android:name="android.intent.category.LAUNCHER"></category>
+			</intent-filter>
+		</activity>
+		<service android:label="DetectionService" android:name=".service.DetectionService" android:process=":remote">
+			<intent-filter>
+				<action android:name="ch.zhaw.ba10_bsha_1.service.IDetectionService"></action>
+				<action android:name="ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters"></action>
+				<action android:name="ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"></action>
+			</intent-filter>
+		</service>
+	</application>
     <uses-sdk android:minSdkVersion="4" />
 
 </manifest> 
