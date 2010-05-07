@@ -18,6 +18,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -49,7 +50,7 @@ public class ServiceTest extends Activity {
             // interact with the service.  We are communicating with our
             // service through an IDL interface, so get a client-side
             // representation of that from the raw service object.
-            detectionService = IDetectionService.Stub.asInterface(service);
+        	detectionService = IDetectionService.Stub.asInterface(service);
             txtViewBinding.setText("Attached.");
 
             // We want to monitor the service for as long as we are
@@ -133,7 +134,7 @@ public class ServiceTest extends Activity {
 	            // by interface names.  This allows other applications to be
 	            // installed that replace the remote service by implementing
 	            // the same interface.
-            	serviceIsBound =  bindService(new Intent("ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"), serviceConnection, Context.BIND_AUTO_CREATE);
+            	serviceIsBound =  bindService(new Intent(IDetectionService.class.getName()), serviceConnection, Context.BIND_AUTO_CREATE);
 	            txtViewBinding.setText("Binding.");
             } else {
             	Toast.makeText(ServiceTest.this, R.string.service_bound, Toast.LENGTH_SHORT).show();
@@ -175,7 +176,12 @@ public class ServiceTest extends Activity {
                     	ArrayList<TouchPoint> tmp = new ArrayList<TouchPoint>(1);
                     	tmp.add(new TouchPoint(10, 10));
                     	tmp.add(new TouchPoint(20, 20));
-                        detectionService.addTouchPoints(tmp);
+                        //detectionService.addTouchPoints(tmp);
+                    	TouchPoint p = tmp.get(0);
+                    	detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
+                    	p = tmp.get(1);
+                    	detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
+                    	detectionService.endSample();
                     } catch (RemoteException e) {
                         // There is nothing special we need to do if the service
                         // has crashed.
@@ -213,8 +219,10 @@ public class ServiceTest extends Activity {
         @Override public void handleMessage(Message msg) {
             switch (msg.what) {
                 case CHAR_RESULT_MSG:
-                	List<Character> chars = (List<Character>) msg.obj;
-                    txtViewResult.setText("Received from service: " + chars.get(0).toString());
+                	ArrayList<Character> chars = (ArrayList<Character>) msg.obj;
+                	if (chars.size() > 0) {
+                		txtViewResult.setText("Received from service: " + chars.get(0).toString());
+                	}
                     break;
                 default:
                     super.handleMessage(msg);
