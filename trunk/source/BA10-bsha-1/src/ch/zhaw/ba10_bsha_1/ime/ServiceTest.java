@@ -1,13 +1,6 @@
 package ch.zhaw.ba10_bsha_1.ime;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import ch.zhaw.ba10_bsha_1.Character;
-import ch.zhaw.ba10_bsha_1.R;
-import ch.zhaw.ba10_bsha_1.TouchPoint;
-import ch.zhaw.ba10_bsha_1.service.IDetectionService;
-import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -18,12 +11,23 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//Need the following import to get access to the app resources, since this
+//class is in a sub-package.
+import ch.zhaw.ba10_bsha_1.Character;
+import ch.zhaw.ba10_bsha_1.R;
+import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.service.IDetectionService;
+import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
+
 
 public class ServiceTest extends Activity {
 	
@@ -209,20 +213,31 @@ public class ServiceTest extends Activity {
          */
 		@Override
 		public void recognisedCharacters(List<ch.zhaw.ba10_bsha_1.Character> characters) throws RemoteException {
-			serviceHandler.sendMessage(serviceHandler.obtainMessage(CHAR_RESULT_MSG, characters));
+			serviceHandler.sendMessage(serviceHandler.obtainMessage(CHARS_RESULT_MSG, characters));
+		}
+
+		@Override
+		public void recognisedChar(char character, float probability) throws RemoteException {
+			serviceHandler.sendMessage(serviceHandler.obtainMessage(CHAR_RESULT_MSG, character, Math.round(probability * 1000000)));
 		}
     };
     
-    private static final int CHAR_RESULT_MSG = 1;
+    private static final int CHARS_RESULT_MSG = 1;
+    private static final int CHAR_RESULT_MSG  = 2;
     
     private Handler serviceHandler = new Handler() {
         @Override public void handleMessage(Message msg) {
             switch (msg.what) {
-                case CHAR_RESULT_MSG:
+                case CHARS_RESULT_MSG:
                 	ArrayList<Character> chars = (ArrayList<Character>) msg.obj;
                 	if (chars.size() > 0) {
                 		txtViewResult.setText("Received from service: " + chars.get(0).toString());
                 	}
+                    break;
+                case CHAR_RESULT_MSG:
+                	char recogn_char = (char) msg.arg1;
+                	float prob = (float) (msg.arg2 / 1000000.0);
+                	txtViewResult.setText(txtViewResult.getText().toString() + recogn_char + "(" + prob + ")");
                     break;
                 default:
                     super.handleMessage(msg);

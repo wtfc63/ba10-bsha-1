@@ -266,6 +266,10 @@ public class MicroGesture implements Cloneable, Parcelable {
 				result.append("u:");
 		}
 		result.append(Float.toString(direction2));
+		for (TouchPoint p : points) {
+			result.append(p.toString());
+		}
+		
 		return result.toString();
 	}
 	

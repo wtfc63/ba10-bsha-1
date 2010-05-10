@@ -13,5 +13,10 @@ oneway interface IReturnRecognisedCharacters {
     /**
      * Return recognised Characters
      */
-    void recognisedCharacters(out List<Character> characters);
+    void recognisedCharacters(in List<Character> characters);
+    
+    /**
+     * Return recognised Characters
+     */
+    void recognisedChar(char character, float probability);
 }
