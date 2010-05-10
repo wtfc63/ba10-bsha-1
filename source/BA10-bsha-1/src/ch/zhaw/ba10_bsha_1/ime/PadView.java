@@ -64,7 +64,7 @@ public class PadView extends View /*implements IObservable*/ {
 		
         paths  = new ArrayList<Path>();
         //points = new ArrayList<TouchPoint>();
-        bitmap = Bitmap.createBitmap(320, 480, Bitmap.Config.ARGB_8888);
+        bitmap = Bitmap.createBitmap(320, 240, Bitmap.Config.ARGB_8888);
         bmCanvas = new Canvas(bitmap);
         bmPaint  = new Paint(Paint.DITHER_FLAG);
         
@@ -86,7 +86,7 @@ public class PadView extends View /*implements IObservable*/ {
     
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawColor(0xFFAAAAAA);
+        canvas.drawColor(0xCCFAFAC8);
         canvas.drawBitmap(bitmap, 0, 0, bmPaint);
         paintBaseLines(canvas);
         for (Path path : paths) {

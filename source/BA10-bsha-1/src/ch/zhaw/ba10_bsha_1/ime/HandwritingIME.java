@@ -56,7 +56,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     private boolean mCompletionOn;
     //private int mLastDisplayWidth;
     //private boolean mCapsLock;
-    private long mLastShiftTime;
+    //private long mLastShiftTime;
     private long mMetaState;
     
     //private LatinKeyboard mSymbolsKeyboard;
@@ -84,9 +84,13 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     @Override
 	public void onInitializeInterface() {
     	if (padView == null) {
-    		padView = new PadView(this);
+    		padView = (PadView) getLayoutInflater().inflate(R.layout.input, null);;
     	}
         padView.setMinimumWidth(getMaxWidth());
+        padView.measure(getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2);
+        padView.layout(0, getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2, 
+        		getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight());
+        padView.requestLayout();
         
         /*
         if (mQwertyKeyboard != null) {
@@ -122,7 +126,8 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
      * Called by the framework when your view for showing candidates needs to
      * be generated, like {@link #onCreateInputView}.
      */
-    @Override public View onCreateCandidatesView() {
+    @Override
+    public View onCreateCandidatesView() {
         mCandidateView = new CandidateView(this);
         mCandidateView.setService(this);
         return mCandidateView;
@@ -134,7 +139,8 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
      * bound to the client, and are now receiving all of the detailed information
      * about the target of our edits.
      */
-    @Override public void onStartInput(EditorInfo attribute, boolean restarting) {
+    @Override
+    public void onStartInput(EditorInfo attribute, boolean restarting) {
         super.onStartInput(attribute, restarting);
         
         // Reset our state.  We want to do this even if restarting, because
@@ -206,14 +212,14 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
                 // We also want to look at the current state of the editor
                 // to decide whether our alphabetic keyboard should start out
                 // shifted.
-                updateShiftKeyState(attribute);
+                //updateShiftKeyState(attribute);
                 break;
                 
             default:
                 // For all unknown input types, default to the alphabetic
                 // keyboard with no special features.
                 //mCurKeyboard = mQwertyKeyboard;
-                updateShiftKeyState(attribute);
+                //updateShiftKeyState(attribute);
         }
         
         // Update the label on the enter key, depending on what the application
@@ -345,10 +351,10 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
                 // key for us, to dismiss the input method if it is shown.
                 // However, our keyboard could be showing a pop-up window
                 // that back should dismiss, so we first allow it to do that.
-                if (event.getRepeatCount() == 0 && mInputView != null) {
-                    if (mInputView.handleBack()) {
+                if (event.getRepeatCount() == 0 && padView != null) {
+                    /*if (mInputView.handleBack()) {
                         return true;
-                    }
+                    }*/
                 }
                 break;
                 
@@ -434,7 +440,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
      * Helper to update the shift state of our keyboard based on the initial
      * editor state.
      */
-    private void updateShiftKeyState(EditorInfo attr) {
+    /*private void updateShiftKeyState(EditorInfo attr) {
         if (attr != null 
                 && mInputView != null && mQwertyKeyboard == mInputView.getKeyboard()) {
             int caps = 0;
@@ -444,13 +450,13 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
             }
             mInputView.setShifted(mCapsLock || caps != 0);
         }
-    }
+    }*/
     
     /**
      * Helper to determine if a given character code is alphabetic.
      */
     private boolean isAlphabet(int code) {
-        if (Character.isLetter(code)) {
+        if (java.lang.Character.isLetter(code)) {
             return true;
         } else {
             return false;
@@ -461,10 +467,8 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
      * Helper to send a key down / key up pair to the current editor.
      */
     private void keyDownUp(int keyEventCode) {
-        getCurrentInputConnection().sendKeyEvent(
-                new KeyEvent(KeyEvent.ACTION_DOWN, keyEventCode));
-        getCurrentInputConnection().sendKeyEvent(
-                new KeyEvent(KeyEvent.ACTION_UP, keyEventCode));
+        getCurrentInputConnection().sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, keyEventCode));
+        getCurrentInputConnection().sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, keyEventCode));
     }
     
     /**
@@ -494,15 +498,15 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
                 commitTyped(getCurrentInputConnection());
             }
             sendKey(primaryCode);
-            updateShiftKeyState(getCurrentInputEditorInfo());
+            //updateShiftKeyState(getCurrentInputEditorInfo());
         } else if (primaryCode == Keyboard.KEYCODE_DELETE) {
             handleBackspace();
         } else if (primaryCode == Keyboard.KEYCODE_SHIFT) {
-            handleShift();
+            //handleShift();
         } else if (primaryCode == Keyboard.KEYCODE_CANCEL) {
             handleClose();
             return;
-        } else if (primaryCode == LatinKeyboardView.KEYCODE_OPTIONS) {
+        } /*else if (primaryCode == LatinKeyboardView.KEYCODE_OPTIONS) {
             // Show a menu or somethin'
         } else if (primaryCode == Keyboard.KEYCODE_MODE_CHANGE
                 && mInputView != null) {
@@ -516,7 +520,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
             if (current == mSymbolsKeyboard) {
                 current.setShifted(false);
             }
-        } else {
+        }*/ else {
             handleCharacter(primaryCode, keyCodes);
         }
     }
@@ -530,7 +534,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
         }
         ic.commitText(text, 0);
         ic.endBatchEdit();
-        updateShiftKeyState(getCurrentInputEditorInfo());
+        //updateShiftKeyState(getCurrentInputEditorInfo());
     }
 
     /**
@@ -575,10 +579,10 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
         } else {
             keyDownUp(KeyEvent.KEYCODE_DEL);
         }
-        updateShiftKeyState(getCurrentInputEditorInfo());
+        //updateShiftKeyState(getCurrentInputEditorInfo());
     }
 
-    private void handleShift() {
+    /*private void handleShift() {
         if (mInputView == null) {
             return;
         }
@@ -597,18 +601,18 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
             mInputView.setKeyboard(mSymbolsKeyboard);
             mSymbolsKeyboard.setShifted(false);
         }
-    }
+    }*/
     
     private void handleCharacter(int primaryCode, int[] keyCodes) {
-        if (isInputViewShown()) {
+        /*if (isInputViewShown()) {
             if (mInputView.isShifted()) {
                 primaryCode = Character.toUpperCase(primaryCode);
             }
-        }
+        }*/
         if (isAlphabet(primaryCode) && mPredictionOn) {
             mComposing.append((char) primaryCode);
             getCurrentInputConnection().setComposingText(mComposing, 1);
-            updateShiftKeyState(getCurrentInputEditorInfo());
+            //updateShiftKeyState(getCurrentInputEditorInfo());
             updateCandidates();
         } else {
             getCurrentInputConnection().commitText(
@@ -619,18 +623,18 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     private void handleClose() {
         commitTyped(getCurrentInputConnection());
         requestHideSelf(0);
-        mInputView.closing();
+        //mInputView.closing();
     }
 
-    private void checkToggleCapsLock() {
+    /*private void checkToggleCapsLock() {
         long now = System.currentTimeMillis();
         if (mLastShiftTime + 800 > now) {
-            mCapsLock = !mCapsLock;
+            //mCapsLock = !mCapsLock;
             mLastShiftTime = 0;
         } else {
             mLastShiftTime = now;
         }
-    }
+    }*/
     
     private String getWordSeparators() {
         return wordSeparators;
@@ -653,7 +657,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
             if (mCandidateView != null) {
                 mCandidateView.clear();
             }
-            updateShiftKeyState(getCurrentInputEditorInfo());
+            //updateShiftKeyState(getCurrentInputEditorInfo());
         } else if (mComposing.length() > 0) {
             // If we were generating candidate suggestions for the current
             // text, we would commit one of them here.  But for this sample,

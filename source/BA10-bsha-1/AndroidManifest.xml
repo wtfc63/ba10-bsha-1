@@ -3,21 +3,34 @@
       package="ch.zhaw.ba10_bsha_1"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
-	    <activity android:label="ServiceTest" android:name=".ime.ServiceTest">
+    <application android:icon="@drawable/icon" 
+    	android:label="@string/app_name" 
+    	android:debuggable="true">
+	    <activity android:name=".ime.ServiceTest"
+	     	android:label="ServiceTest">
 	    	<intent-filter>
-	    		<action android:name="android.intent.action.MAIN"></action>
-				<category android:name="android.intent.category.LAUNCHER"></category>
+	    		<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
-		<service android:label="DetectionService" android:name=".service.DetectionService" android:process=":remote">
+		<service android:name=".service.DetectionService" 
+			android:label="DetectionService" 
+			android:process=":remote">
 			<intent-filter>
-				<action android:name="ch.zhaw.ba10_bsha_1.service.IDetectionService"></action>
-				<action android:name="ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters"></action>
-				<action android:name="ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"></action>
+				<action android:name="ch.zhaw.ba10_bsha_1.service.IDetectionService"/>
+				<action android:name="ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters"/>
+				<action android:name="ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"/>
 			</intent-filter>
 		</service>
+		<service android:name=".ime.HandwritingIME"
+			android:label="@string/ime_name" 
+			android:icon="@drawable/icon" 
+			android:permission="android.permission.BIND_INPUT_METHOD">
+			<intent-filter>
+				<action android:name="android.view.InputMethod"/>
+			</intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method"/>
+		</service>
 	</application>
-    <uses-sdk android:minSdkVersion="4" />
-
+	<uses-sdk android:minSdkVersion="4"/>
 </manifest> 
