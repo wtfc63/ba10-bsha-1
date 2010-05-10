@@ -1,6 +1,8 @@
 package ch.zhaw.ba10_bsha_1;
 
 
+import java.util.Date;
+
 import android.graphics.PointF;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -27,6 +29,10 @@ public class TouchPoint extends PointF implements Cloneable, Parcelable {
 		super(position.x, position.y);
 		this.strength = strength;
 		this.timeStamp = time_stamp;
+	}
+	
+	public TouchPoint(float pos_x, float pos_y, float strength) {
+		this(new PointF(pos_x, pos_y), strength, System.currentTimeMillis());
 	}
 	
 	public TouchPoint(float pos_x, float pos_y, long time_stamp) {
@@ -63,6 +69,21 @@ public class TouchPoint extends PointF implements Cloneable, Parcelable {
 
 	public void setTimeStamp(long timeStamp) {
 		this.timeStamp = timeStamp;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuffer result = new StringBuffer();
+		result.append("[x=");
+		result.append(x);
+		result.append(",y=");
+		result.append(y);
+		result.append(",ts=");
+		result.append(new Date(timeStamp));
+		result.append(",str=");
+		result.append(strength);
+		result.append("]");
+		return result.toString();
 	}
 	
 	public float distanceTo(TouchPoint second) {

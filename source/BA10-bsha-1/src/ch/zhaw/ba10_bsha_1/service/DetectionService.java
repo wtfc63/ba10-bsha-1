@@ -1,20 +1,5 @@
-/*
- * Copyright (C) 2007 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package ch.zhaw.ba10_bsha_1.service;
+
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -26,14 +11,12 @@ import android.os.RemoteException;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
-import android.os.Process;
 import android.os.RemoteCallbackList;
 import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -58,7 +41,7 @@ public class DetectionService extends Service {
      * service.  Note that this is package scoped (instead of private) so
      * that it can be accessed more efficiently from inner classes.
      */
-    final RemoteCallbackList<IReturnRecognisedCharacters> mCallbacks = new RemoteCallbackList<IReturnRecognisedCharacters>();
+    final RemoteCallbackList<IReturnRecognisedCharacters> callbacks = new RemoteCallbackList<IReturnRecognisedCharacters>();
 
     static final int BUFFER_SIZE = 10;
     
@@ -95,7 +78,7 @@ public class DetectionService extends Service {
         Toast.makeText(this, R.string.service_stopped, Toast.LENGTH_SHORT).show();
         
         // Unregister all callbacks.
-        mCallbacks.kill();
+        callbacks.kill();
         
         // Remove the next pending message to increment the counter, stopping
         // the increment loop.
@@ -113,18 +96,30 @@ public class DetectionService extends Service {
     	mgDetectionSteps = new PriorityQueue<IMicroGestureDetectionStrategy>();
     	mgDetectionSteps.add(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Curvature"));
     	
-    	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("None");
+    	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("Graph");
     	
-    	postprocessingStrategy = PostprocessingStrategyManager.getInstance().getStrategy("none");
+    	postprocessingStrategy = PostprocessingStrategyManager.getInstance().getStrategy("None");
     }
     
     private Collection<Character> startDetection() {
+		Log.i("DetectionService.startDetection()", "Started detection");
+		
+		while (!buffer.isEmpty()) {
+			TouchPoint point = buffer.get();
+			if (point != null) {
+				inputPoints.add(point);
+			}
+		}
     	MicroGesture startMG = new MicroGesture(inputPoints);
+    	
+		Log.i("DetectionService.startDetection()", "Preprocessing...");
     	Iterator<IPreprocessingStrategy> prep_itr = preprocessingSteps.iterator();
     	while (prep_itr.hasNext()) {
+    		Log.i("DetectionService.startDetection()", "Preprocessing: startMg = " + startMG.toString());
     		startMG = prep_itr.next().process(startMG);
     	}
     	
+		Log.i("DetectionService.startDetection()", "MicroGesture detection...");
     	Collection<MicroGesture> tmpMGs = new ArrayList<MicroGesture>();
     	tmpMGs.add(startMG);
     	Iterator<IMicroGestureDetectionStrategy> mg_itr = mgDetectionSteps.iterator();
@@ -132,9 +127,29 @@ public class DetectionService extends Service {
     		tmpMGs = mg_itr.next().detectMicroGestures(tmpMGs);
     	}
     	
+		Log.i("DetectionService.startDetection()", "Character detection...");
     	Collection<Character> result = charDetectionStrategy.detectCharacter(tmpMGs);
     	
+		Log.i("DetectionService.startDetection()", "Postprocessing...");
     	result = postprocessingStrategy.process(result); 
+		
+		Log.i("DetectionService.startDetection()", "Begin Broadcast...");
+		int i = callbacks.beginBroadcast();
+		while (i > 0) {
+		    i--;
+		    try {
+		        //callbacks.getBroadcastItem(i).recognisedCharacters(new ArrayList<Character>(result));
+		    	for (Character character : result) {
+		    		Log.i("DetectionService.startDetection()", "Sending: " + character.toString());
+					callbacks.getBroadcastItem(i).recognisedChar(character.getDetectedCharacter(), character.getDetectionProbability());
+				}
+		    } catch (RemoteException e) {
+		        // The RemoteCallbackList will take care of removing
+		    	// the dead object for us.
+		    }
+		}
+		Log.i("DetectionService.startDetection()", "Finish Broadcast...");
+		callbacks.finishBroadcast();
     	return result;
     }
     
@@ -157,14 +172,14 @@ public class DetectionService extends Service {
 		@Override
         public void registerCallback(IReturnRecognisedCharacters cb) {
             if (cb != null) {
-            	mCallbacks.register(cb);
+            	callbacks.register(cb);
             }
         }
 		
 		@Override
         public void unregisterCallback(IReturnRecognisedCharacters cb) {
             if (cb != null) {
-            	mCallbacks.unregister(cb);
+            	callbacks.unregister(cb);
             }
         }
 		
@@ -175,24 +190,22 @@ public class DetectionService extends Service {
 			} else {
 				Log.e("T3H_FAIL", "oh nose...");
 			}
-			startDetection();
 		}
 		
 		@Override
 		public void addTouchPoint(float pos_x, float pos_y, float strength, long timestamp) {
-			buffer.add(new TouchPoint(new PointF(pos_x, pos_y), strength, timestamp));
-			startDetection();
+			TouchPoint tmp = new TouchPoint(new PointF(pos_x, pos_y), strength, timestamp);
+			buffer.add(tmp);
+			Log.i("DetectionService.addTouchPoint()", "Added: " + tmp.toString());
+			if (buffer.isFull()) {
+				startDetection();
+			}
 		}
 		
 		@Override
 		public void endSample() {
-			while (!buffer.isEmpty()) {
-				TouchPoint point = buffer.get();
-				if (point != null) {
-					inputPoints.add(point);
-				}
-			}
 			startDetection();
+			Log.i("DetectionService.endSample()", "Detection ended");
 		}
     };
     
@@ -209,7 +222,7 @@ public class DetectionService extends Service {
                 // It is time to bump the value!
                 case REPORT_MSG:
                     // Broadcast to all clients the new value.
-                    final int n = mCallbacks.beginBroadcast();
+                    /*final int n = mCallbacks.beginBroadcast()Broadcast();
                     for (int i = 0; i < n; i++) {
                         try {
                         	ArrayList<Character> result = new ArrayList<Character>(1);
@@ -220,7 +233,7 @@ public class DetectionService extends Service {
                             // the dead object for us.
                         }
                     }
-                    mCallbacks.finishBroadcast();
+                    callbacks.finishBroadcast();*/
                     break;
                 default:
                     super.handleMessage(msg);

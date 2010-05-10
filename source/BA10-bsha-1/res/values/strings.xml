@@ -2,10 +2,23 @@
 <resources>
     
     <string name="app_name">HandwritingRecognition</string>
-<string name="service_started">Service started</string>
+    
+	<string name="service_started">Service started</string>
+	<string name="service_not_running">Service is not running</string>
+	<string name="service_bound">Service bound to App</string>
+	<string name="service_unbound">Service unbound from App</string>
+	<string name="service_already_running">Service is already running</string>
+	<string name="service_stopped">Service stopped</string>
+	
+	<!-- Title for Latin keyboard  -->
+    <string name="ime_name">HandwritingIME</string>
 
-<string name="service_not_running">Service is not running</string>
-<string name="service_bound">Service bound to App</string>
-<string name="service_unbound">Service unbound from App</string><string name="service_already_running">Service is already running</string><string name="service_stopped">Service stopped</string>
+    <!-- Symbols that are commonly considered word separators in this language -->
+    <string name="word_separators">\u0020.,;:!?\n()[]*&amp;@{}/&lt;&gt;_+=|&quot;</string>
+    
+    <!-- Labels on soft keys -->
+    <string name="label_go_key">Go</string>
+    <string name="label_next_key">Next</string>
+    <string name="label_send_key">Send</string>
 
 </resources>
