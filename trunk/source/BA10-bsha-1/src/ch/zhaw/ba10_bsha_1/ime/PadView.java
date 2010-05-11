@@ -5,6 +5,7 @@ import java.util.*;
 
 import android.content.Context;
 import android.graphics.*;
+import android.inputmethodservice.KeyboardView;
 import android.view.MotionEvent;
 import android.view.View;
 import android.util.AttributeSet;
@@ -18,7 +19,7 @@ import ch.zhaw.ba10_bsha_1.service.IDetectionService;
 import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
 
 
-public class PadView extends View /*implements IObservable*/ {
+public class PadView extends KeyboardView /*implements IObservable*/ {
 	
     
     private static final float TOUCH_TOLERANCE = 4;
@@ -43,11 +44,6 @@ public class PadView extends View /*implements IObservable*/ {
     //private IMicroGestureDetectionStrategy mgDetectionStrategy;
     //private ICharacterDetectionStrategy charDetectionStrategy;
     
-
-	public PadView(Context context) {
-		super(context);
-		init();
-	}
 	
 	public PadView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -79,13 +75,15 @@ public class PadView extends View /*implements IObservable*/ {
 	}
 
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+    public void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        bitmap = Bitmap.createBitmap(this.getWidth(), this.getHeight(), Bitmap.Config.ARGB_8888);
+        if ((w > 0) && (h > 0)) {
+        	bitmap = Bitmap.createBitmap(this.getWidth(), this.getHeight(), Bitmap.Config.ARGB_8888);
+        }
     }
     
     @Override
-    protected void onDraw(Canvas canvas) {
+    public void onDraw(Canvas canvas) {
         canvas.drawColor(0xCCFAFAC8);
         canvas.drawBitmap(bitmap, 0, 0, bmPaint);
         paintBaseLines(canvas);

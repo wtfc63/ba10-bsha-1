@@ -87,10 +87,12 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     		padView = (PadView) getLayoutInflater().inflate(R.layout.input, null);;
     	}
         padView.setMinimumWidth(getMaxWidth());
-        padView.measure(getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2);
-        padView.layout(0, getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2, 
-        		getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight());
+        padView.setMinimumHeight(getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2);
         padView.requestLayout();
+        //padView.measure(getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2);
+        //padView.layout(0, , 
+        //		getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight());
+        //padView.requestLayout();
         
         /*
         if (mQwertyKeyboard != null) {
