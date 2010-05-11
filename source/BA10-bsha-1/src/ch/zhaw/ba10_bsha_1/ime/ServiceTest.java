@@ -180,11 +180,11 @@ public class ServiceTest extends Activity {
                     	ArrayList<TouchPoint> tmp = new ArrayList<TouchPoint>(1);
                     	tmp.add(new TouchPoint(10, 10));
                     	tmp.add(new TouchPoint(20, 20));
-                        //detectionService.addTouchPoints(tmp);
-                    	TouchPoint p = tmp.get(0);
+                        detectionService.addTouchPoints(tmp);
+                    	/*TouchPoint p = tmp.get(0);
                     	detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
                     	p = tmp.get(1);
-                    	detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
+                    	detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());*/
                     	detectionService.endSample();
                     } catch (RemoteException e) {
                         // There is nothing special we need to do if the service
@@ -232,6 +232,8 @@ public class ServiceTest extends Activity {
                 	ArrayList<Character> chars = (ArrayList<Character>) msg.obj;
                 	if (chars.size() > 0) {
                 		txtViewResult.setText("Received from service: " + chars.get(0).toString());
+                	} else {
+                		txtViewResult.setText("Received from service: nothing");
                 	}
                     break;
                 case CHAR_RESULT_MSG:

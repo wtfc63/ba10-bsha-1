@@ -50,6 +50,11 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
 		init();
 	}
 	
+    public PadView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+		init();
+    }
+	
 	private void init() {
 		//observers = new ArrayList<IObserver>();
 		//inputs = new ArrayList<TouchInput>();
@@ -59,7 +64,7 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
 		//charDetectionStrategy = TouchInput.CHAR_DETECTION_STRATEGY_GRAPH;
 		
         paths  = new ArrayList<Path>();
-        //points = new ArrayList<TouchPoint>();
+        points = new ArrayList<TouchPoint>();
         bitmap = Bitmap.createBitmap(320, 240, Bitmap.Config.ARGB_8888);
         bmCanvas = new Canvas(bitmap);
         bmPaint  = new Paint(Paint.DITHER_FLAG);
@@ -67,11 +72,11 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setDither(true);
-        paint.setColor(0xFFFF0000);
+        paint.setColor(0xBBFF0000);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(12);
+        paint.setStrokeWidth(8);
 	}
 
     @Override
@@ -84,7 +89,7 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
     
     @Override
     public void onDraw(Canvas canvas) {
-        canvas.drawColor(0xCCFAFAC8);
+        canvas.drawColor(0xFFFAFAC8);
         canvas.drawBitmap(bitmap, 0, 0, bmPaint);
         paintBaseLines(canvas);
         for (Path path : paths) {
@@ -113,19 +118,20 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
     	Paint bl_paint = new Paint();
     	bl_paint.setAntiAlias(true);
     	bl_paint.setDither(true);
-    	bl_paint.setColor(Color.BLACK);
+    	bl_paint.setColor(0xAAA08200);
     	bl_paint.setStyle(Paint.Style.STROKE);
     	bl_paint.setStrokeJoin(Paint.Join.ROUND);
     	bl_paint.setStrokeCap(Paint.Cap.ROUND);
-    	bl_paint.setStrokeWidth(4);
+    	bl_paint.setStrokeWidth(2);
         
-    	float right_X = 20;
-        float left_X = this.getWidth() - right_X;
-        float mid_Y = this.getHeight() / 2;
-        float line_height = (this.getHeight() / 2) / 3;
-        canvas.drawLine(20, mid_Y, left_X, mid_Y, bl_paint);
+    	float margin = 10;
+    	float right_X = margin;
+        float left_X = this.getWidth() - margin;
+        float line_height = (this.getHeight() - (2 * margin)) / 3;
+        float mid_Y = (2 * line_height) + margin;
+        canvas.drawLine(right_X, mid_Y, left_X, mid_Y, bl_paint);
         
-        bl_paint.setStrokeWidth(2);
+        bl_paint.setStrokeWidth(1);
         bl_paint.setPathEffect(new DashPathEffect(new float[] {8, 4}, 0));
         canvas.drawLine(right_X, (mid_Y - (2 * line_height)), left_X, (mid_Y - (2 * line_height)), bl_paint);
         canvas.drawLine(right_X, (mid_Y - line_height), left_X, (mid_Y - line_height), bl_paint);

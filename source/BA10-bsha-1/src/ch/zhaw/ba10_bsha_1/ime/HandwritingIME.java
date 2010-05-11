@@ -63,7 +63,8 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     //private LatinKeyboard mSymbolsShiftedKeyboard;
     //private LatinKeyboard mQwertyKeyboard;
     
-    //private LatinKeyboard mCurKeyboard;
+    private LatinKeyboard padKeyboard;
+    private LatinKeyboard mCurKeyboard;
     
     private String wordSeparators;
     
@@ -84,25 +85,27 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     @Override
 	public void onInitializeInterface() {
     	if (padView == null) {
-    		padView = (PadView) getLayoutInflater().inflate(R.layout.input, null);;
+    		padView = (PadView) getLayoutInflater().inflate(R.layout.input, null);
     	}
         padView.setMinimumWidth(getMaxWidth());
-        padView.setMinimumHeight(getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2);
-        padView.requestLayout();
+        //padView.setMinimumHeight(getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2);
+        //padView.requestLayout();
         //padView.measure(getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2);
         //padView.layout(0, , 
         //		getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight());
         //padView.requestLayout();
         
-        /*
-        if (mQwertyKeyboard != null) {
+        
+        if (padKeyboard != null) {
             // Configuration changes can happen after the keyboard gets recreated,
             // so we need to be able to re-build the keyboards if the available
             // space has changed.
             int displayWidth = getMaxWidth();
-            if (displayWidth == mLastDisplayWidth) return;
-            mLastDisplayWidth = displayWidth;
+            //if (displayWidth == mLastDisplayWidth) return;
+            //mLastDisplayWidth = displayWidth;
         }
+        padKeyboard = new LatinKeyboard(this, R.xml.pad);
+        /*
         mQwertyKeyboard = new LatinKeyboard(this, R.xml.qwerty);
         mSymbolsKeyboard = new LatinKeyboard(this, R.xml.symbols);
         mSymbolsShiftedKeyboard = new LatinKeyboard(this, R.xml.symbols_shift);
@@ -121,6 +124,9 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
                 R.layout.input, null);
         mInputView.setOnKeyboardActionListener(this);
         mInputView.setKeyboard(mQwertyKeyboard);*/
+		padView = (PadView) getLayoutInflater().inflate(R.layout.input, null);
+		padView.setOnKeyboardActionListener(this);
+		padView.setKeyboard(padKeyboard);
         return padView;//mInputView;
     }
 
@@ -180,7 +186,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
                 // normal alphabetic keyboard, and assume that we should
                 // be doing predictive text (showing candidates as the
                 // user types).
-                //mCurKeyboard = mQwertyKeyboard;
+                mCurKeyboard = padKeyboard;
                 mPredictionOn = true;
                 
                 // We now look for a few special variations of text that will
@@ -220,13 +226,13 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
             default:
                 // For all unknown input types, default to the alphabetic
                 // keyboard with no special features.
-                //mCurKeyboard = mQwertyKeyboard;
+                mCurKeyboard = padKeyboard;
                 //updateShiftKeyState(attribute);
         }
         
         // Update the label on the enter key, depending on what the application
         // says it will do.
-        //mCurKeyboard.setImeOptions(getResources(), attribute.imeOptions);
+        mCurKeyboard.setImeOptions(getResources(), attribute.imeOptions);
     }
 
     /**
@@ -246,17 +252,17 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
         // its window.
         setCandidatesViewShown(false);
         
-        /*mCurKeyboard = mQwertyKeyboard;
-        if (mInputView != null) {
-            mInputView.closing();
-        }*/
+        //mCurKeyboard = mQwertyKeyboard;
+        if (padView != null) {
+            padView.closing();
+        }
     }
     
     @Override public void onStartInputView(EditorInfo attribute, boolean restarting) {
         super.onStartInputView(attribute, restarting);
         // Apply the selected keyboard to the input view.
-        //mInputView.setKeyboard(mCurKeyboard);
-        //mInputView.closing();
+        padView.setKeyboard(mCurKeyboard);
+        padView.closing();
     }
     
     /**
@@ -354,9 +360,9 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
                 // However, our keyboard could be showing a pop-up window
                 // that back should dismiss, so we first allow it to do that.
                 if (event.getRepeatCount() == 0 && padView != null) {
-                    /*if (mInputView.handleBack()) {
+                    if (padView.handleBack()) {
                         return true;
-                    }*/
+                    }
                 }
                 break;
                 
