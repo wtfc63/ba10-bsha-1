@@ -1,0 +1,45 @@
+\chapter{Mikro Gesten}
+
+Die Grundsätzliche Idee zur Handschrifterkennung ist die Unterteilung der Schrift in sogenannte Mikrogesten. Eine Mikrogeste ist eine simple Bewegung, die beim Schreiben ausgeführt wird. Jeder Buchstabe soll dann aus solchen Mikrogesten aufgebaut werden können. 
+Es ist nun natürlich möglich diese Mikrogesten auf beliebige Art zu definieren. Die Hauptkriterien sind, dass die Gesten so einfach wie möglich sein sollen (Für eine optimale Erkennung) und sich untereinandern möglichst stark unterscheiden. Je weniger solche Gesten man braucht, desto besser. Man kann jedoch nicht beliebig grobe Gesten wählen, da immer noch alle möglichen Zeichen einzigartig aus solchen Gesten zusammen gebaut werden müssen.
+
+%%TODO  Bild: Aufbau eines Buchstaben aus Mikrogesten. %%
+
+\section{Definition}
+
+\section{Typen}
+\subsection{Variante A}
+Variante A der Mikrogesten haben wir von der vorherigen Arbeit zu diesem Thema übernommen: 
+%% TODO Referenz zu alter arbeit%% 
+Es sind folgende Typen definiert:
+\begin{itemize}
+\item Gerade
+\item Schwache Krümmung
+\item Starke Krümmung
+\item Spitzkehre
+\end{itemize}
+
+\subsection{Variante B}
+Variante B wurde von uns selbst erarbeitet, um eine bessere Toleranz gegenüber unterschiedlichen Schreibstilen zu erhalten:\begin{itemize}
+\item Kreis
+\item Kurve
+\item Lange Gerade
+\item Kurze Gerade
+\end{itemize}
+
+\section{Abbildung von Zeichen}
+
+Im Anhang befinden sich eine Tabelle wie alle Buchstaben mit dieser Variante aufgebaut sind.
+
+\chapter{Graph}
+Nachdem man nun die Buchstaben in Mikrogesten aufgeteilt hat, muss man noch herausfinden, welche Folge von Mikrogesten welchen Buchstaben darstellt. Eine Möglichkeit dies zu tun ist ein vordefinierter Graph. Im Graph wird für jedes Zeichen die Reihenfolge der Mikrogesten als Nodes eingefügt. Danach muss man bloss von einem Startknoten aus den Graph durchlaufen und landet am Schluss auf dem Node des gesuchten Buchstaben.
+
+%% TODO Bild Beispiel des Graphen %%
+
+\section{Aufbau}
+Der Graph muss von Hand aufgebaut werden. Für jede Node wird noch eine Wahrscheinlichkeit eingebaut, die anzeigt wie hoch die Chance ist über diesen Node auf einen Buchstaben zu kommen.
+
+\section{Erkennungswahrscheinlichkeit}
+Jeder Node besitzt eine bestimmte Wahrscheinlichkeit. Beim durchlaufen des Pfades werden alle Wahrscheinlichkeiten multipliziert. So können häufige Mikrogestenn-Abfolgen gestärkt werden und seltene geschwächt. Ausserdem gibt es immer mehrere Möglichkeiten, wie der Graph durchschritten werden kann. Die resultierende Wahrscheinlichkeit gibt ein Indiz dafür, welches Resultat das richtige ist.
+
+\section{Erkennung von Zeichen}

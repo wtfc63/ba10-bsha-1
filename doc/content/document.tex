@@ -71,8 +71,9 @@
 	\listoftables
 	% Listings
 	\definecolor{listingbg}{HTML}{99CCCC}
-	\lstset{language=Java}
-	\lstset{backgroundcolor=\color{listingbg}, frame=single,framerule=0pt,firstnumber=auto, numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=8pt, captionpos=b}
+	\renewcommand{\ttdefault}{pcr}
+	\lstset{keywordstyle=\bfseries,basicstyle=\ttfamily}
+	\lstset{language=Java, backgroundcolor=\color{listingbg}, frame=single,framerule=0pt,firstnumber=auto, numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=8pt, captionpos=b}
 	\lstlistoflistings
 	
 	% Begin Inhalt
@@ -83,22 +84,15 @@
 	
 
 	\part{Einleitung}
+		\input{examples}
+		\chapter{Aufgabenstellung}
 		
-		\input{content/aufgabenstellung}
+		\input{content/vorgehensweise}
 		
-		\chapter{Vorgehensweise}
-		
-		\chapter{Aufbau Report}
+		\input{content/aufbau_report}
 
 	\part{Theoretischer Hintergrund}
-		\chapter{Mikro Gesten}
-		\section{Definition}
-		\section{Typen}
-		\section{Abbildung von Zeichen}
-
-		\chapter{Graph}
-		\section{Funktionsweise}
-		\section{Erkennung von Zeichen}
+		\input{content/theoretischer_hintergrund}
 
 	\part{Lösung}
 		% Verschiedene Ansätze beschreiben
@@ -115,9 +109,12 @@
 		%\chapter{Implementation}
 		\input{content/backend}
 
+	\part{Evaluation}
+		\chapter{Vergleich der Varianten A und B}
+		\chapter{Verbesserungsmöglichkeiten}
+
 	\part{Diskussion}
-		\chapter{Ausblick und Erweiterungen}
-		\chapter{Schlussfolgerung}
+		\chapter{Fazit}
 
 
 	% Ende Inhalt
