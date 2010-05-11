@@ -96,7 +96,7 @@ public class DetectionService extends Service {
     	mgDetectionSteps = new PriorityQueue<IMicroGestureDetectionStrategy>();
     	mgDetectionSteps.add(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Curvature"));
     	
-    	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("Graph");
+    	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("None");
     	
     	postprocessingStrategy = PostprocessingStrategyManager.getInstance().getStrategy("None");
     }
@@ -129,19 +129,28 @@ public class DetectionService extends Service {
     	
 		Log.i("DetectionService.startDetection()", "Character detection...");
     	Collection<Character> result = charDetectionStrategy.detectCharacter(tmpMGs);
+		Log.i("DetectionService.startDetection()", "Detected: " + result.size() + " Characters");
+    	for (Character character : result) {
+    		Log.i("DetectionService.startDetection()", "Detected: " + character.toString());
+		}
     	
 		Log.i("DetectionService.startDetection()", "Postprocessing...");
-    	result = postprocessingStrategy.process(result); 
-		
+    	result = postprocessingStrategy.process(result);
+		Log.i("DetectionService.startDetection()", "Detected: " + result.size() + " Characters");
+    	for (Character character : result) {
+    		Log.i("DetectionService.startDetection()", "Detected: " + character.toString());
+		}
+    	
 		Log.i("DetectionService.startDetection()", "Begin Broadcast...");
 		int i = callbacks.beginBroadcast();
 		while (i > 0) {
 		    i--;
 		    try {
-		        //callbacks.getBroadcastItem(i).recognisedCharacters(new ArrayList<Character>(result));
+	    		Log.i("DetectionService.startDetection()", "Sending Characters");
+		        callbacks.getBroadcastItem(i).recognisedCharacters(new ArrayList<Character>(result));
 		    	for (Character character : result) {
-		    		Log.i("DetectionService.startDetection()", "Sending: " + character.toString());
-					callbacks.getBroadcastItem(i).recognisedChar(character.getDetectedCharacter(), character.getDetectionProbability());
+		    		Log.i("DetectionService.startDetection()", "Send: " + character.toString());
+					//callbacks.getBroadcastItem(i).recognisedChar(character.getDetectedCharacter(), character.getDetectionProbability());
 				}
 		    } catch (RemoteException e) {
 		        // The RemoteCallbackList will take care of removing
@@ -186,7 +195,13 @@ public class DetectionService extends Service {
 		@Override
 		public void addTouchPoints(List<TouchPoint> points)	throws RemoteException {
 			if (points != null) {
-				inputPoints.addAll(points);
+				for (TouchPoint point : points) {
+					buffer.add(point);
+					Log.i("DetectionService.addTouchPoints()", "Added: " + point.toString());
+				}
+				if (buffer.isFull()) {
+					startDetection();
+				}
 			} else {
 				Log.e("T3H_FAIL", "oh nose...");
 			}
