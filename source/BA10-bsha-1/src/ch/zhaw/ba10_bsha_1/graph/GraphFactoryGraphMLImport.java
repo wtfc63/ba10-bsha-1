@@ -1,9 +1,7 @@
 package ch.zhaw.ba10_bsha_1.graph;
 
-import java.io.File;
-import java.io.IOException;
 
-import android.os.Environment;
+import java.io.File;
 
 
 public class GraphFactoryGraphMLImport implements IGraphFactory {

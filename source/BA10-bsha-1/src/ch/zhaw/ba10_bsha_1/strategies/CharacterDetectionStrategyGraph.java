@@ -6,6 +6,9 @@ import java.util.Collection;
 
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
+import ch.zhaw.ba10_bsha_1.graph.GraphFactoryGraphMLImport;
+import ch.zhaw.ba10_bsha_1.graph.IGraphFactory;
+import ch.zhaw.ba10_bsha_1.graph.Node;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 

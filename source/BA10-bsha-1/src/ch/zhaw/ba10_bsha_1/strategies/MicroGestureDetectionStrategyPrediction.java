@@ -1,4 +1,4 @@
-package ch.zhaw.ba10_bsha_1.service;
+package ch.zhaw.ba10_bsha_1.strategies;
 
 
 import java.util.ArrayList;
@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
 public class MicroGestureDetectionStrategyPrediction extends BaseStrategy implements IMicroGestureDetectionStrategy {

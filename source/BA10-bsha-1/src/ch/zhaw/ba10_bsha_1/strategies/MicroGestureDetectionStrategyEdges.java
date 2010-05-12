@@ -1,9 +1,12 @@
-package ch.zhaw.ba10_bsha_1.service;
+package ch.zhaw.ba10_bsha_1.strategies;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.service.MicroGesture;
+
 
 public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements IMicroGestureDetectionStrategy {
 	
@@ -24,8 +27,7 @@ public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements 
 	
 	
 	@Override
-	public Collection<MicroGesture> detectMicroGestures(
-			Collection<MicroGesture> microGestures) {
+	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 		
 		Collection<MicroGesture> result = new ArrayList<MicroGesture>();
 		

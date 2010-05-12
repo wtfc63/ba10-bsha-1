@@ -1,7 +1,9 @@
-package ch.zhaw.ba10_bsha_1.service;
+package ch.zhaw.ba10_bsha_1.strategies;
 
 
 import java.util.Collection;
+
+import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
 public interface IMicroGestureDetectionStrategy extends IStrategy {
