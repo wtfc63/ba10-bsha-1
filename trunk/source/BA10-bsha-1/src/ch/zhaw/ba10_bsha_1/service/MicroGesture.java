@@ -171,6 +171,11 @@ public class MicroGesture implements Cloneable, Parcelable {
 		return points;
 	}
 	
+	public void setPoints(Collection<TouchPoint> p) {
+		points.clear();
+		points.addAll(p);
+	}
+	
 	public String getPointList() {
 		StringBuffer list = new StringBuffer();
 		Iterator<TouchPoint> itr = points.iterator();
