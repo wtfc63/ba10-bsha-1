@@ -4,6 +4,8 @@ package ch.zhaw.ba10_bsha_1.strategies;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import android.util.Log;
+
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
 import ch.zhaw.ba10_bsha_1.graph.GraphFactoryGraphMLImport;
@@ -21,7 +23,7 @@ public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICh
 	public CharacterDetectionStrategyGraph() {
 		super();
 		
-		IGraphFactory factory = new GraphFactoryGraphMLImport(arguments.get("Path").getArgumentValue());
+		IGraphFactory factory = new GraphFactoryGraphMLImport(getArgument("Path").getArgumentValue());
 		root = factory.createRoot();
 	}
 	
