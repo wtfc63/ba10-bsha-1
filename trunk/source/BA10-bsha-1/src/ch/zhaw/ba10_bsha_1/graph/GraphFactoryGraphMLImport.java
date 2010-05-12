@@ -1,4 +1,4 @@
-package ch.zhaw.ba10_bsha_1.service;
+package ch.zhaw.ba10_bsha_1.strategies;
 
 import java.io.File;
 import java.io.IOException;
