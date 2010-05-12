@@ -1,16 +1,30 @@
 package ch.zhaw.ba10_bsha_1.service;
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 
 import ch.zhaw.ba10_bsha_1.*;
 
-public class MicroGestureDetectionStrategyCircles implements
-		IMicroGestureDetectionStrategy {
+
+public class MicroGestureDetectionStrategyCircles extends BaseStrategy implements IMicroGestureDetectionStrategy {
+	
+	
+	protected void initArguments() {}
 
 	@Override
-	public Collection<MicroGesture> detectMicroGestures(
-			Collection<MicroGesture> microGestures) {
+	protected String getStrategyName() {
+		return "Circle";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Creating a MicroGesture for every circle.";
+	}
+	
+
+	@Override
+	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 		
 		// Check for circles
 		
@@ -54,16 +68,4 @@ public class MicroGestureDetectionStrategyCircles implements
 		}
 		return result;
 	}
-
-	@Override
-	public void setFieldHeight(float fieldHeight) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public String toString() {
-		return "Circle Detection: Creating a MicroGesture for every circle.";
-	}
-	
 }

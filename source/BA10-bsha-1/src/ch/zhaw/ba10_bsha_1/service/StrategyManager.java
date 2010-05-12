@@ -3,7 +3,9 @@ package ch.zhaw.ba10_bsha_1.service;
 import java.util.Collection;
 import java.util.Hashtable;
 
-public abstract class StrategyManager<S> {
+import ch.zhaw.ba10_bsha_1.StrategyArgument;
+
+public abstract class StrategyManager<S extends IStrategy> {
 
 	
 	protected Hashtable<String, S> strategies;
@@ -49,5 +51,13 @@ public abstract class StrategyManager<S> {
 		for (S strategy : strategies) {
 			this.strategies.remove(strategy.toString().toLowerCase());
 		}
+	}
+	
+	public StrategyArgument getArgument(StrategyArgument arg) {
+		return strategies.get(arg.getStrategyName().toLowerCase()).getArgument(arg.getArgumentName());
+	}
+	
+	public void setArgument(StrategyArgument arg) {
+		strategies.get(arg.getStrategyName().toLowerCase()).setArgument(arg);
 	}
 }

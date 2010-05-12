@@ -6,9 +6,24 @@ import java.util.Iterator;
 
 import ch.zhaw.ba10_bsha_1.*;
 
-public class MicroGestureDetectionStrategyLines implements IMicroGestureDetectionStrategy {
+public class MicroGestureDetectionStrategyLines extends BaseStrategy implements IMicroGestureDetectionStrategy {
 
+	
 	private double tolerance = 130;
+	
+	
+	protected void initArguments() {}
+
+	@Override
+	protected String getStrategyName() {
+		return "Lines";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Detect all straigt Lines and create MicroGesture";
+	} 
+	
 	
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(
@@ -103,17 +118,6 @@ public class MicroGestureDetectionStrategyLines implements IMicroGestureDetectio
 		return result;
 	}
 
-	@Override
-	public void setFieldHeight(float fieldHeight) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
-	public String toString() {
-		return "Detect all straigt Lines and create MicroGesture.";
-	}
-	
 	private void setMicroGesture(MicroGesture mg) {
 		ArrayList<TouchPoint> points = mg.getPoints();
 		// calculate slope from first to last point

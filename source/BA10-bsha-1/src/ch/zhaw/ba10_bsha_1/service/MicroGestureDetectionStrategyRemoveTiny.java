@@ -3,9 +3,22 @@ package ch.zhaw.ba10_bsha_1.service;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class MicroGestureDetectionStrategyRemoveTiny implements
-		IMicroGestureDetectionStrategy {
+public class MicroGestureDetectionStrategyRemoveTiny extends BaseStrategy implements IMicroGestureDetectionStrategy {
 
+	
+	protected void initArguments() {}
+
+	@Override
+	protected String getStrategyName() {
+		return "RemoveTiny";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Remove tiny MicroGestures";
+	} 
+	
+	
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(
 			Collection<MicroGesture> microGestures) {
@@ -20,16 +33,4 @@ public class MicroGestureDetectionStrategyRemoveTiny implements
 		microGestures.removeAll(remove);
 		return microGestures;
 	}
-
-	@Override
-	public void setFieldHeight(float fieldHeight) {
-		// TODO Auto-generated method stub
-
-	}
-	
-	@Override
-	public String toString() {
-		return "Remove tiny MicroGestures.";
-	}
-
 }

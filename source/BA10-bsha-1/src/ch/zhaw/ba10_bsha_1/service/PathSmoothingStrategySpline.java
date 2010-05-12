@@ -1,15 +1,26 @@
 package ch.zhaw.ba10_bsha_1.service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Vector;
-import java.math.*;
 
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 
-import android.util.Log;
 
-public class PathSmoothingStrategySpline implements IPreprocessingStrategy {
+public class PathSmoothingStrategySpline extends BaseStrategy implements IPreprocessingStrategy {
+
+	
+	protected void initArguments() {}
+
+	@Override
+	protected String getStrategyName() {
+		return "Spline";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Smooth by calculating spline";
+	} 
+	
 	
 	public MicroGesture process(MicroGesture micro_gesture) {
 		ArrayList<TouchPoint> points = micro_gesture.getPoints();
@@ -55,19 +66,12 @@ public class PathSmoothingStrategySpline implements IPreprocessingStrategy {
 		return (new MicroGesture(result));
 	}
 	
-	public String toString() {
-		return "Spline";
-	}
-
-	
 	public TouchPoint[] NURBS(TouchPoint[] controlPoints, int nCurvePoints, float[] knot, float[] weight, int size, int d) {
 		int n = size - 1;
 	
-		int curveBot;
-		int curveTop;
-		// Points below u[d-1] and above u[n+1] have to be discarded
-		curveBot = 1; 
-		curveTop = nCurvePoints;
+		//int curveBot = 1;
+		//int curveTop = nCurvePoints;
+		// Points below u[d-1] and above u[n+1] have to be discarded 
 
 		TouchPoint[] curvePoints;
 		

@@ -6,11 +6,23 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
-import android.util.Log;
 import ch.zhaw.ba10_bsha_1.*;
 
-public class MicroGestureDetectionStrategyHalfCircle implements
-		IMicroGestureDetectionStrategy {
+public class MicroGestureDetectionStrategyHalfCircle extends BaseStrategy implements IMicroGestureDetectionStrategy {
+
+	
+	protected void initArguments() {}
+
+	@Override
+	protected String getStrategyName() {
+		return "HalfCircle";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Split into half circles by detection rotation-changes in given MicroGestures";
+	} 
+	
 	
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(
@@ -122,17 +134,6 @@ public class MicroGestureDetectionStrategyHalfCircle implements
 			}
 		}
 		return result;
-	}
-
-	@Override
-	public void setFieldHeight(float fieldHeight) {
-		// TODO Auto-generated method stub
-
-	}
-	
-	@Override
-	public String toString() {
-		return "Split into Half-Circles by detection rotation-changes.";
 	}
 	
 	private void setMicroGesture(MicroGesture mg) {
