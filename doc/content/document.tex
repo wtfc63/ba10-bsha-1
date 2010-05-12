@@ -4,23 +4,28 @@
 %
 % Packages
 %
+
 \usepackage[pdftex]{graphicx}
 \usepackage{pdfpages}
 \usepackage{a4}
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
-%\usepackage[colorlinks=true,linkcolor=blue]{hyperref}st]{glossaries}
+\usepackage{bibgerm}
+%\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
 \usepackage{xcolor}
-\usepackage[nonumberlist]{glossaries}
+
 \usepackage{cite}
 \usepackage{url}
-\usepackage{bibgerm}
 \usepackage{svn}
 \usepackage{listings}
 \usepackage{helvet}
 \usepackage[bf]{caption}
 \usepackage{color}
 \usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage[acronym]{glossaries} 
+
+\input{etc/glossary}
 
 %
 % Custom Commands
@@ -40,21 +45,19 @@
 % Document
 %
 \begin{document}
-
 	% Titelseite
 	\input{titlepage}
-	
+
+	\newpage
+	\thispagestyle{empty}
+	\mbox{}
 
 	% Abstract / Management Summary (ev. Abstract on Title-Page)
-	%\input{abstract}
-	\begin{abstract}
-	Dies ist das Abstract
-	\end{abstract}
-	
+	\input{content/abstract}
 
 	% BA Erklärung
-	\includepdf[pagecommand={\thispagestyle{plain}},scale=1.0]{inc/Erklaerung_BA.pdf}
-		
+	\includepdf[pagecommand={\thispagestyle{empty}},scale=1.0]{inc/Erklaerung_BA.pdf}
+	
 
 	% Römische Seitenzahlen
 	\newpage
@@ -84,12 +87,13 @@
 	
 
 	\part{Einleitung}
-		\input{examples}
-		\chapter{Aufgabenstellung}
-		
+		\input{content/aufgabenstellung}
+
+
+
+		\input{content/aufbau_report}		
+
 		\input{content/vorgehensweise}
-		
-		\input{content/aufbau_report}
 
 	\part{Theoretischer Hintergrund}
 		\input{content/theoretischer_hintergrund}
@@ -120,13 +124,12 @@
 	% Ende Inhalt
 
 	% Glossary
-	\glossarystyle{list}
-	\makeglossaries
+	\printglossaries
 
 	% Literaturverzeichnis
-	\bibliographystyle{plain}
-	%\bibliographystyle{geralpha}
-	\bibliography{etc/bibliography}{}
+	%\bibliographystyle{plain}
+	\bibliographystyle{geralpha}
+	\bibliography{etc/bibliography}
 	
 	% Appendices
 	\appendix
