@@ -1,11 +1,14 @@
-package ch.zhaw.ba10_bsha_1.service;
+package ch.zhaw.ba10_bsha_1.strategies;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 
 import ch.zhaw.ba10_bsha_1.Character;
+import ch.zhaw.ba10_bsha_1.service.MicroGesture;
+import ch.zhaw.ba10_bsha_1.service.MicroGestureTester;
+
 
 public class Node {
 	
