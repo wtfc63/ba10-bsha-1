@@ -1,35 +1,43 @@
 package ch.zhaw.ba10_bsha_1.service;
 
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import ch.zhaw.ba10_bsha_1.Character;
-
-import android.os.Environment;
-import android.util.Log;
+import ch.zhaw.ba10_bsha_1.StrategyArgument;
 
 
-public class CharacterDetectionStrategyGraph implements	ICharacterDetectionStrategy {
-	private static final String TAG = "GraphStrategy"; 
+public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICharacterDetectionStrategy {
 	
-	private final String storePath;
+	
 	private Node root;
 	
 	
 	public CharacterDetectionStrategyGraph() {
-		storePath = "/sdcard/test.xml";
-		IGraphFactory factory = new GraphFactoryGraphMLImport(storePath);
+		super();
+		
+		IGraphFactory factory = new GraphFactoryGraphMLImport(arguments.get("Path").getArgumentValue());
 		root = factory.createRoot();
 	}
 	
-	public Node getRoot() {
-		return root;
+	
+	@Override
+	protected void initArguments() {
+		StrategyArgument arg = new StrategyArgument(getStrategyName(), "Path", "/sdcard/test.xml", "Path of the GraphML file");
+		arguments.put(arg.getArgumentName().toLowerCase(), arg);	
 	}
+
+	@Override
+	protected String getStrategyName() {
+		return "Graph";
+	}
+
+	@Override
+	protected String getStrategyDescription() {
+		return "Detect Character through a weighted graph, stored as a GraphML file";
+	}
+	
 	
 	@Override
 	public Collection<Character> detectCharacter(Collection<MicroGesture> micro_gestures) {
@@ -54,10 +62,5 @@ public class CharacterDetectionStrategyGraph implements	ICharacterDetectionStrat
 			}
 		}
 		return chars;
-	}
-
-	@Override
-	public String toString() {
-		return "Graph";
 	}
 }

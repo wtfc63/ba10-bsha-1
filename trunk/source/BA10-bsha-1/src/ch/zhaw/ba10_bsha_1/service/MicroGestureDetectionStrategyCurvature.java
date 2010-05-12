@@ -8,10 +8,20 @@ import ch.zhaw.ba10_bsha_1.TouchPoint;
 
 import android.util.Log;
 
-public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDetectionStrategy {
+public class MicroGestureDetectionStrategyCurvature extends BaseStrategy implements IMicroGestureDetectionStrategy {
 	
 	
-	private static final String TAG = "CurvatureStrategy"; 
+	protected void initArguments() {}
+
+	@Override
+	protected String getStrategyName() {
+		return "Curvature";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Detect MicroGestures though curvature changes";
+	} 
 	
 	
 	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> micro_gestures) {
@@ -96,11 +106,6 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 		Log.v("Curvature", "Number of Microgestures: " + result.size());
 		return result;
 	}
-
-	@Override
-	public String toString() {
-		return "Curvature";
-	}
 	
 	private void setMicroGesture(MicroGesture mg) {
 		ArrayList<TouchPoint> points = mg.getPoints();
@@ -171,10 +176,5 @@ public class MicroGestureDetectionStrategyCurvature implements IMicroGestureDete
 			result = (float) (StrictMath.atan2(dy, dx));// - (Math.PI / 2));
 		}
 		return result;
-	}
-
-	@Override
-	public void setFieldHeight(float field_height) {
-		//fieldHeight = field_height;
 	}
 }

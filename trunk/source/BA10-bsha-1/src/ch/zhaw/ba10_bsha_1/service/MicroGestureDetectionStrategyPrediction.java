@@ -5,15 +5,32 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
+import ch.zhaw.ba10_bsha_1.StrategyArgument;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 
 
-public class MicroGestureDetectionStrategyPrediction implements IMicroGestureDetectionStrategy {
+public class MicroGestureDetectionStrategyPrediction extends BaseStrategy implements IMicroGestureDetectionStrategy {
 
 	
 	private float predictionTolerance = 5;
-	private float fieldHeight = 0;
+	private float field_height = 0;
 	private boolean mergeMicroGestures = true;
+
+	
+	protected void initArguments() {
+		StrategyArgument arg = new StrategyArgument(getStrategyName(), "FieldHeight", "0", "Height of input field");
+		arguments.put(arg.getArgumentName(), arg);
+	}
+
+	@Override
+	protected String getStrategyName() {
+		return "Prediction";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Detect MicroGestures by predicting the expected position of the next point";
+	} 
 	
 	
 	@Override
@@ -105,8 +122,8 @@ public class MicroGestureDetectionStrategyPrediction implements IMicroGestureDet
 		float mg_length = mg.getLength();
 		float start_end_distance = pts[0].distanceTo(pts[nop - 1]);
 		if ((nop < 3) || (mg_length <= (start_end_distance + predictionTolerance))) {
-			if (fieldHeight > 0) {
-				if ((start_end_distance - predictionTolerance) <= (fieldHeight / 3)) {
+			if (field_height > 0) {
+				if ((start_end_distance - predictionTolerance) <= (field_height / 3)) {
 					type = MicroGesture.TYPE_SHORT_LINE;
 				} else {
 					type = MicroGesture.TYPE_LONG_LINE;
@@ -126,15 +143,5 @@ public class MicroGestureDetectionStrategyPrediction implements IMicroGestureDet
 		float b = second.distanceTo(third);
 		float c = first.distanceTo(third);
 		return ((float) Math.acos((Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2)) / (2 * a * b)));
-	}
-
-	@Override
-	public void setFieldHeight(float field_height) {
-		fieldHeight = field_height;
-	}
-
-	@Override
-	public String toString() {
-		return "Prediction";
 	}
 }

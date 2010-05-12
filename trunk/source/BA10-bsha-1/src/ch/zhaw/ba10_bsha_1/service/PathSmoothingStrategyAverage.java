@@ -2,15 +2,25 @@ package ch.zhaw.ba10_bsha_1.service;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Vector;
-import java.math.*;
-import android.util.Log;
 
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 
 
-public class PathSmoothingStrategyAverage implements IPreprocessingStrategy {
+public class PathSmoothingStrategyAverage extends BaseStrategy implements IPreprocessingStrategy {
+
+	
+	protected void initArguments() {}
+
+	@Override
+	protected String getStrategyName() {
+		return "Average";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Smooth by calculating the points' average positions";
+	} 
+	
 	
 	public MicroGesture process(MicroGesture micro_gesture) {
 		int M = 5;
@@ -33,9 +43,4 @@ public class PathSmoothingStrategyAverage implements IPreprocessingStrategy {
 		}
 		return (new MicroGesture(newPoints));
 	}
-	
-	public String toString() {
-		return "Average";
-	}
-	
 }

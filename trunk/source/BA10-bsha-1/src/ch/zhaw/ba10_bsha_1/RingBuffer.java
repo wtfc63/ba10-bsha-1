@@ -1,8 +1,4 @@
-package ch.zhaw.ba10_bsha_1.service;
-
-
-import java.util.Collection;
-import java.util.Iterator;
+package ch.zhaw.ba10_bsha_1;
 
 
 public class RingBuffer<E> {

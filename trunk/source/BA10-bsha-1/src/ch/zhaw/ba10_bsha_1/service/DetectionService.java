@@ -25,6 +25,7 @@ import java.util.PriorityQueue;
 // class is in a sub-package.
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
+import ch.zhaw.ba10_bsha_1.RingBuffer;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.ime.ServiceTest;
 

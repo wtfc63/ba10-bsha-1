@@ -53,7 +53,7 @@ public class TouchInput {
 		points = new ArrayList<TouchPoint>();
 		microGestures = null;
 		mgDetectionStrategy = MG_DETECTION_STRATEGY_NONE;
-		mgDetectionStrategy.setFieldHeight(field_height);
+		//mgDetectionStrategy.setFieldHeight(field_height);
 		charDetectionStrategy = CHAR_DETECTION_STRATEGY_NONE;
 		smoothingStrategy = new PathSmoothingStrategySpline();
 	}
@@ -62,7 +62,7 @@ public class TouchInput {
 		points = new ArrayList<TouchPoint>();
 		microGestures = null;
 		mgDetectionStrategy = mg_strategy;
-		mgDetectionStrategy.setFieldHeight(field_height);
+		//mgDetectionStrategy.setFieldHeight(field_height);
 		charDetectionStrategy = char_strategy;
 		smoothingStrategy = new PathSmoothingStrategySpline();
 	}
@@ -359,6 +359,7 @@ public class TouchInput {
 	
 	private static int id = 10;
 	
+	/*
 	public void addCharactersToGraph() {
 		CharacterDetectionStrategyGraph graph_strat = 
 			(CharacterDetectionStrategyGraph) CharacterDetectionStrategyManager.getInstance().getStrategy("Graph");
@@ -396,6 +397,6 @@ public class TouchInput {
 		}
 
 	}
-	
+	*/
 	
 }

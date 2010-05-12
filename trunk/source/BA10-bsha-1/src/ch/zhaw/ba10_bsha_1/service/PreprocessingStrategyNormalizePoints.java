@@ -5,8 +5,22 @@ import java.util.Collection;
 
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 
-public class PreprocessingStrategyNormalizePoints implements IPreprocessingStrategy {
+public class PreprocessingStrategyNormalizePoints extends BaseStrategy implements IPreprocessingStrategy {
 
+	
+	protected void initArguments() {}
+
+	@Override
+	protected String getStrategyName() {
+		return "NormalizePoints";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Normalize Point-to-Point distancesR";
+	} 
+	
+	
 	@Override
 	public MicroGesture process(MicroGesture microGesture) {
 		Collection<TouchPoint> points = microGesture.getPoints();
@@ -38,9 +52,4 @@ public class PreprocessingStrategyNormalizePoints implements IPreprocessingStrat
 	
 		return null;
 	}
-	
-	public String toString() {
-		return "Normalize Point-to-Point distances";
-	}
-
 }

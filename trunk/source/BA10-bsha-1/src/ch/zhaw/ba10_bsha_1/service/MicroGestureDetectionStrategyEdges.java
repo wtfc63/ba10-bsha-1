@@ -2,15 +2,27 @@ package ch.zhaw.ba10_bsha_1.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Vector;
 
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 
-public class MicroGestureDetectionStrategyEdges 
-		implements IMicroGestureDetectionStrategy {
+public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements IMicroGestureDetectionStrategy {
 	
 	private double tolerance = 0.2d;
+	
+	
+	protected void initArguments() {}
 
+	@Override
+	protected String getStrategyName() {
+		return "Egdes";
+	}
+	
+	@Override
+	protected String getStrategyDescription() {
+		return "Separate the paths of the given MicroGestures at sharp edges";
+	} 
+	
+	
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(
 			Collection<MicroGesture> microGestures) {
@@ -62,15 +74,4 @@ public class MicroGestureDetectionStrategyEdges
 		
 		return result;
 	}
-
-	@Override
-	public void setFieldHeight(float fieldHeight) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public String toString() {
-		return "Edge Detection: Separating the path at sharp edges.";
-	}
-
 }
