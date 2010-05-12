@@ -1,7 +1,11 @@
-package ch.zhaw.ba10_bsha_1.service;
+package ch.zhaw.ba10_bsha_1.strategies;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
+
+import ch.zhaw.ba10_bsha_1.service.MicroGesture;
+
 
 public class MicroGestureDetectionStrategyRemoveTiny extends BaseStrategy implements IMicroGestureDetectionStrategy {
 
@@ -20,8 +24,7 @@ public class MicroGestureDetectionStrategyRemoveTiny extends BaseStrategy implem
 	
 	
 	@Override
-	public Collection<MicroGesture> detectMicroGestures(
-			Collection<MicroGesture> microGestures) {
+	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 		
 		ArrayList<MicroGesture> remove = new ArrayList<MicroGesture>();
 		for (MicroGesture m : microGestures) {

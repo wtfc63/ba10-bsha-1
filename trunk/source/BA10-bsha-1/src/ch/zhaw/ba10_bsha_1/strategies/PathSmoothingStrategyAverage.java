@@ -1,9 +1,10 @@
-package ch.zhaw.ba10_bsha_1.service;
+package ch.zhaw.ba10_bsha_1.strategies;
 
 
 import java.util.ArrayList;
 
 import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
 public class PathSmoothingStrategyAverage extends BaseStrategy implements IPreprocessingStrategy {

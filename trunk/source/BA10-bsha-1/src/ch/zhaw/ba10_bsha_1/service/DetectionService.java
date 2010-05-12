@@ -28,6 +28,14 @@ import ch.zhaw.ba10_bsha_1.R;
 import ch.zhaw.ba10_bsha_1.RingBuffer;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.ime.ServiceTest;
+import ch.zhaw.ba10_bsha_1.strategies.CharacterDetectionStrategyManager;
+import ch.zhaw.ba10_bsha_1.strategies.ICharacterDetectionStrategy;
+import ch.zhaw.ba10_bsha_1.strategies.IMicroGestureDetectionStrategy;
+import ch.zhaw.ba10_bsha_1.strategies.IPostprocessingStrategy;
+import ch.zhaw.ba10_bsha_1.strategies.IPreprocessingStrategy;
+import ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyManager;
+import ch.zhaw.ba10_bsha_1.strategies.PostprocessingStrategyManager;
+import ch.zhaw.ba10_bsha_1.strategies.PreprocessingStrategyManager;
 
 /**
  * This is an example of implementing an application service that runs in a

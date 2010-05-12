@@ -2,11 +2,8 @@ package ch.zhaw.ba10_bsha_1.graph;
 
 import java.io.*;
 import java.util.Map;
-import java.util.Set;
 import java.util.Stack;
 import java.util.TreeMap;
-import java.util.Vector;
-import java.util.Map.Entry;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -77,7 +74,7 @@ public class GraphMLParser implements ContentHandler{
 
 	@Override
 	public void endDocument() throws SAXException {
-		Set<Entry<String, Node>> e = nodes.entrySet();
+		//Set<Entry<String, Node>> e = nodes.entrySet();
 		
 		while (!tempEdges.empty()) {
 			Pair p = tempEdges.pop();
@@ -182,7 +179,7 @@ public class GraphMLParser implements ContentHandler{
 				else {
 					Log.e(TAG, "Malformed XML: " + localName);
 				}
-				status = status.EDGE;
+				status = Status.EDGE;
 			}
 			else if (localName.equalsIgnoreCase("node")) {
 				String node = atts.getValue("id");
