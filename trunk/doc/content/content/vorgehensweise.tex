@@ -1,4 +1,23 @@
 \chapter{Vorgehensweise}
-Für die Lösung des Problems gibt es schon einen Ansatz aus einer vorhergehenden Arbeit. Wir werden den vorgeschlagenen Ansaz aus dieser Arbeit in einem Prototypen umsetzen. Dieser Prototyp wird jedoch so aufgebaut, dass jeder Teil der Erkennung beliebig ausgetauscht werden kann. Damit können wir nicht nur eine Variante, sondern für jeden Schritt mehrere testen. Nach dem Vergleich der verschiedenen Varianten werden wir die besten auswählen und damit die Release-Version für Android erstellen.
+Dieses Kapitel enthält die Vorgehensweise, wie wir die Aufgabenstellung gelöst haben. Es ist im Prinzip ein grober Ablauf des Projekts und viele Punkte werden deshalb nur kurz angetönt. In den folgenden Kapiteln sind jedoch alle hier enthaltenen Details genau beschrieben.
 
-Im Endeffekt werden wir zwei verschiedene Erkennungsvarianten testen: Variante A ist aus der vorhergehenden Arbeit übernommen und Variante B wird durch uns selbst erstellt. Der Vergleich basiert schlussendlich auf der Erkennungsrate für eine bestimmte Anzahl zufällig ausgewählter Zeichen.
+\begin{enumerate}
+\item \textbf{Projektarbeit zum Thema analysieren} \\ 
+Es wurde bereits eine Projektarbeit \cite{zeichenerkennung_pa} zum Thema Handschrifterkennung erstellt. Darin wurde der Lösungsansatz mit den Mikrogesten theoretisch ausgearbeitet, jedoch nicht umgesetzt. Die vorgeschlagene Software verarbeitet die Eingabepunkte zu Mikrogesten und nutzt danach einen vordefinierten Graph um mit der Mikrogestenfolge einen Buchstaben zu bestimmen.
+
+\item \textbf{Protoyp der Software erstellen} \\
+Aufgrund der Anforderungen aus der bestehenden Projektarbeit, erstellen wir einen Prototyp um die Erkennung praktisch zu testen. Die Erkennung der Buchstaben läuft in mehreren Schritten ab und jeder Schritt kann durch verschiedene Algorithmen gelöst werden. Der Prototyp wird so aufgebaut, dass jeder Schritt in der Erkennung während der Laufzeit ausgetauscht werden kann. Dies gibt uns ein gutes Werkzeug um die verschiedenen Ansätze und Algorithmen miteinander zu vergleichen und den besten auszuwählen.
+
+\item \textbf{Umsetzung der vorgegebenen Algorithmen} \\
+Zuerst haben wir alle vorgeschlagenen Algorithmen der bestehenden Projektarbeit umgesetzt und den vorgeschlagenen Graphen verwendet. Diese \emph{Variante A} der Zeichenerkennung funktionierte nicht sehr gut. Wir haben uns deshalb entschieden möglichst für jeden Schritt mehrere Lösungsmöglichkeiten zu erarbeiten, und diese dann zu vergleichen. Auch beim Graphen ergaben sich einige Probleme mit den momentanen Mikrogesten, da sich viele Buchstaben-Überschneidungen ergaben.
+
+\item \textbf{Erstellung von weiteren eigenen Algorithmen und einer zweiten Mikrogesten-Variante} \\
+Die \emph{Mikrogesten-Variante B} wurde von uns auf theoretische Weise erarbeitet um eine Unterscheidung von ähnlichen Buchstaben zu gewährleisten. Für jeden Schritt von der Vorverarbeitung der Punkte bis zum Graphen wurden von uns neue Algorithmen erarbeitet und die bestehenden optimiert. 
+
+\item  \textbf{Vergleich der Varianten} \\
+Die einzelnen Verfahren und Mikrogesten-Varianten wurden von uns verglichen und die besten ausgewählt. In dieser Phase haben wir vor allem noch optimierungen am Graphen vorgenommen, um so viele Schreibweisen wie möglich einzubeziehen.
+
+\item \textbf{Erstellung einer Eingabe-Software für Android} \\
+Als Endprodukt haben wir einen Ersatz für die Standard-Android-Tastatur erstellt. Dafür konnten wir die Klassen des Prototyps mit etwas Refactoring übernehmen. Die Erkennung läuft damit als Service im Hintergrund auf dem Handy. 
+
+\end{enumerate}
