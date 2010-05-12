@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.PriorityQueue;
 
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
@@ -36,6 +35,7 @@ import ch.zhaw.ba10_bsha_1.strategies.IPreprocessingStrategy;
 import ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyManager;
 import ch.zhaw.ba10_bsha_1.strategies.PostprocessingStrategyManager;
 import ch.zhaw.ba10_bsha_1.strategies.PreprocessingStrategyManager;
+
 
 /**
  * This is an example of implementing an application service that runs in a
@@ -57,8 +57,8 @@ public class DetectionService extends Service {
     private ArrayList<TouchPoint> inputPoints;
     private RingBuffer<TouchPoint> buffer;
     
-    private PriorityQueue<IPreprocessingStrategy> preprocessingSteps;
-    private PriorityQueue<IMicroGestureDetectionStrategy> mgDetectionSteps;
+    private StrategyQueue<IPreprocessingStrategy> preprocessingSteps;
+    private StrategyQueue<IMicroGestureDetectionStrategy> mgDetectionSteps;
     private ICharacterDetectionStrategy charDetectionStrategy;
     private IPostprocessingStrategy postprocessingStrategy;
     
@@ -98,12 +98,14 @@ public class DetectionService extends Service {
     private void initDetection() {
         inputPoints = new ArrayList<TouchPoint>();
         buffer = new RingBuffer<TouchPoint>(BUFFER_SIZE);
+        
+        int priority = 1;
+    	preprocessingSteps = new StrategyQueue<IPreprocessingStrategy>();
+    	preprocessingSteps.enqueue(PreprocessingStrategyManager.getInstance().getStrategy("Spline"), priority++);
     	
-        preprocessingSteps = new PriorityQueue<IPreprocessingStrategy>();
-    	preprocessingSteps.add(PreprocessingStrategyManager.getInstance().getStrategy("Spline"));
-    	
-    	mgDetectionSteps = new PriorityQueue<IMicroGestureDetectionStrategy>();
-    	mgDetectionSteps.add(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Curvature"));
+    	priority = 1;
+    	mgDetectionSteps = new StrategyQueue<IMicroGestureDetectionStrategy>();
+    	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Curvature"), priority++);
     	
     	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("None");
     	
@@ -122,18 +124,23 @@ public class DetectionService extends Service {
     	MicroGesture startMG = new MicroGesture(inputPoints);
     	
 		Log.i("DetectionService.startDetection()", "Preprocessing...");
-    	Iterator<IPreprocessingStrategy> prep_itr = preprocessingSteps.iterator();
+    	Iterator<IPreprocessingStrategy> prep_itr = preprocessingSteps;
     	while (prep_itr.hasNext()) {
-    		Log.i("DetectionService.startDetection()", "Preprocessing: startMg = " + startMG.toString());
-    		startMG = prep_itr.next().process(startMG);
+    		IPreprocessingStrategy prep_strat = prep_itr.next();
+    		if (prep_strat.isEnabled()) {
+    			startMG = prep_strat.process(startMG);
+    		}
     	}
     	
 		Log.i("DetectionService.startDetection()", "MicroGesture detection...");
     	Collection<MicroGesture> tmpMGs = new ArrayList<MicroGesture>();
     	tmpMGs.add(startMG);
-    	Iterator<IMicroGestureDetectionStrategy> mg_itr = mgDetectionSteps.iterator();
+    	Iterator<IMicroGestureDetectionStrategy> mg_itr = mgDetectionSteps;
     	while (mg_itr.hasNext()) {
-    		tmpMGs = mg_itr.next().detectMicroGestures(tmpMGs);
+    		IMicroGestureDetectionStrategy mgd_strat = mg_itr.next();
+    		if (mgd_strat.isEnabled()) {
+    			tmpMGs = mgd_strat.detectMicroGestures(tmpMGs);
+    		}
     	}
     	
 		Log.i("DetectionService.startDetection()", "Character detection...");
@@ -143,12 +150,14 @@ public class DetectionService extends Service {
     		Log.i("DetectionService.startDetection()", "Detected: " + character.toString());
 		}
     	
-		Log.i("DetectionService.startDetection()", "Postprocessing...");
-    	result = postprocessingStrategy.process(result);
-		Log.i("DetectionService.startDetection()", "Detected: " + result.size() + " Characters");
-    	for (Character character : result) {
-    		Log.i("DetectionService.startDetection()", "Detected: " + character.toString());
-		}
+    	if (postprocessingStrategy.isEnabled()) {
+			Log.i("DetectionService.startDetection()", "Postprocessing...");
+	    	result = postprocessingStrategy.process(result);
+			Log.i("DetectionService.startDetection()", "Detected: " + result.size() + " Characters");
+	    	for (Character character : result) {
+	    		Log.i("DetectionService.startDetection()", "Detected: " + character.toString());
+			}
+    	}
     	
 		Log.i("DetectionService.startDetection()", "Begin Broadcast...");
 		int i = callbacks.beginBroadcast();

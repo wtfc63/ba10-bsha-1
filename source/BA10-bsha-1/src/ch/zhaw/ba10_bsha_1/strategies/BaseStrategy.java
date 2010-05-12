@@ -11,10 +11,12 @@ public abstract class BaseStrategy implements IStrategy {
 	
 	
 	protected Hashtable<String, StrategyArgument> arguments;
+	protected boolean enabled;
 	
 	
 	public BaseStrategy() {
 		arguments = new Hashtable<String, StrategyArgument>();
+		enabled   = true;
 		initArguments();
 	}
 	
@@ -31,6 +33,11 @@ public abstract class BaseStrategy implements IStrategy {
 	public String getDescription() {
 		return getStrategyDescription();
 	}
+	
+	@Override
+	public boolean isEnabled() {
+		return enabled;
+	}
 
 	@Override
 	public StrategyArgument getArgument(String name) {
@@ -40,6 +47,11 @@ public abstract class BaseStrategy implements IStrategy {
 	@Override
 	public Collection<StrategyArgument> getConfiguration() {
 		return arguments.values();
+	}
+	
+	@Override
+	public void setEnabled(boolean enable) {
+		enabled = enable;
 	}
 
 	@Override

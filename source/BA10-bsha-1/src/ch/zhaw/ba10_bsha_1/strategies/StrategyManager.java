@@ -1,24 +1,26 @@
 package ch.zhaw.ba10_bsha_1.strategies;
 
+
 import java.util.Collection;
 import java.util.Hashtable;
 
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
 
-public abstract class StrategyManager<S extends IStrategy> {
+
+public abstract class StrategyManager<Strategy extends IStrategy> {
 
 	
-	protected Hashtable<String, S> strategies;
+	protected Hashtable<String, Strategy> strategies;
 	
 	
 	protected StrategyManager() {
-		strategies = new Hashtable<String, S>();
+		strategies = new Hashtable<String, Strategy>();
 		initManager();
 	}
 	protected abstract void initManager();
 	
 	
-	public S getStrategy(String name) {
+	public Strategy getStrategy(String name) {
 		if (strategies.containsKey(name.toLowerCase())) {
 			return strategies.get(name.toLowerCase());
 		} else {
@@ -31,24 +33,24 @@ public abstract class StrategyManager<S extends IStrategy> {
 		return strategies.keySet().toArray(result);
 	}
 	
-	public void addStrategy(S strategy) {
+	public void addStrategy(Strategy strategy) {
 		if (strategy != null) {
 			strategies.put(strategy.toString().toLowerCase(), strategy);
 		}
 	}
 	
-	public void addStrategies(Collection<S> strategies) {
-		for (S strategy : strategies) {
+	public void addStrategies(Collection<Strategy> strategies) {
+		for (Strategy strategy : strategies) {
 			this.strategies.put(strategy.toString().toLowerCase(), strategy);
 		}
 	}
 	
-	public void remStrategy(S strategy) {
+	public void remStrategy(Strategy strategy) {
 		strategies.remove(strategy.toString().toLowerCase());
 	}
 	
-	public void remStrategies(Collection<S> strategies) {
-		for (S strategy : strategies) {
+	public void remStrategies(Collection<Strategy> strategies) {
+		for (Strategy strategy : strategies) {
 			this.strategies.remove(strategy.toString().toLowerCase());
 		}
 	}
