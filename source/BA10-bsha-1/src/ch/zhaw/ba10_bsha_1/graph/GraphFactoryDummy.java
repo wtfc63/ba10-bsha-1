@@ -1,4 +1,4 @@
-package ch.zhaw.ba10_bsha_1.strategies;
+package ch.zhaw.ba10_bsha_1.graph;
 
 public class GraphFactoryDummy implements IGraphFactory {
 

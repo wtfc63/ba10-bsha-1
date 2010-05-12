@@ -1,4 +1,4 @@
-package ch.zhaw.ba10_bsha_1.strategies;
+package ch.zhaw.ba10_bsha_1.graph;
 
 import java.io.*;
 import java.util.Map;
