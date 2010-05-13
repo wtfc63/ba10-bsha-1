@@ -57,6 +57,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     private boolean serviceIsRunning = false;
     
     private PadView padView;
+    private boolean sendFieldHeight = false;
     private CandidateView mCandidateView;
     private CompletionInfo[] mCompletions;
     
@@ -285,10 +286,6 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
         padView.setKeyboard(mCurKeyboard);
         padView.closing();
         padView.clear();
-        /*try {
-        	StrategyArgument arg = new StrategyArgument("", "FieldHeight", String.valueOf(padView.getHeight()));
-			detectionService.broadcastArgument(arg);
-		} catch (RemoteException ex) {}*/
     }
 
     /**
@@ -765,6 +762,11 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
 		if (updater instanceof PadView) {
 			if (serviceIsBound && (detectionService != null)) {
 				try {
+					if (!sendFieldHeight) {
+			        	StrategyArgument arg = new StrategyArgument("FieldHeight", Integer.valueOf(padView.getHeight()).toString());
+						detectionService.broadcastArgument(arg);
+						sendFieldHeight = true;
+					}
 					detectionService.addTouchPoints(new ArrayList<TouchPoint>(padView.getLastPoints()), true);
 					//detectionService.endSample();
 				} catch (RemoteException ex) {

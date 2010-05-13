@@ -31,8 +31,7 @@ public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICh
 	
 	@Override
 	protected void initArguments() {
-		StrategyArgument arg = new StrategyArgument(getStrategyName(), "Path", "/sdcard/test.xml", "Path of the GraphML file");
-		arguments.put(arg.getArgumentName().toLowerCase(), arg);	
+		addArgument(new StrategyArgument(getStrategyName(), "Path", "/sdcard/test.xml", "Path of the GraphML file"));	
 	}
 
 	@Override

@@ -10,7 +10,7 @@ import ch.zhaw.ba10_bsha_1.StrategyArgument;
 public abstract class BaseStrategy implements IStrategy {
 	
 	
-	protected Hashtable<String, StrategyArgument> arguments;
+	private Hashtable<String, StrategyArgument> arguments;
 	protected boolean enabled;
 	
 	
@@ -52,6 +52,13 @@ public abstract class BaseStrategy implements IStrategy {
 	@Override
 	public Collection<StrategyArgument> getConfiguration() {
 		return arguments.values();
+	}
+	
+	@Override
+	public void addArgument(StrategyArgument arg) {
+		if (arg != null) {
+			arguments.put(arg.getArgumentName().toLowerCase(), arg);
+		}
 	}
 	
 	@Override

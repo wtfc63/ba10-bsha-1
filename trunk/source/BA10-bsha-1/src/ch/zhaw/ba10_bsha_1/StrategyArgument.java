@@ -22,7 +22,11 @@ public class StrategyArgument implements Parcelable {
 	}
 
 	public StrategyArgument(String strat_name, String arg_name, String descr) {
-		this(strat_name, arg_name, null, "");
+		this(strat_name, arg_name, null, descr);
+	}
+
+	public StrategyArgument(String arg_name, String arg_val) {
+		this(null, arg_name, arg_val, null);
 	}
 	
 	public StrategyArgument(Parcel source) {
