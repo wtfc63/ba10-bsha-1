@@ -115,7 +115,11 @@ public class DetectionService extends Service {
     	
     	priority = 1;
     	mgDetectionSteps = new StrategyQueue<IMicroGestureDetectionStrategy>();
-    	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Curvature"), priority++);
+    	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Edges"), priority++);
+    	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Circles"), priority++);
+    	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("RemoveTiny"), priority++);
+    	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Lines"), priority++);
+    	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("HalfCircle"), priority++);
     	
     	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("DummyGraph");
     	
@@ -149,7 +153,6 @@ public class DetectionService extends Service {
     	Iterator<IMicroGestureDetectionStrategy> mg_itr = mgDetectionSteps.iterator();
     	while (mg_itr.hasNext()) {
     		IMicroGestureDetectionStrategy mgd_strat = mg_itr.next();
-    		Log.i("DetectionService.startDetection()", "MGDS: " + mgd_strat.toString());
     		if (mgd_strat.isEnabled()) {
         		Log.i("DetectionService.startDetection()", "MGDS: " + mgd_strat.toString());
     			tmpMGs = mgd_strat.detectMicroGestures(tmpMGs);

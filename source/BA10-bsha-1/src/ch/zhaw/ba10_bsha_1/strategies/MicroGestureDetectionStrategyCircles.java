@@ -15,7 +15,7 @@ public class MicroGestureDetectionStrategyCircles extends BaseStrategy implement
 
 	@Override
 	protected String getStrategyName() {
-		return "Circle";
+		return "Circles";
 	}
 	
 	@Override

@@ -52,8 +52,8 @@ public class StrategyQueue<Strategy extends IStrategy> implements PriorityQueue<
 	public void enqueue(Strategy element, int priority) {
 		boolean added = false;
 		Prioritized<Strategy> tmp = new Prioritized<Strategy>(element, priority);
-		for (int i = 0; i < queue.size(); i++) {
-			if (queue.get(i).getPriority() < tmp.getPriority()) {
+		for (int i = 0; (!added && (i < queue.size())); i++) {
+			if (tmp.getPriority() < queue.get(i).getPriority()) {
 				queue.add(i, tmp);
 				added = true;
 			}
