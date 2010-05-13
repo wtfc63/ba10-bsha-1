@@ -40,7 +40,7 @@ Auch weist das Verfahren Probleme mit ungleichen Punktedichten auf einem Pfad au
 
 Weiter haben wir mit diesem Verfahren Probleme mit zu nahe beieinander liegenden Eingabepunkten festgestellt. Ist die Distanz von einem Punkt zum nächsten kleiner als die Länge des Toleranz-Wertes, fällt der Punkt in jedem Fall innerhalb der Toleranz und es kann keine fundierte Aussage über mehr darüber gemacht werden, ob der Punkt zur selben Mirkogeste gehören soll oder nicht. Daher werden nur Punkte, deren Abstand zum Ausgangspunkt kleiner als die zweifache Länge des Toleranz-Wertes sind, beachtet. Andere Punkte werden als zur aktuellen Mikrogeste gehörig angenommen und zum neuen Ausgangspunkt. Dies führt wiederum zu Problemen mit sehr engen Kurven, wie sie etwa bei Richtungswechseln und sehr engwinkligen Spitzen, da diese eng beieinander liegende Eingabepunkte erzeugen, deren Abstand häufig unterhalb die Toleranzgrenze fällt. Somit wird häufig noch der erste Punkt nach einer solchen Spitze zur vorherigen Mikrogeste zugeordnet.
 
-(( TODO diesen Part ev. auf Resultat Sektion verschieben))
+%% TODO diesen Part ev. auf Resultat Sektion verschieben))
 Diesen beiden Probleme, welche beide das als substantiell gewertete Bewertungskriterium der Toleranz beinträchtigen, steht steht nur eine gute Performanz durch die relativ simplen Berechnungen, die das Voraussage-Verfahren benötigt, gegenüber. Da das Toleranz-Kriterium von uns aber als signifikant wichtiger eingestuft wurde und vom Krümmungs-Verfahren weit besser erfüllt wird, mussten wir uns am Ende für das auf Krümmungs-Änderungen basierende Verfahren festlegen.
 
 %TODO
@@ -116,12 +116,7 @@ Mit diesem Ansatz sollen alle geschlossenen Kreise auf dem Pfad erkannt werden. 
 \subsubsection{Verfahren}
 Mit jedem Punkt auf dem Pfad werden alle nachfolgenden Punkte verglichen: Wenn die zwei Punkte sehr nahe beieinander liegen bildet der Pfad zwischen den Punkten ein Kreis.
 
-\begin{lstlisting} [caption={Pseudocode-Algorithmus um Kreise auf einem Pfad zu erkennen},label=kreisalgorithmus]
-for(int i=0; i<8;i++) 
-{
-      //donothing
-}
-\end{lstlisting}
+\lstinputlisting [caption={Pseudocode-Algorithmus um Kreise auf einem Pfad zu erkennen},label=kreisalgorithmus]{code/circle.pseudo}
 
 \subsubsection{Bewertung}
 Die Kreiserkennung ist natürlich nur sinnvoll, wenn man eine entsprechende Mikrogeste "Kreis" hat. Allerdings gibt es auch beim Algorithmus noch Verbesserungsbedarf: Bei einem Spezialfall, nämlich ein Pfad der eine '8' bildet, wird der gesamte Pfad als ein Kreis erkannt und nicht als zwei Kreise. 
@@ -131,6 +126,8 @@ Die Kreiserkennung ist natürlich nur sinnvoll, wenn man eine entsprechende Mikr
 \subsection{Fazit}
 Es hat sich gezeigt, dass es nicht sinnvoll ist, sich auf ein einzelnes Verfahren zu stützen. Jedes Verfahren hat seine Schwächen, welche von einem anderen Verfahren abgedeckt werden können. Es ist am besten, den Pfad schrittweise zu unterteilen und bei jedem Schritt die Mikrogesten-Erkennung zu starten. Mit jedem weiteren Schritt werden dann nur noch Pfadteile berücksichtigt, welchen noch keine Mikrogeste zugewiesen ist.
 
+
+%% TODO: Weiter nach unten verschieben
 Der Ansatz ist wie folgt:
 \begin{enumerate}
 	\item Normierung der Punktezahl: Zu nahe beieinander liegende Punkte werden gelöscht. Bei zu grossen Abständen wird zwischen den zwei Punkten interpoliert.
@@ -139,7 +136,7 @@ Der Ansatz ist wie folgt:
 	\item Unterteilung in Kurven und Geraden
 	\item Unterteilung der Kurven bei Drehrichtungswechsel
 \end{enumerate}
-
+%% TODO ENDE
 
 %================================================
 
@@ -157,12 +154,20 @@ Der Ansatz ist wie folgt:
 
 %TODO
 
-\subsection{Zusammenfügen von minimalen Mikrogesten}
 
-%TODO
+\subsection{Normierung der Eingangspunkte}
+Eine Normierung der Eingangspunkte ist nötig, um immer gleiche Voraussetzungen für die Algorithmen zu garantieren. Der durchschnittliche Abstand zwischen den Punkten, die beim schreiben vom Touchpad erfasst werden, ist hauptsächlich von der Schreibgeschwindigkeit, aber auch von der Qualität des Touchpads abhängig. 
+
+\lstinputlisting[caption={Algorithmus zur groben Normierung der Eingangspunkte},label=normierung_algorithmus]{code/normierung.pseudo}
+
+\subsection{Zusammenfügen von minimalen Mikrogesten}
+Die Mikrogesten-Algorithmen erstellen manchmal sehr kurze (nur ganz wenige Punkte) Mikrogesten. Da sie so kurz sind, sagen sie auch nicht wirklich etwas über die Form des eingegebenen Zeichen aus. Dies kann optimiert werden, indem die Punkte einfach der vorhergehenden Mikrogeste angehängt werden und die kurze Geste verworfen wird.
 
 \subsection{Glättung der Eingangspunkte}\label{sec:Glaettung}
+Für die Erkennung der Mikrogesten ist es von Vorteil, dass der Buchstaben relativ ``rund'' eingegeben wurde und nicht zu sehr verwackelt. Dies würde sonst zu einer Erkennung von mehreren kurzen Mikrogesten führen, wo eigentlich nur eine einzige, zittrige Mikrogeste gemacht wurde. Mit einem Glättungs-Algorithmus kann der Pfad zusätzlich optimiert werden. 
 
-%TODO - Verschiedene Verfahren, Optimierungen
+Für die Glättung verwenden wir \emph{rational B-Splines} \cite[S. 454]{smoothing_book} da diese Perfekt für Pfad-Glättung konzipiert sind. Allerdings muss beachtet werden, dass gewisse Kanten im Pfad gewünscht sind, wie zum Beispiel Spitzkehren. Eine Glättung würde diese Merkmale abschwächen und die Erkennung damit verschlechtern. Es ist deshalb von Vorteil wenn nur die Teilpfade zwischen solchen gewünschten Kanten geglättet wird.
+
+
 %================================================
 

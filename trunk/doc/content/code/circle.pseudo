@@ -1,0 +1,21 @@
+for (int i = 0; i < points.length; i++) {
+	Point origin = tPoints[i];
+
+	for (int j = i+5; j < tPoints.length; j++) {
+		// Den Abastand zwischen Startpunkt und jedem
+		// folgenden Punkt berechnen
+		
+		if (origin.distance(points[j] < tolerance) {
+			// Wenn die zwei Punkte sehr nahe beieinander 
+			// liegen bilden die dazwischen liegenden Punkte 
+			// einen Kreis.
+			
+			// Kreis Geste von Punkt i bis j erstellen
+			createMicroGesture(); 
+			
+			// Der Algorithmus fährt nach dem Kreis weiter
+			i = j;
+			break;
+		}
+	}
+}
