@@ -62,4 +62,13 @@ public abstract class StrategyManager<Strategy extends IStrategy> {
 	public void setArgument(StrategyArgument arg) {
 		strategies.get(arg.getStrategyName().toLowerCase()).setArgument(arg);
 	}
+	
+	public void broadcastArgument(StrategyArgument arg) {
+		for (Strategy strategy : strategies.values()) {
+			if (strategy.hasArgument(arg.getArgumentName())) {
+				arg.setStrategyName(strategy.toString());
+				strategy.setArgument(arg);
+			}
+		}
+	}
 }

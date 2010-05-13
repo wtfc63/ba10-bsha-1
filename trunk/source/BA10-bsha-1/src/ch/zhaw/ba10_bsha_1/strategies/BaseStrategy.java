@@ -38,6 +38,11 @@ public abstract class BaseStrategy implements IStrategy {
 	public boolean isEnabled() {
 		return enabled;
 	}
+	
+	@Override
+	public boolean hasArgument(String name) {
+		return arguments.containsKey(name.toLowerCase());
+	}
 
 	@Override
 	public StrategyArgument getArgument(String name) {

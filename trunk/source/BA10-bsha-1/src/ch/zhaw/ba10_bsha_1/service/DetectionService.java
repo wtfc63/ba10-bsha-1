@@ -25,6 +25,7 @@ import java.util.List;
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
 import ch.zhaw.ba10_bsha_1.RingBuffer;
+import ch.zhaw.ba10_bsha_1.StrategyArgument;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.ime.ServiceTest;
 import ch.zhaw.ba10_bsha_1.strategies.CharacterDetectionStrategyManager;
@@ -32,9 +33,11 @@ import ch.zhaw.ba10_bsha_1.strategies.ICharacterDetectionStrategy;
 import ch.zhaw.ba10_bsha_1.strategies.IMicroGestureDetectionStrategy;
 import ch.zhaw.ba10_bsha_1.strategies.IPostprocessingStrategy;
 import ch.zhaw.ba10_bsha_1.strategies.IPreprocessingStrategy;
+import ch.zhaw.ba10_bsha_1.strategies.IStrategy;
 import ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyManager;
 import ch.zhaw.ba10_bsha_1.strategies.PostprocessingStrategyManager;
 import ch.zhaw.ba10_bsha_1.strategies.PreprocessingStrategyManager;
+import ch.zhaw.ba10_bsha_1.strategies.StrategyManager;
 
 
 /**
@@ -45,14 +48,21 @@ import ch.zhaw.ba10_bsha_1.strategies.PreprocessingStrategyManager;
  * show how to interact with the service.
  */
 public class DetectionService extends Service {
+	
+	
+    private static final int STRATEGY_TYPE_PREPROCESSING = 0;
+    private static final int STRATEGY_TYPE_MICROGESTURE_DETECTION = 1;
+    private static final int STRATEGY_TYPE_CHARACTER_DETECTION = 2;
+    private static final int STRATEGY_TYPE_POSTPROCESSING = 3;
+    
     /**
      * This is a list of callbacks that have been registered with the
      * service.  Note that this is package scoped (instead of private) so
      * that it can be accessed more efficiently from inner classes.
      */
-    final RemoteCallbackList<IReturnRecognisedCharacters> callbacks = new RemoteCallbackList<IReturnRecognisedCharacters>();
+    private final RemoteCallbackList<IReturnResults> callbacks = new RemoteCallbackList<IReturnResults>();
+    private final int BUFFER_SIZE = 10;
 
-    static final int BUFFER_SIZE = 10;
     
     private ArrayList<TouchPoint> inputPoints;
     private RingBuffer<TouchPoint> buffer;
@@ -197,14 +207,14 @@ public class DetectionService extends Service {
      */
     private final IDetectionService.Stub serviceBinder = new IDetectionService.Stub() {
 		@Override
-        public void registerCallback(IReturnRecognisedCharacters cb) {
+        public void registerCallback(IReturnResults cb) {
             if (cb != null) {
             	callbacks.register(cb);
             }
         }
 		
 		@Override
-        public void unregisterCallback(IReturnRecognisedCharacters cb) {
+        public void unregisterCallback(IReturnResults cb) {
             if (cb != null) {
             	callbacks.unregister(cb);
             }
@@ -240,7 +250,116 @@ public class DetectionService extends Service {
 			startDetection();
 			Log.i("DetectionService.endSample()", "Detection ended");
 		}
+		
+		@Override
+		public List<String> getAvailableStrategies() {
+			ArrayList<String> result = new ArrayList<String>();
+			String[] strats = PreprocessingStrategyManager.getInstance().getStrategyList();
+			for (String strat : strats) {		
+				result.add(printStrategy(
+						PreprocessingStrategyManager.getInstance().getStrategy(strat), 
+						STRATEGY_TYPE_PREPROCESSING));
+			}
+			strats = MicroGestureDetectionStrategyManager.getInstance().getStrategyList();
+			for (String strat : strats) {
+				result.add(printStrategy(
+						PreprocessingStrategyManager.getInstance().getStrategy(strat), 
+						STRATEGY_TYPE_MICROGESTURE_DETECTION));
+			}
+			strats = CharacterDetectionStrategyManager.getInstance().getStrategyList();
+			for (String strat : strats) {
+				result.add(printStrategy(
+						CharacterDetectionStrategyManager.getInstance().getStrategy(strat), 
+						STRATEGY_TYPE_CHARACTER_DETECTION));
+			}
+			strats = PostprocessingStrategyManager.getInstance().getStrategyList();
+			for (String strat : strats) {
+				result.add(printStrategy(
+						PostprocessingStrategyManager.getInstance().getStrategy(strat), 
+						STRATEGY_TYPE_POSTPROCESSING));
+			}
+			return result;
+		}
+		
+		@Override
+		public List<String> getActiveStrategies() {
+			ArrayList<String> result = new ArrayList<String>();
+			preprocessingSteps.resetIterator();
+			while (preprocessingSteps.hasNext()) {
+				IStrategy strategy = preprocessingSteps.next();
+				if (strategy.isEnabled()) {
+					result.add(printStrategy(strategy, STRATEGY_TYPE_PREPROCESSING));
+				}
+			}
+			mgDetectionSteps.resetIterator();
+			while (mgDetectionSteps.hasNext()) {
+				IStrategy strategy = mgDetectionSteps.next();
+				if (strategy.isEnabled()) {
+					result.add(printStrategy(strategy, STRATEGY_TYPE_MICROGESTURE_DETECTION));
+				}
+			}
+			result.add(printStrategy(charDetectionStrategy, STRATEGY_TYPE_CHARACTER_DETECTION));
+			if (postprocessingStrategy.isEnabled()) {
+				result.add(printStrategy(postprocessingStrategy, STRATEGY_TYPE_POSTPROCESSING));
+			}
+			return result;
+		}
+		
+		@Override
+		public List<StrategyArgument> getStrategyConfiguration(String strategy_name, int type) {
+			IStrategy strategy = getManagerByType(type).getStrategy(strategy_name);
+			return (strategy != null) ? new ArrayList<StrategyArgument>(strategy.getConfiguration()) : null;
+		}
+		
+		@Override
+		public void broadcastArgument(StrategyArgument argument) {
+			PreprocessingStrategyManager.getInstance().broadcastArgument(argument);
+			MicroGestureDetectionStrategyManager.getInstance().broadcastArgument(argument);
+			CharacterDetectionStrategyManager.getInstance().broadcastArgument(argument);
+			PostprocessingStrategyManager.getInstance().broadcastArgument(argument);
+		}
+
+		@Override
+	    public void setStrategyArgument(StrategyArgument argument, int type) {
+			IStrategy strategy = getManagerByType(type).getStrategy(argument.getStrategyName());
+			if (strategy != null) {
+				strategy.setArgument(argument);
+			}
+		}
     };
+    
+    static public String printStrategy(IStrategy strategy, int type) {
+    	StringBuffer result = new StringBuffer();
+		result.append(type);
+		result.append(';');
+		result.append(strategy.toString());
+		result.append(';');
+		result.append(strategy.getDescription());
+		result.append(';');
+		result.append(strategy.isEnabled() ? "true" : "false");
+		return result.toString();
+    }
+    
+    static public StrategyManager<IStrategy> getManagerByType(int type) {
+    	StrategyManager result = null;
+    	switch (type) {
+    		case STRATEGY_TYPE_PREPROCESSING :
+    			result = PreprocessingStrategyManager.getInstance();
+    			break;
+    		case STRATEGY_TYPE_MICROGESTURE_DETECTION :
+    			result = MicroGestureDetectionStrategyManager.getInstance();
+    			break;
+    		case STRATEGY_TYPE_CHARACTER_DETECTION :
+    			result = CharacterDetectionStrategyManager.getInstance();
+    			break;
+    		case STRATEGY_TYPE_POSTPROCESSING :
+    			result = PostprocessingStrategyManager.getInstance();
+    			break;
+    		default :
+    			result = CharacterDetectionStrategyManager.getInstance();
+    	}
+    	return result;
+    }
     
     private static final int REPORT_MSG = 1;
     

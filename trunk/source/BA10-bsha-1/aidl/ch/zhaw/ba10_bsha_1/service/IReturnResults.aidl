@@ -9,7 +9,8 @@ import ch.zhaw.ba10_bsha_1.Character;
  * synchronous notifications back to its clients.  Note that this is a
  * one-way interface so the server does not block waiting for the client.
  */
-oneway interface IReturnRecognisedCharacters {
+oneway interface IReturnResults {
+
     /**
      * Return recognised Characters
      */

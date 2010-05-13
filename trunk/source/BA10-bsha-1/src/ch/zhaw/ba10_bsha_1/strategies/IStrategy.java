@@ -10,8 +10,9 @@ public interface IStrategy {
 	public String toString();
 	public String getDescription();
 	public boolean isEnabled();
-	public Collection<StrategyArgument> getConfiguration();
+	public boolean hasArgument(String name);
 	public StrategyArgument getArgument(String name);
+	public Collection<StrategyArgument> getConfiguration();
 	public void setEnabled(boolean enable);
 	public void setArgument(StrategyArgument arg);
 }

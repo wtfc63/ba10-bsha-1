@@ -27,6 +27,7 @@ import ch.zhaw.ba10_bsha_1.R;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.service.IDetectionService;
 import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
+import ch.zhaw.ba10_bsha_1.service.IReturnResults;
 
 
 public class ServiceTest extends Activity {
@@ -203,7 +204,7 @@ public class ServiceTest extends Activity {
      * This implementation is used to receive callbacks from the remote
      * service.
      */
-    private IReturnRecognisedCharacters serviceCallback = new IReturnRecognisedCharacters.Stub() {
+    private IReturnResults serviceCallback = new IReturnResults.Stub() {
         /**
          * This is called by the remote service regularly to tell us about
          * new values.  Note that IPC calls are dispatched through a thread
