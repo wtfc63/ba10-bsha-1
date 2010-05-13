@@ -3,20 +3,30 @@
 Die Grundsätzliche Idee zur Handschrifterkennung ist die Unterteilung der Schrift in sogenannte Mikrogesten. Eine Mikrogeste ist eine simple Bewegung, die beim Schreiben ausgeführt wird. Jeder Buchstabe soll dann aus solchen Mikrogesten aufgebaut werden können. 
 Es ist nun natürlich möglich diese Mikrogesten auf beliebige Art zu definieren. Die Hauptkriterien sind, dass die Gesten so einfach wie möglich sein sollen (Für eine optimale Erkennung) und sich untereinandern möglichst stark unterscheiden. Je weniger solche Gesten man braucht, desto besser. Man kann jedoch nicht beliebig grobe Gesten wählen, da immer noch alle möglichen Zeichen einzigartig aus solchen Gesten zusammen gebaut werden müssen.
 
-%%TODO  Bild: Aufbau eines Buchstaben aus Mikrogesten. %%
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.2\textwidth]{./img/mikrogesten_beispiel.pdf}
+  \caption{Beispiel für die Auftrennung des Buchstaben 'f' in Mikrogesten.}
+  \label{mikrogeste_beispiel}
+\end{figure}
 
-\section{Definition}
+In der Abbildung \ref{mikrogeste_beispiel} sieht man eine mögliche Aufteilung des Buchstaben 'f' in die Mikrogesten \emph{Kurve} und \emph{Gerade}. Der Buchstabe wird also durch die Abfolge Gerade-Kurve-Kurve-Gerade-Gerade definiert. Nur zwei Mikrogesten sind allerdings zu wenige um alle Zeichen eindeutig abzubilden.
+
+\section{Eigenschaften}
+Die Mikrogesten müssen genau definiert werden und können mehr als eine Eigenschaft besitzen:
+
+\subsubsection{Form}
+Die Form ist ein sehr einfach zu unterscheidendes Merkmal einer
 
 \section{Typen}
 \subsection{Variante A}
-Variante A der Mikrogesten haben wir von der vorherigen Arbeit zu diesem Thema übernommen: 
-%% TODO Referenz zu alter arbeit%% 
-Es sind folgende Typen definiert:
+Variante A der Mikrogesten haben wir aus der bestehenden Projektarbeit \cite{zeichenerkennung_pa} zu diesem Thema übernommen: 
+
+Es sind folgende Mikrogesten definiert:
 \begin{itemize}
 \item Gerade
 \item Schwache Krümmung
 \item Starke Krümmung
-\item Spitzkehre
 \end{itemize}
 
 \subsection{Variante B}

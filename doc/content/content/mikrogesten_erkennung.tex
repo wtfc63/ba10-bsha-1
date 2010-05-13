@@ -116,6 +116,13 @@ Mit diesem Ansatz sollen alle geschlossenen Kreise auf dem Pfad erkannt werden. 
 \subsubsection{Verfahren}
 Mit jedem Punkt auf dem Pfad werden alle nachfolgenden Punkte verglichen: Wenn die zwei Punkte sehr nahe beieinander liegen bildet der Pfad zwischen den Punkten ein Kreis.
 
+\begin{lstlisting} [caption={Pseudocode-Algorithmus um Kreise auf einem Pfad zu erkennen},label=kreisalgorithmus]
+for(int i=0; i<8;i++) 
+{
+      //donothing
+}
+\end{lstlisting}
+
 \subsubsection{Bewertung}
 Die Kreiserkennung ist natürlich nur sinnvoll, wenn man eine entsprechende Mikrogeste "Kreis" hat. Allerdings gibt es auch beim Algorithmus noch Verbesserungsbedarf: Bei einem Spezialfall, nämlich ein Pfad der eine '8' bildet, wird der gesamte Pfad als ein Kreis erkannt und nicht als zwei Kreise. 
 
