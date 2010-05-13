@@ -117,7 +117,7 @@ public class DetectionService extends Service {
     	mgDetectionSteps = new StrategyQueue<IMicroGestureDetectionStrategy>();
     	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Curvature"), priority++);
     	
-    	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("None");
+    	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("DummyGraph");
     	
     	postprocessingStrategy = PostprocessingStrategyManager.getInstance().getStrategy("None");
     }
@@ -132,9 +132,10 @@ public class DetectionService extends Service {
 			}
 		}
     	MicroGesture startMG = new MicroGesture(inputPoints);
+    	inputPoints.clear();
     	
 		Log.i("DetectionService.startDetection()", "Preprocessing...");
-    	Iterator<IPreprocessingStrategy> prep_itr = preprocessingSteps;
+    	Iterator<IPreprocessingStrategy> prep_itr = preprocessingSteps.iterator();
     	while (prep_itr.hasNext()) {
     		IPreprocessingStrategy prep_strat = prep_itr.next();
     		if (prep_strat.isEnabled()) {
@@ -145,13 +146,18 @@ public class DetectionService extends Service {
 		Log.i("DetectionService.startDetection()", "MicroGesture detection...");
     	Collection<MicroGesture> tmpMGs = new ArrayList<MicroGesture>();
     	tmpMGs.add(startMG);
-    	Iterator<IMicroGestureDetectionStrategy> mg_itr = mgDetectionSteps;
+    	Iterator<IMicroGestureDetectionStrategy> mg_itr = mgDetectionSteps.iterator();
     	while (mg_itr.hasNext()) {
     		IMicroGestureDetectionStrategy mgd_strat = mg_itr.next();
+    		Log.i("DetectionService.startDetection()", "MGDS: " + mgd_strat.toString());
     		if (mgd_strat.isEnabled()) {
+        		Log.i("DetectionService.startDetection()", "MGDS: " + mgd_strat.toString());
     			tmpMGs = mgd_strat.detectMicroGestures(tmpMGs);
     		}
     	}
+    	for (MicroGesture mg : tmpMGs) {
+    		Log.i("DetectionService.startDetection()", "MicroGesture: " + mg.toString());
+		}
     	
 		Log.i("DetectionService.startDetection()", "Character detection...");
     	Collection<Character> result = charDetectionStrategy.detectCharacter(tmpMGs);
@@ -221,13 +227,14 @@ public class DetectionService extends Service {
         }
 		
 		@Override
-		public void addTouchPoints(List<TouchPoint> points)	throws RemoteException {
+		public void addTouchPoints(List<TouchPoint> points, boolean start_detection)	throws RemoteException {
 			if (points != null) {
-				for (TouchPoint point : points) {
+				inputPoints.addAll(points);
+				/*for (TouchPoint point : points) {
 					buffer.add(point);
 					Log.i("DetectionService.addTouchPoints()", "Added: " + point.toString());
-				}
-				if (buffer.isFull()) {
+				}*/
+				if (start_detection || buffer.isFull()) {
 					startDetection();
 				}
 			} else {
@@ -284,16 +291,16 @@ public class DetectionService extends Service {
 		@Override
 		public List<String> getActiveStrategies() {
 			ArrayList<String> result = new ArrayList<String>();
-			preprocessingSteps.resetIterator();
-			while (preprocessingSteps.hasNext()) {
-				IStrategy strategy = preprocessingSteps.next();
+			Iterator<IPreprocessingStrategy> pps_itr = preprocessingSteps.iterator();
+			while (pps_itr.hasNext()) {
+				IStrategy strategy = pps_itr.next();
 				if (strategy.isEnabled()) {
 					result.add(printStrategy(strategy, STRATEGY_TYPE_PREPROCESSING));
 				}
 			}
-			mgDetectionSteps.resetIterator();
-			while (mgDetectionSteps.hasNext()) {
-				IStrategy strategy = mgDetectionSteps.next();
+			Iterator<IMicroGestureDetectionStrategy> mgds_itr = mgDetectionSteps.iterator();
+			while (mgds_itr.hasNext()) {
+				IStrategy strategy = mgds_itr.next();
 				if (strategy.isEnabled()) {
 					result.add(printStrategy(strategy, STRATEGY_TYPE_MICROGESTURE_DETECTION));
 				}

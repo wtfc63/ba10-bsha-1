@@ -8,7 +8,7 @@ import java.util.Iterator;
 import ch.zhaw.ba10_bsha_1.strategies.IStrategy;
 
 
-public class StrategyQueue<Strategy extends IStrategy> implements PriorityQueue<Strategy>, Iterator<Strategy> {
+public class StrategyQueue<Strategy extends IStrategy> implements PriorityQueue<Strategy>, Iterator<Strategy>, Iterable<Strategy> {
 
 	
 	private ArrayList<Prioritized<Strategy>> queue;
@@ -90,19 +90,20 @@ public class StrategyQueue<Strategy extends IStrategy> implements PriorityQueue<
 	}
 
 	
-	public void resetIterator() {
+	public Iterator<Strategy> iterator() {
 		currentElement = 0;
+		return (this);
 	}
 	
 	@Override
 	public boolean hasNext() {
-		return (currentElement < (queue.size() - 1));
+		return (currentElement < queue.size());
 	}
 
 	@Override
 	public Strategy next() {
 		Strategy result = queue.get(currentElement).getData();
-		currentElement = (currentElement + 1) % queue.size();
+		currentElement++;
 		return result;
 	}
 
