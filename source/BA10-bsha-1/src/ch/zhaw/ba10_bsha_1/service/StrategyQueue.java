@@ -90,6 +90,10 @@ public class StrategyQueue<Strategy extends IStrategy> implements PriorityQueue<
 	}
 
 	
+	public void resetIterator() {
+		currentElement = 0;
+	}
+	
 	@Override
 	public boolean hasNext() {
 		return (currentElement < (queue.size() - 1));
