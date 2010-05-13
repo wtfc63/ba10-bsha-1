@@ -30,6 +30,7 @@ import java.util.List;
 //class is in a sub-package.
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
+import ch.zhaw.ba10_bsha_1.StrategyArgument;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.ime.ServiceTest.DetectionServiceConnection;
 import ch.zhaw.ba10_bsha_1.service.IDetectionService;
@@ -284,6 +285,10 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
         padView.setKeyboard(mCurKeyboard);
         padView.closing();
         padView.clear();
+        /*try {
+        	StrategyArgument arg = new StrategyArgument("", "FieldHeight", String.valueOf(padView.getHeight()));
+			detectionService.broadcastArgument(arg);
+		} catch (RemoteException ex) {}*/
     }
 
     /**
