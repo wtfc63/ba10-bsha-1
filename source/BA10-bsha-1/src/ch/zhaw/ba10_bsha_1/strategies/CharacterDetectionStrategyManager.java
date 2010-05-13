@@ -17,5 +17,6 @@ public class CharacterDetectionStrategyManager extends StrategyManager<ICharacte
 	protected void initManager() {
 		addStrategy(new CharacterDetectionStrategyNone());
 		addStrategy(new CharacterDetectionStrategyGraph());
+		addStrategy(new CharacterDetectionStrategyDummyGraph());
 	}
 }

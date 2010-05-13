@@ -1,9 +1,17 @@
 package ch.zhaw.ba10_bsha_1.ime;
 
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.RemoteException;
 import android.text.method.MetaKeyKeyListener;
 import android.util.Log;
 import android.view.KeyCharacterMap;
@@ -13,6 +21,7 @@ import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +31,10 @@ import java.util.List;
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.ime.ServiceTest.DetectionServiceConnection;
 import ch.zhaw.ba10_bsha_1.service.IDetectionService;
 import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
+import ch.zhaw.ba10_bsha_1.service.IReturnResults;
 
 
 /**
@@ -33,21 +44,18 @@ import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
  * a basic example for how you would get started writing an input method, to
  * be fleshed out as appropriate.
  */
-public class HandwritingIME extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
-    static final boolean DEBUG = false;
-    
-    /**
-     * This boolean indicates the optional example code for performing
-     * processing of hard keys in addition to regular text generation
-     * from on-screen interaction.  It would be used for input methods that
-     * perform language translations (such as converting text entered on 
-     * a QWERTY keyboard to Chinese), but may not be used for input methods
-     * that are primarily intended to be used for on-screen text entry.
-     */
+public class HandwritingIME extends InputMethodService implements KeyboardView.OnKeyboardActionListener, IObserver {
+
+	
     static final boolean PROCESS_HARD_KEYS = true;
     
+    /** The primary interface we will be calling on the service. */
+    private IDetectionService detectionService = null;
+    private DetectionServiceConnection serviceConnection;
+    private boolean serviceIsBound = false;
+    private boolean serviceIsRunning = false;
+    
     private PadView padView;
-    //private KeyboardView mInputView;
     private CandidateView mCandidateView;
     private CompletionInfo[] mCompletions;
     
@@ -68,6 +76,44 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     
     private String wordSeparators;
     
+    
+    /**
+     * Class for interacting with the main interface of the service.
+     */
+    class DetectionServiceConnection implements ServiceConnection {
+        public void onServiceConnected(ComponentName className, IBinder service) {
+            // This is called when the connection with the service has been
+            // established, giving us the service object we can use to
+            // interact with the service.  We are communicating with our
+            // service through an IDL interface, so get a client-side
+            // representation of that from the raw service object.
+        	detectionService = IDetectionService.Stub.asInterface(service);
+
+            // We want to monitor the service for as long as we are
+            // connected to it.
+            try {
+                detectionService.registerCallback(serviceCallback);
+            } catch (RemoteException e) {
+                // In this case the service has crashed before we could even
+                // do anything with it; we can count on soon being
+                // disconnected (and then reconnected if it can be restarted)
+                // so there is no need to do anything here.
+            }
+            
+            // As part of the sample, tell the user what happened.
+            Toast.makeText(HandwritingIME.this, R.string.service_bound, Toast.LENGTH_SHORT).show();
+        }
+
+        public void onServiceDisconnected(ComponentName className) {
+            // This is called when the connection with the service has been
+            // unexpectedly disconnected -- that is, its process crashed.
+            detectionService = null;
+
+            // As part of the sample, tell the user what happened.
+            Toast.makeText(HandwritingIME.this, R.string.service_unbound, Toast.LENGTH_SHORT).show();
+        }
+    };
+    
     /**
      * Main initialization of the input method component.  Be sure to call
      * to super class.
@@ -75,6 +121,12 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     @Override
     public void onCreate() {
         super.onCreate();
+        serviceConnection = new DetectionServiceConnection();
+        if (!serviceIsRunning) {
+        	startService(new Intent("ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"));
+        	serviceIsRunning = true;
+        	Toast.makeText(HandwritingIME.this, R.string.service_started, Toast.LENGTH_SHORT).show();
+        }
         wordSeparators = getResources().getString(R.string.word_separators);
     }
     
@@ -88,13 +140,6 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     		padView = (PadView) getLayoutInflater().inflate(R.layout.input, null);
     	}
         padView.setMinimumWidth(getMaxWidth());
-        //padView.setMinimumHeight(getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2);
-        //padView.requestLayout();
-        //padView.measure(getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight() / 2);
-        //padView.layout(0, , 
-        //		getMaxWidth(), getWindow().getWindow().getWindowManager().getDefaultDisplay().getHeight());
-        //padView.requestLayout();
-        
         
         if (padKeyboard != null) {
             // Configuration changes can happen after the keyboard gets recreated,
@@ -120,14 +165,10 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
      */
     @Override
     public View onCreateInputView() {
-        /*mInputView = (KeyboardView) getLayoutInflater().inflate(
-                R.layout.input, null);
-        mInputView.setOnKeyboardActionListener(this);
-        mInputView.setKeyboard(mQwertyKeyboard);*/
-		padView = (PadView) getLayoutInflater().inflate(R.layout.input, null);
 		padView.setOnKeyboardActionListener(this);
 		padView.setKeyboard(padKeyboard);
-        return padView;//mInputView;
+		padView.attachObserver(this);
+        return padView;
     }
 
     /**
@@ -234,6 +275,16 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
         // says it will do.
         mCurKeyboard.setImeOptions(getResources(), attribute.imeOptions);
     }
+    
+    @Override
+    public void onStartInputView(EditorInfo attribute, boolean restarting) {
+        super.onStartInputView(attribute, restarting);
+        // Apply the selected keyboard to the input view.
+    	serviceIsBound =  bindService(new Intent(IDetectionService.class.getName()), serviceConnection, Context.BIND_AUTO_CREATE);
+        padView.setKeyboard(mCurKeyboard);
+        padView.closing();
+        padView.clear();
+    }
 
     /**
      * This is called when the user is done editing a field.  We can use
@@ -258,21 +309,12 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
         }
     }
     
-    @Override public void onStartInputView(EditorInfo attribute, boolean restarting) {
-        super.onStartInputView(attribute, restarting);
-        // Apply the selected keyboard to the input view.
-        padView.setKeyboard(mCurKeyboard);
-        padView.closing();
-    }
-    
     /**
      * Deal with the editor reporting movement of its cursor.
      */
-    @Override public void onUpdateSelection(int oldSelStart, int oldSelEnd,
-            int newSelStart, int newSelEnd,
-            int candidatesStart, int candidatesEnd) {
-        super.onUpdateSelection(oldSelStart, oldSelEnd, newSelStart, newSelEnd,
-                candidatesStart, candidatesEnd);
+    @Override
+    public void onUpdateSelection(int oldSelStart, int oldSelEnd, int newSelStart, int newSelEnd, int candidatesStart, int candidatesEnd) {
+        super.onUpdateSelection(oldSelStart, oldSelEnd, newSelStart, newSelEnd, candidatesStart, candidatesEnd);
         
         // If the current selection in the text view changes, we should
         // clear whatever candidate text we have.
@@ -293,7 +335,8 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
      * to show the completions ourself, since the editor can not be seen
      * in that situation.
      */
-    @Override public void onDisplayCompletions(CompletionInfo[] completions) {
+    @Override
+    public void onDisplayCompletions(CompletionInfo[] completions) {
         if (mCompletionOn) {
             mCompletions = completions;
             if (completions == null) {
@@ -307,6 +350,21 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
                 if (ci != null) stringList.add(ci.getText().toString());
             }
             setSuggestions(stringList, true, true);
+        }
+    }
+    
+    @Override
+    public void onDestroy() {
+    	super.onDestroy();
+        if (serviceIsBound) {
+            if (detectionService != null) {
+                try {
+                    detectionService.unregisterCallback(serviceCallback);
+                } catch (RemoteException e) {}
+            }
+            // Detach our existing connection.
+            unbindService(serviceConnection);
+            serviceIsBound = false;
         }
     }
     
@@ -696,4 +754,82 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     
     public void onRelease(int primaryCode) {
     }
+
+	@Override
+	public void update(IObservable updater) {
+		if (updater instanceof PadView) {
+			if (serviceIsBound && (detectionService != null)) {
+				try {
+					detectionService.addTouchPoints(new ArrayList<TouchPoint>(padView.getLastPoints()), true);
+					//detectionService.endSample();
+				} catch (RemoteException ex) {
+					// TODO: handle exception
+				}
+			}
+		}
+	}
+
+    
+    // ----------------------------------------------------------------------
+    // Code showing how to deal with callbacks.
+    // ----------------------------------------------------------------------
+    
+    /**
+     * This implementation is used to receive callbacks from the remote
+     * service.
+     */
+    private IReturnResults serviceCallback = new IReturnResults.Stub() {
+        /**
+         * This is called by the remote service regularly to tell us about
+         * new values.  Note that IPC calls are dispatched through a thread
+         * pool running in each process, so the code executing here will
+         * NOT be running in our main thread like most other things -- so,
+         * to update the UI, we need to use a Handler to hop over there.
+         */
+		@Override
+		public void recognisedCharacters(List<ch.zhaw.ba10_bsha_1.Character> characters) throws RemoteException {
+			serviceHandler.sendMessage(serviceHandler.obtainMessage(CHARS_RESULT_MSG, characters));
+		}
+
+		@Override
+		public void recognisedChar(char character, float probability) throws RemoteException {
+			serviceHandler.sendMessage(serviceHandler.obtainMessage(CHAR_RESULT_MSG, character, Math.round(probability * 1000000)));
+		}
+    };
+    
+    private static final int CHARS_RESULT_MSG = 1;
+    private static final int CHAR_RESULT_MSG  = 2;
+    
+    private Handler serviceHandler = new Handler() {
+        @Override public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case CHARS_RESULT_MSG:
+                	ArrayList<Character> chars = (ArrayList<Character>) msg.obj;
+                	if (chars.size() > 0) {
+                		InputConnection conn = getCurrentInputConnection();
+                		StringBuffer text = new StringBuffer();
+                		for (Character character : chars) {
+                			if (!character.toString().startsWith("none")) {
+                				text.append(character.getDetectedCharacter());
+                			}
+						}
+                		conn.commitText(text, 1);
+                	}
+                    break;
+                case CHAR_RESULT_MSG:
+                	char recogn_char = (char) msg.arg1;
+                	float prob = (float) (msg.arg2 / 1000000.0);
+	                	if (recogn_char != '\0') {
+	            		InputConnection conn = getCurrentInputConnection();
+	            		StringBuffer text = new StringBuffer();
+	            		text.append(recogn_char);
+	                	conn.commitText(text, 1);
+                	}
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+        
+    };
 }

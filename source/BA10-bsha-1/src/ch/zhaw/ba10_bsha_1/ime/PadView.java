@@ -14,35 +14,33 @@ import android.util.AttributeSet;
 //class is in a sub-package.
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
+import ch.zhaw.ba10_bsha_1.TouchInput;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.service.IDetectionService;
 import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
 
 
-public class PadView extends KeyboardView /*implements IObservable*/ {
+public class PadView extends KeyboardView implements IObservable {
 	
     
     private static final float TOUCH_TOLERANCE = 4;
     
-    private ArrayList<TouchPoint> points;
-    
-    private Bitmap          bitmap;
-    private Canvas          bmCanvas;
-    private ArrayList<Path> paths;
-    private Paint           bmPaint;
-    private Paint           paint;
-    
     private float lastX;
     private float lastY;
     
-    //private ArrayList<IObserver> observers;
+    private ArrayList<TouchInput> inputs;
+    private TouchInput currentInput;
+    private int oldPathColor;
+    private int curPathColor;
+    
+    private Bitmap bitmap;
+    private Paint  bmPaint;
+    private Paint  paint;
+    private float  margin;
+    
+    private ArrayList<IObserver> observers;
     //private boolean log;
     //private boolean autoClear;
-    
-    //private ArrayList<TouchInput> inputs;
-   // private TouchInput currentInput;
-    //private IMicroGestureDetectionStrategy mgDetectionStrategy;
-    //private ICharacterDetectionStrategy charDetectionStrategy;
     
 	
 	public PadView(Context context, AttributeSet attrs) {
@@ -56,23 +54,19 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
     }
 	
 	private void init() {
-		//observers = new ArrayList<IObserver>();
-		//inputs = new ArrayList<TouchInput>();
-		//currentInput = null;
-		//mgDetectionStrategy = new MicroGestureDetectionStrategyAwesome();
-		//charDetectionStrategy = TouchInput.CHAR_DETECTION_STRATEGY_CUSTOM_GRAPH;
-		//charDetectionStrategy = TouchInput.CHAR_DETECTION_STRATEGY_GRAPH;
+		observers = new ArrayList<IObserver>();
+		inputs = new ArrayList<TouchInput>();
+		currentInput = null;
+		oldPathColor = 0x44FF0000;
+		curPathColor = 0xCCFF0000;
 		
-        paths  = new ArrayList<Path>();
-        points = new ArrayList<TouchPoint>();
-        bitmap = Bitmap.createBitmap(320, 240, Bitmap.Config.ARGB_8888);
-        bmCanvas = new Canvas(bitmap);
-        bmPaint  = new Paint(Paint.DITHER_FLAG);
+        bitmap  = Bitmap.createBitmap(320, 240, Bitmap.Config.ARGB_8888);
+        bmPaint = new Paint(Paint.DITHER_FLAG);
+        margin  = 10;
         
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setDither(true);
-        paint.setColor(0xBBFF0000);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
@@ -92,8 +86,13 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
         canvas.drawColor(0xFFFAFAC8);
         canvas.drawBitmap(bitmap, 0, 0, bmPaint);
         paintBaseLines(canvas);
-        for (Path path : paths) {
-        	canvas.drawPath(path, paint);
+        paint.setColor(oldPathColor);
+        for (TouchInput input : inputs) {
+        	canvas.drawPath(input.getPath(), paint);
+        }
+        if (currentInput != null) {
+        	paint.setColor(curPathColor);
+        	canvas.drawPath(currentInput.getPath(), paint);
         }
         /*if (showPoints) {
         	Paint p_paint = new Paint();
@@ -124,7 +123,6 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
     	bl_paint.setStrokeCap(Paint.Cap.ROUND);
     	bl_paint.setStrokeWidth(2);
         
-    	float margin = 10;
     	float right_X = margin;
         float left_X = this.getWidth() - margin;
         float line_height = (this.getHeight() - (2 * margin)) / 3;
@@ -162,45 +160,32 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
     }
     
     private void touchStart(float x, float y, float pressure) {
-		//if (autoClear) {
-			clear();
-		//}
+		//clear();
 		
-    	//currentInput = new TouchInput(mgDetectionStrategy, (this.getHeight() / 2), charDetectionStrategy);
-    	//currentInput.add(new TouchPoint(x, y));
-    	//currentInput.enableSmoothing(smoothPoints);
+    	currentInput = new TouchInput(this.getHeight() - (2 * margin));
+    	currentInput.add(new TouchPoint(x, y, pressure));
     	
-    	Path path = new Path();
-        path.reset();
-        path.moveTo(x, y);
         lastX = x;
         lastY = y;
-        paths.add(path);
-        //points.add(new TouchPoint(x, y, pressure));
     }
     
     private void touchMove(float x, float y, float pressure) {
-    	//currentInput.add(new TouchPoint(x, y));
-    	
         float dx = Math.abs(x - lastX);
         float dy = Math.abs(y - lastY);
         if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
-            paths.get(paths.size() - 1).quadTo(lastX, lastY, ((x + lastX) / 2), ((y + lastY) / 2));
+        	currentInput.add(new TouchPoint(x, y, pressure));
             lastX = x;
             lastY = y;
-            //points.add(new TouchPoint(x, y, pressure));
         }
     }
     
     private void touchUp() {
-    	//currentInput.setToStretch((this.getHeight() / 2));
-    	//currentInput.startDetection();
-    	//inputs.add(currentInput);
-    	//currentInput = null;
-    	//notifyObservers();
+    	inputs.add(currentInput);
+    	currentInput = null;
+    	notifyObservers();
     	
-    	Path path = paths.get(paths.size() - 1);
-    	path.lineTo(lastX, lastY);
+    	//Path path = paths.get(paths.size() - 1);
+    	//path.lineTo(lastX, lastY);
         //points.add(new TouchPoint((int) lastX, (int) lastY));
         // commit the path to our offscreen
         //bmCanvas.drawPath(path, paint);
@@ -236,9 +221,7 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
     }*/
     
     public void clear() {
-    	paths.clear();
-    	points.clear();
-    	//inputs.clear();
+    	inputs.clear();
     	invalidate();
     }
     
@@ -297,8 +280,13 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
     public void enableAutoClear(boolean auto_clear) {
     	autoClear = auto_clear;
     }*/
+    
+    public Collection<TouchPoint> getLastPoints() {
+    	TouchInput last = (inputs.size() > 0) ? inputs.get(inputs.size() - 1) : null; 
+    	return (last != null) ? last.getPoints() : null;
+    }
 
-	/*@Override
+	@Override
 	public void attachObserver(IObserver observer) {
 		observers.add(observer);
 	}
@@ -313,8 +301,8 @@ public class PadView extends KeyboardView /*implements IObservable*/ {
 		for (IObserver observer : observers) {
 			observer.update(this);
 		}
-		if (log && (inputs != null) && (inputs.size() > 0)) {
+		/*if (log && (inputs != null) && (inputs.size() > 0)) {
 			DetectionLogger.getInstance().log(inputs.get(inputs.size() - 1).getCharacters());
-		}
-	}*/
+		}*/
+	}
 }

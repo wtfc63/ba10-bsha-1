@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 //Need the following import to get access to the app resources, since this
@@ -28,6 +29,10 @@ import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.service.IDetectionService;
 import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
 import ch.zhaw.ba10_bsha_1.service.IReturnResults;
+import ch.zhaw.ba10_bsha_1.service.MicroGesture;
+import ch.zhaw.ba10_bsha_1.service.StrategyQueue;
+import ch.zhaw.ba10_bsha_1.strategies.IPreprocessingStrategy;
+import ch.zhaw.ba10_bsha_1.strategies.PreprocessingStrategyManager;
 
 
 public class ServiceTest extends Activity {
@@ -173,7 +178,22 @@ public class ServiceTest extends Activity {
 
     private OnClickListener serviceSendListener = new OnClickListener() {
         public void onClick(View v) {
-            if (serviceIsBound) {
+        	ArrayList<TouchPoint> tmp = new ArrayList<TouchPoint>(1);
+        	tmp.add(new TouchPoint(10, 10));
+        	tmp.add(new TouchPoint(20, 20));
+        	MicroGesture startMG = new MicroGesture(tmp);
+            StrategyQueue<IPreprocessingStrategy> preprocessingSteps;
+            int priority = 1;
+        	preprocessingSteps = new StrategyQueue<IPreprocessingStrategy>();
+        	preprocessingSteps.enqueue(PreprocessingStrategyManager.getInstance().getStrategy("Spline"), priority++);
+        	Iterator<IPreprocessingStrategy> prep_itr = preprocessingSteps.iterator();
+        	while (prep_itr.hasNext()) {
+        		IPreprocessingStrategy prep_strat = prep_itr.next();
+        		if (prep_strat.isEnabled()) {
+        			startMG = prep_strat.process(startMG);
+        		}
+        	}
+            /*if (serviceIsBound) {
                 // If we have received the service, and hence registered with
                 // it, then now is the time to unregister.
                 if (detectionService != null) {
@@ -182,17 +202,17 @@ public class ServiceTest extends Activity {
                     	tmp.add(new TouchPoint(10, 10));
                     	tmp.add(new TouchPoint(20, 20));
                         detectionService.addTouchPoints(tmp);
-                    	/*TouchPoint p = tmp.get(0);
-                    	detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
-                    	p = tmp.get(1);
-                    	detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());*/
+                    	//TouchPoint p = tmp.get(0);
+                    	//detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
+                    	//p = tmp.get(1);
+                    	//detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
                     	detectionService.endSample();
                     } catch (RemoteException e) {
                         // There is nothing special we need to do if the service
                         // has crashed.
                     }
                 }
-            }
+            }*/
         }
     };
     

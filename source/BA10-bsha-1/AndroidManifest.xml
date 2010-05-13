@@ -14,8 +14,7 @@
 			</intent-filter>
 		</activity>
 		<service android:name=".service.DetectionService" 
-			android:label="DetectionService" 
-			android:process=":remote">
+			android:label="DetectionService">
 			<intent-filter>
 				<action android:name="ch.zhaw.ba10_bsha_1.service.IDetectionService"/>
 				<action android:name="ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters"/>

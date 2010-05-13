@@ -15,34 +15,31 @@ import ch.zhaw.ba10_bsha_1.graph.Node;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
-public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICharacterDetectionStrategy {
+public class CharacterDetectionStrategyDummyGraph extends BaseStrategy implements ICharacterDetectionStrategy {
 	
 	
 	private Node root;
 	
 	
-	public CharacterDetectionStrategyGraph() {
+	public CharacterDetectionStrategyDummyGraph() {
 		super();
 		
-		IGraphFactory factory = new GraphFactoryGraphMLImport(getArgument("Path").getArgumentValue());
+		IGraphFactory factory = new GraphFactoryDummy();
 		root = factory.createRoot();
 	}
 	
 	
 	@Override
-	protected void initArguments() {
-		StrategyArgument arg = new StrategyArgument(getStrategyName(), "Path", "/sdcard/test.xml", "Path of the GraphML file");
-		arguments.put(arg.getArgumentName().toLowerCase(), arg);	
-	}
+	protected void initArguments() {}
 
 	@Override
 	protected String getStrategyName() {
-		return "Graph";
+		return "DummyGraph";
 	}
 
 	@Override
 	protected String getStrategyDescription() {
-		return "Detect Character through a weighted graph, stored as a GraphML file";
+		return "Detect Character through a weighted graph, test dummy";
 	}
 	
 	

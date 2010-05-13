@@ -26,7 +26,7 @@ interface IDetectionService {
     /**
      * Add TouchPoints to detection queue
      */
-    void addTouchPoints(in List<TouchPoint> points);
+    void addTouchPoints(in List<TouchPoint> points, boolean start_detection);
     
     /**
      * Add a TouchPoint to detection queue
