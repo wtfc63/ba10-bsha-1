@@ -14,5 +14,6 @@ public interface IStrategy {
 	public StrategyArgument getArgument(String name);
 	public Collection<StrategyArgument> getConfiguration();
 	public void setEnabled(boolean enable);
+	public void addArgument(StrategyArgument arg);
 	public void setArgument(StrategyArgument arg);
 }
