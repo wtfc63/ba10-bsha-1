@@ -17,7 +17,7 @@ public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements 
 
 	@Override
 	protected String getStrategyName() {
-		return "Egdes";
+		return "Edges";
 	}
 	
 	@Override

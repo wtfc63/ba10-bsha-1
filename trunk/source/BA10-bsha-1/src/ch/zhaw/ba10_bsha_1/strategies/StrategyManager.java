@@ -10,7 +10,7 @@ import ch.zhaw.ba10_bsha_1.StrategyArgument;
 public abstract class StrategyManager<Strategy extends IStrategy> {
 
 	
-	protected Hashtable<String, Strategy> strategies;
+	private Hashtable<String, Strategy> strategies;
 	
 	
 	protected StrategyManager() {
