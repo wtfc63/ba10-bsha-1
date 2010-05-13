@@ -1,0 +1,27 @@
+Point previous = points[0];
+Point[] result;
+for(Point p : points) {
+	int distance = p.distance(previous);
+	if (distance > tolerance && distance < 2*tolerance) {
+		// Wenn der Punkt innerhalb des Toleranzbereichs
+		// liegt, wird er ins Resultat aufgenommen
+		result.add(p);
+		previous = p;
+	}
+	else if (distance >  2*tolerance) {
+		// Liegt der Punkt über dem Toleranzbereich, wird 
+		// linear zwischen den Punkten interpoliert
+		int pointNo = (distance / tolerance) - 1;
+		int m = (p.y - previous.y) / (p.x - previous.x);
+		int dx = p.x - previous.x;
+		for (int i = 1; i <= pointNo; i++) {
+			int x = previous.x + i*dx;
+			int y = m * i*dx + previous.y;
+			result.add(new Point(x, y));
+		}
+		result.add(p);
+		previous = p;
+	}
+	// Liegt der Punkt unter dem Toleranzbereich wird er
+	// nicht in das Resultat aufgenommen
+}
