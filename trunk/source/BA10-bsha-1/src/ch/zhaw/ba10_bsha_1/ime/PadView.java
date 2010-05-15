@@ -1,27 +1,32 @@
 package ch.zhaw.ba10_bsha_1.ime;
 
 
-import java.util.*;
-
 import android.content.Context;
 import android.graphics.*;
 import android.inputmethodservice.KeyboardView;
 import android.view.MotionEvent;
-import android.view.View;
 import android.util.AttributeSet;
 
-//Need the following import to get access to the app resources, since this
-//class is in a sub-package.
-import ch.zhaw.ba10_bsha_1.Character;
-import ch.zhaw.ba10_bsha_1.R;
+import java.util.*;
+
 import ch.zhaw.ba10_bsha_1.TouchInput;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
-import ch.zhaw.ba10_bsha_1.service.IDetectionService;
-import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
 
 
+/**
+ * Implementation of a KeyboardView to gather data for the DetectionService.
+ * 
+ * Notifies its observers on input events such as new TouchInputs, crossing out of
+ * existing TouchInputs (seen as a backspace) or starting of new TouchInputs with 
+ * a certain offset (seen as a space).
+ */
 public class PadView extends KeyboardView implements IObservable {
-	
+
+
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+    
     
     public static final int EVENT_TYPE_NONE = 0;
     public static final int EVENT_TYPE_NEW_POINTS = 1;
@@ -31,13 +36,14 @@ public class PadView extends KeyboardView implements IObservable {
     
     private static final float TOUCH_TOLERANCE = 4;
     
-    private float lastX;
-    private float lastY;
-    
     private ArrayList<TouchInput> inputs;
     private TouchInput currentInput;
     private int oldPathColor;
     private int curPathColor;
+    
+    private float lastX;
+    private float lastY;
+    private float fieldHeight;
     
     private Bitmap bitmap;
     private Paint  bmPaint;
@@ -46,6 +52,11 @@ public class PadView extends KeyboardView implements IObservable {
     
     private ArrayList<IObserver> observers;
     private int eventType;
+
+
+	//---------------------------------------------------------------------------
+	// Constructors and Initialization
+	//---------------------------------------------------------------------------
     
 	
 	public PadView(Context context, AttributeSet attrs) {
@@ -58,6 +69,9 @@ public class PadView extends KeyboardView implements IObservable {
 		init();
     }
 	
+    /**
+     * Initialize the classes attributes
+     */
 	private void init() {
 		observers = new ArrayList<IObserver>();
 		inputs = new ArrayList<TouchInput>();
@@ -68,7 +82,7 @@ public class PadView extends KeyboardView implements IObservable {
 		
         bitmap  = Bitmap.createBitmap(320, 240, Bitmap.Config.ARGB_8888);
         bmPaint = new Paint(Paint.DITHER_FLAG);
-        margin  = 10;
+        margin  = 20;
         
         paint = new Paint();
         paint.setAntiAlias(true);
@@ -79,14 +93,25 @@ public class PadView extends KeyboardView implements IObservable {
         paint.setStrokeWidth(8);
 	}
 
+
+	//---------------------------------------------------------------------------
+	// Methods to handle drawing
+	//---------------------------------------------------------------------------
+
+
     @Override
     public void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         if ((w > 0) && (h > 0)) {
         	bitmap = Bitmap.createBitmap(this.getWidth(), this.getHeight(), Bitmap.Config.ARGB_8888);
+        	fieldHeight = this.getHeight() - (2 * margin);
         }
     }
     
+    /**
+     * Draw the View's background and the existing TouchInputs 
+     * as well as the currently active TouchInput 
+     */
     @Override
     public void onDraw(Canvas canvas) {
         canvas.drawColor(0xFFFAFAC8);
@@ -102,6 +127,11 @@ public class PadView extends KeyboardView implements IObservable {
         }
     }
     
+    /**
+     * Draw the View's base lines on the background
+     * 
+     * @param canvas
+     */
     private void paintBaseLines(Canvas canvas) {
     	Paint bl_paint = new Paint();
     	bl_paint.setAntiAlias(true);
@@ -114,7 +144,7 @@ public class PadView extends KeyboardView implements IObservable {
         
     	float right_X = margin;
         float left_X = this.getWidth() - margin;
-        float line_height = (this.getHeight() - (2 * margin)) / 3;
+        float line_height = fieldHeight / 3;
         float mid_Y = (2 * line_height) + margin;
         canvas.drawLine(right_X, mid_Y, left_X, mid_Y, bl_paint);
         
@@ -124,8 +154,16 @@ public class PadView extends KeyboardView implements IObservable {
         canvas.drawLine(right_X, (mid_Y - line_height), left_X, (mid_Y - line_height), bl_paint);
         canvas.drawLine(right_X, (mid_Y + line_height), left_X, (mid_Y + line_height), bl_paint);
     }
+
+
+	//---------------------------------------------------------------------------
+	// Methods to handle TouchEvents
+	//---------------------------------------------------------------------------
     
 
+    /**
+     * Handle touchscreen events
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();
@@ -148,21 +186,36 @@ public class PadView extends KeyboardView implements IObservable {
         return true;
     }
     
+    /**
+     * React on a newly started touchscreen input by creating a new TouchInput
+     * 
+     * @param x
+     * @param y
+     * @param pressure
+     */
     private void touchStart(float x, float y, float pressure) {
+    	//Notify observers on a space event if new input is sufficiently offset from the last one
     	if (inputs.size() > 0) {
     		RectF last = inputs.get(inputs.size() - 1).getDimensions();
     		if (x > (last.right + last.width())) {
     			notifyObservers(EVENT_TYPE_SPACE);
     		}
     	}
-    	
-    	currentInput = new TouchInput(this.getHeight() - (2 * margin));
+
+    	currentInput = new TouchInput();
     	currentInput.add(new TouchPoint(x, y, pressure));
     	
         lastX = x;
         lastY = y;
     }
     
+    /**
+     * React on movement with the finger on the touchscreen
+     * 
+     * @param x
+     * @param y
+     * @param pressure
+     */
     private void touchMove(float x, float y, float pressure) {
         float dx = Math.abs(x - lastX);
         float dy = Math.abs(y - lastY);
@@ -173,44 +226,54 @@ public class PadView extends KeyboardView implements IObservable {
         }
     }
     
+    /**
+     * React on the ending of a touchscreen input
+     */
     private void touchUp() {
     	if (inputs.size() > 0) {
     		TouchInput last = inputs.get(inputs.size() - 1);
+    		//Test if finished input crosses out the last one and remove both if it does
     		if (currentInput.crosses(last)) {
     			inputs.remove(last);
     			notifyObservers(EVENT_TYPE_BACKSPACE);
+    		//Otherwise, add finished input to other ones and notify observers
     		} else {
     			inputs.add(currentInput);
         		notifyObservers(EVENT_TYPE_TOUCH_UP);
     		}
     		currentInput = null;
+    	//Commit finished input and notify observers if no others present
     	} else {
     		inputs.add(currentInput);
     		currentInput = null;
     		notifyObservers(EVENT_TYPE_TOUCH_UP);
     	}
     }
-    
-    public void clear() {
-    	inputs.clear();
-    	invalidate();
-    }
-    
-    public Collection<TouchPoint> getLastPoints() {
-    	TouchInput last = (inputs.size() > 0) ? inputs.get(inputs.size() - 1) : null; 
-    	return (last != null) ? last.getPoints() : null;
-    }
 
+
+	//---------------------------------------------------------------------------
+	// Implementation of the IObservable interface
+	//---------------------------------------------------------------------------
+
+    /**
+     * Attach an IObserver to the IObservable
+     */
 	@Override
 	public void attachObserver(IObserver observer) {
 		observers.add(observer);
 	}
 
+    /**
+     * Detach an IObserver from the IObservable
+     */
 	@Override
 	public void detachObserver(IObserver observer) {
 		observers.remove(observer);
 	}
 
+	/**
+	 * Notify all attached IObservers of changes
+	 */
 	@Override
 	public void notifyObservers() {
 		for (IObserver observer : observers) {
@@ -218,6 +281,11 @@ public class PadView extends KeyboardView implements IObservable {
 		}
 	}
 	
+	/**
+	 * Notify all attached IObservers of changes, setting the event type while doing so
+	 * 
+	 * @param event_type
+	 */
 	public void notifyObservers(int event_type) {
 		eventType = event_type;
 		notifyObservers();
@@ -227,4 +295,34 @@ public class PadView extends KeyboardView implements IObservable {
 	public int getEventType() {
 		return eventType;
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Some further methods to interact with the PadView
+	//---------------------------------------------------------------------------
+
+    
+    @Override
+    public void closing() {
+    	super.closing();
+    	clear();
+    }
+    
+    /**
+     * Removes all TouchInputs and marks View as invalid
+     */
+    public void clear() {
+    	inputs.clear();
+    	invalidate();
+    }
+    
+    /**
+     * Returns the points gathered the last
+     * 
+     * @return Collection<TouchPoint>
+     */
+    public Collection<TouchPoint> getLastPoints() {
+    	TouchInput last = (inputs.size() > 0) ? inputs.get(inputs.size() - 1) : null; 
+    	return (last != null) ? last.getPoints() : null;
+    }
 }

@@ -34,6 +34,13 @@ import java.util.List;
 import ch.zhaw.ba10_bsha_1.R;
 
 
+/**
+ * Implementation of CandidateView for our IME. Could be used to show suggested word-completions 
+ * for our input. Currently not used for our Input Method, have a look at the SoftKeyboard example 
+ * in the SDK to see how it would be done.
+ * 
+ * Copied from the SoftKeyboard example from the Android SDK without modifications.
+ */
 public class CandidateView extends View {
 
     private static final int OUT_OF_BOUNDS = -1;

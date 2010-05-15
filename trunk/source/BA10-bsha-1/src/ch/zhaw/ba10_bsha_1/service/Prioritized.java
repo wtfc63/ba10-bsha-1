@@ -2,24 +2,26 @@ package ch.zhaw.ba10_bsha_1.service;
 
 
 /**
- *
+ * Prioritize a data object to be uses in a PriorityQueue
+ * 
  * @author hanhajul
+ * @see ch.zhaw.ba10_bsha_1.service.PriorityQueue
  */
 public class Prioritized<Type> implements Comparable<Prioritized<Type>> {
 
 
-	//
+	//---------------------------------------------------------------------------
 	// Attributes
-	//
+	//---------------------------------------------------------------------------
 
 
 	private Type data;
 	private int priority;
 
 
-	//
+	//---------------------------------------------------------------------------
 	// Constructor
-	//
+	//---------------------------------------------------------------------------
 
 
 	public Prioritized(Type data, int priority) {
@@ -28,9 +30,9 @@ public class Prioritized<Type> implements Comparable<Prioritized<Type>> {
 	}
 
 
-	//
+	//----------------------------------------------------------------------------
 	// Getter-/Setter-methods
-	//
+	//----------------------------------------------------------------------------
 
 
 	public Type getData() {
@@ -55,9 +57,9 @@ public class Prioritized<Type> implements Comparable<Prioritized<Type>> {
 	}
 	
 	
-	//
+	//----------------------------------------------------------------------------
 	// Interface-methods
-	//
+	//----------------------------------------------------------------------------
 	
 
 	public int compareTo(Prioritized<Type> other) {

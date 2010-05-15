@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 //Need the following import to get access to the app resources, since this
@@ -27,29 +26,25 @@ import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.service.IDetectionService;
-import ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters;
 import ch.zhaw.ba10_bsha_1.service.IReturnResults;
-import ch.zhaw.ba10_bsha_1.service.MicroGesture;
-import ch.zhaw.ba10_bsha_1.service.StrategyQueue;
-import ch.zhaw.ba10_bsha_1.strategies.IPreprocessingStrategy;
-import ch.zhaw.ba10_bsha_1.strategies.PreprocessingStrategyManager;
 
 
+/**
+ * Activity we used to test the proper operation of our DetectionService.
+ * Will not be needed for a possible deployment but we kept it as an 
+ * entry point to our Application during development.
+ * 
+ * Based on the Remote Service Controller and Remote Service Binding code samples 
+ * from the API Demos example included in the Android SDK (under App/Service).
+ */
 public class ServiceTest extends Activity {
-	
-	
-    /** The primary interface we will be calling on the service. */
-    IDetectionService detectionService = null;
-    
-    private boolean serviceIsBound = false;
-    private boolean serviceIsRunning = false;
-    private DetectionServiceConnection serviceConnection;
-    
-    private TextView txtViewControl;
-    private TextView txtViewBinding;
-    private TextView txtViewResult;
-    
 
+	
+	//---------------------------------------------------------------------------
+	// Inner Class
+	//---------------------------------------------------------------------------
+
+    
     /**
      * Class for interacting with the main interface of the service.
      */
@@ -88,7 +83,29 @@ public class ServiceTest extends Activity {
             Toast.makeText(ServiceTest.this, R.string.service_unbound, Toast.LENGTH_SHORT).show();
         }
     };
+
+
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+
 	
+    /** The primary interface we will be calling on the service. */
+    IDetectionService detectionService = null;
+    
+    private boolean serviceIsBound = false;
+    private boolean serviceIsRunning = false;
+    private DetectionServiceConnection serviceConnection;
+    
+    private TextView txtViewControl;
+    private TextView txtViewBinding;
+    private TextView txtViewResult;
+
+
+	//---------------------------------------------------------------------------
+	// Initialization
+	//---------------------------------------------------------------------------
+
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +131,11 @@ public class ServiceTest extends Activity {
         button.setOnClickListener(serviceSendListener);
     }
         
+
+	//---------------------------------------------------------------------------
+	// Starting/Stopping Service
+	//---------------------------------------------------------------------------
+
 	
     private OnClickListener serviceStartListener = new OnClickListener() {
         public void onClick(View v) {
@@ -134,7 +156,13 @@ public class ServiceTest extends Activity {
         	txtViewControl.setText(R.string.service_stopped);
         }
     };
+    
 
+	//---------------------------------------------------------------------------
+	// Binding/Unbinding to Service
+	//---------------------------------------------------------------------------
+
+    
     private OnClickListener serviceBindListener = new OnClickListener() {
         public void onClick(View v) {
             if (!serviceIsBound) {
@@ -173,7 +201,13 @@ public class ServiceTest extends Activity {
             }
         }
     };
+    
 
+	//---------------------------------------------------------------------------
+	// Send Samples
+	//---------------------------------------------------------------------------
+
+    
     private OnClickListener serviceSendListener = new OnClickListener() {
         public void onClick(View v) {
         	if (serviceIsBound) {
@@ -199,9 +233,11 @@ public class ServiceTest extends Activity {
         }
     };
     
-    // ----------------------------------------------------------------------
-    // Code showing how to deal with callbacks.
-    // ----------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------
+	// Code showing how to deal with callbacks
+	//---------------------------------------------------------------------------
+
     
     /**
      * This implementation is used to receive callbacks from the remote
