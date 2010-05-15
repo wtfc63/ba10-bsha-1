@@ -121,7 +121,7 @@ public class DetectionService extends Service {
     	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Lines"), priority++);
     	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("HalfCircle"), priority++);
     	
-    	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("DummyGraph");
+    	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("Graph");
     	
     	postprocessingStrategy = PostprocessingStrategyManager.getInstance().getStrategy("None");
     }
