@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import android.graphics.Path;
+import android.graphics.RectF;
 
 
 public class TouchInput {
@@ -15,12 +16,18 @@ public class TouchInput {
 	private float fieldHeight;
 	private float upperMax;
 	private float lowerMax;
+	private float leftBoundary;
+	private float rightBoundary;
 	
 	
 	public TouchInput(float field_height) {
 		points = new ArrayList<TouchPoint>();
 		path   = new Path();
 		fieldHeight = field_height;
+		upperMax = 0;
+		lowerMax = 0;
+		leftBoundary  = 0;
+		rightBoundary = 0;
 	}
 	
 	public void add(TouchPoint point) {
@@ -32,11 +39,17 @@ public class TouchInput {
 	        path.moveTo(point.x, point.y);
 		}
 		points.add(point);
-		if ((point.y > upperMax) || (points.size() == 1)) {
+		if ((point.y < upperMax) || (points.size() == 1)) {
 			upperMax = point.y;
 		}
-		if (point.y < lowerMax) {
+		if (point.y > lowerMax) {
 			lowerMax = point.y;
+		}
+		if ((point.x < leftBoundary) || (points.size() == 1)) {
+			leftBoundary = point.x;
+		}
+		if (point.x > rightBoundary) {
+			rightBoundary = point.x;
 		}
 	}
 	
@@ -56,6 +69,20 @@ public class TouchInput {
 				point.y = corr * point.y;
 			}
 		}
+	}
+	
+	public RectF getDimensions() {
+		RectF dimensions = new RectF(leftBoundary, upperMax, rightBoundary, lowerMax);
+		return dimensions;
+	}
+	
+	public boolean crosses(TouchInput other) {
+		boolean result = false;
+		RectF this_dim = getDimensions();
+		RectF othr_dim = other.getDimensions();
+		result = (((this_dim.top > othr_dim.top) && (this_dim.bottom < othr_dim.bottom)) 
+				&& ((this_dim.left < othr_dim.left) && (this_dim.right > othr_dim.right)));
+		return result;
 	}
 	
 	public Collection<TouchPoint> getPoints() {

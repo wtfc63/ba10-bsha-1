@@ -4,11 +4,11 @@ package ch.zhaw.ba10_bsha_1.graph;
 public class GraphFactoryGraphMLImport implements IGraphFactory {
 
 	
-	private String pathToFile;
+	private String  pathToFile;
 	
 	
 	public GraphFactoryGraphMLImport(String path_to_file) {
-		pathToFile = path_to_file;
+		this.pathToFile = path_to_file;
 	}
 	
 	

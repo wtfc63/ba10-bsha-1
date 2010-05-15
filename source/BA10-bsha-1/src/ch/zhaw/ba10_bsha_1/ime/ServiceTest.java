@@ -120,7 +120,6 @@ public class ServiceTest extends Activity {
             if (!serviceIsRunning) {
             	startService(new Intent("ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"));
             	serviceIsRunning = true;
-            	Toast.makeText(ServiceTest.this, R.string.service_started, Toast.LENGTH_SHORT).show();
             	txtViewControl.setText(R.string.service_started);
             } else {
             	Toast.makeText(ServiceTest.this, R.string.service_already_running, Toast.LENGTH_SHORT).show();
@@ -132,7 +131,6 @@ public class ServiceTest extends Activity {
         public void onClick(View v) {
             stopService(new Intent("ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"));
             serviceIsRunning = false;
-            Toast.makeText(ServiceTest.this, R.string.service_stopped, Toast.LENGTH_SHORT).show();
         	txtViewControl.setText(R.string.service_stopped);
         }
     };
@@ -178,22 +176,7 @@ public class ServiceTest extends Activity {
 
     private OnClickListener serviceSendListener = new OnClickListener() {
         public void onClick(View v) {
-        	ArrayList<TouchPoint> tmp = new ArrayList<TouchPoint>(1);
-        	tmp.add(new TouchPoint(10, 10));
-        	tmp.add(new TouchPoint(20, 20));
-        	MicroGesture startMG = new MicroGesture(tmp);
-            StrategyQueue<IPreprocessingStrategy> preprocessingSteps;
-            int priority = 1;
-        	preprocessingSteps = new StrategyQueue<IPreprocessingStrategy>();
-        	preprocessingSteps.enqueue(PreprocessingStrategyManager.getInstance().getStrategy("Spline"), priority++);
-        	Iterator<IPreprocessingStrategy> prep_itr = preprocessingSteps.iterator();
-        	while (prep_itr.hasNext()) {
-        		IPreprocessingStrategy prep_strat = prep_itr.next();
-        		if (prep_strat.isEnabled()) {
-        			startMG = prep_strat.process(startMG);
-        		}
-        	}
-            /*if (serviceIsBound) {
+        	if (serviceIsBound) {
                 // If we have received the service, and hence registered with
                 // it, then now is the time to unregister.
                 if (detectionService != null) {
@@ -201,7 +184,7 @@ public class ServiceTest extends Activity {
                     	ArrayList<TouchPoint> tmp = new ArrayList<TouchPoint>(1);
                     	tmp.add(new TouchPoint(10, 10));
                     	tmp.add(new TouchPoint(20, 20));
-                        detectionService.addTouchPoints(tmp);
+                        detectionService.addTouchPoints(tmp, true);
                     	//TouchPoint p = tmp.get(0);
                     	//detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
                     	//p = tmp.get(1);
@@ -212,7 +195,7 @@ public class ServiceTest extends Activity {
                         // has crashed.
                     }
                 }
-            }*/
+            }
         }
     };
     
