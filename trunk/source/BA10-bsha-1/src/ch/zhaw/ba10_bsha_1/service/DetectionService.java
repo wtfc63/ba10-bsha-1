@@ -5,6 +5,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.PointF;
 import android.os.RemoteException;
@@ -27,6 +28,7 @@ import ch.zhaw.ba10_bsha_1.R;
 import ch.zhaw.ba10_bsha_1.RingBuffer;
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.ime.HandwritingIME;
 import ch.zhaw.ba10_bsha_1.ime.ServiceTest;
 import ch.zhaw.ba10_bsha_1.strategies.CharacterDetectionStrategyManager;
 import ch.zhaw.ba10_bsha_1.strategies.ICharacterDetectionStrategy;
@@ -55,6 +57,8 @@ public class DetectionService extends Service {
     private static final int STRATEGY_TYPE_CHARACTER_DETECTION = 2;
     private static final int STRATEGY_TYPE_POSTPROCESSING = 3;
     
+    private static Context context;
+    
     /**
      * This is a list of callbacks that have been registered with the
      * service.  Note that this is package scoped (instead of private) so
@@ -76,11 +80,13 @@ public class DetectionService extends Service {
     
     @Override
     public void onCreate() {
-        mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        mNM     = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        context = getApplicationContext();
         initDetection();
 
         // Display a notification about us starting.
         showNotification();
+    	Toast.makeText(DetectionService.this, R.string.service_started, Toast.LENGTH_SHORT).show();
         
         // While this service is running, it will continually increment a
         // number.  Send the first message that is used to perform the
@@ -131,7 +137,7 @@ public class DetectionService extends Service {
 		
 		while (!buffer.isEmpty()) {
 			TouchPoint point = buffer.get();
-			if (point != null) {
+			if ((point != null) && !inputPoints.contains(point)) {
 				inputPoints.add(point);
 			}
 		}
@@ -369,6 +375,10 @@ public class DetectionService extends Service {
     			result = CharacterDetectionStrategyManager.getInstance();
     	}
     	return result;
+    }
+    
+    public static Context getContext() {
+    	return context;
     }
     
     private static final int REPORT_MSG = 1;

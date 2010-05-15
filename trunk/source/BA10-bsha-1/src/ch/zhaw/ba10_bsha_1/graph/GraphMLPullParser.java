@@ -11,11 +11,13 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
 
 import ch.zhaw.ba10_bsha_1.R;
+import ch.zhaw.ba10_bsha_1.service.DetectionService;
 import ch.zhaw.ba10_bsha_1.service.MicroGestureTester;
 
 
@@ -105,7 +107,7 @@ public class GraphMLPullParser implements IGraphMLParser {
 				parser = Resources.getSystem().getXml(R.xml.graph);
 			}
 		} else {
-			parser = Resources.getSystem().getXml(R.xml.graph);
+			parser = DetectionService.getContext().getResources().getXml(R.xml.graph);
 		}
 		nodes = new Hashtable<Integer, Node>();
 		edges = new ArrayList<GraphEdge>();

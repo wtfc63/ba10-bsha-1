@@ -125,9 +125,9 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
         super.onCreate();
         serviceConnection = new DetectionServiceConnection();
         if (!serviceIsRunning) {
+            Toast.makeText(HandwritingIME.this, R.string.service_starting, Toast.LENGTH_SHORT).show();
         	startService(new Intent("ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"));
         	serviceIsRunning = true;
-        	Toast.makeText(HandwritingIME.this, R.string.service_started, Toast.LENGTH_SHORT).show();
         }
         wordSeparators = getResources().getString(R.string.word_separators);
     }
@@ -762,13 +762,37 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
 		if (updater instanceof PadView) {
 			if (serviceIsBound && (detectionService != null)) {
 				try {
-					if (!sendFieldHeight) {
-			        	StrategyArgument arg = new StrategyArgument("FieldHeight", Integer.valueOf(padView.getHeight()).toString());
-						detectionService.broadcastArgument(arg);
-						sendFieldHeight = true;
+					InputConnection ic = getCurrentInputConnection();
+					switch (padView.getEventType()) {
+						case PadView.EVENT_TYPE_NEW_POINTS :
+							if (!sendFieldHeight) {
+					        	StrategyArgument arg = new StrategyArgument("FieldHeight", Integer.valueOf(padView.getHeight()).toString());
+								detectionService.broadcastArgument(arg);
+								sendFieldHeight = true;
+							}
+							detectionService.addTouchPoints(new ArrayList<TouchPoint>(padView.getLastPoints()), false);
+							break;
+						case PadView.EVENT_TYPE_TOUCH_UP :
+							if (!sendFieldHeight) {
+					        	StrategyArgument arg = new StrategyArgument("FieldHeight", Integer.valueOf(padView.getHeight()).toString());
+								detectionService.broadcastArgument(arg);
+								sendFieldHeight = true;
+							}
+							if (padView.getLastPoints() != null) {
+								detectionService.addTouchPoints(new ArrayList<TouchPoint>(padView.getLastPoints()), true);
+							} else {
+								detectionService.endSample();
+							}
+							break;
+						case PadView.EVENT_TYPE_SPACE :
+							ic.commitText(" ", 1);
+							break;
+						case PadView.EVENT_TYPE_BACKSPACE :
+							ic.deleteSurroundingText(1, 0);
+							break;
+						default :
+							break;
 					}
-					detectionService.addTouchPoints(new ArrayList<TouchPoint>(padView.getLastPoints()), true);
-					//detectionService.endSample();
 				} catch (RemoteException ex) {
 					// TODO: handle exception
 				}

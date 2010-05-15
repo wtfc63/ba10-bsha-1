@@ -5,8 +5,8 @@
     
 	<string name="service_started">Service started</string>
 	<string name="service_not_running">Service is not running</string>
-	<string name="service_bound">Service bound to App</string>
-	<string name="service_unbound">Service unbound from App</string>
+	<string name="service_bound">Service bound to Input Method</string>
+	<string name="service_unbound">Service unbound from Input Method</string>
 	<string name="service_already_running">Service is already running</string>
 	<string name="service_stopped">Service stopped</string>
 	
@@ -21,4 +21,5 @@
     <string name="label_next_key">Next</string>
     <string name="label_send_key">Send</string>
 
+<string name="service_starting">Starting service, please stand by...</string>
 </resources>
