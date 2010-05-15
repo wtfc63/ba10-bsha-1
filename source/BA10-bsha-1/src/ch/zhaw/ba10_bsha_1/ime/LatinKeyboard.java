@@ -13,17 +13,25 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-
 package ch.zhaw.ba10_bsha_1.ime;
+
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.inputmethodservice.Keyboard;
-import android.inputmethodservice.Keyboard.Key;
-import android.inputmethodservice.Keyboard.Row;
 import android.view.inputmethod.EditorInfo;
 
+import ch.zhaw.ba10_bsha_1.R;
+
+
+/**
+ * Implementation of a Latin Keyboard for our IME. Creates its keyboard layout from an XML file but
+ * is just used to plant our PadView on top of it here. Have a look at the SoftKeyboard example 
+ * in the SDK to see how it would be done properly.
+ * 
+ * Copied from the SoftKeyboard example from the Android SDK without modifications.
+ */
 public class LatinKeyboard extends Keyboard {
 
     private Key mEnterKey;
@@ -54,30 +62,29 @@ public class LatinKeyboard extends Keyboard {
     void setImeOptions(Resources res, int options) {
         if (mEnterKey == null) {
             return;
-        }
-        
-        switch (options&(EditorInfo.IME_MASK_ACTION|EditorInfo.IME_FLAG_NO_ENTER_ACTION)) {
+        }   
+        switch (options & (EditorInfo.IME_MASK_ACTION | EditorInfo.IME_FLAG_NO_ENTER_ACTION)) {
             case EditorInfo.IME_ACTION_GO:
                 mEnterKey.iconPreview = null;
                 mEnterKey.icon = null;
-                //mEnterKey.label = res.getText(R.string.label_go_key);
+                mEnterKey.label = res.getText(R.string.label_go_key);
                 break;
             case EditorInfo.IME_ACTION_NEXT:
                 mEnterKey.iconPreview = null;
                 mEnterKey.icon = null;
-                //mEnterKey.label = res.getText(R.string.label_next_key);
+                mEnterKey.label = res.getText(R.string.label_next_key);
                 break;
             case EditorInfo.IME_ACTION_SEARCH:
-                //mEnterKey.icon = res.getDrawable(R.drawable.sym_keyboard_search);
+                mEnterKey.icon = res.getDrawable(R.drawable.sym_keyboard_search);
                 mEnterKey.label = null;
                 break;
             case EditorInfo.IME_ACTION_SEND:
                 mEnterKey.iconPreview = null;
                 mEnterKey.icon = null;
-                //mEnterKey.label = res.getText(R.string.label_send_key);
+                mEnterKey.label = res.getText(R.string.label_send_key);
                 break;
             default:
-                //mEnterKey.icon = res.getDrawable(R.drawable.sym_keyboard_return);
+                mEnterKey.icon = res.getDrawable(R.drawable.sym_keyboard_return);
                 mEnterKey.label = null;
                 break;
         }

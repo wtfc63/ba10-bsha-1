@@ -21,14 +21,11 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-// Need the following import to get access to the app resources, since this
-// class is in a sub-package.
-import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
+import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.RingBuffer;
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
-import ch.zhaw.ba10_bsha_1.ime.HandwritingIME;
 import ch.zhaw.ba10_bsha_1.ime.ServiceTest;
 import ch.zhaw.ba10_bsha_1.strategies.CharacterDetectionStrategyManager;
 import ch.zhaw.ba10_bsha_1.strategies.ICharacterDetectionStrategy;
