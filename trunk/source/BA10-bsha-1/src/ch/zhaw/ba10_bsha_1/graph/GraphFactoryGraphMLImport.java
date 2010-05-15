@@ -1,9 +1,6 @@
 package ch.zhaw.ba10_bsha_1.graph;
 
 
-import java.io.File;
-
-
 public class GraphFactoryGraphMLImport implements IGraphFactory {
 
 	
@@ -19,9 +16,8 @@ public class GraphFactoryGraphMLImport implements IGraphFactory {
 	public Node createRoot() {
 		Node root = null;
 		if (pathToFile != null) {
-			GraphMLParser parser = new GraphMLParser();
-			File file = new File(pathToFile);
-			root = parser.readFile(file);
+			IGraphMLParser parser = new GraphMLPullParser();
+			root = parser.parse(pathToFile);
 		}
 		
 		return root;

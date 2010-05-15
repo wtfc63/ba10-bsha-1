@@ -12,7 +12,7 @@ import org.xml.sax.*;
 
 import android.util.Log;
 
-public class GraphMLParser implements ContentHandler{
+public class GraphMLParser implements IGraphMLParser, ContentHandler {
 	private static final String TAG = "GraphMLParser"; 
 	
 	private Map<String, Node> nodes;
@@ -42,7 +42,8 @@ public class GraphMLParser implements ContentHandler{
 		}
 	}
 	
-	public Node readFile(File file) {
+	public Node parse(String file_name) {
+		File file = new File(file_name);
 		nodes = new TreeMap<String, Node>();
 		tempEdges = new Stack<Pair>();
 		try{
