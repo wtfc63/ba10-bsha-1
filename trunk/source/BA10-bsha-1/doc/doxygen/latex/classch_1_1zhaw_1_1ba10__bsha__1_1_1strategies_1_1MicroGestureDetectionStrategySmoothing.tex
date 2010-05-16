@@ -1,0 +1,110 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategySmoothing Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing}\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing}}
+}
+
+
+Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::BaseStrategy}, and \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IMicroGestureDetectionStrategy}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategySmoothing:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_acdb5b6b2bb7ad9f48c79b88770113f45}{detectMicroGestures} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ microGestures)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_ab400617238497ed677884eb5bb7b5782}{initArguments} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_a5189e1b6d591f58bbe190f59cd6ad18f}{getStrategyDescription} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_aa12378131b9c311f0191934885c3345a}{getStrategyName} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{IMicroGestureDetectionStrategy} which applies an \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy}{IPreprocessingStrategy} to all given \hyperlink{}{MicroGesture}s to smooth their points' path.
+
+\begin{DoxyAuthor}{Author}
+Dominik Giger, Julian Hanhart 
+\end{DoxyAuthor}
+
+
+Definition at line 15 of file MicroGestureDetectionStrategySmoothing.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_acdb5b6b2bb7ad9f48c79b88770113f45}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing}!detectMicroGestures@{detectMicroGestures}}
+\index{detectMicroGestures@{detectMicroGestures}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategySmoothing@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing}}
+\subsubsection[{detectMicroGestures}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf MicroGesture}$>$ ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategySmoothing.detectMicroGestures (Collection$<$ {\bf MicroGesture} $>$ {\em microGestures})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_acdb5b6b2bb7ad9f48c79b88770113f45}
+Smooth path of all given \hyperlink{}{MicroGesture}s
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em micro\_\-gestures}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy}.
+
+Definition at line 49 of file MicroGestureDetectionStrategySmoothing.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.strategies.IPreprocessingStrategy.process().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=410pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_acdb5b6b2bb7ad9f48c79b88770113f45_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_a5189e1b6d591f58bbe190f59cd6ad18f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing}!getStrategyDescription@{getStrategyDescription}}
+\index{getStrategyDescription@{getStrategyDescription}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategySmoothing@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing}}
+\subsubsection[{getStrategyDescription}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategySmoothing.getStrategyDescription ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_a5189e1b6d591f58bbe190f59cd6ad18f}
+Return a description of the strategy
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 27 of file MicroGestureDetectionStrategySmoothing.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_aa12378131b9c311f0191934885c3345a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing}!getStrategyName@{getStrategyName}}
+\index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategySmoothing@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing}}
+\subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategySmoothing.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_aa12378131b9c311f0191934885c3345a}
+Return the strategy's name
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 32 of file MicroGestureDetectionStrategySmoothing.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_ab400617238497ed677884eb5bb7b5782}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing}!initArguments@{initArguments}}
+\index{initArguments@{initArguments}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategySmoothing@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategySmoothing}}
+\subsubsection[{initArguments}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategySmoothing.initArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_ab400617238497ed677884eb5bb7b5782}
+Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a0496e8fd0099a5f0f7765322d7e752a9}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 24 of file MicroGestureDetectionStrategySmoothing.java.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/strategies/\hyperlink{MicroGestureDetectionStrategySmoothing_8java}{MicroGestureDetectionStrategySmoothing.java}\end{DoxyCompactItemize}

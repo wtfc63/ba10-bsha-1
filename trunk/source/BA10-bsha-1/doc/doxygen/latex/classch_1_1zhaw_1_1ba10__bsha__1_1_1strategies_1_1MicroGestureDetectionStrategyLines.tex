@@ -1,0 +1,185 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines}\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}}
+}
+
+
+Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::BaseStrategy}, and \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IMicroGestureDetectionStrategy}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_ac4a6ad22e6ca3b595006c0b956fdd208}{detectMicroGestures} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ microGestures)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a2c3a3cda170672d79a797c0d3060e9d7}{initArguments} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a9e856240313caac95a363e99bfac2474}{getStrategyName} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a268ab1d51d959092f2d9a68044cc818d}{getStrategyDescription} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_ae2fe4b45825de8b32bd93848a6ecac12}{setMicroGesture} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} mg)
+\item 
+double \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a752e22e2803dd97ddea5ce9ba6ce9071}{calculateDistance} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} a, double m1, double q1)
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a3eed9607540b8b73f0dd0f77b841a9c7}{analyseMicroGestureDirection} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} mg)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a05159d73fbedc92c3e806f38b1ac4c7d}{tolerance} = 130
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{IMicroGestureDetectionStrategy} which detects lines in the given \hyperlink{}{MicroGesture}s.
+
+\begin{DoxyAuthor}{Author}
+Dominik Giger, Julian Hanhart 
+\end{DoxyAuthor}
+
+
+Definition at line 17 of file MicroGestureDetectionStrategyLines.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a3eed9607540b8b73f0dd0f77b841a9c7}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}!analyseMicroGestureDirection@{analyseMicroGestureDirection}}
+\index{analyseMicroGestureDirection@{analyseMicroGestureDirection}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}}
+\subsubsection[{analyseMicroGestureDirection}]{\setlength{\rightskip}{0pt plus 5cm}float ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.analyseMicroGestureDirection ({\bf MicroGesture} {\em mg})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a3eed9607540b8b73f0dd0f77b841a9c7}
+
+
+Definition at line 209 of file MicroGestureDetectionStrategyLines.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getType(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setDirection2(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.tolerance.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.detectMicroGestures().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=403pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a3eed9607540b8b73f0dd0f77b841a9c7_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a752e22e2803dd97ddea5ce9ba6ce9071}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}!calculateDistance@{calculateDistance}}
+\index{calculateDistance@{calculateDistance}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}}
+\subsubsection[{calculateDistance}]{\setlength{\rightskip}{0pt plus 5cm}double ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.calculateDistance ({\bf TouchPoint} {\em a}, \/  double {\em m1}, \/  double {\em q1})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a752e22e2803dd97ddea5ce9ba6ce9071}
+
+
+Definition at line 192 of file MicroGestureDetectionStrategyLines.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.setMicroGesture().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_ac4a6ad22e6ca3b595006c0b956fdd208}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}!detectMicroGestures@{detectMicroGestures}}
+\index{detectMicroGestures@{detectMicroGestures}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}}
+\subsubsection[{detectMicroGestures}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf MicroGesture}$>$ ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.detectMicroGestures (Collection$<$ {\bf MicroGesture} $>$ {\em microGestures})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_ac4a6ad22e6ca3b595006c0b956fdd208}
+Detect lines in the \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint}s of the given \hyperlink{}{MicroGesture}s
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em micro\_\-gestures}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy}.
+
+Definition at line 58 of file MicroGestureDetectionStrategyLines.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.addPoint(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.analyseMicroGestureDirection(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getDirection2(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getType(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setDirection(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.setMicroGesture(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.tolerance.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_ac4a6ad22e6ca3b595006c0b956fdd208_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a268ab1d51d959092f2d9a68044cc818d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}!getStrategyDescription@{getStrategyDescription}}
+\index{getStrategyDescription@{getStrategyDescription}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}}
+\subsubsection[{getStrategyDescription}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.getStrategyDescription ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a268ab1d51d959092f2d9a68044cc818d}
+Return a description of the strategy
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 41 of file MicroGestureDetectionStrategyLines.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a9e856240313caac95a363e99bfac2474}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}!getStrategyName@{getStrategyName}}
+\index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}}
+\subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a9e856240313caac95a363e99bfac2474}
+Return the strategy's name
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 36 of file MicroGestureDetectionStrategyLines.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a2c3a3cda170672d79a797c0d3060e9d7}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}!initArguments@{initArguments}}
+\index{initArguments@{initArguments}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}}
+\subsubsection[{initArguments}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.initArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a2c3a3cda170672d79a797c0d3060e9d7}
+Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a0496e8fd0099a5f0f7765322d7e752a9}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 33 of file MicroGestureDetectionStrategyLines.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_ae2fe4b45825de8b32bd93848a6ecac12}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}!setMicroGesture@{setMicroGesture}}
+\index{setMicroGesture@{setMicroGesture}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}}
+\subsubsection[{setMicroGesture}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.setMicroGesture ({\bf MicroGesture} {\em mg})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_ae2fe4b45825de8b32bd93848a6ecac12}
+
+
+Definition at line 155 of file MicroGestureDetectionStrategyLines.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.calculateDistance(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), and ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setType().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.detectMicroGestures().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_ae2fe4b45825de8b32bd93848a6ecac12_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a05159d73fbedc92c3e806f38b1ac4c7d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}!tolerance@{tolerance}}
+\index{tolerance@{tolerance}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLines@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLines}}
+\subsubsection[{tolerance}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.tolerance} = 130\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_a05159d73fbedc92c3e806f38b1ac4c7d}
+
+
+Definition at line 25 of file MicroGestureDetectionStrategyLines.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.analyseMicroGestureDirection(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines.detectMicroGestures().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/strategies/\hyperlink{MicroGestureDetectionStrategyLines_8java}{MicroGestureDetectionStrategyLines.java}\end{DoxyCompactItemize}

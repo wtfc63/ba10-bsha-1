@@ -1,0 +1,905 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME}\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+}
+
+
+Inherits android::inputmethodservice::InputMethodService, and \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver}{ch::zhaw::ba10\_\-bsha\_\-1::ime::IObserver}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_1_1DetectionServiceConnection}{DetectionServiceConnection}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a391f1eb148d1c08e456d1595516c158c}{onCreate} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a113e6d863b481e5a9c926dd917d7822a}{onInitializeInterface} ()
+\item 
+View \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a920e8e85634fc64519604846302aaa58}{onCreateInputView} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a731678d503654a151a2204665ec2f018}{onStartInputView} (EditorInfo attribute, boolean restarting)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a35c873d879f2440e2a98e2dbca31202f}{onDestroy} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a788cf4563e1480f6c3ea3ca6f07b2623}{update} (\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObservable}{IObservable} updater)
+\item 
+View \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a478af9d9f8258613e4e124bdfdd8dc09}{onCreateCandidatesView} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_abb0bfa8e1c7857a88657e6640855af0f}{onStartInput} (EditorInfo attribute, boolean restarting)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a1b167f4b94b905a354b0713f15ef4a92}{onFinishInput} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a372883c8da0f8e41f6acb0d169fc5b6e}{onUpdateSelection} (int oldSelStart, int oldSelEnd, int newSelStart, int newSelEnd, int candidatesStart, int candidatesEnd)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5e02e524ed9e962644d630cc0facda16}{onDisplayCompletions} (CompletionInfo\mbox{[}$\,$\mbox{]} completion\_\-infos)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a999c8827bbffc0388be05c9e87e2ac49}{onKeyDown} (int keyCode, KeyEvent event)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3d39e17d6aa63cc1b2564dcb2022c8ec}{onKeyUp} (int keyCode, KeyEvent event)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6bf7a6751794c5bf24f686cbf94d7ebf}{onKey} (int primaryCode, int\mbox{[}$\,$\mbox{]} keyCodes)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aaa0fc01a36b17c423c223f0dce23390d}{onText} (CharSequence text)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a761d3a5ee4b8830684c9fe03641b6a62}{setSuggestions} (List$<$ String $>$ suggestions, boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a8df4f47c35084abc7bf31d65b248c5be}{completions}, boolean typedWordValid)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aeef9b5d4fa9f314d5bf17331645ba93b}{isWordSeparator} (int code)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6e2e375b97933b90f110199def80abfe}{pickDefaultCandidate} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ada3cca347b6d9a39b3fb4d008d90dac8}{pickSuggestionManually} (int index)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5a27dd14331c21af3031ffcd38d802f4}{swipeRight} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aab0d09eae40077fbdb87a21566a266ea}{swipeLeft} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aa35f0cbc95d0b5623c29229e3a8ee2e5}{swipeDown} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a76b1e0dc03f0b6d2641cf60325dee604}{swipeUp} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_abb77d1d11f616d5980ea16858a6b6190}{onPress} (int primaryCode)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_adf013e6d8fc9b5d0e567fe93f5f6511a}{onRelease} (int primaryCode)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a25b3410857b8a7b81ad09b2a76ca352c}{translateKeyDown} (int keyCode, KeyEvent event)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3f0ca3d6a23ac27b9ad1b2578078512e}{commitTyped} (InputConnection inputConnection)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a0cc6d7c254ce701f73f5852bafe294b4}{isAlphabet} (int code)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_acaadb74527ea7fc306cdd571b9a25097}{keyDownUp} (int keyEventCode)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2711e357f6251b532e7d0bde79cadfdf}{sendKey} (int keyCode)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a428fc59e616bef0e75c866ddece97a70}{updateCandidates} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a629b38e45bc795d46cb7ce1c79bc1def}{handleBackspace} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5b7f7f06b8e6f5eb9797725b5d814f5c}{handleCharacter} (int primaryCode, int\mbox{[}$\,$\mbox{]} keyCodes)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a4287014b4f552f286e8b51ef841573b1}{handleClose} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aedc68ffb6a0f14256976a0cfdb5a8a3d}{getWordSeparators} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+IDetectionService \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_adb6575df144036d95d8e2fb029218c4d}{detectionService} = null
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_1_1DetectionServiceConnection}{DetectionServiceConnection} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a327839f818f5782ff037e64ff386045f}{serviceConnection}
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a9d9ecc20c8af30a04dfaa832cd7da89b}{serviceIsBound} = false
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2ec39f4494a222882ffb6a09419accd8}{serviceIsRunning} = false
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView}{PadView} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a1dd0d971c8e7acd463435307af0b6bcd}{padView}
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a25083961cde3a46e105a3ad13c0f557b}{sendFieldHeight} = false
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView}{CandidateView} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_af7d4919c3faf26a9459310f8102d4d80}{candidateView}
+\item 
+CompletionInfo\mbox{[}$\,$\mbox{]} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a8df4f47c35084abc7bf31d65b248c5be}{completions}
+\item 
+StringBuilder \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_adb09682281dc4daa50613d97d28c6dfd}{composingText} = new StringBuilder()
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a84134f9987fa827825135caaac882b26}{predictionOn}
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ab1ce22088e636ff9cd28e7c5d062471a}{completionOn}
+\item 
+long \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5fcd0c226a96c4fb7549fba822b49d2a}{metaState}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard}{LatinKeyboard} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a57cdeb14386f227d3588cf221f32e8d0}{padKeyboard}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard}{LatinKeyboard} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ac95c3e131d61264247ea2f40b3bd4991}{curKeyboard}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a23ac28ca44ad5920e88c7671b7a9f2d1}{wordSeparators}
+\item 
+IReturnResults \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2b00011a3695bc66257dd90aa0ac27ab}{serviceCallback}
+\item 
+Handler \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3c53e6e79323d1574d50d493d76f290d}{serviceHandler}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6807180ab4641e86ea2c94e01ead09a8}{PROCESS\_\-HARD\_\-KEYS} = true
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_af6448d252df45f5e4ea520c29ec38d0b}{CHARACTER\_\-RESULT\_\-MSG} = 1
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a4a5e59ff77bc147c35c6cc423e878305}{CHAR\_\-RESULT\_\-MSG} = 2
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A basic implementation of the \hyperlink{}{InputMethodService} for our IME. Deals with the connection to the \hyperlink{}{DetectionService} and lets a \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView}{PadView} handle the gathering of the input data.
+
+Based on the SoftKeyboard example from the Android SDK. 
+
+Definition at line 45 of file HandwritingIME.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3f0ca3d6a23ac27b9ad1b2578078512e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!commitTyped@{commitTyped}}
+\index{commitTyped@{commitTyped}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{commitTyped}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.commitTyped (InputConnection {\em inputConnection})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3f0ca3d6a23ac27b9ad1b2578078512e}
+Helper function to commit any text being composed in to the editor. 
+
+Definition at line 580 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleClose(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onText(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3f0ca3d6a23ac27b9ad1b2578078512e_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aedc68ffb6a0f14256976a0cfdb5a8a3d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!getWordSeparators@{getWordSeparators}}
+\index{getWordSeparators@{getWordSeparators}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{getWordSeparators}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.getWordSeparators ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aedc68ffb6a0f14256976a0cfdb5a8a3d}
+
+
+Definition at line 728 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.wordSeparators.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.isWordSeparator().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a629b38e45bc795d46cb7ce1c79bc1def}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!handleBackspace@{handleBackspace}}
+\index{handleBackspace@{handleBackspace}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{handleBackspace}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleBackspace ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a629b38e45bc795d46cb7ce1c79bc1def}
+Clean up text suggestions if needed and send the keycode for the backspace-\/key. 
+
+Definition at line 691 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.keyDownUp(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.swipeLeft(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.update().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a629b38e45bc795d46cb7ce1c79bc1def_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5b7f7f06b8e6f5eb9797725b5d814f5c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!handleCharacter@{handleCharacter}}
+\index{handleCharacter@{handleCharacter}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{handleCharacter}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleCharacter (int {\em primaryCode}, \/  int\mbox{[}$\,$\mbox{]} {\em keyCodes})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5b7f7f06b8e6f5eb9797725b5d814f5c}
+Add character to suggestion of needed or send directly through the \hyperlink{}{InputConnection} 
+
+Definition at line 709 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.isAlphabet(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.predictionOn, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5b7f7f06b8e6f5eb9797725b5d814f5c_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a4287014b4f552f286e8b51ef841573b1}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!handleClose@{handleClose}}
+\index{handleClose@{handleClose}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{handleClose}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleClose ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a4287014b4f552f286e8b51ef841573b1}
+React on closing of the input method 
+
+Definition at line 722 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.closing(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.commitTyped(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padView.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.swipeDown().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a4287014b4f552f286e8b51ef841573b1_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a0cc6d7c254ce701f73f5852bafe294b4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!isAlphabet@{isAlphabet}}
+\index{isAlphabet@{isAlphabet}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{isAlphabet}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.isAlphabet (int {\em code})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a0cc6d7c254ce701f73f5852bafe294b4}
+Helper to determine if a given character code is alphabetic. 
+
+Definition at line 591 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleCharacter().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aeef9b5d4fa9f314d5bf17331645ba93b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!isWordSeparator@{isWordSeparator}}
+\index{isWordSeparator@{isWordSeparator}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{isWordSeparator}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.isWordSeparator (int {\em code})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aeef9b5d4fa9f314d5bf17331645ba93b}
+
+
+Definition at line 732 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.getWordSeparators().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aeef9b5d4fa9f314d5bf17331645ba93b_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_acaadb74527ea7fc306cdd571b9a25097}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!keyDownUp@{keyDownUp}}
+\index{keyDownUp@{keyDownUp}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{keyDownUp}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.keyDownUp (int {\em keyEventCode})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_acaadb74527ea7fc306cdd571b9a25097}
+Helper to send a key down / key up pair to the current editor. 
+
+Definition at line 602 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleBackspace(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.sendKey().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a391f1eb148d1c08e456d1595516c158c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onCreate}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreate ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a391f1eb148d1c08e456d1595516c158c}
+Main initialization of the input method component. Used to start the \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1service}{service} if it's not already running. 
+
+Definition at line 116 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceConnection, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceIsRunning, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.wordSeparators.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a478af9d9f8258613e4e124bdfdd8dc09}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onCreateCandidatesView@{onCreateCandidatesView}}
+\index{onCreateCandidatesView@{onCreateCandidatesView}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onCreateCandidatesView}]{\setlength{\rightskip}{0pt plus 5cm}View ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreateCandidatesView ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a478af9d9f8258613e4e124bdfdd8dc09}
+Called by the framework when the view for showing candidates needs to be generated, like \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a920e8e85634fc64519604846302aaa58}{onCreateInputView}. 
+
+Definition at line 315 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.candidateView, and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setService().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a478af9d9f8258613e4e124bdfdd8dc09_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a920e8e85634fc64519604846302aaa58}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onCreateInputView@{onCreateInputView}}
+\index{onCreateInputView@{onCreateInputView}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onCreateInputView}]{\setlength{\rightskip}{0pt plus 5cm}View ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreateInputView ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a920e8e85634fc64519604846302aaa58}
+Called by the framework when the view for creating input needs to be generated. This will be called the first time the input method is displayed, and every time it needs to be re-\/created such as due to a configuration change. 
+
+Definition at line 147 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padKeyboard, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padView.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a35c873d879f2440e2a98e2dbca31202f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onDestroy@{onDestroy}}
+\index{onDestroy@{onDestroy}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onDestroy}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onDestroy ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a35c873d879f2440e2a98e2dbca31202f}
+Called when the input method is destroy. Since there will be no input method around afterwards, we can use this to unbind the input method from the \hyperlink{}{Service}. 
+
+Definition at line 175 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.detectionService, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceCallback, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceConnection, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceIsBound.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5e02e524ed9e962644d630cc0facda16}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onDisplayCompletions@{onDisplayCompletions}}
+\index{onDisplayCompletions@{onDisplayCompletions}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onDisplayCompletions}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onDisplayCompletions (CompletionInfo\mbox{[}$\,$\mbox{]} {\em completion\_\-infos})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5e02e524ed9e962644d630cc0facda16}
+This tells us about completions that the editor has determined based on the current text in it. We want to use this in fullscreen mode to show the completions ourself, since the editor can not be seen in that situation. 
+
+Definition at line 463 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.completionOn, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.completions, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.setSuggestions().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5e02e524ed9e962644d630cc0facda16_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a1b167f4b94b905a354b0713f15ef4a92}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onFinishInput@{onFinishInput}}
+\index{onFinishInput@{onFinishInput}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onFinishInput}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onFinishInput ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a1b167f4b94b905a354b0713f15ef4a92}
+This is called when the user is done editing a field. We can use this to reset our state. 
+
+Definition at line 419 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.closing(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padView, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a1b167f4b94b905a354b0713f15ef4a92_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a113e6d863b481e5a9c926dd917d7822a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onInitializeInterface@{onInitializeInterface}}
+\index{onInitializeInterface@{onInitializeInterface}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onInitializeInterface}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onInitializeInterface ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a113e6d863b481e5a9c926dd917d7822a}
+Initialization of the User Interface. It is called after creation and any configuration change. 
+
+Definition at line 131 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.attachObserver(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padKeyboard, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padView.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a113e6d863b481e5a9c926dd917d7822a_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6bf7a6751794c5bf24f686cbf94d7ebf}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onKey@{onKey}}
+\index{onKey@{onKey}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onKey}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey (int {\em primaryCode}, \/  int\mbox{[}$\,$\mbox{]} {\em keyCodes})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6bf7a6751794c5bf24f686cbf94d7ebf}
+Implementation of KeyboardViewListener \begin{DoxySeeAlso}{See also}
+android.inputmethodservice.KeyboardView.OnKeyboardActionListener.onKey(int, int\mbox{[}\mbox{]}) 
+\end{DoxySeeAlso}
+
+
+Definition at line 629 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.commitTyped(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleBackspace(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleCharacter(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleClose(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.isWordSeparator(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.sendKey().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyDown(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.translateKeyDown().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6bf7a6751794c5bf24f686cbf94d7ebf_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a999c8827bbffc0388be05c9e87e2ac49}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onKeyDown@{onKeyDown}}
+\index{onKeyDown@{onKeyDown}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onKeyDown}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyDown (int {\em keyCode}, \/  KeyEvent {\em event})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a999c8827bbffc0388be05c9e87e2ac49}
+Use this to monitor key events being delivered to the application. We get first crack at them, and can either resume them or let them continue to the app. 
+
+Definition at line 521 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padView, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.predictionOn, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.PROCESS\_\-HARD\_\-KEYS, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.translateKeyDown().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a999c8827bbffc0388be05c9e87e2ac49_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3d39e17d6aa63cc1b2564dcb2022c8ec}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onKeyUp@{onKeyUp}}
+\index{onKeyUp@{onKeyUp}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onKeyUp}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyUp (int {\em keyCode}, \/  KeyEvent {\em event})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3d39e17d6aa63cc1b2564dcb2022c8ec}
+Use this to monitor key events being delivered to the application. We get first crack at them, and can either resume them or let them continue to the app. 
+
+Definition at line 565 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.metaState, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.predictionOn, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.PROCESS\_\-HARD\_\-KEYS.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_abb77d1d11f616d5980ea16858a6b6190}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onPress@{onPress}}
+\index{onPress@{onPress}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onPress}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onPress (int {\em primaryCode})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_abb77d1d11f616d5980ea16858a6b6190}
+
+
+Definition at line 775 of file HandwritingIME.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_adf013e6d8fc9b5d0e567fe93f5f6511a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onRelease@{onRelease}}
+\index{onRelease@{onRelease}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onRelease}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onRelease (int {\em primaryCode})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_adf013e6d8fc9b5d0e567fe93f5f6511a}
+
+
+Definition at line 776 of file HandwritingIME.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_abb0bfa8e1c7857a88657e6640855af0f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onStartInput@{onStartInput}}
+\index{onStartInput@{onStartInput}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onStartInput}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput (EditorInfo {\em attribute}, \/  boolean {\em restarting})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_abb0bfa8e1c7857a88657e6640855af0f}
+This is the main point where we do our initialization of the input method to begin operating on an application. At this point we have been bound to the client, and are now receiving all of the detailed information about the target of our edits. 
+
+Definition at line 328 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.completionOn, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.completions, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.curKeyboard, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.metaState, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padKeyboard, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.predictionOn, ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.setImeOptions(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_abb0bfa8e1c7857a88657e6640855af0f_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a731678d503654a151a2204665ec2f018}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onStartInputView@{onStartInputView}}
+\index{onStartInputView@{onStartInputView}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onStartInputView}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInputView (EditorInfo {\em attribute}, \/  boolean {\em restarting})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a731678d503654a151a2204665ec2f018}
+Called every time when the input method is shown, therefore we use this to bind to the \hyperlink{}{Service}. 
+
+Definition at line 163 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.closing(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.curKeyboard, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padView, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceConnection, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceIsBound.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=399pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a731678d503654a151a2204665ec2f018_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aaa0fc01a36b17c423c223f0dce23390d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onText@{onText}}
+\index{onText@{onText}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onText}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onText (CharSequence {\em text})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aaa0fc01a36b17c423c223f0dce23390d}
+
+
+Definition at line 646 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.commitTyped(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aaa0fc01a36b17c423c223f0dce23390d_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a372883c8da0f8e41f6acb0d169fc5b6e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!onUpdateSelection@{onUpdateSelection}}
+\index{onUpdateSelection@{onUpdateSelection}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{onUpdateSelection}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onUpdateSelection (int {\em oldSelStart}, \/  int {\em oldSelEnd}, \/  int {\em newSelStart}, \/  int {\em newSelEnd}, \/  int {\em candidatesStart}, \/  int {\em candidatesEnd})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a372883c8da0f8e41f6acb0d169fc5b6e}
+Deal with the editor reporting movement of its cursor. 
+
+Definition at line 440 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a372883c8da0f8e41f6acb0d169fc5b6e_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6e2e375b97933b90f110199def80abfe}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!pickDefaultCandidate@{pickDefaultCandidate}}
+\index{pickDefaultCandidate@{pickDefaultCandidate}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{pickDefaultCandidate}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickDefaultCandidate ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6e2e375b97933b90f110199def80abfe}
+Pick the first suggested candidate 
+
+Definition at line 740 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6e2e375b97933b90f110199def80abfe_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ada3cca347b6d9a39b3fb4d008d90dac8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!pickSuggestionManually@{pickSuggestionManually}}
+\index{pickSuggestionManually@{pickSuggestionManually}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{pickSuggestionManually}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually (int {\em index})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ada3cca347b6d9a39b3fb4d008d90dac8}
+Pick one of the suggested candidates 
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]\end{DoxyParams}
+
+
+Definition at line 748 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.candidateView, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.clear(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.commitTyped(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.completionOn, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.completions, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onTouchEvent(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickDefaultCandidate(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.takeSuggestionAt().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ada3cca347b6d9a39b3fb4d008d90dac8_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2711e357f6251b532e7d0bde79cadfdf}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!sendKey@{sendKey}}
+\index{sendKey@{sendKey}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{sendKey}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.sendKey (int {\em keyCode})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2711e357f6251b532e7d0bde79cadfdf}
+Helper to send a character to the editor as raw key events. 
+
+Definition at line 610 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.keyDownUp().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2711e357f6251b532e7d0bde79cadfdf_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a761d3a5ee4b8830684c9fe03641b6a62}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!setSuggestions@{setSuggestions}}
+\index{setSuggestions@{setSuggestions}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{setSuggestions}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.setSuggestions (List$<$ String $>$ {\em suggestions}, \/  boolean {\em completions}, \/  boolean {\em typedWordValid})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a761d3a5ee4b8830684c9fe03641b6a62}
+
+
+Definition at line 676 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.candidateView, and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setSuggestions().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onDisplayCompletions(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a761d3a5ee4b8830684c9fe03641b6a62_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aa35f0cbc95d0b5623c29229e3a8ee2e5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!swipeDown@{swipeDown}}
+\index{swipeDown@{swipeDown}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{swipeDown}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.swipeDown ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aa35f0cbc95d0b5623c29229e3a8ee2e5}
+
+
+Definition at line 770 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleClose().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aa35f0cbc95d0b5623c29229e3a8ee2e5_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aab0d09eae40077fbdb87a21566a266ea}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!swipeLeft@{swipeLeft}}
+\index{swipeLeft@{swipeLeft}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{swipeLeft}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.swipeLeft ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aab0d09eae40077fbdb87a21566a266ea}
+
+
+Definition at line 766 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleBackspace().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_aab0d09eae40077fbdb87a21566a266ea_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5a27dd14331c21af3031ffcd38d802f4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!swipeRight@{swipeRight}}
+\index{swipeRight@{swipeRight}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{swipeRight}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.swipeRight ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5a27dd14331c21af3031ffcd38d802f4}
+
+
+Definition at line 764 of file HandwritingIME.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a76b1e0dc03f0b6d2641cf60325dee604}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!swipeUp@{swipeUp}}
+\index{swipeUp@{swipeUp}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{swipeUp}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.swipeUp ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a76b1e0dc03f0b6d2641cf60325dee604}
+
+
+Definition at line 774 of file HandwritingIME.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a25b3410857b8a7b81ad09b2a76ca352c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!translateKeyDown@{translateKeyDown}}
+\index{translateKeyDown@{translateKeyDown}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{translateKeyDown}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.translateKeyDown (int {\em keyCode}, \/  KeyEvent {\em event})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a25b3410857b8a7b81ad09b2a76ca352c}
+This translates incoming hard key events in to edit operations on an \hyperlink{}{InputConnection}. It is only needed when using the PROCESS\_\-HARD\_\-KEYS option. 
+
+Definition at line 485 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.metaState, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyDown().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a25b3410857b8a7b81ad09b2a76ca352c_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a788cf4563e1480f6c3ea3ca6f07b2623}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!update@{update}}
+\index{update@{update}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.update ({\bf IObservable} {\em updater})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a788cf4563e1480f6c3ea3ca6f07b2623}
+Deal with changes in the \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView}{PadView}, mostly relaying its input to the \hyperlink{}{DetectionService} 
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver_a9bd8c4a6a6aaaf70d771c8f4b08a748d}{ch.zhaw.ba10\_\-bsha\_\-1.ime.IObserver}.
+
+Definition at line 199 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.detectionService, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.getEventType(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.getLastPoints(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleBackspace(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padView, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.sendFieldHeight, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceIsBound.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a788cf4563e1480f6c3ea3ca6f07b2623_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a428fc59e616bef0e75c866ddece97a70}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!updateCandidates@{updateCandidates}}
+\index{updateCandidates@{updateCandidates}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{updateCandidates}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a428fc59e616bef0e75c866ddece97a70}
+Update the list of available candidates from the current composing text. This will need to be filled in by however you are determining candidates. 
+
+Definition at line 664 of file HandwritingIME.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.completionOn, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText, and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.setSuggestions().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.commitTyped(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleBackspace(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleCharacter(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onFinishInput(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onUpdateSelection().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a428fc59e616bef0e75c866ddece97a70_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_af7d4919c3faf26a9459310f8102d4d80}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!candidateView@{candidateView}}
+\index{candidateView@{candidateView}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{candidateView}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CandidateView} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.candidateView}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_af7d4919c3faf26a9459310f8102d4d80}
+
+
+Definition at line 93 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreateCandidatesView(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.setSuggestions().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a4a5e59ff77bc147c35c6cc423e878305}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!CHAR\_\-RESULT\_\-MSG@{CHAR\_\-RESULT\_\-MSG}}
+\index{CHAR\_\-RESULT\_\-MSG@{CHAR\_\-RESULT\_\-MSG}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{CHAR\_\-RESULT\_\-MSG}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.CHAR\_\-RESULT\_\-MSG} = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a4a5e59ff77bc147c35c6cc423e878305}
+
+
+Definition at line 262 of file HandwritingIME.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_af6448d252df45f5e4ea520c29ec38d0b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!CHARACTER\_\-RESULT\_\-MSG@{CHARACTER\_\-RESULT\_\-MSG}}
+\index{CHARACTER\_\-RESULT\_\-MSG@{CHARACTER\_\-RESULT\_\-MSG}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{CHARACTER\_\-RESULT\_\-MSG}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.CHARACTER\_\-RESULT\_\-MSG} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_af6448d252df45f5e4ea520c29ec38d0b}
+
+
+Definition at line 261 of file HandwritingIME.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ab1ce22088e636ff9cd28e7c5d062471a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!completionOn@{completionOn}}
+\index{completionOn@{completionOn}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{completionOn}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.completionOn}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ab1ce22088e636ff9cd28e7c5d062471a}
+
+
+Definition at line 98 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onDisplayCompletions(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a8df4f47c35084abc7bf31d65b248c5be}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!completions@{completions}}
+\index{completions@{completions}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{completions}]{\setlength{\rightskip}{0pt plus 5cm}CompletionInfo \mbox{[}$\,$\mbox{]} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.completions}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a8df4f47c35084abc7bf31d65b248c5be}
+
+
+Definition at line 94 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onDisplayCompletions(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_adb09682281dc4daa50613d97d28c6dfd}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!composingText@{composingText}}
+\index{composingText@{composingText}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{composingText}]{\setlength{\rightskip}{0pt plus 5cm}StringBuilder {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.composingText} = new StringBuilder()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_adb09682281dc4daa50613d97d28c6dfd}
+
+
+Definition at line 96 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.commitTyped(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleBackspace(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleCharacter(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onFinishInput(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKey(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyDown(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onText(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onUpdateSelection(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.translateKeyDown(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.updateCandidates().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ac95c3e131d61264247ea2f40b3bd4991}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!curKeyboard@{curKeyboard}}
+\index{curKeyboard@{curKeyboard}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{curKeyboard}]{\setlength{\rightskip}{0pt plus 5cm}{\bf LatinKeyboard} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.curKeyboard}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_ac95c3e131d61264247ea2f40b3bd4991}
+
+
+Definition at line 102 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInputView().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_adb6575df144036d95d8e2fb029218c4d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!detectionService@{detectionService}}
+\index{detectionService@{detectionService}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{detectionService}]{\setlength{\rightskip}{0pt plus 5cm}IDetectionService {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.detectionService} = null\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_adb6575df144036d95d8e2fb029218c4d}
+
+
+Definition at line 86 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onDestroy(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.DetectionServiceConnection.onServiceConnected(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.DetectionServiceConnection.onServiceDisconnected(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.update().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5fcd0c226a96c4fb7549fba822b49d2a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!metaState@{metaState}}
+\index{metaState@{metaState}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{metaState}]{\setlength{\rightskip}{0pt plus 5cm}long {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.metaState}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a5fcd0c226a96c4fb7549fba822b49d2a}
+
+
+Definition at line 99 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyUp(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.translateKeyDown().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a57cdeb14386f227d3588cf221f32e8d0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!padKeyboard@{padKeyboard}}
+\index{padKeyboard@{padKeyboard}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{padKeyboard}]{\setlength{\rightskip}{0pt plus 5cm}{\bf LatinKeyboard} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padKeyboard}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a57cdeb14386f227d3588cf221f32e8d0}
+
+
+Definition at line 101 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreateInputView(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onInitializeInterface(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a1dd0d971c8e7acd463435307af0b6bcd}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!padView@{padView}}
+\index{padView@{padView}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{padView}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PadView} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.padView}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a1dd0d971c8e7acd463435307af0b6bcd}
+
+
+Definition at line 91 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleClose(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreateInputView(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onFinishInput(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onInitializeInterface(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyDown(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInputView(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.update().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a84134f9987fa827825135caaac882b26}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!predictionOn@{predictionOn}}
+\index{predictionOn@{predictionOn}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{predictionOn}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.predictionOn}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a84134f9987fa827825135caaac882b26}
+
+
+Definition at line 97 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleCharacter(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyDown(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyUp(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6807180ab4641e86ea2c94e01ead09a8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!PROCESS\_\-HARD\_\-KEYS@{PROCESS\_\-HARD\_\-KEYS}}
+\index{PROCESS\_\-HARD\_\-KEYS@{PROCESS\_\-HARD\_\-KEYS}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{PROCESS\_\-HARD\_\-KEYS}]{\setlength{\rightskip}{0pt plus 5cm}final boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.PROCESS\_\-HARD\_\-KEYS} = true\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a6807180ab4641e86ea2c94e01ead09a8}
+
+
+Definition at line 84 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyDown(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onKeyUp().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a25083961cde3a46e105a3ad13c0f557b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!sendFieldHeight@{sendFieldHeight}}
+\index{sendFieldHeight@{sendFieldHeight}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{sendFieldHeight}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.sendFieldHeight} = false\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a25083961cde3a46e105a3ad13c0f557b}
+
+
+Definition at line 92 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.update().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2b00011a3695bc66257dd90aa0ac27ab}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!serviceCallback@{serviceCallback}}
+\index{serviceCallback@{serviceCallback}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{serviceCallback}]{\setlength{\rightskip}{0pt plus 5cm}IReturnResults {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceCallback}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2b00011a3695bc66257dd90aa0ac27ab}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new IReturnResults.Stub() {
+                @Override
+                public void recognisedCharacters(List<ch.zhaw.ba10_bsha_1.Charact
+      er> characters) throws RemoteException {
+                        serviceHandler.sendMessage(serviceHandler.obtainMessage(
+      CHARACTER_RESULT_MSG, characters));
+                }
+
+                @Override
+                public void recognisedChar(char character, float probability) thr
+      ows RemoteException {
+                        serviceHandler.sendMessage(serviceHandler.obtainMessage(
+      CHAR_RESULT_MSG, character, Math.round(probability * 1000000)));
+                }
+    }
+\end{DoxyCode}
+This implementation is used to receive callbacks from the remote \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1service}{service}. 
+
+Definition at line 249 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onDestroy(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.DetectionServiceConnection.onServiceConnected().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a327839f818f5782ff037e64ff386045f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!serviceConnection@{serviceConnection}}
+\index{serviceConnection@{serviceConnection}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{serviceConnection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DetectionServiceConnection} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceConnection}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a327839f818f5782ff037e64ff386045f}
+
+
+Definition at line 87 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreate(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onDestroy(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInputView().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3c53e6e79323d1574d50d493d76f290d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!serviceHandler@{serviceHandler}}
+\index{serviceHandler@{serviceHandler}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{serviceHandler}]{\setlength{\rightskip}{0pt plus 5cm}Handler {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceHandler}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a3c53e6e79323d1574d50d493d76f290d}
+
+
+Definition at line 264 of file HandwritingIME.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a9d9ecc20c8af30a04dfaa832cd7da89b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!serviceIsBound@{serviceIsBound}}
+\index{serviceIsBound@{serviceIsBound}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{serviceIsBound}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceIsBound} = false\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a9d9ecc20c8af30a04dfaa832cd7da89b}
+
+
+Definition at line 88 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onDestroy(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInputView(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.update().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2ec39f4494a222882ffb6a09419accd8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!serviceIsRunning@{serviceIsRunning}}
+\index{serviceIsRunning@{serviceIsRunning}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{serviceIsRunning}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.serviceIsRunning} = false\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a2ec39f4494a222882ffb6a09419accd8}
+
+
+Definition at line 89 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a23ac28ca44ad5920e88c7671b7a9f2d1}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}!wordSeparators@{wordSeparators}}
+\index{wordSeparators@{wordSeparators}!ch::zhaw::ba10_bsha_1::ime::HandwritingIME@{ch::zhaw::ba10\_\-bsha\_\-1::ime::HandwritingIME}}
+\subsubsection[{wordSeparators}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.wordSeparators}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_a23ac28ca44ad5920e88c7671b7a9f2d1}
+
+
+Definition at line 104 of file HandwritingIME.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.getWordSeparators(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreate().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/ime/\hyperlink{HandwritingIME_8java}{HandwritingIME.java}\end{DoxyCompactItemize}

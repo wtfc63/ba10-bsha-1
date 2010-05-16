@@ -1,0 +1,285 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.Character Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+}
+
+
+Inherits android::os::Parcelable.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.Character:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a4767949d8c182759546593cedbfa2fca}{Character} ()
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a7de6941f30f53be346af22a76e8dd455}{Character} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ micro\_\-gestures, char character, float probability)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a9610139b4634b1f6c33ed5a5fa91ba0f}{Character} (Parcel source)
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ae64eef9831bfc6a36a46711512f031a3}{describeContents} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ab8b193814ae930d7ee870d11ec3ae788}{writeToParcel} (Parcel dest, int flags)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ad3676c8beb543679a81599fa69bb447d}{readFromParcel} (Parcel source)
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a66cd28da88720aba5b7a441326874e65}{compareTo} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}{Character} another)
+\item 
+ArrayList$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a5db74fce6f0c14edd6eb3e4a693ad689}{getMicroGestures} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ab1a6cfeef0de8bca6e97e79b65320978}{setMicroGestures} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ micro\_\-gestures)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a6f61da3106a54f30d804c9e4d5b03b9c}{addMicroGesture} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} micro\_\-gesture)
+\item 
+char \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a2bcee4a4f8ab32a78d3a8d2885795c16}{getDetectedCharacter} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_aa9e5aa7c1059cddf5ff9ff451a36b74e}{setDetectedCharacter} (char character)
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_afaae3f56a30c91e7bac95a24501bae6c}{getDetectionProbability} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a31e123df91176847469ae4ac0fab3066}{setDetectionProbability} (float probability)
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a52e36b4f56fd850f683d0e0e0c3ddf1e}{toString} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Parcelable.Creator$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}{Character} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a0659f648118f65f0deed3ac7b08bdee1}{CREATOR}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ArrayList$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a3a665125fd44a0f4b65330f0dfa72bfe}{microGestures}
+\item 
+char \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ab26dadf317157ee393e6498b03c4c4b2}{detectedCharacter}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_af797c21f650fd10789f7c00bda6418c8}{detectionProbability}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a detected \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}{Character} and includes its detection-\/probability and \hyperlink{}{MicroGesture}s. Implements \hyperlink{}{Parcelable} and can therefore be send to and from a \hyperlink{}{Service}.
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+
+Definition at line 20 of file Character.java.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a4767949d8c182759546593cedbfa2fca}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!Character@{Character}}
+\index{Character@{Character}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{Character}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.Character.Character ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a4767949d8c182759546593cedbfa2fca}
+
+
+Definition at line 38 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectedCharacter, ch.zhaw.ba10\_\-bsha\_\-1.Character.detectionProbability, and ch.zhaw.ba10\_\-bsha\_\-1.Character.microGestures.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a7de6941f30f53be346af22a76e8dd455}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!Character@{Character}}
+\index{Character@{Character}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{Character}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.Character.Character (Collection$<$ {\bf MicroGesture} $>$ {\em micro\_\-gestures}, \/  char {\em character}, \/  float {\em probability})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a7de6941f30f53be346af22a76e8dd455}
+
+
+Definition at line 44 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectedCharacter, ch.zhaw.ba10\_\-bsha\_\-1.Character.detectionProbability, and ch.zhaw.ba10\_\-bsha\_\-1.Character.setMicroGestures().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a7de6941f30f53be346af22a76e8dd455_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a9610139b4634b1f6c33ed5a5fa91ba0f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!Character@{Character}}
+\index{Character@{Character}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{Character}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.Character.Character (Parcel {\em source})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a9610139b4634b1f6c33ed5a5fa91ba0f}
+
+
+Definition at line 51 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.readFromParcel().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a9610139b4634b1f6c33ed5a5fa91ba0f_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a6f61da3106a54f30d804c9e4d5b03b9c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!addMicroGesture@{addMicroGesture}}
+\index{addMicroGesture@{addMicroGesture}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{addMicroGesture}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.Character.addMicroGesture ({\bf MicroGesture} {\em micro\_\-gesture})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a6f61da3106a54f30d804c9e4d5b03b9c}
+
+
+Definition at line 126 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.microGestures.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a66cd28da88720aba5b7a441326874e65}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!compareTo@{compareTo}}
+\index{compareTo@{compareTo}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{compareTo}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.Character.compareTo ({\bf Character} {\em another})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a66cd28da88720aba5b7a441326874e65}
+
+
+Definition at line 101 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectionProbability.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ae64eef9831bfc6a36a46711512f031a3}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!describeContents@{describeContents}}
+\index{describeContents@{describeContents}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{describeContents}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.Character.describeContents ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ae64eef9831bfc6a36a46711512f031a3}
+
+
+Definition at line 72 of file Character.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a2bcee4a4f8ab32a78d3a8d2885795c16}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!getDetectedCharacter@{getDetectedCharacter}}
+\index{getDetectedCharacter@{getDetectedCharacter}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{getDetectedCharacter}]{\setlength{\rightskip}{0pt plus 5cm}char ch.zhaw.ba10\_\-bsha\_\-1.Character.getDetectedCharacter ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a2bcee4a4f8ab32a78d3a8d2885795c16}
+
+
+Definition at line 131 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectedCharacter.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_afaae3f56a30c91e7bac95a24501bae6c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!getDetectionProbability@{getDetectionProbability}}
+\index{getDetectionProbability@{getDetectionProbability}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{getDetectionProbability}]{\setlength{\rightskip}{0pt plus 5cm}float ch.zhaw.ba10\_\-bsha\_\-1.Character.getDetectionProbability ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_afaae3f56a30c91e7bac95a24501bae6c}
+
+
+Definition at line 140 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectionProbability.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a5db74fce6f0c14edd6eb3e4a693ad689}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!getMicroGestures@{getMicroGestures}}
+\index{getMicroGestures@{getMicroGestures}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{getMicroGestures}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf MicroGesture}$>$ ch.zhaw.ba10\_\-bsha\_\-1.Character.getMicroGestures ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a5db74fce6f0c14edd6eb3e4a693ad689}
+
+
+Definition at line 117 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.microGestures.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ad3676c8beb543679a81599fa69bb447d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!readFromParcel@{readFromParcel}}
+\index{readFromParcel@{readFromParcel}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{readFromParcel}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.Character.readFromParcel (Parcel {\em source})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ad3676c8beb543679a81599fa69bb447d}
+
+
+Definition at line 84 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectedCharacter, ch.zhaw.ba10\_\-bsha\_\-1.Character.detectionProbability, and ch.zhaw.ba10\_\-bsha\_\-1.Character.microGestures.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.Character.Character().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_aa9e5aa7c1059cddf5ff9ff451a36b74e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!setDetectedCharacter@{setDetectedCharacter}}
+\index{setDetectedCharacter@{setDetectedCharacter}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{setDetectedCharacter}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.Character.setDetectedCharacter (char {\em character})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_aa9e5aa7c1059cddf5ff9ff451a36b74e}
+
+
+Definition at line 135 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectedCharacter.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a31e123df91176847469ae4ac0fab3066}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!setDetectionProbability@{setDetectionProbability}}
+\index{setDetectionProbability@{setDetectionProbability}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{setDetectionProbability}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.Character.setDetectionProbability (float {\em probability})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a31e123df91176847469ae4ac0fab3066}
+
+
+Definition at line 144 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectionProbability.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ab1a6cfeef0de8bca6e97e79b65320978}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!setMicroGestures@{setMicroGestures}}
+\index{setMicroGestures@{setMicroGestures}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{setMicroGestures}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.Character.setMicroGestures (Collection$<$ {\bf MicroGesture} $>$ {\em micro\_\-gestures})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ab1a6cfeef0de8bca6e97e79b65320978}
+
+
+Definition at line 121 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.microGestures.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.Character.Character().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a52e36b4f56fd850f683d0e0e0c3ddf1e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!toString@{toString}}
+\index{toString@{toString}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.Character.toString ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a52e36b4f56fd850f683d0e0e0c3ddf1e}
+
+
+Definition at line 150 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectedCharacter, and ch.zhaw.ba10\_\-bsha\_\-1.Character.detectionProbability.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ab8b193814ae930d7ee870d11ec3ae788}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!writeToParcel@{writeToParcel}}
+\index{writeToParcel@{writeToParcel}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{writeToParcel}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.Character.writeToParcel (Parcel {\em dest}, \/  int {\em flags})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ab8b193814ae930d7ee870d11ec3ae788}
+
+
+Definition at line 77 of file Character.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.Character.detectedCharacter, ch.zhaw.ba10\_\-bsha\_\-1.Character.detectionProbability, and ch.zhaw.ba10\_\-bsha\_\-1.Character.microGestures.
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a0659f648118f65f0deed3ac7b08bdee1}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!CREATOR@{CREATOR}}
+\index{CREATOR@{CREATOR}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{CREATOR}]{\setlength{\rightskip}{0pt plus 5cm}final Parcelable.Creator$<${\bf Character}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.Character.CREATOR}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a0659f648118f65f0deed3ac7b08bdee1}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new Parcelable.Creator<Character>() {
+                public Character createFromParcel(Parcel in) {
+                        return new Character(in);
+                }
+
+                public Character[] newArray(int size) {
+                        return new Character[size];
+                }
+        }
+\end{DoxyCode}
+
+
+Definition at line 55 of file Character.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ab26dadf317157ee393e6498b03c4c4b2}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!detectedCharacter@{detectedCharacter}}
+\index{detectedCharacter@{detectedCharacter}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{detectedCharacter}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ch.zhaw.ba10\_\-bsha\_\-1.Character.detectedCharacter}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_ab26dadf317157ee393e6498b03c4c4b2}
+
+
+Definition at line 29 of file Character.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.Character.Character(), ch.zhaw.ba10\_\-bsha\_\-1.Character.getDetectedCharacter(), ch.zhaw.ba10\_\-bsha\_\-1.Character.readFromParcel(), ch.zhaw.ba10\_\-bsha\_\-1.Character.setDetectedCharacter(), ch.zhaw.ba10\_\-bsha\_\-1.Character.toString(), and ch.zhaw.ba10\_\-bsha\_\-1.Character.writeToParcel().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_af797c21f650fd10789f7c00bda6418c8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!detectionProbability@{detectionProbability}}
+\index{detectionProbability@{detectionProbability}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{detectionProbability}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.Character.detectionProbability}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_af797c21f650fd10789f7c00bda6418c8}
+
+
+Definition at line 30 of file Character.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.Character.Character(), ch.zhaw.ba10\_\-bsha\_\-1.Character.compareTo(), ch.zhaw.ba10\_\-bsha\_\-1.Character.getDetectionProbability(), ch.zhaw.ba10\_\-bsha\_\-1.Character.readFromParcel(), ch.zhaw.ba10\_\-bsha\_\-1.Character.setDetectionProbability(), ch.zhaw.ba10\_\-bsha\_\-1.Character.toString(), and ch.zhaw.ba10\_\-bsha\_\-1.Character.writeToParcel().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a3a665125fd44a0f4b65330f0dfa72bfe}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}!microGestures@{microGestures}}
+\index{microGestures@{microGestures}!ch::zhaw::ba10_bsha_1::Character@{ch::zhaw::ba10\_\-bsha\_\-1::Character}}
+\subsubsection[{microGestures}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf MicroGesture}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.Character.microGestures}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character_a3a665125fd44a0f4b65330f0dfa72bfe}
+
+
+Definition at line 28 of file Character.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.Character.addMicroGesture(), ch.zhaw.ba10\_\-bsha\_\-1.Character.Character(), ch.zhaw.ba10\_\-bsha\_\-1.Character.getMicroGestures(), ch.zhaw.ba10\_\-bsha\_\-1.Character.readFromParcel(), ch.zhaw.ba10\_\-bsha\_\-1.Character.setMicroGestures(), and ch.zhaw.ba10\_\-bsha\_\-1.Character.writeToParcel().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/\hyperlink{Character_8java}{Character.java}\end{DoxyCompactItemize}

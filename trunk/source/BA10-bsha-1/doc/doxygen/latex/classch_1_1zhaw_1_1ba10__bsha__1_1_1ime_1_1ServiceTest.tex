@@ -1,0 +1,376 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest}\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+}
+
+
+Inherits android::app::Activity.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_1_1DetectionServiceConnection}{DetectionServiceConnection}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a26ed9a2164e8ed852c0755ed175c3805}{onCreate} (Bundle savedInstanceState)
+\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+IDetectionService \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_aa8b6876190c4c3bfdba83a05065ee667}{detectionService} = null
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a1be1618594a88e74deea51ba0c351fd5}{serviceIsBound} = false
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a9e8f69bb91fbb935e81e07c927bc07ed}{serviceIsRunning} = false
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_1_1DetectionServiceConnection}{DetectionServiceConnection} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_ac2a420e14076a26d93ed433d75633b12}{serviceConnection}
+\item 
+TextView \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a3eedc453bc997b1c3b6fed0a3c5cd0d5}{txtViewControl}
+\item 
+TextView \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a3c1a17a86c78afadef203bdfee113859}{txtViewBinding}
+\item 
+TextView \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a9f9b094cd1d2a8d0f485a8e5f56da93c}{txtViewResult}
+\item 
+OnClickListener \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_ac61c2027977621a45d5b68999adb3df0}{serviceStartListener}
+\item 
+OnClickListener \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_acf699219d38a24ed7f4de7985cbcb129}{serviceStopListener}
+\item 
+OnClickListener \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a4fd63657e481b0a7fa19836a9bfad101}{serviceBindListener}
+\item 
+OnClickListener \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_aa8c033e5421b4479f79d96f776aef94b}{serviceUnbindListener}
+\item 
+OnClickListener \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_af3586f921944718d5308e283836cd92f}{serviceSendListener}
+\item 
+IReturnResults \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a1f4c0d2cd1ee8a21b0864daf0a0ef6c9}{serviceCallback}
+\item 
+Handler \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a396e691506a0c43959988e291d8281c3}{serviceHandler}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_ac1d59d2fe1c01777f19b3c9bdf279f4f}{CHARS\_\-RESULT\_\-MSG} = 1
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_af5742511ec4008834a2d1354102ce616}{CHAR\_\-RESULT\_\-MSG} = 2
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Activity we used to test the proper operation of our \hyperlink{}{DetectionService}. Will not be needed for a possible deployment but we kept it as an entry point to our Application during development.
+
+Based on the Remote Service Controller and Remote Service Binding code samples from the API Demos example included in the Android SDK (under App/Service). 
+
+Definition at line 41 of file ServiceTest.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a26ed9a2164e8ed852c0755ed175c3805}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{onCreate}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate (Bundle {\em savedInstanceState})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a26ed9a2164e8ed852c0755ed175c3805}
+
+
+Definition at line 112 of file ServiceTest.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceBindListener, ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceConnection, ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceSendListener, ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceStartListener, ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceStopListener, ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceUnbindListener, ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.txtViewBinding, ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.txtViewControl, and ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.txtViewResult.
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_af5742511ec4008834a2d1354102ce616}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!CHAR\_\-RESULT\_\-MSG@{CHAR\_\-RESULT\_\-MSG}}
+\index{CHAR\_\-RESULT\_\-MSG@{CHAR\_\-RESULT\_\-MSG}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{CHAR\_\-RESULT\_\-MSG}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.CHAR\_\-RESULT\_\-MSG} = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_af5742511ec4008834a2d1354102ce616}
+
+
+Definition at line 267 of file ServiceTest.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_ac1d59d2fe1c01777f19b3c9bdf279f4f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!CHARS\_\-RESULT\_\-MSG@{CHARS\_\-RESULT\_\-MSG}}
+\index{CHARS\_\-RESULT\_\-MSG@{CHARS\_\-RESULT\_\-MSG}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{CHARS\_\-RESULT\_\-MSG}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.CHARS\_\-RESULT\_\-MSG} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_ac1d59d2fe1c01777f19b3c9bdf279f4f}
+
+
+Definition at line 266 of file ServiceTest.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_aa8b6876190c4c3bfdba83a05065ee667}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!detectionService@{detectionService}}
+\index{detectionService@{detectionService}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{detectionService}]{\setlength{\rightskip}{0pt plus 5cm}IDetectionService {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.detectionService} = null\hspace{0.3cm}{\ttfamily  \mbox{[}package\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_aa8b6876190c4c3bfdba83a05065ee667}
+The primary interface we will be calling on the \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1service}{service}. 
+
+Definition at line 95 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.DetectionServiceConnection.onServiceConnected(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.DetectionServiceConnection.onServiceDisconnected().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a4fd63657e481b0a7fa19836a9bfad101}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceBindListener@{serviceBindListener}}
+\index{serviceBindListener@{serviceBindListener}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceBindListener}]{\setlength{\rightskip}{0pt plus 5cm}OnClickListener {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceBindListener}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a4fd63657e481b0a7fa19836a9bfad101}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new OnClickListener() {
+        public void onClick(View v) {
+            if (!serviceIsBound) {
+                    
+                    
+                    
+                    
+                serviceIsBound =  bindService(new Intent(IDetectionService.class.
+      getName()), serviceConnection, Context.BIND_AUTO_CREATE);
+                    txtViewBinding.setText("Binding.");
+            } else {
+                Toast.makeText(ServiceTest.this, R.string.service_bound, Toast.LE
+      NGTH_SHORT).show();
+            }
+        }
+    }
+\end{DoxyCode}
+
+
+Definition at line 167 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a1f4c0d2cd1ee8a21b0864daf0a0ef6c9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceCallback@{serviceCallback}}
+\index{serviceCallback@{serviceCallback}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceCallback}]{\setlength{\rightskip}{0pt plus 5cm}IReturnResults {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceCallback}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a1f4c0d2cd1ee8a21b0864daf0a0ef6c9}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new IReturnResults.Stub() {
+        
+                @Override
+                public void recognisedCharacters(List<ch.zhaw.ba10_bsha_1.Charact
+      er> characters) throws RemoteException {
+                        serviceHandler.sendMessage(serviceHandler.obtainMessage(
+      CHARS_RESULT_MSG, characters));
+                }
+
+                @Override
+                public void recognisedChar(char character, float probability) thr
+      ows RemoteException {
+                        serviceHandler.sendMessage(serviceHandler.obtainMessage(
+      CHAR_RESULT_MSG, character, Math.round(probability * 1000000)));
+                }
+    }
+\end{DoxyCode}
+This implementation is used to receive callbacks from the remote \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1service}{service}. 
+
+Definition at line 247 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.DetectionServiceConnection.onServiceConnected().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_ac2a420e14076a26d93ed433d75633b12}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceConnection@{serviceConnection}}
+\index{serviceConnection@{serviceConnection}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceConnection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DetectionServiceConnection} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceConnection}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_ac2a420e14076a26d93ed433d75633b12}
+
+
+Definition at line 99 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a396e691506a0c43959988e291d8281c3}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceHandler@{serviceHandler}}
+\index{serviceHandler@{serviceHandler}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceHandler}]{\setlength{\rightskip}{0pt plus 5cm}Handler {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceHandler}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a396e691506a0c43959988e291d8281c3}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new Handler() {
+        
+        @SuppressWarnings("unchecked")
+                @Override
+                public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case CHARS_RESULT_MSG:
+                        ArrayList<Character> chars = (ArrayList<Character>) msg.o
+      bj;
+                        if (chars.size() > 0) {
+                                txtViewResult.setText("Received from service: " +
+       chars.get(0).toString());
+                        } else {
+                                txtViewResult.setText("Received from service: not
+      hing");
+                        }
+                    break;
+                case CHAR_RESULT_MSG:
+                        char recogn_char = (char) msg.arg1;
+                        float prob = (float) (msg.arg2 / 1000000.0);
+                        txtViewResult.setText(txtViewResult.getText().toString() 
+      + recogn_char + "(" + prob + ")");
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+        
+    }
+\end{DoxyCode}
+
+
+Definition at line 269 of file ServiceTest.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a1be1618594a88e74deea51ba0c351fd5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceIsBound@{serviceIsBound}}
+\index{serviceIsBound@{serviceIsBound}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceIsBound}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceIsBound} = false\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a1be1618594a88e74deea51ba0c351fd5}
+
+
+Definition at line 97 of file ServiceTest.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a9e8f69bb91fbb935e81e07c927bc07ed}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceIsRunning@{serviceIsRunning}}
+\index{serviceIsRunning@{serviceIsRunning}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceIsRunning}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceIsRunning} = false\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a9e8f69bb91fbb935e81e07c927bc07ed}
+
+
+Definition at line 98 of file ServiceTest.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_af3586f921944718d5308e283836cd92f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceSendListener@{serviceSendListener}}
+\index{serviceSendListener@{serviceSendListener}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceSendListener}]{\setlength{\rightskip}{0pt plus 5cm}OnClickListener {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceSendListener}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_af3586f921944718d5308e283836cd92f}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new OnClickListener() {
+        public void onClick(View v) {
+                if (serviceIsBound) {
+                
+                
+                if (detectionService != null) {
+                    try {
+                        ArrayList<TouchPoint> tmp = new ArrayList<TouchPoint>(1);
+      
+                        tmp.add(new TouchPoint(10, 10));
+                        tmp.add(new TouchPoint(20, 20));
+                        detectionService.addTouchPoints(tmp, true);
+                        
+                        
+                        
+                        
+                        detectionService.endSample();
+                    } catch (RemoteException e) {
+                        
+                        
+                    }
+                }
+            }
+        }
+    }
+\end{DoxyCode}
+
+
+Definition at line 212 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_ac61c2027977621a45d5b68999adb3df0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceStartListener@{serviceStartListener}}
+\index{serviceStartListener@{serviceStartListener}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceStartListener}]{\setlength{\rightskip}{0pt plus 5cm}OnClickListener {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceStartListener}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_ac61c2027977621a45d5b68999adb3df0}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new OnClickListener() {
+        public void onClick(View v) {
+            if (!serviceIsRunning) {
+                startService(new Intent("ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"))
+      ;
+                serviceIsRunning = true;
+                txtViewControl.setText(R.string.service_started);
+            } else {
+                Toast.makeText(ServiceTest.this, R.string.service_already_running
+      , Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+\end{DoxyCode}
+
+
+Definition at line 141 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_acf699219d38a24ed7f4de7985cbcb129}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceStopListener@{serviceStopListener}}
+\index{serviceStopListener@{serviceStopListener}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceStopListener}]{\setlength{\rightskip}{0pt plus 5cm}OnClickListener {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceStopListener}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_acf699219d38a24ed7f4de7985cbcb129}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new OnClickListener() {
+        public void onClick(View v) {
+            stopService(new Intent("ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"));
+            serviceIsRunning = false;
+                txtViewControl.setText(R.string.service_stopped);
+        }
+    }
+\end{DoxyCode}
+
+
+Definition at line 153 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_aa8c033e5421b4479f79d96f776aef94b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!serviceUnbindListener@{serviceUnbindListener}}
+\index{serviceUnbindListener@{serviceUnbindListener}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{serviceUnbindListener}]{\setlength{\rightskip}{0pt plus 5cm}OnClickListener {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.serviceUnbindListener}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_aa8c033e5421b4479f79d96f776aef94b}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new OnClickListener() {
+        public void onClick(View v) {
+            if (serviceIsBound) {
+                
+                
+                if (detectionService != null) {
+                    try {
+                        detectionService.unregisterCallback(serviceCallback);
+                    } catch (RemoteException e) {
+                        
+                        
+                    }
+                }
+                
+                
+                unbindService(serviceConnection);
+                serviceIsBound = false;
+                txtViewBinding.setText("Unbinding.");
+            } else {
+                Toast.makeText(ServiceTest.this, R.string.service_not_running, To
+      ast.LENGTH_SHORT).show();
+            }
+        }
+    }
+\end{DoxyCode}
+
+
+Definition at line 182 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a3c1a17a86c78afadef203bdfee113859}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!txtViewBinding@{txtViewBinding}}
+\index{txtViewBinding@{txtViewBinding}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{txtViewBinding}]{\setlength{\rightskip}{0pt plus 5cm}TextView {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.txtViewBinding}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a3c1a17a86c78afadef203bdfee113859}
+
+
+Definition at line 102 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate(), ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.DetectionServiceConnection.onServiceConnected(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.DetectionServiceConnection.onServiceDisconnected().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a3eedc453bc997b1c3b6fed0a3c5cd0d5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!txtViewControl@{txtViewControl}}
+\index{txtViewControl@{txtViewControl}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{txtViewControl}]{\setlength{\rightskip}{0pt plus 5cm}TextView {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.txtViewControl}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a3eedc453bc997b1c3b6fed0a3c5cd0d5}
+
+
+Definition at line 101 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a9f9b094cd1d2a8d0f485a8e5f56da93c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}!txtViewResult@{txtViewResult}}
+\index{txtViewResult@{txtViewResult}!ch::zhaw::ba10_bsha_1::ime::ServiceTest@{ch::zhaw::ba10\_\-bsha\_\-1::ime::ServiceTest}}
+\subsubsection[{txtViewResult}]{\setlength{\rightskip}{0pt plus 5cm}TextView {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.txtViewResult}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1ServiceTest_a9f9b094cd1d2a8d0f485a8e5f56da93c}
+
+
+Definition at line 103 of file ServiceTest.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.ServiceTest.onCreate().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/ime/\hyperlink{ServiceTest_8java}{ServiceTest.java}\end{DoxyCompactItemize}

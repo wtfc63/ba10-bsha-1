@@ -1,0 +1,1414 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Creator: Graphviz version 2.20.2 (Wed Sep 16 11:12:11 UTC 2009)
+%%For: (jhanhart) Julian Hanhart,,,
+%%Title: G
+%%Pages: (atend)
+%%BoundingBox: (atend)
+%%EndComments
+save
+%%BeginProlog
+/DotDict 200 dict def
+DotDict begin
+
+/setupLatin1 {
+mark
+/EncodingVector 256 array def
+ EncodingVector 0
+
+ISOLatin1Encoding 0 255 getinterval putinterval
+EncodingVector 45 /hyphen put
+
+% Set up ISO Latin 1 character encoding
+/starnetISO {
+        dup dup findfont dup length dict begin
+        { 1 index /FID ne { def }{ pop pop } ifelse
+        } forall
+        /Encoding EncodingVector def
+        currentdict end definefont
+} def
+/Times-Roman starnetISO def
+/Times-Italic starnetISO def
+/Times-Bold starnetISO def
+/Times-BoldItalic starnetISO def
+/Helvetica starnetISO def
+/Helvetica-Oblique starnetISO def
+/Helvetica-Bold starnetISO def
+/Helvetica-BoldOblique starnetISO def
+/Courier starnetISO def
+/Courier-Oblique starnetISO def
+/Courier-Bold starnetISO def
+/Courier-BoldOblique starnetISO def
+cleartomark
+} bind def
+
+%%BeginResource: procset graphviz 0 0
+/coord-font-family /Times-Roman def
+/default-font-family /Times-Roman def
+/coordfont coord-font-family findfont 8 scalefont def
+
+/InvScaleFactor 1.0 def
+/set_scale {
+       dup 1 exch div /InvScaleFactor exch def
+       scale
+} bind def
+
+% styles
+/solid { [] 0 setdash } bind def
+/dashed { [9 InvScaleFactor mul dup ] 0 setdash } bind def
+/dotted { [1 InvScaleFactor mul 6 InvScaleFactor mul] 0 setdash } bind def
+/invis {/fill {newpath} def /stroke {newpath} def /show {pop newpath} def} bind def
+/bold { 2 setlinewidth } bind def
+/filled { } bind def
+/unfilled { } bind def
+/rounded { } bind def
+/diagonals { } bind def
+
+% hooks for setting color 
+/nodecolor { sethsbcolor } bind def
+/edgecolor { sethsbcolor } bind def
+/graphcolor { sethsbcolor } bind def
+/nopcolor {pop pop pop} bind def
+
+/beginpage {	% i j npages
+	/npages exch def
+	/j exch def
+	/i exch def
+	/str 10 string def
+	npages 1 gt {
+		gsave
+			coordfont setfont
+			0 0 moveto
+			(\() show i str cvs show (,) show j str cvs show (\)) show
+		grestore
+	} if
+} bind def
+
+/set_font {
+	findfont exch
+	scalefont setfont
+} def
+
+% draw text fitted to its expected width
+/alignedtext {			% width text
+	/text exch def
+	/width exch def
+	gsave
+		width 0 gt {
+			[] 0 setdash
+			text stringwidth pop width exch sub text length div 0 text ashow
+		} if
+	grestore
+} def
+
+/boxprim {				% xcorner ycorner xsize ysize
+		4 2 roll
+		moveto
+		2 copy
+		exch 0 rlineto
+		0 exch rlineto
+		pop neg 0 rlineto
+		closepath
+} bind def
+
+/ellipse_path {
+	/ry exch def
+	/rx exch def
+	/y exch def
+	/x exch def
+	matrix currentmatrix
+	newpath
+	x y translate
+	rx ry scale
+	0 0 1 0 360 arc
+	setmatrix
+} bind def
+
+/endpage { showpage } bind def
+/showpage { } def
+
+/layercolorseq
+	[	% layer color sequence - darkest to lightest
+		[0 0 0]
+		[.2 .8 .8]
+		[.4 .8 .8]
+		[.6 .8 .8]
+		[.8 .8 .8]
+	]
+def
+
+/layerlen layercolorseq length def
+
+/setlayer {/maxlayer exch def /curlayer exch def
+	layercolorseq curlayer 1 sub layerlen mod get
+	aload pop sethsbcolor
+	/nodecolor {nopcolor} def
+	/edgecolor {nopcolor} def
+	/graphcolor {nopcolor} def
+} bind def
+
+/onlayer { curlayer ne {invis} if } def
+
+/onlayers {
+	/myupper exch def
+	/mylower exch def
+	curlayer mylower lt
+	curlayer myupper gt
+	or
+	{invis} if
+} def
+
+/curlayer 0 def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+14 default-font-family set_font
+1 setmiterlimit
+% /arrowlength 10 def
+% /arrowwidth 5 def
+
+% make sure pdfmark is harmless for PS-interpreters other than Distiller
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+% make '<<' and '>>' safe on PS Level 1 devices
+/languagelevel where {pop languagelevel}{1} ifelse
+2 lt {
+    userdict (<<) cvn ([) cvn load put
+    userdict (>>) cvn ([) cvn load put
+} if
+
+%%EndSetup
+setupLatin1
+%%Page: 1 1
+%%PageBoundingBox: 36 36 1476 697
+%%PageOrientation: Portrait
+0 0 1 beginpage
+gsave
+36 36 1440 661 boxprim clip newpath
+1 1 set_scale 0 rotate 40 40 translate
+% Node1
+gsave
+0.000 0.000 0.749 nodecolor
+newpath 907 205 moveto
+907 227 lineto
+1110 227 lineto
+1110 205 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.000 nodecolor
+newpath 907 205 moveto
+907 227 lineto
+1110 227 lineto
+1110 205 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+914.5 214 moveto 187 (ch.zhaw.ba10_bsha_1.ime.HandwritingIME) alignedtext
+grestore
+% Node4
+gsave
+[ /Rect [ 1233 484 1431 506 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0.000 0.000 1.000 nodecolor
+newpath 1233 484 moveto
+1233 506 lineto
+1432 506 lineto
+1432 484 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.000 nodecolor
+newpath 1233 484 moveto
+1233 506 lineto
+1432 506 lineto
+1432 484 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+1240.5 493 moveto 183 (ch.zhaw.ba10_bsha_1.ime.CandidateView) alignedtext
+grestore
+% Node1->Node4
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 1023 235 moveto
+1045 262 1087 310 1128 347 curveto
+1164 378 1176 381 1214 409 curveto
+1251 436 1294 467 1317 484 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 1025.8 232.9 moveto
+1017 227 lineto
+1020.2 237.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 1025.8 232.9 moveto
+1017 227 lineto
+1020.2 237.1 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+1150.5 414 moveto 41 (mService) alignedtext
+grestore
+% Node2
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 574 285 moveto
+574 307 lineto
+677 307 lineto
+677 285 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 574 285 moveto
+574 307 lineto
+677 307 lineto
+677 285 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+581.5 294 moveto 87 (InputMethodService) alignedtext
+grestore
+% Node2->Node1
+gsave
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 687 290 moveto
+719 287 757 282 790 276 curveto
+835 267 845 262 888 251 curveto
+916 243 947 234 971 227 curveto
+stroke
+0.667 0.776 0.439 edgecolor
+newpath 686.6 286.52 moveto
+677 291 lineto
+687.3 293.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 686.6 286.52 moveto
+677 291 lineto
+687.3 293.49 lineto
+closepath stroke
+grestore
+% Node3
+gsave
+[ /Rect [ 537 245 713 267 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0.000 0.000 1.000 nodecolor
+newpath 537 245 moveto
+537 267 lineto
+714 267 lineto
+714 245 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.000 nodecolor
+newpath 537 245 moveto
+537 267 lineto
+714 267 lineto
+714 245 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+544.5 254 moveto 161 (ch.zhaw.ba10_bsha_1.ime.IObserver) alignedtext
+grestore
+% Node3->Node1
+gsave
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 724 249 moveto
+773 245 834 240 888 234 curveto
+904 232 922 229 938 227 curveto
+stroke
+0.667 0.776 0.439 edgecolor
+newpath 723.6 245.52 moveto
+714 250 lineto
+724.3 252.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 723.6 245.52 moveto
+714 250 lineto
+724.3 252.49 lineto
+closepath stroke
+grestore
+% Node4->Node1
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 1321 475 moveto
+1303 442 1263 376 1214 333 curveto
+1159 283 1078 245 1036 227 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 1318.08 476.96 moveto
+1326 484 lineto
+1324.2 473.56 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 1318.08 476.96 moveto
+1326 484 lineto
+1324.2 473.56 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+1139.5 338 moveto 63 (candidateView) alignedtext
+grestore
+% Node5
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 990 631 moveto
+990 653 lineto
+1027 653 lineto
+1027 631 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 990 631 moveto
+990 653 lineto
+1027 653 lineto
+1027 631 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+997.5 640 moveto 21 (View) alignedtext
+grestore
+% Node5->Node4
+gsave
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 1037 642 moveto
+1079 642 1157 637 1214 608 curveto
+1264 583 1307 529 1324 506 curveto
+stroke
+0.667 0.776 0.439 edgecolor
+newpath 1037 638.5 moveto
+1027 642 lineto
+1037 645.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 1037 638.5 moveto
+1027 642 lineto
+1037 645.5 lineto
+closepath stroke
+grestore
+% Node6
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 980 591 moveto
+980 613 lineto
+1036 613 lineto
+1036 591 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 980 591 moveto
+980 613 lineto
+1036 613 lineto
+1036 591 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+988 600 moveto 40 (Drawable) alignedtext
+grestore
+% Node6->Node4
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 1046 600 moveto
+1089 598 1159 590 1214 570 curveto
+1256 554 1298 523 1319 506 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 1045.6 596.52 moveto
+1036 601 lineto
+1046.3 603.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 1045.6 596.52 moveto
+1036 601 lineto
+1046.3 603.49 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+1128 595 moveto 86 (mSelectionHighlight) alignedtext
+grestore
+% Node7
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 971 545 moveto
+971 567 lineto
+1046 567 lineto
+1046 545 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 971 545 moveto
+971 567 lineto
+1046 567 lineto
+1046 545 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+978.5 554 moveto 59 (List< String >) alignedtext
+grestore
+% Node7->Node4
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 1056 550 moveto
+1098 545 1160 536 1214 525 curveto
+1241 520 1270 512 1293 506 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 1055.6 546.52 moveto
+1046 551 lineto
+1056.3 553.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 1055.6 546.52 moveto
+1046 551 lineto
+1056.3 553.49 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+1140 557 moveto 62 (mSuggestions) alignedtext
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+1141 543 moveto 60 (EMPTY_LIST) alignedtext
+grestore
+% Node8
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 990 505 moveto
+990 527 lineto
+1026 527 lineto
+1026 505 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 990 505 moveto
+990 527 lineto
+1026 527 lineto
+1026 505 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+998 514 moveto 20 (Rect) alignedtext
+grestore
+% Node8->Node4
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 1036 514 moveto
+1080 511 1165 506 1233 501 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 1035.6 510.52 moveto
+1026 515 lineto
+1036.3 517.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 1035.6 510.52 moveto
+1026 515 lineto
+1036.3 517.49 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+1143.5 512 moveto 55 (mBgPadding) alignedtext
+grestore
+% Node9
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 965 465 moveto
+965 487 lineto
+1052 487 lineto
+1052 465 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 965 465 moveto
+965 487 lineto
+1052 487 lineto
+1052 465 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+972.5 474 moveto 71 (GestureDetector) alignedtext
+grestore
+% Node9->Node4
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 1062 475 moveto
+1104 474 1163 474 1214 478 curveto
+1231 479 1250 482 1267 484 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 1062 471.5 moveto
+1052 475 lineto
+1062 478.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 1062 471.5 moveto
+1052 475 lineto
+1062 478.5 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+1131 483 moveto 80 (mGestureDetector) alignedtext
+grestore
+% Node10
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 259 418 moveto
+259 440 lineto
+297 440 lineto
+297 418 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 259 418 moveto
+259 440 lineto
+297 440 lineto
+297 418 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+267 427 moveto 22 (Paint) alignedtext
+grestore
+% Node10->Node4
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 307 429 moveto
+414 429 797 431 1110 456 curveto
+1157 459 1169 461 1214 469 curveto
+1238 473 1265 479 1287 484 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 307 425.5 moveto
+297 429 lineto
+307 432.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 307 425.5 moveto
+297 429 lineto
+307 432.5 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+833 446 moveto 30 (mPaint) alignedtext
+grestore
+% Node11
+gsave
+[ /Rect [ 539 325 711 347 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0.000 0.000 1.000 nodecolor
+newpath 539 325 moveto
+539 347 lineto
+711 347 lineto
+711 325 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.000 nodecolor
+newpath 539 325 moveto
+539 347 lineto
+711 347 lineto
+711 325 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+547 334 moveto 156 (ch.zhaw.ba10_bsha_1.ime.PadView) alignedtext
+grestore
+% Node10->Node11
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 307 420 moveto
+326 415 351 408 372 401 curveto
+381 398 382 397 390 395 curveto
+454 376 528 358 576 347 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 305.57 416.77 moveto
+297 423 lineto
+307.58 423.48 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 305.57 416.77 moveto
+297 423 lineto
+307.58 423.48 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+398.5 414 moveto 35 (bmPaint) alignedtext
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+405.5 400 moveto 21 (paint) alignedtext
+grestore
+% Node11->Node1
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 721 329 moveto
+744 326 768 321 790 316 curveto
+836 303 846 294 888 275 curveto
+923 259 963 239 986 227 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 720.6 325.52 moveto
+711 330 lineto
+721.3 332.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 720.6 325.52 moveto
+711 330 lineto
+721.3 332.49 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+829.5 315 moveto 37 (padView) alignedtext
+grestore
+% Node12
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 239 370 moveto
+239 392 lineto
+317 392 lineto
+317 370 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 239 370 moveto
+239 392 lineto
+317 392 lineto
+317 370 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+247 379 moveto 62 (KeyboardView) alignedtext
+grestore
+% Node12->Node11
+gsave
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 327 375 moveto
+382 367 473 355 540 347 curveto
+stroke
+0.667 0.776 0.439 edgecolor
+newpath 326.6 371.52 moveto
+317 376 lineto
+327.3 378.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 326.6 371.52 moveto
+317 376 lineto
+327.3 378.49 lineto
+closepath stroke
+grestore
+% Node13
+gsave
+[ /Rect [ 185 330 371 352 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObservable.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0.000 0.000 1.000 nodecolor
+newpath 185 330 moveto
+185 352 lineto
+372 352 lineto
+372 330 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.000 nodecolor
+newpath 185 330 moveto
+185 352 lineto
+372 352 lineto
+372 330 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+192.5 339 moveto 171 (ch.zhaw.ba10_bsha_1.ime.IObservable) alignedtext
+grestore
+% Node13->Node11
+gsave
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 382 340 moveto
+432 339 491 338 539 337 curveto
+stroke
+0.667 0.776 0.439 edgecolor
+newpath 382 336.5 moveto
+372 340 lineto
+382 343.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 382 336.5 moveto
+372 340 lineto
+382 343.5 lineto
+closepath stroke
+grestore
+% Node14
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 220 290 moveto
+220 312 lineto
+336 312 lineto
+336 290 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 220 290 moveto
+220 312 lineto
+336 312 lineto
+336 290 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+228 299 moveto 100 (ArrayList< IObserver >) alignedtext
+grestore
+% Node14->Node11
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 346 308 moveto
+401 314 480 321 539 327 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 346.3 304.51 moveto
+336 307 lineto
+345.6 311.48 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 346.3 304.51 moveto
+336 307 lineto
+345.6 311.48 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+394.5 320 moveto 43 (observers) alignedtext
+grestore
+% Node15
+gsave
+[ /Rect [ 187 250 369 272 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0.000 0.000 1.000 nodecolor
+newpath 187 250 moveto
+187 272 lineto
+370 272 lineto
+370 250 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.000 nodecolor
+newpath 187 250 moveto
+187 272 lineto
+370 272 lineto
+370 250 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+194.5 259 moveto 167 (ch.zhaw.ba10_bsha_1.ime.TouchInput) alignedtext
+grestore
+% Node15->Node11
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 380 269 moveto
+402 274 424 282 442 293 curveto
+454 299 449 309 460 316 curveto
+484 329 512 335 539 338 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 380.49 265.53 moveto
+370 267 lineto
+379.12 272.39 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 380.49 265.53 moveto
+370 267 lineto
+379.12 272.39 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+390 298 moveto 52 (currentInput) alignedtext
+grestore
+% Node16
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 1 270 moveto
+1 292 lineto
+122 292 lineto
+122 270 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 1 270 moveto
+1 292 lineto
+122 292 lineto
+122 270 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+8.5 279 moveto 105 (ArrayList< TouchPoint >) alignedtext
+grestore
+% Node16->Node15
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 132 274 moveto
+150 272 169 271 187 269 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 131.6 270.52 moveto
+122 275 lineto
+132.3 277.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 131.6 270.52 moveto
+122 275 lineto
+132.3 277.49 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+140 277 moveto 26 (points) alignedtext
+grestore
+% Node17
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 43 230 moveto
+43 252 lineto
+79 252 lineto
+79 230 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 43 230 moveto
+43 252 lineto
+79 252 lineto
+79 230 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+51 239 moveto 20 (Path) alignedtext
+grestore
+% Node17->Node15
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 89 244 moveto
+114 246 152 249 187 252 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 89.3 240.51 moveto
+79 243 lineto
+88.6 247.48 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 89.3 240.51 moveto
+79 243 lineto
+88.6 247.48 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+143.5 254 moveto 19 (path) alignedtext
+grestore
+% Node18
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 218 210 moveto
+218 232 lineto
+339 232 lineto
+339 210 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 218 210 moveto
+218 232 lineto
+339 232 lineto
+339 210 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+225.5 219 moveto 105 (ArrayList< TouchInput >) alignedtext
+grestore
+% Node18->Node11
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 349 219 moveto
+382 221 418 230 442 253 curveto
+464 272 438 297 460 316 curveto
+482 334 511 341 539 343 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 349.3 215.51 moveto
+339 218 lineto
+348.6 222.48 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 349.3 215.51 moveto
+339 218 lineto
+348.6 222.48 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+403 258 moveto 26 (inputs) alignedtext
+grestore
+% Node19
+gsave
+[ /Rect [ 461 205 789 227 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME_1_1DetectionServiceConnection.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0.000 0.000 1.000 nodecolor
+newpath 461 205 moveto
+461 227 lineto
+790 227 lineto
+790 205 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.000 nodecolor
+newpath 461 205 moveto
+461 227 lineto
+790 227 lineto
+790 205 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+468.5 214 moveto 313 (ch.zhaw.ba10_bsha_1.ime.HandwritingIME.DetectionServiceConnection) alignedtext
+grestore
+% Node19->Node1
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 800 216 moveto
+837 216 874 216 907 216 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 800 212.5 moveto
+790 216 lineto
+800 219.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 800 212.5 moveto
+790 216 lineto
+800 219.5 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+808 221 moveto 80 (serviceConnection) alignedtext
+grestore
+% Node20
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 229 170 moveto
+229 192 lineto
+327 192 lineto
+327 170 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 229 170 moveto
+229 192 lineto
+327 192 lineto
+327 170 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+237 179 moveto 82 (ServiceConnection) alignedtext
+grestore
+% Node20->Node19
+gsave
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 337 187 moveto
+386 192 455 199 514 205 curveto
+stroke
+0.667 0.776 0.439 edgecolor
+newpath 337.3 183.51 moveto
+327 186 lineto
+336.6 190.48 lineto
+closepath fill
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 337.3 183.51 moveto
+327 186 lineto
+336.6 190.48 lineto
+closepath stroke
+grestore
+% Node21
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 601 165 moveto
+601 187 lineto
+650 187 lineto
+650 165 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 601 165 moveto
+601 187 lineto
+650 187 lineto
+650 165 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+608.5 174 moveto 33 (Handler) alignedtext
+grestore
+% Node21->Node1
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 660 178 moveto
+711 181 807 189 888 198 curveto
+905 200 924 202 941 205 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 660.3 174.51 moveto
+650 177 lineto
+659.6 181.48 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 660.3 174.51 moveto
+650 177 lineto
+659.6 181.48 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+815.5 203 moveto 65 (serviceHandler) alignedtext
+grestore
+% Node22
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 579 125 moveto
+579 147 lineto
+672 147 lineto
+672 125 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 579 125 moveto
+579 147 lineto
+672 147 lineto
+672 125 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+586.5 134 moveto 77 (IDetectionService) alignedtext
+grestore
+% Node22->Node1
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 682 139 moveto
+736 143 818 152 888 170 curveto
+923 179 961 194 984 205 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 682.3 135.51 moveto
+672 138 lineto
+681.6 142.48 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 682.3 135.51 moveto
+672 138 lineto
+681.6 142.48 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+811.5 175 moveto 73 (detectionService) alignedtext
+grestore
+% Node23
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 585 85 moveto
+585 107 lineto
+666 107 lineto
+666 85 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 585 85 moveto
+585 107 lineto
+666 107 lineto
+666 85 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+592.5 94 moveto 65 (CompletionInfo) alignedtext
+grestore
+% Node23->Node1
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 676 96 moveto
+731 98 818 106 888 134 curveto
+932 151 975 187 996 205 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 676 92.5 moveto
+666 96 lineto
+676 99.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 676 92.5 moveto
+666 96 lineto
+676 99.5 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+821.5 139 moveto 53 (completions) alignedtext
+grestore
+% Node24
+gsave
+[ /Rect [ 527 41 723 63 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0.000 0.000 1.000 nodecolor
+newpath 527 41 moveto
+527 63 lineto
+723 63 lineto
+723 41 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.000 nodecolor
+newpath 527 41 moveto
+527 63 lineto
+723 63 lineto
+723 41 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+535 50 moveto 180 (ch.zhaw.ba10_bsha_1.ime.LatinKeyboard) alignedtext
+grestore
+% Node24->Node1
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 733 47 moveto
+783 49 841 57 888 81 curveto
+945 110 987 178 1002 205 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 733 43.5 moveto
+723 47 lineto
+733 50.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 733 43.5 moveto
+723 47 lineto
+733 50.5 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+821 100 moveto 54 (curKeyboard) alignedtext
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+820 86 moveto 56 (padKeyboard) alignedtext
+grestore
+% Node25
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 250 41 moveto
+250 63 lineto
+307 63 lineto
+307 41 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 250 41 moveto
+250 63 lineto
+307 63 lineto
+307 41 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+257.5 50 moveto 41 (Keyboard) alignedtext
+grestore
+% Node25->Node24
+gsave
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 317 52 moveto
+368 52 458 52 527 52 curveto
+stroke
+0.667 0.776 0.439 edgecolor
+newpath 317 48.5 moveto
+307 52 lineto
+317 55.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.667 0.776 0.439 edgecolor
+newpath 317 48.5 moveto
+307 52 lineto
+317 55.5 lineto
+closepath stroke
+grestore
+% Node26
+gsave
+0.000 0.000 1.000 nodecolor
+newpath 585 1 moveto
+585 23 lineto
+666 23 lineto
+666 1 lineto
+closepath fill
+1 setlinewidth
+filled
+0.000 0.000 0.749 nodecolor
+newpath 585 1 moveto
+585 23 lineto
+666 23 lineto
+666 1 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+10 /FreeSans set_font
+592.5 10 moveto 65 (IReturnResults) alignedtext
+grestore
+% Node26->Node1
+gsave
+1 setlinewidth
+dashed
+0.776 0.753 0.804 edgecolor
+newpath 676 5 moveto
+732 0 823 -1 888 38 curveto
+955 78 993 172 1004 205 curveto
+stroke
+0.776 0.753 0.804 edgecolor
+newpath 675.6 1.52 moveto
+666 6 lineto
+676.3 8.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0.776 0.753 0.804 edgecolor
+newpath 675.6 1.52 moveto
+666 6 lineto
+676.3 8.49 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+10 /FreeSans set_font
+813.5 43 moveto 69 (serviceCallback) alignedtext
+grestore
+endpage
+showpage
+grestore
+%%PageTrailer
+%%EndPage: 1
+%%Trailer
+%%Pages: 1
+%%BoundingBox: 36 36 1476 697
+end
+restore
+%%EOF

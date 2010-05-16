@@ -1,0 +1,123 @@
+\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy Interface Reference}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy}\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+}
+
+
+Inherited by \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}, \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1ICharacterDetectionStrategy}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.ICharacterDetectionStrategy}, \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy}, \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPostprocessingStrategy}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IPostprocessingStrategy}, and \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IPreprocessingStrategy}.\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a2b109250e12270545e1c342c9d136bcd}{toString} ()
+\item 
+String \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_ab1ebc130da7b0792d736a8b5f9cf595d}{getDescription} ()
+\item 
+boolean \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a64149a1aad4d39dde043d11b2e7cc673}{isEnabled} ()
+\item 
+void \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_ae95d5ca1a67248a3c6dd80b40d6f6a32}{setEnabled} (boolean enable)
+\item 
+boolean \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a32756f860175f58c3d01b453cdc46bc2}{hasArgument} (String name)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument} \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_acc7ef9593926bb88c142d296332525cc}{getArgument} (String name)
+\item 
+void \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_aa5cbdd49578bcc84207fc073bc91da99}{setArgument} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument} arg)
+\item 
+void \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a503733cf208ec99900463a36b2fea6b2}{addArgument} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument} arg)
+\item 
+Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument} $>$ \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_aa03517aa764bf207ef9fccc86102ca85}{getConfiguration} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface defining a strategy. Note that the actual type of a strategy and its processing method are described through a series of additional interfaces derived from this one, since their processing methods take different types of arguments and because they have different return types.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IPreprocessingStrategy} 
+
+\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy} 
+
+\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1ICharacterDetectionStrategy}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.ICharacterDetectionStrategy} 
+
+\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPostprocessingStrategy}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IPostprocessingStrategy}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+
+Definition at line 21 of file IStrategy.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a503733cf208ec99900463a36b2fea6b2}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}!addArgument@{addArgument}}
+\index{addArgument@{addArgument}!ch::zhaw::ba10_bsha_1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+\subsubsection[{addArgument}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.addArgument ({\bf StrategyArgument} {\em arg})}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a503733cf208ec99900463a36b2fea6b2}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_ad106d9d501550fe475a4a01032632597}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_acc7ef9593926bb88c142d296332525cc}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}!getArgument@{getArgument}}
+\index{getArgument@{getArgument}!ch::zhaw::ba10_bsha_1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+\subsubsection[{getArgument}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StrategyArgument} ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.getArgument (String {\em name})}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_acc7ef9593926bb88c142d296332525cc}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a8c113a7ead0de41b8dbd5e58d66de08e}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_aa03517aa764bf207ef9fccc86102ca85}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}!getConfiguration@{getConfiguration}}
+\index{getConfiguration@{getConfiguration}!ch::zhaw::ba10_bsha_1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+\subsubsection[{getConfiguration}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf StrategyArgument}$>$ ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.getConfiguration ()}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_aa03517aa764bf207ef9fccc86102ca85}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a38329740106081e084162fb2e2c25f07}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_ab1ebc130da7b0792d736a8b5f9cf595d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!ch::zhaw::ba10_bsha_1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+\subsubsection[{getDescription}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.getDescription ()}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_ab1ebc130da7b0792d736a8b5f9cf595d}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a56e779e4ce93ac1570b34bcde23e7455}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.printStrategy().\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a32756f860175f58c3d01b453cdc46bc2}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}!hasArgument@{hasArgument}}
+\index{hasArgument@{hasArgument}!ch::zhaw::ba10_bsha_1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+\subsubsection[{hasArgument}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.hasArgument (String {\em name})}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a32756f860175f58c3d01b453cdc46bc2}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a468d38d65e49d18ced35a34962e3f667}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a64149a1aad4d39dde043d11b2e7cc673}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!ch::zhaw::ba10_bsha_1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+\subsubsection[{isEnabled}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.isEnabled ()}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a64149a1aad4d39dde043d11b2e7cc673}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_ad8e0e57f59a0ca49b27f205a39f2b8ae}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.printStrategy(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_aa5cbdd49578bcc84207fc073bc91da99}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}!setArgument@{setArgument}}
+\index{setArgument@{setArgument}!ch::zhaw::ba10_bsha_1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+\subsubsection[{setArgument}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.setArgument ({\bf StrategyArgument} {\em arg})}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_aa5cbdd49578bcc84207fc073bc91da99}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_ad1b20c8f3f41126c9e6cef52d3f30bbe}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_ae95d5ca1a67248a3c6dd80b40d6f6a32}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}!setEnabled@{setEnabled}}
+\index{setEnabled@{setEnabled}!ch::zhaw::ba10_bsha_1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+\subsubsection[{setEnabled}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.setEnabled (boolean {\em enable})}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_ae95d5ca1a67248a3c6dd80b40d6f6a32}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_acfeb454c9eda3e3279c75ce8101d980c}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a2b109250e12270545e1c342c9d136bcd}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}!toString@{toString}}
+\index{toString@{toString}!ch::zhaw::ba10_bsha_1::strategies::IStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.toString ()}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy_a2b109250e12270545e1c342c9d136bcd}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_adfb24fbd69261e8567269c5d59365e46}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.printStrategy().
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/strategies/\hyperlink{IStrategy_8java}{IStrategy.java}\end{DoxyCompactItemize}

@@ -1,0 +1,597 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView}\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+}
+
+
+Inherits android::inputmethodservice::KeyboardView, and \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObservable}{ch::zhaw::ba10\_\-bsha\_\-1::ime::IObservable}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a08835b6a562f4b6dcab131be32589200}{PadView} (Context context, AttributeSet attrs)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a6cf8fbcde7920542f7b36c6a3c5028a9}{PadView} (Context context, AttributeSet attrs, int defStyle)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_acb791dfd686e052f61ff46a40de66b58}{onSizeChanged} (int w, int h, int oldw, int oldh)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac3129d73ee224efd3cd031971c810818}{onDraw} (Canvas canvas)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac9247d50f73d59730a5893447aa8ca46}{onTouchEvent} (MotionEvent event)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4969dbd30351775211919860ef1f8643}{attachObserver} (\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver}{IObserver} observer)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1a924fadb8d0d1e9278a1ad136bcfb13}{detachObserver} (\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver}{IObserver} observer)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1516c15d8011caccf368c5d709f19e01}{notifyObservers} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa3a0e6aedfc80225bf47ce3cce17db27}{notifyObservers} (int event\_\-type)
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_acea9e02a6fe22cd86a909dcd20de83f0}{getEventType} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4e5d62bdc50d1efae84f0cde40beeb51}{closing} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a5bfac21895a5740fef99268846f223ef}{clear} ()
+\item 
+Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aea9a4c4f77ccfdfddfad16cdcc200107}{getLastPoints} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a125bdca474db5a2f392bd3036673abc2}{EVENT\_\-TYPE\_\-NONE} = 0
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a25e2262d68474969ad4d9ddd4abf79a9}{EVENT\_\-TYPE\_\-NEW\_\-POINTS} = 1
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a09fad18879227b2619c33c071a66523d}{EVENT\_\-TYPE\_\-TOUCH\_\-UP} = 2
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_af16e51780a0ada3ad00a022717084b41}{EVENT\_\-TYPE\_\-SPACE} = 3
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1383a241ed874fd21ccfb9f661d34c5d}{EVENT\_\-TYPE\_\-BACKSPACE} = 4
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a7f6b9437957e161e9ddef40f1aff665a}{init} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a86b554f6a4a5fe0023b2c8bac23e32c7}{paintBaseLines} (Canvas canvas)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa6c73f1271801bab9f52b52e53ca9c06}{touchStart} (float x, float y, float pressure)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a04937ec9e314a781c98cad2b080e63df}{touchMove} (float x, float y, float pressure)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac4eee83441a5d6f625582acf5a1d7d03}{touchUp} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ArrayList$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a73761fbcb4c8d5848fa88f6293d12519}{inputs}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a6ff45debae1b93ccc68f309c62fe6885}{currentInput}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac399fffb0a2e777ca6089ad4e713e76c}{oldPathColor}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a9fdc4e6d121c7b8d5466b5f0148a6be6}{curPathColor}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ab132a8e8a4f00924500f87483cff2a98}{lastX}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a2e3aa9d507464cf235778e66baea84a0}{lastY}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a2d40bd61174101fd313d5964a0ae0ab2}{fieldHeight}
+\item 
+Bitmap \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa24b63a808cf4edc3dc57a42b5d71892}{bitmap}
+\item 
+Paint \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a9113cabd4a9c66b85a2224ff87c7756a}{bmPaint}
+\item 
+Paint \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1122cb9b4a18be3bb5f96d56dea23ad6}{paint}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_af25e748299c5bc4816c615f180306695}{margin}
+\item 
+ArrayList$<$ \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver}{IObserver} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_acb98feb9db4b3995ee755d986679428d}{observers}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4884ead1ce1948227083986cb75b6a0a}{eventType}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a5fa1919707284dc6019fbc707998b7fe}{TOUCH\_\-TOLERANCE} = 4
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of a \hyperlink{}{KeyboardView} to gather data for the \hyperlink{}{DetectionService}.
+
+Notifies its \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver}{IObserver}s on input events such as new \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput}s, crossing out of existing \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput}s (seen as a backspace) or starting of new \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput}s with a certain offset (seen as a space). 
+
+Definition at line 24 of file PadView.java.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a08835b6a562f4b6dcab131be32589200}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!PadView@{PadView}}
+\index{PadView@{PadView}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{PadView}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.PadView (Context {\em context}, \/  AttributeSet {\em attrs})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a08835b6a562f4b6dcab131be32589200}
+
+
+Definition at line 63 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a08835b6a562f4b6dcab131be32589200_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a6cf8fbcde7920542f7b36c6a3c5028a9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!PadView@{PadView}}
+\index{PadView@{PadView}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{PadView}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.PadView (Context {\em context}, \/  AttributeSet {\em attrs}, \/  int {\em defStyle})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a6cf8fbcde7920542f7b36c6a3c5028a9}
+
+
+Definition at line 68 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a6cf8fbcde7920542f7b36c6a3c5028a9_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4969dbd30351775211919860ef1f8643}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!attachObserver@{attachObserver}}
+\index{attachObserver@{attachObserver}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{attachObserver}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.attachObserver ({\bf IObserver} {\em observer})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4969dbd30351775211919860ef1f8643}
+Attach an \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver}{IObserver} to the \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObservable}{IObservable} 
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObservable_ab05b466951c1b4c9c05644c27cf3fd9f}{ch.zhaw.ba10\_\-bsha\_\-1.ime.IObservable}.
+
+Definition at line 263 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.observers.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onInitializeInterface().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a5bfac21895a5740fef99268846f223ef}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!clear@{clear}}
+\index{clear@{clear}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.clear ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a5bfac21895a5740fef99268846f223ef}
+Removes all \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput}s and marks \hyperlink{}{View} as invalid 
+
+Definition at line 315 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.inputs.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.closing().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4e5d62bdc50d1efae84f0cde40beeb51}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!closing@{closing}}
+\index{closing@{closing}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{closing}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.closing ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4e5d62bdc50d1efae84f0cde40beeb51}
+
+
+Definition at line 307 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.clear().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.handleClose(), ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onFinishInput(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInputView().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4e5d62bdc50d1efae84f0cde40beeb51_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1a924fadb8d0d1e9278a1ad136bcfb13}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!detachObserver@{detachObserver}}
+\index{detachObserver@{detachObserver}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{detachObserver}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.detachObserver ({\bf IObserver} {\em observer})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1a924fadb8d0d1e9278a1ad136bcfb13}
+Detach an \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver}{IObserver} from the \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObservable}{IObservable} 
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObservable_a18a068196edc176c68282162bab22eff}{ch.zhaw.ba10\_\-bsha\_\-1.ime.IObservable}.
+
+Definition at line 271 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.observers.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_acea9e02a6fe22cd86a909dcd20de83f0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!getEventType@{getEventType}}
+\index{getEventType@{getEventType}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{getEventType}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.getEventType ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_acea9e02a6fe22cd86a909dcd20de83f0}
+
+
+Definition at line 296 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.eventType.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.update().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aea9a4c4f77ccfdfddfad16cdcc200107}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!getLastPoints@{getLastPoints}}
+\index{getLastPoints@{getLastPoints}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{getLastPoints}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf TouchPoint}$>$ ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.getLastPoints ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aea9a4c4f77ccfdfddfad16cdcc200107}
+Returns the points gathered the last
+
+\begin{DoxyReturn}{Returns}
+Collection$<$TouchPoint$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 325 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getPoints(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.inputs.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.update().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aea9a4c4f77ccfdfddfad16cdcc200107_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a7f6b9437957e161e9ddef40f1aff665a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!init@{init}}
+\index{init@{init}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a7f6b9437957e161e9ddef40f1aff665a}
+Initialize the classes attributes 
+
+Definition at line 76 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.bitmap, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.bmPaint, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.curPathColor, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.currentInput, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-NONE, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.eventType, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.inputs, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.margin, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.observers, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.oldPathColor, and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.paint.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.PadView().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa3a0e6aedfc80225bf47ce3cce17db27}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{notifyObservers}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.notifyObservers (int {\em event\_\-type})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa3a0e6aedfc80225bf47ce3cce17db27}
+Notify all attached \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver}{IObserver}s of changes, setting the event type while doing so
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em event\_\-type}]\end{DoxyParams}
+
+
+Definition at line 290 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-NONE, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.eventType, and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.notifyObservers().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa3a0e6aedfc80225bf47ce3cce17db27_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1516c15d8011caccf368c5d709f19e01}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{notifyObservers}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.notifyObservers ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1516c15d8011caccf368c5d709f19e01}
+Notify all attached \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObserver}{IObserver}s of changes 
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1IObservable_ade6befac243ff61d162ba09d6ff2e31d}{ch.zhaw.ba10\_\-bsha\_\-1.ime.IObservable}.
+
+Definition at line 279 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.observers.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.notifyObservers(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchStart(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchUp().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac3129d73ee224efd3cd031971c810818}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!onDraw@{onDraw}}
+\index{onDraw@{onDraw}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{onDraw}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw (Canvas {\em canvas})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac3129d73ee224efd3cd031971c810818}
+Draw the \hyperlink{}{View}'s background and the existing \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput}s as well as the currently active \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput} 
+
+Definition at line 117 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.bitmap, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.bmPaint, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.curPathColor, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.currentInput, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getPath(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.inputs, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.oldPathColor, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.paint, and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.paintBaseLines().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac3129d73ee224efd3cd031971c810818_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_acb791dfd686e052f61ff46a40de66b58}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!onSizeChanged@{onSizeChanged}}
+\index{onSizeChanged@{onSizeChanged}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{onSizeChanged}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onSizeChanged (int {\em w}, \/  int {\em h}, \/  int {\em oldw}, \/  int {\em oldh})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_acb791dfd686e052f61ff46a40de66b58}
+
+
+Definition at line 104 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.bitmap, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.fieldHeight, and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.margin.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac9247d50f73d59730a5893447aa8ca46}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!onTouchEvent@{onTouchEvent}}
+\index{onTouchEvent@{onTouchEvent}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{onTouchEvent}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onTouchEvent (MotionEvent {\em event})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac9247d50f73d59730a5893447aa8ca46}
+Handle touchscreen events 
+
+Definition at line 169 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchMove(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchStart(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchUp().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac9247d50f73d59730a5893447aa8ca46_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a86b554f6a4a5fe0023b2c8bac23e32c7}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!paintBaseLines@{paintBaseLines}}
+\index{paintBaseLines@{paintBaseLines}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{paintBaseLines}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.paintBaseLines (Canvas {\em canvas})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a86b554f6a4a5fe0023b2c8bac23e32c7}
+Draw the \hyperlink{}{View}'s base lines on the background
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em canvas}]\end{DoxyParams}
+
+
+Definition at line 136 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.fieldHeight, and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.margin.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a04937ec9e314a781c98cad2b080e63df}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!touchMove@{touchMove}}
+\index{touchMove@{touchMove}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{touchMove}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchMove (float {\em x}, \/  float {\em y}, \/  float {\em pressure})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a04937ec9e314a781c98cad2b080e63df}
+React on movement with the finger on the touchscreen
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]\item[{\em y}]\item[{\em pressure}]\end{DoxyParams}
+
+
+Definition at line 220 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.add(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.currentInput, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.lastX, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.lastY, and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.TOUCH\_\-TOLERANCE.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onTouchEvent().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a04937ec9e314a781c98cad2b080e63df_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa6c73f1271801bab9f52b52e53ca9c06}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!touchStart@{touchStart}}
+\index{touchStart@{touchStart}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{touchStart}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchStart (float {\em x}, \/  float {\em y}, \/  float {\em pressure})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa6c73f1271801bab9f52b52e53ca9c06}
+React on a newly started touchscreen input by creating a new \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]\item[{\em y}]\item[{\em pressure}]\end{DoxyParams}
+
+
+Definition at line 197 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.add(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.currentInput, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-SPACE, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.inputs, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.lastX, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.lastY, and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.notifyObservers().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onTouchEvent().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa6c73f1271801bab9f52b52e53ca9c06_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac4eee83441a5d6f625582acf5a1d7d03}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!touchUp@{touchUp}}
+\index{touchUp@{touchUp}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{touchUp}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchUp ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac4eee83441a5d6f625582acf5a1d7d03}
+React on the ending of a touchscreen input 
+
+Definition at line 233 of file PadView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.crosses(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.currentInput, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-BACKSPACE, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-TOUCH\_\-UP, ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.inputs, and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.notifyObservers().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onTouchEvent().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=411pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac4eee83441a5d6f625582acf5a1d7d03_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa24b63a808cf4edc3dc57a42b5d71892}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!bitmap@{bitmap}}
+\index{bitmap@{bitmap}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{bitmap}]{\setlength{\rightskip}{0pt plus 5cm}Bitmap {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.bitmap}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_aa24b63a808cf4edc3dc57a42b5d71892}
+
+
+Definition at line 49 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onSizeChanged().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a9113cabd4a9c66b85a2224ff87c7756a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!bmPaint@{bmPaint}}
+\index{bmPaint@{bmPaint}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{bmPaint}]{\setlength{\rightskip}{0pt plus 5cm}Paint {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.bmPaint}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a9113cabd4a9c66b85a2224ff87c7756a}
+
+
+Definition at line 50 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a9fdc4e6d121c7b8d5466b5f0148a6be6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!curPathColor@{curPathColor}}
+\index{curPathColor@{curPathColor}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{curPathColor}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.curPathColor}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a9fdc4e6d121c7b8d5466b5f0148a6be6}
+
+
+Definition at line 43 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a6ff45debae1b93ccc68f309c62fe6885}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!currentInput@{currentInput}}
+\index{currentInput@{currentInput}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{currentInput}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TouchInput} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.currentInput}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a6ff45debae1b93ccc68f309c62fe6885}
+
+
+Definition at line 41 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchMove(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchStart(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchUp().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1383a241ed874fd21ccfb9f661d34c5d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!EVENT\_\-TYPE\_\-BACKSPACE@{EVENT\_\-TYPE\_\-BACKSPACE}}
+\index{EVENT\_\-TYPE\_\-BACKSPACE@{EVENT\_\-TYPE\_\-BACKSPACE}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{EVENT\_\-TYPE\_\-BACKSPACE}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-BACKSPACE} = 4\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1383a241ed874fd21ccfb9f661d34c5d}
+
+
+Definition at line 36 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchUp().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a25e2262d68474969ad4d9ddd4abf79a9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!EVENT\_\-TYPE\_\-NEW\_\-POINTS@{EVENT\_\-TYPE\_\-NEW\_\-POINTS}}
+\index{EVENT\_\-TYPE\_\-NEW\_\-POINTS@{EVENT\_\-TYPE\_\-NEW\_\-POINTS}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{EVENT\_\-TYPE\_\-NEW\_\-POINTS}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-NEW\_\-POINTS} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a25e2262d68474969ad4d9ddd4abf79a9}
+
+
+Definition at line 33 of file PadView.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a125bdca474db5a2f392bd3036673abc2}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!EVENT\_\-TYPE\_\-NONE@{EVENT\_\-TYPE\_\-NONE}}
+\index{EVENT\_\-TYPE\_\-NONE@{EVENT\_\-TYPE\_\-NONE}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{EVENT\_\-TYPE\_\-NONE}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-NONE} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a125bdca474db5a2f392bd3036673abc2}
+
+
+Definition at line 32 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.notifyObservers().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_af16e51780a0ada3ad00a022717084b41}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!EVENT\_\-TYPE\_\-SPACE@{EVENT\_\-TYPE\_\-SPACE}}
+\index{EVENT\_\-TYPE\_\-SPACE@{EVENT\_\-TYPE\_\-SPACE}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{EVENT\_\-TYPE\_\-SPACE}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-SPACE} = 3\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_af16e51780a0ada3ad00a022717084b41}
+
+
+Definition at line 35 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchStart().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a09fad18879227b2619c33c071a66523d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!EVENT\_\-TYPE\_\-TOUCH\_\-UP@{EVENT\_\-TYPE\_\-TOUCH\_\-UP}}
+\index{EVENT\_\-TYPE\_\-TOUCH\_\-UP@{EVENT\_\-TYPE\_\-TOUCH\_\-UP}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{EVENT\_\-TYPE\_\-TOUCH\_\-UP}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.EVENT\_\-TYPE\_\-TOUCH\_\-UP} = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a09fad18879227b2619c33c071a66523d}
+
+
+Definition at line 34 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchUp().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4884ead1ce1948227083986cb75b6a0a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!eventType@{eventType}}
+\index{eventType@{eventType}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{eventType}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.eventType}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a4884ead1ce1948227083986cb75b6a0a}
+
+
+Definition at line 55 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.getEventType(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.notifyObservers().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a2d40bd61174101fd313d5964a0ae0ab2}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!fieldHeight@{fieldHeight}}
+\index{fieldHeight@{fieldHeight}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{fieldHeight}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.fieldHeight}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a2d40bd61174101fd313d5964a0ae0ab2}
+
+
+Definition at line 47 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onSizeChanged(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.paintBaseLines().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a73761fbcb4c8d5848fa88f6293d12519}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!inputs@{inputs}}
+\index{inputs@{inputs}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{inputs}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf TouchInput}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.inputs}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a73761fbcb4c8d5848fa88f6293d12519}
+
+
+Definition at line 40 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.clear(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.getLastPoints(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchStart(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchUp().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ab132a8e8a4f00924500f87483cff2a98}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!lastX@{lastX}}
+\index{lastX@{lastX}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{lastX}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.lastX}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ab132a8e8a4f00924500f87483cff2a98}
+
+
+Definition at line 45 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchMove(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchStart().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a2e3aa9d507464cf235778e66baea84a0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!lastY@{lastY}}
+\index{lastY@{lastY}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{lastY}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.lastY}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a2e3aa9d507464cf235778e66baea84a0}
+
+
+Definition at line 46 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchMove(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchStart().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_af25e748299c5bc4816c615f180306695}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!margin@{margin}}
+\index{margin@{margin}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{margin}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.margin}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_af25e748299c5bc4816c615f180306695}
+
+
+Definition at line 52 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onSizeChanged(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.paintBaseLines().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_acb98feb9db4b3995ee755d986679428d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!observers@{observers}}
+\index{observers@{observers}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{observers}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf IObserver}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.observers}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_acb98feb9db4b3995ee755d986679428d}
+
+
+Definition at line 54 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.attachObserver(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.detachObserver(), ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.notifyObservers().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac399fffb0a2e777ca6089ad4e713e76c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!oldPathColor@{oldPathColor}}
+\index{oldPathColor@{oldPathColor}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{oldPathColor}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.oldPathColor}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_ac399fffb0a2e777ca6089ad4e713e76c}
+
+
+Definition at line 42 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1122cb9b4a18be3bb5f96d56dea23ad6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!paint@{paint}}
+\index{paint@{paint}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}Paint {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.paint}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a1122cb9b4a18be3bb5f96d56dea23ad6}
+
+
+Definition at line 51 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.init(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a5fa1919707284dc6019fbc707998b7fe}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}!TOUCH\_\-TOLERANCE@{TOUCH\_\-TOLERANCE}}
+\index{TOUCH\_\-TOLERANCE@{TOUCH\_\-TOLERANCE}!ch::zhaw::ba10_bsha_1::ime::PadView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::PadView}}
+\subsubsection[{TOUCH\_\-TOLERANCE}]{\setlength{\rightskip}{0pt plus 5cm}final float {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.TOUCH\_\-TOLERANCE} = 4\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView_a5fa1919707284dc6019fbc707998b7fe}
+
+
+Definition at line 38 of file PadView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchMove().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/ime/\hyperlink{PadView_8java}{PadView.java}\end{DoxyCompactItemize}

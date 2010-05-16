@@ -1,0 +1,531 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+}
+
+
+Inherits \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1IGraphMLParser}{ch::zhaw::ba10\_\-bsha\_\-1::graph::IGraphMLParser}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge}{GraphEdge}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a4d51cf5d2432541f6777df36b8649d70}{parse} (String file\_\-name)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{TagType} \{ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{KEY}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{NODE}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{EDGE}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{NONE}
+ \}
+\item 
+enum \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{KeyType} \{ \par
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{VERSION}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{WEIGHT}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{TEST}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{CHARACTER}, 
+\par
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{NONE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_adbe40e63ba94ad70d3dfc64b37c098b8}{initParser} (String file\_\-name)
+\item 
+String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a74f06179a71e0990ec4601c9ce78df29}{getAttributes} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aa5ab79571da883a79a97faaed6886f51}{handleTag} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a4ae4bad785554b69b5f7cefb090b5250}{valueOfAttribute} (String name)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a06f1ee797fdd3fe07b3665cbaf3413d9}{handleText} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae57851701120dd3a6c241c4057f88f34}{endTag} ()
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a5725aeb6453b75f4a0e7166bf4fe1023}{buildGraph} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+XmlPullParser \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a71778cb195f68c6f07c7bc50697f8ec1}{parser}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{TagType} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ac17f293b08f00b7bca26c3937d3beae4}{currentTagType}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{KeyType} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a5a312256806488a510dd5bc2f67535c0}{currentKeyType}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a29497a03af065e9cb3394b2fe8ecc25f}{currentTag}
+\item 
+String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae37f614d6cb7f6ad309e1f6b138f041b}{currentAttributes}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_acea5e4293f4be63dd51ba0615f2c79e6}{versionID}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_adf4343a0781e9f30755d78eb8d821d90}{charID}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a79c09f5a53d75b35da0f609cc4290f2a}{testID}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a2e9f39fce4b5b75c5608490acb5de29c}{weightID}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a358171c0cc9e1c06de938c842793aa0c}{defaultVersion}
+\item 
+char \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a0ef51caacb5fe8a0a38fe0bfdae500ff}{defaultChar}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a9ffb54d99e75b7486ff62d5c81a02f0d}{defaultTest}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ad92f2d9a4a9f758ebac8b19b650f0759}{defaultWeight}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a212c61eb8990534e883cda1e29c60589}{graphVersion}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae4185aa59926024ce10f7041d048d56f}{rootNode}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a2281dbf08b291997a372d130efea7d07}{currentNode}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge}{GraphEdge} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aa293c98ba213a9cbe6f6f48c82f5b706}{currentEdge}
+\item 
+Hashtable$<$ Integer, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_acf2b3dbec13a253bc3667292157150c4}{nodes}
+\item 
+ArrayList$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge}{GraphEdge} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a181a350c69c351b9f21d914202abaee4}{edges}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ab9f2c0c9b2d0193cb1fee32505e5bd9c}{TAG} = \char`\"{}GraphMLPullParser\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1graph}{graph} from a GraphML file, using XML Pull parsing
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+
+Definition at line 27 of file GraphMLPullParser.java.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!KeyType@{KeyType}}
+\index{KeyType@{KeyType}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{KeyType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser::KeyType}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{VERSION@{VERSION}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!VERSION@{VERSION}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{
+VERSION}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}
+}]\index{WEIGHT@{WEIGHT}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!WEIGHT@{WEIGHT}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{
+WEIGHT}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}
+}]\index{TEST@{TEST}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!TEST@{TEST}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{
+TEST}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}
+}]\index{CHARACTER@{CHARACTER}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!CHARACTER@{CHARACTER}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{
+CHARACTER}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}
+}]\index{NONE@{NONE}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!NONE@{NONE}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}{
+NONE}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aaa46f90276e81808deff1bae71e7e97a}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 52 of file GraphMLPullParser.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!TagType@{TagType}}
+\index{TagType@{TagType}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{TagType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser::TagType}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{KEY@{KEY}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!KEY@{KEY}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{
+KEY}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}
+}]\index{NODE@{NODE}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!NODE@{NODE}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{
+NODE}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}
+}]\index{EDGE@{EDGE}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!EDGE@{EDGE}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{
+EDGE}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}
+}]\index{NONE@{NONE}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!NONE@{NONE}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}{
+NONE}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a3a47e280c52cfcf49f188060f23cac7f}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 51 of file GraphMLPullParser.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a5725aeb6453b75f4a0e7166bf4fe1023}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!buildGraph@{buildGraph}}
+\index{buildGraph@{buildGraph}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{buildGraph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.buildGraph ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a5725aeb6453b75f4a0e7166bf4fe1023}
+Build \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1graph}{graph} from parsed \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node}s and \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Edge}{Edge}s
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 366 of file GraphMLPullParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addOutgoingEdge(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.edges, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.nodes, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.rootNode.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parse().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a5725aeb6453b75f4a0e7166bf4fe1023_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae57851701120dd3a6c241c4057f88f34}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!endTag@{endTag}}
+\index{endTag@{endTag}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{endTag}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae57851701120dd3a6c241c4057f88f34}
+Handle end-\/tags 
+
+Definition at line 310 of file GraphMLPullParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentAttributes, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentEdge, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentNode, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentTag, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentTagType, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.edges, ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.getId(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.nodes, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.rootNode.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parse().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae57851701120dd3a6c241c4057f88f34_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a74f06179a71e0990ec4601c9ce78df29}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!getAttributes@{getAttributes}}
+\index{getAttributes@{getAttributes}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{getAttributes}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.getAttributes ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a74f06179a71e0990ec4601c9ce78df29}
+Read attributes of current Tag into a 2D-\/array of Strings
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 164 of file GraphMLPullParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parser.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aa5ab79571da883a79a97faaed6886f51}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!handleTag@{handleTag}}
+\index{handleTag@{handleTag}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{handleTag}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aa5ab79571da883a79a97faaed6886f51}
+Handle current XML-\/tag 
+
+Definition at line 176 of file GraphMLPullParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.charID, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentAttributes, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentEdge, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentKeyType, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentNode, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentTag, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentTagType, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.defaultWeight, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.getAttributes(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parser, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.GraphEdge.src, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.testID, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.GraphEdge.tgt, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.valueOfAttribute(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.versionID, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.GraphEdge.weight, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.weightID.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parse().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aa5ab79571da883a79a97faaed6886f51_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a06f1ee797fdd3fe07b3665cbaf3413d9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!handleText@{handleText}}
+\index{handleText@{handleText}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{handleText}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a06f1ee797fdd3fe07b3665cbaf3413d9}
+Handle Text of the current element 
+
+Definition at line 251 of file GraphMLPullParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentEdge, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentKeyType, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentNode, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentTagType, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.defaultChar, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.defaultTest, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.defaultVersion, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.defaultWeight, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.graphVersion, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parser, ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.setCharacter(), ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.setTester(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.GraphEdge.weight.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parse().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a06f1ee797fdd3fe07b3665cbaf3413d9_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_adbe40e63ba94ad70d3dfc64b37c098b8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!initParser@{initParser}}
+\index{initParser@{initParser}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{initParser}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.initParser (String {\em file\_\-name})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_adbe40e63ba94ad70d3dfc64b37c098b8}
+Initialize Parser, either with the GraphML file specified with its file name or with the one included in the applications package
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file\_\-name}]\end{DoxyParams}
+
+
+Definition at line 137 of file GraphMLPullParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.edges, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.nodes, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parser.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parse().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a4d51cf5d2432541f6777df36b8649d70}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!parse@{parse}}
+\index{parse@{parse}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parse (String {\em file\_\-name})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a4d51cf5d2432541f6777df36b8649d70}
+Parse GraphML file, create \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1graph}{graph} and return its root \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1IGraphMLParser_a4b7516793ccd484abfe8ab83f4e57fa8}{ch.zhaw.ba10\_\-bsha\_\-1.graph.IGraphMLParser}.
+
+Definition at line 90 of file GraphMLPullParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.buildGraph(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentKeyType, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.initParser(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parser, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.TAG.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a4d51cf5d2432541f6777df36b8649d70_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a4ae4bad785554b69b5f7cefb090b5250}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!valueOfAttribute@{valueOfAttribute}}
+\index{valueOfAttribute@{valueOfAttribute}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{valueOfAttribute}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.valueOfAttribute (String {\em name})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a4ae4bad785554b69b5f7cefb090b5250}
+Get the value of the current tag's attribute with the given name
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 238 of file GraphMLPullParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentAttributes.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag().
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_adf4343a0781e9f30755d78eb8d821d90}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!charID@{charID}}
+\index{charID@{charID}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{charID}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.charID}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_adf4343a0781e9f30755d78eb8d821d90}
+
+
+Definition at line 61 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae37f614d6cb7f6ad309e1f6b138f041b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!currentAttributes@{currentAttributes}}
+\index{currentAttributes@{currentAttributes}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{currentAttributes}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentAttributes}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae37f614d6cb7f6ad309e1f6b138f041b}
+
+
+Definition at line 58 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.valueOfAttribute().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aa293c98ba213a9cbe6f6f48c82f5b706}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!currentEdge@{currentEdge}}
+\index{currentEdge@{currentEdge}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{currentEdge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf GraphEdge} {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentEdge}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_aa293c98ba213a9cbe6f6f48c82f5b706}
+
+
+Definition at line 73 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a5a312256806488a510dd5bc2f67535c0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!currentKeyType@{currentKeyType}}
+\index{currentKeyType@{currentKeyType}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{currentKeyType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf KeyType} {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentKeyType}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a5a312256806488a510dd5bc2f67535c0}
+
+
+Definition at line 56 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parse().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a2281dbf08b291997a372d130efea7d07}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!currentNode@{currentNode}}
+\index{currentNode@{currentNode}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{currentNode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentNode}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a2281dbf08b291997a372d130efea7d07}
+
+
+Definition at line 72 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a29497a03af065e9cb3394b2fe8ecc25f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!currentTag@{currentTag}}
+\index{currentTag@{currentTag}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{currentTag}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentTag}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a29497a03af065e9cb3394b2fe8ecc25f}
+
+
+Definition at line 57 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ac17f293b08f00b7bca26c3937d3beae4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!currentTagType@{currentTagType}}
+\index{currentTagType@{currentTagType}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{currentTagType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TagType} {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.currentTagType}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ac17f293b08f00b7bca26c3937d3beae4}
+
+
+Definition at line 55 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a0ef51caacb5fe8a0a38fe0bfdae500ff}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!defaultChar@{defaultChar}}
+\index{defaultChar@{defaultChar}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{defaultChar}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.defaultChar}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a0ef51caacb5fe8a0a38fe0bfdae500ff}
+
+
+Definition at line 66 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a9ffb54d99e75b7486ff62d5c81a02f0d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!defaultTest@{defaultTest}}
+\index{defaultTest@{defaultTest}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{defaultTest}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.defaultTest}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a9ffb54d99e75b7486ff62d5c81a02f0d}
+
+
+Definition at line 67 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a358171c0cc9e1c06de938c842793aa0c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!defaultVersion@{defaultVersion}}
+\index{defaultVersion@{defaultVersion}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{defaultVersion}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.defaultVersion}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a358171c0cc9e1c06de938c842793aa0c}
+
+
+Definition at line 65 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ad92f2d9a4a9f758ebac8b19b650f0759}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!defaultWeight@{defaultWeight}}
+\index{defaultWeight@{defaultWeight}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{defaultWeight}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.defaultWeight}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ad92f2d9a4a9f758ebac8b19b650f0759}
+
+
+Definition at line 68 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a181a350c69c351b9f21d914202abaee4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!edges@{edges}}
+\index{edges@{edges}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{edges}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf GraphEdge}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.edges}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a181a350c69c351b9f21d914202abaee4}
+
+
+Definition at line 76 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.buildGraph(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.initParser().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a212c61eb8990534e883cda1e29c60589}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!graphVersion@{graphVersion}}
+\index{graphVersion@{graphVersion}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{graphVersion}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.graphVersion}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a212c61eb8990534e883cda1e29c60589}
+
+
+Definition at line 70 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_acf2b3dbec13a253bc3667292157150c4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!nodes@{nodes}}
+\index{nodes@{nodes}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{nodes}]{\setlength{\rightskip}{0pt plus 5cm}Hashtable$<$Integer, {\bf Node}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.nodes}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_acf2b3dbec13a253bc3667292157150c4}
+
+
+Definition at line 75 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.buildGraph(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.initParser().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a71778cb195f68c6f07c7bc50697f8ec1}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!parser@{parser}}
+\index{parser@{parser}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{parser}]{\setlength{\rightskip}{0pt plus 5cm}XmlPullParser {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parser}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a71778cb195f68c6f07c7bc50697f8ec1}
+
+
+Definition at line 52 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.getAttributes(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.initParser(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parse().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae4185aa59926024ce10f7041d048d56f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!rootNode@{rootNode}}
+\index{rootNode@{rootNode}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{rootNode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.rootNode}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ae4185aa59926024ce10f7041d048d56f}
+
+
+Definition at line 71 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.buildGraph(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ab9f2c0c9b2d0193cb1fee32505e5bd9c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!TAG@{TAG}}
+\index{TAG@{TAG}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{TAG}]{\setlength{\rightskip}{0pt plus 5cm}final String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.TAG} = \char`\"{}GraphMLPullParser\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_ab9f2c0c9b2d0193cb1fee32505e5bd9c}
+
+
+Definition at line 50 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.parse().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a79c09f5a53d75b35da0f609cc4290f2a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!testID@{testID}}
+\index{testID@{testID}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{testID}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.testID}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a79c09f5a53d75b35da0f609cc4290f2a}
+
+
+Definition at line 62 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_acea5e4293f4be63dd51ba0615f2c79e6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!versionID@{versionID}}
+\index{versionID@{versionID}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{versionID}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.versionID}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_acea5e4293f4be63dd51ba0615f2c79e6}
+
+
+Definition at line 60 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a2e9f39fce4b5b75c5608490acb5de29c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}!weightID@{weightID}}
+\index{weightID@{weightID}!ch::zhaw::ba10_bsha_1::graph::GraphMLPullParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLPullParser}}
+\subsubsection[{weightID}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.weightID}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_a2e9f39fce4b5b75c5608490acb5de29c}
+
+
+Definition at line 63 of file GraphMLPullParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleTag().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/graph/\hyperlink{GraphMLPullParser_8java}{GraphMLPullParser.java}\end{DoxyCompactItemize}

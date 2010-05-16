@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#ada3cca347b6d9a39b3fb4d008d90dac8" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.pickSuggestionManually" alt="" coords="451,32,867,61"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#aa3d1a8c9206e423a3f532ef599b28cf4" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.clear" alt="" coords="2573,5,2869,35"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a3f0ca3d6a23ac27b9ad1b2578078512e" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.commitTyped" alt="" coords="916,57,1268,87"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a428fc59e616bef0e75c866ddece97a70" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.updateCandidates" alt="" coords="1317,57,1696,87"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a761d3a5ee4b8830684c9fe03641b6a62" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.setSuggestions" alt="" coords="1745,57,2108,87"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#a3b2b7c5d303e3e6c25dd7458d61b2a20" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.setSuggestions" alt="" coords="2157,57,2517,87"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#a81383d3ca29122604138b340746eabe5" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.onDraw" alt="" coords="2565,59,2877,88"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#a300599eba91c613b0354b24f7414c1be" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.scrollToTarget" alt="" coords="2927,59,3276,88"/>
+</map>

@@ -1,0 +1,127 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyNormalizePoints Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints}\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}}
+}
+
+
+Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::BaseStrategy}, and \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IPreprocessingStrategy}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyNormalizePoints:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0b7ffa8b9a2f6d98a2b871fc4afa39f9}{process} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} microGesture)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0c81b7ac2ba72e201512d5f6de524e14}{initArguments} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_ac9826f8ef875b62955887e6f3ffe7cff}{getStrategyName} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a9b2a647c2f4d9702d943dbe8ef43485e}{getStrategyDescription} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0b3e38f03eb2ce52c7e0a1b09c5f0355}{tolerance} = 15
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy}{IPreprocessingStrategy} that normalizes the points of the path of the given \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint}s.
+
+\begin{DoxyAuthor}{Author}
+Dominik Giger, Julian Hanhart 
+\end{DoxyAuthor}
+
+
+Definition at line 17 of file PreprocessingStrategyNormalizePoints.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a9b2a647c2f4d9702d943dbe8ef43485e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}!getStrategyDescription@{getStrategyDescription}}
+\index{getStrategyDescription@{getStrategyDescription}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}}
+\subsubsection[{getStrategyDescription}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyNormalizePoints.getStrategyDescription ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a9b2a647c2f4d9702d943dbe8ef43485e}
+Return a description of the strategy
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 41 of file PreprocessingStrategyNormalizePoints.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_ac9826f8ef875b62955887e6f3ffe7cff}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}!getStrategyName@{getStrategyName}}
+\index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}}
+\subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyNormalizePoints.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_ac9826f8ef875b62955887e6f3ffe7cff}
+Return the strategy's name
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 36 of file PreprocessingStrategyNormalizePoints.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0c81b7ac2ba72e201512d5f6de524e14}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}!initArguments@{initArguments}}
+\index{initArguments@{initArguments}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}}
+\subsubsection[{initArguments}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyNormalizePoints.initArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0c81b7ac2ba72e201512d5f6de524e14}
+Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a0496e8fd0099a5f0f7765322d7e752a9}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 33 of file PreprocessingStrategyNormalizePoints.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0b7ffa8b9a2f6d98a2b871fc4afa39f9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}!process@{process}}
+\index{process@{process}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf MicroGesture} ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyNormalizePoints.process ({\bf MicroGesture} {\em microGesture})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0b7ffa8b9a2f6d98a2b871fc4afa39f9}
+Process the \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint}s of the given \hyperlink{}{MicroGesture}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em micro\_\-gesture}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy_a3e3885dce8fda7b79dc514078f11ad62}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IPreprocessingStrategy}.
+
+Definition at line 58 of file PreprocessingStrategyNormalizePoints.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setPoints(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyNormalizePoints.tolerance.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=351pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0b7ffa8b9a2f6d98a2b871fc4afa39f9_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0b3e38f03eb2ce52c7e0a1b09c5f0355}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}!tolerance@{tolerance}}
+\index{tolerance@{tolerance}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyNormalizePoints@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyNormalizePoints}}
+\subsubsection[{tolerance}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyNormalizePoints.tolerance} = 15\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyNormalizePoints_a0b3e38f03eb2ce52c7e0a1b09c5f0355}
+
+
+Definition at line 25 of file PreprocessingStrategyNormalizePoints.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyNormalizePoints.process().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/strategies/\hyperlink{PreprocessingStrategyNormalizePoints_8java}{PreprocessingStrategyNormalizePoints.java}\end{DoxyCompactItemize}

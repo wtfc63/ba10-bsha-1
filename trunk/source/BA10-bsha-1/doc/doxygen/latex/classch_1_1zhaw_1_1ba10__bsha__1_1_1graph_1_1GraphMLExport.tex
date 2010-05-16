@@ -1,0 +1,171 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}}
+}
+Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a5ca63fefbff43c1591da29d3529144cb}{writeFile} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} graph, File file)  throws IOException 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a5a853fe3b7dd0a477a6805b74768bb5e}{writeNode} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} n, PrintWriter stream)  throws IOException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_aafa9816a624b6f1f332dae553c543f39}{writeEdge} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Edge}{Edge} e, PrintWriter stream)  throws IOException 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ArrayList$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Edge}{Edge} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_ac3ec3e5c8c6aed88cf7788cc043b4537}{edges}
+\item 
+ArrayList$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a72991c26d971fa9bdcce9a1e457f3894}{nodes}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a9c60598286723614922d49364b21b500}{footer} = \char`\"{}$<$/graph$>$$\backslash$n$<$/graphml$>$\char`\"{}
+\item 
+static String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_aacda8d98c8b83e0f7cdff3bad24b8bd5}{header}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Export \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1graph}{graph} to GraphML file.
+
+\begin{DoxyAuthor}{Author}
+Dominik Giger, Julian Hanhart 
+\end{DoxyAuthor}
+
+
+Definition at line 15 of file GraphMLExport.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_aafa9816a624b6f1f332dae553c543f39}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}!writeEdge@{writeEdge}}
+\index{writeEdge@{writeEdge}!ch::zhaw::ba10_bsha_1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}}
+\subsubsection[{writeEdge}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeEdge ({\bf Edge} {\em e}, \/  PrintWriter {\em stream})  throws IOException \hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_aafa9816a624b6f1f332dae553c543f39}
+
+
+Definition at line 85 of file GraphMLExport.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.edges, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeNode().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeNode().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_aafa9816a624b6f1f332dae553c543f39_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a5ca63fefbff43c1591da29d3529144cb}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!ch::zhaw::ba10_bsha_1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}}
+\subsubsection[{writeFile}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeFile ({\bf Node} {\em graph}, \/  File {\em file})  throws IOException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a5ca63fefbff43c1591da29d3529144cb}
+
+
+Definition at line 46 of file GraphMLExport.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.edges, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.footer, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.header, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.nodes, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeNode().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a5ca63fefbff43c1591da29d3529144cb_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a5a853fe3b7dd0a477a6805b74768bb5e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}!writeNode@{writeNode}}
+\index{writeNode@{writeNode}!ch::zhaw::ba10_bsha_1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}}
+\subsubsection[{writeNode}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeNode ({\bf Node} {\em n}, \/  PrintWriter {\em stream})  throws IOException \hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a5a853fe3b7dd0a477a6805b74768bb5e}
+
+
+Definition at line 68 of file GraphMLExport.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.nodes, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeEdge().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeEdge(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeFile().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a5a853fe3b7dd0a477a6805b74768bb5e_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_ac3ec3e5c8c6aed88cf7788cc043b4537}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}!edges@{edges}}
+\index{edges@{edges}!ch::zhaw::ba10_bsha_1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}}
+\subsubsection[{edges}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf Edge}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.edges}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_ac3ec3e5c8c6aed88cf7788cc043b4537}
+
+
+Definition at line 37 of file GraphMLExport.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeEdge(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeFile().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a9c60598286723614922d49364b21b500}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}!footer@{footer}}
+\index{footer@{footer}!ch::zhaw::ba10_bsha_1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}}
+\subsubsection[{footer}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.footer} = \char`\"{}$<$/graph$>$$\backslash$n$<$/graphml$>$\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a9c60598286723614922d49364b21b500}
+
+
+Definition at line 23 of file GraphMLExport.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeFile().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_aacda8d98c8b83e0f7cdff3bad24b8bd5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}!header@{header}}
+\index{header@{header}!ch::zhaw::ba10_bsha_1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.header}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_aacda8d98c8b83e0f7cdff3bad24b8bd5}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                "<graphml xmlns=\"http://graphml.graphdrawing.org/xmlns\"\n" +
+                "\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n" +
+                "\txsi:schemaLcation=\"http://graphml.graphdrawing.org/xmlns\n" +
+      
+                "\t http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd\">\n" +
+      
+                "\t<key id=\"d0\" for=\"node\" attr.name=\"character\" attr.type=
+      \"string\">\n" +
+                "\t\t<default></default>\n" +
+                "\t</key>\n" +
+                "\t<key id=\"d1\" for=\"node\" attr.name=\"test\" attr.type=\"str
+      ing\">\n" +
+                "\t\t<default></default>\n" +
+                "\t</key>\n" +
+                "<graph id=\"G\" edgedefault=\"directed\">\n"
+\end{DoxyCode}
+
+
+Definition at line 24 of file GraphMLExport.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeFile().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a72991c26d971fa9bdcce9a1e457f3894}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}!nodes@{nodes}}
+\index{nodes@{nodes}!ch::zhaw::ba10_bsha_1::graph::GraphMLExport@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLExport}}
+\subsubsection[{nodes}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf Node}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.nodes}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLExport_a72991c26d971fa9bdcce9a1e457f3894}
+
+
+Definition at line 38 of file GraphMLExport.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeFile(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLExport.writeNode().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/graph/\hyperlink{GraphMLExport_8java}{GraphMLExport.java}\end{DoxyCompactItemize}

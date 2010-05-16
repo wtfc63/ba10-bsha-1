@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.addPoint" alt="" coords="783,5,1113,35"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature.html#a7d6da421d9cd91b8eccad94f0755a0f0" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCurvature.analyseMicroGestureDirection" alt="" coords="632,59,1264,88"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints" alt="" coords="1424,111,1760,140"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ab3b057406a8b11af28ec1bb73be22e58" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setDirection" alt="" coords="772,163,1124,192"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature.html#a8e53337041e648e2e5f9c72cc74d7a0e" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCurvature.setMicroGesture" alt="" coords="672,216,1224,245"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature.html#aa729634754fd1d0e1d5c4f0c5b403500" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCurvature.calculateDistance" alt="" coords="1312,189,1872,219"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ae7f33d544189f7cf99710d8694beec56" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setType" alt="" coords="1428,243,1756,272"/>
+</map>
