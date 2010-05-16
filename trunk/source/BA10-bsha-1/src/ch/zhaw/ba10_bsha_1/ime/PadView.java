@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 
 import java.util.*;
 
-import ch.zhaw.ba10_bsha_1.TouchInput;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
 
 

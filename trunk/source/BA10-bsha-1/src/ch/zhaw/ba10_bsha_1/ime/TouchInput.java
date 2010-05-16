@@ -1,4 +1,4 @@
-package ch.zhaw.ba10_bsha_1;
+package ch.zhaw.ba10_bsha_1.ime;
 
 
 import android.graphics.Path;
@@ -7,6 +7,7 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import ch.zhaw.ba10_bsha_1.TouchPoint;
 
 
 /**

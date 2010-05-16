@@ -1,7 +1,18 @@
 package ch.zhaw.ba10_bsha_1.graph;
 
+
+/**
+ * Creates VERY basic graph for testing purposes.
+ * 
+ * @author Julian Hanhart, Dominik Giger
+ */
 public class GraphFactoryDummy implements IGraphFactory {
 
+	/**
+	 * Create our test-graph and return its root Node
+	 * 
+	 * @return
+	 */
 	@Override
 	public Node createRoot() {
 		Node root = new Node(0);
@@ -31,5 +42,4 @@ public class GraphFactoryDummy implements IGraphFactory {
 		
 		return root;
 	}
-
 }
