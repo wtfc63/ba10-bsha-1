@@ -18,6 +18,7 @@ public class TouchInput {
 	public static final IMicroGestureDetectionStrategy MG_DETECTION_STRATEGY_NONE = new MicroGestureDetectionStrategyNone();
 	public static final IMicroGestureDetectionStrategy MG_DETECTION_STRATEGY_PREDICTION = new MicroGestureDetectionStrategyPreditction();
 	public static final IMicroGestureDetectionStrategy MG_DETECTION_STRATEGY_CURVATURE = new MicroGestureDetectionStrategyCurvature();
+	public static final IMicroGestureDetectionStrategy MG_DETECTION_STRATEGY_VARIANTB = new MicroGestureDetectionStrategyVariantB();
 	
 	public static final ICharacterDetectionStrategy CHAR_DETECTION_STRATEGY_NONE = new CharacterDetectionStrategyNone();
 	public static final ICharacterDetectionStrategy CHAR_DETECTION_STRATEGY_GRAPH = new CharacterDetectionStrategyGraph();
@@ -169,7 +170,7 @@ public class TouchInput {
 		return result.toString();
 	}
 	
-	public void startDetection() {
+	public void startDetectionNew() {
 		// Disclaimer: Grober Hack
 		// Point normalizing
 
@@ -323,7 +324,7 @@ public class TouchInput {
 		characters = detectCharacters(charDetectionStrategy);
 	}
 
-	public void startDetectionOld() {
+	public void startDetection() {
 		try {
 			if (smooth) {
 				points = new ArrayList<TouchPoint>(smoothingStrategy.smoothePath(points));

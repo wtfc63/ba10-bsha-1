@@ -127,7 +127,7 @@ public class Pad extends Activity implements IObserver, OnClickListener {
     	AlertDialog.Builder builder;
         switch (item.getItemId()) {
             case MENU_ITEM_DETECTION_STRATEGY:
-            	final CharSequence[] strategies = {"None", "Prediction", "Curvature"};
+            	final CharSequence[] strategies = {"None", "Prediction", "Curvature", "Variant B"};
             	int selected_strategy = -1;
             	IMicroGestureDetectionStrategy active_strategy = padView.getMicroGestureDetectionStrategy(); 
             	if (active_strategy instanceof MicroGestureDetectionStrategyNone) {
@@ -136,6 +136,8 @@ public class Pad extends Activity implements IObserver, OnClickListener {
             		selected_strategy = 1;
             	} else if (active_strategy instanceof MicroGestureDetectionStrategyCurvature) {
             		selected_strategy = 2;
+            	} else if (active_strategy instanceof MicroGestureDetectionStrategyVariantB) {
+            		selected_strategy = 3;
             	}
             	builder = new AlertDialog.Builder(this);
             	builder.setTitle("MicroGesture Detection Strategy");
@@ -151,6 +153,9 @@ public class Pad extends Activity implements IObserver, OnClickListener {
             	        		break;
             	        	case 2 :
             	        		padView.setDetectionStrategies(TouchInput.MG_DETECTION_STRATEGY_CURVATURE, old_strat, true);
+            	        		break;
+            	        	case 3 :
+            	        		padView.setDetectionStrategies(TouchInput.MG_DETECTION_STRATEGY_VARIANTB, old_strat, true);
             	        		break;
             	        }
             	        dialog.dismiss();
