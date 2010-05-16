@@ -1,0 +1,3 @@
+Durch die Implementation eines so genannten Input Method Service für das Android Betriebssystem kann die Applikation zur Handschriften-Erkennung in systemweit zur Eingabe von Text verwendet werden.
+
+Since we are implementiong a so called Input Method Service on the Android operating system, it is possible to use the handwriting recognition application system-wide to enter text.
