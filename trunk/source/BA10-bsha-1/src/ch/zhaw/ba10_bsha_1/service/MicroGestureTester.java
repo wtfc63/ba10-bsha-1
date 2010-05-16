@@ -1,7 +1,17 @@
 package ch.zhaw.ba10_bsha_1.service;
 
 
+/**
+ * Represents a test-case one can validate a MicroGesture against.
+ * 
+ * @author Julian Hanhart, Dominik Giger
+ */
 public class MicroGestureTester {
+
+
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
 	
 	
 	public static final char MASK_DIRECTION_LEFT   = 1;      //0b00000001
@@ -12,6 +22,11 @@ public class MicroGestureTester {
 	
 	private int type;
 	private char directionPattern;
+
+
+	//---------------------------------------------------------------------------
+	// Constructors
+	//---------------------------------------------------------------------------
 	
 	
 	public MicroGestureTester(int type, char dir_pattern) {
@@ -26,8 +41,18 @@ public class MicroGestureTester {
 			this.directionPattern = StrToPattern(parts[1]);
 		}
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Validation-method
+	//---------------------------------------------------------------------------
 	
 	
+	/**
+	 * Validate the given MicroGesture against the tester
+	 * 
+	 * @param micro_gesture
+	 */
 	public boolean validate(MicroGesture micro_gesture) {
 		char dir = 0;
 		dir = micro_gesture.directionIsLeft()      ? (char) (dir | MASK_DIRECTION_LEFT)   : dir;
@@ -38,7 +63,18 @@ public class MicroGestureTester {
 		return ((type == micro_gesture.getType()) && ((dir & directionPattern) == dir));
 	}
 	
+
+	//---------------------------------------------------------------------------
+	// Parsing-method
+	//---------------------------------------------------------------------------
 	
+	
+	/**
+	 * Translate a given String-representation of a tester
+	 * to its char pattern
+	 * 
+	 * @param str
+	 */
 	public static char StrToPattern(String str) {
 		char pattern = 0;
 		if (str.contains("l")) {

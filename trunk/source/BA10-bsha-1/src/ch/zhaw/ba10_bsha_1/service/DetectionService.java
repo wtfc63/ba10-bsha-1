@@ -40,13 +40,20 @@ import ch.zhaw.ba10_bsha_1.strategies.StrategyManager;
 
 
 /**
- * This is an example of implementing an application service that runs in a
- * different process than the application.  Because it can be in another
- * process, we must use IPC to interact with it.  The
- * {@link RemoteServiceController} and {@link RemoteServiceBinding} classes
- * show how to interact with the service.
+ * Implementation of the remote Service used for the detection of 
+ * Characters out of a list of input points.
+ * 
+ * Based on the RemoteService code sample from the 
+ * API Demos example of the Android SDK.
+ * 
+ * @author Julian Hanhart, Dominik Giger
  */
 public class DetectionService extends Service {
+
+
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
 	
 	
     private static final int STRATEGY_TYPE_PREPROCESSING = 0;
@@ -54,16 +61,17 @@ public class DetectionService extends Service {
     private static final int STRATEGY_TYPE_CHARACTER_DETECTION = 2;
     private static final int STRATEGY_TYPE_POSTPROCESSING = 3;
     
-    private static Context context;
+    private static final String TAG = "DetectionService";
+    private static Context CONTEXT;
     
     /**
-     * This is a list of callbacks that have been registered with the
-     * service.  Note that this is package scoped (instead of private) so
-     * that it can be accessed more efficiently from inner classes.
+     * This is a list of callbacks that have been registered with the service. 
+     * Note that this is package scoped (instead of private) so that it can 
+     * be accessed more efficiently from inner classes.
      */
-    private final RemoteCallbackList<IReturnResults> callbacks = new RemoteCallbackList<IReturnResults>();
+    final RemoteCallbackList<IReturnResults> callbacks = new RemoteCallbackList<IReturnResults>();
     private final int BUFFER_SIZE = 10;
-
+    private final boolean DEBUG = true; 
     
     private ArrayList<TouchPoint> inputPoints;
     private RingBuffer<TouchPoint> buffer;
@@ -73,41 +81,18 @@ public class DetectionService extends Service {
     private ICharacterDetectionStrategy charDetectionStrategy;
     private IPostprocessingStrategy postprocessingStrategy;
     
-    NotificationManager mNM;
-    
-    @Override
-    public void onCreate() {
-        mNM     = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        context = getApplicationContext();
-        initDetection();
+    private NotificationManager notificationManager;
 
-        // Display a notification about us starting.
-        showNotification();
-    	Toast.makeText(DetectionService.this, R.string.service_started, Toast.LENGTH_SHORT).show();
-        
-        // While this service is running, it will continually increment a
-        // number.  Send the first message that is used to perform the
-        // increment.
-        mHandler.sendEmptyMessage(REPORT_MSG);
-    }
-
-    @Override
-    public void onDestroy() {
-        // Cancel the persistent notification.
-        mNM.cancel(R.string.service_started);
-
-        // Tell the user we stopped.
-        Toast.makeText(this, R.string.service_stopped, Toast.LENGTH_SHORT).show();
-        
-        // Unregister all callbacks.
-        callbacks.kill();
-        
-        // Remove the next pending message to increment the counter, stopping
-        // the increment loop.
-        mHandler.removeMessages(REPORT_MSG);
-    }
+	//---------------------------------------------------------------------------
+	// Detection-initialization
+	//---------------------------------------------------------------------------
+	
     
-    
+    /**
+     * Initialisation of the detection. This is the place where one can define, 
+     * which strategies should be used on the input and in what order they 
+     * should be applied
+     */
     private void initDetection() {
         inputPoints = new ArrayList<TouchPoint>();
         buffer = new RingBuffer<TouchPoint>(BUFFER_SIZE);
@@ -128,20 +113,32 @@ public class DetectionService extends Service {
     	
     	postprocessingStrategy = PostprocessingStrategyManager.getInstance().getStrategy("None");
     }
+
+
+	//---------------------------------------------------------------------------
+	// Starting detection
+	//---------------------------------------------------------------------------
+	
     
+    /**
+     * Starts the detection of Characters from the input points (the buffer is first emptied)
+     */
     private Collection<Character> startDetection() {
 		Log.i("DetectionService.startDetection()", "Started detection");
 		
+		//Add all points from the buffer to the inputPoints
 		while (!buffer.isEmpty()) {
 			TouchPoint point = buffer.get();
 			if ((point != null) && !inputPoints.contains(point)) {
 				inputPoints.add(point);
 			}
 		}
+		
+		//Create temporary MicroGesture to start end empty input point list
     	MicroGesture startMG = new MicroGesture(inputPoints);
     	inputPoints.clear();
     	
-		Log.i("DetectionService.startDetection()", "Preprocessing...");
+    	//Preprocessing
     	Iterator<IPreprocessingStrategy> prep_itr = preprocessingSteps.iterator();
     	while (prep_itr.hasNext()) {
     		IPreprocessingStrategy prep_strat = prep_itr.next();
@@ -150,106 +147,152 @@ public class DetectionService extends Service {
     		}
     	}
     	
-		Log.i("DetectionService.startDetection()", "MicroGesture detection...");
+		//MicroGesture detection
     	Collection<MicroGesture> tmpMGs = new ArrayList<MicroGesture>();
     	tmpMGs.add(startMG);
     	Iterator<IMicroGestureDetectionStrategy> mg_itr = mgDetectionSteps.iterator();
     	while (mg_itr.hasNext()) {
     		IMicroGestureDetectionStrategy mgd_strat = mg_itr.next();
     		if (mgd_strat.isEnabled()) {
-        		Log.i("DetectionService.startDetection()", "MGDS: " + mgd_strat.toString());
     			tmpMGs = mgd_strat.detectMicroGestures(tmpMGs);
     		}
     	}
-    	for (MicroGesture mg : tmpMGs) {
-    		Log.i("DetectionService.startDetection()", "MicroGesture: " + mg.toString());
-		}
+    	if (DEBUG) {
+    		for (MicroGesture mg : tmpMGs) {
+    			Log.i(TAG, "Recognized MicroGesture: " + mg.toString());
+    		}
+    	}
     	
-		Log.i("DetectionService.startDetection()", "Character detection...");
+    	//Character detection
     	Collection<Character> result = charDetectionStrategy.detectCharacter(tmpMGs);
-		Log.i("DetectionService.startDetection()", "Detected: " + result.size() + " Characters");
-    	for (Character character : result) {
-    		Log.i("DetectionService.startDetection()", "Detected: " + character.toString());
-		}
-    	
-    	if (postprocessingStrategy.isEnabled()) {
-			Log.i("DetectionService.startDetection()", "Postprocessing...");
-	    	result = postprocessingStrategy.process(result);
-			Log.i("DetectionService.startDetection()", "Detected: " + result.size() + " Characters");
+    	if (DEBUG) {
+			Log.i(TAG, "Detected: " + result.size() + " Characters");
 	    	for (Character character : result) {
-	    		Log.i("DetectionService.startDetection()", "Detected: " + character.toString());
+	    		Log.i(TAG, "Detected Character: " + character.toString());
 			}
     	}
     	
-		Log.i("DetectionService.startDetection()", "Begin Broadcast...");
+    	//Postprocessing
+    	if (postprocessingStrategy.isEnabled()) {
+	    	result = postprocessingStrategy.process(result);
+	    	if (DEBUG) {
+				Log.i(TAG, "After Postprocessing:");
+				Log.i(TAG, "  Detected: " + result.size() + " Characters");
+		    	for (Character character : result) {
+		    		Log.i(TAG, "  Detected Character: " + character.toString());
+				}
+	    	}
+    	}
+    	
+		//Broadcast results
 		int i = callbacks.beginBroadcast();
 		while (i > 0) {
 		    i--;
 		    try {
-	    		Log.i("DetectionService.startDetection()", "Sending Characters");
 		        callbacks.getBroadcastItem(i).recognisedCharacters(new ArrayList<Character>(result));
-		    	for (Character character : result) {
-		    		Log.i("DetectionService.startDetection()", "Send: " + character.toString());
-					//callbacks.getBroadcastItem(i).recognisedChar(character.getDetectedCharacter(), character.getDetectionProbability());
-				}
 		    } catch (RemoteException e) {
 		        // The RemoteCallbackList will take care of removing
 		    	// the dead object for us.
 		    }
 		}
-		Log.i("DetectionService.startDetection()", "Finish Broadcast...");
 		callbacks.finishBroadcast();
+		
     	return result;
     }
-    
 
+
+	//---------------------------------------------------------------------------
+	// Lifecycle-methods
+	//---------------------------------------------------------------------------
+	
+    
+    /**
+     * Called when the Service is created
+     */
     @Override
-    public IBinder onBind(Intent intent) {
-        // Select the interface to return.  If your service only implements
-        // a single interface, you can just return it here without checking
-        // the Intent.
-        if (intent.getAction().equals(IDetectionService.class.getName())) {
-            return serviceBinder;
-        }
-        return null;
+    public void onCreate() {
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        CONTEXT = getApplicationContext();
+        initDetection();
+
+        // Display a notification about us starting.
+        showNotification();
+    	Toast.makeText(DetectionService.this, R.string.service_started, Toast.LENGTH_SHORT).show();
     }
 
     /**
-     * The IDetectionService Interface is defined through AIDL
+     * Called when the Service is destroyed
+     */
+    @Override
+    public void onDestroy() {
+        // Cancel the persistent notification.
+        notificationManager.cancel(R.string.service_started);
+
+        // Tell the user we stopped.
+        Toast.makeText(this, R.string.service_stopped, Toast.LENGTH_SHORT).show();
+        
+        // Unregister all callbacks.
+        callbacks.kill();
+    }
+    
+    /**
+     * Called when Service is bound to
+     */
+    @Override
+    public IBinder onBind(Intent intent) {
+        return serviceBinder;
+    }
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of the AIDL-interface
+	//---------------------------------------------------------------------------
+	
+    
+    /**
+     * The IDetectionService Interface as defined through AIDL
      */
     private final IDetectionService.Stub serviceBinder = new IDetectionService.Stub() {
+
+        /**
+         * Registering callback interface with service.
+         */
 		@Override
-        public void registerCallback(IReturnResults cb) {
+        public void registerCallback(IReturnResults cb) throws RemoteException {
             if (cb != null) {
             	callbacks.register(cb);
             }
         }
 		
+		/**
+	     * Remove a previously registered callback interface.
+	     */
 		@Override
-        public void unregisterCallback(IReturnResults cb) {
+        public void unregisterCallback(IReturnResults cb) throws RemoteException {
             if (cb != null) {
             	callbacks.unregister(cb);
             }
         }
+
 		
+	    /**
+	     * Add TouchPoints to detection queue and start detection if requested
+	     */
 		@Override
-		public void addTouchPoints(List<TouchPoint> points, boolean start_detection)	throws RemoteException {
+		public void addTouchPoints(List<TouchPoint> points, boolean start_detection) throws RemoteException {
 			if (points != null) {
 				inputPoints.addAll(points);
-				/*for (TouchPoint point : points) {
-					buffer.add(point);
-					Log.i("DetectionService.addTouchPoints()", "Added: " + point.toString());
-				}*/
 				if (start_detection || buffer.isFull()) {
 					startDetection();
 				}
-			} else {
-				Log.e("T3H_FAIL", "oh nose...");
 			}
 		}
-		
+
+	    /**
+	     * Add a TouchPoint to detection queue
+	     */
 		@Override
-		public void addTouchPoint(float pos_x, float pos_y, float strength, long timestamp) {
+		public void addTouchPoint(float pos_x, float pos_y, float strength, long timestamp) throws RemoteException {
 			TouchPoint tmp = new TouchPoint(new PointF(pos_x, pos_y), strength, timestamp);
 			buffer.add(tmp);
 			Log.i("DetectionService.addTouchPoint()", "Added: " + tmp.toString());
@@ -257,15 +300,21 @@ public class DetectionService extends Service {
 				startDetection();
 			}
 		}
-		
+
+	    /**
+	     * End sample (Touch-up) and start detection
+	     */
 		@Override
-		public void endSample() {
+		public void endSample() throws RemoteException {
 			startDetection();
-			Log.i("DetectionService.endSample()", "Detection ended");
 		}
 		
+
+	    /**
+	     * Get a List of all available strategies (separated by semicolon: "type;name;description;enabled")
+	     */
 		@Override
-		public List<String> getAvailableStrategies() {
+		public List<String> getAvailableStrategies() throws RemoteException {
 			ArrayList<String> result = new ArrayList<String>();
 			String[] strats = PreprocessingStrategyManager.getInstance().getStrategyList();
 			for (String strat : strats) {		
@@ -293,9 +342,12 @@ public class DetectionService extends Service {
 			}
 			return result;
 		}
-		
+
+	    /**
+	     * Get a List of all actively used strategies (separated by semicolon: "type;name;description")
+	     */
 		@Override
-		public List<String> getActiveStrategies() {
+		public List<String> getActiveStrategies() throws RemoteException {
 			ArrayList<String> result = new ArrayList<String>();
 			Iterator<IPreprocessingStrategy> pps_itr = preprocessingSteps.iterator();
 			while (pps_itr.hasNext()) {
@@ -317,31 +369,53 @@ public class DetectionService extends Service {
 			}
 			return result;
 		}
-		
+
+	    /**
+	     * Get a listing of the arguments of a strategy
+	     */
 		@Override
-		public List<StrategyArgument> getStrategyConfiguration(String strategy_name, int type) {
+		public List<StrategyArgument> getStrategyConfiguration(String strategy_name, int type) throws RemoteException {
 			IStrategy strategy = getManagerByType(type).getStrategy(strategy_name);
 			return (strategy != null) ? new ArrayList<StrategyArgument>(strategy.getConfiguration()) : null;
 		}
-		
+
+	    /**
+	     * Set an argument in all strategies supporting the given argument
+	     */
 		@Override
-		public void broadcastArgument(StrategyArgument argument) {
+		public void broadcastArgument(StrategyArgument argument) throws RemoteException {
 			PreprocessingStrategyManager.getInstance().broadcastArgument(argument);
 			MicroGestureDetectionStrategyManager.getInstance().broadcastArgument(argument);
 			CharacterDetectionStrategyManager.getInstance().broadcastArgument(argument);
 			PostprocessingStrategyManager.getInstance().broadcastArgument(argument);
 		}
 
+	    /**
+	     * Set an argument of a strategy
+	     */
 		@Override
-	    public void setStrategyArgument(StrategyArgument argument, int type) {
+	    public void setStrategyArgument(StrategyArgument argument, int type) throws RemoteException {
 			IStrategy strategy = getManagerByType(type).getStrategy(argument.getStrategyName());
 			if (strategy != null) {
 				strategy.setArgument(argument);
 			}
 		}
     };
+
+
+	//---------------------------------------------------------------------------
+	// Static helper-methods to the AIDL-implementation
+	//---------------------------------------------------------------------------
+	
     
-    static public String printStrategy(IStrategy strategy, int type) {
+    /**
+     * Get String-representation of the given Strategy to be send over the AIDL-interface
+     * 
+     * @param strategy
+     * @param type
+     * @return
+     */
+    static private String printStrategy(IStrategy strategy, int type) {
     	StringBuffer result = new StringBuffer();
 		result.append(type);
 		result.append(';');
@@ -353,7 +427,13 @@ public class DetectionService extends Service {
 		return result.toString();
     }
     
-    static public StrategyManager<IStrategy> getManagerByType(int type) {
+    /**
+     * Get the corresponding StrategyManager to the given Manager-Type
+     * 
+     * @param type
+     * @return
+     */
+    static private StrategyManager<IStrategy> getManagerByType(int type) {
     	StrategyManager result = null;
     	switch (type) {
     		case STRATEGY_TYPE_PREPROCESSING :
@@ -373,42 +453,21 @@ public class DetectionService extends Service {
     	}
     	return result;
     }
-    
-    public static Context getContext() {
-    	return context;
-    }
-    
-    private static final int REPORT_MSG = 1;
+
+
+	//---------------------------------------------------------------------------
+	// Further methods
+	//---------------------------------------------------------------------------
+	
     
     /**
-     * Our Handler used to execute operations on the main thread.  This is used
-     * to schedule increments of our value.
+     * Get the Application's Context
+     * 
+     * @return
      */
-    private final Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                // It is time to bump the value!
-                case REPORT_MSG:
-                    // Broadcast to all clients the new value.
-                    /*final int n = mCallbacks.beginBroadcast()Broadcast();
-                    for (int i = 0; i < n; i++) {
-                        try {
-                        	ArrayList<Character> result = new ArrayList<Character>(1);
-                        	result.add(new ch.zhaw.ba10_bsha_1.Character());
-                            mCallbacks.getBroadcastItem(i).recognisedCharacters(result);
-                        } catch (RemoteException e) {
-                            // The RemoteCallbackList will take care of removing
-                            // the dead object for us.
-                        }
-                    }
-                    callbacks.finishBroadcast();*/
-                    break;
-                default:
-                    super.handleMessage(msg);
-            }
-        }
-    };
+    public static Context getContext() {
+    	return CONTEXT;
+    }
 
     /**
      * Show a notification while this service is running.
@@ -427,8 +486,7 @@ public class DetectionService extends Service {
         String tmp = "Test Service";
         notification.setLatestEventInfo(this, tmp.subSequence(0, tmp.length()), text, contentIntent);
 
-        // Send the notification.
-        // We use a string id because it is a unique number.  We use it later to cancel.
-        mNM.notify(R.string.service_started, notification);
+        // Send the notification. We use a string id because it is a unique number, it is later used to cancel
+        notificationManager.notify(R.string.service_started, notification);
     }
 }

@@ -7,8 +7,9 @@ import ch.zhaw.ba10_bsha_1.StrategyArgument;
 
 
 /**
- * Example of defining an interface for calling on to a remote service
- * (running in another process).
+ * The remote interface to interact with the detection Service
+ *
+ * @author Julian Hanhart, Dominik Giger
  */
 interface IDetectionService {
 
@@ -24,7 +25,7 @@ interface IDetectionService {
     
     
     /**
-     * Add TouchPoints to detection queue
+     * Add TouchPoints to detection queue and start detection if requested
      */
     void addTouchPoints(in List<TouchPoint> points, boolean start_detection);
     
@@ -40,12 +41,12 @@ interface IDetectionService {
     
     
     /**
-     * Get List of all available strategies (separated by semicolon: "type;name;description,enabled")
+     * Get a List of all available strategies (separated by semicolon: "type;name;description;enabled")
      */
     List<String> getAvailableStrategies();
     
     /**
-     * Get List of all actively used strategies (separated by semicolon: "type;name;description")
+     * Get a List of all actively used strategies (separated by semicolon: "type;name;description")
      */
     List<String> getActiveStrategies();
     
