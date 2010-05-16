@@ -1,7 +1,7 @@
-\chapter{Mikro Gesten}
+\chapter{Mikrogesten}
 
-Die Grundsätzliche Idee zur Handschrifterkennung ist die Unterteilung der Schrift in sogenannte Mikrogesten. Eine Mikrogeste ist eine simple Bewegung, die beim Schreiben ausgeführt wird. Jeder Buchstabe soll dann aus solchen Mikrogesten aufgebaut werden können. 
-Es ist nun natürlich möglich diese Mikrogesten auf beliebige Art zu definieren. Die Hauptkriterien sind, dass die Gesten so einfach wie möglich sein sollen (Für eine optimale Erkennung) und sich untereinandern möglichst stark unterscheiden. Je weniger solche Gesten man braucht, desto besser. Man kann jedoch nicht beliebig grobe Gesten wählen, da immer noch alle möglichen Zeichen einzigartig aus solchen Gesten zusammen gebaut werden müssen.
+Die grundsätzliche Idee zur Handschrifterkennung ist die Unterteilung der Schrift in sogenannte Mikrogesten. Eine Mikrogeste ist eine simple Bewegung, die beim Schreiben ausgeführt wird. Jeder Buchstabe soll dann aus solchen Mikrogesten aufgebaut werden können. 
+Es ist nun natürlich möglich diese Mikrogesten auf beliebige Art zu definieren. Die Hauptkriterien sind, dass die Gesten so einfach wie möglich sein sollen (Für eine optimale Erkennung) und sich untereinander möglichst stark unterscheiden. Je weniger solche Gesten man braucht, desto besser. Man kann jedoch nicht beliebig grobe Gesten wählen, da immer noch alle möglichen Zeichen einzigartig aus solchen Gesten zusammen gebaut werden müssen.
 
 \begin{figure}[h!]
   \centering
@@ -16,7 +16,13 @@ In der Abbildung \ref{mikrogeste_beispiel} sieht man eine mögliche Aufteilung d
 Die Mikrogesten müssen genau definiert werden und können mehr als eine Eigenschaft besitzen:
 
 \subsubsection{Form}
-Die Form ist ein sehr einfach zu unterscheidendes Merkmal einer
+Es ist naheliegend die Mikrogesten hauptsächlich anhand ihrer Form zu unterscheiden. Diese Eigenschaft reicht jedoch nicht, um alle Buchstaben einzigartig zu beschreiben. Zum Beispiel könnte ein 'b' und ein 'p' beides als Gerade-Kreis beschrieben werden. 
+
+\subsubsection{Ausrichtung}
+Die Ausrichtung kann auch eine wichtige Eigenschaft sein, z.B. um Querstriche von Längsstrichen zu unterscheiden. Es bietet sich an, die Mikrogesten in eine diskrete Anzahl Richtungen abzubilden, um später die Erkennung im Graph zu vereinfachen.
+
+\subsubsection{Länge}
+Für Geraden kann die Länge eine wichtige Rolle spielen: Zum Beispiel ist der Unterschied zwischen 'q' und 'a' nur die Länge der Geraden.  
 
 \section{Typen}
 \subsection{Variante A}
@@ -32,10 +38,12 @@ Es sind folgende Mikrogesten definiert:
 \subsection{Variante B}
 Variante B wurde von uns selbst erarbeitet, um eine bessere Toleranz gegenüber unterschiedlichen Schreibstilen zu erhalten:\begin{itemize}
 \item Kreis
-\item Kurve
+\item Halbkreis
 \item Lange Gerade
 \item Kurze Gerade
 \end{itemize}
+
+Die Bezeichnungen Kreis und Halbkreis könnten etwas irreführend sein: Die Pfade müssen nicht genau kreisförmig sein, sondern jeder geschlossene Pfad gilt als Kreis und jeder gebogene Pfad gilt als Halbkreis.
 
 \section{Abbildung von Zeichen}
 
