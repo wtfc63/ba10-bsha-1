@@ -11,8 +11,18 @@ import ch.zhaw.ba10_bsha_1.*;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link IMicroGestureDetectionStrategy} which detects half circles in the given {@link MicroGesture}s.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class MicroGestureDetectionStrategyHalfCircle extends BaseStrategy implements IMicroGestureDetectionStrategy {
 
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
+	
 	
 	protected void initArguments() {}
 
@@ -25,8 +35,19 @@ public class MicroGestureDetectionStrategyHalfCircle extends BaseStrategy implem
 	protected String getStrategyDescription() {
 		return "Split into half circles by detection rotation-changes in given MicroGestures";
 	} 
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IMicroGestureDetectionStrategy
+	//---------------------------------------------------------------------------
+
 	
-	
+	/**
+	 * Detect half circles in the {@link TouchPoint}s of the given {@link MicroGesture}s
+	 * 
+	 * @param micro_gestures
+	 * @return
+	 */
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 
@@ -137,7 +158,13 @@ public class MicroGestureDetectionStrategyHalfCircle extends BaseStrategy implem
 		}
 		return result;
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Helper methods
+	//---------------------------------------------------------------------------
 	
+
 	private void setMicroGesture(MicroGesture mg) {
 		ArrayList<TouchPoint> points = mg.getPoints();
 		// calculate slope from first to last point

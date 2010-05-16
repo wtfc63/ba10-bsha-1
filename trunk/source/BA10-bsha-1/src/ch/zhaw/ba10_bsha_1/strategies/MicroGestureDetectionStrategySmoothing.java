@@ -5,9 +5,21 @@ import java.util.Collection;
 
 import ch.zhaw.ba10_bsha_1.service.*;
 
+
+/**
+ * Implementation of {@link IMicroGestureDetectionStrategy} which applies an {@link IPreprocessingStrategy} to all
+ * given {@link MicroGesture}s to smooth their points' path.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class MicroGestureDetectionStrategySmoothing extends BaseStrategy implements IMicroGestureDetectionStrategy {
 
 
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
+	
+	
 	@Override
 	protected void initArguments() {}
 	
@@ -20,8 +32,19 @@ public class MicroGestureDetectionStrategySmoothing extends BaseStrategy impleme
 	protected String getStrategyName() {
 		return "Smoothing";
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IMicroGestureDetectionStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Smooth path of all given {@link MicroGesture}s
+	 * 
+	 * @param micro_gestures
+	 * @return
+	 */
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 		
