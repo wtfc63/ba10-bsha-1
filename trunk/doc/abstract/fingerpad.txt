@@ -1,0 +1,3 @@
+Der Prototyp, der zum Austesten und Verfeinern der Erkennung verwendet wurde. Die eingegebenen Punkte werden in minimale Gesten, so genannte Mikrogesten, unterteilt, anhand derer die Erkennung durchgeführt wird.
+
+The prototype which was used to test and fine-tune the recognition. The input-points are divided into minimal gestures, so called MicroGestures, which are then used to recognize characters.
