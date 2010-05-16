@@ -8,9 +8,26 @@ import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link IMicroGestureDetectionStrategy} which detects edges in the paths of the {@link TouchPoint}s 
+ * of the given {@link MicroGesture}s.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements IMicroGestureDetectionStrategy {
+
+	
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+	
 	
 	private double tolerance = 0.2d;
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
 	
 	
 	protected void initArguments() {}
@@ -24,8 +41,19 @@ public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements 
 	protected String getStrategyDescription() {
 		return "Separate the paths of the given MicroGestures at sharp edges";
 	} 
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IMicroGestureDetectionStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Detect edges in the {@link TouchPoint}s of the given {@link MicroGesture}s
+	 * 
+	 * @param micro_gestures
+	 * @return
+	 */
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 		

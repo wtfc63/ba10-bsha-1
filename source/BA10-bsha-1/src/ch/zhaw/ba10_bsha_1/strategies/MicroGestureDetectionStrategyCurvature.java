@@ -11,7 +11,17 @@ import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 import android.util.Log;
 
 
+/**
+ * Implementation of {@link IMicroGestureDetectionStrategy} that recognizes {@link MicroGesture}s by changes in curvature. 
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class MicroGestureDetectionStrategyCurvature extends BaseStrategy implements IMicroGestureDetectionStrategy {
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
 	
 	
 	protected void initArguments() {}
@@ -25,8 +35,20 @@ public class MicroGestureDetectionStrategyCurvature extends BaseStrategy impleme
 	protected String getStrategyDescription() {
 		return "Detect MicroGestures though curvature changes";
 	} 
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IMicroGestureDetectionStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Detect {@link MicroGesture}s in the {@link TouchPoint}s of the given {@link MicroGesture}s
+	 * 
+	 * @param micro_gestures
+	 * @return
+	 */
+	@Override
 	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> micro_gestures) {
 		ArrayList<MicroGesture> result = new ArrayList<MicroGesture>();
 		Iterator<MicroGesture> itr = micro_gestures.iterator();
@@ -109,7 +131,13 @@ public class MicroGestureDetectionStrategyCurvature extends BaseStrategy impleme
 		Log.v("Curvature", "Number of Microgestures: " + result.size());
 		return result;
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Helper methods
+	//---------------------------------------------------------------------------
 	
+
 	private void setMicroGesture(MicroGesture mg) {
 		ArrayList<TouchPoint> points = mg.getPoints();
 		// calculate slope from first to last point

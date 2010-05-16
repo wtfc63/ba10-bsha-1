@@ -8,6 +8,11 @@ import ch.zhaw.ba10_bsha_1.*;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link IMicroGestureDetectionStrategy} which detects circles in the given {@link MicroGesture}s.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class MicroGestureDetectionStrategyCircles extends BaseStrategy implements IMicroGestureDetectionStrategy {
 	
 	
@@ -22,8 +27,19 @@ public class MicroGestureDetectionStrategyCircles extends BaseStrategy implement
 	protected String getStrategyDescription() {
 		return "Creating a MicroGesture for every circle.";
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IMicroGestureDetectionStrategy
+	//---------------------------------------------------------------------------
 	
 
+	/**
+	 * Detect circles in the {@link TouchPoint}s of the given {@link MicroGesture}s
+	 * 
+	 * @param micro_gestures
+	 * @return
+	 */
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 		

@@ -9,10 +9,25 @@ import ch.zhaw.ba10_bsha_1.*;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link IMicroGestureDetectionStrategy} which detects lines in the given {@link MicroGesture}s.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class MicroGestureDetectionStrategyLines extends BaseStrategy implements IMicroGestureDetectionStrategy {
 
 	
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+	
+	
 	private double tolerance = 130;
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
 	
 	
 	protected void initArguments() {}
@@ -26,8 +41,19 @@ public class MicroGestureDetectionStrategyLines extends BaseStrategy implements 
 	protected String getStrategyDescription() {
 		return "Detect all straigt Lines and create MicroGesture";
 	} 
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IMicroGestureDetectionStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Detect lines in the {@link TouchPoint}s of the given {@link MicroGesture}s
+	 * 
+	 * @param micro_gestures
+	 * @return
+	 */
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 			
@@ -119,6 +145,12 @@ public class MicroGestureDetectionStrategyLines extends BaseStrategy implements 
 		}
 		return result;
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Helper methods
+	//---------------------------------------------------------------------------
+	
 
 	private void setMicroGesture(MicroGesture mg) {
 		ArrayList<TouchPoint> points = mg.getPoints();

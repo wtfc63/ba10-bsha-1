@@ -125,7 +125,13 @@ public class MicroGestureDetectionStrategyPrediction extends BaseStrategy implem
 		}
 		return result;
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Helper methods
+	//---------------------------------------------------------------------------
 	
+
 	/**
 	 * Determine a found {@link MicroGesture}'s direction, type and merge it with the last one if needed
 	 * 

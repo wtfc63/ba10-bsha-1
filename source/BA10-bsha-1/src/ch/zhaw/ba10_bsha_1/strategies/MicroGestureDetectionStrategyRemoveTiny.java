@@ -7,8 +7,19 @@ import java.util.Collection;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link IMicroGestureDetectionStrategy} which removes all {@link MicroGesture}s that do not
+ * meet its size requirements (that do not have enough points).
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class MicroGestureDetectionStrategyRemoveTiny extends BaseStrategy implements IMicroGestureDetectionStrategy {
 
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
+	
 	
 	protected void initArguments() {}
 
@@ -21,8 +32,19 @@ public class MicroGestureDetectionStrategyRemoveTiny extends BaseStrategy implem
 	protected String getStrategyDescription() {
 		return "Remove tiny MicroGestures";
 	} 
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IMicroGestureDetectionStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Remove {@link MicroGesture}s that do not have enough points
+	 * 
+	 * @param micro_gestures
+	 * @return
+	 */
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 		
