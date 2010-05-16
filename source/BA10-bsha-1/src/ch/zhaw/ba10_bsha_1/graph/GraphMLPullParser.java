@@ -1,39 +1,56 @@
 package ch.zhaw.ba10_bsha_1.graph;
 
 
+import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
+import android.util.Log;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
-
-import android.content.Context;
-import android.content.res.Resources;
-import android.content.res.XmlResourceParser;
-import android.util.Log;
-
 import ch.zhaw.ba10_bsha_1.R;
 import ch.zhaw.ba10_bsha_1.service.DetectionService;
 import ch.zhaw.ba10_bsha_1.service.MicroGestureTester;
 
 
+/**
+ * Create graph from a GraphML file, using XML Pull parsing
+ * 
+ * @author Julian Hanhart, Dominik Giger
+ */
 public class GraphMLPullParser implements IGraphMLParser {
-	
 
-	private static final String TAG = "GraphMLPullParser"; 
-	private static enum TagType {KEY, NODE, EDGE, NONE};
-	private static enum KeyType {VERSION, WEIGHT, TEST, CHARACTER, NONE};
 	
+	//---------------------------------------------------------------------------
+	// Inner Class
+	//---------------------------------------------------------------------------
+	
+	
+	/**
+	 * Temporary container for Edges
+	 */
 	private class GraphEdge {
 		int src;
 		int tgt;
 		float weight;
 	}
+
 	
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+	
+
+	private static final String TAG = "GraphMLPullParser"; 
+	private static enum TagType {KEY, NODE, EDGE, NONE};
+	private static enum KeyType {VERSION, WEIGHT, TEST, CHARACTER, NONE};
 	
 	private XmlPullParser parser;
 	private TagType    currentTagType;
@@ -58,8 +75,18 @@ public class GraphMLPullParser implements IGraphMLParser {
 	
 	private Hashtable<Integer, Node> nodes;
 	private ArrayList<GraphEdge> edges;
+
+	
+	//---------------------------------------------------------------------------
+	// Implementation of the IGraphMLParser interface
+	//---------------------------------------------------------------------------
 	
 
+	/**
+	 * Parse GraphML file, create graph and return its root Node
+	 * 
+	 * @return
+	 */
 	@Override
 	public Node parse(String file_name) {
 		Node root = null;
@@ -68,6 +95,7 @@ public class GraphMLPullParser implements IGraphMLParser {
 			try {
 				int event_type = parser.getEventType();
 				currentKeyType = KeyType.NONE;
+				//Iterate through tags
 				while (event_type != XmlResourceParser.END_DOCUMENT) {
 					switch (event_type) {
 						case XmlPullParser.START_TAG :
@@ -84,6 +112,7 @@ public class GraphMLPullParser implements IGraphMLParser {
 					}
 					event_type = parser.next();
 				}
+				//Build graph with read Nodes and Edges
 				root = buildGraph();
 			} catch (XmlPullParserException pull_ex) {
 				Log.e(TAG, pull_ex.getMessage(), pull_ex);
@@ -93,9 +122,22 @@ public class GraphMLPullParser implements IGraphMLParser {
 		}
 		return root;
 	}
+
 	
+	//---------------------------------------------------------------------------
+	// Helper methods
+	//---------------------------------------------------------------------------
+	
+	
+	/**
+	 * Initialize Parser, either with the GraphML file specified with its file name 
+	 * or with the one included in the applications package
+	 * 
+	 * @param file_name
+	 */
 	private void initParser(String file_name) {
 		File file = (file_name != null) ? new File(file_name) : null;
+		//Use GraphML file at given location, if any was given and if there is a file there
 		if ((file != null) && file.exists()) {
 			try {
 				XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
@@ -103,9 +145,11 @@ public class GraphMLPullParser implements IGraphMLParser {
 				factory.setValidating(false);
 				parser = factory.newPullParser();
 				parser.setInput(new FileReader(file));
+			//Fall back to included GraphML file if anything goes wrong
 			} catch (Exception ex) {
-				parser = Resources.getSystem().getXml(R.xml.graph);
+				parser = DetectionService.getContext().getResources().getXml(R.xml.graph);
 			}
+		//Use GraphML file included in application package if otherwise
 		} else {
 			parser = DetectionService.getContext().getResources().getXml(R.xml.graph);
 		}
@@ -113,6 +157,11 @@ public class GraphMLPullParser implements IGraphMLParser {
 		edges = new ArrayList<GraphEdge>();
 	}
 
+	/**
+	 * Read attributes of current Tag into a 2D-array of Strings
+	 * 
+	 * @return
+	 */
 	private String[][] getAttributes() {
 		String[][] attributes = new String[parser.getAttributeCount()][2];
 		for (int i = 0; i < attributes.length; i++) {
@@ -122,38 +171,47 @@ public class GraphMLPullParser implements IGraphMLParser {
 		return attributes;
 	}
 	
+	/**
+	 * Handle current XML-tag
+	 */
 	private void handleTag() {
+		//Read current tag's name and its attributes
 		currentTag = parser.getName();
 		currentAttributes = getAttributes();
+		//Current tag == <key>
 		if (currentTag.equalsIgnoreCase("key")) {
 			currentTagType = TagType.KEY;
-			String attr = findAttribute("attr.name");
+			String attr = valueOfAttribute("attr.name");
 			if (attr.equalsIgnoreCase("version")) {
 				currentKeyType = KeyType.VERSION;
-				versionID = findAttribute("id");
+				versionID = valueOfAttribute("id");
 			} else if (attr.equalsIgnoreCase("weight")) {
 				currentKeyType = KeyType.WEIGHT;
-				weightID = findAttribute("id");
+				weightID = valueOfAttribute("id");
 			} else if (attr.equalsIgnoreCase("test")) {
 				currentKeyType = KeyType.TEST;
-				testID = findAttribute("id");
+				testID = valueOfAttribute("id");
 			} else if (attr.equalsIgnoreCase("character")) {
 				currentKeyType = KeyType.CHARACTER;
-				charID = findAttribute("id");
+				charID = valueOfAttribute("id");
 			}
+		//Current tag == <default>
 		} else if (currentTag.equalsIgnoreCase("default")) {
 			currentTagType = TagType.KEY;
+		//Current tag == <node>
 		} else if (currentTag.equalsIgnoreCase("node")) {
 			currentTagType = TagType.NODE;
-			currentNode = new Node(Integer.parseInt(findAttribute("id")));
+			currentNode = new Node(Integer.parseInt(valueOfAttribute("id")));
+		//Current tag == <edge>
 		} else if (currentTag.equalsIgnoreCase("edge")) {
 			currentTagType = TagType.EDGE;
 			currentEdge = new GraphEdge();
-			currentEdge.src = Integer.parseInt(findAttribute("source"));
-			currentEdge.tgt = Integer.parseInt(findAttribute("target"));
+			currentEdge.src = Integer.parseInt(valueOfAttribute("source"));
+			currentEdge.tgt = Integer.parseInt(valueOfAttribute("target"));
 			currentEdge.weight = defaultWeight;
+		//Current tag == <data>
 		} else if (currentTag.equalsIgnoreCase("data")) {
-			String key = findAttribute("key");
+			String key = valueOfAttribute("key");
 			if (key.equals(versionID)) {
 				currentTagType = TagType.NONE;
 				currentKeyType = KeyType.VERSION;
@@ -166,12 +224,19 @@ public class GraphMLPullParser implements IGraphMLParser {
 			} else {
 				currentKeyType = KeyType.NONE;
 			}
-		} else {
+		//Otherwise
+		} else { 
 			currentTagType = TagType.NONE;
 		}
 	}
 	
-	private String findAttribute(String name) {
+	/**
+	 * Get the value of the current tag's attribute with the given name 
+	 * 
+	 * @param name
+	 * @return
+	 */
+	private String valueOfAttribute(String name) {
 		String attribute_value = null;
 		for (int i = 0; ((attribute_value == null) && (i < currentAttributes.length)); i++) {
 			if (currentAttributes[i][0].equalsIgnoreCase(name.toLowerCase())) {
@@ -181,10 +246,15 @@ public class GraphMLPullParser implements IGraphMLParser {
 		return attribute_value;
 	}
 	
+	/**
+	 * Handle Text of the current element
+	 */
 	private void handleText() {
+		//Discard whitespace
 		String text = parser.getText().trim();
 		if (!text.equals("")) {
 			switch (currentTagType) {
+				//If we're looking at text in a <key>-element, it has to be from an embedded <default>-element
 				case KEY :
 					switch (currentKeyType) {
 						case VERSION :
@@ -203,6 +273,7 @@ public class GraphMLPullParser implements IGraphMLParser {
 							break;
 					}
 					break;
+				//If we're looking at text in a <node>- or <edge>-element, it has to be from an embedded <data>-element
 				case NODE :
 					//Fall through...
 				case EDGE :
@@ -220,6 +291,7 @@ public class GraphMLPullParser implements IGraphMLParser {
 							break;
 					}
 					break;
+				//Otherwise it's most likely a <data>-element, embedded in the main <graph>-element
 				default :
 					switch (currentKeyType) {
 						case VERSION :
@@ -233,6 +305,9 @@ public class GraphMLPullParser implements IGraphMLParser {
 		}
 	}
 	
+	/**
+	 * Handle end-tags
+	 */
 	private void endTag() {
 		switch (currentTagType)  {
 			case KEY :
@@ -247,10 +322,12 @@ public class GraphMLPullParser implements IGraphMLParser {
 				}
 				break;
 			case NODE :
+				//If it's a <data>-end-tag, skip and prepare for <node>-end-tag
 				if (currentTag.equalsIgnoreCase("data")) {
 					currentTagType = TagType.NODE;
 					currentTag = "node";
 					currentAttributes = null;
+				//Otherwise commit Node to Hashtable
 				} else if (currentTag.equalsIgnoreCase("node")) {
 					if (nodes.isEmpty()) {
 						rootNode = currentNode;
@@ -263,10 +340,12 @@ public class GraphMLPullParser implements IGraphMLParser {
 				}
 				break;
 			case EDGE :
+				//If it's a <data>-end-tag, skip and prepare for <edge>-end-tag
 				if (currentTag.equalsIgnoreCase("data")) {
 					currentTagType = TagType.EDGE;
 					currentTag = "edge";
 					currentAttributes = null;
+				//Otherwise commit Edge to ArrayList
 				} else if (currentTag.equalsIgnoreCase("edge")) {
 					edges.add(currentEdge);
 					currentEdge = null;
@@ -280,6 +359,11 @@ public class GraphMLPullParser implements IGraphMLParser {
 		}
 	}
 	
+	/**
+	 * Build graph from parsed Nodes and Edges
+	 * 
+	 * @return
+	 */
 	private Node buildGraph() {
 		for (GraphEdge gr_edge : edges) {
 			Node src = nodes.get(gr_edge.src);

@@ -10,7 +10,18 @@ import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 import ch.zhaw.ba10_bsha_1.service.MicroGestureTester;
 
 
+/**
+ * Represents a Node in our Graph. May carry a condition to test MicroGestures 
+ * given to consume as well as a Character it can evaluate MicroGestures to.
+ * 
+ * @author Julian Hanhart, Dominik Giger
+ */
 public class Node {
+
+
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
 	
 	
 	protected int id;
@@ -20,6 +31,11 @@ public class Node {
 	protected Collection<Edge> incomingEdges;
 	protected Collection<Edge> outgoingEdges;
 	
+
+	//---------------------------------------------------------------------------
+	// Constructors
+	//---------------------------------------------------------------------------
+
 	
 	public Node(int id, String test, char character) {
 		this.id = id;
@@ -37,6 +53,52 @@ public class Node {
 	public Node(int id, String test) {
 		this(id, test, '\0');
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Character-recognition method
+	//---------------------------------------------------------------------------
+	
+	
+	/**
+	 * Feed MicroGestures to Node and return recognized Characters (recursively)
+	 * 
+	 * @param micro_gestures
+	 * @param probability
+	 */
+	public Collection<Character> consume(Collection<MicroGesture> micro_gestures, float probability) {
+		ArrayList<Character> result = new ArrayList<Character>();
+		//Proceed if there are MicroGestures left to consume
+		if ((micro_gestures != null) && (micro_gestures.size() > 0)) {
+			//Test if there is a MicroGestureTester associated with the Node 
+			if (tester != null) {
+				MicroGesture mg = micro_gestures.iterator().next();
+				if (tester.validate(mg)) {
+					//Remove positively evaluated MicroGestures from those left to feed
+					micro_gestures.remove(mg);
+					//Add the Node's Character to the results 
+					result.add(new Character(null, character, probability));
+					//Feed those MicroGestures left to recognize to all children
+					for (Edge edge : outgoingEdges) {
+						result.addAll(edge.getDestination().consume(micro_gestures, (edge.getProbability() * probability)));
+					}
+				}
+			//Feed to all children if no MicroGestureTester present
+			} else {
+				for (Edge edge : outgoingEdges) {
+					result.addAll(edge.getDestination().consume(micro_gestures, (edge.getProbability() * probability)));
+				}
+			}
+		}
+		//Sort recognized Characters by probability
+		Collections.sort(result);
+		return result;
+	}
+
+
+	//---------------------------------------------------------------------------
+	// Getter-/Setter-methods
+	//---------------------------------------------------------------------------
 
 
 	public int getId() {
@@ -72,28 +134,6 @@ public class Node {
 
 	public void setCharacter(char character) {
 		this.character = character;
-	}
-	
-	public Collection<Character> consume(Collection<MicroGesture> micro_gestures, float probability) {
-		ArrayList<Character> result = new ArrayList<Character>();
-		if ((micro_gestures != null) && (micro_gestures.size() > 0)) {
-			if (tester != null) {
-				MicroGesture mg = micro_gestures.iterator().next();
-				if (tester.validate(mg)) {
-					micro_gestures.remove(mg);
-					result.add(new Character(null, character, probability));
-					for (Edge edge : outgoingEdges) {
-						result.addAll(edge.getDestination().consume(micro_gestures, (edge.getProbability() * probability)));
-					}
-				}
-			} else {
-				for (Edge edge : outgoingEdges) {
-					result.addAll(edge.getDestination().consume(micro_gestures, (edge.getProbability() * probability)));
-				}
-			}
-		}
-		Collections.sort(result);
-		return result;
 	}
 
 	
@@ -134,5 +174,4 @@ public class Node {
 	public void removeOutgoingEdge(Edge edge) {
 		outgoingEdges.remove(edge);
 	}
-	
 }

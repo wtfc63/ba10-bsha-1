@@ -1,11 +1,26 @@
 package ch.zhaw.ba10_bsha_1.graph;
 
-import java.io.*;
-import java.util.ArrayList;
 
 import android.util.Log;
 
+import java.io.*;
+import java.util.ArrayList;
+
+
+/**
+ * Export graph to GraphML file.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class GraphMLExport {
+
+
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+	
+	
+	private static String footer = "</graph>\n</graphml>";
 	private static String header = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
 		"<graphml xmlns=\"http://graphml.graphdrawing.org/xmlns\"\n" +
 		"\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n" +
@@ -19,11 +34,14 @@ public class GraphMLExport {
 		"\t</key>\n" +
 		"<graph id=\"G\" edgedefault=\"directed\">\n";
 	
-	private static String footer = "</graph>\n</graphml>";
-	
-	
 	private ArrayList<Edge> edges;
 	private ArrayList<Node> nodes;
+
+
+	//---------------------------------------------------------------------------
+	// Export methods
+	//---------------------------------------------------------------------------
+
 	
 	public void writeFile(Node graph, File file) throws IOException {
 		edges = new ArrayList<Edge>();

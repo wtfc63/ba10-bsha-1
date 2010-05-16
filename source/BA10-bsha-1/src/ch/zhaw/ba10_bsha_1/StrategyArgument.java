@@ -5,14 +5,30 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 
+/**
+ * Argument to a Strategy that implements Parcelable and 
+ * can therefore be send to and from a service.
+ * 
+ * @author Julian Hanhart, Dominik Giger
+ */
 public class StrategyArgument implements Parcelable {
 
+
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+	
 	
 	private String strategyName;
 	private String argumentName;
 	private String argumentValue;
 	private String description;
 
+	
+	//---------------------------------------------------------------------------
+	// Constructors and Creators
+	//---------------------------------------------------------------------------
+	
 	
 	public StrategyArgument(String strat_name, String arg_name, String arg_val, String descr) {
 		strategyName  = strat_name;
@@ -43,51 +59,12 @@ public class StrategyArgument implements Parcelable {
 		}
 	};
 
+
+	//---------------------------------------------------------------------------
+	// Implementation of the Parcelable interface
+	//---------------------------------------------------------------------------
+
 	
-	public String getStrategyName() {
-		return strategyName;
-	}
-
-	public String getArgumentName() {
-		return argumentName;
-	}
-
-	public String getArgumentValue() {
-		return argumentValue;
-	}
-
-	public boolean isSet() {
-		return (argumentValue != null);
-	}
-	
-	public String getDescription() {
-		return description;
-	}
-
-	public void setStrategyName(String strat_name) {
-		strategyName = strat_name;
-	}
-
-	public void setArgumentName(String arg_name) {
-		argumentName = arg_name;
-	}
-
-	public void setArgumentValue(String arg_val) {
-		argumentValue = arg_val;
-	}
-
-	public String toString() {
-		StringBuffer result = new StringBuffer();
-		result.append("Argument (");
-		result.append(strategyName);
-		result.append("): ");
-		result.append(argumentName);
-		result.append(" = \"");
-		result.append(argumentValue);
-		result.append('\"');
-		return result.toString();
-    }
-
 	@Override
 	public int describeContents() {
 		return 0;
@@ -107,4 +84,57 @@ public class StrategyArgument implements Parcelable {
 		argumentValue = source.readString();
 		description   = source.readString();
 	}
+
+	
+	//---------------------------------------------------------------------------
+	// Getter-/Setter-methods
+	//---------------------------------------------------------------------------
+
+	
+	public String getStrategyName() {
+		return strategyName;
+	}
+
+	public void setStrategyName(String strat_name) {
+		strategyName = strat_name;
+	}
+
+	
+	public String getArgumentName() {
+		return argumentName;
+	}
+
+	public void setArgumentName(String arg_name) {
+		argumentName = arg_name;
+	}
+	
+
+	public boolean isSet() {
+		return (argumentValue != null);
+	}
+	
+	public String getArgumentValue() {
+		return argumentValue;
+	}
+
+	public void setArgumentValue(String arg_val) {
+		argumentValue = arg_val;
+	}
+	
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public String toString() {
+		StringBuffer result = new StringBuffer();
+		result.append("Argument (");
+		result.append(strategyName);
+		result.append("): ");
+		result.append(argumentName);
+		result.append(" = \"");
+		result.append(argumentValue);
+		result.append('\"');
+		return result.toString();
+    }
 }

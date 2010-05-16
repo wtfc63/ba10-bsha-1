@@ -1,29 +1,35 @@
 package ch.zhaw.ba10_bsha_1;
 
 
-import java.util.Date;
-
 import android.graphics.PointF;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Date;
 
+
+/**
+ * Represents one input point from a touchscreen event. Implements Parcelable and 
+ * can therefore be send to and from a service.
+ * 
+ * @author Julian Hanhart, Dominik Giger
+ */
 public class TouchPoint extends PointF implements Cloneable, Parcelable {
 
+
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+	
 	
 	private float strength;
 	private long timeStamp;
-	
-	public static final Parcelable.Creator<TouchPoint> CREATOR = new Parcelable.Creator<TouchPoint>() {
-		public TouchPoint createFromParcel(Parcel in) {
-			return new TouchPoint(in);
-		}
 
-		public TouchPoint[] newArray(int size) {
-			return new TouchPoint[size];
-		}
-	};
-	
+
+	//---------------------------------------------------------------------------
+	// Constructors and Creators
+	//---------------------------------------------------------------------------
+
 	
 	public TouchPoint(PointF position, float strength, long time_stamp) {
 		super(position.x, position.y);
@@ -54,45 +60,22 @@ public class TouchPoint extends PointF implements Cloneable, Parcelable {
 		return clone;
 	}
 	
+	public static final Parcelable.Creator<TouchPoint> CREATOR = new Parcelable.Creator<TouchPoint>() {
+		public TouchPoint createFromParcel(Parcel in) {
+			return new TouchPoint(in);
+		}
 
-	public float getStrength() {
-		return strength;
-	}
+		public TouchPoint[] newArray(int size) {
+			return new TouchPoint[size];
+		}
+	};
 
-	public long getTimeStamp() {
-		return timeStamp;
-	}
 
-	public void setStrength(float strength) {
-		this.strength = strength;
-	}
+	//---------------------------------------------------------------------------
+	// Implementation of the Parcelable interface
+	//---------------------------------------------------------------------------
 
-	public void setTimeStamp(long timeStamp) {
-		this.timeStamp = timeStamp;
-	}
 	
-	@Override
-	public String toString() {
-		StringBuffer result = new StringBuffer();
-		result.append("[x=");
-		result.append(x);
-		result.append(",y=");
-		result.append(y);
-		result.append(",ts=");
-		result.append(new Date(timeStamp));
-		result.append(",str=");
-		result.append(strength);
-		result.append("]");
-		return result.toString();
-	}
-	
-	public float distanceTo(TouchPoint second) {
-		float a = (float) Math.pow(Math.abs(x - second.x), 2);
-		float b = (float) Math.pow(Math.abs(y - second.y), 2);
-		float c = a + b;
-		return ((float) Math.sqrt(c));
-	}
-
 	@Override
 	public int describeContents() {
 		return 0;
@@ -111,5 +94,63 @@ public class TouchPoint extends PointF implements Cloneable, Parcelable {
 		y = source.readFloat();
 		strength  = source.readFloat();
 		timeStamp = source.readLong();
+	}
+	
+
+	//---------------------------------------------------------------------------
+	// Getter-/Setter-methods
+	//---------------------------------------------------------------------------
+
+	
+	public float getStrength() {
+		return strength;
+	}
+
+	public void setStrength(float strength) {
+		this.strength = strength;
+	}
+	
+
+	public long getTimeStamp() {
+		return timeStamp;
+	}
+
+	public void setTimeStamp(long timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+	
+	
+	@Override
+	public String toString() {
+		StringBuffer result = new StringBuffer();
+		result.append("[x=");
+		result.append(x);
+		result.append(",y=");
+		result.append(y);
+		result.append(",ts=");
+		result.append(new Date(timeStamp));
+		result.append(",str=");
+		result.append(strength);
+		result.append("]");
+		return result.toString();
+	}
+
+
+	//---------------------------------------------------------------------------
+	// General purpose methods
+	//---------------------------------------------------------------------------
+
+	
+	/**
+	 * Calculate the distance to another TouchPoint
+	 * 
+	 * @param other
+	 * @return
+	 */
+	public float distanceTo(TouchPoint other) {
+		float a = (float) Math.pow(Math.abs(x - other.x), 2);
+		float b = (float) Math.pow(Math.abs(y - other.y), 2);
+		float c = a + b;
+		return ((float) Math.sqrt(c));
 	}
 }

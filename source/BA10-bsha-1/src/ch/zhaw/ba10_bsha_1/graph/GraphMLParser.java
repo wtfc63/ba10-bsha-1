@@ -1,5 +1,8 @@
 package ch.zhaw.ba10_bsha_1.graph;
 
+
+import android.util.Log;
+
 import java.io.*;
 import java.util.Map;
 import java.util.Stack;
@@ -10,20 +13,19 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.*;
 
-import android.util.Log;
 
+/**
+ * Create graph from GraphML file, using a SAX parser.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class GraphMLParser implements IGraphMLParser, ContentHandler {
-	private static final String TAG = "GraphMLParser"; 
+
+
+	//---------------------------------------------------------------------------
+	// Inner Classes
+	//---------------------------------------------------------------------------
 	
-	private Map<String, Node> nodes;
-	private Stack<Pair> tempEdges;
-	
-	private int nodeID = 0;
-	
-	private enum Status { NODE, EDGE, DATATEST, DATACHARACTER, DATAWEIGHT, NONE };
-	private Status status = Status.NONE;
-	
-	private String nodeId, nodeTest, nodeCharacter, edgeWeight;
 	
 	public class Pair {
 		public String first;
@@ -42,6 +44,36 @@ public class GraphMLParser implements IGraphMLParser, ContentHandler {
 		}
 	}
 	
+	
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+	
+	
+	private static final String TAG = "GraphMLParser"; 
+	
+	private Map<String, Node> nodes;
+	private Stack<Pair> tempEdges;
+	
+	private int nodeID = 0;
+	
+	private enum Status { NODE, EDGE, DATATEST, DATACHARACTER, DATAWEIGHT, NONE };
+	private Status status = Status.NONE;
+	
+	private String nodeId, nodeTest, nodeCharacter, edgeWeight;
+
+	
+	//---------------------------------------------------------------------------
+	// Implementation of the IGraphMLParser interface
+	//---------------------------------------------------------------------------
+	
+
+	/**
+	 * Parse GraphML file, create graph and return its root Node
+	 * 
+	 * @return
+	 */
+	@Override
 	public Node parse(String file_name) {
 		File file = new File(file_name);
 		nodes = new TreeMap<String, Node>();
@@ -60,6 +92,12 @@ public class GraphMLParser implements IGraphMLParser, ContentHandler {
 		return nodes.get("0");
 	}
 
+	
+	//---------------------------------------------------------------------------
+	// Implementation of the ContentHandler interface
+	//---------------------------------------------------------------------------
+	
+	
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
 		if (status == Status.DATACHARACTER) {
@@ -74,99 +112,7 @@ public class GraphMLParser implements IGraphMLParser, ContentHandler {
 	}
 
 	@Override
-	public void endDocument() throws SAXException {
-		//Set<Entry<String, Node>> e = nodes.entrySet();
-		
-		while (!tempEdges.empty()) {
-			Pair p = tempEdges.pop();
-			Node a = nodes.get(p.first);
-			Node b = nodes.get(p.second);
-			float probability = (p instanceof WeightedPair) ? ((WeightedPair) p).weight : (float) 0.9;
-			Edge temp = new Edge(a, b, probability);
-			a.addOutgoingEdge(temp);
-			b.addIncomingEdge(temp);
-			//Log.v(TAG, "Edge: " + p.first + "->" +p.second);			
-		}
-	}
-
-	@Override
-	public void endElement(String uri, String localName, String qName) throws SAXException {
-		if (status == Status.NODE && localName.equalsIgnoreCase("node")) {
-			status = Status.NONE;
-			Node temp;
-			if (nodeTest == null && nodeCharacter == null) {
-				temp = new Node(nodeID++);
-			}
-			else if (nodeCharacter == null) {
-				temp = new Node(nodeID++, nodeTest);
-			}
-			else {
-				temp = new Node(nodeID++, nodeTest, nodeCharacter.charAt(0));
-				//Log.v(TAG, "End " + localName + " " + nodeTest + " " + nodeCharacter);
-			}		
-			nodes.put(nodeId, temp);
-			nodeTest = null;
-			nodeCharacter = null;
-			nodeId = null;
-		}
-		else if (status == Status.EDGE && localName.equalsIgnoreCase("edge")) {
-			status = Status.NONE;
-			edgeWeight = null;
-		}
-		else if (status == Status.DATATEST && localName.equalsIgnoreCase("data")) {
-			status = Status.NODE;
-		}
-		else if (status == Status.DATACHARACTER && localName.equalsIgnoreCase("data")) {
-			status = Status.NODE;
-		}
-		else if (status == Status.DATAWEIGHT && localName.equalsIgnoreCase("data")) {
-			Pair last = tempEdges.pop();
-			last = new WeightedPair(last.first, last.second, Float.parseFloat(edgeWeight));
-			tempEdges.push(last);
-			status = Status.EDGE;
-		}
-		
-	}
-
-	@Override
-	public void endPrefixMapping(String prefix) throws SAXException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void processingInstruction(String target, String data) throws SAXException {
-		
-		
-	}
-
-	@Override
-	public void setDocumentLocator(Locator locator) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void skippedEntity(String name) throws SAXException {
-		// TODO Auto-generated method stub
-		//Log.e(TAG, "Skipped: " + name);
-	}
-
-	@Override
-	public void startDocument() throws SAXException {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
 	public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
-		// TODO Auto-generated method stub
-		
 		if (status == Status.NONE) { 
 			if (localName.equalsIgnoreCase("edge")) {
 				String source = atts.getValue("source");
@@ -217,15 +163,83 @@ public class GraphMLParser implements IGraphMLParser, ContentHandler {
 			}
 			//Log.e(TAG, "Malformed XML: " + localName);
 		}
-		
 		//Log.v(TAG, "Element: " + localName + " " + qName + " " + uri);
-
 	}
 
 	@Override
-	public void startPrefixMapping(String prefix, String uri) throws SAXException {
-		// TODO Auto-generated method stub
+	public void endElement(String uri, String localName, String qName) throws SAXException {
+		if (status == Status.NODE && localName.equalsIgnoreCase("node")) {
+			status = Status.NONE;
+			Node temp;
+			if (nodeTest == null && nodeCharacter == null) {
+				temp = new Node(nodeID++);
+			}
+			else if (nodeCharacter == null) {
+				temp = new Node(nodeID++, nodeTest);
+			}
+			else {
+				temp = new Node(nodeID++, nodeTest, nodeCharacter.charAt(0));
+				//Log.v(TAG, "End " + localName + " " + nodeTest + " " + nodeCharacter);
+			}		
+			nodes.put(nodeId, temp);
+			nodeTest = null;
+			nodeCharacter = null;
+			nodeId = null;
+		}
+		else if (status == Status.EDGE && localName.equalsIgnoreCase("edge")) {
+			status = Status.NONE;
+			edgeWeight = null;
+		}
+		else if (status == Status.DATATEST && localName.equalsIgnoreCase("data")) {
+			status = Status.NODE;
+		}
+		else if (status == Status.DATACHARACTER && localName.equalsIgnoreCase("data")) {
+			status = Status.NODE;
+		}
+		else if (status == Status.DATAWEIGHT && localName.equalsIgnoreCase("data")) {
+			Pair last = tempEdges.pop();
+			last = new WeightedPair(last.first, last.second, Float.parseFloat(edgeWeight));
+			tempEdges.push(last);
+			status = Status.EDGE;
+		}
 		
 	}
+
+	@Override
+	public void endDocument() throws SAXException {
+		//Set<Entry<String, Node>> e = nodes.entrySet();
+		while (!tempEdges.empty()) {
+			Pair p = tempEdges.pop();
+			Node a = nodes.get(p.first);
+			Node b = nodes.get(p.second);
+			float probability = (p instanceof WeightedPair) ? ((WeightedPair) p).weight : (float) 0.9;
+			Edge temp = new Edge(a, b, probability);
+			a.addOutgoingEdge(temp);
+			b.addIncomingEdge(temp);
+			//Log.v(TAG, "Edge: " + p.first + "->" +p.second);			
+		}
+	}
+
+	@Override
+	public void startDocument() throws SAXException {}
+
+	@Override
+	public void processingInstruction(String target, String data) throws SAXException {}
+
+	@Override
+	public void setDocumentLocator(Locator locator) {}
 	
+	@Override
+	public void startPrefixMapping(String prefix, String uri) throws SAXException {}
+
+	@Override
+	public void endPrefixMapping(String prefix) throws SAXException {}
+
+	@Override
+	public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {}
+
+	@Override
+	public void skippedEntity(String name) throws SAXException {
+		//Log.e(TAG, "Skipped: " + name);
+	}
 }
