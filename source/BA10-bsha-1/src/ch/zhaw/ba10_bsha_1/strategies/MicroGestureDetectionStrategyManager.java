@@ -23,5 +23,6 @@ public class MicroGestureDetectionStrategyManager extends StrategyManager<IMicro
 		addStrategy(new MicroGestureDetectionStrategyHalfCircle());
 		addStrategy(new MicroGestureDetectionStrategyPrediction());
 		addStrategy(new MicroGestureDetectionStrategyCurvature());
+		addStrategy(new MicroGestureDetectionStrategySmoothing());
 	}
 }
