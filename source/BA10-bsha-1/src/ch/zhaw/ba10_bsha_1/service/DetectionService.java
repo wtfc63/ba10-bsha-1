@@ -9,9 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.PointF;
 import android.os.RemoteException;
-import android.os.Handler;
 import android.os.IBinder;
-import android.os.Message;
 import android.os.RemoteCallbackList;
 import android.util.Log;
 import android.widget.Toast;
@@ -40,8 +38,8 @@ import ch.zhaw.ba10_bsha_1.strategies.StrategyManager;
 
 
 /**
- * Implementation of the remote Service used for the detection of 
- * Characters out of a list of input points.
+ * Implementation of the remote {@link Service} used for the detection of 
+ * {@link Character}s out of a list of input points.
  * 
  * Based on the RemoteService code sample from the 
  * API Demos example of the Android SDK.
@@ -121,7 +119,7 @@ public class DetectionService extends Service {
 	
     
     /**
-     * Starts the detection of Characters from the input points (the buffer is first emptied)
+     * Starts the detection of {@link Character}s from the input points (the buffer is first emptied)
      */
     private Collection<Character> startDetection() {
 		Log.i("DetectionService.startDetection()", "Started detection");
@@ -207,7 +205,7 @@ public class DetectionService extends Service {
 	
     
     /**
-     * Called when the Service is created
+     * Called when the {@link Service} is created
      */
     @Override
     public void onCreate() {
@@ -221,7 +219,7 @@ public class DetectionService extends Service {
     }
 
     /**
-     * Called when the Service is destroyed
+     * Called when the {@link Service} is destroyed
      */
     @Override
     public void onDestroy() {
@@ -250,7 +248,7 @@ public class DetectionService extends Service {
 	
     
     /**
-     * The IDetectionService Interface as defined through AIDL
+     * The {@link IDetectionService} Interface as defined through AIDL
      */
     private final IDetectionService.Stub serviceBinder = new IDetectionService.Stub() {
 
@@ -276,7 +274,7 @@ public class DetectionService extends Service {
 
 		
 	    /**
-	     * Add TouchPoints to detection queue and start detection if requested
+	     * Add {@link TouchPoint}s to detection queue and start detection if requested
 	     */
 		@Override
 		public void addTouchPoints(List<TouchPoint> points, boolean start_detection) throws RemoteException {
@@ -289,7 +287,7 @@ public class DetectionService extends Service {
 		}
 
 	    /**
-	     * Add a TouchPoint to detection queue
+	     * Add a {@link TouchPoint} to detection queue
 	     */
 		@Override
 		public void addTouchPoint(float pos_x, float pos_y, float strength, long timestamp) throws RemoteException {
@@ -409,7 +407,7 @@ public class DetectionService extends Service {
 	
     
     /**
-     * Get String-representation of the given Strategy to be send over the AIDL-interface
+     * Get String-representation of the given {@link IStrategy} to be send over the AIDL-interface
      * 
      * @param strategy
      * @param type
@@ -428,12 +426,13 @@ public class DetectionService extends Service {
     }
     
     /**
-     * Get the corresponding StrategyManager to the given Manager-Type
+     * Get the corresponding {@link StrategyManager} to the given Manager-Type
      * 
      * @param type
      * @return
      */
-    static private StrategyManager<IStrategy> getManagerByType(int type) {
+    @SuppressWarnings("unchecked")
+	static private StrategyManager<IStrategy> getManagerByType(int type) {
     	StrategyManager result = null;
     	switch (type) {
     		case STRATEGY_TYPE_PREPROCESSING :
@@ -461,7 +460,7 @@ public class DetectionService extends Service {
 	
     
     /**
-     * Get the Application's Context
+     * Get the Application's {@link Context}
      * 
      * @return
      */
@@ -470,7 +469,7 @@ public class DetectionService extends Service {
     }
 
     /**
-     * Show a notification while this service is running.
+     * Show a {@link Notification} while this {@link Service} is running.
      */
     private void showNotification() {
         // In this sample, we'll use the same text for the ticker and the expanded notification

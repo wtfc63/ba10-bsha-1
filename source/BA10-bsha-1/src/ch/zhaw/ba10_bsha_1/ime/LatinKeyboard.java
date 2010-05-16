@@ -26,8 +26,8 @@ import ch.zhaw.ba10_bsha_1.R;
 
 
 /**
- * Implementation of a Latin Keyboard for our IME. Creates its keyboard layout from an XML file but
- * is just used to plant our PadView on top of it here. Have a look at the SoftKeyboard example 
+ * Implementation of a Latin {@link Keyboard} for our IME. Creates its keyboard layout from an XML file but
+ * is just used to plant our {@link PadView} on top of it here. Have a look at the SoftKeyboard example 
  * in the SDK to see how it would be done properly.
  * 
  * Copied from the SoftKeyboard example from the Android SDK without modifications.

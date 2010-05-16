@@ -1,6 +1,7 @@
 package ch.zhaw.ba10_bsha_1;
 
 
+import android.app.Service;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -11,8 +12,8 @@ import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
 /**
- * Represents a detected Character and includes its detection-probability and MicroGestures. 
- * Implements Parcelable and can therefore be send to and from a service.
+ * Represents a detected Character and includes its detection-probability and {@link MicroGesture}s. 
+ * Implements {@link Parcelable} and can therefore be send to and from a {@link Service}.
  * 
  * @author Julian Hanhart, Dominik Giger
  */

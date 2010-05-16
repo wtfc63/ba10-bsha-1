@@ -16,7 +16,7 @@ import ch.zhaw.ba10_bsha_1.TouchPoint;
 
 /**
  * Represents a MicroGesture, a minimal gesture in which we want separate our input point. 
- * Implements Parcelable and can therefore be send to and from a service.
+ * Implements {@link Parcelable} and can therefore be send to and from a service.
  * 
  * @author Julian Hanhart, Dominik Giger
  */
@@ -190,7 +190,7 @@ public class MicroGesture implements Cloneable, Parcelable {
 	}
 	
 	/**
-	 * Create a Path out of the MicroGesture's points
+	 * Create a {@link Path} out of the MicroGesture's points
 	 * 
 	 * @return
 	 */
@@ -213,7 +213,7 @@ public class MicroGesture implements Cloneable, Parcelable {
 	}
 	
 	/**
-	 * Draw the MicroGesture's Path on the given Canvas in the given color
+	 * Draw the MicroGesture's {@link Path} on the given {@link Canvas} in the given color
 	 * 
 	 * @param canvas
 	 * @param color

@@ -9,7 +9,7 @@ package ch.zhaw.ba10_bsha_1.graph;
 public class GraphFactoryDummy implements IGraphFactory {
 
 	/**
-	 * Create our test-graph and return its root Node
+	 * Create our test-graph and return its root {@link Node}
 	 * 
 	 * @return
 	 */

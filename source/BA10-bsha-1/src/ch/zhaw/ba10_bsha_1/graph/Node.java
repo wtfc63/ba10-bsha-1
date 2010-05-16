@@ -11,8 +11,8 @@ import ch.zhaw.ba10_bsha_1.service.MicroGestureTester;
 
 
 /**
- * Represents a Node in our Graph. May carry a condition to test MicroGestures 
- * given to consume as well as a Character it can evaluate MicroGestures to.
+ * Represents a Node in our graph. May carry a condition to test {@link MicroGesture}s 
+ * given to consume as well as a {@link Character} it can evaluate {@link MicroGesture}s to.
  * 
  * @author Julian Hanhart, Dominik Giger
  */
@@ -61,7 +61,7 @@ public class Node {
 	
 	
 	/**
-	 * Feed MicroGestures to Node and return recognized Characters (recursively)
+	 * Feed {@link MicroGesture}s to Node and return recognized {@link Character}s (recursively)
 	 * 
 	 * @param micro_gestures
 	 * @param probability

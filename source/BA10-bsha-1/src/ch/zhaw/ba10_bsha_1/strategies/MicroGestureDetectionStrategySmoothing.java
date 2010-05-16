@@ -5,11 +5,12 @@ import java.util.Collection;
 
 import ch.zhaw.ba10_bsha_1.service.*;
 
-public class MicroGestureDetectionStrategySmoothing extends BaseStrategy 
-									implements IMicroGestureDetectionStrategy {
+public class MicroGestureDetectionStrategySmoothing extends BaseStrategy implements IMicroGestureDetectionStrategy {
 
+
+	@Override
+	protected void initArguments() {}
 	
-
 	@Override
 	protected String getStrategyDescription() {
 		return "Smoothing";
@@ -19,16 +20,10 @@ public class MicroGestureDetectionStrategySmoothing extends BaseStrategy
 	protected String getStrategyName() {
 		return "Smoothing";
 	}
-
-	@Override
-	protected void initArguments() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 	@Override
-	public Collection<MicroGesture> detectMicroGestures(
-			Collection<MicroGesture> microGestures) {
+	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> microGestures) {
 		
 		IPreprocessingStrategy smoother = new PathSmoothingStrategySpline();
 		ArrayList<MicroGesture> result = new ArrayList<MicroGesture>(microGestures);

@@ -4,22 +4,34 @@ package ch.zhaw.ba10_bsha_1.strategies;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import android.util.Log;
-
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
-import ch.zhaw.ba10_bsha_1.graph.GraphFactoryDummy;
 import ch.zhaw.ba10_bsha_1.graph.GraphFactoryGraphMLImport;
 import ch.zhaw.ba10_bsha_1.graph.IGraphFactory;
 import ch.zhaw.ba10_bsha_1.graph.Node;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link ICharacterDetectionStrategy} using a graph created by an {@link IGraphFactory}.
+ * 
+ * @author Julian Hanhart, Dominik Giger
+ */
 public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICharacterDetectionStrategy {
 	
 	
-	private Node root;
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
 	
+	
+	private Node root;
+
+
+	//---------------------------------------------------------------------------
+	// Constructor
+	//---------------------------------------------------------------------------
+
 	
 	public CharacterDetectionStrategyGraph() {
 		super();
@@ -27,6 +39,11 @@ public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICh
 		IGraphFactory factory = new GraphFactoryGraphMLImport(getArgument("Path").getArgumentValue());
 		root = factory.createRoot();
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
 	
 	
 	@Override
@@ -43,8 +60,19 @@ public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICh
 	protected String getStrategyDescription() {
 		return "Detect Character through a weighted graph, stored as a GraphML file";
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of ICharacterDetectionStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Detect {@link Character}s out of the given {@link MicroGesture}s
+	 * 
+	 * @param micro_gestures
+	 * @return
+	 */
 	@Override
 	public Collection<Character> detectCharacter(Collection<MicroGesture> micro_gestures) {
 		ArrayList<Character> chars = new ArrayList<Character>();

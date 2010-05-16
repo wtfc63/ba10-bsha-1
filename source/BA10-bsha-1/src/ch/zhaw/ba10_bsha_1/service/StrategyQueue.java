@@ -9,7 +9,7 @@ import ch.zhaw.ba10_bsha_1.strategies.IStrategy;
 
 
 /**
- * Implements a PriorityQueue for IStrategy elements. Also acts as an Iterator over its queue
+ * Implements an {@link IPriorityQueue} for {@link IStrategy} elements. Also acts as an {@link Iterator} over its queue
  * 
  * @author Julian Hanhart, Dominik Giger
  * @param <Strategy>
@@ -146,7 +146,7 @@ public class StrategyQueue<Strategy extends IStrategy> implements IPriorityQueue
 	
 	
 	/**
-	 * Resets the Iterator and return reference to self
+	 * Resets the {@link Iterator} and return reference to self
 	 */
 	public Iterator<Strategy> iterator() {
 		currentElement = 0;

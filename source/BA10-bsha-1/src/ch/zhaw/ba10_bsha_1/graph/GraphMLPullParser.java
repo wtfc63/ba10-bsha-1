@@ -1,7 +1,6 @@
 package ch.zhaw.ba10_bsha_1.graph;
 
 
-import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
 
@@ -34,7 +33,7 @@ public class GraphMLPullParser implements IGraphMLParser {
 	
 	
 	/**
-	 * Temporary container for Edges
+	 * Temporary container for {@link Edge}s
 	 */
 	private class GraphEdge {
 		int src;
@@ -63,12 +62,12 @@ public class GraphMLPullParser implements IGraphMLParser {
 	private String testID;
 	private String weightID;
 	
-	private float  defaultVersion;
-	private char   defaultChar;
-	private String defaultTest;
+	@SuppressWarnings("unused")	private float  defaultVersion;
+	@SuppressWarnings("unused")	private char   defaultChar;
+	@SuppressWarnings("unused")	private String defaultTest;
 	private float  defaultWeight;
 	
-	private float graphVersion;
+	@SuppressWarnings("unused")	private float graphVersion;
 	private Node rootNode;
 	private Node currentNode;
 	private GraphEdge currentEdge;
@@ -83,7 +82,7 @@ public class GraphMLPullParser implements IGraphMLParser {
 	
 
 	/**
-	 * Parse GraphML file, create graph and return its root Node
+	 * Parse GraphML file, create graph and return its root {@link Node}
 	 * 
 	 * @return
 	 */
@@ -360,7 +359,7 @@ public class GraphMLPullParser implements IGraphMLParser {
 	}
 	
 	/**
-	 * Build graph from parsed Nodes and Edges
+	 * Build graph from parsed {@link Node}s and {@link Edge}s
 	 * 
 	 * @return
 	 */

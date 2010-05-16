@@ -8,8 +8,19 @@ import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link IPreprocessingStrategy} that smoothes the path of the given {@link TouchPoint}s
+ * by calculating a spline curve over them and adjusting them accordingly.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class PathSmoothingStrategySpline extends BaseStrategy implements IPreprocessingStrategy {
 
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
+	
 	
 	protected void initArguments() {}
 
@@ -22,8 +33,20 @@ public class PathSmoothingStrategySpline extends BaseStrategy implements IPrepro
 	protected String getStrategyDescription() {
 		return "Smooth by calculating spline";
 	} 
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IPreprocessingStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Process the {@link TouchPoint}s of the given {@link MicroGesture}
+	 * 
+	 * @param micro_gesture
+	 * @return
+	 */
+	@Override
 	public MicroGesture process(MicroGesture micro_gesture) {
 		ArrayList<TouchPoint> points = micro_gesture.getPoints();
 		
@@ -68,7 +91,7 @@ public class PathSmoothingStrategySpline extends BaseStrategy implements IPrepro
 		return (new MicroGesture(result));
 	}
 	
-	public TouchPoint[] NURBS(TouchPoint[] controlPoints, int nCurvePoints, float[] knot, float[] weight, int size, int d) {
+	private TouchPoint[] NURBS(TouchPoint[] controlPoints, int nCurvePoints, float[] knot, float[] weight, int size, int d) {
 		int n = size - 1;
 	
 		//int curveBot = 1;
@@ -100,7 +123,7 @@ public class PathSmoothingStrategySpline extends BaseStrategy implements IPrepro
 		return curvePoints;
 	}
 	
-	double bSplineBlend(int k, int d, double u, float[] knot) {
+	private double bSplineBlend(int k, int d, double u, float[] knot) {
 		if(d == 1) {
 			if((knot[k] <= u && u <= knot[k+1])) {
 				return 1f;

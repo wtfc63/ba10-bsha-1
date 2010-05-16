@@ -9,7 +9,7 @@ import java.util.Date;
 
 
 /**
- * Represents one input point from a touchscreen event. Implements Parcelable and 
+ * Represents one input point from a touchscreen event. Implements {@link Parcelable} and 
  * can therefore be send to and from a service.
  * 
  * @author Julian Hanhart, Dominik Giger
@@ -142,7 +142,7 @@ public class TouchPoint extends PointF implements Cloneable, Parcelable {
 
 	
 	/**
-	 * Calculate the distance to another TouchPoint
+	 * Calculate the distance to another {@link TouchPoint}
 	 * 
 	 * @param other
 	 * @return

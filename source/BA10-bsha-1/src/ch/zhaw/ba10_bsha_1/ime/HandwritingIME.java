@@ -1,6 +1,7 @@
 package ch.zhaw.ba10_bsha_1.ime;
 
 
+import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -29,13 +30,15 @@ import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.service.DetectionService;
 import ch.zhaw.ba10_bsha_1.service.IDetectionService;
 import ch.zhaw.ba10_bsha_1.service.IReturnResults;
 
 
 /**
- * A basic implementation of the InputMethodService for our IME. Deals with the connection to the DetectionService and
- * lets a PadView handle the gathering of the input data.
+ * A basic implementation of the {@link InputMethodService} for our IME. Deals with 
+ * the connection to the {@link DetectionService} and lets a {@link PadView} handle 
+ * the gathering of the input data.
  * 
  * Based on the SoftKeyboard example from the Android SDK.
  */
@@ -154,7 +157,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
 
     
     /**
-     * Called every time when the input method is shown, therefore we use this to bind to the service.
+     * Called every time when the input method is shown, therefore we use this to bind to the {@link Service}.
      */
     @Override
     public void onStartInputView(EditorInfo attribute, boolean restarting) {
@@ -166,7 +169,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     
     /**
      * Called when the input method is destroy. Since there will be no input method around afterwards,
-     * we can use this to unbind the input method from the service.
+     * we can use this to unbind the input method from the {@link Service}.
      */
     @Override
     public void onDestroy() {
@@ -190,7 +193,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
 
     
     /**
-     * Deal with changes in the PadView, mostly relaying its input to the detection service
+     * Deal with changes in the {@link PadView}, mostly relaying its input to the {@link DetectionService}
      */
 	@Override
 	public void update(IObservable updater) {
@@ -259,7 +262,9 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     private static final int CHAR_RESULT_MSG  = 2;
     
     private Handler serviceHandler = new Handler() {
-        @Override
+    	
+        @SuppressWarnings("unchecked")
+		@Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
             	// Most used case: Retrieving one or more Characters as a List
@@ -474,7 +479,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     
     /**
      * This translates incoming hard key events in to edit operations on an
-     * InputConnection.  It is only needed when using the
+     * {@link InputConnection}.  It is only needed when using the
      * PROCESS_HARD_KEYS option.
      */
     private boolean translateKeyDown(int keyCode, KeyEvent event) {
@@ -486,10 +491,9 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
             return false;
         }
         
-        boolean dead = false;
-
+        //boolean dead = false;
         if ((c & KeyCharacterMap.COMBINING_ACCENT) != 0) {
-            dead = true;
+            //dead = true;
             c = c & KeyCharacterMap.COMBINING_ACCENT_MASK;
         }
         
@@ -700,7 +704,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
     }
     
     /**
-     * Add character to suggestion of needed or send directly through the InputConnection
+     * Add character to suggestion of needed or send directly through the {@link InputConnection}
      */
     private void handleCharacter(int primaryCode, int[] keyCodes) {
         if (isAlphabet(primaryCode) && predictionOn) {

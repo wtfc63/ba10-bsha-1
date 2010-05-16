@@ -4,22 +4,34 @@ package ch.zhaw.ba10_bsha_1.strategies;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import android.util.Log;
-
 import ch.zhaw.ba10_bsha_1.Character;
-import ch.zhaw.ba10_bsha_1.StrategyArgument;
 import ch.zhaw.ba10_bsha_1.graph.GraphFactoryDummy;
-import ch.zhaw.ba10_bsha_1.graph.GraphFactoryGraphMLImport;
 import ch.zhaw.ba10_bsha_1.graph.IGraphFactory;
 import ch.zhaw.ba10_bsha_1.graph.Node;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link ICharacterDetectionStrategy} using a 
+ * VERY basic graph created by {@link GraphFactoryDummy}.
+ * 
+ * @author Julian Hanhart, Dominik Giger
+ */
 public class CharacterDetectionStrategyDummyGraph extends BaseStrategy implements ICharacterDetectionStrategy {
+
+	
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
 	
 	
 	private Node root;
-	
+
+
+	//---------------------------------------------------------------------------
+	// Constructor
+	//---------------------------------------------------------------------------
+
 	
 	public CharacterDetectionStrategyDummyGraph() {
 		super();
@@ -27,6 +39,11 @@ public class CharacterDetectionStrategyDummyGraph extends BaseStrategy implement
 		IGraphFactory factory = new GraphFactoryDummy();
 		root = factory.createRoot();
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
 	
 	
 	@Override
@@ -41,12 +58,22 @@ public class CharacterDetectionStrategyDummyGraph extends BaseStrategy implement
 	protected String getStrategyDescription() {
 		return "Detect Character through a weighted graph, test dummy";
 	}
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of ICharacterDetectionStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Detect {@link Character}s out of the given {@link MicroGesture}s
+	 * 
+	 * @param micro_gestures
+	 * @return
+	 */
 	@Override
 	public Collection<Character> detectCharacter(Collection<MicroGesture> micro_gestures) {
 		ArrayList<Character> chars = new ArrayList<Character>();
-		//Character character = null;
 		Collection<MicroGesture> tmp = new ArrayList<MicroGesture>(micro_gestures.size());
 		try {
 			for (MicroGesture mg : micro_gestures) {
@@ -55,10 +82,6 @@ public class CharacterDetectionStrategyDummyGraph extends BaseStrategy implement
 		} catch (CloneNotSupportedException ex) {
 			tmp = micro_gestures;
 		}
-		/*while ((character = root.consume(tmp)) != null) {
-			character.setMicroGestures(micro_gestures);
-			chars.add(character);
-		}*/
 		chars.addAll(root.consume(tmp, 1));
 		for (Character c : chars) {
 			if (c.toString().equals("none")) {
