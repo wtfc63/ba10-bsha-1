@@ -9,7 +9,7 @@ import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
 public class PreprocessingStrategyNormalizePoints extends BaseStrategy implements IPreprocessingStrategy {
-
+	private float tolerance = 15;
 	
 	protected void initArguments() {}
 
@@ -37,15 +37,22 @@ public class PreprocessingStrategyNormalizePoints extends BaseStrategy implement
 			double dist = Math.sqrt(Math.pow(prev.x - temp[i].x, 2) + Math.pow(prev.y - temp[i].y, 2));	
 			
 			// Remove Points too close together
-			if(dist > 15 && dist < 50) {
+			if(dist > tolerance && dist < 2*tolerance) {
 				normalizedPoints.add(temp[i]);
 				prev = temp[i];
 			}
 			
 			// Add Points if too far from each other
-			else if(dist > 50) {
-				TouchPoint newp = new TouchPoint((temp[i].x + prev.x)/2f, (temp[i].y + prev.y)/2f);
-				normalizedPoints.add(newp);
+			else if(dist >= 2*tolerance) {
+
+				int pointNo = (int)(dist / tolerance) - 1;
+				float m = (temp[i].y - prev.y) / (temp[i].x - prev.x);
+				float dx = (temp[i].x - prev.x) / (pointNo + 1);
+				for (int j = 1; j <= pointNo; j++) {
+					float x = prev.x + j*dx;
+					float y = m * j * dx + prev.y;
+					normalizedPoints.add(new TouchPoint(x, y));
+				}
 				normalizedPoints.add(temp[i]);
 				prev = temp[i];
 			}
