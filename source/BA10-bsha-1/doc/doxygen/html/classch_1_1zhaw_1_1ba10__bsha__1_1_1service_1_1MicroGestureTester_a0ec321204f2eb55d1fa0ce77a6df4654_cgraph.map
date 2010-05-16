@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a6ac77efbcacfb83da624687c2362b2a9" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.directionHasSwitched" alt="" coords="419,5,827,35"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#af20c9c32f3b4f9924bffffc78b7697e6" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.directionIsDown" alt="" coords="436,59,809,88"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a4d4320e029aef962577b2ccc85f2ee57" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.directionIsLeft" alt="" coords="441,112,804,141"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a265dca7b768b336a90d0177b1a299949" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.directionIsRight" alt="" coords="437,165,808,195"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ac7b68d3f3a9efd30535baf0c60b9024f" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.directionIsUp" alt="" coords="444,219,801,248"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getType" alt="" coords="459,272,787,301"/>
+</map>

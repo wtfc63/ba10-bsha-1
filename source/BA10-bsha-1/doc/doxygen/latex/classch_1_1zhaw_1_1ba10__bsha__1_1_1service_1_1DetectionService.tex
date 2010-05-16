@@ -1,0 +1,395 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService}\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+}
+
+
+Inherits android::app::Service.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a78b14ab8beb6bafa58ed1eb4c601d8a6}{onCreate} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_ad432cd1189d8ccb72ad4a32b4cd7fd0a}{onDestroy} ()
+\item 
+IBinder \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a4f03a6b3f16d1dfa20dafc02952681da}{onBind} (Intent intent)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Context \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a70a305c4eec817ca91cf711732f52e2a}{getContext} ()
+\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final RemoteCallbackList$<$ IReturnResults $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_af1cfbca8177ea5c9c92d30b4f0f3052c}{callbacks} = new RemoteCallbackList$<$IReturnResults$>$()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a0b70bd7c8703ca40307ec7cfb79c4c87}{initDetection} ()
+\item 
+Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}{Character} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a46d2b046ce0e9baa02ee1a064e7bd766}{startDetection} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a916374be5bffc9ece850bb0cc92d480f}{showNotification} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a201836f7453d62a935b7eed1203b27f6}{printStrategy} (\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy}{IStrategy} strategy, int type)
+\item 
+static StrategyManager$<$ \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy}{IStrategy} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a6ad4b4b98cda7ec8ebfb0420f93e03dd}{getManagerByType} (int type)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a9702db5e460b3123f4c475b05ed6942f}{BUFFER\_\-SIZE} = 10
+\item 
+final boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a7595c17917add9e9146a3bee444187c9}{DEBUG} = true
+\item 
+ArrayList$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a6bf9d1f281b4bc5efb555b742f2ad928}{inputPoints}
+\item 
+RingBuffer$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a9188c843a530615bdd8c2e031879224b}{buffer}
+\item 
+StrategyQueue$<$ \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy}{IPreprocessingStrategy} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a1cf989116feef3dca971827a4d16e56b}{preprocessingSteps}
+\item 
+StrategyQueue$<$ \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{IMicroGestureDetectionStrategy} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_ace6fc1c597f8789a6f7f8048296799a3}{mgDetectionSteps}
+\item 
+\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1ICharacterDetectionStrategy}{ICharacterDetectionStrategy} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a27bece13d8cc4a8d488f104d078acfeb}{charDetectionStrategy}
+\item 
+\hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPostprocessingStrategy}{IPostprocessingStrategy} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_addd3104ced0625818552e1c6459269ec}{postprocessingStrategy}
+\item 
+NotificationManager \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a805b20b9685b173065d4bbceeb3a73d3}{notificationManager}
+\item 
+final IDetectionService.Stub \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a9f24365c090a9ae586420e140fc97e0e}{serviceBinder}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a618391553bffc271f3d62fc4b1705c34}{STRATEGY\_\-TYPE\_\-PREPROCESSING} = 0
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_acc8c85d6fe896611e64180360f6150b3}{STRATEGY\_\-TYPE\_\-MICROGESTURE\_\-DETECTION} = 1
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a79f9a08bcebfb07d97dad403931d011d}{STRATEGY\_\-TYPE\_\-CHARACTER\_\-DETECTION} = 2
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a0a5532caf09d48e950372c1b0de3e328}{STRATEGY\_\-TYPE\_\-POSTPROCESSING} = 3
+\item 
+static final String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a94d1866b426bddfba5d001cc6bc003fa}{TAG} = \char`\"{}DetectionService\char`\"{}
+\item 
+static Context \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a0e249aa466d4da8bcac9f75942129aa6}{CONTEXT}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the remote \hyperlink{}{Service} used for the detection of \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}{Character}s out of a list of input points.
+
+Based on the RemoteService code sample from the API Demos example of the Android SDK.
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+
+Definition at line 49 of file DetectionService.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a70a305c4eec817ca91cf711732f52e2a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!getContext@{getContext}}
+\index{getContext@{getContext}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{getContext}]{\setlength{\rightskip}{0pt plus 5cm}static Context ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.getContext ()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a70a305c4eec817ca91cf711732f52e2a}
+Get the Application's \hyperlink{}{Context}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 467 of file DetectionService.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.CONTEXT.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a6ad4b4b98cda7ec8ebfb0420f93e03dd}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!getManagerByType@{getManagerByType}}
+\index{getManagerByType@{getManagerByType}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{getManagerByType}]{\setlength{\rightskip}{0pt plus 5cm}static StrategyManager$<${\bf IStrategy}$>$ ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.getManagerByType (int {\em type})\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a6ad4b4b98cda7ec8ebfb0420f93e03dd}
+Get the corresponding \hyperlink{}{StrategyManager} to the given Manager-\/Type
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 435 of file DetectionService.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.STRATEGY\_\-TYPE\_\-CHARACTER\_\-DETECTION, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.STRATEGY\_\-TYPE\_\-MICROGESTURE\_\-DETECTION, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.STRATEGY\_\-TYPE\_\-POSTPROCESSING, and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.STRATEGY\_\-TYPE\_\-PREPROCESSING.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a0b70bd7c8703ca40307ec7cfb79c4c87}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!initDetection@{initDetection}}
+\index{initDetection@{initDetection}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{initDetection}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.initDetection ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a0b70bd7c8703ca40307ec7cfb79c4c87}
+Initialisation of the detection. This is the place where one can define, which \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies}{strategies} should be used on the input and in what order they should be applied 
+
+Definition at line 94 of file DetectionService.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.buffer, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.BUFFER\_\-SIZE, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.charDetectionStrategy, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.inputPoints, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.mgDetectionSteps, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.postprocessingStrategy, and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.preprocessingSteps.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a4f03a6b3f16d1dfa20dafc02952681da}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!onBind@{onBind}}
+\index{onBind@{onBind}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{onBind}]{\setlength{\rightskip}{0pt plus 5cm}IBinder ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onBind (Intent {\em intent})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a4f03a6b3f16d1dfa20dafc02952681da}
+Called when Service is bound to 
+
+Definition at line 240 of file DetectionService.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.serviceBinder.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a78b14ab8beb6bafa58ed1eb4c601d8a6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{onCreate}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onCreate ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a78b14ab8beb6bafa58ed1eb4c601d8a6}
+Called when the \hyperlink{}{Service} is created 
+
+Definition at line 211 of file DetectionService.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.CONTEXT, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.initDetection(), ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.notificationManager, and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.showNotification().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a78b14ab8beb6bafa58ed1eb4c601d8a6_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_ad432cd1189d8ccb72ad4a32b4cd7fd0a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!onDestroy@{onDestroy}}
+\index{onDestroy@{onDestroy}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{onDestroy}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onDestroy ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_ad432cd1189d8ccb72ad4a32b4cd7fd0a}
+Called when the \hyperlink{}{Service} is destroyed 
+
+Definition at line 225 of file DetectionService.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.callbacks, and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.notificationManager.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a201836f7453d62a935b7eed1203b27f6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!printStrategy@{printStrategy}}
+\index{printStrategy@{printStrategy}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{printStrategy}]{\setlength{\rightskip}{0pt plus 5cm}static String ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.printStrategy ({\bf IStrategy} {\em strategy}, \/  int {\em type})\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a201836f7453d62a935b7eed1203b27f6}
+Get String-\/representation of the given \hyperlink{}{IStrategy} to be send over the AIDL-\/interface
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em strategy}]\item[{\em type}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 416 of file DetectionService.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.getDescription(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.isEnabled(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.toString().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a201836f7453d62a935b7eed1203b27f6_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a916374be5bffc9ece850bb0cc92d480f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!showNotification@{showNotification}}
+\index{showNotification@{showNotification}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{showNotification}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.showNotification ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a916374be5bffc9ece850bb0cc92d480f}
+Show a \hyperlink{}{Notification} while this \hyperlink{}{Service} is running. 
+
+Definition at line 474 of file DetectionService.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.notificationManager.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a46d2b046ce0e9baa02ee1a064e7bd766}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!startDetection@{startDetection}}
+\index{startDetection@{startDetection}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{startDetection}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf Character}$>$ ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a46d2b046ce0e9baa02ee1a064e7bd766}
+Starts the detection of \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}{Character}s from the input points (the buffer is first emptied) 
+
+Definition at line 124 of file DetectionService.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.buffer, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.callbacks, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.charDetectionStrategy, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.DEBUG, ch.zhaw.ba10\_\-bsha\_\-1.strategies.ICharacterDetectionStrategy.detectCharacter(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy.detectMicroGestures(), ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.inputPoints, ch.zhaw.ba10\_\-bsha\_\-1.strategies.IStrategy.isEnabled(), ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.mgDetectionSteps, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.postprocessingStrategy, ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.preprocessingSteps, ch.zhaw.ba10\_\-bsha\_\-1.strategies.IPostprocessingStrategy.process(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.IPreprocessingStrategy.process(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.TAG.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=382pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a46d2b046ce0e9baa02ee1a064e7bd766_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a9188c843a530615bdd8c2e031879224b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!buffer@{buffer}}
+\index{buffer@{buffer}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}RingBuffer$<${\bf TouchPoint}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.buffer}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a9188c843a530615bdd8c2e031879224b}
+
+
+Definition at line 75 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.initDetection(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a9702db5e460b3123f4c475b05ed6942f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!BUFFER\_\-SIZE@{BUFFER\_\-SIZE}}
+\index{BUFFER\_\-SIZE@{BUFFER\_\-SIZE}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{BUFFER\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.BUFFER\_\-SIZE} = 10\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a9702db5e460b3123f4c475b05ed6942f}
+
+
+Definition at line 71 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.initDetection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_af1cfbca8177ea5c9c92d30b4f0f3052c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!callbacks@{callbacks}}
+\index{callbacks@{callbacks}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{callbacks}]{\setlength{\rightskip}{0pt plus 5cm}final RemoteCallbackList$<$IReturnResults$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.callbacks} = new RemoteCallbackList$<$IReturnResults$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}package\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_af1cfbca8177ea5c9c92d30b4f0f3052c}
+This is a list of callbacks that have been registered with the \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1service}{service}. Note that this is package scoped (instead of private) so that it can be accessed more efficiently from inner classes. 
+
+Definition at line 70 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onDestroy(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a27bece13d8cc4a8d488f104d078acfeb}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!charDetectionStrategy@{charDetectionStrategy}}
+\index{charDetectionStrategy@{charDetectionStrategy}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{charDetectionStrategy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ICharacterDetectionStrategy} {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.charDetectionStrategy}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a27bece13d8cc4a8d488f104d078acfeb}
+
+
+Definition at line 79 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.initDetection(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a0e249aa466d4da8bcac9f75942129aa6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!CONTEXT@{CONTEXT}}
+\index{CONTEXT@{CONTEXT}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{CONTEXT}]{\setlength{\rightskip}{0pt plus 5cm}Context {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.CONTEXT}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a0e249aa466d4da8bcac9f75942129aa6}
+
+
+Definition at line 63 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.getContext(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onCreate().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a7595c17917add9e9146a3bee444187c9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{DEBUG}]{\setlength{\rightskip}{0pt plus 5cm}final boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.DEBUG} = true\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a7595c17917add9e9146a3bee444187c9}
+
+
+Definition at line 72 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a6bf9d1f281b4bc5efb555b742f2ad928}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!inputPoints@{inputPoints}}
+\index{inputPoints@{inputPoints}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{inputPoints}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf TouchPoint}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.inputPoints}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a6bf9d1f281b4bc5efb555b742f2ad928}
+
+
+Definition at line 74 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.initDetection(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_ace6fc1c597f8789a6f7f8048296799a3}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!mgDetectionSteps@{mgDetectionSteps}}
+\index{mgDetectionSteps@{mgDetectionSteps}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{mgDetectionSteps}]{\setlength{\rightskip}{0pt plus 5cm}StrategyQueue$<${\bf IMicroGestureDetectionStrategy}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.mgDetectionSteps}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_ace6fc1c597f8789a6f7f8048296799a3}
+
+
+Definition at line 78 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.initDetection(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a805b20b9685b173065d4bbceeb3a73d3}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!notificationManager@{notificationManager}}
+\index{notificationManager@{notificationManager}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{notificationManager}]{\setlength{\rightskip}{0pt plus 5cm}NotificationManager {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.notificationManager}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a805b20b9685b173065d4bbceeb3a73d3}
+
+
+Definition at line 82 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onCreate(), ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onDestroy(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.showNotification().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_addd3104ced0625818552e1c6459269ec}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!postprocessingStrategy@{postprocessingStrategy}}
+\index{postprocessingStrategy@{postprocessingStrategy}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{postprocessingStrategy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf IPostprocessingStrategy} {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.postprocessingStrategy}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_addd3104ced0625818552e1c6459269ec}
+
+
+Definition at line 80 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.initDetection(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a1cf989116feef3dca971827a4d16e56b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!preprocessingSteps@{preprocessingSteps}}
+\index{preprocessingSteps@{preprocessingSteps}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{preprocessingSteps}]{\setlength{\rightskip}{0pt plus 5cm}StrategyQueue$<${\bf IPreprocessingStrategy}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.preprocessingSteps}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a1cf989116feef3dca971827a4d16e56b}
+
+
+Definition at line 77 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.initDetection(), and ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a9f24365c090a9ae586420e140fc97e0e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!serviceBinder@{serviceBinder}}
+\index{serviceBinder@{serviceBinder}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{serviceBinder}]{\setlength{\rightskip}{0pt plus 5cm}final IDetectionService.Stub {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.serviceBinder}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a9f24365c090a9ae586420e140fc97e0e}
+The \hyperlink{}{IDetectionService} Interface as defined through AIDL 
+
+Definition at line 253 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.onBind().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a79f9a08bcebfb07d97dad403931d011d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!STRATEGY\_\-TYPE\_\-CHARACTER\_\-DETECTION@{STRATEGY\_\-TYPE\_\-CHARACTER\_\-DETECTION}}
+\index{STRATEGY\_\-TYPE\_\-CHARACTER\_\-DETECTION@{STRATEGY\_\-TYPE\_\-CHARACTER\_\-DETECTION}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{STRATEGY\_\-TYPE\_\-CHARACTER\_\-DETECTION}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.STRATEGY\_\-TYPE\_\-CHARACTER\_\-DETECTION} = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a79f9a08bcebfb07d97dad403931d011d}
+
+
+Definition at line 59 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.getManagerByType().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_acc8c85d6fe896611e64180360f6150b3}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!STRATEGY\_\-TYPE\_\-MICROGESTURE\_\-DETECTION@{STRATEGY\_\-TYPE\_\-MICROGESTURE\_\-DETECTION}}
+\index{STRATEGY\_\-TYPE\_\-MICROGESTURE\_\-DETECTION@{STRATEGY\_\-TYPE\_\-MICROGESTURE\_\-DETECTION}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{STRATEGY\_\-TYPE\_\-MICROGESTURE\_\-DETECTION}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.STRATEGY\_\-TYPE\_\-MICROGESTURE\_\-DETECTION} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_acc8c85d6fe896611e64180360f6150b3}
+
+
+Definition at line 58 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.getManagerByType().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a0a5532caf09d48e950372c1b0de3e328}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!STRATEGY\_\-TYPE\_\-POSTPROCESSING@{STRATEGY\_\-TYPE\_\-POSTPROCESSING}}
+\index{STRATEGY\_\-TYPE\_\-POSTPROCESSING@{STRATEGY\_\-TYPE\_\-POSTPROCESSING}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{STRATEGY\_\-TYPE\_\-POSTPROCESSING}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.STRATEGY\_\-TYPE\_\-POSTPROCESSING} = 3\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a0a5532caf09d48e950372c1b0de3e328}
+
+
+Definition at line 60 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.getManagerByType().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a618391553bffc271f3d62fc4b1705c34}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!STRATEGY\_\-TYPE\_\-PREPROCESSING@{STRATEGY\_\-TYPE\_\-PREPROCESSING}}
+\index{STRATEGY\_\-TYPE\_\-PREPROCESSING@{STRATEGY\_\-TYPE\_\-PREPROCESSING}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{STRATEGY\_\-TYPE\_\-PREPROCESSING}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.STRATEGY\_\-TYPE\_\-PREPROCESSING} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a618391553bffc271f3d62fc4b1705c34}
+
+
+Definition at line 57 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.getManagerByType().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a94d1866b426bddfba5d001cc6bc003fa}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}!TAG@{TAG}}
+\index{TAG@{TAG}!ch::zhaw::ba10_bsha_1::service::DetectionService@{ch::zhaw::ba10\_\-bsha\_\-1::service::DetectionService}}
+\subsubsection[{TAG}]{\setlength{\rightskip}{0pt plus 5cm}final String {\bf ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.TAG} = \char`\"{}DetectionService\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService_a94d1866b426bddfba5d001cc6bc003fa}
+
+
+Definition at line 62 of file DetectionService.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/service/\hyperlink{DetectionService_8java}{DetectionService.java}\end{DoxyCompactItemize}

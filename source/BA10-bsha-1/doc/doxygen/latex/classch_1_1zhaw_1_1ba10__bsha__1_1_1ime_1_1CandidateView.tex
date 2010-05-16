@@ -1,0 +1,478 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView}\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+}
+
+
+Inherits android::view::View.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a75f1d36bd5cff9a3ea522c83fc9b2f8e}{CandidateView} (Context context)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ae5104c93fe283ac8ea6fa057ce007bc9}{setService} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME}{HandwritingIME} listener)
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a5e65e7d039376a5131044211f3affb37}{computeHorizontalScrollRange} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a3b2b7c5d303e3e6c25dd7458d61b2a20}{setSuggestions} (List$<$ String $>$ suggestions, boolean completions, boolean typedWordValid)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aa3d1a8c9206e423a3f532ef599b28cf4}{clear} ()
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a726242422f3279f05a81283406fa9d4a}{onTouchEvent} (MotionEvent me)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_af87d8229ab4a607f3a0e60dcfb435562}{takeSuggestionAt} (float x)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ac29e64dd3d1acc11c93208fcffe41f0a}{onMeasure} (int widthMeasureSpec, int heightMeasureSpec)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a81383d3ca29122604138b340746eabe5}{onDraw} (Canvas canvas)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a300599eba91c613b0354b24f7414c1be}{scrollToTarget} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a08f3ae896df1462fb9af1ffd5eeca266}{removeHighlight} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME}{HandwritingIME} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a0d884c9d53fd9e83c4f07227d64d0e4a}{mService}
+\item 
+List$<$ String $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a3e227667ae0295c1e7f36d55342bc8bd}{mSuggestions}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a056a5bbf219465c88152d1c77a9bfd5d}{mSelectedIndex}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_af8a46c24bf29d609f187c805b7e0975c}{mTouchX} = \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a9315efa15e2f117b2253fc55d3d1912d}{OUT\_\-OF\_\-BOUNDS}
+\item 
+Drawable \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a4242253fd23317c3e023553f91199268}{mSelectionHighlight}
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a2283ffd5b861d5fa11e315f499b247f5}{mTypedWordValid}
+\item 
+Rect \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_afb3141192119d59855386a531991a9e0}{mBgPadding}
+\item 
+int\mbox{[}$\,$\mbox{]} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a88507b3d2c0823b5b3ab79799af801a3}{mWordWidth} = new int\mbox{[}\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a1eebcf5c70a711c20ae8b828c7177fe4}{MAX\_\-SUGGESTIONS}\mbox{]}
+\item 
+int\mbox{[}$\,$\mbox{]} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ac4308faba65c9f711d459d494630f8e9}{mWordX} = new int\mbox{[}\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a1eebcf5c70a711c20ae8b828c7177fe4}{MAX\_\-SUGGESTIONS}\mbox{]}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a45fdde0e6a7cdb8fb7fbde1ef1c6d30f}{mColorNormal}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a81a1c0185059c585e32c263c6cbdd517}{mColorRecommended}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aceb46ae8e260d54fc447132586fe690d}{mColorOther}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a09be680d6c44ef69940000d2f784d6c1}{mVerticalPadding}
+\item 
+Paint \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a7dec4379f982d454cb80cf4f1e1c664e}{mPaint}
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ad2ee9a4886f59f2a631043d59aeb732e}{mScrolled}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a9ed80c188a223426cd2d8577f599ae35}{mTargetScrollX}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aba0e07a01b1f5624c5acba0b22733d39}{mTotalWidth}
+\item 
+GestureDetector \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a4baceb8886b2f5203241dcfd69663344}{mGestureDetector}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a9315efa15e2f117b2253fc55d3d1912d}{OUT\_\-OF\_\-BOUNDS} = -\/1
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a1eebcf5c70a711c20ae8b828c7177fe4}{MAX\_\-SUGGESTIONS} = 32
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ad0dedbdc2b99fa4d34b4cdd4bfe28a23}{SCROLL\_\-PIXELS} = 20
+\item 
+static final int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a52d99a2607cfa3d1a19b1be6ba8b10d5}{X\_\-GAP} = 10
+\item 
+static final List$<$ String $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aaf4f6e66871f835ad0f96ebe37a03cb3}{EMPTY\_\-LIST} = new ArrayList$<$String$>$()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of a candidate \hyperlink{}{View} for our IME. Could be used to show suggested word-\/completions for our input. Currently not used for our Input Method, have a look at the SoftKeyboard example in the SDK to see how it would be done.
+
+Copied from the SoftKeyboard example from the Android SDK without modifications. 
+
+Definition at line 44 of file CandidateView.java.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a75f1d36bd5cff9a3ea522c83fc9b2f8e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!CandidateView@{CandidateView}}
+\index{CandidateView@{CandidateView}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{CandidateView}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView (Context {\em context})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a75f1d36bd5cff9a3ea522c83fc9b2f8e}
+Construct a \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView}{CandidateView} for showing suggested words for completion. 
+\begin{DoxyParams}{Parameters}
+\item[{\em context}]\item[{\em attrs}]\end{DoxyParams}
+
+
+Definition at line 84 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mColorNormal, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mColorOther, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mColorRecommended, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mGestureDetector, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mPaint, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mScrolled, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSelectionHighlight, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTargetScrollX, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTotalWidth, and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mVerticalPadding.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aa3d1a8c9206e423a3f532ef599b28cf4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!clear@{clear}}
+\index{clear@{clear}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.clear ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aa3d1a8c9206e423a3f532ef599b28cf4}
+
+
+Definition at line 266 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.EMPTY\_\-LIST, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSelectedIndex, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSuggestions, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTouchX, and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.OUT\_\-OF\_\-BOUNDS.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setSuggestions().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a5e65e7d039376a5131044211f3affb37}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!computeHorizontalScrollRange@{computeHorizontalScrollRange}}
+\index{computeHorizontalScrollRange@{computeHorizontalScrollRange}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{computeHorizontalScrollRange}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.computeHorizontalScrollRange ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a5e65e7d039376a5131044211f3affb37}
+
+
+Definition at line 144 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTotalWidth.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a81383d3ca29122604138b340746eabe5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!onDraw@{onDraw}}
+\index{onDraw@{onDraw}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{onDraw}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw (Canvas {\em canvas})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a81383d3ca29122604138b340746eabe5}
+If the canvas is null, then only touch calculations are performed to pick the target candidate. 
+
+Definition at line 169 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mBgPadding, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mColorNormal, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mColorOther, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mColorRecommended, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mPaint, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mScrolled, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSelectedIndex, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSelectionHighlight, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSuggestions, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTargetScrollX, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTotalWidth, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTouchX, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTypedWordValid, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mWordWidth, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mWordX, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.scrollToTarget(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.X\_\-GAP.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setSuggestions(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.takeSuggestionAt().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a81383d3ca29122604138b340746eabe5_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ac29e64dd3d1acc11c93208fcffe41f0a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!onMeasure@{onMeasure}}
+\index{onMeasure@{onMeasure}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{onMeasure}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onMeasure (int {\em widthMeasureSpec}, \/  int {\em heightMeasureSpec})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ac29e64dd3d1acc11c93208fcffe41f0a}
+
+
+Definition at line 149 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mPaint, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSelectionHighlight, and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mVerticalPadding.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a726242422f3279f05a81283406fa9d4a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!onTouchEvent@{onTouchEvent}}
+\index{onTouchEvent@{onTouchEvent}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{onTouchEvent}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onTouchEvent (MotionEvent {\em me})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a726242422f3279f05a81283406fa9d4a}
+
+
+Definition at line 274 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mGestureDetector, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mScrolled, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSelectedIndex, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mService, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTouchX, ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.removeHighlight().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a726242422f3279f05a81283406fa9d4a_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a08f3ae896df1462fb9af1ffd5eeca266}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!removeHighlight@{removeHighlight}}
+\index{removeHighlight@{removeHighlight}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{removeHighlight}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.removeHighlight ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a08f3ae896df1462fb9af1ffd5eeca266}
+
+
+Definition at line 329 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTouchX, and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.OUT\_\-OF\_\-BOUNDS.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onTouchEvent().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a300599eba91c613b0354b24f7414c1be}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!scrollToTarget@{scrollToTarget}}
+\index{scrollToTarget@{scrollToTarget}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{scrollToTarget}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.scrollToTarget ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a300599eba91c613b0354b24f7414c1be}
+
+
+Definition at line 232 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTargetScrollX, and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.SCROLL\_\-PIXELS.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ae5104c93fe283ac8ea6fa057ce007bc9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!setService@{setService}}
+\index{setService@{setService}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{setService}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setService ({\bf HandwritingIME} {\em listener})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ae5104c93fe283ac8ea6fa057ce007bc9}
+A connection back to the \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1service}{service} to communicate with the text field 
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]\end{DoxyParams}
+
+
+Definition at line 139 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mService.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onCreateCandidatesView().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a3b2b7c5d303e3e6c25dd7458d61b2a20}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!setSuggestions@{setSuggestions}}
+\index{setSuggestions@{setSuggestions}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{setSuggestions}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setSuggestions (List$<$ String $>$ {\em suggestions}, \/  boolean {\em completions}, \/  boolean {\em typedWordValid})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a3b2b7c5d303e3e6c25dd7458d61b2a20}
+
+
+Definition at line 251 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.clear(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSuggestions, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTargetScrollX, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTypedWordValid, and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.setSuggestions().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a3b2b7c5d303e3e6c25dd7458d61b2a20_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_af87d8229ab4a607f3a0e60dcfb435562}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!takeSuggestionAt@{takeSuggestionAt}}
+\index{takeSuggestionAt@{takeSuggestionAt}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{takeSuggestionAt}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.takeSuggestionAt (float {\em x})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_af87d8229ab4a607f3a0e60dcfb435562}
+For flick through from keyboard, call this method with the x coordinate of the flick gesture. 
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]\end{DoxyParams}
+
+
+Definition at line 319 of file CandidateView.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSelectedIndex, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mService, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTouchX, ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.pickSuggestionManually().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_af87d8229ab4a607f3a0e60dcfb435562_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aaf4f6e66871f835ad0f96ebe37a03cb3}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!EMPTY\_\-LIST@{EMPTY\_\-LIST}}
+\index{EMPTY\_\-LIST@{EMPTY\_\-LIST}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{EMPTY\_\-LIST}]{\setlength{\rightskip}{0pt plus 5cm}final List$<$String$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.EMPTY\_\-LIST} = new ArrayList$<$String$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aaf4f6e66871f835ad0f96ebe37a03cb3}
+
+
+Definition at line 65 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.clear().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a1eebcf5c70a711c20ae8b828c7177fe4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!MAX\_\-SUGGESTIONS@{MAX\_\-SUGGESTIONS}}
+\index{MAX\_\-SUGGESTIONS@{MAX\_\-SUGGESTIONS}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{MAX\_\-SUGGESTIONS}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.MAX\_\-SUGGESTIONS} = 32\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a1eebcf5c70a711c20ae8b828c7177fe4}
+
+
+Definition at line 57 of file CandidateView.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_afb3141192119d59855386a531991a9e0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mBgPadding@{mBgPadding}}
+\index{mBgPadding@{mBgPadding}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mBgPadding}]{\setlength{\rightskip}{0pt plus 5cm}Rect {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mBgPadding}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_afb3141192119d59855386a531991a9e0}
+
+
+Definition at line 55 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a45fdde0e6a7cdb8fb7fbde1ef1c6d30f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mColorNormal@{mColorNormal}}
+\index{mColorNormal@{mColorNormal}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mColorNormal}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mColorNormal}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a45fdde0e6a7cdb8fb7fbde1ef1c6d30f}
+
+
+Definition at line 67 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aceb46ae8e260d54fc447132586fe690d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mColorOther@{mColorOther}}
+\index{mColorOther@{mColorOther}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mColorOther}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mColorOther}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aceb46ae8e260d54fc447132586fe690d}
+
+
+Definition at line 69 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a81a1c0185059c585e32c263c6cbdd517}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mColorRecommended@{mColorRecommended}}
+\index{mColorRecommended@{mColorRecommended}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mColorRecommended}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mColorRecommended}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a81a1c0185059c585e32c263c6cbdd517}
+
+
+Definition at line 68 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a4baceb8886b2f5203241dcfd69663344}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mGestureDetector@{mGestureDetector}}
+\index{mGestureDetector@{mGestureDetector}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mGestureDetector}]{\setlength{\rightskip}{0pt plus 5cm}GestureDetector {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mGestureDetector}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a4baceb8886b2f5203241dcfd69663344}
+
+
+Definition at line 77 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onTouchEvent().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a7dec4379f982d454cb80cf4f1e1c664e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mPaint@{mPaint}}
+\index{mPaint@{mPaint}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mPaint}]{\setlength{\rightskip}{0pt plus 5cm}Paint {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mPaint}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a7dec4379f982d454cb80cf4f1e1c664e}
+
+
+Definition at line 71 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onMeasure().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ad2ee9a4886f59f2a631043d59aeb732e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mScrolled@{mScrolled}}
+\index{mScrolled@{mScrolled}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mScrolled}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mScrolled}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ad2ee9a4886f59f2a631043d59aeb732e}
+
+
+Definition at line 72 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onTouchEvent().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a056a5bbf219465c88152d1c77a9bfd5d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mSelectedIndex@{mSelectedIndex}}
+\index{mSelectedIndex@{mSelectedIndex}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mSelectedIndex}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSelectedIndex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a056a5bbf219465c88152d1c77a9bfd5d}
+
+
+Definition at line 50 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.clear(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onTouchEvent(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.takeSuggestionAt().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a4242253fd23317c3e023553f91199268}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mSelectionHighlight@{mSelectionHighlight}}
+\index{mSelectionHighlight@{mSelectionHighlight}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mSelectionHighlight}]{\setlength{\rightskip}{0pt plus 5cm}Drawable {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSelectionHighlight}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a4242253fd23317c3e023553f91199268}
+
+
+Definition at line 52 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onMeasure().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a0d884c9d53fd9e83c4f07227d64d0e4a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mService@{mService}}
+\index{mService@{mService}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf HandwritingIME} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a0d884c9d53fd9e83c4f07227d64d0e4a}
+
+
+Definition at line 48 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onTouchEvent(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setService(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.takeSuggestionAt().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a3e227667ae0295c1e7f36d55342bc8bd}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mSuggestions@{mSuggestions}}
+\index{mSuggestions@{mSuggestions}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mSuggestions}]{\setlength{\rightskip}{0pt plus 5cm}List$<$String$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mSuggestions}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a3e227667ae0295c1e7f36d55342bc8bd}
+
+
+Definition at line 49 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.clear(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setSuggestions().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a9ed80c188a223426cd2d8577f599ae35}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mTargetScrollX@{mTargetScrollX}}
+\index{mTargetScrollX@{mTargetScrollX}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mTargetScrollX}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTargetScrollX}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a9ed80c188a223426cd2d8577f599ae35}
+
+
+Definition at line 73 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.scrollToTarget(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setSuggestions().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aba0e07a01b1f5624c5acba0b22733d39}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mTotalWidth@{mTotalWidth}}
+\index{mTotalWidth@{mTotalWidth}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mTotalWidth}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTotalWidth}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_aba0e07a01b1f5624c5acba0b22733d39}
+
+
+Definition at line 75 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.computeHorizontalScrollRange(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_af8a46c24bf29d609f187c805b7e0975c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mTouchX@{mTouchX}}
+\index{mTouchX@{mTouchX}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mTouchX}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTouchX} = {\bf OUT\_\-OF\_\-BOUNDS}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_af8a46c24bf29d609f187c805b7e0975c}
+
+
+Definition at line 51 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.clear(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onTouchEvent(), ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.removeHighlight(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.takeSuggestionAt().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a2283ffd5b861d5fa11e315f499b247f5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mTypedWordValid@{mTypedWordValid}}
+\index{mTypedWordValid@{mTypedWordValid}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mTypedWordValid}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mTypedWordValid}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a2283ffd5b861d5fa11e315f499b247f5}
+
+
+Definition at line 53 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.setSuggestions().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a09be680d6c44ef69940000d2f784d6c1}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mVerticalPadding@{mVerticalPadding}}
+\index{mVerticalPadding@{mVerticalPadding}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mVerticalPadding}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mVerticalPadding}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a09be680d6c44ef69940000d2f784d6c1}
+
+
+Definition at line 70 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.CandidateView(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onMeasure().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a88507b3d2c0823b5b3ab79799af801a3}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mWordWidth@{mWordWidth}}
+\index{mWordWidth@{mWordWidth}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mWordWidth}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mWordWidth} = new int\mbox{[}{\bf MAX\_\-SUGGESTIONS}\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a88507b3d2c0823b5b3ab79799af801a3}
+
+
+Definition at line 60 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ac4308faba65c9f711d459d494630f8e9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!mWordX@{mWordX}}
+\index{mWordX@{mWordX}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{mWordX}]{\setlength{\rightskip}{0pt plus 5cm}int \mbox{[}$\,$\mbox{]} {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.mWordX} = new int\mbox{[}{\bf MAX\_\-SUGGESTIONS}\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ac4308faba65c9f711d459d494630f8e9}
+
+
+Definition at line 61 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a9315efa15e2f117b2253fc55d3d1912d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!OUT\_\-OF\_\-BOUNDS@{OUT\_\-OF\_\-BOUNDS}}
+\index{OUT\_\-OF\_\-BOUNDS@{OUT\_\-OF\_\-BOUNDS}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{OUT\_\-OF\_\-BOUNDS}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.OUT\_\-OF\_\-BOUNDS} = -\/1\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a9315efa15e2f117b2253fc55d3d1912d}
+
+
+Definition at line 46 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.clear(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.removeHighlight().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ad0dedbdc2b99fa4d34b4cdd4bfe28a23}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!SCROLL\_\-PIXELS@{SCROLL\_\-PIXELS}}
+\index{SCROLL\_\-PIXELS@{SCROLL\_\-PIXELS}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{SCROLL\_\-PIXELS}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.SCROLL\_\-PIXELS} = 20\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_ad0dedbdc2b99fa4d34b4cdd4bfe28a23}
+
+
+Definition at line 58 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.scrollToTarget().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a52d99a2607cfa3d1a19b1be6ba8b10d5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}!X\_\-GAP@{X\_\-GAP}}
+\index{X\_\-GAP@{X\_\-GAP}!ch::zhaw::ba10_bsha_1::ime::CandidateView@{ch::zhaw::ba10\_\-bsha\_\-1::ime::CandidateView}}
+\subsubsection[{X\_\-GAP}]{\setlength{\rightskip}{0pt plus 5cm}final int {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.X\_\-GAP} = 10\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView_a52d99a2607cfa3d1a19b1be6ba8b10d5}
+
+
+Definition at line 63 of file CandidateView.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.CandidateView.onDraw().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/ime/\hyperlink{CandidateView_8java}{CandidateView.java}\end{DoxyCompactItemize}

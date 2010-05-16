@@ -1,0 +1,141 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$ Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4}\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_ae1dfe88c3ce02a51d0f7cd05ea7adb25}{RingBuffer} (int size)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_aecfc46c5e25cecd04fdabd85d773a5d8}{isEmpty} ()
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a15be0d2b15a323b9d3fab9bcf7ebe9a8}{isFull} ()
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a0e958d4d07b0d8d782036b0593b80cb8}{getElementCount} ()
+\item 
+Type \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a8e0a51acf2fd13ad7e935583bd7b386a}{get} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a21bbdf937d9882aa3bedaa12659f1473}{add} (Type object)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_acab4ce43532969d02efd5f3b64412ead}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Object\mbox{[}$\,$\mbox{]} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a0f05e508eb82500d1f00fb0a13fee154}{slots}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a83cb75811921f53d1ea9cd289d6132a6}{elementCount}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a92cc08d7afa1de0617a23432c047eb36}{readCursor}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_aecc4ed40393c864568b0806a6349de11}{writeCursor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of a ring buffer.
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em $<$Type$>$}]\end{DoxyParams}
+
+
+Definition at line 10 of file RingBuffer.java.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_ae1dfe88c3ce02a51d0f7cd05ea7adb25}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!RingBuffer@{RingBuffer}}
+\index{RingBuffer@{RingBuffer}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{RingBuffer}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.RingBuffer (int {\em size})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_ae1dfe88c3ce02a51d0f7cd05ea7adb25}
+
+
+Definition at line 29 of file RingBuffer.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a21bbdf937d9882aa3bedaa12659f1473}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!add@{add}}
+\index{add@{add}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.add (Type {\em object})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a21bbdf937d9882aa3bedaa12659f1473}
+Add object to the buffer (is not added if buffer is full)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\end{DoxyParams}
+
+
+Definition at line 86 of file RingBuffer.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_acab4ce43532969d02efd5f3b64412ead}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!clear@{clear}}
+\index{clear@{clear}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.clear ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_acab4ce43532969d02efd5f3b64412ead}
+Clear all elements from buffer 
+
+Definition at line 97 of file RingBuffer.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a8e0a51acf2fd13ad7e935583bd7b386a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!get@{get}}
+\index{get@{get}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}Type ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.get ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a8e0a51acf2fd13ad7e935583bd7b386a}
+Get next element in buffer 
+
+Definition at line 71 of file RingBuffer.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a0e958d4d07b0d8d782036b0593b80cb8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!getElementCount@{getElementCount}}
+\index{getElementCount@{getElementCount}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{getElementCount}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.getElementCount ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a0e958d4d07b0d8d782036b0593b80cb8}
+
+
+Definition at line 57 of file RingBuffer.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_aecfc46c5e25cecd04fdabd85d773a5d8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{isEmpty}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.isEmpty ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_aecfc46c5e25cecd04fdabd85d773a5d8}
+
+
+Definition at line 49 of file RingBuffer.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a15be0d2b15a323b9d3fab9bcf7ebe9a8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!isFull@{isFull}}
+\index{isFull@{isFull}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{isFull}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.isFull ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a15be0d2b15a323b9d3fab9bcf7ebe9a8}
+
+
+Definition at line 53 of file RingBuffer.java.
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a83cb75811921f53d1ea9cd289d6132a6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!elementCount@{elementCount}}
+\index{elementCount@{elementCount}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{elementCount}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.{\bf elementCount}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a83cb75811921f53d1ea9cd289d6132a6}
+
+
+Definition at line 19 of file RingBuffer.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a92cc08d7afa1de0617a23432c047eb36}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!readCursor@{readCursor}}
+\index{readCursor@{readCursor}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{readCursor}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.{\bf readCursor}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a92cc08d7afa1de0617a23432c047eb36}
+
+
+Definition at line 20 of file RingBuffer.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a0f05e508eb82500d1f00fb0a13fee154}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!slots@{slots}}
+\index{slots@{slots}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{slots}]{\setlength{\rightskip}{0pt plus 5cm}Object \mbox{[}$\,$\mbox{]} ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.{\bf slots}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_a0f05e508eb82500d1f00fb0a13fee154}
+
+
+Definition at line 18 of file RingBuffer.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_aecc4ed40393c864568b0806a6349de11}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}!writeCursor@{writeCursor}}
+\index{writeCursor@{writeCursor}!ch::zhaw::ba10_bsha_1::RingBuffer< Type >@{ch::zhaw::ba10\_\-bsha\_\-1::RingBuffer$<$ Type $>$}}
+\subsubsection[{writeCursor}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.RingBuffer$<$ Type $>$.{\bf writeCursor}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1RingBuffer_3_01Type_01_4_aecc4ed40393c864568b0806a6349de11}
+
+
+Definition at line 21 of file RingBuffer.java.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/\hyperlink{RingBuffer_8java}{RingBuffer.java}\end{DoxyCompactItemize}

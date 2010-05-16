@@ -1,0 +1,55 @@
+\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy Interface Reference}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IMicroGestureDetectionStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IMicroGestureDetectionStrategy}}
+}
+
+
+Inherits \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IStrategy}.
+
+Inherited by \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCircles}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCircles}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCombine}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyNone}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyNone}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyPrediction}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyPrediction}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyRemoveTiny}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyRemoveTiny}, and \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategySmoothing}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}{detectMicroGestures} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ micro\_\-gestures)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface to describe a strategy detecting \hyperlink{}{MicroGesture}s in the \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint}s of the given \hyperlink{}{MicroGesture}s and returning the detected \hyperlink{}{MicroGesture}s.
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+
+Definition at line 16 of file IMicroGestureDetectionStrategy.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IMicroGestureDetectionStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IMicroGestureDetectionStrategy}!detectMicroGestures@{detectMicroGestures}}
+\index{detectMicroGestures@{detectMicroGestures}!ch::zhaw::ba10_bsha_1::strategies::IMicroGestureDetectionStrategy@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IMicroGestureDetectionStrategy}}
+\subsubsection[{detectMicroGestures}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf MicroGesture}$>$ ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy.detectMicroGestures (Collection$<$ {\bf MicroGesture} $>$ {\em micro\_\-gestures})}}
+\label{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}
+Detect \hyperlink{}{MicroGesture}s in the \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint}s of the given \hyperlink{}{MicroGesture}s
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em micro\_\-gestures}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCircles_a1ce3987ae892eba2d0cf644a111933d3}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCircles}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a5487e41dc2d1b6dbe493b5a8420c050f}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCombine}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a939545a8c5597d693f4857a8f6195fc9}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a16cd0b9ef604ba14a7eb573a77966c4f}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a780f7ded471f8e1dbd141518c41c060e}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLines_ac4a6ad22e6ca3b595006c0b956fdd208}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLines}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyNone_affb5fbb496f04e53720496e1cc3feb88}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyNone}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyPrediction_af8639be36ae7218b7f7d2feee8edc86f}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyPrediction}, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyRemoveTiny_a3a51833545b6e87173dbacf505e44359}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyRemoveTiny}, and \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategySmoothing_acdb5b6b2bb7ad9f48c79b88770113f45}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategySmoothing}.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.service.DetectionService.startDetection().
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/strategies/\hyperlink{IMicroGestureDetectionStrategy_8java}{IMicroGestureDetectionStrategy.java}\end{DoxyCompactItemize}

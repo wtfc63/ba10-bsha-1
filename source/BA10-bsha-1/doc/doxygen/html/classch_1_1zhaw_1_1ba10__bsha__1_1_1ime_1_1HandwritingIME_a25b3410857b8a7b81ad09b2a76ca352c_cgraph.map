@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a6bf7a6751794c5bf24f686cbf94d7ebf" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.onKey" alt="" coords="433,168,743,197"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a3f0ca3d6a23ac27b9ad1b2578078512e" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.commitTyped" alt="" coords="1235,193,1587,223"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a629b38e45bc795d46cb7ce1c79bc1def" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.handleBackspace" alt="" coords="793,88,1169,117"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a5b7f7f06b8e6f5eb9797725b5d814f5c" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.handleCharacter" alt="" coords="797,35,1165,64"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a4287014b4f552f286e8b51ef841573b1" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.handleClose" alt="" coords="809,245,1153,275"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#aeef9b5d4fa9f314d5bf17331645ba93b" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.isWordSeparator" alt="" coords="797,299,1165,328"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a2711e357f6251b532e7d0bde79cadfdf" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.sendKey" alt="" coords="820,141,1143,171"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a428fc59e616bef0e75c866ddece97a70" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.updateCandidates" alt="" coords="1651,88,2029,117"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a761d3a5ee4b8830684c9fe03641b6a62" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.setSuggestions" alt="" coords="2079,88,2441,117"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#a3b2b7c5d303e3e6c25dd7458d61b2a20" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.setSuggestions" alt="" coords="2491,88,2851,117"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#aa3d1a8c9206e423a3f532ef599b28cf4" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.clear" alt="" coords="2907,61,3203,91"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#a81383d3ca29122604138b340746eabe5" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.onDraw" alt="" coords="2899,115,3211,144"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#a300599eba91c613b0354b24f7414c1be" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.scrollToTarget" alt="" coords="3260,115,3609,144"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#acaadb74527ea7fc306cdd571b9a25097" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.keyDownUp" alt="" coords="1240,140,1581,169"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a0cc6d7c254ce701f73f5852bafe294b4" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.isAlphabet" alt="" coords="1243,36,1579,65"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView.html#a4e5d62bdc50d1efae84f0cde40beeb51" title="ch.zhaw.ba10_bsha_1.ime.PadView.closing" alt="" coords="1273,247,1548,276"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView.html#a5bfac21895a5740fef99268846f223ef" title="ch.zhaw.ba10_bsha_1.ime.PadView.clear" alt="" coords="1709,247,1971,276"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#aedc68ffb6a0f14256976a0cfdb5a8a3d" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.getWordSeparators" alt="" coords="1219,300,1603,329"/>
+</map>

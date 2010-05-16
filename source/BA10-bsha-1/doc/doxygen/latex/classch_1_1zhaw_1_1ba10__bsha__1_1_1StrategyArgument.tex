@@ -1,0 +1,300 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+}
+
+
+Inherits android::os::Parcelable.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a66be298497fd2bf1afb35984d52360b8}{StrategyArgument} (String strat\_\-name, String arg\_\-name, String arg\_\-val, String descr)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a78121903280e3471780120ff923eb864}{StrategyArgument} (String strat\_\-name, String arg\_\-name, String descr)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a1fd5b2ee140e28571e04c21059377290}{StrategyArgument} (String arg\_\-name, String arg\_\-val)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a168a3cb11b9268aeeb2da1a0beca2e48}{StrategyArgument} (Parcel source)
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a9512363209aaf07138c49d9f5ad4e544}{describeContents} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a08f54b2b1d26e5ac781f2fa04d7fbb2c}{writeToParcel} (Parcel dest, int flags)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a5e5f2a91947c234f3e4eb17e34bdd9cd}{readFromParcel} (Parcel source)
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a20a6d523b6d1e1ba34f3d2de700aa6d2}{getStrategyName} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a28088da3c6d84b84795ff51eac7585f6}{setStrategyName} (String strat\_\-name)
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a21d958fbf972ae5087f67783e0e39f1c}{getArgumentName} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a465e881c78d8ed0156e340c2d0a31b70}{setArgumentName} (String arg\_\-name)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_acb69a3eb712c170e58895e7acc2ebed5}{isSet} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a76a205f94be443d1afa031656caeea23}{getArgumentValue} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_aeab013b0a473256b0c7e3a8db8f3b6c1}{setArgumentValue} (String arg\_\-val)
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a4006c3123680c0506a6988ac46037c12}{getDescription} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a7ce8d37f25b367e8c67d6579530b0d2f}{toString} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Parcelable.Creator$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a6f093e36dac1d9e9a4f9f7e238438566}{CREATOR}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a8253c7846314fd6c03d51eb7dbe12af1}{strategyName}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a23bc0d9bfc4863330365b5d5acf3bb75}{argumentName}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_aaa81438d1961c79ddfa16915aa9cf5ff}{argumentValue}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_ac73a5de1e59e47ee8dde08e59b5dfa66}{description}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Argument to a Strategy that implements \hyperlink{}{Parcelable} and can therefore be send to and from a \hyperlink{}{Service}.
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+
+Definition at line 15 of file StrategyArgument.java.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a66be298497fd2bf1afb35984d52360b8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!StrategyArgument@{StrategyArgument}}
+\index{StrategyArgument@{StrategyArgument}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{StrategyArgument}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.StrategyArgument (String {\em strat\_\-name}, \/  String {\em arg\_\-name}, \/  String {\em arg\_\-val}, \/  String {\em descr})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a66be298497fd2bf1afb35984d52360b8}
+
+
+Definition at line 34 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentName, ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentValue, ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.description, and ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.strategyName.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a78121903280e3471780120ff923eb864}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!StrategyArgument@{StrategyArgument}}
+\index{StrategyArgument@{StrategyArgument}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{StrategyArgument}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.StrategyArgument (String {\em strat\_\-name}, \/  String {\em arg\_\-name}, \/  String {\em descr})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a78121903280e3471780120ff923eb864}
+
+
+Definition at line 41 of file StrategyArgument.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a1fd5b2ee140e28571e04c21059377290}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!StrategyArgument@{StrategyArgument}}
+\index{StrategyArgument@{StrategyArgument}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{StrategyArgument}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.StrategyArgument (String {\em arg\_\-name}, \/  String {\em arg\_\-val})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a1fd5b2ee140e28571e04c21059377290}
+
+
+Definition at line 45 of file StrategyArgument.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a168a3cb11b9268aeeb2da1a0beca2e48}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!StrategyArgument@{StrategyArgument}}
+\index{StrategyArgument@{StrategyArgument}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{StrategyArgument}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.StrategyArgument (Parcel {\em source})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a168a3cb11b9268aeeb2da1a0beca2e48}
+
+
+Definition at line 49 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.readFromParcel().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a168a3cb11b9268aeeb2da1a0beca2e48_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a9512363209aaf07138c49d9f5ad4e544}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!describeContents@{describeContents}}
+\index{describeContents@{describeContents}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{describeContents}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.describeContents ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a9512363209aaf07138c49d9f5ad4e544}
+
+
+Definition at line 70 of file StrategyArgument.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a21d958fbf972ae5087f67783e0e39f1c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!getArgumentName@{getArgumentName}}
+\index{getArgumentName@{getArgumentName}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{getArgumentName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.getArgumentName ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a21d958fbf972ae5087f67783e0e39f1c}
+
+
+Definition at line 104 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentName.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.addArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.StrategyManager$<$ Strategy extends IStrategy $>$.broadcastArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.StrategyManager$<$ Strategy extends IStrategy $>$.getArgument(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.setArgument().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a76a205f94be443d1afa031656caeea23}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!getArgumentValue@{getArgumentValue}}
+\index{getArgumentValue@{getArgumentValue}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{getArgumentValue}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.getArgumentValue ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a76a205f94be443d1afa031656caeea23}
+
+
+Definition at line 117 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentValue.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.setArgument().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a4006c3123680c0506a6988ac46037c12}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{getDescription}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.getDescription ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a4006c3123680c0506a6988ac46037c12}
+
+
+Definition at line 126 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.description.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a20a6d523b6d1e1ba34f3d2de700aa6d2}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!getStrategyName@{getStrategyName}}
+\index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.getStrategyName ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a20a6d523b6d1e1ba34f3d2de700aa6d2}
+
+
+Definition at line 95 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.strategyName.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.StrategyManager$<$ Strategy extends IStrategy $>$.getArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.StrategyManager$<$ Strategy extends IStrategy $>$.setArgument(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.setArgument().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_acb69a3eb712c170e58895e7acc2ebed5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!isSet@{isSet}}
+\index{isSet@{isSet}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{isSet}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.isSet ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_acb69a3eb712c170e58895e7acc2ebed5}
+
+
+Definition at line 113 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentValue.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a5e5f2a91947c234f3e4eb17e34bdd9cd}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!readFromParcel@{readFromParcel}}
+\index{readFromParcel@{readFromParcel}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{readFromParcel}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.readFromParcel (Parcel {\em source})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a5e5f2a91947c234f3e4eb17e34bdd9cd}
+
+
+Definition at line 82 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentName, ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentValue, ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.description, and ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.strategyName.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.StrategyArgument().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a465e881c78d8ed0156e340c2d0a31b70}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!setArgumentName@{setArgumentName}}
+\index{setArgumentName@{setArgumentName}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{setArgumentName}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.setArgumentName (String {\em arg\_\-name})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a465e881c78d8ed0156e340c2d0a31b70}
+
+
+Definition at line 108 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentName.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_aeab013b0a473256b0c7e3a8db8f3b6c1}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!setArgumentValue@{setArgumentValue}}
+\index{setArgumentValue@{setArgumentValue}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{setArgumentValue}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.setArgumentValue (String {\em arg\_\-val})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_aeab013b0a473256b0c7e3a8db8f3b6c1}
+
+
+Definition at line 121 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentValue.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a28088da3c6d84b84795ff51eac7585f6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!setStrategyName@{setStrategyName}}
+\index{setStrategyName@{setStrategyName}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{setStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.setStrategyName (String {\em strat\_\-name})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a28088da3c6d84b84795ff51eac7585f6}
+
+
+Definition at line 99 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.strategyName.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.StrategyManager$<$ Strategy extends IStrategy $>$.broadcastArgument().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a7ce8d37f25b367e8c67d6579530b0d2f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!toString@{toString}}
+\index{toString@{toString}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.toString ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a7ce8d37f25b367e8c67d6579530b0d2f}
+
+
+Definition at line 130 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentName, ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentValue, and ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.strategyName.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a08f54b2b1d26e5ac781f2fa04d7fbb2c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!writeToParcel@{writeToParcel}}
+\index{writeToParcel@{writeToParcel}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{writeToParcel}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.writeToParcel (Parcel {\em dest}, \/  int {\em flags})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a08f54b2b1d26e5ac781f2fa04d7fbb2c}
+
+
+Definition at line 75 of file StrategyArgument.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentName, ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentValue, ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.description, and ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.strategyName.
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a23bc0d9bfc4863330365b5d5acf3bb75}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!argumentName@{argumentName}}
+\index{argumentName@{argumentName}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{argumentName}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentName}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a23bc0d9bfc4863330365b5d5acf3bb75}
+
+
+Definition at line 24 of file StrategyArgument.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.getArgumentName(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.readFromParcel(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.setArgumentName(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.StrategyArgument(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.toString(), and ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.writeToParcel().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_aaa81438d1961c79ddfa16915aa9cf5ff}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!argumentValue@{argumentValue}}
+\index{argumentValue@{argumentValue}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{argumentValue}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.argumentValue}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_aaa81438d1961c79ddfa16915aa9cf5ff}
+
+
+Definition at line 25 of file StrategyArgument.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.getArgumentValue(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.isSet(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.readFromParcel(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.setArgumentValue(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.StrategyArgument(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.toString(), and ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.writeToParcel().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a6f093e36dac1d9e9a4f9f7e238438566}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!CREATOR@{CREATOR}}
+\index{CREATOR@{CREATOR}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{CREATOR}]{\setlength{\rightskip}{0pt plus 5cm}final Parcelable.Creator$<${\bf StrategyArgument}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.CREATOR}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a6f093e36dac1d9e9a4f9f7e238438566}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new Parcelable.Creator<StrategyArgument>() {
+                public StrategyArgument createFromParcel(Parcel in) {
+                        return new StrategyArgument(in);
+                }
+
+                public StrategyArgument[] newArray(int size) {
+                        return new StrategyArgument[size];
+                }
+        }
+\end{DoxyCode}
+
+
+Definition at line 53 of file StrategyArgument.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_ac73a5de1e59e47ee8dde08e59b5dfa66}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!description@{description}}
+\index{description@{description}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.description}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_ac73a5de1e59e47ee8dde08e59b5dfa66}
+
+
+Definition at line 26 of file StrategyArgument.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.getDescription(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.readFromParcel(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.StrategyArgument(), and ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.writeToParcel().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a8253c7846314fd6c03d51eb7dbe12af1}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}!strategyName@{strategyName}}
+\index{strategyName@{strategyName}!ch::zhaw::ba10_bsha_1::StrategyArgument@{ch::zhaw::ba10\_\-bsha\_\-1::StrategyArgument}}
+\subsubsection[{strategyName}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.strategyName}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument_a8253c7846314fd6c03d51eb7dbe12af1}
+
+
+Definition at line 23 of file StrategyArgument.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.getStrategyName(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.readFromParcel(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.setStrategyName(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.StrategyArgument(), ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.toString(), and ch.zhaw.ba10\_\-bsha\_\-1.StrategyArgument.writeToParcel().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/\hyperlink{StrategyArgument_8java}{StrategyArgument.java}\end{DoxyCompactItemize}

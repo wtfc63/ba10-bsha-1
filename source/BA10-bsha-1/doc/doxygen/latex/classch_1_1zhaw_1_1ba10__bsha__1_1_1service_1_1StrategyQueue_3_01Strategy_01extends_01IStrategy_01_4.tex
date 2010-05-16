@@ -1,0 +1,215 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends IStrategy $>$ Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4}\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+}
+
+
+Inherits java::util::Iterator$<$ Strategy $>$.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends IStrategy $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=394pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a93e359e9f2f3e6599556932ebdc2afd9}{StrategyQueue} ()
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a4c8a5b4f7ced4d925516119b8c74cb31}{StrategyQueue} (Collection$<$ Strategy $>$ strategies)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_acf78600218c28b5e92fcfd2ebb18316f}{StrategyQueue} (Collection$<$ Strategy $>$ strategies, int initial\_\-priority)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_ae22c1c70cd9cfa4d5d5d7c62398b76a7}{StrategyQueue} (Collection$<$ Strategy $>$ strategies, int\mbox{[}$\,$\mbox{]} priorities)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a599a285ab1a1c49c6a664987897301ec}{enqueue} (Strategy element, int priority)
+\item 
+Strategy \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a7babaf26a238bf7906fef212a5ea2ae0}{dequeue} ()
+\item 
+Strategy \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a52f7573f550132117fdb03083b27e9f4}{getFront} ()
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a369b0d778468632c08f996c48c55bdb7}{isFull} ()
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a13f95814e9acdad7a68586e778d65670}{isEmpty} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a727c27ccaed1755ff77994dc4b4d50a2}{makeEmpty} ()
+\item 
+Iterator$<$ Strategy $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_af8e5c776860033a81d2a3f3b35ecf28d}{iterator} ()
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_ad17a1d8ee0daf7fa8bf03ebcdf086e98}{hasNext} ()
+\item 
+Strategy \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_accac6ec5804bd23cc0f7d8839ef613ad}{next} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a74b39a093152962d2449bbd2951f5f56}{remove} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ArrayList$<$ Prioritized$<$ Strategy $>$ $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a2a1363a6e0f87ad69ee2734381cfa657}{queue}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_ad91c57b63849448bf5f255fc077eaca1}{currentElement}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements an \hyperlink{}{IPriorityQueue} for \hyperlink{}{IStrategy} elements. Also acts as an \hyperlink{}{Iterator} over its queue
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em $<$Strategy$>$}]\end{DoxyParams}
+
+
+Definition at line 17 of file StrategyQueue.java.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a93e359e9f2f3e6599556932ebdc2afd9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!StrategyQueue@{StrategyQueue}}
+\index{StrategyQueue@{StrategyQueue}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{StrategyQueue}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.StrategyQueue ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a93e359e9f2f3e6599556932ebdc2afd9}
+
+
+Definition at line 34 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a4c8a5b4f7ced4d925516119b8c74cb31}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!StrategyQueue@{StrategyQueue}}
+\index{StrategyQueue@{StrategyQueue}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{StrategyQueue}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.StrategyQueue (Collection$<$ Strategy $>$ {\em strategies})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a4c8a5b4f7ced4d925516119b8c74cb31}
+
+
+Definition at line 39 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_acf78600218c28b5e92fcfd2ebb18316f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!StrategyQueue@{StrategyQueue}}
+\index{StrategyQueue@{StrategyQueue}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{StrategyQueue}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.StrategyQueue (Collection$<$ Strategy $>$ {\em strategies}, \/  int {\em initial\_\-priority})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_acf78600218c28b5e92fcfd2ebb18316f}
+
+
+Definition at line 47 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_ae22c1c70cd9cfa4d5d5d7c62398b76a7}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!StrategyQueue@{StrategyQueue}}
+\index{StrategyQueue@{StrategyQueue}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{StrategyQueue}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.StrategyQueue (Collection$<$ Strategy $>$ {\em strategies}, \/  int\mbox{[}$\,$\mbox{]} {\em priorities})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_ae22c1c70cd9cfa4d5d5d7c62398b76a7}
+
+
+Definition at line 55 of file StrategyQueue.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a7babaf26a238bf7906fef212a5ea2ae0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{dequeue}]{\setlength{\rightskip}{0pt plus 5cm}Strategy ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.dequeue ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a7babaf26a238bf7906fef212a5ea2ae0}
+Removes and returns the first Strategy from the queue
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 99 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a599a285ab1a1c49c6a664987897301ec}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{enqueue}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.enqueue (Strategy {\em element}, \/  int {\em priority})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a599a285ab1a1c49c6a664987897301ec}
+Adds a Strategy to the prioritized queue
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]\item[{\em priority}]\end{DoxyParams}
+
+
+Definition at line 79 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a52f7573f550132117fdb03083b27e9f4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!getFront@{getFront}}
+\index{getFront@{getFront}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{getFront}]{\setlength{\rightskip}{0pt plus 5cm}Strategy ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.getFront ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a52f7573f550132117fdb03083b27e9f4}
+Get the first Strategy of the queue
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 109 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_ad17a1d8ee0daf7fa8bf03ebcdf086e98}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{hasNext}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.hasNext ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_ad17a1d8ee0daf7fa8bf03ebcdf086e98}
+Returns whether there are more Strategies in the queue to iterate over 
+
+Definition at line 167 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a13f95814e9acdad7a68586e778d65670}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{isEmpty}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.isEmpty ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a13f95814e9acdad7a68586e778d65670}
+Returns whether there are Strategies in the queue or not
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 129 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a369b0d778468632c08f996c48c55bdb7}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!isFull@{isFull}}
+\index{isFull@{isFull}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{isFull}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.isFull ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a369b0d778468632c08f996c48c55bdb7}
+Returns whether queue can take more Strategies or not
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 119 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_af8e5c776860033a81d2a3f3b35ecf28d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}Iterator$<$Strategy$>$ ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.iterator ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_af8e5c776860033a81d2a3f3b35ecf28d}
+Resets the \hyperlink{}{Iterator} and return reference to self 
+
+Definition at line 151 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a727c27ccaed1755ff77994dc4b4d50a2}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!makeEmpty@{makeEmpty}}
+\index{makeEmpty@{makeEmpty}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{makeEmpty}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.makeEmpty ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a727c27ccaed1755ff77994dc4b4d50a2}
+Removes all Strategies from the queue 
+
+Definition at line 137 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_accac6ec5804bd23cc0f7d8839ef613ad}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!next@{next}}
+\index{next@{next}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}Strategy ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.next ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_accac6ec5804bd23cc0f7d8839ef613ad}
+Get next Strategy in queue 
+
+Definition at line 175 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a74b39a093152962d2449bbd2951f5f56}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!remove@{remove}}
+\index{remove@{remove}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.remove ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a74b39a093152962d2449bbd2951f5f56}
+Removes the Strategy return last from the queue 
+
+Definition at line 185 of file StrategyQueue.java.
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_ad91c57b63849448bf5f255fc077eaca1}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!currentElement@{currentElement}}
+\index{currentElement@{currentElement}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{currentElement}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.{\bf currentElement}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_ad91c57b63849448bf5f255fc077eaca1}
+
+
+Definition at line 26 of file StrategyQueue.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a2a1363a6e0f87ad69ee2734381cfa657}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}!queue@{queue}}
+\index{queue@{queue}!ch::zhaw::ba10_bsha_1::service::StrategyQueue< Strategy extends IStrategy >@{ch::zhaw::ba10\_\-bsha\_\-1::service::StrategyQueue$<$ Strategy extends IStrategy $>$}}
+\subsubsection[{queue}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<$Prioritized$<$Strategy$>$ $>$ ch.zhaw.ba10\_\-bsha\_\-1.service.StrategyQueue$<$ Strategy extends {\bf IStrategy} $>$.{\bf queue}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1StrategyQueue_3_01Strategy_01extends_01IStrategy_01_4_a2a1363a6e0f87ad69ee2734381cfa657}
+
+
+Definition at line 25 of file StrategyQueue.java.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/service/\hyperlink{StrategyQueue_8java}{StrategyQueue.java}\end{DoxyCompactItemize}

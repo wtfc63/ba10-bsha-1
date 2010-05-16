@@ -1,0 +1,104 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard}\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}}
+}
+
+
+Inherits android::inputmethodservice::Keyboard.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries LatinKey}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_acc26ef16ae49f4b555f375e831b322c0}{LatinKeyboard} (Context context, int xmlLayoutResId)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_a2614bb0eacfd8a278475184346b05820}{LatinKeyboard} (Context context, int layoutTemplateResId, CharSequence characters, int columns, int horizontalPadding)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Key \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_a1aaff47f24e478664fe1c8b376849f2e}{createKeyFromXml} (Resources res, Row parent, int x, int y, XmlResourceParser parser)
+\end{DoxyCompactItemize}
+\subsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_adf5bb7364614b740d3360ed911912f31}{setImeOptions} (Resources res, int options)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Key \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_ad656281b2f3876c565a1b8d5ec514fe4}{mEnterKey}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of a Latin \hyperlink{}{Keyboard} for our IME. Creates its keyboard layout from an XML file but is just used to plant our \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView}{PadView} on top of it here. Have a look at the SoftKeyboard example in the SDK to see how it would be done properly.
+
+Copied from the SoftKeyboard example from the Android SDK without modifications. 
+
+Definition at line 35 of file LatinKeyboard.java.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_acc26ef16ae49f4b555f375e831b322c0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}!LatinKeyboard@{LatinKeyboard}}
+\index{LatinKeyboard@{LatinKeyboard}!ch::zhaw::ba10_bsha_1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}}
+\subsubsection[{LatinKeyboard}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.LatinKeyboard (Context {\em context}, \/  int {\em xmlLayoutResId})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_acc26ef16ae49f4b555f375e831b322c0}
+
+
+Definition at line 39 of file LatinKeyboard.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_a2614bb0eacfd8a278475184346b05820}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}!LatinKeyboard@{LatinKeyboard}}
+\index{LatinKeyboard@{LatinKeyboard}!ch::zhaw::ba10_bsha_1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}}
+\subsubsection[{LatinKeyboard}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.LatinKeyboard (Context {\em context}, \/  int {\em layoutTemplateResId}, \/  CharSequence {\em characters}, \/  int {\em columns}, \/  int {\em horizontalPadding})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_a2614bb0eacfd8a278475184346b05820}
+
+
+Definition at line 43 of file LatinKeyboard.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_a1aaff47f24e478664fe1c8b376849f2e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}!createKeyFromXml@{createKeyFromXml}}
+\index{createKeyFromXml@{createKeyFromXml}!ch::zhaw::ba10_bsha_1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}}
+\subsubsection[{createKeyFromXml}]{\setlength{\rightskip}{0pt plus 5cm}Key ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.createKeyFromXml (Resources {\em res}, \/  Row {\em parent}, \/  int {\em x}, \/  int {\em y}, \/  XmlResourceParser {\em parser})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_a1aaff47f24e478664fe1c8b376849f2e}
+
+
+Definition at line 49 of file LatinKeyboard.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.mEnterKey.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_adf5bb7364614b740d3360ed911912f31}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}!setImeOptions@{setImeOptions}}
+\index{setImeOptions@{setImeOptions}!ch::zhaw::ba10_bsha_1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}}
+\subsubsection[{setImeOptions}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.setImeOptions (Resources {\em res}, \/  int {\em options})\hspace{0.3cm}{\ttfamily  \mbox{[}package\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_adf5bb7364614b740d3360ed911912f31}
+This looks at the \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1ime}{ime} options given by the current editor, to set the appropriate label on the keyboard's enter key (if it has one). 
+
+Definition at line 62 of file LatinKeyboard.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.mEnterKey.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.HandwritingIME.onStartInput().
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_ad656281b2f3876c565a1b8d5ec514fe4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}!mEnterKey@{mEnterKey}}
+\index{mEnterKey@{mEnterKey}!ch::zhaw::ba10_bsha_1::ime::LatinKeyboard@{ch::zhaw::ba10\_\-bsha\_\-1::ime::LatinKeyboard}}
+\subsubsection[{mEnterKey}]{\setlength{\rightskip}{0pt plus 5cm}Key {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.mEnterKey}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1LatinKeyboard_ad656281b2f3876c565a1b8d5ec514fe4}
+
+
+Definition at line 37 of file LatinKeyboard.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.createKeyFromXml(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.LatinKeyboard.setImeOptions().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/ime/\hyperlink{LatinKeyboard_8java}{LatinKeyboard.java}\end{DoxyCompactItemize}

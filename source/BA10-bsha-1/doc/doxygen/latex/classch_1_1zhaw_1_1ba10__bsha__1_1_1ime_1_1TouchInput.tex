@@ -1,0 +1,206 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+}
+Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a35e5a2dafdadf1379ce628ff01dec0f6}{TouchInput} ()
+\item 
+Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a12f25294b93d8e24ab3186f2c3e8e1b9}{getPoints} ()
+\item 
+Path \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a109b88f906f350c5d4c25abc5fd6f95e}{getPath} ()
+\item 
+RectF \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_ac68086768e724f1c1847b31dca3cc851}{getDimensions} ()
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_adb0a9fe73a2091ae7c3bdebe40be8a25}{crosses} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput}{TouchInput} other)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a658d320b9d5c19adcbcd583476ef59e1}{add} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} point)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_ae2b9a9c1de66611330905b922310cc7c}{stretchToField} (float field\_\-height)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ArrayList$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a03a322fbe00768dea16f01801bdcc3b8}{points}
+\item 
+Path \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_ae40ac5199f39cda2322b9b74b4f388aa}{path}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a30f650d3ad8ed1df80b13bf4b6a90ccd}{upperMax}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_aaab22f154cdbb07626714d84b808a68a}{lowerMax}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_aaaec1a7c1eb29dde413a37e18fe9eaac}{leftBoundary}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a2006af7bf2e20ee8082b41b0ff80810a}{rightBoundary}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A collection of \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint}s and the \hyperlink{}{Path} connecting them 
+
+Definition at line 17 of file TouchInput.java.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a35e5a2dafdadf1379ce628ff01dec0f6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!TouchInput@{TouchInput}}
+\index{TouchInput@{TouchInput}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{TouchInput}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.TouchInput ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a35e5a2dafdadf1379ce628ff01dec0f6}
+
+
+Definition at line 38 of file TouchInput.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.leftBoundary, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.lowerMax, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.path, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.points, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.rightBoundary, and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.upperMax.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a658d320b9d5c19adcbcd583476ef59e1}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!add@{add}}
+\index{add@{add}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.add ({\bf TouchPoint} {\em point})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a658d320b9d5c19adcbcd583476ef59e1}
+Adds a \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} to the input, updating its \hyperlink{}{Path} and boundaries while doing so 
+
+Definition at line 84 of file TouchInput.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.leftBoundary, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.lowerMax, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.path, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.points, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.rightBoundary, and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.upperMax.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchMove(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchStart().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_adb0a9fe73a2091ae7c3bdebe40be8a25}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!crosses@{crosses}}
+\index{crosses@{crosses}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{crosses}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.crosses ({\bf TouchInput} {\em other})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_adb0a9fe73a2091ae7c3bdebe40be8a25}
+
+
+Definition at line 66 of file TouchInput.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getDimensions().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.touchUp().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_adb0a9fe73a2091ae7c3bdebe40be8a25_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_ac68086768e724f1c1847b31dca3cc851}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!getDimensions@{getDimensions}}
+\index{getDimensions@{getDimensions}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{getDimensions}]{\setlength{\rightskip}{0pt plus 5cm}RectF ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getDimensions ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_ac68086768e724f1c1847b31dca3cc851}
+
+
+Definition at line 61 of file TouchInput.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.leftBoundary, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.lowerMax, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.rightBoundary, and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.upperMax.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.crosses().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a109b88f906f350c5d4c25abc5fd6f95e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!getPath@{getPath}}
+\index{getPath@{getPath}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{getPath}]{\setlength{\rightskip}{0pt plus 5cm}Path ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getPath ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a109b88f906f350c5d4c25abc5fd6f95e}
+
+
+Definition at line 57 of file TouchInput.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.path.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.onDraw().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a12f25294b93d8e24ab3186f2c3e8e1b9}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!getPoints@{getPoints}}
+\index{getPoints@{getPoints}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{getPoints}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf TouchPoint}$>$ ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getPoints ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a12f25294b93d8e24ab3186f2c3e8e1b9}
+
+
+Definition at line 53 of file TouchInput.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.points.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.PadView.getLastPoints().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_ae2b9a9c1de66611330905b922310cc7c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!stretchToField@{stretchToField}}
+\index{stretchToField@{stretchToField}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{stretchToField}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.stretchToField (float {\em field\_\-height})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_ae2b9a9c1de66611330905b922310cc7c}
+Stretch the input's points to a given field height (Deprecated because an \hyperlink{}{IPreprocessingStrategy} would probably be better suited for that task)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em field\_\-height}]\end{DoxyParams}
+
+
+Definition at line 125 of file TouchInput.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.lowerMax, ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.points, and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.upperMax.
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_aaaec1a7c1eb29dde413a37e18fe9eaac}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!leftBoundary@{leftBoundary}}
+\index{leftBoundary@{leftBoundary}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{leftBoundary}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.leftBoundary}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_aaaec1a7c1eb29dde413a37e18fe9eaac}
+
+
+Definition at line 29 of file TouchInput.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.add(), ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getDimensions(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.TouchInput().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_aaab22f154cdbb07626714d84b808a68a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!lowerMax@{lowerMax}}
+\index{lowerMax@{lowerMax}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{lowerMax}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.lowerMax}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_aaab22f154cdbb07626714d84b808a68a}
+
+
+Definition at line 28 of file TouchInput.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.add(), ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getDimensions(), ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.stretchToField(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.TouchInput().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_ae40ac5199f39cda2322b9b74b4f388aa}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!path@{path}}
+\index{path@{path}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}Path {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.path}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_ae40ac5199f39cda2322b9b74b4f388aa}
+
+
+Definition at line 26 of file TouchInput.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.add(), ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getPath(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.TouchInput().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a03a322fbe00768dea16f01801bdcc3b8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!points@{points}}
+\index{points@{points}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{points}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf TouchPoint}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.points}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a03a322fbe00768dea16f01801bdcc3b8}
+
+
+Definition at line 25 of file TouchInput.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.add(), ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getPoints(), ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.stretchToField(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.TouchInput().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a2006af7bf2e20ee8082b41b0ff80810a}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!rightBoundary@{rightBoundary}}
+\index{rightBoundary@{rightBoundary}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{rightBoundary}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.rightBoundary}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a2006af7bf2e20ee8082b41b0ff80810a}
+
+
+Definition at line 30 of file TouchInput.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.add(), ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getDimensions(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.TouchInput().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a30f650d3ad8ed1df80b13bf4b6a90ccd}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}!upperMax@{upperMax}}
+\index{upperMax@{upperMax}!ch::zhaw::ba10_bsha_1::ime::TouchInput@{ch::zhaw::ba10\_\-bsha\_\-1::ime::TouchInput}}
+\subsubsection[{upperMax}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.upperMax}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput_a30f650d3ad8ed1df80b13bf4b6a90ccd}
+
+
+Definition at line 27 of file TouchInput.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.add(), ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.getDimensions(), ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.stretchToField(), and ch.zhaw.ba10\_\-bsha\_\-1.ime.TouchInput.TouchInput().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/ime/\hyperlink{TouchInput_8java}{TouchInput.java}\end{DoxyCompactItemize}

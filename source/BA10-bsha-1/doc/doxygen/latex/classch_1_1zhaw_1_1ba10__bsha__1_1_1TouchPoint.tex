@@ -1,0 +1,261 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+}
+
+
+Inherits android::graphics::PointF, and android::os::Parcelable.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a78cfb1506a0081d1e3175fde400290de}{TouchPoint} (PointF position, float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad245f48693fecee2b25f3c5e7e1976a8}{strength}, long time\_\-stamp)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a56ef62d0be5dbcd46be0d65ea13e48b3}{TouchPoint} (float pos\_\-x, float pos\_\-y, float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad245f48693fecee2b25f3c5e7e1976a8}{strength})
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad3f4dd64b5c48581bd65cd2d777a1b96}{TouchPoint} (float pos\_\-x, float pos\_\-y, long time\_\-stamp)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a17cb410a388f8ca317ac65f981eac6ec}{TouchPoint} (float pos\_\-x, float pos\_\-y)
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad882a2ee5e211bfefaa73c1322cf1823}{TouchPoint} (Parcel source)
+\item 
+Object \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ac71c9f7fa232435af2314d0d707e7559}{clone} ()  throws CloneNotSupportedException 
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad5596f285f8ff8daf89cf36f4074df0f}{describeContents} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a8cfc22332015bceee96d2fdafc321290}{writeToParcel} (Parcel dest, int flags)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a23cc1e796d80c3fb6b7ca66fcecdd01e}{readFromParcel} (Parcel source)
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a2297107f0bc05baf381fc9b8653a6df2}{getStrength} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_acccafc087a2fd76987d8f829390626d7}{setStrength} (float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad245f48693fecee2b25f3c5e7e1976a8}{strength})
+\item 
+long \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aa25d5cf22375b6c5f8e59bccc2ec69d0}{getTimeStamp} ()
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aae69659dd478457f14287116e34f868e}{setTimeStamp} (long \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aa0b6bef79c301e7ef664dd21045b517d}{timeStamp})
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a4e930068dfcb62f5ff8a7dd60ae2a04c}{toString} ()
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_afb4bcfacdc81a0922e69fcef9f07dbf8}{distanceTo} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} other)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Parcelable.Creator$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a0f386eacc8abbc547cd2a5b23630d211}{CREATOR}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad245f48693fecee2b25f3c5e7e1976a8}{strength}
+\item 
+long \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aa0b6bef79c301e7ef664dd21045b517d}{timeStamp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents one input point from a touchscreen event. Implements \hyperlink{}{Parcelable} and can therefore be send to and from a \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1service}{service}.
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+
+Definition at line 17 of file TouchPoint.java.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a78cfb1506a0081d1e3175fde400290de}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!TouchPoint@{TouchPoint}}
+\index{TouchPoint@{TouchPoint}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{TouchPoint}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.TouchPoint (PointF {\em position}, \/  float {\em strength}, \/  long {\em time\_\-stamp})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a78cfb1506a0081d1e3175fde400290de}
+
+
+Definition at line 34 of file TouchPoint.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.timeStamp.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a56ef62d0be5dbcd46be0d65ea13e48b3}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!TouchPoint@{TouchPoint}}
+\index{TouchPoint@{TouchPoint}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{TouchPoint}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.TouchPoint (float {\em pos\_\-x}, \/  float {\em pos\_\-y}, \/  float {\em strength})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a56ef62d0be5dbcd46be0d65ea13e48b3}
+
+
+Definition at line 40 of file TouchPoint.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad3f4dd64b5c48581bd65cd2d777a1b96}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!TouchPoint@{TouchPoint}}
+\index{TouchPoint@{TouchPoint}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{TouchPoint}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.TouchPoint (float {\em pos\_\-x}, \/  float {\em pos\_\-y}, \/  long {\em time\_\-stamp})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad3f4dd64b5c48581bd65cd2d777a1b96}
+
+
+Definition at line 44 of file TouchPoint.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a17cb410a388f8ca317ac65f981eac6ec}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!TouchPoint@{TouchPoint}}
+\index{TouchPoint@{TouchPoint}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{TouchPoint}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.TouchPoint (float {\em pos\_\-x}, \/  float {\em pos\_\-y})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a17cb410a388f8ca317ac65f981eac6ec}
+
+
+Definition at line 48 of file TouchPoint.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad882a2ee5e211bfefaa73c1322cf1823}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!TouchPoint@{TouchPoint}}
+\index{TouchPoint@{TouchPoint}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{TouchPoint}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.TouchPoint (Parcel {\em source})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad882a2ee5e211bfefaa73c1322cf1823}
+
+
+Definition at line 52 of file TouchPoint.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.readFromParcel().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad882a2ee5e211bfefaa73c1322cf1823_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ac71c9f7fa232435af2314d0d707e7559}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!clone@{clone}}
+\index{clone@{clone}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{clone}]{\setlength{\rightskip}{0pt plus 5cm}Object ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.clone ()  throws CloneNotSupportedException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ac71c9f7fa232435af2314d0d707e7559}
+
+
+Definition at line 56 of file TouchPoint.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.strength, and ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.timeStamp.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad5596f285f8ff8daf89cf36f4074df0f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!describeContents@{describeContents}}
+\index{describeContents@{describeContents}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{describeContents}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.describeContents ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad5596f285f8ff8daf89cf36f4074df0f}
+
+
+Definition at line 80 of file TouchPoint.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_afb4bcfacdc81a0922e69fcef9f07dbf8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!distanceTo@{distanceTo}}
+\index{distanceTo@{distanceTo}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{distanceTo}]{\setlength{\rightskip}{0pt plus 5cm}float ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.distanceTo ({\bf TouchPoint} {\em other})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_afb4bcfacdc81a0922e69fcef9f07dbf8}
+Calculate the distance to another \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em other}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 150 of file TouchPoint.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyPrediction.analyseMicroGestureType(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyPrediction.calcAngle(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyPrediction.detectMicroGestures().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a2297107f0bc05baf381fc9b8653a6df2}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!getStrength@{getStrength}}
+\index{getStrength@{getStrength}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{getStrength}]{\setlength{\rightskip}{0pt plus 5cm}float ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.getStrength ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a2297107f0bc05baf381fc9b8653a6df2}
+
+
+Definition at line 105 of file TouchPoint.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.strength.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aa25d5cf22375b6c5f8e59bccc2ec69d0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!getTimeStamp@{getTimeStamp}}
+\index{getTimeStamp@{getTimeStamp}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{getTimeStamp}]{\setlength{\rightskip}{0pt plus 5cm}long ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.getTimeStamp ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aa25d5cf22375b6c5f8e59bccc2ec69d0}
+
+
+Definition at line 114 of file TouchPoint.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.timeStamp.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a23cc1e796d80c3fb6b7ca66fcecdd01e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!readFromParcel@{readFromParcel}}
+\index{readFromParcel@{readFromParcel}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{readFromParcel}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.readFromParcel (Parcel {\em source})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a23cc1e796d80c3fb6b7ca66fcecdd01e}
+
+
+Definition at line 92 of file TouchPoint.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.strength, and ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.timeStamp.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.TouchPoint().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_acccafc087a2fd76987d8f829390626d7}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!setStrength@{setStrength}}
+\index{setStrength@{setStrength}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{setStrength}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.setStrength (float {\em strength})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_acccafc087a2fd76987d8f829390626d7}
+
+
+Definition at line 109 of file TouchPoint.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aae69659dd478457f14287116e34f868e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!setTimeStamp@{setTimeStamp}}
+\index{setTimeStamp@{setTimeStamp}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{setTimeStamp}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.setTimeStamp (long {\em timeStamp})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aae69659dd478457f14287116e34f868e}
+
+
+Definition at line 118 of file TouchPoint.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a4e930068dfcb62f5ff8a7dd60ae2a04c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!toString@{toString}}
+\index{toString@{toString}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.toString ()}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a4e930068dfcb62f5ff8a7dd60ae2a04c}
+
+
+Definition at line 124 of file TouchPoint.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.strength, and ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.timeStamp.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a8cfc22332015bceee96d2fdafc321290}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!writeToParcel@{writeToParcel}}
+\index{writeToParcel@{writeToParcel}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{writeToParcel}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.writeToParcel (Parcel {\em dest}, \/  int {\em flags})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a8cfc22332015bceee96d2fdafc321290}
+
+
+Definition at line 85 of file TouchPoint.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.strength, and ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.timeStamp.
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a0f386eacc8abbc547cd2a5b23630d211}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!CREATOR@{CREATOR}}
+\index{CREATOR@{CREATOR}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{CREATOR}]{\setlength{\rightskip}{0pt plus 5cm}final Parcelable.Creator$<${\bf TouchPoint}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.CREATOR}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_a0f386eacc8abbc547cd2a5b23630d211}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ new Parcelable.Creator<TouchPoint>() {
+                public TouchPoint createFromParcel(Parcel in) {
+                        return new TouchPoint(in);
+                }
+
+                public TouchPoint[] newArray(int size) {
+                        return new TouchPoint[size];
+                }
+        }
+\end{DoxyCode}
+
+
+Definition at line 63 of file TouchPoint.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad245f48693fecee2b25f3c5e7e1976a8}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!strength@{strength}}
+\index{strength@{strength}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{strength}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.strength}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_ad245f48693fecee2b25f3c5e7e1976a8}
+
+
+Definition at line 25 of file TouchPoint.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.clone(), ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.getStrength(), ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.readFromParcel(), ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.toString(), and ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.writeToParcel().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aa0b6bef79c301e7ef664dd21045b517d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}!timeStamp@{timeStamp}}
+\index{timeStamp@{timeStamp}!ch::zhaw::ba10_bsha_1::TouchPoint@{ch::zhaw::ba10\_\-bsha\_\-1::TouchPoint}}
+\subsubsection[{timeStamp}]{\setlength{\rightskip}{0pt plus 5cm}long {\bf ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.timeStamp}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint_aa0b6bef79c301e7ef664dd21045b517d}
+
+
+Definition at line 26 of file TouchPoint.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.clone(), ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.getTimeStamp(), ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.readFromParcel(), ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.toString(), ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.TouchPoint(), and ch.zhaw.ba10\_\-bsha\_\-1.TouchPoint.writeToParcel().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/\hyperlink{TouchPoint_8java}{TouchPoint.java}\end{DoxyCompactItemize}

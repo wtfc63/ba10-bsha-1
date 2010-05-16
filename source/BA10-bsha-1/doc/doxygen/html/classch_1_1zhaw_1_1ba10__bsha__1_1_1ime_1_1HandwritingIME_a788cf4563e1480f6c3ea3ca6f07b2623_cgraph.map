@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView.html#acea9e02a6fe22cd86a909dcd20de83f0" title="ch.zhaw.ba10_bsha_1.ime.PadView.getEventType" alt="" coords="401,5,713,35"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView.html#aea9a4c4f77ccfdfddfad16cdcc200107" title="ch.zhaw.ba10_bsha_1.ime.PadView.getLastPoints" alt="" coords="401,59,713,88"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a629b38e45bc795d46cb7ce1c79bc1def" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.handleBackspace" alt="" coords="369,112,745,141"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput.html#a12f25294b93d8e24ab3186f2c3e8e1b9" title="ch.zhaw.ba10_bsha_1.ime.TouchInput.getPoints" alt="" coords="833,59,1135,88"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#acaadb74527ea7fc306cdd571b9a25097" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.keyDownUp" alt="" coords="813,112,1155,141"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a428fc59e616bef0e75c866ddece97a70" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.updateCandidates" alt="" coords="795,165,1173,195"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1HandwritingIME.html#a761d3a5ee4b8830684c9fe03641b6a62" title="ch.zhaw.ba10_bsha_1.ime.HandwritingIME.setSuggestions" alt="" coords="1223,165,1585,195"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#a3b2b7c5d303e3e6c25dd7458d61b2a20" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.setSuggestions" alt="" coords="1635,165,1995,195"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#aa3d1a8c9206e423a3f532ef599b28cf4" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.clear" alt="" coords="2051,139,2347,168"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#a81383d3ca29122604138b340746eabe5" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.onDraw" alt="" coords="2043,192,2355,221"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1CandidateView.html#a300599eba91c613b0354b24f7414c1be" title="ch.zhaw.ba10_bsha_1.ime.CandidateView.scrollToTarget" alt="" coords="2404,192,2753,221"/>
+</map>

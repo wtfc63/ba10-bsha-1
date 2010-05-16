@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" href="$interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1ICharacterDetectionStrategy.html#a994429a274e75c471d18aca69dce2c1d" title="ch.zhaw.ba10_bsha_1.strategies.ICharacterDetectionStrategy.detectCharacter" alt="" coords="464,5,939,35"/>
+<area shape="rect" href="$interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy.html#a8593331fb67e5d4dc890d3db9f2d1b58" title="ch.zhaw.ba10_bsha_1.strategies.IMicroGestureDetectionStrategy.detectMicroGestures" alt="" coords="439,59,964,88"/>
+<area shape="rect" href="$interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy.html#a64149a1aad4d39dde043d11b2e7cc673" title="ch.zhaw.ba10_bsha_1.strategies.IStrategy.isEnabled" alt="" coords="537,112,865,141"/>
+<area shape="rect" href="$interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPostprocessingStrategy.html#a0bb435d4c5cb8ce3b3909ad81961d912" title="ch.zhaw.ba10_bsha_1.strategies.IPostprocessingStrategy.process" alt="" coords="497,165,905,195"/>
+<area shape="rect" href="$interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy.html#a3e3885dce8fda7b79dc514078f11ad62" title="ch.zhaw.ba10_bsha_1.strategies.IPreprocessingStrategy.process" alt="" coords="501,219,901,248"/>
+</map>

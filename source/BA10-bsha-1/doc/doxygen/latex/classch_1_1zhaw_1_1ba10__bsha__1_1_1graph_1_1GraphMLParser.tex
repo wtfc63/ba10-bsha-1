@@ -1,0 +1,336 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+}
+
+
+Inherits \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1IGraphMLParser}{ch::zhaw::ba10\_\-bsha\_\-1::graph::IGraphMLParser}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_1_1Pair}{Pair}
+\item 
+class \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_1_1WeightedPair}{WeightedPair}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ae127bee890029b56abc11c84d2badd1c}{parse} (String file\_\-name)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf97af9462bb91aabd817d1be6c32f6e}{characters} (char\mbox{[}$\,$\mbox{]} ch, int start, int length)  throws SAXException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a0e853ca6043b2cb4f676c915209d3abe}{startElement} (String uri, String localName, String qName, Attributes atts)  throws SAXException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a3121ca1de0dbf5cc9e7d262608f55f52}{endElement} (String uri, String localName, String qName)  throws SAXException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a644cce55a39c7d1acb1625b7903a6522}{endDocument} ()  throws SAXException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ae7ac9d9c1d64eecaf87b1a68d65ae5c0}{startDocument} ()  throws SAXException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a4db4f0e906963188c539de8c429477c3}{processingInstruction} (String target, String data)  throws SAXException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aff550f1ff85c53385477bfe9b674323b}{setDocumentLocator} (Locator locator)
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aef06cdfd0c74659d1fdbb66fd20af1d7}{startPrefixMapping} (String prefix, String uri)  throws SAXException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a79c9275778e96cb44d16b466a2a58075}{endPrefixMapping} (String prefix)  throws SAXException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac4e0c2da8416b919f9841b646f3d058d}{ignorableWhitespace} (char\mbox{[}$\,$\mbox{]} ch, int start, int length)  throws SAXException 
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac3138b26d478aef2b67820bf35cd3b1f}{skippedEntity} (String name)  throws SAXException 
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{Status} \{ \par
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{NODE}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{EDGE}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{DATATEST}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{DATACHARACTER}, 
+\par
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{DATAWEIGHT}, 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{NONE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Map$<$ String, \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac367709d47f36449600550ee700271c5}{nodes}
+\item 
+Stack$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_1_1Pair}{Pair} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac4f86507ba5f92c81a9d1736e50866a4}{tempEdges}
+\item 
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a5761f7b6b239f00aba8a3d2d93cc093c}{nodeID} = 0
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{Status} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aad96857e9c5dd4c59f408b26937a0c72}{status} = Status.NONE
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a08f6eb33a630ada96db0b4359f034e85}{nodeId}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a80dbdb8f56f9fdee9a0471acdc0078eb}{nodeTest}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a93c139de1399a5b2741e5554f7138ee5}{nodeCharacter}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_abd140ea7e8e8b6f312f1823e309eacf4}{edgeWeight}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a7df7fc4703a593c56c984fef423b7973}{TAG} = \char`\"{}GraphMLParser\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1graph}{graph} from GraphML file, using a SAX parser.
+
+\begin{DoxyAuthor}{Author}
+Dominik Giger, Julian Hanhart 
+\end{DoxyAuthor}
+
+
+Definition at line 22 of file GraphMLParser.java.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!Status@{Status}}
+\index{Status@{Status}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser::Status}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NODE@{NODE}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!NODE@{NODE}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{
+NODE}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}
+}]\index{EDGE@{EDGE}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!EDGE@{EDGE}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{
+EDGE}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}
+}]\index{DATATEST@{DATATEST}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!DATATEST@{DATATEST}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{
+DATATEST}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}
+}]\index{DATACHARACTER@{DATACHARACTER}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!DATACHARACTER@{DATACHARACTER}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{
+DATACHARACTER}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}
+}]\index{DATAWEIGHT@{DATAWEIGHT}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!DATAWEIGHT@{DATAWEIGHT}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{
+DATAWEIGHT}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}
+}]\index{NONE@{NONE}!ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!NONE@{NONE}}\item[{\em 
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}{
+NONE}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf3d4942a1edfa4a19addb2f2c0cdb9c}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 60 of file GraphMLParser.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf97af9462bb91aabd817d1be6c32f6e}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!characters@{characters}}
+\index{characters@{characters}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{characters}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.characters (char\mbox{[}$\,$\mbox{]} {\em ch}, \/  int {\em start}, \/  int {\em length})  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aaf97af9462bb91aabd817d1be6c32f6e}
+
+
+Definition at line 102 of file GraphMLParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.edgeWeight, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeCharacter, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeTest, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.status.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a644cce55a39c7d1acb1625b7903a6522}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!endDocument@{endDocument}}
+\index{endDocument@{endDocument}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{endDocument}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endDocument ()  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a644cce55a39c7d1acb1625b7903a6522}
+
+
+Definition at line 209 of file GraphMLParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addIncomingEdge(), ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addOutgoingEdge(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.Pair.first, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodes, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.Pair.second, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.tempEdges.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a644cce55a39c7d1acb1625b7903a6522_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a3121ca1de0dbf5cc9e7d262608f55f52}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!endElement@{endElement}}
+\index{endElement@{endElement}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{endElement}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endElement (String {\em uri}, \/  String {\em localName}, \/  String {\em qName})  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a3121ca1de0dbf5cc9e7d262608f55f52}
+
+
+Definition at line 170 of file GraphMLParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.edgeWeight, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.Pair.first, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeCharacter, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeId, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeID, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodes, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeTest, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.Pair.second, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.status, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.tempEdges.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a79c9275778e96cb44d16b466a2a58075}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!endPrefixMapping@{endPrefixMapping}}
+\index{endPrefixMapping@{endPrefixMapping}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{endPrefixMapping}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endPrefixMapping (String {\em prefix})  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a79c9275778e96cb44d16b466a2a58075}
+
+
+Definition at line 236 of file GraphMLParser.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac4e0c2da8416b919f9841b646f3d058d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!ignorableWhitespace@{ignorableWhitespace}}
+\index{ignorableWhitespace@{ignorableWhitespace}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{ignorableWhitespace}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.ignorableWhitespace (char\mbox{[}$\,$\mbox{]} {\em ch}, \/  int {\em start}, \/  int {\em length})  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac4e0c2da8416b919f9841b646f3d058d}
+
+
+Definition at line 239 of file GraphMLParser.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ae127bee890029b56abc11c84d2badd1c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!parse@{parse}}
+\index{parse@{parse}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.parse (String {\em file\_\-name})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ae127bee890029b56abc11c84d2badd1c}
+Parse GraphML file, create \hyperlink{namespacech_1_1zhaw_1_1ba10__bsha__1_1_1graph}{graph} and return its root \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1IGraphMLParser_a4b7516793ccd484abfe8ab83f4e57fa8}{ch.zhaw.ba10\_\-bsha\_\-1.graph.IGraphMLParser}.
+
+Definition at line 77 of file GraphMLParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodes, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.tempEdges.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a4db4f0e906963188c539de8c429477c3}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!processingInstruction@{processingInstruction}}
+\index{processingInstruction@{processingInstruction}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{processingInstruction}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.processingInstruction (String {\em target}, \/  String {\em data})  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a4db4f0e906963188c539de8c429477c3}
+
+
+Definition at line 227 of file GraphMLParser.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aff550f1ff85c53385477bfe9b674323b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!setDocumentLocator@{setDocumentLocator}}
+\index{setDocumentLocator@{setDocumentLocator}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{setDocumentLocator}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.setDocumentLocator (Locator {\em locator})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aff550f1ff85c53385477bfe9b674323b}
+
+
+Definition at line 230 of file GraphMLParser.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac3138b26d478aef2b67820bf35cd3b1f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!skippedEntity@{skippedEntity}}
+\index{skippedEntity@{skippedEntity}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{skippedEntity}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.skippedEntity (String {\em name})  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac3138b26d478aef2b67820bf35cd3b1f}
+
+
+Definition at line 242 of file GraphMLParser.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ae7ac9d9c1d64eecaf87b1a68d65ae5c0}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!startDocument@{startDocument}}
+\index{startDocument@{startDocument}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{startDocument}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.startDocument ()  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ae7ac9d9c1d64eecaf87b1a68d65ae5c0}
+
+
+Definition at line 224 of file GraphMLParser.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a0e853ca6043b2cb4f676c915209d3abe}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!startElement@{startElement}}
+\index{startElement@{startElement}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{startElement}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.startElement (String {\em uri}, \/  String {\em localName}, \/  String {\em qName}, \/  Attributes {\em atts})  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a0e853ca6043b2cb4f676c915209d3abe}
+
+
+Definition at line 115 of file GraphMLParser.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeId, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.status, ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.TAG, and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.tempEdges.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aef06cdfd0c74659d1fdbb66fd20af1d7}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!startPrefixMapping@{startPrefixMapping}}
+\index{startPrefixMapping@{startPrefixMapping}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{startPrefixMapping}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.startPrefixMapping (String {\em prefix}, \/  String {\em uri})  throws SAXException }}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aef06cdfd0c74659d1fdbb66fd20af1d7}
+
+
+Definition at line 233 of file GraphMLParser.java.
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_abd140ea7e8e8b6f312f1823e309eacf4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!edgeWeight@{edgeWeight}}
+\index{edgeWeight@{edgeWeight}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{edgeWeight}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.edgeWeight}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_abd140ea7e8e8b6f312f1823e309eacf4}
+
+
+Definition at line 63 of file GraphMLParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.characters(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endElement().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a93c139de1399a5b2741e5554f7138ee5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!nodeCharacter@{nodeCharacter}}
+\index{nodeCharacter@{nodeCharacter}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{nodeCharacter}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeCharacter}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a93c139de1399a5b2741e5554f7138ee5}
+
+
+Definition at line 63 of file GraphMLParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.characters(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endElement().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a08f6eb33a630ada96db0b4359f034e85}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!nodeId@{nodeId}}
+\index{nodeId@{nodeId}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{nodeId}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeId}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a08f6eb33a630ada96db0b4359f034e85}
+
+
+Definition at line 63 of file GraphMLParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endElement(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.startElement().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a5761f7b6b239f00aba8a3d2d93cc093c}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!nodeID@{nodeID}}
+\index{nodeID@{nodeID}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{nodeID}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeID} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a5761f7b6b239f00aba8a3d2d93cc093c}
+
+
+Definition at line 58 of file GraphMLParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endElement().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac367709d47f36449600550ee700271c5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!nodes@{nodes}}
+\index{nodes@{nodes}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{nodes}]{\setlength{\rightskip}{0pt plus 5cm}Map$<$String, {\bf Node}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodes}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac367709d47f36449600550ee700271c5}
+
+
+Definition at line 55 of file GraphMLParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endDocument(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endElement(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.parse().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a80dbdb8f56f9fdee9a0471acdc0078eb}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!nodeTest@{nodeTest}}
+\index{nodeTest@{nodeTest}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{nodeTest}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.nodeTest}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a80dbdb8f56f9fdee9a0471acdc0078eb}
+
+
+Definition at line 63 of file GraphMLParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.characters(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endElement().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aad96857e9c5dd4c59f408b26937a0c72}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!status@{status}}
+\index{status@{status}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status} {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.status} = Status.NONE\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_aad96857e9c5dd4c59f408b26937a0c72}
+
+
+Definition at line 61 of file GraphMLParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.characters(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endElement(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.startElement().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a7df7fc4703a593c56c984fef423b7973}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!TAG@{TAG}}
+\index{TAG@{TAG}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{TAG}]{\setlength{\rightskip}{0pt plus 5cm}final String {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.TAG} = \char`\"{}GraphMLParser\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_a7df7fc4703a593c56c984fef423b7973}
+
+
+Definition at line 53 of file GraphMLParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.startElement().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac4f86507ba5f92c81a9d1736e50866a4}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}!tempEdges@{tempEdges}}
+\index{tempEdges@{tempEdges}!ch::zhaw::ba10_bsha_1::graph::GraphMLParser@{ch::zhaw::ba10\_\-bsha\_\-1::graph::GraphMLParser}}
+\subsubsection[{tempEdges}]{\setlength{\rightskip}{0pt plus 5cm}Stack$<${\bf Pair}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.tempEdges}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLParser_ac4f86507ba5f92c81a9d1736e50866a4}
+
+
+Definition at line 56 of file GraphMLParser.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endDocument(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endElement(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.parse(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.startElement().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/graph/\hyperlink{GraphMLParser_8java}{GraphMLParser.java}\end{DoxyCompactItemize}
