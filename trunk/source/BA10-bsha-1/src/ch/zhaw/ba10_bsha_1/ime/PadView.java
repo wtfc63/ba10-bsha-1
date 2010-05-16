@@ -5,18 +5,20 @@ import android.content.Context;
 import android.graphics.*;
 import android.inputmethodservice.KeyboardView;
 import android.view.MotionEvent;
+import android.view.View;
 import android.util.AttributeSet;
 
 import java.util.*;
 
 import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.service.DetectionService;
 
 
 /**
- * Implementation of a KeyboardView to gather data for the DetectionService.
+ * Implementation of a {@link KeyboardView} to gather data for the {@link DetectionService}.
  * 
- * Notifies its observers on input events such as new TouchInputs, crossing out of
- * existing TouchInputs (seen as a backspace) or starting of new TouchInputs with 
+ * Notifies its {@link IObserver}s on input events such as new {@link TouchInput}s, crossing out of
+ * existing {@link TouchInput}s (seen as a backspace) or starting of new {@link TouchInput}s with 
  * a certain offset (seen as a space).
  */
 public class PadView extends KeyboardView implements IObservable {
@@ -108,8 +110,8 @@ public class PadView extends KeyboardView implements IObservable {
     }
     
     /**
-     * Draw the View's background and the existing TouchInputs 
-     * as well as the currently active TouchInput 
+     * Draw the {@link View}'s background and the existing {@link TouchInput}s 
+     * as well as the currently active {@link TouchInput} 
      */
     @Override
     public void onDraw(Canvas canvas) {
@@ -127,7 +129,7 @@ public class PadView extends KeyboardView implements IObservable {
     }
     
     /**
-     * Draw the View's base lines on the background
+     * Draw the {@link View}'s base lines on the background
      * 
      * @param canvas
      */
@@ -186,7 +188,7 @@ public class PadView extends KeyboardView implements IObservable {
     }
     
     /**
-     * React on a newly started touchscreen input by creating a new TouchInput
+     * React on a newly started touchscreen input by creating a new {@link TouchInput}
      * 
      * @param x
      * @param y
@@ -255,7 +257,7 @@ public class PadView extends KeyboardView implements IObservable {
 	//---------------------------------------------------------------------------
 
     /**
-     * Attach an IObserver to the IObservable
+     * Attach an {@link IObserver} to the {@link IObservable}
      */
 	@Override
 	public void attachObserver(IObserver observer) {
@@ -263,7 +265,7 @@ public class PadView extends KeyboardView implements IObservable {
 	}
 
     /**
-     * Detach an IObserver from the IObservable
+     * Detach an {@link IObserver} from the {@link IObservable}
      */
 	@Override
 	public void detachObserver(IObserver observer) {
@@ -271,7 +273,7 @@ public class PadView extends KeyboardView implements IObservable {
 	}
 
 	/**
-	 * Notify all attached IObservers of changes
+	 * Notify all attached {@link IObserver}s of changes
 	 */
 	@Override
 	public void notifyObservers() {
@@ -281,7 +283,7 @@ public class PadView extends KeyboardView implements IObservable {
 	}
 	
 	/**
-	 * Notify all attached IObservers of changes, setting the event type while doing so
+	 * Notify all attached {@link IObserver}s of changes, setting the event type while doing so
 	 * 
 	 * @param event_type
 	 */
@@ -308,7 +310,7 @@ public class PadView extends KeyboardView implements IObservable {
     }
     
     /**
-     * Removes all TouchInputs and marks View as invalid
+     * Removes all {@link TouchInput}s and marks {@link View} as invalid
      */
     public void clear() {
     	inputs.clear();

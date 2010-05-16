@@ -8,8 +8,27 @@ import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link IPreprocessingStrategy} that normalizes the points of the path 
+ * of the given {@link TouchPoint}s.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class PreprocessingStrategyNormalizePoints extends BaseStrategy implements IPreprocessingStrategy {
+	
+	
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
+	
+	
 	private float tolerance = 15;
+
+	
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
+	
 	
 	protected void initArguments() {}
 
@@ -22,8 +41,19 @@ public class PreprocessingStrategyNormalizePoints extends BaseStrategy implement
 	protected String getStrategyDescription() {
 		return "Normalize Point-to-Point distancesR";
 	} 
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IPreprocessingStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Process the {@link TouchPoint}s of the given {@link MicroGesture}
+	 * 
+	 * @param micro_gesture
+	 * @return
+	 */
 	@Override
 	public MicroGesture process(MicroGesture microGesture) {
 		Collection<TouchPoint> points = microGesture.getPoints();
@@ -57,9 +87,7 @@ public class PreprocessingStrategyNormalizePoints extends BaseStrategy implement
 				prev = temp[i];
 			}
 		}
-		
 		microGesture.setPoints(normalizedPoints);
-	
 		return null;
 	}
 }

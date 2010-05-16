@@ -2,10 +2,11 @@ package ch.zhaw.ba10_bsha_1.service;
 
 
 /**
- * Prioritize a data object to be uses in a PriorityQueue
+ * Prioritize a data object to be used in a {@link IPriorityQueue}
+ * 
+ * @see ch.zhaw.ba10_bsha_1.service.IPriorityQueue
  * 
  * @author Julian Hanhart, Dominik Giger
- * @see ch.zhaw.ba10_bsha_1.service.IPriorityQueue
  */
 public class Prioritized<Type> implements Comparable<Prioritized<Type>> {
 

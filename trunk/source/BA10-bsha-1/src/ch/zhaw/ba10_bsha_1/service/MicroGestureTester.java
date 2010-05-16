@@ -2,7 +2,7 @@ package ch.zhaw.ba10_bsha_1.service;
 
 
 /**
- * Represents a test-case one can validate a MicroGesture against.
+ * Represents a test-case one can validate a {@link MicroGesture} against.
  * 
  * @author Julian Hanhart, Dominik Giger
  */
@@ -49,7 +49,7 @@ public class MicroGestureTester {
 	
 	
 	/**
-	 * Validate the given MicroGesture against the tester
+	 * Validate the given {@link MicroGesture} against the tester
 	 * 
 	 * @param micro_gesture
 	 */

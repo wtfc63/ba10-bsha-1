@@ -8,10 +8,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.strategies.IPreprocessingStrategy;
 
 
 /**
- * A collection of Points and the Path connecting them
+ * A collection of {@link TouchPoint}s and the {@link Path} connecting them
  */
 public class TouchInput {
 
@@ -78,7 +79,7 @@ public class TouchInput {
 
 	
 	/**
-	 * Adds a TouchPoint to the input, updating its Path and boundaries while doing so
+	 * Adds a {@link TouchPoint} to the input, updating its {@link Path} and boundaries while doing so
 	 */
 	public void add(TouchPoint point) {
 		//Add point and extend Path
@@ -113,11 +114,13 @@ public class TouchInput {
 
 	
 	/**
-	 * Stretch the input's points to a given field height (Deprecated because a 
-	 * preprocessing strategy would probably be better suited for that)
+	 * Stretch the input's points to a given field height
+	 * (Deprecated because an {@link IPreprocessingStrategy} would 
+	 * probably be better suited for that task)
 	 * 
 	 * @param field_height
 	 */
+	@SuppressWarnings("unused")
 	@Deprecated
 	private void stretchToField(float field_height) {
 		float real_height = lowerMax - upperMax;

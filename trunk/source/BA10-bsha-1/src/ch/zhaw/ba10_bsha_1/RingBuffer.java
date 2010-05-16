@@ -67,6 +67,7 @@ public class RingBuffer<Type> {
 	/**
 	 * Get next element in buffer
 	 */
+	@SuppressWarnings("unchecked")
 	public Type get() {
 		Type result = (Type) slots[readCursor];
 		if (slots[readCursor] != null) {

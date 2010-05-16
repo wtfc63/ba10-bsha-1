@@ -7,11 +7,44 @@ import java.util.Hashtable;
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
 
 
+/**
+ * Abstract Base Class for strategies. Takes care of the management of the strategy's arguments.
+ * Derived classes need to implement the methods used to initialize its arguments and its 
+ * name and description getters.
+ * 
+ * @see ch.zhaw.ba10_bsha_1.strategies.PreprocessingStrategyNormalizePoints
+ * @see ch.zhaw.ba10_bsha_1.strategies.PathSmoothingStrategyAverage
+ * @see ch.zhaw.ba10_bsha_1.strategies.PathSmoothingStrategySpline
+ * @see ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyNone
+ * @see ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyRemoveTiny
+ * @see ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCombine
+ * @see ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyPrediction
+ * @see ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCurvature
+ * @see ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyEdges
+ * @see ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCircles
+ * @see ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle
+ * @see ch.zhaw.ba10_bsha_1.strategies.CharacterDetectionStrategyNone
+ * @see ch.zhaw.ba10_bsha_1.strategies.CharacterDetectionStrategyDummyGraph
+ * @see ch.zhaw.ba10_bsha_1.strategies.CharacterDetectionStrategyGraph
+ * @see ch.zhaw.ba10_bsha_1.strategies.PostprocessingStrategyNone
+ * 
+ * @author Julian Hanhart, Domink Giger
+ */
 public abstract class BaseStrategy implements IStrategy {
+
+	
+	//---------------------------------------------------------------------------
+	// Attributes
+	//---------------------------------------------------------------------------
 	
 	
 	private Hashtable<String, StrategyArgument> arguments;
 	protected boolean enabled;
+
+	
+	//---------------------------------------------------------------------------
+	// Constructor
+	//---------------------------------------------------------------------------
 	
 	
 	public BaseStrategy() {
@@ -19,10 +52,37 @@ public abstract class BaseStrategy implements IStrategy {
 		enabled   = true;
 		initArguments();
 	}
+
 	
+	//---------------------------------------------------------------------------
+	// Abstract methods to be implemented
+	//---------------------------------------------------------------------------
+	
+	
+	/**
+	 * Initialize the strategy's {@link StrategyArgument}s
+	 */
 	protected abstract void initArguments();
+	
+	/**
+	 * Return the strategy's name
+	 * 
+	 * @return
+	 */
 	protected abstract String getStrategyName();
+	
+	/**
+	 * Return a description of the strategy
+	 * 
+	 * @return
+	 */
 	protected abstract String getStrategyDescription();
+
+	
+	//---------------------------------------------------------------------------
+	// Getter-/Setter-methods
+	//---------------------------------------------------------------------------
+	
 	
 	@Override
 	public String toString() {
@@ -40,6 +100,11 @@ public abstract class BaseStrategy implements IStrategy {
 	}
 	
 	@Override
+	public void setEnabled(boolean enable) {
+		enabled = enable;
+	}
+	
+	@Override
 	public boolean hasArgument(String name) {
 		return arguments.containsKey(name.toLowerCase());
 	}
@@ -50,8 +115,12 @@ public abstract class BaseStrategy implements IStrategy {
 	}
 
 	@Override
-	public Collection<StrategyArgument> getConfiguration() {
-		return arguments.values();
+	public void setArgument(StrategyArgument arg) {
+		if ((arg != null) 
+				&& arg.getStrategyName().equalsIgnoreCase(getStrategyName()) 
+				&& arguments.containsKey(arg.getArgumentName().toLowerCase())) {
+			arguments.get(arg.getArgumentName().toLowerCase()).setArgumentValue(arg.getArgumentValue());
+		}
 	}
 	
 	@Override
@@ -60,18 +129,14 @@ public abstract class BaseStrategy implements IStrategy {
 			arguments.put(arg.getArgumentName().toLowerCase(), arg);
 		}
 	}
-	
-	@Override
-	public void setEnabled(boolean enable) {
-		enabled = enable;
-	}
 
+	/**
+	 * Returns a Collection of all the strategy's {@link StrategyArgument}s
+	 * 
+	 * @return
+	 */
 	@Override
-	public void setArgument(StrategyArgument arg) {
-		if ((arg != null) 
-				&& arg.getStrategyName().equalsIgnoreCase(getStrategyName()) 
-				&& arguments.containsKey(arg.getArgumentName().toLowerCase())) {
-			arguments.get(arg.getArgumentName().toLowerCase()).setArgumentValue(arg.getArgumentValue());
-		}
+	public Collection<StrategyArgument> getConfiguration() {
+		return arguments.values();
 	}
 }

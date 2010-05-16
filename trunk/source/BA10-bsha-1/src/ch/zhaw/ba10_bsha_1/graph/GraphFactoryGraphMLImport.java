@@ -33,7 +33,7 @@ public class GraphFactoryGraphMLImport implements IGraphFactory {
 
 
 	/**
-	 * Create graph and return its root Node
+	 * Create graph and return its root {@link Node}
 	 * 
 	 * @return
 	 */

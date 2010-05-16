@@ -7,8 +7,19 @@ import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
+/**
+ * Implementation of {@link IPreprocessingStrategy} that smoothes the path of the given {@link TouchPoint}s
+ * by calculating their average and adjusting them accordingly.
+ * 
+ * @author Dominik Giger, Julian Hanhart
+ */
 public class PathSmoothingStrategyAverage extends BaseStrategy implements IPreprocessingStrategy {
 
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
+	
 	
 	protected void initArguments() {}
 
@@ -21,8 +32,20 @@ public class PathSmoothingStrategyAverage extends BaseStrategy implements IPrepr
 	protected String getStrategyDescription() {
 		return "Smooth by calculating the points' average positions";
 	} 
+
+
+	//---------------------------------------------------------------------------
+	// Implementation of IPreprocessingStrategy
+	//---------------------------------------------------------------------------
 	
-	
+
+	/**
+	 * Process the {@link TouchPoint}s of the given {@link MicroGesture}
+	 * 
+	 * @param micro_gesture
+	 * @return
+	 */
+	@Override
 	public MicroGesture process(MicroGesture micro_gesture) {
 		int M = 5;
 		ArrayList<TouchPoint> points = micro_gesture.getPoints();

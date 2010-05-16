@@ -25,12 +25,13 @@ import java.util.List;
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
 import ch.zhaw.ba10_bsha_1.TouchPoint;
+import ch.zhaw.ba10_bsha_1.service.DetectionService;
 import ch.zhaw.ba10_bsha_1.service.IDetectionService;
 import ch.zhaw.ba10_bsha_1.service.IReturnResults;
 
 
 /**
- * Activity we used to test the proper operation of our DetectionService.
+ * Activity we used to test the proper operation of our {@link DetectionService}.
  * Will not be needed for a possible deployment but we kept it as an 
  * entry point to our Application during development.
  * 
@@ -266,7 +267,10 @@ public class ServiceTest extends Activity {
     private static final int CHAR_RESULT_MSG  = 2;
     
     private Handler serviceHandler = new Handler() {
-        @Override public void handleMessage(Message msg) {
+    	
+        @SuppressWarnings("unchecked")
+		@Override
+		public void handleMessage(Message msg) {
             switch (msg.what) {
                 case CHARS_RESULT_MSG:
                 	ArrayList<Character> chars = (ArrayList<Character>) msg.obj;

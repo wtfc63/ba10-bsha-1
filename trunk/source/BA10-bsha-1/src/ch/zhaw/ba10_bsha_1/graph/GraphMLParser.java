@@ -69,7 +69,7 @@ public class GraphMLParser implements IGraphMLParser, ContentHandler {
 	
 
 	/**
-	 * Parse GraphML file, create graph and return its root Node
+	 * Parse GraphML file, create graph and return its root {@link Node}
 	 * 
 	 * @return
 	 */

@@ -1,13 +1,14 @@
 package ch.zhaw.ba10_bsha_1;
 
 
+import android.app.Service;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 
 /**
- * Argument to a Strategy that implements Parcelable and 
- * can therefore be send to and from a service.
+ * Argument to a Strategy that implements {@link Parcelable} and 
+ * can therefore be send to and from a {@link Service}.
  * 
  * @author Julian Hanhart, Dominik Giger
  */
