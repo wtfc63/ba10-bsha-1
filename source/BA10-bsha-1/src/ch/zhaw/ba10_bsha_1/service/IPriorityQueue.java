@@ -1,10 +1,16 @@
 package ch.zhaw.ba10_bsha_1.service;
 
 
-public interface PriorityQueue<Type> {
+/**
+ * Interface defining a priority queue
+ * 
+ * @author Julian Hanhart, Dominik Giger
+ * @param <Type>
+ */
+public interface IPriorityQueue<Type> {
 	
 	/**
-	 * Add Element to prioritized queue
+	 * Adds an element to prioritized queue
 	 * 
 	 * @param element
 	 * @param priority
@@ -12,14 +18,14 @@ public interface PriorityQueue<Type> {
 	public void enqueue(Type element, int priority);	
 
 	/**
-	 * Removes and returns first element of Queue
+	 * Removes and returns the first element of the queue
 	 * 
 	 * @return
 	 */
 	public Type dequeue();			
 
 	/**
-	 * Get first element of the queue
+	 * Get the first element of the queue
 	 * 
 	 * @return
 	 */
