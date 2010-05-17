@@ -24,6 +24,8 @@ public class Node {
 	//---------------------------------------------------------------------------
 	
 	
+	private static final float MIN_PROBABILITY = 0.05f;
+	
 	protected int id;
 	protected String label;
 	protected MicroGestureTester tester;
@@ -69,7 +71,7 @@ public class Node {
 	public Collection<Character> consume(Collection<MicroGesture> micro_gestures, float probability) {
 		ArrayList<Character> result = new ArrayList<Character>();
 		//Proceed if there are MicroGestures left to consume
-		if ((micro_gestures != null) && (micro_gestures.size() > 0)) {
+		if ((micro_gestures != null) && (micro_gestures.size() > 0) && (probability > MIN_PROBABILITY)) {
 			//Test if there is a MicroGestureTester associated with the Node 
 			if (tester != null) {
 				MicroGesture mg = micro_gestures.iterator().next();
