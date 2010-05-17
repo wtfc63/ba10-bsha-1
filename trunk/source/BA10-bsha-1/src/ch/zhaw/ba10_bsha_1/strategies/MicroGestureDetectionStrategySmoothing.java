@@ -21,7 +21,7 @@ public class MicroGestureDetectionStrategySmoothing extends BaseStrategy impleme
 	
 	
 	@Override
-	protected void initArguments() {}
+	public void initialize() {}
 	
 	@Override
 	protected String getStrategyDescription() {

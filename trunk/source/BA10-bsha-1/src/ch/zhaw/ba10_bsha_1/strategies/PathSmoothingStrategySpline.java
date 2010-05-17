@@ -22,7 +22,8 @@ public class PathSmoothingStrategySpline extends BaseStrategy implements IPrepro
 	//---------------------------------------------------------------------------
 	
 	
-	protected void initArguments() {}
+	@Override
+	public void initialize() {}
 
 	@Override
 	protected String getStrategyName() {

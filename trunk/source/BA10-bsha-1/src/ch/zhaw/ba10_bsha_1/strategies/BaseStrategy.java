@@ -1,6 +1,7 @@
 package ch.zhaw.ba10_bsha_1.strategies;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Hashtable;
 
@@ -50,7 +51,7 @@ public abstract class BaseStrategy implements IStrategy {
 	public BaseStrategy() {
 		arguments = new Hashtable<String, StrategyArgument>();
 		enabled   = true;
-		initArguments();
+		initialize();
 	}
 
 	
@@ -62,7 +63,8 @@ public abstract class BaseStrategy implements IStrategy {
 	/**
 	 * Initialize the strategy's {@link StrategyArgument}s
 	 */
-	protected abstract void initArguments();
+	@Override
+	public abstract void initialize();
 	
 	/**
 	 * Return the strategy's name
@@ -116,10 +118,12 @@ public abstract class BaseStrategy implements IStrategy {
 
 	@Override
 	public void setArgument(StrategyArgument arg) {
-		if ((arg != null) 
-				&& arg.getStrategyName().equalsIgnoreCase(getStrategyName()) 
-				&& arguments.containsKey(arg.getArgumentName().toLowerCase())) {
-			arguments.get(arg.getArgumentName().toLowerCase()).setArgumentValue(arg.getArgumentValue());
+		if ((arg != null) && arg.getStrategyName().equalsIgnoreCase(getStrategyName())) {
+			if (arg.getArgumentName().equalsIgnoreCase("enabled")) {
+				enabled = !arg.getArgumentValue().equalsIgnoreCase("false");
+			} else if (arguments.containsKey(arg.getArgumentName().toLowerCase())) {
+				arguments.get(arg.getArgumentName().toLowerCase()).setArgumentValue(arg.getArgumentValue());
+			}
 		}
 	}
 	
@@ -137,6 +141,11 @@ public abstract class BaseStrategy implements IStrategy {
 	 */
 	@Override
 	public Collection<StrategyArgument> getConfiguration() {
-		return arguments.values();
+		ArrayList<StrategyArgument> config = new ArrayList<StrategyArgument>(arguments.values());
+		if (!arguments.containsKey("enabled")) {
+			config.add(0, new StrategyArgument(
+					getStrategyName(), "enabled", Boolean.toString(enabled), "Is strategy enabled or not"));
+		}
+		return config;
 	}
 }

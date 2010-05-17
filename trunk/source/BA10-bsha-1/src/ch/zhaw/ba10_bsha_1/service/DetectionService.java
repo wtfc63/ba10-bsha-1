@@ -372,6 +372,20 @@ public class DetectionService extends Service {
 		}
 
 	    /**
+	     * Reinitialize all strategies of the given type (or all of them if type is smaller than zero)
+	     */
+	    public void reinitializeStrategies(int type) {
+	    	if (type < 0) {
+	    		PreprocessingStrategyManager.getInstance().reinitializeAllStrategies();
+	    		MicroGestureDetectionStrategyManager.getInstance().reinitializeAllStrategies();
+	    		CharacterDetectionStrategyManager.getInstance().reinitializeAllStrategies();
+	    		PostprocessingStrategyManager.getInstance().reinitializeAllStrategies();
+	    	} else {
+	    		getManagerByType(type).reinitializeAllStrategies();
+	    	}
+	    }
+	    
+	    /**
 	     * Get a listing of the arguments of a strategy
 	     */
 		@Override

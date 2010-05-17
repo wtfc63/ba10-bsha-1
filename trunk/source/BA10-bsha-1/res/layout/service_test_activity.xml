@@ -11,7 +11,7 @@
 
 
 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv_binding" android:text="Service: No binding attempted"></TextView>
-<Button android:layout_height="wrap_content" android:id="@+id/send" android:text="Send Test Samples" android:layout_width="fill_parent"></Button>
+<Button android:layout_height="wrap_content" android:id="@+id/send" android:layout_width="fill_parent" android:text="Send Reset Command"></Button>
 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv_result" android:text="Nothing received yet"></TextView>
 <EditText android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/edit_test"></EditText>
 </LinearLayout>

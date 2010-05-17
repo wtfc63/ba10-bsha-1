@@ -24,7 +24,8 @@ public class MicroGestureDetectionStrategyCurvature extends BaseStrategy impleme
 	//---------------------------------------------------------------------------
 	
 	
-	protected void initArguments() {}
+	@Override
+	public void initialize() {}
 
 	@Override
 	protected String getStrategyName() {

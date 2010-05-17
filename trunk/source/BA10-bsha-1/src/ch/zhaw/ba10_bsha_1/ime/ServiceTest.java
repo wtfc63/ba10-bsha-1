@@ -24,7 +24,6 @@ import java.util.List;
 //class is in a sub-package.
 import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.R;
-import ch.zhaw.ba10_bsha_1.TouchPoint;
 import ch.zhaw.ba10_bsha_1.service.DetectionService;
 import ch.zhaw.ba10_bsha_1.service.IDetectionService;
 import ch.zhaw.ba10_bsha_1.service.IReturnResults;
@@ -216,15 +215,8 @@ public class ServiceTest extends Activity {
                 // it, then now is the time to unregister.
                 if (detectionService != null) {
                     try {
-                    	ArrayList<TouchPoint> tmp = new ArrayList<TouchPoint>(1);
-                    	tmp.add(new TouchPoint(10, 10));
-                    	tmp.add(new TouchPoint(20, 20));
-                        detectionService.addTouchPoints(tmp, true);
-                    	//TouchPoint p = tmp.get(0);
-                    	//detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
-                    	//p = tmp.get(1);
-                    	//detectionService.addTouchPoint(p.x, p.y, p.getStrength(), p.getTimeStamp());
-                    	detectionService.endSample();
+                    	detectionService.reinitializeStrategies(-1);
+                    	txtViewResult.setText("Strategies have been reset");
                     } catch (RemoteException e) {
                         // There is nothing special we need to do if the service
                         // has crashed.

@@ -15,8 +15,14 @@ import ch.zhaw.ba10_bsha_1.service.MicroGesture;
  */
 public class MicroGestureDetectionStrategyCircles extends BaseStrategy implements IMicroGestureDetectionStrategy {
 	
+
+	//---------------------------------------------------------------------------
+	// Implementation of BaseStrategy's abstract methods
+	//---------------------------------------------------------------------------
 	
-	protected void initArguments() {}
+	
+	@Override
+	public void initialize() {}
 
 	@Override
 	protected String getStrategyName() {
