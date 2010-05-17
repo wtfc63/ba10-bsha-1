@@ -4,7 +4,7 @@ Bevor wir zur Besprechung der Umsetzung des eigentlichen Backends übergehen, wo
 
 \section{Art des Prozesses}\label{lbl_prozess_art}
 
-\subsection{Prozesse unter Android}
+\subsection{Prozesse unter Android}\label{lbl_be_procandroid}
 
 Da in der Entwicklung für das Android-Betriebssystem ein etwas erweitertes Vokabular für die Beschreibung des Applikations-Lebenszyklus verwendet wird, wollen wir zuerst kurz auf einige dieser Begriffe im Android-Kontext eingehen.
 
@@ -81,52 +81,117 @@ Mögliche Einsatz-Zwecke für Nachverarbeitungs-Algorithmen wäre etwa, wie bere
 
 \subsection{Schnittstellen}
 
-Wie bereits in \ref{lbl_prozess_art} besprochen, wollen wir für das Backend einen Service definieren. Damit dieser auch wirklich unabhängig (also in einem eigenen Prozess) vom Frontend läuft, soll dieser ein Remote-Service sein. Dies bedeutet, dass wir für die Kommunikation zwischen dem Frontend und dem Backend Schnittstellen definieren müssen, um die Inter-Prozess-Kommunikation abzuwickeln. Android stellt dafür eine eigenen Dialekt der Interface Definition Language bereit, der sich wenig überraschend "Android Interface Definition Language" (kurz AIDL) nennt.
+Wie bereits in \ref{lbl_prozess_art} besprochen, wollen wir für das Backend einen Service definieren. Damit dieser auch wirklich unabhängig (also in einem eigenen Prozess) vom Frontend läuft, soll dieser ein Remote-Service sein. Dies bedeutet, dass wir für die Kommunikation zwischen dem Frontend und dem Backend Schnittstellen definieren müssen, um die Inter-Prozess-Kommunikation abzuwickeln. Android stellt dafür eine eigenen Dialekt der Interface Definition Language bereit, der sich wenig überraschend "Android Interface Definition Language" (kurz AIDL) nennt.\\
+\\
+Die Schnittstellen, die wir benötigen werden, lassen sich in zwei Gruppen unterteilen: Die eigentliche Zeichen-Erkennung und die Verwaltung der Erkennungs-Algorithmen und deren Konfiguration.\\
 
-Die Schnittstellen, die wir benötigen werden, lassen sich in zwei Gruppen unterteilen: Die eigentliche Zeichen-Erkennung und die Verwaltung der Erkennungs-Algorithmen.
-
-\subsubsection{Zeichen-Erkennung}
-
-Die Schnittstellen für die Zeichen-Erkennung sind relativ simpel und direkt: Es müssen Eingabe-Punkte an das Backend gesendet werden und es müssen die erkannten Zeichen an das Frontend zurück gegeben werden.
-
-\begin{lstlisting} [caption={Schnittstellen für die Zeichen-Erkennung},label=intrf_detection]
+\begin{lstlisting} [caption={AIDL-Definitionen der Service-Schnittstelle},label=intrf_detection]
 interface IDetectionService {
-    /**
-     * Registering callback interface with service.
-     */
-    void registerCallback(
-		IReturnRecognisedCharacters cb);
-    
-    /**
-     * Remove a previously registered callback interface.
-     */
-    void unregisterCallback(
-		IReturnRecognisedCharacters cb);
-    
-    /**
-     * Add TouchPoints to detection queue
-     */
-    void addTouchPoints(in List<TouchPoint> points);
-}
+    //...
 
-oneway interface IReturnRecognisedCharacters {
-    /**
-     * Return recognised Characters
-     */
-    void recognisedCharacters(
-		out List<Character> characters);
+    void addTouchPoints(
+             in List<TouchPoint> points, 
+             boolean start_detection);
+    //...
+    void endSample();
+    
+    List<String> getAvailableStrategies();
+    List<String> getActiveStrategies();
+    void reinitializeStrategies(int type);
+    List<StrategyArgument> getStrategyConfiguration(
+                               String strategy_name, 
+                               int type);
+    void setStrategyArgument(
+             in StrategyArgument argument, int type);
+    void broadcastArgument(in StrategyArgument argument);
 }
 \end{lstlisting}
 
-\subsubsection{Verwaltung der Erkennungs-Algorithmen}
+\begin{lstlisting} [caption={AIDL-Definitionen der R\"{u}ckruf-Schnittstelle},label=intrf_detection]
+oneway interface IReturnResults {
+    void recognisedCharacters(
+             in List<Character> characters);
+    //...
+}
+\end{lstlisting}
+
+\subsubsection{Zeichen-Erkennung}
+
+Die Schnittstellen für die Zeichen-Erkennung sind relativ simpel und direkt: Es müssen Eingabe-Punkte an das Backend gesendet werden und es müssen die erkannten Zeichen an das Frontend zurück gegeben werden. Da die Rückgabe der erkannten Zeichen nicht zwingend unmittelbar nach der Übertragung der Eingabe-Punkte erfolgen muss, wird sie über ein eigenes Rückruf-Interface abgehandelt.
+
+Das Interface \emph{IDetectionService} definiert dafür unter anderem die Methoden \emph{addTouchPoints()}, mit welcher neue Eingabe-Punkte an den Erkennungs-Dienst übermittelt und die Erkennung falls gewünscht gestartet werden kann, sowie \emph{endSample()}, welche eine Eingabe abschliesst und die Erkennung started.
+
+Für die Rückgabe definiert das Rückruf-Interface \emph{IReturnResults} unter anderem die Methode \emph{recognisedCharacters()}, mit welcher die erkannten Zeichen an das Frontend zurück gegeben werden.
+
+\subsubsection{Verwaltung und Konfiguration der Erkennungs-Algorithmen}
+
+Für die Verwaltung der Erkennungs-Algorithmen stellt das Interface \emph{IDetectionService} zum Einen Methoden für das Auslesen der Verwendeten Algorithmen und zum Anderen für solche für die Konfiguration der einzelnen Algorithmen bereit.
+
+Die Methode \emph{getAvailableStrategies()} gibt alle im Service vorhandenen Algorithmen zurück, während \emph{getActiveStrategies()} nur die momentan aktiven liefert. Ein solcher Algorithmus kann über die Konfigurations-Schnittstellen aktiviert oder deaktiviert werden. Weiter können mit der Methode \emph{reinitializeStrategies()} alle Algorithmen einer bestimmten Phase\footnote{Wird als Type der Phase ein Wert unter Null angegeben, werden alle Algorithmen neu initialisiert.} neu initialisiert werden werden.
+
+\label{lbl_be_enable}Für die Konfiguration der Algorithmen wurde die Klasse \emph{StrategyArgument} entworfen, welche das Interface \emph{Parcelable} des Android-Frameworks implementiert und daher über die Kommunikations-Mechanismen von Android versandt werden kann. Die Klasse repräsentiert ein Argument eines Algorithmus und enthält dessen Namen, den Namen des Argumentes, sowie dessen Wert und Beschreibung. Ein Spezialfall eines solchen Arguments ist die Aktivierung oder Deaktivierung eines Algorithmus. Mit einem \emph{StrategyArgument} mit dem Namen "enabled" und dem Wert "false" kann ein Algorithmus deaktiviert werden, alle anderen Wert aktivieren ihn. Mit der Methode \emph{getStrategyConfiguration()} können alle Argumente eines Algorithmus ausgelesen werden. Die Methode \emph{setStrategyConfiguration()} setzt den Wert des übergebenen Arguments in dem im \emph{StrategyArgument} spezifizierten Algorithmus. Weiter ist auch noch die Methode \emph{broadcastArgument()} definiert, welche den Wert des übergebenen Argumentes in allen Algorithmen setzt, welche dieses unterstützen. Diese Methode wird etwa dafür verwendet, die Höhe des jeweiligen Eingabe-Feldes an alle interessierten Algorithmen zu melden.
 
 \subsection{Erkennungs-Alogrithmen}
 
-(Klassendiagramm, Sequenzdiagramm)
+Da die einzelnen Schritte unseres Erkennungs-Ablaufs innerhalb der jeweiligen Phasen die selben Eingabe- und Ausgabe-Typen verwenden und dort austauschbar sein sollen lag die Anwendung des Strategy Design Patterns\cite[S.315-323]{designpatterns} für diese nahe. Jeder dieser Algorithmen ist somit eine Instanz einer der Phase entsprechenden Strategie.
+
+\subsubsection{Strategien}
+
+Da die Strategien aller Phasen ausser den Typen der Ein- und Rückgabewerte der Methode, die ihren eigentlichen Algorithmus implementiert, sehr ähnliche Attribute und Methoden haben, wurde ein globales Interface für die Strategien namens \emph{IStrategy} definiert, sowie eine abstrakte Basis-Klasse namens \emph{BaseStrategy} entworfen. Diese übernimmt etwa die Verwaltung der Argumente einer Strategie. Dadurch müssen die konkreten Implementationen von \emph{IStrategy}\footnote{Beziehungsweise der davon abgeleiteten Interfaces für die einzelnen Phasen.} nur den eigentlichen Algorithmus sowie ein paar einfache Methoden zur Beschreibung der Strategie umfassen. Dies erlaubt uns, Quelltext-Redundanzen zu minimieren und vereinfacht das Hinzufügen von neuen Algorithmen erheblich.
+
+(Klassen-Diagramm IStrategy)
+
+\subsubsection{Verwaltung der Strategien}
+
+Alle bekannten Strategien einer Phase werden zur einfachen Auffindbarkeit und Verwaltung durch entsprechenden Manager-Klassen verwaltet. Auf für die Manager der einzelnen Phasen wurde wieder eine verallgemeinerte abstrakte Basis-Klasse entworfen, welche die eigentlichen Verwaltungs-Operationen implementiert. Für die Implementation der Phasen-Manager wurden diese dann nur noch von der Basis-Klasse namens \emph{StrategyManager} abgeleitet und die einzelnen Strategien mussten noch initialisiert und dem Manager hinzugefügt werden.
+
+(Klassen-Diagramm Manager)
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=\textwidth]{img/uml_cd_strategies} 
+   \caption{Klassen-Diagram der Erkennungs-Strategien}
+   \label{fig:cl_strategies}
+\end{figure}
+
+\subsection{Erkennungs-Service}
+
+Da der Erkennungs-Dienst als Service in einem unabhängigen Hintergrund-Prozess arbeiten soll, wird dieser natürlich von der Service-Klasse von Android abgeleitet und muss entsprechend die verlangten Methoden implementieren (siehe \ref{lbl_be_impl_service}).
+
+(Klassen-Diagramm DetectionService)
+
+Weiter muss der Service den Ablauf seiner Erkennung verwalten. Dazu soll er für die beiden mehrstufigen Phasen jeweils eine Priority-Queue erhalten in welcher die einzelnen Erkennungs-Schritte anhand ihrer Position im Erkennungs-Prozess priorisiert abgelegt werden sollen.
+
+(Klassen-Diagramm StrategyQueue)
+
+Während der Erkennung muss der \emph{DetectionService} nun für jede Phase durch diese jeweilige \emph{StrategyQueue} iterieren und die aktiven Strategien, beziehungsweise bei einstufigen Phasen nur die entsprechende Strategie, anwenden. Zwischen den einzelnen Phasen muss der Dienst jeweils noch die Eingabe-Punkte oder die Resultate der vorgängigen Phase in das Eingabe-Format der nächsten Stufe konvertieren. Gegebenenfalls müssen vor dem Start der Erkennung noch die Eingabe-Punkte aus einem Buffer in die Liste der Eingabe-Punkte verschoben werden.
+
+Nachdem alle Erkennungs-Phasen durchlaufen wurden werden die Resultate dann über das Rückruf-Interface an alle angebunden Clients versendet.
+
+(Sequenz-Diagramm DetectionService.startDetection())
+
 %================================================
 
 \section{Implementation}
 
-(...)
+In diesem Abschnitt sollen nur die interessanteren Aspekte der Implementation erläutert werden und die Erweiterung des Systems mit zusätzlichen Funktionen beschrieben werden. Für Details der Implementation soll hiermit auf die API-Dokumentation\footnote{Zu finden in Form von mit Javadoc und Doxygen generiertem HTML im Ordner ''doc'' unter dem Projektverzeichnis} und den Quellcode verwiesen werden.
+
+\subsection{Strategien}
+
+\subsubsection{Zeichen-Erkennungsstrategie Graph}
+
+Um die Erkennung der Zeichen anhand der zuvor erkannten Mikrogesten mit Hilfe eines Graphen durchführen zu können, muss dieser zuvor initialisiert werden. Da wir uns eine gewisse Flexibilität bei der Definition des Graphen erhalten wollte, wurde entschieden, dessen Daten im standardisierten, XML-basierenden GraphML-Format abzuspeichern und diese jeweils beim Start des \emph{DetectionService} einzulesen. Wie in \ref{lbl_be_procandroid} bereits erläutert, sollen die Daten des Graphen während der Laufzeit im Speicher gehalten werden, im die Verzögerung für den Anwender beim Aufstarten der Anwendung möglichst gering zu halten. Trotzdem soll es möglich sein, die mit der Applikation mitgelieferte GraphML-Datei durch eine eigene zu ersetzen, sollte der Benutzer dies wünschen oder ein Frontend dies umsetzen wollen.
+
+Daher besitzt die Erkennungs-Strategie \emph{CharacterDetectionStrategyGraph} ein Argument das denn Ort an dem die GraphML-Datei gespeichert ist spezifizieren kann. Der Einfachheit halber wird neben dem Laden der mitgelieferten Datei aus den Applikations-Ressourcen nur das Laden von einer SD-Karte unterstützt. Der Benutzter oder ein Frontend müssten ihre eigene Datei daher auf eine solche ablegen. Damit können wir auch eventuelle Einschränkungen für den Dateizugriff umgehen\footnote{Unter Android laufen alle Applikationen mit einer individuellen Benutzer- und Prozess-Identifikation und das System erlaubt keinen Zugriff auf die Dateien anderer Applikationen.}.
+
+Das eigentliche Laden des Graphen erfolgt in der \emph{initialize()} Methode der Strategie und verwendet das \emph{IGraphFactory} Interface. Dieses definiert eine Schnittstelle zur Erzeugung des Wurzel-Knotens eines Graphen nach dem Factory Method Design Pattern\cite[S.107-116]{designpatterns} und wird von der Klasse \emph{GraphFactoryGraphMLImport} implementiert. Diese delegiert das Erzeugen wiederum an das \emph{IGraphParser} Interface und dessen konkrete Implementation \emph{GraphMLPullParser}, welches einen XML Pull Parser zum einlesen der GraphML-Datei verwenden.
+
+\subsubsection{Beispiel einer neuen Strategie}
+
+Zur Veranschaulichung wollen wir nun kurz demonstrieren, wie eine neue Strategie in unser System hinzugefügt werden könnte. Als Beispiel wollen wir jeweils eine Strategy implementieren, welche die übergebenen Eingabe-Punkte beziehungsweise die übergebenen Mikrogesten über das Logcat Logging-Interface ausgibt. Diese könnten etwa als ersten und letzten Schritt der Vorverarbeitung eingebunden werden um deren Effekte zu beobachten, während die Mikrogesten-Erkennungsstrategie die erkannten Mikrogesten ausgeben würde.
+
+
+\subsection{Service}\label{lbl_be_impl_service}
+
 %================================================
 
