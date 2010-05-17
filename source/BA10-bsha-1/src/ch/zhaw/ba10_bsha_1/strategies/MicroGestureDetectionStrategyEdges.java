@@ -23,7 +23,7 @@ public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements 
 	
 	
 	private double tolerance = 0.2d;
-
+	private double angleCosinus = -0.1d; // Enger Winkel
 
 	//---------------------------------------------------------------------------
 	// Implementation of BaseStrategy's abstract methods
@@ -83,7 +83,7 @@ public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements 
 				if(lastCurve == 0) {
 					lastCurve = cos;
 				}
-				else if(cos > -0.1 && Math.abs(cos - lastCurve) > tolerance) {
+				else if(cos > angleCosinus && Math.abs(cos - lastCurve) > tolerance) {
 					temp2.addPoint(pts[i]);
 	
 					result.add(temp2);

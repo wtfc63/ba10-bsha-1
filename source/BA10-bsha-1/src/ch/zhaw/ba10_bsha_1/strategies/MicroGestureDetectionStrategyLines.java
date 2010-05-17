@@ -176,7 +176,7 @@ public class MicroGestureDetectionStrategyLines extends BaseStrategy implements 
 			max = max / Math.sqrt(Math.pow(b.y - a.y, 2) + Math.pow(b.x - a.x, 2));
 			
 			if (max < 0.10) {
-				if (Math.sqrt(Math.pow(b.y - a.y, 2) + Math.pow(b.x - a.x, 2)) > 110) {
+				if (Math.sqrt(Math.pow(b.y - a.y, 2) + Math.pow(b.x - a.x, 2)) > 140) {
 					mg.setType(MicroGesture.TYPE_LONG_LINE);
 				}
 				else {
