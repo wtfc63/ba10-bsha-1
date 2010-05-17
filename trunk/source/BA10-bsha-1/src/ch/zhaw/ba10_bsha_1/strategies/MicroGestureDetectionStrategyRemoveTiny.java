@@ -51,7 +51,7 @@ public class MicroGestureDetectionStrategyRemoveTiny extends BaseStrategy implem
 		ArrayList<MicroGesture> result = new ArrayList<MicroGesture>();
 		for (MicroGesture m : microGestures) {
 			// TODO CHECK THIS TOLERANCE (SHOULD BE IMPROVED)
-			if (m.getPoints().size() > 3) {
+			if (m.getPoints().size() > 4) {
 				result.add(m);
 			}
 		}

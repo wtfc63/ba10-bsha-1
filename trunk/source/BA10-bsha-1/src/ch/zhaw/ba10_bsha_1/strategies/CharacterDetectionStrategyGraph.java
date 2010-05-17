@@ -90,11 +90,15 @@ public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICh
 			chars.add(character);
 		}*/
 		chars.addAll(root.consume(tmp, 1));
+		ArrayList<Character> chars2 = new ArrayList<Character>();
 		for (Character c : chars) {
-			if (c.toString().equals("none")) {
-				chars.remove(c);
+			if (c.toString().contains("none")) {
+				//chars.remove(c);
+			}
+			else {
+				chars2.add(c);
 			}
 		}
-		return chars;
+		return chars2;
 	}
 }
