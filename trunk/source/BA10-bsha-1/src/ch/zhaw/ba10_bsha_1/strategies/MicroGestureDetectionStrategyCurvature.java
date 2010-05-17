@@ -50,6 +50,10 @@ public class MicroGestureDetectionStrategyCurvature extends BaseStrategy impleme
 	 */
 	@Override
 	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> micro_gestures) {
+		
+		
+		
+		
 		ArrayList<MicroGesture> result = new ArrayList<MicroGesture>();
 		Iterator<MicroGesture> itr = micro_gestures.iterator();
 		while (itr.hasNext()) {
@@ -58,9 +62,24 @@ public class MicroGestureDetectionStrategyCurvature extends BaseStrategy impleme
 			
 			float tolerance = 230;
 			MicroGesture curr_mg = new MicroGesture();
-			if ((points != null) && (points.size() > 3)) {
-				TouchPoint[] pts = new TouchPoint[points.size()];
-				pts = points.toArray(pts);
+			
+			// Remove points that are too close together
+			TouchPoint[] temp = new TouchPoint[points.size()];
+			temp = points.toArray(temp);
+			ArrayList<TouchPoint> tempResult = new ArrayList<TouchPoint>();
+			TouchPoint prev = temp[0];
+			tempResult.add(temp[0]);
+			for(int i = 1; i < temp.length; i++) {
+				double dist = Math.sqrt(Math.pow(prev.x - temp[i].x, 2) + Math.pow(prev.y - temp[i].y, 2));	
+				if(dist > 15) {
+					tempResult.add(temp[i]);
+					prev = temp[i];
+				}
+			}
+
+			if ((points != null) && (tempResult.size() > 3)) {
+				TouchPoint[] pts = new TouchPoint[tempResult.size()];
+				pts = tempResult.toArray(pts);
 				curr_mg.addPoint(pts[0]);
 				float lastCurve = 0;
 				for (int i = 1; i < pts.length-1; i++) {

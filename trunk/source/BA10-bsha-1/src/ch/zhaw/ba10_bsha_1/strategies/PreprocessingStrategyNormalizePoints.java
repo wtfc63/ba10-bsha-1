@@ -88,6 +88,6 @@ public class PreprocessingStrategyNormalizePoints extends BaseStrategy implement
 			}
 		}
 		microGesture.setPoints(normalizedPoints);
-		return null;
+		return microGesture;
 	}
 }
