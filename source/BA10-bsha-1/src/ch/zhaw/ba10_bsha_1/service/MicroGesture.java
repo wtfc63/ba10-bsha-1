@@ -38,8 +38,7 @@ public class MicroGesture implements Cloneable, Parcelable {
 	public final static int TYPE_DOT = 6;
 	
 	private int type;
-	private float direction;
-	private int direction2;
+	private int direction;
 	private boolean switchedDirection;
 	private ArrayList<TouchPoint> points;
 	
@@ -64,7 +63,7 @@ public class MicroGesture implements Cloneable, Parcelable {
 		this.points.addAll(points);
 	}
 	
-	public MicroGesture(Collection<TouchPoint> points, int type, float direction) {
+	public MicroGesture(Collection<TouchPoint> points, int type, int direction) {
 		this.type = type;
 		this.direction = direction;
 		this.points = new ArrayList<TouchPoint>(points);
@@ -111,8 +110,7 @@ public class MicroGesture implements Cloneable, Parcelable {
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeInt(type);
-		dest.writeFloat(direction);
-		dest.writeInt(direction2);
+		dest.writeInt(direction);
 		dest.writeByte(switchedDirection ? Integer.valueOf(1).byteValue() : Integer.valueOf(0).byteValue());
 		TouchPoint[] tmp = new TouchPoint[points.size()];
 		dest.writeParcelableArray(points.toArray(tmp), flags);
@@ -120,8 +118,7 @@ public class MicroGesture implements Cloneable, Parcelable {
 	
 	public void readFromParcel(Parcel source) {
 		type = source.readInt();
-		direction = source.readFloat();
-		direction2 = source.readInt();
+		direction = source.readInt();
 		switchedDirection = (source.readInt() > 0) ? true : false;
 		Parcelable[] tmp = source.readParcelableArray(TouchPoint.class.getClassLoader());
 		points = new ArrayList<TouchPoint>(tmp.length);
@@ -256,49 +253,31 @@ public class MicroGesture implements Cloneable, Parcelable {
 	
 	public void setType(int type) {
 		this.type = type;
-	}
-	
-	
-	public float getDirection() {
-		return direction;
-	}
-	
-	public void setDirection(float direction) {
-		this.direction = direction;
-	}
-	
+	}	
 	
 	public boolean directionIsUp() {
-		return direction2 == 2 || direction2 == -1;
-		//return (Math.abs(direction) <= Math.PI) 
-		//		? (direction > 0) : false;
+		return direction == 2 || direction == -1;
 	}
 	
 	public boolean directionIsDown() {
-		return direction2 == 3 || direction2 == -1;
-		//return (Math.abs(direction) <= Math.PI) 
-		//		? (direction < 0) : false;
+		return direction == 3 || direction == -1;
 	}
 	
 	public boolean directionIsRight() {
-		return direction2 == 1 || direction2 == -1;
-		//return (Math.abs(direction) <= Math.PI) 
-		//		? (Math.abs(direction) > (Math.PI / 2)) : false;
+		return direction == 1 || direction == -1;
 	}
 	
 	public boolean directionIsLeft() {
-		return direction2 == 0 || direction2 == -1;
-		//return (Math.abs(direction) <= Math.PI) 
-		//		? (Math.abs(direction) < (Math.PI / 2)) : false;
+		return direction == 0 || direction == -1;
 	}
 	
 	
-	public int getDirection2() {
-		return this.direction2;
+	public int getDirection() {
+		return this.direction;
 	}
 	
-	public void setDirection2(int direction) {
-		this.direction2 = direction;
+	public void setDirection(int direction) {
+		this.direction = direction;
 	}
 	
 	
@@ -356,7 +335,7 @@ public class MicroGesture implements Cloneable, Parcelable {
 			default :
 				result.append("u:");
 		}
-		result.append(Float.toString(direction2));
+		result.append(Float.toString(direction));
 		for (TouchPoint p : points) {
 			result.append(p.toString());
 		}

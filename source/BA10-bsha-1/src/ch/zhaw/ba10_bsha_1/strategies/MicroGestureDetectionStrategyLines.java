@@ -95,7 +95,7 @@ public class MicroGestureDetectionStrategyLines extends BaseStrategy implements 
 							curr_mg.addPoint(pts[i+1]);
 							
 							setMicroGesture(curr_mg);
-							curr_mg.setDirection(analyseMicroGestureDirection(curr_mg));
+							analyseMicroGestureDirection(curr_mg);
 							tempResult.add(curr_mg);
 							
 							curr_mg = new MicroGesture();
@@ -109,7 +109,7 @@ public class MicroGestureDetectionStrategyLines extends BaseStrategy implements 
 					curr_mg.addPoint(pts[pts.length -1]);
 					
 					setMicroGesture(curr_mg);
-					curr_mg.setDirection(analyseMicroGestureDirection(curr_mg));
+					analyseMicroGestureDirection(curr_mg);
 					tempResult.add(curr_mg);
 					
 				} else {
@@ -131,7 +131,7 @@ public class MicroGestureDetectionStrategyLines extends BaseStrategy implements 
 					}
 					if (current.getType() == previous.getType() && 
 							previous.getType() != MicroGesture.TYPE_UNKNOWN &&
-							current.getDirection2() == previous.getDirection2()) {
+							current.getDirection() == previous.getDirection()) {
 						ArrayList<TouchPoint> list = current.getPoints();
 						for (TouchPoint p : list) {
 							previous.addPoint(p);
@@ -207,7 +207,7 @@ public class MicroGestureDetectionStrategyLines extends BaseStrategy implements 
 		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 	}
 	
-	private float analyseMicroGestureDirection(MicroGesture mg) {
+	private void analyseMicroGestureDirection(MicroGesture mg) {
 		float result = 0;
 		if (mg.getPoints().size() > 1) {
 			int size = mg.getPoints().size();
@@ -220,47 +220,46 @@ public class MicroGestureDetectionStrategyLines extends BaseStrategy implements 
 			if (mg.getType() == MicroGesture.TYPE_SHORT_LINE || mg.getType() == MicroGesture.TYPE_LONG_LINE) {
 				double tolerance = 0.8;
 				if (result < (1-tolerance) && result > (-1 + tolerance)) {
-					mg.setDirection2(2);
+					mg.setDirection(2);
 				}
 				else if (result > 1-tolerance && result < 1 + 4*tolerance) {
-					mg.setDirection2(1);
+					mg.setDirection(1);
 				}
 				else if (result > -1-4*tolerance && result < -1 + tolerance) {
-					mg.setDirection2(3);
+					mg.setDirection(3);
 				}
 				else {
-					mg.setDirection2(0);
+					mg.setDirection(0);
 				}
 			}
 			else if (mg.getType() == MicroGesture.TYPE_HALFCIRCLE) {
 				if (dx < dy) {
 					if (mg.getPoints().get(1).x < first.x) {
-						mg.setDirection2(0);
+						mg.setDirection(0);
 					}
 					else if (mg.getPoints().get(1).x > first.x) {
-						mg.setDirection2(2);
+						mg.setDirection(2);
 					}
 					else {
-						mg.setDirection2(-1);
+						mg.setDirection(-1);
 					}
 				}
 				else if (dx > dy) {
 					if (mg.getPoints().get((int)size/2).y < first.y) {
-						mg.setDirection2(1);
+						mg.setDirection(1);
 					}
 					else if (mg.getPoints().get((int)size/2).y > first.y) {
-						mg.setDirection2(3);
+						mg.setDirection(3);
 					}
 					else {
-						mg.setDirection2(-1);
+						mg.setDirection(-1);
 					}
 				}
 			}
 			else {
-				mg.setDirection2(-1);
+				mg.setDirection(-1);
 			}
 		}
-		return result;
 	}
 
 }

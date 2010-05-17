@@ -161,16 +161,52 @@ public class MicroGestureDetectionStrategyPrediction extends BaseStrategy implem
 	 * @param mg
 	 * @return
 	 */
-	private float analyseMicroGestureDirection(MicroGesture mg) {
-		float direction = 0;
+	private int analyseMicroGestureDirection(MicroGesture mg) {
+		float result = 0;
 		if (mg.getPoints().size() > 1) {
 			TouchPoint first  = mg.getPoints().get(0);
 			TouchPoint second = mg.getPoints().get(1);
 			float dx = first.x - second.x;
 			float dy = first.y - second.y;
-			direction = (float) (Math.atan2(dy, dx));
+			result = (float) (Math.atan2(dy, dx));
 		}
-		return direction;
+		int dir;
+		if (directionIsUp(result)) {
+			dir = 2;
+		}
+		else if (directionIsDown(result)) {
+			dir = 3;
+		}
+		else if (directionIsRight(result)) {
+			dir = 1;
+		}
+		else if (directionIsLeft(result)) {
+			dir = 0;
+		}
+		else {
+			dir = -1;
+		}
+		return dir;
+	}
+	
+	private boolean directionIsUp(double direction) {
+		return (Math.abs(direction) <= Math.PI) 
+				? (direction > 0) : false;
+	}
+	
+	private boolean directionIsDown(double direction) {
+		return (Math.abs(direction) <= Math.PI) 
+				? (direction < 0) : false;
+	}
+	
+	private boolean directionIsRight(double direction) {
+		return (Math.abs(direction) <= Math.PI) 
+				? (Math.abs(direction) > (Math.PI / 2)) : false;
+	}
+	
+	private boolean directionIsLeft(double direction) {
+		return (Math.abs(direction) <= Math.PI) 
+				? (Math.abs(direction) < (Math.PI / 2)) : false;
 	}
 	
 	/**
