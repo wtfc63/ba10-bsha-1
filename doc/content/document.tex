@@ -1,4 +1,4 @@
-\documentclass[a4paper,twopage,ngerman,11pt]{scrreprt}
+\documentclass[a4paper,twoside,ngerman,11pt]{scrreprt}
 
 
 %
@@ -24,6 +24,7 @@
 \usepackage{epsfig}
 \usepackage{enumerate}
 \usepackage[acronym]{glossaries} 
+\usepackage{array}
 
 \input{etc/glossary}
 
@@ -91,7 +92,7 @@
 	\part{Einleitung}
 		\input{content/aufgabenstellung}
 
-
+		\input{content/resultate}
 
 		\input{content/aufbau_report}		
 
@@ -129,9 +130,9 @@
 	\printglossaries
 
 	% Literaturverzeichnis
-	%\bibliographystyle{plain}
-	\bibliographystyle{geralpha}
-	\bibliography{etc/bibliography}
+	\bibliography{etc/bibliography}{}
+	\bibliographystyle{gerplain}
+	%\bibliographystyle{geralpha}
 	
 	% Appendices
 	\appendix
