@@ -57,7 +57,7 @@ public class MicroGestureDetectionStrategyCombine extends BaseStrategy implement
 			for (int i = 1; i < tempGestures.size(); i++) {
 				MicroGesture current = tempGestures.get(i);
 				if (current.getPoints().size() > 4) {
-					if (current.getType() == previous.getType() && current.getDirection2() == previous.getDirection2() && current.getType() == MicroGesture.TYPE_SHORT_LINE) {
+					if (current.getType() == previous.getType() && current.getDirection() == previous.getDirection() && current.getType() == MicroGesture.TYPE_SHORT_LINE) {
 						ArrayList<TouchPoint> list = current.getPoints();
 						for (TouchPoint p : list) {
 							previous.addPoint(p);

@@ -217,7 +217,7 @@ public class MicroGestureDetectionStrategyCurvature extends BaseStrategy impleme
 		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 	}
 	
-	private float analyseMicroGestureDirection(MicroGesture mg) {
+	private int analyseMicroGestureDirection(MicroGesture mg) {
 		float result = 0;
 		if (mg.getPoints().size() > 1) {
 			TouchPoint first  = mg.getPoints().get(0);
@@ -226,6 +226,42 @@ public class MicroGestureDetectionStrategyCurvature extends BaseStrategy impleme
 			float dy = first.y - second.y;
 			result = (float) (StrictMath.atan2(dy, dx));// - (Math.PI / 2));
 		}
-		return result;
+		int dir;
+		if (directionIsUp(result)) {
+			dir = 2;
+		}
+		else if (directionIsDown(result)) {
+			dir = 3;
+		}
+		else if (directionIsRight(result)) {
+			dir = 1;
+		}
+		else if (directionIsLeft(result)) {
+			dir = 0;
+		}
+		else {
+			dir = -1;
+		}
+		return dir;
+	}
+	
+	private boolean directionIsUp(double direction) {
+		return (Math.abs(direction) <= Math.PI) 
+				? (direction > 0) : false;
+	}
+	
+	private boolean directionIsDown(double direction) {
+		return (Math.abs(direction) <= Math.PI) 
+				? (direction < 0) : false;
+	}
+	
+	private boolean directionIsRight(double direction) {
+		return (Math.abs(direction) <= Math.PI) 
+				? (Math.abs(direction) > (Math.PI / 2)) : false;
+	}
+	
+	private boolean directionIsLeft(double direction) {
+		return (Math.abs(direction) <= Math.PI) 
+				? (Math.abs(direction) < (Math.PI / 2)) : false;
 	}
 }
