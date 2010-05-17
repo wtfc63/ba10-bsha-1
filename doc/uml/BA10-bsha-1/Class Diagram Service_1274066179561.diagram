@@ -1,4 +1,4 @@
-<XMI xmi.version="1.2"  xmlns:UML="org.omg.xmi.namespace.UML"  timestamp="17. Mai 2010 05:49:57 MESZ" >
+<XMI xmi.version="1.2"  xmlns:UML="org.omg.xmi.namespace.UML"  timestamp="17. Mai 2010 06:10:06 MESZ" >
 <XMI.content>
 <UML:Diagram isVisible="false"  zoom="0.65"  name="Class Diagram Service"  xmi.id="DCE.90A2CB37-9FC6-1C9B-E214-EF7F5BA2869D" >
 <UML:GraphElement.position>
@@ -6,8 +6,8 @@
      <XMI.field>0</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphNode.size>
-     <XMI.field>1443</XMI.field>
-     <XMI.field>826</XMI.field>
+     <XMI.field>1424</XMI.field>
+     <XMI.field>856</XMI.field>
 </UML:GraphNode.size>
 <UML:Diagram.viewport>
      <XMI.field>0</XMI.field>
@@ -23,8 +23,8 @@
 <UML:GraphElement.contained>
 <UML:GraphNode isVisible="false"  xmi.id="DCE.E54F4C8D-11DB-E3A2-A2F8-CAAADCF270A4" >
 <UML:GraphElement.position>
-     <XMI.field>94</XMI.field>
-     <XMI.field>169</XMI.field>
+     <XMI.field>73</XMI.field>
+     <XMI.field>435</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphNode.size>
      <XMI.field>389</XMI.field>
@@ -234,7 +234,7 @@
 <UML:GraphNode isVisible="false"  xmi.id="DCE.F6340005-8BAD-055F-7F28-866FB1DA94E0" >
 <UML:GraphElement.position>
      <XMI.field>1060</XMI.field>
-     <XMI.field>723</XMI.field>
+     <XMI.field>590</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphNode.size>
      <XMI.field>154</XMI.field>
@@ -263,8 +263,8 @@
 </UML:GraphNode>
 <UML:GraphNode isVisible="false"  xmi.id="DCE.27573784-09AC-B0A0-69C7-B890141F1EEA" >
 <UML:GraphElement.position>
-     <XMI.field>593</XMI.field>
-     <XMI.field>74</XMI.field>
+     <XMI.field>652</XMI.field>
+     <XMI.field>95</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphNode.size>
      <XMI.field>321</XMI.field>
@@ -408,7 +408,7 @@
 <UML:GraphNode isVisible="false"  xmi.id="DCE.6E1DB0D9-6B07-8FEA-AC30-28723D9CF529" >
 <UML:GraphElement.position>
      <XMI.field>1060</XMI.field>
-     <XMI.field>622</XMI.field>
+     <XMI.field>448</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphNode.size>
      <XMI.field>178</XMI.field>
@@ -437,8 +437,8 @@
 </UML:GraphNode>
 <UML:GraphNode isVisible="false"  xmi.id="DCE.2CA40FB9-5203-3D4C-470E-7A66D523811E" >
 <UML:GraphElement.position>
-     <XMI.field>1142</XMI.field>
-     <XMI.field>87</XMI.field>
+     <XMI.field>101</XMI.field>
+     <XMI.field>169</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphNode.size>
      <XMI.field>301</XMI.field>
@@ -548,8 +548,8 @@
 </UML:GraphNode>
 <UML:GraphNode isVisible="false"  xmi.id="DCE.323F73CA-90A3-7C4B-8C6E-3CA321D254AC" >
 <UML:GraphElement.position>
-     <XMI.field>531</XMI.field>
-     <XMI.field>365</XMI.field>
+     <XMI.field>593</XMI.field>
+     <XMI.field>383</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphNode.size>
      <XMI.field>435</XMI.field>
