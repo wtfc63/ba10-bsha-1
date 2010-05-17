@@ -22,7 +22,17 @@ Es ist naheliegend die Mikrogesten hauptsächlich anhand ihrer Form zu untersche
 Die Ausrichtung kann auch eine wichtige Eigenschaft sein, z.B. um Querstriche von Längsstrichen zu unterscheiden. Es bietet sich an, die Mikrogesten in eine diskrete Anzahl Richtungen abzubilden, um später die Erkennung im Graph zu vereinfachen.
 
 \subsubsection{Länge}
-Für Geraden kann die Länge eine wichtige Rolle spielen: Zum Beispiel ist der Unterschied zwischen 'q' und 'a' nur die Länge der Geraden.  
+Für Geraden kann die Länge eine wichtige Rolle spielen: Zum Beispiel ist der Unterschied zwischen 'q' und 'a' nur die Länge der Geraden.  Die Länge wird normalerweise nach dem Liniensystem der Schrift definiert (siehe Abbildung \ref{liniensystem}). Es wird unterschieden zwischen Linien die nur Mittellänge haben und solchen die Ober- oder Unterlänge haben.
+
+\subsubsection{Position}
+Die Schrift kann in drei Bereiche Unterteilt werden: Mittel-, Unter- und Oberlänge \cite{typo_linien}. Die Mikrogesten können sich generell in einem oder zwei dieser Bereiche befinden. Dies kann in spezialfällen die Unterscheidung ermöglichen: Zum Beispiel Besitzen 'p' und 'b' den gleichen Aufbau, jedoch befindet sich die Gerade an einer anderen Position.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.4\textwidth]{./img/liniensystem.pdf}
+  \caption{Unterteilung der Buchstaben in Mittel-, Unter- und Oberlänge}
+  \label{liniensystem}
+\end{figure}
 
 \section{Typen}
 \subsection{Variante A}
@@ -31,9 +41,12 @@ Variante A der Mikrogesten haben wir aus der bestehenden Projektarbeit \cite{zei
 Es sind folgende Mikrogesten definiert:
 \begin{itemize}
 \item Gerade
+\item Spitzkehre
 \item Schwache Krümmung
 \item Starke Krümmung
 \end{itemize}
+
+Es wird ausserdem noch berücksichtigt, ob der erkannte Buchstabe Ober- oder Unterlänge hat, um ähnliche Buchstaben zu unterscheiden. Richtung und Position der Mikrogesten werden nicht berücksichtigt.
 
 \subsection{Variante B}
 Variante B wurde von uns selbst erarbeitet, um eine bessere Toleranz gegenüber unterschiedlichen Schreibstilen zu erhalten:\begin{itemize}
@@ -43,19 +56,88 @@ Variante B wurde von uns selbst erarbeitet, um eine bessere Toleranz gegenüber 
 \item Kurze Gerade
 \end{itemize}
 
-Die Bezeichnungen Kreis und Halbkreis könnten etwas irreführend sein: Die Pfade müssen nicht genau kreisförmig sein, sondern jeder geschlossene Pfad gilt als Kreis und jeder gebogene Pfad gilt als Halbkreis.
+Die Bezeichnungen Kreis und Halbkreis könnten etwas irreführend sein: Die Pfade müssen nicht genau kreisförmig sein, sondern jeder geschlossene Pfad gilt als Kreis und jeder gebogene Pfad gilt als Halbkreis. Es wird zusätzlich noch die Position und Richtung der Mikrogesten berücksichtigt. Die daraus resultierenden Kombinationen sind in Tabelle \ref{varb_directions} ersichtlich.
+
+\begin{table}[h!]
+  \begin{center}
+\[
+    \begin{array}{l | c | c }
+    Richtung & Halbkreis & Gerade \\
+    \hline
+   \mbox{Vertikal} & \subset & | \\
+    \mbox{Vorwärts} & \cap & \backslash \\
+    \mbox{Horizontal} & \supset & - \\
+    \mbox{Rückwärts} & \cup & / \\
+    \hline
+    \end{array}
+\]
+  \end{center}
+  \caption{Die vier Richtungen für Halbkreis und Gerade}
+  \label{varb_directions}
+\end{table}
+
 
 \section{Abbildung von Zeichen}
+Jedes Zeichen muss nun mit den vorgegebenen Mikrogesten aufgebaut werden. Abbildung \ref{beispiel_aufbau} zeigt wie dies theoretisch mit Variante A und B aussieht. Dieses Beispiel berücksichtigt nur Blockschrift. Für die Kursivschrift ist ein anderer Aufbau nötig. Dort kommt die Position der Mikrogesten zum Zuge: Einige Kursivbuchstaben haben zum Beispiel einen Kreis im Oberlängen- oder Unterlängen-Bereich.
 
-Im Anhang befinden sich eine Tabelle wie alle Buchstaben mit dieser Variante aufgebaut sind.
+Eine weitere Besonderheit der Kursivschrift ist das zusammenhängen von Buchstaben. Dieses Problem kann mit Hilfe von Postfix-Mikrogesten gelöst werden. Damit ist lediglich eine oder mehrere optionale Mikrogesten gemeint, die am Ende der Mikrogesten-Folge angehängt sind. Es müssen mehrere Verbindungsgesten möglich sein, da diese je nach verbundenen Buchstaben anders ist.
+
+Für die Variante A wurden von der vorhergehenden Projektgruppe Präfixe verwendet, um die Buchstabenverbindung zu gewährleisten.
+
+Folglich gibt es für jeden Buchstaben zwei Möglichkeiten, geschrieben zu werden und bei der Kursiv-Variante gibt es noch optionale Zeichen-Teile. 
+
+\begin{table}[h!]
+  \begin{center}
+\[
+    \begin{array}{l | c | c }
+    Buchstabe & Aufbau Variante A & Aufbau Variante B \\
+   \hline\noalign{\smallskip}
+   \mbox{a} & 
+	 \includegraphics[width=15pt]{./img/a_schwach_uhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}    \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}   & 
+	\bigcirc \; | \\
+   \hline\noalign{\smallskip}
+
+    \mbox{b} & 
+		 \includegraphics[width=15pt]{./img/a_schwach_gegenuhrzeiger.pdf}  \includegraphics[width=15pt]{./img/a_schwach_uhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_schwach_gegenuhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_schwach_gegenuhrzeiger.pdf} & 
+		 \includegraphics[width=15pt]{./img/a_gerade.pdf} \; \bigcirc \\ 
+  \hline\noalign{\smallskip}
+
+    \mbox{c} &
+		 \includegraphics[width=15pt]{./img/a_schwach_uhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}  & 
+		\subset \\ 
+  \hline\noalign{\smallskip}
+
+    \mbox{d} & 
+		 \includegraphics[width=15pt]{./img/a_schwach_uhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_gerade.pdf}   \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}  & 
+		\bigcirc \includegraphics[width=15pt]{./img/a_gerade.pdf} \\
+   \hline
+    \end{array}
+\]
+  \end{center}
+  \caption{Beispiel-Aufbau der Buchstaben a, b c und d}
+  \label{beispiel_aufbau}
+\end{table}
+
+Im Anhang befindet sich eine Tabelle mit dem Aufbau aller Buchstaben.
 
 \chapter{Graph}
-Nachdem man nun die Buchstaben in Mikrogesten aufgeteilt hat, muss man noch herausfinden, welche Folge von Mikrogesten welchen Buchstaben darstellt. Eine Möglichkeit dies zu tun ist ein vordefinierter Graph. Im Graph wird für jedes Zeichen die Reihenfolge der Mikrogesten als Nodes eingefügt. Danach muss man bloss von einem Startknoten aus den Graph durchlaufen und landet am Schluss auf dem Node des gesuchten Buchstaben.
+Nachdem man nun die Buchstaben in Mikrogesten aufgeteilt hat, muss man noch herausfinden, welche Folge von Mikrogesten welchen Buchstaben darstellt. Eine Möglichkeit dies zu tun ist die Verwendung eines zyklischen gerichteten Graphen. Wie im vorherigen Kapitel beschrieben, werden alle Buchstaben durch Mikrogesten-Folgen beschrieben. Jede Mikrogeste der Folge wird im Graph als Knoten dargestellt. Mit einer intelligenten Verknüpfung der Knoten lassen sich so beliebige Abweichungen und auch mehrere Buchstaben abbilden. 
 
-%% TODO Bild Beispiel des Graphen %%
+Die Erkennung funktioniert im Prinzip so, dass die Liste der erkannten Mikrogesten der Fahrplan für den Graph darstellt. Ausgehend von einem Startknoten wird immer die nächste Mikrogeste aus der Liste entnommen und auf den passenden Knoten gewechselt. Nachdem alle Mikrogesten so abgearbeitet wurden, sollte man auf einem Knoten mit einem zugehörigen Buchstaben gelandet sein.
+
+In Abbildung \ref{beispiel_graph} sieht man einen ganz simplen solchen Graphen. 
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.5\textwidth]{./img/BeispielGraph.pdf}
+  \caption{Ein sehr einfacher Graph für die Erkennung des Buchstaben 'e'}
+  \label{beispiel_graph}
+\end{figure}
 
 \section{Aufbau}
-Der Graph muss von Hand aufgebaut werden. Für jede Node wird noch eine Wahrscheinlichkeit eingebaut, die anzeigt wie hoch die Chance ist über diesen Node auf einen Buchstaben zu kommen.
+Der Graph besitzt einen Eintrittspunkt, den \emph{Root-Node}. Von diesem aus wird jeweils die Buchstaben-Erkennung gestartet. Jedes Mal wenn der Pfad auf dem Graph wieder zurück auf den Root-Node führt, bedeutet dies dass die Buchstaben-Erkennung abgeschlossen ist und ein neuer Buchstaben beginnt. 
+
+Die restlichen Nodes beinhalten alle eine bestimmte Mikrogeste und optional ein Zeichen. Ausserdem besitzt der Graph gewichtete Kanten
 
 \section{Erkennungswahrscheinlichkeit}
 Jeder Node besitzt eine bestimmte Wahrscheinlichkeit. Beim durchlaufen des Pfades werden alle Wahrscheinlichkeiten multipliziert. So können häufige Mikrogestenn-Abfolgen gestärkt werden und seltene geschwächt. Ausserdem gibt es immer mehrere Möglichkeiten, wie der Graph durchschritten werden kann. Die resultierende Wahrscheinlichkeit gibt ein Indiz dafür, welches Resultat das richtige ist.
