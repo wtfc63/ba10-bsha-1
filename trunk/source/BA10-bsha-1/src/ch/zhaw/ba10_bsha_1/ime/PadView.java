@@ -234,7 +234,7 @@ public class PadView extends KeyboardView implements IObservable {
     	if (inputs.size() > 0) {
     		TouchInput last = inputs.get(inputs.size() - 1);
     		//Test if finished input crosses out the last one and remove both if it does
-    		if (currentInput.crosses(last)) {
+    		if (currentInput.crosses(last) && currentInput.isRightToLeft()) {
     			inputs.remove(last);
     			notifyObservers(EVENT_TYPE_BACKSPACE);
     		//Otherwise, add finished input to other ones and notify observers

@@ -58,11 +58,36 @@ public class TouchInput {
 		return path;
 	}
 	
+	/**
+	 * Determine whether this TouchInput started from the right and goes to the left
+	 * 
+	 * @return
+	 */
+	public boolean isRightToLeft() {
+		boolean result = false;
+		if (points.size() > 1) {
+			TouchPoint first = points.get(0);
+			result = (first.x > leftBoundary);
+		}
+		return result;
+	}
+	
+	/**
+	 * Get the bounding rectangle of this TouchInput
+	 * 
+	 * @return
+	 */
 	public RectF getDimensions() {
 		RectF dimensions = new RectF(leftBoundary, upperMax, rightBoundary, lowerMax);
 		return dimensions;
 	}
 	
+	/**
+	 * Determine whether this TouchInput crosses out another one
+	 * 
+	 * @param other
+	 * @return
+	 */
 	public boolean crosses(TouchInput other) {
 		boolean result = false;
 		RectF this_dim = getDimensions();
