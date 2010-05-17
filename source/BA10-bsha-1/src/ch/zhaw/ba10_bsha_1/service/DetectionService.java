@@ -97,15 +97,18 @@ public class DetectionService extends Service {
         
         int priority = 1;
     	preprocessingSteps = new StrategyQueue<IPreprocessingStrategy>();
-    	preprocessingSteps.enqueue(PreprocessingStrategyManager.getInstance().getStrategy("Spline"), priority++);
+    	preprocessingSteps.enqueue(PreprocessingStrategyManager.getInstance().getStrategy("NormalizePoints"), priority++);
+    	preprocessingSteps.enqueue(PreprocessingStrategyManager.getInstance().getStrategy("Spline"), priority++);	
     	
     	priority = 1;
     	mgDetectionSteps = new StrategyQueue<IMicroGestureDetectionStrategy>();
     	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Edges"), priority++);
+    	//mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Smoothing"), priority++);
     	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Circles"), priority++);
-    	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("RemoveTiny"), priority++);
+    	//mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("RemoveTiny"), priority++);
     	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Lines"), priority++);
     	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("HalfCircle"), priority++);
+       	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Combine"), priority++);
     	
     	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("Graph");
     	

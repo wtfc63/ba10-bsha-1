@@ -64,11 +64,22 @@ public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements 
 			TouchPoint[] pts = new TouchPoint[points.size()];
 			pts = points.toArray(pts);
 			
-			double lastCurve = 0;
-			MicroGesture temp2 = new MicroGesture();
-			temp2.addPoint(pts[0]);
+			////// TEST
+			if (microGestures.size() == 1 && pts.length < 5) {
+				MicroGesture dot = new MicroGesture();
+				dot.setPoints(points);
+				dot.setType(MicroGesture.TYPE_DOT);
+				result.add(dot);
+				break;
+			}
+			
+			///// END TEST
+			
+			double lastCos = 0;
+			MicroGesture newGesture = new MicroGesture();
+			newGesture.addPoint(pts[0]);
 			for (int i = 1; i < pts.length-1; i++) {
-				temp2.addPoint(pts[i]);
+				newGesture.addPoint(pts[i]);
 				float x1, y1;
 				float x2, y2;
 				x1 = pts[i-1].x - pts[i].x;
@@ -77,29 +88,28 @@ public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements 
 				y2 = pts[i+1].y - pts[i].y;
 				
 				//Winkel
-				double cos = (x1 * x2 + y1 * y2) / 
-					(Math.sqrt(x1*x1 + y1*y1) * Math.sqrt(x2*x2 + y2*y2));
+				double cos = (x1 * x2 + y1 * y2) / (Math.sqrt(x1*x1 + y1*y1) * Math.sqrt(x2*x2 + y2*y2));
 	
-				if(lastCurve == 0) {
-					lastCurve = cos;
+				if(lastCos == 0) {
+					lastCos = cos;
 				}
-				else if(cos > angleCosinus && Math.abs(cos - lastCurve) > tolerance) {
-					temp2.addPoint(pts[i]);
+				else if(cos > angleCosinus && Math.abs(cos - lastCos) > tolerance) {
+					newGesture.addPoint(pts[i]);
 	
-					result.add(temp2);
+					result.add(newGesture);
 					
 					if (i != pts.length-1) {
-						temp2 = new MicroGesture();
-						temp2.addPoint(pts[i]);
+						newGesture = new MicroGesture();
+						newGesture.addPoint(pts[i]);
 					}
-					lastCurve = 0;
+					lastCos = 0;
 				}
 				else {
-					lastCurve = cos;
+					lastCos = cos;
 				}
 			}
-			temp2.addPoint(pts[pts.length -1]);
-			result.add(temp2);
+			newGesture.addPoint(pts[pts.length -1]);
+			result.add(newGesture);
 		}
 		
 		return result;

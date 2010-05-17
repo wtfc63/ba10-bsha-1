@@ -35,6 +35,7 @@ public class MicroGesture implements Cloneable, Parcelable {
 	public final static int TYPE_SHORT_LINE = 3;
 	public final static int TYPE_CIRCLE = 4;
 	public final static int TYPE_HALFCIRCLE = 5;
+	public final static int TYPE_DOT = 6;
 	
 	private int type;
 	private float direction;
@@ -349,6 +350,9 @@ public class MicroGesture implements Cloneable, Parcelable {
 			case TYPE_HALFCIRCLE :
 				result.append("h:");
 				break;
+			case TYPE_DOT :
+				result.append("d:");
+				break;
 			default :
 				result.append("u:");
 		}
@@ -401,6 +405,8 @@ public class MicroGesture implements Cloneable, Parcelable {
 			type = TYPE_CIRCLE;
 		} else if (str.contains("h")) {
 			type = TYPE_HALFCIRCLE;
+		} else if (str.contains("d")) {
+			type = TYPE_DOT;
 		}
 		return type;
 	}
