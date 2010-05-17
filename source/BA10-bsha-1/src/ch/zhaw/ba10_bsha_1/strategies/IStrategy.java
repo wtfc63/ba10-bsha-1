@@ -20,6 +20,8 @@ import ch.zhaw.ba10_bsha_1.StrategyArgument;
  */
 public interface IStrategy {
 	
+	public void initialize();
+	
 	public String toString();
 	public String getDescription();
 	

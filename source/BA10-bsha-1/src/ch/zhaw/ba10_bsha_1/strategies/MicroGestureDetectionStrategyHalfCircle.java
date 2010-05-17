@@ -24,7 +24,8 @@ public class MicroGestureDetectionStrategyHalfCircle extends BaseStrategy implem
 	//---------------------------------------------------------------------------
 	
 	
-	protected void initArguments() {}
+	@Override
+	public void initialize() {}
 
 	@Override
 	protected String getStrategyName() {

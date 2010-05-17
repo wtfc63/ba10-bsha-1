@@ -51,17 +51,22 @@ interface IDetectionService {
     List<String> getActiveStrategies();
     
     /**
+     * Reinitialize all strategies of the given type (or all of them if type is smaller than zero)
+     */
+    void reinitializeStrategies(int type);
+    
+    /**
      * Get a listing of the arguments of a strategy
      */
     List<StrategyArgument> getStrategyConfiguration(String strategy_name, int type);
     
     /**
-     * Set an argument in all strategies supporting the given argument
-     */
-    void broadcastArgument(in StrategyArgument argument);
-    
-    /**
      * Set an argument of a strategy
      */
     void setStrategyArgument(in StrategyArgument argument, int type);
+    
+    /**
+     * Set an argument in all strategies supporting the given argument
+     */
+    void broadcastArgument(in StrategyArgument argument);
 }

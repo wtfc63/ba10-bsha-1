@@ -21,8 +21,9 @@ public class CharacterDetectionStrategyNone extends BaseStrategy implements	ICha
 	// Implementation of BaseStrategy's abstract methods
 	//---------------------------------------------------------------------------
 	
-	
-	protected void initArguments() {}
+
+	@Override
+	public void initialize() {}
 
 	@Override
 	protected String getStrategyName() {

@@ -91,6 +91,12 @@ public abstract class StrategyManager<Strategy extends IStrategy> {
 		}
 	}
 
+	public void reinitializeAllStrategies() {
+		for (Strategy strategy : strategies.values()) {
+			strategy.initialize();
+		}
+	}
+
 
 	//---------------------------------------------------------------------------
 	// StrategyArgument management methods

@@ -38,8 +38,11 @@ public class MicroGestureDetectionStrategyPrediction extends BaseStrategy implem
 	//---------------------------------------------------------------------------
 	
 	
-	protected void initArguments() {
-		addArgument(new StrategyArgument(getStrategyName(), "FieldHeight", "Height of input field"));
+	@Override
+	public void initialize() {
+		if (!hasArgument("FieldHeight")) {
+			addArgument(new StrategyArgument(getStrategyName(), "FieldHeight", "Height of input field"));
+		}
 	}
 
 	@Override

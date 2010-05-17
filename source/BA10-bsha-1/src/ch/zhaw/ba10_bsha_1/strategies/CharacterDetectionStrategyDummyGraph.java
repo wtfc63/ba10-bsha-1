@@ -29,25 +29,15 @@ public class CharacterDetectionStrategyDummyGraph extends BaseStrategy implement
 
 
 	//---------------------------------------------------------------------------
-	// Constructor
-	//---------------------------------------------------------------------------
-
-	
-	public CharacterDetectionStrategyDummyGraph() {
-		super();
-		
-		IGraphFactory factory = new GraphFactoryDummy();
-		root = factory.createRoot();
-	}
-
-
-	//---------------------------------------------------------------------------
 	// Implementation of BaseStrategy's abstract methods
 	//---------------------------------------------------------------------------
 	
 	
 	@Override
-	protected void initArguments() {}
+	public void initialize() {
+		IGraphFactory factory = new GraphFactoryDummy();
+		root = factory.createRoot();
+	}
 
 	@Override
 	protected String getStrategyName() {

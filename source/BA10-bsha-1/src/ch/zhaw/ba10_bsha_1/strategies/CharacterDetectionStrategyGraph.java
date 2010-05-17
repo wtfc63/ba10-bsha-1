@@ -29,26 +29,18 @@ public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICh
 
 
 	//---------------------------------------------------------------------------
-	// Constructor
-	//---------------------------------------------------------------------------
-
-	
-	public CharacterDetectionStrategyGraph() {
-		super();
-		
-		IGraphFactory factory = new GraphFactoryGraphMLImport(getArgument("Path").getArgumentValue());
-		root = factory.createRoot();
-	}
-
-
-	//---------------------------------------------------------------------------
 	// Implementation of BaseStrategy's abstract methods
 	//---------------------------------------------------------------------------
 	
 	
 	@Override
-	protected void initArguments() {
-		addArgument(new StrategyArgument(getStrategyName(), "Path", "/sdcard/ba10_bsha_1.xml", "Path of the GraphML file"));	
+	public void initialize() {
+		if (!hasArgument("Path")) {
+			addArgument(new StrategyArgument(getStrategyName(), "Path", "/sdcard/ba10_bsha_1.xml", "Path of the GraphML file"));
+		}
+		
+		IGraphFactory factory = new GraphFactoryGraphMLImport(getArgument("Path").getArgumentValue());
+		root = factory.createRoot();	
 	}
 
 	@Override
@@ -85,10 +77,6 @@ public class CharacterDetectionStrategyGraph extends BaseStrategy implements ICh
 		} catch (CloneNotSupportedException ex) {
 			tmp = micro_gestures;
 		}
-		/*while ((character = root.consume(tmp)) != null) {
-			character.setMicroGestures(micro_gestures);
-			chars.add(character);
-		}*/
 		chars.addAll(root.consume(tmp, 1));
 		ArrayList<Character> chars2 = new ArrayList<Character>();
 		for (Character c : chars) {

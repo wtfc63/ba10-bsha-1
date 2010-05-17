@@ -25,12 +25,14 @@ public class MicroGestureDetectionStrategyEdges extends BaseStrategy implements 
 	private double tolerance = 0.2d;
 	private double angleCosinus = -0.1d; // Enger Winkel
 
+	
 	//---------------------------------------------------------------------------
 	// Implementation of BaseStrategy's abstract methods
 	//---------------------------------------------------------------------------
 	
 	
-	protected void initArguments() {}
+	@Override
+	public void initialize() {}
 
 	@Override
 	protected String getStrategyName() {

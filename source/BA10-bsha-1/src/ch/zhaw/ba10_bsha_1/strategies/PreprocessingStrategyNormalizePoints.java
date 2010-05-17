@@ -30,7 +30,8 @@ public class PreprocessingStrategyNormalizePoints extends BaseStrategy implement
 	//---------------------------------------------------------------------------
 	
 	
-	protected void initArguments() {}
+	@Override
+	public void initialize() {}
 
 	@Override
 	protected String getStrategyName() {

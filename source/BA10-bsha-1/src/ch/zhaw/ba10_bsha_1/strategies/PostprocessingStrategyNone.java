@@ -20,7 +20,8 @@ public class PostprocessingStrategyNone extends BaseStrategy implements IPostpro
 	//---------------------------------------------------------------------------
 	
 	
-	protected void initArguments() {}
+	@Override
+	public void initialize() {}
 
 	@Override
 	protected String getStrategyName() {

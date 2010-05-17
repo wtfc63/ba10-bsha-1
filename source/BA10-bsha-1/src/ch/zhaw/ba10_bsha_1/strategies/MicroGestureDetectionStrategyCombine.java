@@ -3,7 +3,6 @@ package ch.zhaw.ba10_bsha_1.strategies;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 
 import ch.zhaw.ba10_bsha_1.*;
 import ch.zhaw.ba10_bsha_1.service.MicroGesture;
@@ -22,7 +21,7 @@ public class MicroGestureDetectionStrategyCombine extends BaseStrategy implement
 	//---------------------------------------------------------------------------
 	
 	
-	protected void initArguments() {}
+	public void initialize() {}
 
 	@Override
 	protected String getStrategyName() {
