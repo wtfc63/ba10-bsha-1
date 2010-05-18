@@ -90,7 +90,7 @@ Folglich gibt es für jeden Buchstaben zwei Möglichkeiten, geschrieben zu werde
   \begin{center}
 \[
     \begin{array}{l | c | c }
-    Buchstabe & Aufbau Variante A & Aufbau Variante B \\
+    Buchstabe & \mbox{\emph{Aufbau Variante A}} & \mbox{\emph{Aufbau Variante B}} \\
    \hline\noalign{\smallskip}
    \mbox{a} & 
 	 \includegraphics[width=15pt]{./img/a_schwach_uhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}    \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}   & 
@@ -137,9 +137,18 @@ In Abbildung \ref{beispiel_graph} sieht man einen ganz simplen solchen Graphen.
 \section{Aufbau}
 Der Graph besitzt einen Eintrittspunkt, den \emph{Root-Node}. Von diesem aus wird jeweils die Buchstaben-Erkennung gestartet. Jedes Mal wenn der Pfad auf dem Graph wieder zurück auf den Root-Node führt, bedeutet dies dass die Buchstaben-Erkennung abgeschlossen ist und ein neuer Buchstaben beginnt. 
 
-Die restlichen Nodes beinhalten alle eine bestimmte Mikrogeste und optional ein Zeichen. Ausserdem besitzt der Graph gewichtete Kanten
+Die restlichen Nodes beinhalten alle eine bestimmte Mikrogeste und optional ein Zeichen. Die Kanten sind alle gewichtet, um einen Pfad durch den Graphen zu bewerten. Es ist möglich, dass mit einer bestimmten Menge Mikrogesten der Graph auf mehrere Arten beschritten werden kann. Um diese verschiedenen Pfade zu vergleichen wird die Gewichtung der beschrittenen Kanten verglichen.
 
 \section{Erkennungswahrscheinlichkeit}
-Jeder Node besitzt eine bestimmte Wahrscheinlichkeit. Beim durchlaufen des Pfades werden alle Wahrscheinlichkeiten multipliziert. So können häufige Mikrogestenn-Abfolgen gestärkt werden und seltene geschwächt. Ausserdem gibt es immer mehrere Möglichkeiten, wie der Graph durchschritten werden kann. Die resultierende Wahrscheinlichkeit gibt ein Indiz dafür, welches Resultat das richtige ist.
+Jeder Node besitzt eine bestimmte Wahrscheinlichkeit. Beim durchlaufen des Pfades werden alle Wahrscheinlichkeiten multipliziert. So können häufige Mikrogesten-Abfolgen gestärkt werden und seltene geschwächt. Die resultierende Pfadwahrscheinlichkeit hilft, die beste Lösung auszuwählen.
 
 \section{Erkennung von Zeichen}
+
+In Abbildung \ref{beispiel_graph_ablauf} ist aufgezeigt, wie der Graph entsprechend der erkannten Mikrogesten abgeschritten wird. Was allerdings im Beispiel nicht berücksichtigt ist: Es ist sehr wahrscheinlich, dass mehr als eine mögliche Lösung existiert. Bei mehreren Lösungen muss bestimmt werden, welche Lösung am besten ist. 
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=\textwidth]{./img/graph_ablauf_beispiel.pdf}
+  \caption{Beispiel des Ablaufs Eingabe - Mikrogesten-Erkennung - Buchstaben-Erkennung}
+  \label{beispiel_graph_ablauf}
+\end{figure}

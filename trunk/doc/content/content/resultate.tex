@@ -4,6 +4,22 @@
 % - zwei MG-Varianten mit passenden Graphen
 % - Import, Export, Visualisierung Graph
 % - Software zum testen der Mikrogesten-Erkennung
-% - Ersatz f�r das Keyboard im Android Betriebssystem
+% - Ersatz für das Keyboard im Android Betriebssystem
 % - ???
 % - Profit.
+
+\begin{enumerate}
+\item \textbf{Entwicklung einer Input-Method und Handschrifterkennungs-Service für Android} \\ 
+Die erstellte Input-Method kann als Ersatz für das Standard-Keyboard von Android verwendet werden. Für die Erkennung der Buchstaben greift sie auf den Service zu, der die gesamte Erkennungs-Logik enthält und von der Input-Method unabhängig läuft.
+Der Service ist komplett modular aufgebaut, was es erlaubt auf sehr einfache Weise die Logik zur Buchstabenerkennung zu ändern.
+
+\item \textbf{Zwei Varianten für die Aufteilung von Pfaden in Mikrogesten} \\
+Wir haben zwei verschiedene Varianten von Mikrogesten implementiert und verglichen. 
+
+\item \textbf{Buchstaben-Erkennung basierend auf einem Graphen} \\
+Für jede der Mikrogesten-Varianten haben wir einen Graph erstellt, welcher mit Hilfe der erkannten Mikrogesten einen Buchstaben auswählt. Für den Graph haben wir ausserdem noch Import-, Export- und automatische Visualisierungs-Klassen eingebaut.
+
+\item \textbf{Neue und verbesserte Algorithmen für die Mikrogesten-Erkennung} \\
+Wir haben einen neuen Ansatz entwickelt, um Mikrogesten zu erkennen. Statt in einem Schritt alle verschiedenen Mikrogesten zu erkennen und bestimmen, wird der Pfad über mehrere Stufen verarbeitet. 
+
+\end{enumerate}
