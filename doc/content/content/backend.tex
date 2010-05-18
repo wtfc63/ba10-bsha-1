@@ -197,7 +197,7 @@ public void initialize() {
       getStrategyName(), 
       "Path", 
       "/sdcard/ba10_bsha_1.xml", 
-      "Path_of_the_GraphML_file"));
+      "Path of the GraphML file"));
   }
 
   IGraphFactory factory = new GraphFactoryGraphMLImport(
@@ -208,14 +208,20 @@ public void initialize() {
 
 Durch dieses Vorgehen muss der Graph nur beim ersten Aufstarten des Service geparsed und erzeugt werden und kann dann im Speicher gehalten werden. So lange ein Frontend an unseren \emph{DetectionService} gebunden ist, sollte dieser vom Betriebssystem nur im Falle eines äusserst gravierenden Ressourcen-Mangels terminiert werden. Da unser Frontend einen \emph{InputMethodService} implementieren wird und somit auch wenn der Benutzer keine Eingaben tätigt von Android im Hintergrund bereit gehalten werden sollte, sollte dies beinahe nie der Fall sein. Sollte es trotzdem einmal erwünscht sein, den Graphen neu oder von einer anderen Datei einzulesen, kann über die Schnittstellen\footnote{Über die Methode \emph{reinitialize()} mit der Typen-Nummer der Zeichen-Erkennungsstrategie als Parameter. Soll eine andere Datei verwendet werden, muss diese zuerst mit über das entsprechende \emph{StrategyArgument} spezifiziert werden.} des \emph{DetectionService} eine Reinitialisierung der Zeichen-Erkennungs-Strategie veranlasst werden. Dabei wird auch der Graph neu aufgebaut.
 
-Werden dann später die erkannten Microgesten der Zeichen-Erkennung zugeführt, reicht die \emph{detectCharater()} Methode von \emph{CharacterDetectionStrategyGraph} diese an den Wurzel-Knoten des Graphen weiter. Dessen Methode \emph{consume()} nimmt diese entgegen, führt die Erkennung durch und gibt die gefundenen Zeichen zurück.
+Werden dann später die erkannten Microgesten der Zeichen-Erkennung zugeführt, reicht die \emph{detectCharater()} Methode von \emph{CharacterDetectionStrategyGraph} diese an den Wurzel-Knoten des Graphen weiter. Dessen Methode \emph{consume()} nimmt diese entgegen, führt die Erkennung rekursiv durch und gibt die gefundenen Zeichen zurück.
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=\textwidth]{img/uml_sd_consume} 
-   \caption{Grober Ablauf der Erkennung in \emph{Node}}
+   \caption{Sequenz-Diagramm des groben Ablaufs der Erkennung in \emph{Node}}
    \label{fig:sd_consume}
 \end{figure}
+
+Die Knoten tragen dabei den grössten Teil der zur Erkennung benötigten Informationen. Die Kanten nehmen die Gewichtung dieser Informationen vor, dienen ansonsten aber nur zum Verbinden der Knoten. Dadurch können diese Daten und deren Verarbeitung in die Klasse \emph{Node} konzentriert werden. 
+
+Bei jedem Durchlauf von \emph{consume()} wird bei der Erkennung jeweils eine \emph{MicroGesture} vom aktuellen Knoten darauf getestet, ob sie sein Test-Kriterium erfüllt. Die Validierung des Kriteriums wird dabei an die Klasse \emph{MicroGestureTester} delegiert. Erfüllt die \emph{MicroGesture} das Kriterium, wird diese aus der Liste der zu konsumierenden \emph{MicroGestures} entfernt und das dem Knoten zugewiesene Zeichen wird, sofern vorhanden, der Liste der erkannten Zeichen angehängt. Danach werden die restlichen \emph{MicroGestures} den dem aktuellen Knoten im Graph folgenden Knoten zum Konsum zugeführt. Die jeweiligen Rekursions-Stufen geben dann jeweils die von ihnen erkannten Zeichen zurück, welche ebenfalls den Rückgabe-Zeichen der aktuellen Stufe angehängt werden.
+
+Jede Rekursions-Stufe erhält auch ihre Erkennungs-Wahrscheinlichkeit übergeben, welche berechnet wird, in dem die Wahrscheinlichkeit der übergeordneten Stufe mit dem Gewicht\footnote{Das Gewicht einer Kante im Graph repräsentiert die Wahrscheinlichkeit des Knotens zu dem die Kante führt.} der zur Stufe führenden Kante multipliziert wird. Die Erkennungs-Wahrscheinlichkeit wird jeweils mit dem erkannten Zeichen in der Klasse \emph{Character} zurückgegen. Die Liste der erkannten Zeichen wird dann vor der Rückgabe an die übergeordnete Stufe nach der Erkennungs-Wahrscheinlichkeit sortiert.
 
 \begin{lstlisting} [caption={Methode zur Zeichen-Erkennung in \emph{Node}},label=node_consume]
 public Collection<Character> consume(
@@ -268,8 +274,131 @@ public Collection<Character> consume(
 
 \subsubsection{Beispiel einer neuen Strategie}
 
-Zur Veranschaulichung wollen wir nun kurz demonstrieren, wie eine neue Strategie in unser System hinzugefügt werden könnte. Als Beispiel wollen wir jeweils eine Strategy implementieren, welche die übergebenen Eingabe-Punkte beziehungsweise die übergebenen Mikrogesten über das Logcat Logging-Interface ausgibt. Diese könnten etwa als ersten und letzten Schritt der Vorverarbeitung eingebunden werden um deren Effekte zu beobachten, während die Mikrogesten-Erkennungsstrategie die erkannten Mikrogesten ausgeben würde.
+Zur Veranschaulichung wollen wir nun kurz demonstrieren, wie eine neue Strategie in unser System hinzugefügt werden könnte. Als Beispiel wollen wir jeweils eine Strategy implementieren, welche die übergebenen Eingabe-Punkte beziehungsweise die übergebenen Mikrogesten über das Logcat Logging-Interface ausgibt und diese in eine Log-Datei schreibt. Diese könnten etwa als ersten und letzten Schritt der Vorverarbeitung eingebunden werden um deren Effekte zu beobachten, während die Mikrogesten-Erkennungsstrategie die erkannten Mikrogesten ausgeben würde. Die Implementation der beiden Strategie-Typen erfolgt dabei nahezu identisch, das sich die Interfaces \emph{IPreprocessingStrategy} und \emph{IMircoGestureDetectionStrategy} nur in den Typen ihre Parameter und Rückgabewerte unterscheiden. Daher soll hier nur die Implementation \emph{MicroGestureDetectionStrategyLog} explizit gezeigt werden.
 
+Als erstes müssen wir dabei die abstrakten Methoden der Basis-Klasse \emph{BaseStrategy}, von der wir unsere Strategie ableiten, implementieren. Die beiden Beschreibungs-Methoden sind dabei ziemlich selbsterklärend. Sie geben den Namen beziehungsweise die Beschreibung der Strategie zurück. Die Methode \emph{initialize()} ist, wie ihr Namen vermuten lässt, dafür zuständig, die Strategie und ihre Attribute und Argumente zu initialisieren. In unserem Beispiel müssen wir ein Argument für den Pfad unserer Log-Datei festlegen\footnote{Falls die Strategie zu einem späteren Zeitpunkt neu initialisiert werden sollt, wird das Argument nur festgelegt, wenn es noch nicht vorhanden ist.}. Weiter soll die Log-Datei auch von einem Attribut vom Type \emph{File} repräsentiert und ein \emph{BufferdWriter} soll für das Schreiben in sie erzeugt werden.
+
+\begin{lstlisting} [caption={Beispiel-Strategie \emph{MicroGestureDetectionStrategyLog}},label=mgdslog_init]
+public class MicroGestureDetectionStrategyLog 
+  extends BaseStrategy {
+
+  private static final String TAG = "MGDS_Log";
+  private File logFile;
+  private BufferedWriter writer;
+
+  public void initialize() {
+    if (!hasArgument("Path")) {
+      addArgument(new StrategyArgument(
+        getStrategyName(), 
+        "Path", 
+        "/sdcard/ba10_bsha_1.log", 
+        "Path of the log-file"));
+    }
+    try {
+      logFile = new File(
+        getArgument("Path").getArgumentValue());
+      if (!logFile.exists()) {
+        logFile.createNewFile();
+      }
+      writer  = new BufferedWriter(
+        new FileWriter(logFile, true));
+    } catch (IOException ex) {
+      Log.e(TAG, ex.getMessage(), ex);
+    }
+  }
+
+  protected String getStrategyName() {
+    return "Log";
+  }
+
+  protected String getStrategyDescription() {
+    return "Logs the given MicroGestures " + 
+           "into the specified log-file";
+  }
+}
+\end{lstlisting}
+
+Nun können wir uns daran machen, das Interface \emph{IMicroGestureDetectionStrategy} zu implementieren. Dieses definiert die Methode \emph{detectMicroGestures()}, welche wir nun implementieren werden. In ihr sollen alle übergebenen \emph{MicroGestures} über das Logcat-Interface ausgegeben und in die Log-Datei geschrieben werden und dann unverändert wieder zurück gegeben werden.
+
+\begin{lstlisting} [caption={Beispiel-Strategie \emph{MicroGestureDetectionStrategyLog} - Interface-Implementation},label=mgdslog_interface]
+public class MicroGestureDetectionStrategyLog 
+  extends BaseStrategy 
+  implements IMicroGestureDetectionStrategy {
+
+  //...
+
+  public Collection<MicroGesture> detectMicroGestures(
+    Collection<MicroGesture> micro_gestures) {
+    try {
+      DateFormat format = new SimpleDateFormat(
+        "dd.MM.yyyy HH:mm:ss");
+      for (MicroGesture mg : micro_gestures) {
+        //MicroGesture an Logcat senden
+        Log.i(TAG, "MicroGesture: " + mg.toString());
+        //MicroGesture in Log-Datei schreiben
+        writer.append(format.format(new Date()));
+        writer.append(": ");
+        writer.append(TAG);
+        writer.append(", detected MicroGesture: ");
+        writer.append(mg.toString());
+        writer.append('\n');
+      }
+      writer.close();
+    } catch (Exception ex) {
+      Log.e(TAG, ex.getMessage(), ex);
+    }
+    return micro_gestures;
+  }
+}
+\end{lstlisting}
+
+Nun müssen wir die fertige Strategie noch dem entsprechenden Manager bekannt machen. Dies erfolgt im Falle unseres Beispiels in der Methode \emph{initManager()} Methode von \emph{MicroGestureDetectionStrategyManager}.
+
+\begin{lstlisting} [caption={Beispiel-Strategie \emph{MicroGestureDetectionStrategyLog} - Manager},label=mgdslog_manager]
+  protected void initManager() {
+    addStrategy(new MicroGestureDetectionStrategyNone());
+    //Erzeugen und Hinzufuegen der anderen Strategien...
+    addStrategy(new MicroGestureDetectionStrategyLog());
+  }
+\end{lstlisting}
+
+Schlussendlich muss die Strategie noch an der gewünschten Position der Priority-Queue für Mikrogesten-Erkennungs-Strategien hinzugefügt werden. Dies erfolgt in der \emph{initDetection()} Methode der Klasse \emph{DetectionService}.
+
+\begin{lstlisting} [caption={Beispiel-Strategie \emph{MicroGestureDetectionStrategyLog} - Service},label=mgdslog_service]
+  private void initDetection() {
+    inputPoints = new ArrayList<TouchPoint>();
+    buffer = new RingBuffer<TouchPoint>(BUFFER_SIZE);
+
+    int priority = 1;
+    preprocessingSteps = 
+      new StrategyQueue<IPreprocessingStrategy>();
+    preprocessingSteps.enqueue(
+      PreprocessingStrategyManager.getInstance().
+        getStrategy("NormalizePoints"), priority++);
+    preprocessingSteps.enqueue(
+      PreprocessingStrategyManager.getInstance().
+        getStrategy("Spline"), priority++);	
+
+    priority = 1;
+    mgDetectionSteps = 
+      new StrategyQueue<IMicroGestureDetectionStrategy>();
+    mgDetectionSteps.enqueue(
+      MicroGestureDetectionStrategyManager.getInstance().
+        getStrategy("Edges"), priority++);
+    //Hinzufuegen der anderen Strategien...
+    mgDetectionSteps.enqueue(
+      MicroGestureDetectionStrategyManager.getInstance().
+        getStrategy("Log"), priority++);
+
+    charDetectionStrategy = 
+      CharacterDetectionStrategyManager.getInstance().
+      getStrategy("Graph");
+
+    postprocessingStrategy = 
+      PostprocessingStrategyManager.getInstance().
+      getStrategy("None");
+  }
+\end{lstlisting}
 
 \subsection{Service}\label{lbl_be_impl_service}
 
