@@ -139,7 +139,7 @@ Die Klasse \emph{TouchPoint} repräsentiert einen Punkt mit dessen Position, dem
 
 \begin{figure}[h!]
    \centering
-   \includegraphics[width=\textwidth]{img/uml_cd_tp} 
+   \includegraphics[scale=0.5]{img/uml_cd_tp} 
    \caption{Klassen-Diagramm \emph{TouchPoint}}
    \label{fig:cd_touchpoint}
 \end{figure}
@@ -157,7 +157,7 @@ Die Klasse \emph{Character} umfasst neben dem erkannten Zeichen und desen Erkenn
 
 \begin{figure}[h!]
    \centering
-   \includegraphics[width=\textwidth]{img/uml_cd_char} 
+   \includegraphics[scale=0.5]{img/uml_cd_char} 
    \caption{Klassen-Diagramm \emph{Character}}
    \label{fig:cd_character}
 \end{figure}
@@ -201,9 +201,9 @@ Während der Erkennung muss der \emph{DetectionService} nun für jede Phase durc
 
 Nachdem alle Erkennungs-Phasen durchlaufen wurden werden die Resultate dann über das Rückruf-Interface an alle angebunden Clients versendet (siehe Abbildung \ref{fig:sd_detection}).
 
-\begin{figure}[h!]
+\begin{figure}[bh!]
    \centering
-   \includegraphics[height=\textheight]{img/uml_sd_detection} 
+   \includegraphics[scale=0.45]{img/uml_sd_detection} 
    \caption{Sequenz-Diagramm des groben Erkennungs-Ablaufs}
    \label{fig:sd_detection}
 \end{figure}
@@ -243,7 +243,7 @@ Durch dieses Vorgehen muss der Graph nur beim ersten Aufstarten des Service gepa
 
 \begin{figure}[h!]
    \centering
-   \includegraphics[scale=0.375]{img/uml_sd_consume} 
+   \includegraphics[width=\textwidth]{img/uml_sd_consume} 
    \caption{Sequenz-Diagramm des groben Erkennungs-Ablaufs in \emph{Node}}
    \label{fig:sd_consume}
 \end{figure}
