@@ -121,7 +121,7 @@ Folglich gibt es für jeden Buchstaben zwei Möglichkeiten, geschrieben zu werde
 Im Anhang befindet sich eine Tabelle mit dem Aufbau aller Buchstaben.
 
 \chapter{Graph}
-Nachdem man nun die Buchstaben in Mikrogesten aufgeteilt hat, muss man noch herausfinden, welche Folge von Mikrogesten welchen Buchstaben darstellt. Eine Möglichkeit dies zu tun ist die Verwendung eines zyklischen gerichteten Graphen. Wie im vorherigen Kapitel beschrieben, werden alle Buchstaben durch Mikrogesten-Folgen beschrieben. Jede Mikrogeste der Folge wird im Graph als Knoten dargestellt. Mit einer intelligenten Verknüpfung der Knoten lassen sich so beliebige Abweichungen und auch mehrere Buchstaben abbilden. 
+Nachdem man nun die Buchstaben in Mikrogesten aufgeteilt hat, muss man noch herausfinden, welche Folge von Mikrogesten welchen Buchstaben darstellt. Eine Möglichkeit dies zu tun ist die Verwendung eines zyklischen gerichteten Graphen \cite{diestel2006graphentheorie}. Wie im vorherigen Kapitel beschrieben, werden alle Buchstaben durch Mikrogesten-Folgen beschrieben. Jede Mikrogeste der Folge wird im Graph als Knoten dargestellt. Mit einer intelligenten Verknüpfung der Knoten lassen sich so beliebige Abweichungen und auch mehrere Buchstaben abbilden. 
 
 Die Erkennung funktioniert im Prinzip so, dass die Liste der erkannten Mikrogesten der Fahrplan für den Graph darstellt. Ausgehend von einem Startknoten wird immer die nächste Mikrogeste aus der Liste entnommen und auf den passenden Knoten gewechselt. Nachdem alle Mikrogesten so abgearbeitet wurden, sollte man auf einem Knoten mit einem zugehörigen Buchstaben gelandet sein.
 
