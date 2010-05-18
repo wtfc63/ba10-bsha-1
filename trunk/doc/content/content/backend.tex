@@ -104,10 +104,11 @@ interface IDetectionService {
   void broadcastArgument(in StrategyArgument argument);
 }
 \end{lstlisting}
-
+\newpage
 \begin{lstlisting} [caption={AIDL-Definitionen der R\"{u}ckruf-Schnittstelle},label=intrf_detection]
 oneway interface IReturnResults {
-  void recognisedCharacters(in List<Character> characters);
+  void recognisedCharacters(
+    in List<Character> characters);
   //...
 }
 \end{lstlisting}
@@ -135,8 +136,6 @@ Da die einzelnen Schritte unseres Erkennungs-Ablaufs innerhalb der jeweiligen Ph
 \subsubsection{Strategien}
 
 Da die Strategien aller Phasen ausser den Typen der Ein- und Rückgabewerte der Methode, die ihren eigentlichen Algorithmus implementiert, sehr ähnliche Attribute und Methoden haben, wurde ein globales Interface für die Strategien namens \emph{IStrategy} definiert, sowie eine abstrakte Basis-Klasse namens \emph{BaseStrategy} entworfen. Diese übernimmt etwa die Verwaltung der Argumente einer Strategie. Dadurch müssen die konkreten Implementationen von \emph{IStrategy}\footnote{Beziehungsweise der davon abgeleiteten Interfaces für die einzelnen Phasen.} nur den eigentlichen Algorithmus sowie ein paar einfache Methoden zur Beschreibung der Strategie umfassen. Dies erlaubt uns, Quelltext-Redundanzen zu minimieren und vereinfacht das Hinzufügen von neuen Algorithmen erheblich.
-
-(Klassen-Diagramm IStrategy)
 
 \subsubsection{Verwaltung der Strategien}
 
@@ -195,8 +194,10 @@ Das eigentliche Laden des Graphen erfolgt in der \emph{initialize()} Methode der
 public void initialize() {
   if (!hasArgument("Path")) {
     addArgument(new StrategyArgument(
-      getStrategyName(), "Path", "/sdcard/ba10_bsha_1.xml", 
-      "Path of the GraphML file"));
+      getStrategyName(), 
+      "Path", 
+      "/sdcard/ba10_bsha_1.xml", 
+      "Path_of_the_GraphML_file"));
   }
 
   IGraphFactory factory = new GraphFactoryGraphMLImport(
@@ -218,23 +219,28 @@ Werden dann später die erkannten Microgesten der Zeichen-Erkennung zugeführt, 
 
 \begin{lstlisting} [caption={Methode zur Zeichen-Erkennung in \emph{Node}},label=node_consume]
 public Collection<Character> consume(
-    Collection<MicroGesture> micro_gestures, float probability) {
-  ArrayList<Character> result = new ArrayList<Character>();
-  //Weiterfahren wenn noch MicroGestures zum Konsum vorhanden sind
+    Collection<MicroGesture> micro_gestures, 
+    float probability) {
+  ArrayList<Character> result;
+  result = new ArrayList<Character>();
+  //Weiterfahren wenn noch MicroGestures zum 
+  //Konsum vorhanden sind
   if ((micro_gestures != null) 
       && (micro_gestures.size() > 0) 
       && (probability > MIN_PROBABILITY)) {
-    //Testen, ob dem Node ein MicroGestureTester zugewiesen ist
+    //Testen, ob dem Node ein MicroGestureTester 
+    //zugewiesen ist
     if (tester != null) {
       MicroGesture mg = micro_gestures.iterator().next();
       if (tester.validate(mg)) {
         //Positiv evaluierte MicroGestures aus den noch 
-        //zu verfütternden heraus nehmen
+        //zu verfuetternden heraus nehmen
         micro_gestures.remove(mg);
-        //Character des Nodes den Resultaten hinzufügen
+        //Character des Nodes den Resultaten hinzufuegen
         result.add(new Character(
           null, character, probability));
-        //\"Ubrige MicroGestures an die folgenden Knoten verfüttern
+        //Uebrige MicroGestures an die folgenden 
+        //Knoten verfuettern
         for (Edge edge : outgoingEdges) {
           result.addAll(
             edge.getDestination().consume(
@@ -242,8 +248,8 @@ public Collection<Character> consume(
               (edge.getProbability() * probability)));
         }
       }
-    //Alle MicroGestures an die folgenden Knoten verfüttern 
-    //wenn kein MicroGestureTester vorhanden
+    //Alle MicroGestures an die folgenden Knoten ver-
+    //fuettern wenn kein MicroGestureTester vorhanden
     } else {
       for (Edge edge : outgoingEdges) {
         result.addAll(
