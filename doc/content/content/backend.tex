@@ -137,15 +137,30 @@ Zur Verwaltung der Daten während der Erkennung benötigen wir drei Klassen: \em
 
 Die Klasse \emph{TouchPoint} repräsentiert einen Punkt mit dessen Position, dem Zeitpunkt zu dem er eingegeben wurde und dessen Stärke (der Druck mit dem er eingegeben wurde)\footnote{Da die meisten modernen Android Mobiltelefone über kapazitive Touchscreens verfügen, welche Eingaben nicht anhand des Druckes erkennen, sondern über die Änderung eines elektrischen Feldes durch den Finger, wird die Stärke eines Punktes normalerweise den Wert "1.0" haben. Deshalb hat die Stärke für unsere Erkennung keinen Informationsgehalt und wird nicht beachtet.} und kann unter anderem die Entfernung zu einem anderen Punkt berechnen.
 
-(Klassen-Diagramm TouchPoint)
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=\textwidth]{img/uml_cd_tp} 
+   \caption{Klassen-Diagramm \emph{TouchPoint}}
+   \label{fig:cd_touchpoint}
+\end{figure}
 
 Die Mikrogesten in der Klasse \emph{MicroGesture} haben neben einer Liste mit den \emph{TouchPoints} aus welcher die Geste besteht auch einen Richtungs-Indikator und natürlich den Typ als welcher sie erkannt wurden als Attribute. Spezieller Methoden der Klasse sind etwa die Berechnung ihrer Gesamtlänge (jeweils von Punkt zu Punkt) oder das generieren eines Pfades aus den einzelnen Punkten.
 
-(Klassen-Diagramm MicroGesture)
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=\textwidth]{img/uml_cd_mg} 
+   \caption{Klassen-Diagramm \emph{MicroGesture}}
+   \label{fig:cd_microgesture}
+\end{figure}
 
 Die Klasse \emph{Character} umfasst neben dem erkannten Zeichen und desen Erkennungs-Wahrscheinlichkeit optional auch die \emph{MicroGestures} aus denen das erkannte Zeichen bestehen.
 
-(Klassen-Diagramm Character)
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=\textwidth]{img/uml_cd_char} 
+   \caption{Klassen-Diagramm \emph{Character}}
+   \label{fig:cd_character}
+\end{figure}
 
 \subsubsection{Strategien}
 
@@ -173,7 +188,7 @@ Da der Erkennungs-Dienst als Service in einem unabhängigen Hintergrund-Prozess 
    \label{fig:cd_strategies}
 \end{figure}
 
-Weiter muss der Service den Ablauf seiner Erkennung verwalten. Dazu soll er für die beiden mehrstufigen Phasen jeweils eine Priority-Queue erhalten in welcher die einzelnen Erkennungs-Schritte anhand ihrer Position im Erkennungs-Prozess priorisiert abgelegt werden sollen  (siehe Abbildung \ref{fig:cd_queues}).
+Weiter muss der Service den Ablauf seiner Erkennung verwalten. Dazu soll er für die beiden mehrstufigen Phasen jeweils eine Priority-Queue erhalten in welcher die einzelnen Erkennungs-Schritte anhand ihrer Position im Erkennungs-Prozess priorisiert abgelegt werden sollen (siehe Abbildung \ref{fig:cd_queues}).
 
 \begin{figure}[bh!]
    \centering
@@ -184,10 +199,14 @@ Weiter muss der Service den Ablauf seiner Erkennung verwalten. Dazu soll er für
 
 Während der Erkennung muss der \emph{DetectionService} nun für jede Phase durch diese jeweilige \emph{StrategyQueue} iterieren und die aktiven Strategien, beziehungsweise bei einstufigen Phasen nur die entsprechende Strategie, anwenden. Zwischen den einzelnen Phasen muss der Dienst jeweils noch die Eingabe-Punkte oder die Resultate der vorgängigen Phase in das Eingabe-Format der nächsten Stufe konvertieren. Gegebenenfalls müssen vor dem Start der Erkennung noch die Eingabe-Punkte aus einem Buffer in die Liste der Eingabe-Punkte verschoben werden.
 
-Nachdem alle Erkennungs-Phasen durchlaufen wurden werden die Resultate dann über das Rückruf-Interface an alle angebunden Clients versendet.
+Nachdem alle Erkennungs-Phasen durchlaufen wurden werden die Resultate dann über das Rückruf-Interface an alle angebunden Clients versendet (siehe Abbildung \ref{fig:sd_detection}).
 
-(Sequenz-Diagramm DetectionService.startDetection())
-
+\begin{figure}[h!]
+   \centering
+   \includegraphics[height=\textheight]{img/uml_sd_detection} 
+   \caption{Sequenz-Diagramm des groben Erkennungs-Ablaufs}
+   \label{fig:sd_detection}
+\end{figure}
 %================================================
 
 \section{Implementation}
