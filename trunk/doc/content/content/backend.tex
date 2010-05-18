@@ -87,31 +87,28 @@ Die Schnittstellen, die wir benötigen werden, lassen sich in zwei Gruppen unter
 
 \begin{lstlisting} [caption={AIDL-Definitionen der Service-Schnittstelle},label=intrf_detection]
 interface IDetectionService {
-    //...
+  //...
 
-    void addTouchPoints(
-             in List<TouchPoint> points, 
-             boolean start_detection);
-    //...
-    void endSample();
-    
-    List<String> getAvailableStrategies();
-    List<String> getActiveStrategies();
-    void reinitializeStrategies(int type);
-    List<StrategyArgument> getStrategyConfiguration(
-                               String strategy_name, 
-                               int type);
-    void setStrategyArgument(
-             in StrategyArgument argument, int type);
-    void broadcastArgument(in StrategyArgument argument);
+  void addTouchPoints(
+    in List<TouchPoint> points, boolean start_detection);
+  //...
+  void endSample();
+
+  List<String> getAvailableStrategies();
+  List<String> getActiveStrategies();
+  void reinitializeStrategies(int type);
+  List<StrategyArgument> getStrategyConfiguration(
+    String strategy_name, int type);
+  void setStrategyArgument(
+    in StrategyArgument argument, int type);
+  void broadcastArgument(in StrategyArgument argument);
 }
 \end{lstlisting}
 
 \begin{lstlisting} [caption={AIDL-Definitionen der R\"{u}ckruf-Schnittstelle},label=intrf_detection]
 oneway interface IReturnResults {
-    void recognisedCharacters(
-             in List<Character> characters);
-    //...
+  void recognisedCharacters(in List<Character> characters);
+  //...
 }
 \end{lstlisting}
 
@@ -145,24 +142,32 @@ Da die Strategien aller Phasen ausser den Typen der Ein- und Rückgabewerte der 
 
 Alle bekannten Strategien einer Phase werden zur einfachen Auffindbarkeit und Verwaltung durch entsprechenden Manager-Klassen verwaltet. Auf für die Manager der einzelnen Phasen wurde wieder eine verallgemeinerte abstrakte Basis-Klasse entworfen, welche die eigentlichen Verwaltungs-Operationen implementiert. Für die Implementation der Phasen-Manager wurden diese dann nur noch von der Basis-Klasse namens \emph{StrategyManager} abgeleitet und die einzelnen Strategien mussten noch initialisiert und dem Manager hinzugefügt werden.
 
-(Klassen-Diagramm Manager)
-
 \begin{figure}[h]
    \centering
-   \includegraphics[width=\textwidth]{img/uml_cd_strategies} 
-   \caption{Klassen-Diagram der Erkennungs-Strategien}
-   \label{fig:cl_strategies}
+   \includegraphics[width=\textwidth]{img/uml_cd_manager} 
+   \caption{Klassen-Diagramm der Manager}
+   \label{fig:cl_manager}
 \end{figure}
 
 \subsection{Erkennungs-Service}
 
 Da der Erkennungs-Dienst als Service in einem unabhängigen Hintergrund-Prozess arbeiten soll, wird dieser natürlich von der Service-Klasse von Android abgeleitet und muss entsprechend die verlangten Methoden implementieren (siehe \ref{lbl_be_impl_service}).
 
-(Klassen-Diagramm DetectionService)
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=\textwidth]{img/uml_cd_strategies} 
+   \caption{Klassen-Diagramm der Strategien}
+   \label{fig:cl_strategies}
+\end{figure}
 
 Weiter muss der Service den Ablauf seiner Erkennung verwalten. Dazu soll er für die beiden mehrstufigen Phasen jeweils eine Priority-Queue erhalten in welcher die einzelnen Erkennungs-Schritte anhand ihrer Position im Erkennungs-Prozess priorisiert abgelegt werden sollen.
 
-(Klassen-Diagramm StrategyQueue)
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=\textwidth]{img/uml_cd_queue} 
+   \caption{Klassen-Diagramm der Priority-Queues}
+   \label{fig:cl_queue}
+\end{figure}
 
 Während der Erkennung muss der \emph{DetectionService} nun für jede Phase durch diese jeweilige \emph{StrategyQueue} iterieren und die aktiven Strategien, beziehungsweise bei einstufigen Phasen nur die entsprechende Strategie, anwenden. Zwischen den einzelnen Phasen muss der Dienst jeweils noch die Eingabe-Punkte oder die Resultate der vorgängigen Phase in das Eingabe-Format der nächsten Stufe konvertieren. Gegebenenfalls müssen vor dem Start der Erkennung noch die Eingabe-Punkte aus einem Buffer in die Liste der Eingabe-Punkte verschoben werden.
 
@@ -180,11 +185,80 @@ In diesem Abschnitt sollen nur die interessanteren Aspekte der Implementation er
 
 \subsubsection{Zeichen-Erkennungsstrategie Graph}
 
-Um die Erkennung der Zeichen anhand der zuvor erkannten Mikrogesten mit Hilfe eines Graphen durchführen zu können, muss dieser zuvor initialisiert werden. Da wir uns eine gewisse Flexibilität bei der Definition des Graphen erhalten wollte, wurde entschieden, dessen Daten im standardisierten, XML-basierenden GraphML-Format abzuspeichern und diese jeweils beim Start des \emph{DetectionService} einzulesen. Wie in \ref{lbl_be_procandroid} bereits erläutert, sollen die Daten des Graphen während der Laufzeit im Speicher gehalten werden, im die Verzögerung für den Anwender beim Aufstarten der Anwendung möglichst gering zu halten. Trotzdem soll es möglich sein, die mit der Applikation mitgelieferte GraphML-Datei durch eine eigene zu ersetzen, sollte der Benutzer dies wünschen oder ein Frontend dies umsetzen wollen.
+Um die Erkennung der Zeichen anhand der zuvor erkannten Mikrogesten mit Hilfe eines Graphen durchführen zu können, muss dieser zuvor initialisiert werden. Da wir uns eine gewisse Flexibilität bei der Definition des Graphen erhalten wollte, wurde entschieden, dessen Daten im standardisierten, XML-basierenden GraphML-Format\cite{graphml_primer} abzuspeichern und diese jeweils beim Start des \emph{DetectionService} einzulesen. Wie in \ref{lbl_be_procandroid} bereits erläutert, sollen die Daten des Graphen während der Laufzeit im Speicher gehalten werden, im die Verzögerung für den Anwender beim Aufstarten der Anwendung möglichst gering zu halten. Trotzdem soll es möglich sein, die mit der Applikation mitgelieferte GraphML-Datei durch eine eigene zu ersetzen, sollte der Benutzer dies wünschen oder ein Frontend dies umsetzen wollen.
 
 Daher besitzt die Erkennungs-Strategie \emph{CharacterDetectionStrategyGraph} ein Argument das denn Ort an dem die GraphML-Datei gespeichert ist spezifizieren kann. Der Einfachheit halber wird neben dem Laden der mitgelieferten Datei aus den Applikations-Ressourcen nur das Laden von einer SD-Karte unterstützt. Der Benutzter oder ein Frontend müssten ihre eigene Datei daher auf eine solche ablegen. Damit können wir auch eventuelle Einschränkungen für den Dateizugriff umgehen\footnote{Unter Android laufen alle Applikationen mit einer individuellen Benutzer- und Prozess-Identifikation und das System erlaubt keinen Zugriff auf die Dateien anderer Applikationen.}.
 
-Das eigentliche Laden des Graphen erfolgt in der \emph{initialize()} Methode der Strategie und verwendet das \emph{IGraphFactory} Interface. Dieses definiert eine Schnittstelle zur Erzeugung des Wurzel-Knotens eines Graphen nach dem Factory Method Design Pattern\cite[S.107-116]{designpatterns} und wird von der Klasse \emph{GraphFactoryGraphMLImport} implementiert. Diese delegiert das Erzeugen wiederum an das \emph{IGraphParser} Interface und dessen konkrete Implementation \emph{GraphMLPullParser}, welches einen XML Pull Parser zum einlesen der GraphML-Datei verwenden.
+Das eigentliche Laden des Graphen erfolgt in der \emph{initialize()} Methode der Strategie und verwendet das \emph{IGraphFactory} Interface. Dieses definiert eine Schnittstelle zur Erzeugung des Wurzel-Knoten eines Graphen nach dem Factory Method Design Pattern\cite[S.107-116]{designpatterns} und wird von der Klasse \emph{GraphFactoryGraphMLImport} implementiert. Diese delegiert das Erzeugen wiederum an das \emph{IGraphMLParser} Interface und dessen konkrete Implementation \emph{GraphMLPullParser}, welches einen XML Pull Parser\footnote{Im Prototyp wurde noch ein SAX-Parser verwendet, aber die Android API stellt zum Einlesen von XML-Dateien aus den Applikations-Ressourcen einen Pull Parser zur Verfügung, weshalb schlussendlich dieser verwendet wurde.} zum Einlesen der GraphML-Datei verwenden. \emph{GraphMLPullParser} versucht dabei zuerst, sofern der Parsing-Methode ein Pfad übergeben wurde, die entsprechende XML-Datei von der SD-Karte einzulesen. Ist diese nicht vorhanden, wird die im Applikations-Paket mitgelieferte GraphML-Datei eingelesen.
+
+\begin{lstlisting} [caption={Initialisierung von \emph{CharacterDetectionStrategyGraph}},label=cds_graph_init]
+public void initialize() {
+  if (!hasArgument("Path")) {
+    addArgument(new StrategyArgument(
+      getStrategyName(), "Path", "/sdcard/ba10_bsha_1.xml", 
+      "Path of the GraphML file"));
+  }
+
+  IGraphFactory factory = new GraphFactoryGraphMLImport(
+    getArgument("Path").getArgumentValue());
+  root = factory.createRoot();	
+}
+\end{lstlisting}
+
+Durch dieses Vorgehen muss der Graph nur beim ersten Aufstarten des Service geparsed und erzeugt werden und kann dann im Speicher gehalten werden. So lange ein Frontend an unseren \emph{DetectionService} gebunden ist, sollte dieser vom Betriebssystem nur im Falle eines äusserst gravierenden Ressourcen-Mangels terminiert werden. Da unser Frontend einen \emph{InputMethodService} implementieren wird und somit auch wenn der Benutzer keine Eingaben tätigt von Android im Hintergrund bereit gehalten werden sollte, sollte dies beinahe nie der Fall sein. Sollte es trotzdem einmal erwünscht sein, den Graphen neu oder von einer anderen Datei einzulesen, kann über die Schnittstellen\footnote{Über die Methode \emph{reinitialize()} mit der Typen-Nummer der Zeichen-Erkennungsstrategie als Parameter. Soll eine andere Datei verwendet werden, muss diese zuerst mit über das entsprechende \emph{StrategyArgument} spezifiziert werden.} des \emph{DetectionService} eine Reinitialisierung der Zeichen-Erkennungs-Strategie veranlasst werden. Dabei wird auch der Graph neu aufgebaut.
+
+Werden dann später die erkannten Microgesten der Zeichen-Erkennung zugeführt, reicht die \emph{detectCharater()} Methode von \emph{CharacterDetectionStrategyGraph} diese an den Wurzel-Knoten des Graphen weiter. Dessen Methode \emph{consume()} nimmt diese entgegen, führt die Erkennung durch und gibt die gefundenen Zeichen zurück.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=\textwidth]{img/uml_sd_consume} 
+   \caption{Grober Ablauf der Erkennung in \emph{Node}}
+   \label{fig:sd_consume}
+\end{figure}
+
+\begin{lstlisting} [caption={Methode zur Zeichen-Erkennung in \emph{Node}},label=node_consume]
+public Collection<Character> consume(
+    Collection<MicroGesture> micro_gestures, float probability) {
+  ArrayList<Character> result = new ArrayList<Character>();
+  //Weiterfahren wenn noch MicroGestures zum Konsum vorhanden sind
+  if ((micro_gestures != null) 
+      && (micro_gestures.size() > 0) 
+      && (probability > MIN_PROBABILITY)) {
+    //Testen, ob dem Node ein MicroGestureTester zugewiesen ist
+    if (tester != null) {
+      MicroGesture mg = micro_gestures.iterator().next();
+      if (tester.validate(mg)) {
+        //Positiv evaluierte MicroGestures aus den noch 
+        //zu verfütternden heraus nehmen
+        micro_gestures.remove(mg);
+        //Character des Nodes den Resultaten hinzufügen
+        result.add(new Character(
+          null, character, probability));
+        //\"Ubrige MicroGestures an die folgenden Knoten verfüttern
+        for (Edge edge : outgoingEdges) {
+          result.addAll(
+            edge.getDestination().consume(
+              micro_gestures, 
+              (edge.getProbability() * probability)));
+        }
+      }
+    //Alle MicroGestures an die folgenden Knoten verfüttern 
+    //wenn kein MicroGestureTester vorhanden
+    } else {
+      for (Edge edge : outgoingEdges) {
+        result.addAll(
+          edge.getDestination().consume(
+            micro_gestures, 
+            (edge.getProbability() * probability)));
+      }
+    }
+  }
+  //Resultate nach Wahrscheinlichkeit ordnen
+  Collections.sort(result);
+  return result;
+}
+\end{lstlisting}
+
 
 \subsubsection{Beispiel einer neuen Strategie}
 
