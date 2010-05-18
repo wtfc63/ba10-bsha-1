@@ -16,5 +16,6 @@
    <UML:Profile xmi.id="DCE.F7FEFB78-E2F7-084C-D79C-6BE072440308" name="Unnamed" isCloned="true" href="./BA10-bsha-1.etup#//*[@xmi.id=&apos;DCE.F7FEFB78-E2F7-084C-D79C-6BE072440308&apos;]" isDirty="false"><UML:Element.ownedElement>
 <UML:Stereotype xmi.id="DCE.2C052C36-30D7-346F-74E4-65FEA9875993" name="interface" owner="__uri_./BA10-bsha-1.etup#//*[@xmi.id=&apos;DCE.F7FEFB78-E2F7-084C-D79C-6BE072440308&apos;]"/>
 <UML:Stereotype xmi.id="DCE.7DA7DEB5-26A2-CD29-A91C-71ACF19C3090" name="interface" owner="__uri_./BA10-bsha-1.etup#//*[@xmi.id=&apos;DCE.F7FEFB78-E2F7-084C-D79C-6BE072440308&apos;]"/>
-<UML:Stereotype xmi.id="DCE.2C727E48-609E-1E6C-3684-CB33B2F4CF22" name="interface" owner="__uri_./BA10-bsha-1.etup#//*[@xmi.id=&apos;DCE.F7FEFB78-E2F7-084C-D79C-6BE072440308&apos;]"/></UML:Element.ownedElement></UML:Profile></XMI.content>
+<UML:Stereotype xmi.id="DCE.2C727E48-609E-1E6C-3684-CB33B2F4CF22" name="interface" owner="__uri_./BA10-bsha-1.etup#//*[@xmi.id=&apos;DCE.F7FEFB78-E2F7-084C-D79C-6BE072440308&apos;]"/>
+<UML:Stereotype xmi.id="DCE.15E8D61E-9399-3171-755D-A9F750BC7D95" name="adasd" owner="__uri_./BA10-bsha-1.etup#//*[@xmi.id=&apos;DCE.F7FEFB78-E2F7-084C-D79C-6BE072440308&apos;]"/></UML:Element.ownedElement></UML:Profile></XMI.content>
 </XMI>
