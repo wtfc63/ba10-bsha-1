@@ -133,39 +133,53 @@ Die Methode \emph{getAvailableStrategies()} gibt alle im Service vorhandenen Alg
 
 Da die einzelnen Schritte unseres Erkennungs-Ablaufs innerhalb der jeweiligen Phasen die selben Eingabe- und Ausgabe-Typen verwenden und dort austauschbar sein sollen lag die Anwendung des Strategy Design Patterns\cite[S.315-323]{designpatterns} für diese nahe. Jeder dieser Algorithmen ist somit eine Instanz einer der Phase entsprechenden Strategie.
 
+Zur Verwaltung der Daten während der Erkennung benötigen wir drei Klassen: \emph{TouchPoint} für die Eingabe-Punkte, \emph{MicroGesture} für die Mikrogesten und \emph{Character} für die erkannten Zeichen. Die Mechanismen für die Interprozess-Kommunikation unter Android verschicken Objekte jeweils in einem so genannten \emph{Parcel}. Damit die genannten Klassen in ein solches verpackt ("marshaled") werden können, müssen sie das Interface \emph{Parcelable} implementieren. Diese definiert eine Methode, die das jeweilige Object in ein \emph{Parcel} packt.
+
+Die Klasse \emph{TouchPoint} repräsentiert einen Punkt mit dessen Position, dem Zeitpunkt zu dem er eingegeben wurde und dessen Stärke (der Druck mit dem er eingegeben wurde)\footnote{Da die meisten modernen Android Mobiltelefone über kapazitive Touchscreens verfügen, welche Eingaben nicht anhand des Druckes erkennen, sondern über die Änderung eines elektrischen Feldes durch den Finger, wird die Stärke eines Punktes normalerweise den Wert "1.0" haben. Deshalb hat die Stärke für unsere Erkennung keinen Informationsgehalt und wird nicht beachtet.} und kann unter anderem die Entfernung zu einem anderen Punkt berechnen.
+
+(Klassen-Diagramm TouchPoint)
+
+Die Mikrogesten in der Klasse \emph{MicroGesture} haben neben einer Liste mit den \emph{TouchPoints} aus welcher die Geste besteht auch einen Richtungs-Indikator und natürlich den Typ als welcher sie erkannt wurden als Attribute. Spezieller Methoden der Klasse sind etwa die Berechnung ihrer Gesamtlänge (jeweils von Punkt zu Punkt) oder das generieren eines Pfades aus den einzelnen Punkten.
+
+(Klassen-Diagramm MicroGesture)
+
+Die Klasse \emph{Character} umfasst neben dem erkannten Zeichen und desen Erkennungs-Wahrscheinlichkeit optional auch die \emph{MicroGestures} aus denen das erkannte Zeichen bestehen.
+
+(Klassen-Diagramm Character)
+
 \subsubsection{Strategien}
 
 Da die Strategien aller Phasen ausser den Typen der Ein- und Rückgabewerte der Methode, die ihren eigentlichen Algorithmus implementiert, sehr ähnliche Attribute und Methoden haben, wurde ein globales Interface für die Strategien namens \emph{IStrategy} definiert, sowie eine abstrakte Basis-Klasse namens \emph{BaseStrategy} entworfen. Diese übernimmt etwa die Verwaltung der Argumente einer Strategie. Dadurch müssen die konkreten Implementationen von \emph{IStrategy}\footnote{Beziehungsweise der davon abgeleiteten Interfaces für die einzelnen Phasen.} nur den eigentlichen Algorithmus sowie ein paar einfache Methoden zur Beschreibung der Strategie umfassen. Dies erlaubt uns, Quelltext-Redundanzen zu minimieren und vereinfacht das Hinzufügen von neuen Algorithmen erheblich.
 
 \subsubsection{Verwaltung der Strategien}
 
-Alle bekannten Strategien einer Phase werden zur einfachen Auffindbarkeit und Verwaltung durch entsprechenden Manager-Klassen verwaltet. Auf für die Manager der einzelnen Phasen wurde wieder eine verallgemeinerte abstrakte Basis-Klasse entworfen, welche die eigentlichen Verwaltungs-Operationen implementiert. Für die Implementation der Phasen-Manager wurden diese dann nur noch von der Basis-Klasse namens \emph{StrategyManager} abgeleitet und die einzelnen Strategien mussten noch initialisiert und dem Manager hinzugefügt werden.
+Alle bekannten Strategien einer Phase werden zur einfachen Auffindbarkeit und Verwaltung durch entsprechenden Manager-Klassen verwaltet. Auf für die Manager der einzelnen Phasen wurde wieder eine verallgemeinerte abstrakte Basis-Klasse entworfen, welche die eigentlichen Verwaltungs-Operationen implementiert. Für die Implementation der Phasen-Manager wurden diese dann nur noch von der Basis-Klasse namens \emph{StrategyManager} abgeleitet und die einzelnen Strategien mussten noch initialisiert und dem Manager hinzugefügt werden (siehe Abbildung \ref{fig:cd_manager}).
 
-\begin{figure}[h]
+\begin{figure}[bh!]
    \centering
    \includegraphics[width=\textwidth]{img/uml_cd_manager} 
    \caption{Klassen-Diagramm der Manager}
-   \label{fig:cl_manager}
+   \label{fig:cd_manager}
 \end{figure}
 
 \subsection{Erkennungs-Service}
 
-Da der Erkennungs-Dienst als Service in einem unabhängigen Hintergrund-Prozess arbeiten soll, wird dieser natürlich von der Service-Klasse von Android abgeleitet und muss entsprechend die verlangten Methoden implementieren (siehe \ref{lbl_be_impl_service}).
+Da der Erkennungs-Dienst als Service in einem unabhängigen Hintergrund-Prozess arbeiten soll, wird dieser natürlich von der Service-Klasse von Android abgeleitet und muss entsprechend die verlangten Methoden implementieren  (siehe Abbildung \ref{fig:cd_strategies} und Abschnitt \ref{lbl_be_impl_service} für die Implementation).
 
-\begin{figure}[h]
+\begin{figure}[bh!]
    \centering
    \includegraphics[width=\textwidth]{img/uml_cd_strategies} 
    \caption{Klassen-Diagramm der Strategien}
-   \label{fig:cl_strategies}
+   \label{fig:cd_strategies}
 \end{figure}
 
-Weiter muss der Service den Ablauf seiner Erkennung verwalten. Dazu soll er für die beiden mehrstufigen Phasen jeweils eine Priority-Queue erhalten in welcher die einzelnen Erkennungs-Schritte anhand ihrer Position im Erkennungs-Prozess priorisiert abgelegt werden sollen.
+Weiter muss der Service den Ablauf seiner Erkennung verwalten. Dazu soll er für die beiden mehrstufigen Phasen jeweils eine Priority-Queue erhalten in welcher die einzelnen Erkennungs-Schritte anhand ihrer Position im Erkennungs-Prozess priorisiert abgelegt werden sollen  (siehe Abbildung \ref{fig:cd_queues}).
 
-\begin{figure}[h]
+\begin{figure}[bh!]
    \centering
    \includegraphics[width=\textwidth]{img/uml_cd_queue} 
    \caption{Klassen-Diagramm der Priority-Queues}
-   \label{fig:cl_queue}
+   \label{fig:cd_queues}
 \end{figure}
 
 Während der Erkennung muss der \emph{DetectionService} nun für jede Phase durch diese jeweilige \emph{StrategyQueue} iterieren und die aktiven Strategien, beziehungsweise bei einstufigen Phasen nur die entsprechende Strategie, anwenden. Zwischen den einzelnen Phasen muss der Dienst jeweils noch die Eingabe-Punkte oder die Resultate der vorgängigen Phase in das Eingabe-Format der nächsten Stufe konvertieren. Gegebenenfalls müssen vor dem Start der Erkennung noch die Eingabe-Punkte aus einem Buffer in die Liste der Eingabe-Punkte verschoben werden.
@@ -208,14 +222,14 @@ public void initialize() {
 
 Durch dieses Vorgehen muss der Graph nur beim ersten Aufstarten des Service geparsed und erzeugt werden und kann dann im Speicher gehalten werden. So lange ein Frontend an unseren \emph{DetectionService} gebunden ist, sollte dieser vom Betriebssystem nur im Falle eines äusserst gravierenden Ressourcen-Mangels terminiert werden. Da unser Frontend einen \emph{InputMethodService} implementieren wird und somit auch wenn der Benutzer keine Eingaben tätigt von Android im Hintergrund bereit gehalten werden sollte, sollte dies beinahe nie der Fall sein. Sollte es trotzdem einmal erwünscht sein, den Graphen neu oder von einer anderen Datei einzulesen, kann über die Schnittstellen\footnote{Über die Methode \emph{reinitialize()} mit der Typen-Nummer der Zeichen-Erkennungsstrategie als Parameter. Soll eine andere Datei verwendet werden, muss diese zuerst mit über das entsprechende \emph{StrategyArgument} spezifiziert werden.} des \emph{DetectionService} eine Reinitialisierung der Zeichen-Erkennungs-Strategie veranlasst werden. Dabei wird auch der Graph neu aufgebaut.
 
-Werden dann später die erkannten Microgesten der Zeichen-Erkennung zugeführt, reicht die \emph{detectCharater()} Methode von \emph{CharacterDetectionStrategyGraph} diese an den Wurzel-Knoten des Graphen weiter. Dessen Methode \emph{consume()} nimmt diese entgegen, führt die Erkennung rekursiv durch und gibt die gefundenen Zeichen zurück.
-
-\begin{figure}[h]
+\begin{figure}[h!]
    \centering
-   \includegraphics[width=\textwidth]{img/uml_sd_consume} 
-   \caption{Sequenz-Diagramm des groben Ablaufs der Erkennung in \emph{Node}}
+   \includegraphics[scale=0.375]{img/uml_sd_consume} 
+   \caption{Sequenz-Diagramm des groben Erkennungs-Ablaufs in \emph{Node}}
    \label{fig:sd_consume}
 \end{figure}
+
+Werden dann später die erkannten Microgesten der Zeichen-Erkennung zugeführt, reicht die \emph{detectCharater()} Methode von \emph{CharacterDetectionStrategyGraph} diese an den Wurzel-Knoten des Graphen weiter. Dessen Methode \emph{consume()} nimmt diese entgegen, führt die Erkennung rekursiv durch und gibt die gefundenen Zeichen zurück.
 
 Die Knoten tragen dabei den grössten Teil der zur Erkennung benötigten Informationen. Die Kanten nehmen die Gewichtung dieser Informationen vor, dienen ansonsten aber nur zum Verbinden der Knoten. Dadurch können diese Daten und deren Verarbeitung in die Klasse \emph{Node} konzentriert werden. 
 
@@ -320,7 +334,7 @@ public class MicroGestureDetectionStrategyLog
 
 Nun können wir uns daran machen, das Interface \emph{IMicroGestureDetectionStrategy} zu implementieren. Dieses definiert die Methode \emph{detectMicroGestures()}, welche wir nun implementieren werden. In ihr sollen alle übergebenen \emph{MicroGestures} über das Logcat-Interface ausgegeben und in die Log-Datei geschrieben werden und dann unverändert wieder zurück gegeben werden.
 
-\begin{lstlisting} [caption={Beispiel-Strategie \emph{MicroGestureDetectionStrategyLog} - Interface-Implementation},label=mgdslog_interface]
+\begin{lstlisting} [caption={Beispiel-Strategie \emph{MicroGestureDetectionStrategyLog} - Implementation des Interfaces},label=mgdslog_interface]
 public class MicroGestureDetectionStrategyLog 
   extends BaseStrategy 
   implements IMicroGestureDetectionStrategy {
@@ -362,9 +376,19 @@ Nun müssen wir die fertige Strategie noch dem entsprechenden Manager bekannt ma
   }
 \end{lstlisting}
 
-Schlussendlich muss die Strategie noch an der gewünschten Position der Priority-Queue für Mikrogesten-Erkennungs-Strategien hinzugefügt werden. Dies erfolgt in der \emph{initDetection()} Methode der Klasse \emph{DetectionService}.
+Schlussendlich muss die Strategie noch an der gewünschten Position der Priority-Queue für Mikrogesten-Erkennungs-Strategien hinzugefügt werden. Dies erfolgt in der \emph{initDetection()} Methode der Klasse \emph{DetectionService} (siehe Listing \ref{service_init}).
 
-\begin{lstlisting} [caption={Beispiel-Strategie \emph{MicroGestureDetectionStrategyLog} - Service},label=mgdslog_service]
+\subsection{Service}\label{lbl_be_impl_service}
+
+Neben der eigentlichen Zeichen-Erkennung mussten für den Service natürlich noch diverse Methoden der Basis-Klasse \emph{Service} implementiert werden um den Lebenszyklus des Dienstes abzuhandeln und um die korrekte Kommunikation mir dem Frontend sicher zu stellen. Als Erstes wollen wir nun aber Erkennung als solches betrachten.
+
+\subsubsection{Zeichen-Erkennung}
+
+Neben einer Liste der Eingabe-Punkte, durch welche sich die Erkennung durcharbeiten soll, verfügt \emph{DetectionService} auch noch über eine Buffer, in dem Punkte abgelegt werden können. Die Erkennung kann entweder sofort starten, etwa wenn mehrere \emph{TouchPoints} zusammen übergeben wurden, oder sie kann automatisch starten, wenn der Buffer voll ist. Wird die Erkennung gestartet, werden die Punkte aus dem Buffer in die Liste der Eingabe-Punkte verschoben.
+
+Die verwendeten Erkennungs-Algorithmen werden jeweils nach der gewünschten Reihenfolge geordnet in entsprechende \emph{StrategyQueues} abgelegt, oder bei einstufigen Phasen direkt als Attribut gesetzt. Diese Initialisierung erfolgt in der Methode \emph{initDetection()}.
+
+\begin{lstlisting} [caption={Initialisierung von \emph{DetectionService}},label=service_init]
   private void initDetection() {
     inputPoints = new ArrayList<TouchPoint>();
     buffer = new RingBuffer<TouchPoint>(BUFFER_SIZE);
@@ -399,8 +423,6 @@ Schlussendlich muss die Strategie noch an der gewünschten Position der Priority
       getStrategy("None");
   }
 \end{lstlisting}
-
-\subsection{Service}\label{lbl_be_impl_service}
 
 %================================================
 
