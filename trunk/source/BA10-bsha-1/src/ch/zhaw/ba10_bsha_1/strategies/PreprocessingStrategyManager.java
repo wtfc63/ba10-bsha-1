@@ -42,5 +42,6 @@ public class PreprocessingStrategyManager extends StrategyManager<IPreprocessing
 		addStrategy(new PreprocessingStrategyNormalizePoints());
 		addStrategy(new PathSmoothingStrategySpline());
 		addStrategy(new PathSmoothingStrategyAverage());
+		addStrategy(new PreprocessingStrategyLog());
 	}
 }
