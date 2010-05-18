@@ -99,6 +99,7 @@ public class DetectionService extends Service {
     	preprocessingSteps = new StrategyQueue<IPreprocessingStrategy>();
     	preprocessingSteps.enqueue(PreprocessingStrategyManager.getInstance().getStrategy("NormalizePoints"), priority++);
     	preprocessingSteps.enqueue(PreprocessingStrategyManager.getInstance().getStrategy("Spline"), priority++);	
+    	preprocessingSteps.enqueue(PreprocessingStrategyManager.getInstance().getStrategy("Log"), priority++);	
     	
     	priority = 1;
     	mgDetectionSteps = new StrategyQueue<IMicroGestureDetectionStrategy>();
@@ -109,6 +110,7 @@ public class DetectionService extends Service {
     	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Lines"), priority++);
     	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("HalfCircle"), priority++);
        	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Combine"), priority++);
+       	mgDetectionSteps.enqueue(MicroGestureDetectionStrategyManager.getInstance().getStrategy("Log"), priority++);
     	
     	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("Graph");
     	
@@ -125,8 +127,6 @@ public class DetectionService extends Service {
      * Starts the detection of {@link Character}s from the input points (the buffer is first emptied)
      */
     private Collection<Character> startDetection() {
-		Log.i("DetectionService.startDetection()", "Started detection");
-		
 		//Add all points from the buffer to the inputPoints
 		while (!buffer.isEmpty()) {
 			TouchPoint point = buffer.get();
@@ -158,11 +158,6 @@ public class DetectionService extends Service {
     			tmpMGs = mgd_strat.detectMicroGestures(tmpMGs);
     		}
     	}
-    	if (DEBUG) {
-    		for (MicroGesture mg : tmpMGs) {
-    			Log.i(TAG, "Recognized MicroGesture: " + mg.toString());
-    		}
-    	}
     	
     	//Character detection
     	Collection<Character> result = charDetectionStrategy.detectCharacter(tmpMGs);
@@ -178,9 +173,9 @@ public class DetectionService extends Service {
 	    	result = postprocessingStrategy.process(result);
 	    	if (DEBUG) {
 				Log.i(TAG, "After Postprocessing:");
-				Log.i(TAG, "  Detected: " + result.size() + " Characters");
+				Log.i(TAG, "'-> Detected: " + result.size() + " Characters");
 		    	for (Character character : result) {
-		    		Log.i(TAG, "  Detected Character: " + character.toString());
+		    		Log.i(TAG, "  > Detected Character: " + character.toString());
 				}
 	    	}
     	}

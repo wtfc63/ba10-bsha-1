@@ -5,6 +5,8 @@ import android.graphics.PointF;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -123,12 +125,13 @@ public class TouchPoint extends PointF implements Cloneable, Parcelable {
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
+		DateFormat format = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 		result.append("[x=");
 		result.append(x);
 		result.append(",y=");
 		result.append(y);
 		result.append(",ts=");
-		result.append(new Date(timeStamp));
+		result.append(format.format(new Date(timeStamp)));
 		result.append(",str=");
 		result.append(strength);
 		result.append("]");
