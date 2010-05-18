@@ -1,0 +1,24 @@
+float tolerance = -0.1; // Cosinus-Toleranzwert 
+						// des Winkels.
+
+for (int i = 1; i < pts.length-1; i++) {
+	
+	// Berechnung der Vektoren vom aktuellen Punkt zum
+	// vorherigen und nächsten
+	float x1, y1;
+	float x2, y2;
+	x1 = pts[i-1].x - pts[i].x;
+	y1 = pts[i-1].y - pts[i].y;
+	x2 = pts[i+1].x - pts[i].x;
+	y2 = pts[i+1].y - pts[i].y;
+	
+	// Berechnung des Winkels zwischen den Vektoren
+	double cos = (x1 * x2 + y1 * y2) / 
+			(Math.sqrt(x1*x1 + y1*y1) * 
+				Math.sqrt(x2*x2 + y2*y2));
+
+	if(cos > tolerance) {
+		// Wenn Toleranz erreicht, erstelle neue Mikrogeste
+		createNewMicroGesture();
+	}
+}
