@@ -79,7 +79,7 @@ Mögliche Einsatz-Zwecke für Nachverarbeitungs-Algorithmen wäre etwa, wie bere
 
 \section{Design}
 
-\subsection{Schnittstellen}
+\subsection{Schnittstellen}\label{lbl_be_intrf}
 
 Wie bereits in \ref{lbl_prozess_art} besprochen, wollen wir für das Backend einen Service definieren. Damit dieser auch wirklich unabhängig (also in einem eigenen Prozess) vom Frontend läuft, soll dieser ein Remote-Service sein. Dies bedeutet, dass wir für die Kommunikation zwischen dem Frontend und dem Backend Schnittstellen definieren müssen, um die Inter-Prozess-Kommunikation abzuwickeln. Android stellt dafür eine eigenen Dialekt der Interface Definition Language bereit, der sich wenig überraschend "Android Interface Definition Language" (kurz AIDL) nennt.\\
 \\
@@ -177,7 +177,7 @@ Alle bekannten Strategien einer Phase werden zur einfachen Auffindbarkeit und Ve
    \label{fig:cd_manager}
 \end{figure}
 
-\subsection{Erkennungs-Service}
+\subsection{Erkennungs-Service}\label{lbl_be_design_service}
 
 Da der Erkennungs-Dienst als Service in einem unabhängigen Hintergrund-Prozess arbeiten soll, wird dieser natürlich von der Service-Klasse von Android abgeleitet und muss entsprechend die verlangten Methoden implementieren  (siehe Abbildung \ref{fig:cd_strategies} und Abschnitt \ref{lbl_be_impl_service} für die Implementation).
 
@@ -228,8 +228,7 @@ public void initialize() {
   if (!hasArgument("Path")) {
     addArgument(new StrategyArgument(
       getStrategyName(), 
-      "Path", 
-      "/sdcard/ba10_bsha_1.xml", 
+      "Path", "/sdcard/ba10_bsha_1.xml", 
       "Path of the GraphML file"));
   }
 
@@ -323,8 +322,7 @@ public class MicroGestureDetectionStrategyLog
     if (!hasArgument("Path")) {
       addArgument(new StrategyArgument(
         getStrategyName(), 
-        "Path", 
-        "/sdcard/ba10_bsha_1.log", 
+        "Path", "/sdcard/ba10_bsha_1.log", 
         "Path of the log-file"));
     }
     try {
@@ -370,8 +368,7 @@ public class MicroGestureDetectionStrategyLog
         Log.i(TAG, "MicroGesture: " + mg.toString());
         //MicroGesture in Log-Datei schreiben
         writer.append(format.format(new Date()));
-        writer.append(": ");
-        writer.append(TAG);
+        writer.append(": "); writer.append(TAG);
         writer.append(", detected MicroGesture: ");
         writer.append(mg.toString());
         writer.append('\n');
@@ -400,6 +397,13 @@ Schlussendlich muss die Strategie noch an der gewünschten Position der Priority
 \subsection{Service}\label{lbl_be_impl_service}
 
 Neben der eigentlichen Zeichen-Erkennung mussten für den Service natürlich noch diverse Methoden der Basis-Klasse \emph{Service} implementiert werden um den Lebenszyklus des Dienstes abzuhandeln und um die korrekte Kommunikation mir dem Frontend sicher zu stellen. Als Erstes wollen wir nun aber Erkennung als solches betrachten.
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=\textwidth]{img/uml_cd_detectionservice} 
+   \caption{Klassen-Diagramm des \emph{DetectionService}}
+   \label{fig:cd_detectionservice}
+\end{figure}
 
 \subsubsection{Zeichen-Erkennung}
 
@@ -443,5 +447,106 @@ Die verwendeten Erkennungs-Algorithmen werden jeweils nach der gewünschten Reih
   }
 \end{lstlisting}
 
+Wird nun ein Durchlauf der Erkennung gestarted, läuft diese im Wesentlichen wie im Kapitel \ref{lbl_be_design_service} und dem dazugehörigen Sequenz-Diagramm (siehe Abbildung \ref{fig:sd_detection}) beschrieben ab. Zuerst werden eventuell im Buffer vorhandene Punkte in die \emph{inputPoints} verschoben. Die Eingabe-Punkte werden dann in einen temporären \emph{MicroGesture} Container kopiert und \emph{inputPoints} wird für den nächsten Durchlauf geleert.
+
+Nun beginnt die Vorverarbeitungs-Phase, wo durch die Strategien der entsprechenden \emph{StrategyQueue} iteriert wird und die jeweilige \emph{IPreprocessingStrategy} wird, sofern sie aktiviert ist, auf die Punkte des temporären \emph{MicroGesture} Containers angewendet.
+
+In der nächsten Phase, der Mikrogesten-Erkennung, erfogt nun ein Ablauf analog zu dem der Vorverabeitungs-Phase. Auch wird ein temporärer Container für alle erkannten \emph{MicroGestures} erzeugt und die zuvor bearbeitete \emph{MicroGesture} wird in diesen eingefügt. Darauf werden alle aktivierten Erkennungs-Schritte der \emph{StategyQueue} für die Mikrogesten-Erkennung mit dem Container durchlaufen.
+
+Die nun folgende Zeichen-Erkennungs-Phase kann nun direkt den Container mit den erkannten \emph{MicroGestures} weiter verwenden. Da sie nur einstufig ist, können wir nun mit dem Container die in \emph{charDetectionStrategy} festgelegte \emph{ICharacterDetectionStrategy} durchlaufen und die erhalten erkannten Zeichen in unseren Rückgabewert speichern.
+
+Als Letztes wird dann die Nachverarbeitungs-Phase durchlaufen, wobei die festgelegte \emph{IPostprocessingStrategy} direkt auf die erkannten Zeichen angewendet werden kann, falls diese aktiviert ist.
+
+Da wir nun die eigentliche Erkennung abgeschlossen haben, müssen wir nun noch die Resultate an das Frontend zurück geben. Dazu wird ein Broadcast der Resultate an alle registrieten Clients über die in Kapitel \ref{lbl_be_intrf} beschriebene Rückruf-Schnittstelle \emph{IReturnResults} vorgenommen (siehe Listing \ref{intrf_detection} für die Schnittstellen-Definition unf Listing \ref{service_results} für deren Anwedung).
+
+\begin{lstlisting} [caption={Rückgabe der Resultate in \emph{DetectionService}},label=service_results]
+    //...
+    int i = callbacks.beginBroadcast();
+    while (i > 0) {
+      i--;
+      try {
+        callbacks.getBroadcastItem(i).
+          recognisedCharacters(
+            new ArrayList<Character>(result));
+      } catch (RemoteException e) {}
+    }
+    callbacks.finishBroadcast();
+    return result;
+  }
+\end{lstlisting}
+
+\subsubsection{Serivce-Lebenszyklus und -Kommunikation}
+
+Neben den zum Konstruktor beziehungsweise Dekonstruktor äquivalenten Lebenszyklus-Methoden \emph{onCreate()} und \emph{onDestroy()}\footnote{Welche neben der Initialisation der Erkennung nur noch für das Anzeigen einer \emph{Notification} über das Benachrichtigungs-System von Android während der Laufzeit des Service zuständig sind} müssen wir auch noch die Methode \emph{onBind()} implementieren. Diese gibt dem aufrufenden Client einen Stub unserer Kommunikations-Schnittstelle zum Service zurück, der noch implementiert werden musste (siehe Listing \ref{service_stub}). Über diesen Stub wird festgelegt, welche Operationen beim Aufruf der Schnittstellen-Methoden durchgeführt werden.
+
+Neben der genannten Funktionalität umfasst die Klasse \emph{DetectionService} noch ein paar Helfer-Methoden, überwiegend für den \emph{IDetectionService}-Stub.
+
+\begin{lstlisting} [caption={Implementation des \emph{IDetectionService} Interface-Stub},label=service_stub]
+  private final IDetectionService.Stub 
+    serviceBinder = new IDetectionService.Stub() {
+
+    public void registerCallback(IReturnResults cb) 
+      throws RemoteException {
+      if (cb != null) {callbacks.register(cb);}
+    }
+
+    public void unregisterCallback(IReturnResults cb) 
+      throws RemoteException {
+      if (cb != null) {callbacks.unregister(cb);}
+    }
+
+    public void addTouchPoints(
+      List<TouchPoint> points, 
+      boolean start_detection) 
+      throws RemoteException {
+      if (points != null) {
+        inputPoints.addAll(points);
+        if (start_detection || buffer.isFull()) {
+          startDetection();
+        }
+      }
+    }
+
+    public void addTouchPoint(
+      float pos_x, float pos_y, 
+      float strength, long timestamp) 
+      throws RemoteException {
+      //...
+    }
+
+    public void endSample() 
+      throws RemoteException {
+      startDetection();
+    }
+
+    public List<String> getAvailableStrategies() 
+      throws RemoteException {
+      //...
+    }
+    public List<String> getActiveStrategies() 
+      throws RemoteException {
+      //...
+    }
+    public void reinitializeStrategies(int type) {
+      //...
+    }
+    public List<StrategyArgument> 
+      getStrategyConfiguration(
+        String strategy_name, int type) 
+      throws RemoteException {
+      //...
+    }
+    public void broadcastArgument(
+      StrategyArgument argument) 
+      throws RemoteException {
+      //...
+    }
+    public void setStrategyArgument(
+      StrategyArgument argument, int type) 
+      throws RemoteException {
+      //...
+    }
+  };
+\end{lstlisting}
 %================================================
 
