@@ -357,7 +357,6 @@ public class MicroGestureDetectionStrategyLog
   implements IMicroGestureDetectionStrategy {
 
   //...
-
   public Collection<MicroGesture> detectMicroGestures(
     Collection<MicroGesture> micro_gestures) {
     try {
@@ -370,8 +369,7 @@ public class MicroGestureDetectionStrategyLog
         writer.append(format.format(new Date()));
         writer.append(": "); writer.append(TAG);
         writer.append(", detected MicroGesture: ");
-        writer.append(mg.toString());
-        writer.append('\n');
+        writer.append(mg.toString()); writer.append('\n');
       }
       writer.close();
     } catch (Exception ex) {
@@ -415,7 +413,7 @@ Die verwendeten Erkennungs-Algorithmen werden jeweils nach der gewünschten Reih
   private void initDetection() {
     inputPoints = new ArrayList<TouchPoint>();
     buffer = new RingBuffer<TouchPoint>(BUFFER_SIZE);
-
+    
     int priority = 1;
     preprocessingSteps = 
       new StrategyQueue<IPreprocessingStrategy>();
@@ -440,7 +438,6 @@ Die verwendeten Erkennungs-Algorithmen werden jeweils nach der gewünschten Reih
     charDetectionStrategy = 
       CharacterDetectionStrategyManager.getInstance().
       getStrategy("Graph");
-
     postprocessingStrategy = 
       PostprocessingStrategyManager.getInstance().
       getStrategy("None");
@@ -459,7 +456,7 @@ Als Letztes wird dann die Nachverarbeitungs-Phase durchlaufen, wobei die festgel
 
 Da wir nun die eigentliche Erkennung abgeschlossen haben, müssen wir nun noch die Resultate an das Frontend zurück geben. Dazu wird ein Broadcast der Resultate an alle registrieten Clients über die in Kapitel \ref{lbl_be_intrf} beschriebene Rückruf-Schnittstelle \emph{IReturnResults} vorgenommen (siehe Listing \ref{intrf_detection} für die Schnittstellen-Definition unf Listing \ref{service_results} für deren Anwedung).
 
-\begin{lstlisting} [caption={Rückgabe der Resultate in \emph{DetectionService}},label=service_results]
+\begin{lstlisting} [caption={R\"{u}ckgabe der Resultate in \emph{DetectionService}},label=service_results]
     //...
     int i = callbacks.beginBroadcast();
     while (i > 0) {
@@ -477,13 +474,13 @@ Da wir nun die eigentliche Erkennung abgeschlossen haben, müssen wir nun noch d
 
 \subsubsection{Serivce-Lebenszyklus und -Kommunikation}
 
-Neben den zum Konstruktor beziehungsweise Dekonstruktor äquivalenten Lebenszyklus-Methoden \emph{onCreate()} und \emph{onDestroy()}\footnote{Welche neben der Initialisation der Erkennung nur noch für das Anzeigen einer \emph{Notification} über das Benachrichtigungs-System von Android während der Laufzeit des Service zuständig sind} müssen wir auch noch die Methode \emph{onBind()} implementieren. Diese gibt dem aufrufenden Client einen Stub unserer Kommunikations-Schnittstelle zum Service zurück, der noch implementiert werden musste (siehe Listing \ref{service_stub}). Über diesen Stub wird festgelegt, welche Operationen beim Aufruf der Schnittstellen-Methoden durchgeführt werden.
+Neben den zum Konstruktor beziehungsweise Dekonstruktor äquivalenten Methoden zum Service-Lebenszyklus \emph{onCreate()} und \emph{onDestroy()}\footnote{Welche neben der Initialisation der Erkennung nur noch für das Anzeigen einer \emph{Notification} über das Benachrichtigungs-System von Android während der Laufzeit des Service zuständig sind} müssen wir auch noch die Methode \emph{onBind()} implementieren. Diese gibt dem aufrufenden Client einen Stub unserer Kommunikations-Schnittstelle zum Service zurück, der noch implementiert werden musste (siehe Listing \ref{service_stub}). Über diesen Stub wird festgelegt, welche Operationen beim Aufruf der Schnittstellen-Methoden durchgeführt werden.
 
 Neben der genannten Funktionalität umfasst die Klasse \emph{DetectionService} noch ein paar Helfer-Methoden, überwiegend für den \emph{IDetectionService}-Stub.
 
 \begin{lstlisting} [caption={Implementation des \emph{IDetectionService} Interface-Stub},label=service_stub]
-  private final IDetectionService.Stub 
-    serviceBinder = new IDetectionService.Stub() {
+  private final IDetectionService.Stub serviceBinder = 
+    new IDetectionService.Stub() {
 
     public void registerCallback(IReturnResults cb) 
       throws RemoteException {
@@ -496,8 +493,7 @@ Neben der genannten Funktionalität umfasst die Klasse \emph{DetectionService} n
     }
 
     public void addTouchPoints(
-      List<TouchPoint> points, 
-      boolean start_detection) 
+      List<TouchPoint> points, boolean start_detection) 
       throws RemoteException {
       if (points != null) {
         inputPoints.addAll(points);
@@ -514,8 +510,7 @@ Neben der genannten Funktionalität umfasst die Klasse \emph{DetectionService} n
       //...
     }
 
-    public void endSample() 
-      throws RemoteException {
+    public void endSample() throws RemoteException {
       startDetection();
     }
 
