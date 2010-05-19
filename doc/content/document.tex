@@ -1,4 +1,4 @@
-\documentclass[a4paper,twoside,ngerman,11pt]{scrreprt}
+\documentclass[a4paper,twoside,ngerman]{scrreprt}
 
 
 %
@@ -8,7 +8,7 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{pdfpages}
 \usepackage{a4}
-\usepackage[ngerman]{babel}
+\usepackage[ngerman, english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{bibgerm}
 %\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
@@ -56,9 +56,17 @@
 	% Abstract / Management Summary (ev. Abstract on Title-Page)
 	\input{content/abstract}
 
+	
+	\newpage
+	\thispagestyle{empty}
+	\mbox{}
+	
 	% BA Erklärung
 	\includepdf[pagecommand={\thispagestyle{empty}},scale=1.0]{inc/Erklaerung_BA.pdf}
 	
+	\newpage
+	\thispagestyle{empty}
+	\mbox{}
 
 	% Römische Seitenzahlen
 	\newpage
@@ -112,8 +120,10 @@
 		\input{content/backend}
 
 	\part{Evaluation}
-		\chapter{Vergleich der Varianten A und B}
-		\chapter{Verbesserungsmöglichkeiten}
+		\input{content/vergleich_ab}
+		
+		\input{content/verbesserungsmoeglichkeiten}
+		
 
 	\part{Diskussion}
 		\chapter{Fazit}
