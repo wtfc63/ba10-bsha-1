@@ -1,1 +1,19 @@
 \chapter{Verbesserungsmöglichkeiten}
+Unsere Lösung für das Problem besitzt noch einiges an Verbesserungspotential. In diesem Kapitel werden wir einige Ideen aufzeigen, die wir aus Zeitgründen nicht mehr umsetzen konnten.
+
+\section{Mikrogesten-Erkennung}
+
+
+\section{Zeichen-Erkennung}
+\subsection{Neuronales Netz}
+Als Alternative zum Graphen bietet isch ein neuronales Netz an. Es gibt bereits speziell auf Handschrifterkennung ausgerichtete neuronale Netze zum Beispiel von Microsoft. Das spezielle an diesen Netzen ist, dass nicht alle Eingangsdaten auf einmal eingegeben werden müssen, sondern sequentiell ins Netz gespeist werden können. Dies passt auch sehr gut auf unsere Architektur, da der Graph die Mikrogesten ebenfalls sequentiell verarbeitet.
+
+Ein weiterer Vorteil der neuronalen Netze sind die vielfältigen Trainingsmöglichkeiten. Das Netz könnte dann einfach zuerst vom Benutzer trainiert werden und ist somit schon auf seine Handschrift eingestellt. Die Erkennungsrate der Mikrogesten muss dadurch nicht mehr perfekt sein, da ein neuronales Netz im Gegensatz zum Graphen unscharf arbeitet. 
+
+\subsection{Graph}
+Bei der Graph-Variante der Zeichen-Erkennung gibt es auch Verbesserungspotential: Vor allem für die Erstellung des Graphen sind bessere Tools nötig. Wir haben momentan eine Datenstruktur für das speichern des Graphen und ein Tool zur Visualisierung erstellt. Ein nächster Schritt wäre die Erweiterung des Visualisierungs-Tools, so dass dieses Graphen editieren und speichern kann. Theoretisch müssten mit dem Graphen auch sehr gute Erkennungsraten möglich sein, jedoch nur mit erheblichem Zeitaufwand. Ein Editier-Werkzeug könnte diesen Vorgang stark beschleunigen.
+
+\subsection{Wörterbuch}
+In unserer Software-Architektur ist bereits vorgesehen, nach der Zeichenerkennung noch eine Verifizierung des Buchstabens durchzuführen. Dazu wäre eine Überprüfung mittels Wörterbuch eine gute Lösung. Das Android-Betriebssystem enthält bereits ein solches Wörterbuch für die normale Bildschirmtastatur. Dieses Wörterbuch könnte übernommen und im Service implementiert werden.
+
+\section{Erkennungs-Service für Android}
