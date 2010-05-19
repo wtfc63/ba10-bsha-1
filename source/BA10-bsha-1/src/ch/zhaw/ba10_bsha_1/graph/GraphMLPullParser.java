@@ -1,7 +1,6 @@
 package ch.zhaw.ba10_bsha_1.graph;
 
 
-import android.content.res.XmlResourceParser;
 import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -95,7 +94,7 @@ public class GraphMLPullParser implements IGraphMLParser {
 				int event_type = parser.getEventType();
 				currentKeyType = KeyType.NONE;
 				//Iterate through tags
-				while (event_type != XmlResourceParser.END_DOCUMENT) {
+				while (event_type != XmlPullParser.END_DOCUMENT) {
 					switch (event_type) {
 						case XmlPullParser.START_TAG :
 							handleTag();
