@@ -1,0 +1,11 @@
+\chapter{Frontend}
+
+Bevor das Frontend in seiner endgültigen Form entworfen und ausgearbeitet wurde, ist die grundsätzliche Eignung und Anwendbarkeit der geplanten Architektur-Ideen in einem Prototyp getestet worden. Der grundsätzliche Aufbau konnte dann bei der Implementation der finalen Version beibehalten werden, zusätzlich musste aber noch die Anbindung an den Erkennungs-Dienst vorgenommen und ein \emph{InputMethodService} musste implementiert werden.
+
+\section{Analyse}
+
+Zuerst wollen wir nun kurz der generelle Funktionsweise eines solchen Dienstes betrachten, bevor die erarbeitete Lösung erläutern wird.
+
+\subsection{InputMethodService}
+
+Das Android Betriebssystem erlaubt es, dass Applikationen von Drittanbietern die systemweit zur Eingabe von Text verwendete Applikation durch eine eigene ersetzten. Diese ``Input Method'' wird dabei ebenfalls als Hintergrund-Dienst betrieben, um eine möglichst verzögerungsfreie Texteingabe zu ermöglichen.

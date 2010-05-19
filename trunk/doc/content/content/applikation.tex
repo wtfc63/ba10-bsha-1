@@ -1,0 +1,55 @@
+\chapter{Applikation}
+
+Die zur Umsetzung der besprochenen Lösungsansätze entworfene Applikation besteht aus zwei Teilen: Einem Backend und einem Frontend. Diese werden in einer Applikation zusammengefasst auf das jeweilige Gerät ausgeliefert.
+
+\section{Komponenten}
+
+Das Backend ist für die eigentliche Zeichen-Erkennung zuständig und soll in einem vom Frontend unabhängigen Prozess laufen. Es liesst den in einer GraphML-Datei gespeicherten Erkennungs-Graphen ein und nimmt vom Frontend Eingabe-Punkte zur Erkennung entgegen. Über diese wird der Erkennungs-Algorithmus angewendet und die erkannten Zeichen werden zurück an das Frontend geschickt.
+
+Das Frontend ist die Benutzer-Schnittstelle der Applikation und dient zur Eingabe der Zeichen über den Touchscreen. Es zeichnet bei Eingaben die eingegebenen Punkte auf und sendet diese zur Verarbeitung an das Backend. Danach werden die erkannten Zeichen entgegen genommen und an das aktive Eingabefeld weitergereicht.
+
+Zusätzlich existiert für Test-Zwecke noch ein zweiter Client zum Backend. Dieser wurde erstellt um das korrekte Starten, Beenden und Binden zum Dienst des Backend's zu testen.
+
+\section{Projekt-Konfiguration}
+
+Die aus diesen drei Komponenten bestehende Applikation musste nun noch korrekt konfiguriert werden um wie gewünscht funktionieren zu können. Dafür ist die XML-Datei ``AndroidManifest.xml'' zuständig.
+
+\subsection{Intents}
+
+Die so genannten \emph{Intents} beschreiben unter Android eine beabsichtigte Operation und dienen dazu entsprechenden Anwendungen zu starten. So bestimmt etwa der \emph{IntentFilter} des Test-Client, dass dieser den \emph{Intent} ``android.intent.action.MAIN'' annehmen kann. Dieser bestimmt, welches Anwendungs-Fenster beim Starten der Anwendung aus dem Applikationsmenü von Android angezeigt wird.
+
+Für unseren Backend-Dienst benötigen wir nun einen \emph{IntentFilter} der die \emp{Intents} für dessen Kommunikations-Schnittstellen annimmt und den \empp{Intent} definiert, unter dem der Dienst angesprochen werden kann.
+
+Das Frontend wiederum benötigt einen \emph{IntentFilter} der den \emph{Intent} ``android.view.InputMethod'' annimmt, um als systemweite Eingabe-Methode angeboten werden zu können.
+
+\begin{lstlisting} [caption={Definition der \emph{IntentFilter}},label=manifest]
+  <service android:name=".service.DetectionService" 
+    android:label="DetectionService">
+    <intent-filter>
+      <action android:name=
+        "ch.zhaw.ba10_bsha_1.service.IDetectionService"/>
+      <action android:name=
+        "ch.zhaw.ba10_bsha_1.service.IReturnRecognisedCharacters"/>
+      <action android:name=
+        "ch.zhaw.ba10_bsha_1.DETECTION_SERVICE"/>
+    </intent-filter>
+  </service>
+  <service android:name=".ime.HandwritingIME"
+    android:label="@string/ime_name" 
+    android:icon="@drawable/icon" 
+    android:permission="android.permission.BIND_INPUT_METHOD">
+    <intent-filter>
+      <action android:name="android.view.InputMethod"/>
+    </intent-filter>
+    <meta-data android:name="android.view.im" 
+      android:resource="@xml/method"/>
+  </service>
+\end{lstlisting}
+
+\subsection{Berechtigungen}
+
+Das Android-System verlangt von Applikationen, dass sie ausweisen auf welche möglicherweise Sicherheits-relevanten System-Ressourcen sie zugreifen müssen. Unsere Applikation soll jeweils auf die SD-Karte des Endgeräts zugreifen können und muss entsprechend die Berechtigung ``android.permission.WRITE_EXTERNAL_STORAGE'' ausweisen. Um die systemweite Eingabe-Methode ersetzen zu können, muss unser Frontend auch noch die Berechtigung ``android.permission.BIND_INPUT_METHOD'' ausweisen.
+
+\subsection{Schnittstellen}
+
+Die für die Kommunikation zwischen Frontend und Backend benötigten Schnittstellen-Definitionen werden vom Precompiler des Android-SDKs eingelesen, um aus ihnen entsprechenden Java-Quelltext generieren zu können. Daher müssen sie in einem speziellen Ordner namens ``aidl'' abgelegt werden. Darin muss die Ordnerstruktur für die \emph{packages} des Quelltext-Ordners eingehalten werden. Auch die Klassen welche über diese Schnittstellen versendet werden sollen und deshalb das \emph{Parcelable} Interface implementieren müssen in diesem Orner entsprechen ausgewiesen werden (siehe Kapitel \ref{lbl_be_intrf}).
