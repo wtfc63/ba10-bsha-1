@@ -1,8 +1,3 @@
-package ch.zhaw.ba10_bsha_1.graph;
-
-
-import android.util.Log;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -13,17 +8,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import ch.zhaw.ba10_bsha_1.R;
-import ch.zhaw.ba10_bsha_1.service.DetectionService;
-import ch.zhaw.ba10_bsha_1.service.MicroGestureTester;
-
 
 /**
  * Create graph from a GraphML file, using XML Pull parsing
  * 
  * @author Julian Hanhart, Dominik Giger
  */
-public class GraphMLPullParser implements IGraphMLParser {
+public class GraphMLPullParser {
 
 	
 	//---------------------------------------------------------------------------
@@ -85,7 +76,6 @@ public class GraphMLPullParser implements IGraphMLParser {
 	 * 
 	 * @return
 	 */
-	@Override
 	public Node parse(String file_name) {
 		Node root = null;
 		initParser(file_name);
@@ -113,9 +103,9 @@ public class GraphMLPullParser implements IGraphMLParser {
 				//Build graph with read Nodes and Edges
 				root = buildGraph();
 			} catch (XmlPullParserException pull_ex) {
-				Log.e(TAG, pull_ex.getMessage(), pull_ex);
+				pull_ex.printStackTrace();
 			} catch (IOException ex) {
-				Log.e(TAG, ex.getMessage(), ex);
+				ex.printStackTrace();
 			}
 		}
 		return root;
@@ -145,12 +135,10 @@ public class GraphMLPullParser implements IGraphMLParser {
 				parser.setInput(new FileReader(file));
 			//Fall back to included GraphML file if anything goes wrong
 			} catch (Exception ex) {
-				parser = DetectionService.getContext().getResources().getXml(R.xml.graph);
+				ex.printStackTrace();
 			}
 		//Use GraphML file included in application package if otherwise
-		} else {
-			parser = DetectionService.getContext().getResources().getXml(R.xml.graph);
-		}
+		} else {}
 		nodes = new Hashtable<Integer, Node>();
 		edges = new ArrayList<GraphEdge>();
 	}

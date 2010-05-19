@@ -1,13 +1,9 @@
-package ch.zhaw.ba10_bsha_1.graph;
+
 
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-
-import ch.zhaw.ba10_bsha_1.Character;
-import ch.zhaw.ba10_bsha_1.service.MicroGesture;
-import ch.zhaw.ba10_bsha_1.service.MicroGestureTester;
 
 
 /**
@@ -32,6 +28,11 @@ public class Node {
 	protected char character;
 	protected Collection<Edge> incomingEdges;
 	protected Collection<Edge> outgoingEdges;
+	
+	public int vertLevel = 0;
+	public int horzLevel = 0;
+	public int x;
+	public int y;
 	
 
 	//---------------------------------------------------------------------------
@@ -95,6 +96,29 @@ public class Node {
 		//Sort recognized Characters by probability
 		Collections.sort(result);
 		return result;
+	}
+	
+	
+	public void findLevels(int vert_lvl, int horz_lvl) {
+		if ((vertLevel < 1) && (horzLevel < 1)) {
+			if (!Graph2SVG.nodes.contains(this)) {
+				Graph2SVG.nodes.add(this);
+			}
+			for (Node node : Graph2SVG.nodes) {
+				if ((node != this) && (node.vertLevel == vert_lvl) && (node.horzLevel == horz_lvl)) {
+					horz_lvl++;
+				}
+			}
+			vertLevel = vert_lvl;
+			horzLevel = horz_lvl;
+			ArrayList<Edge> edges = new ArrayList<Edge>(outgoingEdges);
+			for (int i = 0; i < edges.size(); i++) {
+				if (!Graph2SVG.edges.contains(edges.get(i))) {
+					Graph2SVG.edges.add(edges.get(i));
+				}
+				edges.get(i).destination.findLevels(vertLevel + 1, i + 1);
+			}
+		}
 	}
 
 

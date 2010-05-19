@@ -1,0 +1,7 @@
+Graph2SVG:
+
+  Converts GrapML file to SVG-image
+
+Usage:
+
+  user@machine:workdir$java -jar graph2svg.jar <GraphML-file> <SVG-file> [<width> <height>]
