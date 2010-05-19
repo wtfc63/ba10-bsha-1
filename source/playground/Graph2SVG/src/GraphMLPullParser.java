@@ -29,6 +29,7 @@ public class GraphMLPullParser {
 		int src;
 		int tgt;
 		float weight;
+		int samples;
 	}
 
 	
@@ -265,7 +266,14 @@ public class GraphMLPullParser {
 				case EDGE :
 					switch (currentKeyType) {
 						case WEIGHT :
-							currentEdge.weight = Float.parseFloat(text);
+							if (text.matches("[0-9]*\\.?[0-9]*/[0-9]+")) {
+								String[] tmp = text.split("/");
+								currentEdge.weight = Float.parseFloat(tmp[0]);
+								currentEdge.samples = Integer.parseInt(tmp[1]);
+							} else {
+								currentEdge.weight = Float.parseFloat(text);
+								currentEdge.samples = 1;
+							}
 							break;
 						case TEST :
 							currentNode.setLabel(text);
@@ -354,7 +362,7 @@ public class GraphMLPullParser {
 	private Node buildGraph() {
 		for (GraphEdge gr_edge : edges) {
 			Node src = nodes.get(gr_edge.src);
-			src.addOutgoingEdge(nodes.get(gr_edge.tgt), gr_edge.weight);
+			src.addOutgoingEdge(nodes.get(gr_edge.tgt), gr_edge.weight, gr_edge.samples);
 		}
 		return rootNode;
 	}
