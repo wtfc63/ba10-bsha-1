@@ -188,10 +188,14 @@ public class Node {
 		this.outgoingEdges = outgoingEdges;
 	}
 
-	public void addOutgoingEdge(Node node, float probability) {
-		Edge conn = new Edge(this, node, probability);
+	public void addOutgoingEdge(Node node, float probability, int nr_of_samples) {
+		Edge conn = new Edge(this, node, probability, nr_of_samples);
 		node.addIncomingEdge(conn);
 		outgoingEdges.add(conn);
+	}
+
+	public void addOutgoingEdge(Node node, float probability) {
+		addOutgoingEdge(node, probability, 1);
 	}
 	
 	public void addOutgoingEdge(Edge edge) {

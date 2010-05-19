@@ -128,20 +128,24 @@ public class Graph2SVG {
 		writer.write("  </defs>\n");
 		int radius = 30;
 		for (Edge edge : edges) {
+			String text = Float.valueOf(edge.probability).toString();
+			if (edge.nrOfSamples != 1) {
+				text += "/" + Integer.valueOf(edge.nrOfSamples);
+			}
 			int weight_x = edge.startX + ((edge.endX - edge.startX) / 3);
 			int weight_y = edge.startY + ((edge.endY - edge.startY) / 3);
 			writer.write("  <g>\n");
 			writer.write("    <line class=\"edge\" x1=\"" + edge.startX + "\" y1=\"" + (edge.startY + radius) + "\" x2=\"" + edge.endX + "\" y2=\"" + (edge.endY - radius - 2) + "\" style=\"marker-end:url(#arrow);stroke:black;stroke-width:2\"/>\n");
-			writer.write("    <text text-anchor=\"middle\" x=\"" + weight_x + "\" y=\"" + (weight_y + 2) + "\" style=\"font-size:18;fill:grey\">" + edge.probability + "</text>\n");
+			writer.write("    <text text-anchor=\"middle\" x=\"" + weight_x + "\" y=\"" + (weight_y + 2) + "\" style=\"font-size:18;fill:grey\">" + text + "</text>\n");
 			writer.write("  </g>\n");
 		}
 		for (Node node : nodes) {
 			writer.write("  <g class=\"node\">\n");
 			writer.write("    <circle cx=\"" + node.x + "\" cy=\"" + node.y + "\" r=\"" + radius + "\" stroke=\"rgb(7,55,99)\" stroke-width=\"2\" fill=\"rgb(207,226,255)\"/>\n");
-			writer.write("    <text text-anchor=\"middle\" x=\"" + node.x + "\" y=\"" + (node.y - (radius / 3)) + "\" style=\"font-size:24;font-weight:bold\">" + node.id + "</text>\n");
-			writer.write("    <text text-anchor=\"middle\" x=\"" + node.x + "\" y=\"" + (node.y + (radius / 5)) + "\" style=\"font-size:12\">" + node.label + "</text>\n");
+			writer.write("    <text text-anchor=\"middle\" x=\"" + node.x + "\" y=\"" + (node.y - (radius / 3)) + "\" style=\"font-size:12\">" + node.id + "</text>\n");
+			writer.write("    <text text-anchor=\"middle\" x=\"" + node.x + "\" y=\"" + (node.y + (radius / 6)) + "\" style=\"font-size:24;font-weight:bold\">" + node.label + "</text>\n");
 			if (node.character != '\0') {
-				writer.write("    <text text-anchor=\"middle\" x=\"" + node.x + "\" y=\"" + (node.y + (2 * radius / 3)) + "\" style=\"font-size:18;fill:red\">" + node.character + "</text>\n");
+				writer.write("    <text text-anchor=\"middle\" x=\"" + node.x + "\" y=\"" + (node.y + (2 * radius / 3)) + "\" style=\"font-size:18;font-weight:bold;fill:red\">" + node.character + "</text>\n");
 			}
 			writer.write("  </g>\n");
 		}

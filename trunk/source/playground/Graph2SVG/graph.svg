@@ -15,7 +15,7 @@
   </g>
   <g>
     <line class="edge" x1="530" y1="310" x2="405" y2="373" style="marker-end:url(#arrow);stroke:black;stroke-width:2"/>
-    <text text-anchor="middle" x="489" y="323" style="font-size:18;fill:grey">0.5</text>
+    <text text-anchor="middle" x="489" y="323" style="font-size:18;fill:grey">0.5/10</text>
   </g>
   <g>
     <line class="edge" x1="405" y1="435" x2="30" y2="498" style="marker-end:url(#arrow);stroke:black;stroke-width:2"/>
@@ -51,7 +51,7 @@
   </g>
   <g>
     <line class="edge" x1="780" y1="560" x2="655" y2="373" style="marker-end:url(#arrow);stroke:black;stroke-width:2"/>
-    <text text-anchor="middle" x="739" y="491" style="font-size:18;fill:grey">1.0</text>
+    <text text-anchor="middle" x="739" y="491" style="font-size:18;fill:grey">1.0/12</text>
   </g>
   <g>
     <line class="edge" x1="655" y1="435" x2="1030" y2="498" style="marker-end:url(#arrow);stroke:black;stroke-width:2"/>
@@ -79,59 +79,59 @@
   </g>
   <g class="node">
     <circle cx="530" cy="30" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="530" y="20" style="font-size:24;font-weight:bold">0</text>
-    <text text-anchor="middle" x="530" y="36" style="font-size:12">null</text>
+    <text text-anchor="middle" x="530" y="20" style="font-size:12">0</text>
+    <text text-anchor="middle" x="530" y="35" style="font-size:24;font-weight:bold">null</text>
   </g>
   <g class="node">
     <circle cx="280" cy="155" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="280" y="145" style="font-size:24;font-weight:bold">1</text>
-    <text text-anchor="middle" x="280" y="161" style="font-size:12">s:du</text>
+    <text text-anchor="middle" x="280" y="145" style="font-size:12">1</text>
+    <text text-anchor="middle" x="280" y="160" style="font-size:24;font-weight:bold">s:du</text>
   </g>
   <g class="node">
     <circle cx="530" cy="280" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="530" y="270" style="font-size:24;font-weight:bold">3</text>
-    <text text-anchor="middle" x="530" y="286" style="font-size:12">c:lrdu</text>
+    <text text-anchor="middle" x="530" y="270" style="font-size:12">3</text>
+    <text text-anchor="middle" x="530" y="285" style="font-size:24;font-weight:bold">c:lrdu</text>
   </g>
   <g class="node">
     <circle cx="405" cy="405" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="405" y="395" style="font-size:24;font-weight:bold">4</text>
-    <text text-anchor="middle" x="405" y="411" style="font-size:12">s:lr</text>
-    <text text-anchor="middle" x="405" y="425" style="font-size:18;fill:red">a</text>
+    <text text-anchor="middle" x="405" y="395" style="font-size:12">4</text>
+    <text text-anchor="middle" x="405" y="410" style="font-size:24;font-weight:bold">s:lr</text>
+    <text text-anchor="middle" x="405" y="425" style="font-size:18;font-weight:bold;fill:red">a</text>
   </g>
   <g class="node">
     <circle cx="30" cy="530" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="30" y="520" style="font-size:24;font-weight:bold">5</text>
-    <text text-anchor="middle" x="30" y="536" style="font-size:12">h:d</text>
+    <text text-anchor="middle" x="30" y="520" style="font-size:12">5</text>
+    <text text-anchor="middle" x="30" y="535" style="font-size:24;font-weight:bold">h:d</text>
   </g>
   <g class="node">
     <circle cx="280" cy="530" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="280" y="520" style="font-size:24;font-weight:bold">6</text>
-    <text text-anchor="middle" x="280" y="536" style="font-size:12">s:u</text>
+    <text text-anchor="middle" x="280" y="520" style="font-size:12">6</text>
+    <text text-anchor="middle" x="280" y="535" style="font-size:24;font-weight:bold">s:u</text>
   </g>
   <g class="node">
     <circle cx="655" cy="405" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="655" y="395" style="font-size:24;font-weight:bold">7</text>
-    <text text-anchor="middle" x="655" y="411" style="font-size:12">l:lr</text>
-    <text text-anchor="middle" x="655" y="425" style="font-size:18;fill:red">q</text>
+    <text text-anchor="middle" x="655" y="395" style="font-size:12">7</text>
+    <text text-anchor="middle" x="655" y="410" style="font-size:24;font-weight:bold">l:lr</text>
+    <text text-anchor="middle" x="655" y="425" style="font-size:18;font-weight:bold;fill:red">q</text>
   </g>
   <g class="node">
     <circle cx="530" cy="530" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="530" y="520" style="font-size:24;font-weight:bold">8</text>
-    <text text-anchor="middle" x="530" y="536" style="font-size:12">s:ud</text>
+    <text text-anchor="middle" x="530" y="520" style="font-size:12">8</text>
+    <text text-anchor="middle" x="530" y="535" style="font-size:24;font-weight:bold">s:ud</text>
   </g>
   <g class="node">
     <circle cx="780" cy="530" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="780" y="520" style="font-size:24;font-weight:bold">9</text>
-    <text text-anchor="middle" x="780" y="536" style="font-size:12">h:dl</text>
+    <text text-anchor="middle" x="780" y="520" style="font-size:12">9</text>
+    <text text-anchor="middle" x="780" y="535" style="font-size:24;font-weight:bold">h:dl</text>
   </g>
   <g class="node">
     <circle cx="1030" cy="530" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="1030" y="520" style="font-size:24;font-weight:bold">10</text>
-    <text text-anchor="middle" x="1030" y="536" style="font-size:12">l:l</text>
+    <text text-anchor="middle" x="1030" y="520" style="font-size:12">10</text>
+    <text text-anchor="middle" x="1030" y="535" style="font-size:24;font-weight:bold">l:l</text>
   </g>
   <g class="node">
     <circle cx="780" cy="155" r="30" stroke="rgb(7,55,99)" stroke-width="2" fill="rgb(207,226,255)"/>
-    <text text-anchor="middle" x="780" y="145" style="font-size:24;font-weight:bold">2</text>
-    <text text-anchor="middle" x="780" y="161" style="font-size:12">h:du</text>
+    <text text-anchor="middle" x="780" y="145" style="font-size:12">2</text>
+    <text text-anchor="middle" x="780" y="160" style="font-size:24;font-weight:bold">h:du</text>
   </g>
 </svg>
