@@ -1,4 +1,47 @@
 \chapter{Zeichen-Erkennung}
+Als Ausgangslage für die Zeichen-Erkennung hat man eine Reihe von Mikrogesten. Es wird jeweils jeder kontinuierliche Pfad in Mikrogesten umgewandelt. Das heisst wenn beim Schreiben unterbrochen wird, werden aus dem bisher geschriebenen schon Mikrogesten erstellt und eine Erkennung der Buchstaben versucht. Wenn man nun davon ausgeht, dass alle Zeichen komplett ohne absetzen geschrieben werden, funktioniert der Graph ohne weitere Logik dahinter. 
 
-\section{Vergleich der Ansätze}
+Bei normaler Schreibweise wird jedoch nicht jeder Buchstabe mit einem einzigen Pfad ohne absetzen beschrieben. Diese Fälle müssen zusätzlich überprüft werden.
+
+\section{Graph}
+Jeder Knoten des Graphen enthält den Typ der Mikrogeste, deren Richtung und optional einen Buchstaben. Die Wahrscheinlichkeit wird jeweils in den Kanten gespeichert. 
+
+\subsection{Erstellen des Graphen}
+Der grösste Aufwand verursacht die Erstellung eines gut funktionierenden Graphen. Theoretisch gesehen gibt es für jeden Buchstaben nur zwei Varianten, Blockschrift und Kursivschrift, welche sich auch meist noch im Aufbau überschneiden. Da jedoch die Mikrogesten-Erkennung nicht perfekt ist und auch von Person zu Person der Schreibstil unterschiedlich ist, gibt es eine Vielzahl Möglichkeiten. 
+
+Das Vorgehen beim Erstellen des Graphen ist damit:
+\begin{enumerate}
+\item Graph nach theoretischen Überlegungen des Schriftbildes aufbauen. Das heisst man überlegt sich wie sich der Buchstaben aus den Mikrogesten zusammen setzt, ohne dies im Programm zu testen.
+\item Im zweiten Schritt muss man alle Buchstaben durchtesten um die Erkennungsrate zu testen. Generell funktioniert der Theoretische Graph sehr gut für relativ sauber geschriebene Blockschrift und eher weniger für Kursivschrift.
+\item Die Verbesserung des Graphen basiert dann auf Trial \& Error: Der Buchstaben wird immer wieder getestet und analysiert, weshalb der Graph diesen nun nicht erkannt hat. Anschliessend werden Anpassungen im Graph vorgenommen um diesen Fall zu unterstützen. Dies kann entweder durch Anpassung der Gewichte, oder durch Hinzufügen von Knoten und Kanten geschehen.
+\end{enumerate}
+
+\subsubsection{Mehrere Zeichen erkennen}
+Es soll auch möglich sein, mehrere Zeichen in Kursivschrift einzugeben. Dies wird allerdings vom Graph schon unterstützt: Wenn ein Zeichen erkannt ist, muss bloss eine Verbindung zum Ausgangspunkt erstellt werden und der Algorithmus wird dort automatisch wieder von vorne beginnen um den zweiten Buchstaben zu erkennen.
+
 \section{Probleme \& Lösungsvorschläge}
+\subsection{Komplexität der Graphenerstellung}
+Das Hauptproblem besteht im enormen Zeitaufwand, um einen Graphen zu erstellen. Das liegt daran, dass der Graph von Hand erstellt werden muss, da wir noch keine guten Algorithmen zur automatischen Erstellung haben.
+
+\subsubsection{Graphenerstellung durch Training}
+Wir haben die Möglichkeit getestet, automatisch einen Graphen zu erstellen. Dazu gibt der Benutzer an, welchen Buchstaben er schreibt und gibt diesen einige Male ein. Anhand der erkannten Mikrogesten-Folge wird dann der Graph erstellt. Durch die automatische Erkennung sieht der Graph dann allerdings aus wie ein Baum und ist völlig unflexibel. 
+
+Allerdings wäre es möglich, den Graph so automatisch zu erstellen und dann von Hand Optimierungen vorzunehmen.
+
+\subsubsection{Automatische Anpassung der Wahrscheinlichkeiten}
+Eine rein theoretische Überlegung ist das automatische anpassen der Wahrscheinlichkeiten. Bei der Erkennung eines Buchstaben kann der Benutzer einen Fehler melden, was dann eine Anpassung der Wahrscheinlichkeiten auslösen würde. 
+Diesen Ansatz haben wir jedoch nicht praktisch getestet.
+
+\subsection{Schlechte Erkennungsrate}
+Die Erkennungsrate ist bei beiden Varianten eher tief. Das Problem dabei liegt allerdings nicht am Graphen, sondern eher an der schwankenden Qualität der Mikrogesten-Erkennung.
+
+\subsubsection{Toleranzen im Graph}
+Eine mögliche Lösung wäre, auch im Graph Toleranzen einzufügen. So könnte man zum Beispiel erlauben, beliebig viele Eigenschaften des Knotens zu verletzen und dafür einfach einen Abzug bei der Erkennungswahrscheinlichkeit zu machen. 
+
+\subsection{Zeichen-Erkennung ohne kontinuierlicher Pfad}
+Das abheben/absetzen während dem Schreiben stellt insofern Probleme, dass bei jedem neuen absetzen entweder ein neuer Buchstabe beginnt, oder ein bestehender erweitert wird. So kann eine Geraden-Mikrogeste nach einem 'a' entweder zu einem 'ä' führen oder der Anfang für ein 'z' sein.
+
+Diese Problem kann jedoch relativ einfach gelöst werden: Die Mikrogesten von jedem erkannten kontinuierlichen Pfad gehören im Prinzip zusammen. Man kann deshalb immer diese Liste an Mikrogesten zwischenspeichern. Nachdem nun ein zweiter Pfad eingegeben wurde, wird von diesem auch wieder die Erkennung gestartet. Nun kann man einfach die Mikrogesten der beiden Pfade noch kombinieren und von diesen auch die Buchstabenerkennung durchführen.
+
+Für die Auswahl der besten Lösung werden wieder die Wahrscheinlichkeiten verglichen. 
+
