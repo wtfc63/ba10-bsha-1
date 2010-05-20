@@ -1,5 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput.html#adb0a9fe73a2091ae7c3bdebe40be8a25" title="ch.zhaw.ba10_bsha_1.ime.TouchInput.crosses" alt="" coords="352,5,645,35"/>
-<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView.html#a1516c15d8011caccf368c5d709f19e01" title="ch.zhaw.ba10_bsha_1.ime.PadView.notifyObservers" alt="" coords="336,59,661,88"/>
-<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput.html#ac68086768e724f1c1847b31dca3cc851" title="ch.zhaw.ba10_bsha_1.ime.TouchInput.getDimensions" alt="" coords="709,5,1043,35"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView.html#a5bfac21895a5740fef99268846f223ef" title="ch.zhaw.ba10_bsha_1.ime.PadView.clear" alt="" coords="368,5,629,35"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput.html#adb0a9fe73a2091ae7c3bdebe40be8a25" title="ch.zhaw.ba10_bsha_1.ime.TouchInput.crosses" alt="" coords="352,59,645,88"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput.html#ac68086768e724f1c1847b31dca3cc851" title="ch.zhaw.ba10_bsha_1.ime.TouchInput.getDimensions" alt="" coords="709,85,1043,115"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1TouchInput.html#a128099435135aeaa5d2aac9901b3ec3a" title="ch.zhaw.ba10_bsha_1.ime.TouchInput.isRightToLeft" alt="" coords="337,163,660,192"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1ime_1_1PadView.html#a1516c15d8011caccf368c5d709f19e01" title="ch.zhaw.ba10_bsha_1.ime.PadView.notifyObservers" alt="" coords="336,216,661,245"/>
 </map>

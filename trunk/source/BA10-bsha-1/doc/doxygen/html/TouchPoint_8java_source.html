@@ -48,143 +48,146 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="keyword">import</span> android.os.Parcel;
 <a name="l00006"></a>00006 <span class="keyword">import</span> android.os.Parcelable;
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="keyword">import</span> java.util.Date;
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010 
-<a name="l00017"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">00017</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> <span class="keyword">extends</span> PointF implements Cloneable, Parcelable {
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00021"></a>00021         <span class="comment">// Attributes</span>
+<a name="l00008"></a>00008 <span class="keyword">import</span> java.text.DateFormat;
+<a name="l00009"></a>00009 <span class="keyword">import</span> java.text.SimpleDateFormat;
+<a name="l00010"></a>00010 <span class="keyword">import</span> java.util.Date;
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 
+<a name="l00019"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">00019</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> <span class="keyword">extends</span> PointF implements Cloneable, Parcelable {
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 
 <a name="l00022"></a>00022         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00023"></a>00023         
-<a name="l00024"></a>00024         
-<a name="l00025"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">00025</a>         <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>;
-<a name="l00026"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">00026</a>         <span class="keyword">private</span> <span class="keywordtype">long</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>;
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00030"></a>00030         <span class="comment">// Constructors and Creators</span>
+<a name="l00023"></a>00023         <span class="comment">// Attributes</span>
+<a name="l00024"></a>00024         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00025"></a>00025         
+<a name="l00026"></a>00026         
+<a name="l00027"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">00027</a>         <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>;
+<a name="l00028"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">00028</a>         <span class="keyword">private</span> <span class="keywordtype">long</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>;
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 
 <a name="l00031"></a>00031         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033         
-<a name="l00034"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a78cfb1506a0081d1e3175fde400290de">00034</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a78cfb1506a0081d1e3175fde400290de">TouchPoint</a>(PointF position, <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>, <span class="keywordtype">long</span> time_stamp) {
-<a name="l00035"></a>00035                 super(position.x, position.y);
-<a name="l00036"></a>00036                 this.strength = strength;
-<a name="l00037"></a>00037                 this.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a> = time_stamp;
-<a name="l00038"></a>00038         }
-<a name="l00039"></a>00039         
-<a name="l00040"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a56ef62d0be5dbcd46be0d65ea13e48b3">00040</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a56ef62d0be5dbcd46be0d65ea13e48b3">TouchPoint</a>(<span class="keywordtype">float</span> pos_x, <span class="keywordtype">float</span> pos_y, <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>) {
-<a name="l00041"></a>00041                 <span class="keyword">this</span>(<span class="keyword">new</span> PointF(pos_x, pos_y), strength, System.currentTimeMillis());
-<a name="l00042"></a>00042         }
-<a name="l00043"></a>00043         
-<a name="l00044"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad3f4dd64b5c48581bd65cd2d777a1b96">00044</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad3f4dd64b5c48581bd65cd2d777a1b96">TouchPoint</a>(<span class="keywordtype">float</span> pos_x, <span class="keywordtype">float</span> pos_y, <span class="keywordtype">long</span> time_stamp) {
-<a name="l00045"></a>00045                 <span class="keyword">this</span>(<span class="keyword">new</span> PointF(pos_x, pos_y), 1, time_stamp);
-<a name="l00046"></a>00046         }
-<a name="l00047"></a>00047         
-<a name="l00048"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a17cb410a388f8ca317ac65f981eac6ec">00048</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a17cb410a388f8ca317ac65f981eac6ec">TouchPoint</a>(<span class="keywordtype">float</span> pos_x, <span class="keywordtype">float</span> pos_y) {
-<a name="l00049"></a>00049                 <span class="keyword">this</span>(<span class="keyword">new</span> PointF(pos_x, pos_y), 1, System.currentTimeMillis());
-<a name="l00050"></a>00050         }
-<a name="l00051"></a>00051         
-<a name="l00052"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad882a2ee5e211bfefaa73c1322cf1823">00052</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad882a2ee5e211bfefaa73c1322cf1823">TouchPoint</a>(Parcel source) {
-<a name="l00053"></a>00053                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a23cc1e796d80c3fb6b7ca66fcecdd01e">readFromParcel</a>(source);
-<a name="l00054"></a>00054         }
-<a name="l00055"></a>00055         
-<a name="l00056"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ac71c9f7fa232435af2314d0d707e7559">00056</a>         <span class="keyword">public</span> Object <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ac71c9f7fa232435af2314d0d707e7559">clone</a>() throws CloneNotSupportedException {
-<a name="l00057"></a>00057                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ac71c9f7fa232435af2314d0d707e7559">clone</a> = (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>) super.clone();
-<a name="l00058"></a>00058                 clone.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>  = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>;
-<a name="l00059"></a>00059                 clone.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>;
-<a name="l00060"></a>00060                 <span class="keywordflow">return</span> clone;
-<a name="l00061"></a>00061         }
-<a name="l00062"></a>00062         
-<a name="l00063"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a0f386eacc8abbc547cd2a5b23630d211">00063</a>         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Parcelable.Creator&lt;<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a0f386eacc8abbc547cd2a5b23630d211">CREATOR</a> = <span class="keyword">new</span> Parcelable.Creator&lt;<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>&gt;() {
-<a name="l00064"></a>00064                 <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> createFromParcel(Parcel in) {
-<a name="l00065"></a>00065                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a78cfb1506a0081d1e3175fde400290de">TouchPoint</a>(in);
-<a name="l00066"></a>00066                 }
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068                 <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>[] newArray(<span class="keywordtype">int</span> size) {
-<a name="l00069"></a>00069                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>[size];
-<a name="l00070"></a>00070                 }
-<a name="l00071"></a>00071         };
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00075"></a>00075         <span class="comment">// Implementation of the Parcelable interface</span>
+<a name="l00032"></a>00032         <span class="comment">// Constructors and Creators</span>
+<a name="l00033"></a>00033         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035         
+<a name="l00036"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a78cfb1506a0081d1e3175fde400290de">00036</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a78cfb1506a0081d1e3175fde400290de">TouchPoint</a>(PointF position, <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>, <span class="keywordtype">long</span> time_stamp) {
+<a name="l00037"></a>00037                 super(position.x, position.y);
+<a name="l00038"></a>00038                 this.strength = strength;
+<a name="l00039"></a>00039                 this.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a> = time_stamp;
+<a name="l00040"></a>00040         }
+<a name="l00041"></a>00041         
+<a name="l00042"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a56ef62d0be5dbcd46be0d65ea13e48b3">00042</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a56ef62d0be5dbcd46be0d65ea13e48b3">TouchPoint</a>(<span class="keywordtype">float</span> pos_x, <span class="keywordtype">float</span> pos_y, <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>) {
+<a name="l00043"></a>00043                 <span class="keyword">this</span>(<span class="keyword">new</span> PointF(pos_x, pos_y), strength, System.currentTimeMillis());
+<a name="l00044"></a>00044         }
+<a name="l00045"></a>00045         
+<a name="l00046"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad3f4dd64b5c48581bd65cd2d777a1b96">00046</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad3f4dd64b5c48581bd65cd2d777a1b96">TouchPoint</a>(<span class="keywordtype">float</span> pos_x, <span class="keywordtype">float</span> pos_y, <span class="keywordtype">long</span> time_stamp) {
+<a name="l00047"></a>00047                 <span class="keyword">this</span>(<span class="keyword">new</span> PointF(pos_x, pos_y), 1, time_stamp);
+<a name="l00048"></a>00048         }
+<a name="l00049"></a>00049         
+<a name="l00050"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a17cb410a388f8ca317ac65f981eac6ec">00050</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a17cb410a388f8ca317ac65f981eac6ec">TouchPoint</a>(<span class="keywordtype">float</span> pos_x, <span class="keywordtype">float</span> pos_y) {
+<a name="l00051"></a>00051                 <span class="keyword">this</span>(<span class="keyword">new</span> PointF(pos_x, pos_y), 1, System.currentTimeMillis());
+<a name="l00052"></a>00052         }
+<a name="l00053"></a>00053         
+<a name="l00054"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad882a2ee5e211bfefaa73c1322cf1823">00054</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad882a2ee5e211bfefaa73c1322cf1823">TouchPoint</a>(Parcel source) {
+<a name="l00055"></a>00055                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a23cc1e796d80c3fb6b7ca66fcecdd01e">readFromParcel</a>(source);
+<a name="l00056"></a>00056         }
+<a name="l00057"></a>00057         
+<a name="l00058"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ac71c9f7fa232435af2314d0d707e7559">00058</a>         <span class="keyword">public</span> Object <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ac71c9f7fa232435af2314d0d707e7559">clone</a>() throws CloneNotSupportedException {
+<a name="l00059"></a>00059                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ac71c9f7fa232435af2314d0d707e7559">clone</a> = (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>) super.clone();
+<a name="l00060"></a>00060                 clone.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>  = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>;
+<a name="l00061"></a>00061                 clone.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>;
+<a name="l00062"></a>00062                 <span class="keywordflow">return</span> clone;
+<a name="l00063"></a>00063         }
+<a name="l00064"></a>00064         
+<a name="l00065"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a0f386eacc8abbc547cd2a5b23630d211">00065</a>         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Parcelable.Creator&lt;<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a0f386eacc8abbc547cd2a5b23630d211">CREATOR</a> = <span class="keyword">new</span> Parcelable.Creator&lt;<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>&gt;() {
+<a name="l00066"></a>00066                 <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> createFromParcel(Parcel in) {
+<a name="l00067"></a>00067                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a78cfb1506a0081d1e3175fde400290de">TouchPoint</a>(in);
+<a name="l00068"></a>00068                 }
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070                 <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>[] newArray(<span class="keywordtype">int</span> size) {
+<a name="l00071"></a>00071                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>[size];
+<a name="l00072"></a>00072                 }
+<a name="l00073"></a>00073         };
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 
 <a name="l00076"></a>00076         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         
-<a name="l00079"></a>00079         @Override
-<a name="l00080"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad5596f285f8ff8daf89cf36f4074df0f">00080</a>         <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad5596f285f8ff8daf89cf36f4074df0f">describeContents</a>() {
-<a name="l00081"></a>00081                 <span class="keywordflow">return</span> 0;
-<a name="l00082"></a>00082         }
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084         @Override
-<a name="l00085"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a8cfc22332015bceee96d2fdafc321290">00085</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a8cfc22332015bceee96d2fdafc321290">writeToParcel</a>(Parcel dest, <span class="keywordtype">int</span> flags) {
-<a name="l00086"></a>00086                 dest.writeFloat(x);
-<a name="l00087"></a>00087                 dest.writeFloat(y);
-<a name="l00088"></a>00088                 dest.writeFloat(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>);
-<a name="l00089"></a>00089                 dest.writeLong(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>);
-<a name="l00090"></a>00090         }
-<a name="l00091"></a>00091         
-<a name="l00092"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a23cc1e796d80c3fb6b7ca66fcecdd01e">00092</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a23cc1e796d80c3fb6b7ca66fcecdd01e">readFromParcel</a>(Parcel source) {
-<a name="l00093"></a>00093                 x = source.readFloat();
-<a name="l00094"></a>00094                 y = source.readFloat();
-<a name="l00095"></a>00095                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>  = source.readFloat();
-<a name="l00096"></a>00096                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a> = source.readLong();
-<a name="l00097"></a>00097         }
-<a name="l00098"></a>00098         
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00101"></a>00101         <span class="comment">// Getter-/Setter-methods</span>
+<a name="l00077"></a>00077         <span class="comment">// Implementation of the Parcelable interface</span>
+<a name="l00078"></a>00078         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080         
+<a name="l00081"></a>00081         @Override
+<a name="l00082"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad5596f285f8ff8daf89cf36f4074df0f">00082</a>         <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad5596f285f8ff8daf89cf36f4074df0f">describeContents</a>() {
+<a name="l00083"></a>00083                 <span class="keywordflow">return</span> 0;
+<a name="l00084"></a>00084         }
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086         @Override
+<a name="l00087"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a8cfc22332015bceee96d2fdafc321290">00087</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a8cfc22332015bceee96d2fdafc321290">writeToParcel</a>(Parcel dest, <span class="keywordtype">int</span> flags) {
+<a name="l00088"></a>00088                 dest.writeFloat(x);
+<a name="l00089"></a>00089                 dest.writeFloat(y);
+<a name="l00090"></a>00090                 dest.writeFloat(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>);
+<a name="l00091"></a>00091                 dest.writeLong(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>);
+<a name="l00092"></a>00092         }
+<a name="l00093"></a>00093         
+<a name="l00094"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a23cc1e796d80c3fb6b7ca66fcecdd01e">00094</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a23cc1e796d80c3fb6b7ca66fcecdd01e">readFromParcel</a>(Parcel source) {
+<a name="l00095"></a>00095                 x = source.readFloat();
+<a name="l00096"></a>00096                 y = source.readFloat();
+<a name="l00097"></a>00097                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>  = source.readFloat();
+<a name="l00098"></a>00098                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a> = source.readLong();
+<a name="l00099"></a>00099         }
+<a name="l00100"></a>00100         
+<a name="l00101"></a>00101 
 <a name="l00102"></a>00102         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00103"></a>00103 
-<a name="l00104"></a>00104         
-<a name="l00105"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a2297107f0bc05baf381fc9b8653a6df2">00105</a>         <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a2297107f0bc05baf381fc9b8653a6df2">getStrength</a>() {
-<a name="l00106"></a>00106                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>;
-<a name="l00107"></a>00107         }
-<a name="l00108"></a>00108 
-<a name="l00109"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#acccafc087a2fd76987d8f829390626d7">00109</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#acccafc087a2fd76987d8f829390626d7">setStrength</a>(<span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>) {
-<a name="l00110"></a>00110                 this.strength = strength;
-<a name="l00111"></a>00111         }
-<a name="l00112"></a>00112         
-<a name="l00113"></a>00113 
-<a name="l00114"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa25d5cf22375b6c5f8e59bccc2ec69d0">00114</a>         <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa25d5cf22375b6c5f8e59bccc2ec69d0">getTimeStamp</a>() {
-<a name="l00115"></a>00115                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>;
-<a name="l00116"></a>00116         }
-<a name="l00117"></a>00117 
-<a name="l00118"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aae69659dd478457f14287116e34f868e">00118</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aae69659dd478457f14287116e34f868e">setTimeStamp</a>(<span class="keywordtype">long</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>) {
-<a name="l00119"></a>00119                 this.timeStamp = timeStamp;
-<a name="l00120"></a>00120         }
-<a name="l00121"></a>00121         
-<a name="l00122"></a>00122         
-<a name="l00123"></a>00123         @Override
-<a name="l00124"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a4e930068dfcb62f5ff8a7dd60ae2a04c">00124</a>         <span class="keyword">public</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a4e930068dfcb62f5ff8a7dd60ae2a04c">toString</a>() {
-<a name="l00125"></a>00125                 StringBuffer result = <span class="keyword">new</span> StringBuffer();
-<a name="l00126"></a>00126                 result.append(<span class="stringliteral">&quot;[x=&quot;</span>);
-<a name="l00127"></a>00127                 result.append(x);
-<a name="l00128"></a>00128                 result.append(<span class="stringliteral">&quot;,y=&quot;</span>);
-<a name="l00129"></a>00129                 result.append(y);
-<a name="l00130"></a>00130                 result.append(<span class="stringliteral">&quot;,ts=&quot;</span>);
-<a name="l00131"></a>00131                 result.append(<span class="keyword">new</span> Date(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>));
-<a name="l00132"></a>00132                 result.append(<span class="stringliteral">&quot;,str=&quot;</span>);
-<a name="l00133"></a>00133                 result.append(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>);
-<a name="l00134"></a>00134                 result.append(<span class="stringliteral">&quot;]&quot;</span>);
-<a name="l00135"></a>00135                 <span class="keywordflow">return</span> result.toString();
-<a name="l00136"></a>00136         }
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00140"></a>00140         <span class="comment">// General purpose methods</span>
-<a name="l00141"></a>00141         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143         
-<a name="l00150"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#afb4bcfacdc81a0922e69fcef9f07dbf8">00150</a>         <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#afb4bcfacdc81a0922e69fcef9f07dbf8">distanceTo</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> other) {
-<a name="l00151"></a>00151                 <span class="keywordtype">float</span> a = (float) Math.pow(Math.abs(x - other.x), 2);
-<a name="l00152"></a>00152                 <span class="keywordtype">float</span> b = (float) Math.pow(Math.abs(y - other.y), 2);
-<a name="l00153"></a>00153                 <span class="keywordtype">float</span> c = a + b;
-<a name="l00154"></a>00154                 <span class="keywordflow">return</span> ((<span class="keywordtype">float</span>) Math.sqrt(c));
-<a name="l00155"></a>00155         }
-<a name="l00156"></a>00156 }
+<a name="l00103"></a>00103         <span class="comment">// Getter-/Setter-methods</span>
+<a name="l00104"></a>00104         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106         
+<a name="l00107"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a2297107f0bc05baf381fc9b8653a6df2">00107</a>         <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a2297107f0bc05baf381fc9b8653a6df2">getStrength</a>() {
+<a name="l00108"></a>00108                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>;
+<a name="l00109"></a>00109         }
+<a name="l00110"></a>00110 
+<a name="l00111"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#acccafc087a2fd76987d8f829390626d7">00111</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#acccafc087a2fd76987d8f829390626d7">setStrength</a>(<span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>) {
+<a name="l00112"></a>00112                 this.strength = strength;
+<a name="l00113"></a>00113         }
+<a name="l00114"></a>00114         
+<a name="l00115"></a>00115 
+<a name="l00116"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa25d5cf22375b6c5f8e59bccc2ec69d0">00116</a>         <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa25d5cf22375b6c5f8e59bccc2ec69d0">getTimeStamp</a>() {
+<a name="l00117"></a>00117                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>;
+<a name="l00118"></a>00118         }
+<a name="l00119"></a>00119 
+<a name="l00120"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aae69659dd478457f14287116e34f868e">00120</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aae69659dd478457f14287116e34f868e">setTimeStamp</a>(<span class="keywordtype">long</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>) {
+<a name="l00121"></a>00121                 this.timeStamp = timeStamp;
+<a name="l00122"></a>00122         }
+<a name="l00123"></a>00123         
+<a name="l00124"></a>00124         
+<a name="l00125"></a>00125         @Override
+<a name="l00126"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a4e930068dfcb62f5ff8a7dd60ae2a04c">00126</a>         <span class="keyword">public</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#a4e930068dfcb62f5ff8a7dd60ae2a04c">toString</a>() {
+<a name="l00127"></a>00127                 StringBuffer result = <span class="keyword">new</span> StringBuffer();
+<a name="l00128"></a>00128                 DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="stringliteral">&quot;dd.MM.yyyy HH:mm:ss&quot;</span>);
+<a name="l00129"></a>00129                 result.append(<span class="stringliteral">&quot;[x=&quot;</span>);
+<a name="l00130"></a>00130                 result.append(x);
+<a name="l00131"></a>00131                 result.append(<span class="stringliteral">&quot;,y=&quot;</span>);
+<a name="l00132"></a>00132                 result.append(y);
+<a name="l00133"></a>00133                 result.append(<span class="stringliteral">&quot;,ts=&quot;</span>);
+<a name="l00134"></a>00134                 result.append(format.format(<span class="keyword">new</span> Date(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#aa0b6bef79c301e7ef664dd21045b517d">timeStamp</a>)));
+<a name="l00135"></a>00135                 result.append(<span class="stringliteral">&quot;,str=&quot;</span>);
+<a name="l00136"></a>00136                 result.append(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#ad245f48693fecee2b25f3c5e7e1976a8">strength</a>);
+<a name="l00137"></a>00137                 result.append(<span class="stringliteral">&quot;]&quot;</span>);
+<a name="l00138"></a>00138                 <span class="keywordflow">return</span> result.toString();
+<a name="l00139"></a>00139         }
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00143"></a>00143         <span class="comment">// General purpose methods</span>
+<a name="l00144"></a>00144         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146         
+<a name="l00153"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#afb4bcfacdc81a0922e69fcef9f07dbf8">00153</a>         <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html#afb4bcfacdc81a0922e69fcef9f07dbf8">distanceTo</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> other) {
+<a name="l00154"></a>00154                 <span class="keywordtype">float</span> a = (float) Math.pow(Math.abs(x - other.x), 2);
+<a name="l00155"></a>00155                 <span class="keywordtype">float</span> b = (float) Math.pow(Math.abs(y - other.y), 2);
+<a name="l00156"></a>00156                 <span class="keywordtype">float</span> c = a + b;
+<a name="l00157"></a>00157                 <span class="keywordflow">return</span> ((<span class="keywordtype">float</span>) Math.sqrt(c));
+<a name="l00158"></a>00158         }
+<a name="l00159"></a>00159 }
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -200,7 +203,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun May 16 22:50:16 2010 for BA10-bsha-1 by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri May 21 01:42:15 2010 for BA10-bsha-1 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

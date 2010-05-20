@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyPrediction.html#ac903a10ecc5d8bbf35d94b3675614dc9" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyPrediction.directionIsDown" alt="" coords="689,5,1239,35"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyPrediction.html#aab16f8d6aa8dbf56c71b04e299ae190a" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyPrediction.directionIsLeft" alt="" coords="693,59,1235,88"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyPrediction.html#a41a97838c8b39eff1e6b50de7ca85d2e" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyPrediction.directionIsRight" alt="" coords="689,112,1239,141"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyPrediction.html#a9f38c05408d59c4d2211b249a402e0ff" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyPrediction.directionIsUp" alt="" coords="696,165,1232,195"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints" alt="" coords="796,219,1132,248"/>
+</map>

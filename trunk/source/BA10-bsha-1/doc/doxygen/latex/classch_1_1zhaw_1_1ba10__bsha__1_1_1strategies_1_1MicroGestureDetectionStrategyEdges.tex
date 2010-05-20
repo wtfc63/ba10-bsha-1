@@ -14,12 +14,12 @@ Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrate
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_ab4abee912f5692af0155d1770c354108}{initialize} ()
+\item 
 Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a16cd0b9ef604ba14a7eb573a77966c4f}{detectMicroGestures} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ microGestures)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a81df19fe3c91ea915592918c082ceb5d}{initArguments} ()
 \item 
 String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a7ae8347737b8180278eb34f6d5cbba1d}{getStrategyName} ()
 \item 
@@ -29,6 +29,8 @@ String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGesture
 \begin{DoxyCompactItemize}
 \item 
 double \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a17536b25d63e07e0c5c776e017a4b29c}{tolerance} = 0.2d
+\item 
+double \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a2490c2e49516999b5b3f9da8a9a6b8ba}{angleCosinus} = -\/0.1d
 \end{DoxyCompactItemize}
 
 
@@ -60,15 +62,15 @@ Detect edges in the \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{T
 
 Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy}.
 
-Definition at line 58 of file MicroGestureDetectionStrategyEdges.java.
+Definition at line 60 of file MicroGestureDetectionStrategyEdges.java.
 
-References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.addPoint(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges.tolerance.
+References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.addPoint(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges.angleCosinus, ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setPoints(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setType(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges.tolerance.
 
 Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=375pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a16cd0b9ef604ba14a7eb573a77966c4f_cgraph}
+\includegraphics[width=376pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a16cd0b9ef604ba14a7eb573a77966c4f_cgraph}
 \end{center}
 \end{figure}
 \hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_ae0338811d57c4b4b96705b71c5edfc43}{
@@ -85,7 +87,7 @@ Return a description of the strategy
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 41 of file MicroGestureDetectionStrategyEdges.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a7ae8347737b8180278eb34f6d5cbba1d}{
+Definition at line 43 of file MicroGestureDetectionStrategyEdges.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a7ae8347737b8180278eb34f6d5cbba1d}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}!getStrategyName@{getStrategyName}}
 \index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}}
 \subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
@@ -99,19 +101,28 @@ Return the strategy's name
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 36 of file MicroGestureDetectionStrategyEdges.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a81df19fe3c91ea915592918c082ceb5d}{
-\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}!initArguments@{initArguments}}
-\index{initArguments@{initArguments}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}}
-\subsubsection[{initArguments}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges.initArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a81df19fe3c91ea915592918c082ceb5d}
+Definition at line 38 of file MicroGestureDetectionStrategyEdges.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_ab4abee912f5692af0155d1770c354108}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}!initialize@{initialize}}
+\index{initialize@{initialize}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges.initialize ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_ab4abee912f5692af0155d1770c354108}
 Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
 
-Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a0496e8fd0099a5f0f7765322d7e752a9}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_af6ea27835befac71906915236a347450}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 33 of file MicroGestureDetectionStrategyEdges.java.
+Definition at line 35 of file MicroGestureDetectionStrategyEdges.java.
 
 \subsection{Member Data Documentation}
-\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a17536b25d63e07e0c5c776e017a4b29c}{
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a2490c2e49516999b5b3f9da8a9a6b8ba}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}!angleCosinus@{angleCosinus}}
+\index{angleCosinus@{angleCosinus}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}}
+\subsubsection[{angleCosinus}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges.angleCosinus} = -\/0.1d\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a2490c2e49516999b5b3f9da8a9a6b8ba}
+
+
+Definition at line 26 of file MicroGestureDetectionStrategyEdges.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges.detectMicroGestures().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges_a17536b25d63e07e0c5c776e017a4b29c}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}!tolerance@{tolerance}}
 \index{tolerance@{tolerance}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyEdges@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyEdges}}
 \subsubsection[{tolerance}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyEdges.tolerance} = 0.2d\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}

@@ -60,82 +60,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023         
 <a name="l00024"></a>00024         
 <a name="l00025"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a17536b25d63e07e0c5c776e017a4b29c">00025</a>         <span class="keyword">private</span> <span class="keywordtype">double</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a17536b25d63e07e0c5c776e017a4b29c">tolerance</a> = 0.2d;
-<a name="l00026"></a>00026 
+<a name="l00026"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a2490c2e49516999b5b3f9da8a9a6b8ba">00026</a>         <span class="keyword">private</span> <span class="keywordtype">double</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a2490c2e49516999b5b3f9da8a9a6b8ba">angleCosinus</a> = -0.1d; <span class="comment">// Enger Winkel</span>
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00029"></a>00029         <span class="comment">// Implementation of BaseStrategy&apos;s abstract methods</span>
-<a name="l00030"></a>00030         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00031"></a>00031         
+<a name="l00028"></a>00028         
+<a name="l00029"></a>00029         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00030"></a>00030         <span class="comment">// Implementation of BaseStrategy&apos;s abstract methods</span>
+<a name="l00031"></a>00031         <span class="comment">//---------------------------------------------------------------------------</span>
 <a name="l00032"></a>00032         
-<a name="l00033"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a81df19fe3c91ea915592918c082ceb5d">00033</a>         <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a81df19fe3c91ea915592918c082ceb5d">initArguments</a>() {}
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035         @Override
-<a name="l00036"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a7ae8347737b8180278eb34f6d5cbba1d">00036</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a7ae8347737b8180278eb34f6d5cbba1d">getStrategyName</a>() {
-<a name="l00037"></a>00037                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Edges&quot;</span>;
-<a name="l00038"></a>00038         }
-<a name="l00039"></a>00039         
-<a name="l00040"></a>00040         @Override
-<a name="l00041"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#ae0338811d57c4b4b96705b71c5edfc43">00041</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#ae0338811d57c4b4b96705b71c5edfc43">getStrategyDescription</a>() {
-<a name="l00042"></a>00042                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Separate the paths of the given MicroGestures at sharp edges&quot;</span>;
-<a name="l00043"></a>00043         } 
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00047"></a>00047         <span class="comment">// Implementation of IMicroGestureDetectionStrategy</span>
+<a name="l00033"></a>00033         
+<a name="l00034"></a>00034         @Override
+<a name="l00035"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#ab4abee912f5692af0155d1770c354108">00035</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#ab4abee912f5692af0155d1770c354108">initialize</a>() {}
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037         @Override
+<a name="l00038"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a7ae8347737b8180278eb34f6d5cbba1d">00038</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a7ae8347737b8180278eb34f6d5cbba1d">getStrategyName</a>() {
+<a name="l00039"></a>00039                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Edges&quot;</span>;
+<a name="l00040"></a>00040         }
+<a name="l00041"></a>00041         
+<a name="l00042"></a>00042         @Override
+<a name="l00043"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#ae0338811d57c4b4b96705b71c5edfc43">00043</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#ae0338811d57c4b4b96705b71c5edfc43">getStrategyDescription</a>() {
+<a name="l00044"></a>00044                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Separate the paths of the given MicroGestures at sharp edges&quot;</span>;
+<a name="l00045"></a>00045         } 
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 
 <a name="l00048"></a>00048         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00049"></a>00049         
-<a name="l00050"></a>00050 
-<a name="l00057"></a>00057         @Override
-<a name="l00058"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a16cd0b9ef604ba14a7eb573a77966c4f">00058</a>         <span class="keyword">public</span> Collection&lt;MicroGesture&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a16cd0b9ef604ba14a7eb573a77966c4f">detectMicroGestures</a>(Collection&lt;MicroGesture&gt; microGestures) {
-<a name="l00059"></a>00059                 
-<a name="l00060"></a>00060                 Collection&lt;MicroGesture&gt; result = <span class="keyword">new</span> ArrayList&lt;MicroGesture&gt;();
+<a name="l00049"></a>00049         <span class="comment">// Implementation of IMicroGestureDetectionStrategy</span>
+<a name="l00050"></a>00050         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00051"></a>00051         
+<a name="l00052"></a>00052 
+<a name="l00059"></a>00059         @Override
+<a name="l00060"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a16cd0b9ef604ba14a7eb573a77966c4f">00060</a>         <span class="keyword">public</span> Collection&lt;MicroGesture&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a16cd0b9ef604ba14a7eb573a77966c4f">detectMicroGestures</a>(Collection&lt;MicroGesture&gt; microGestures) {
 <a name="l00061"></a>00061                 
-<a name="l00062"></a>00062                 <span class="keywordflow">for</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> m : microGestures) {
-<a name="l00063"></a>00063                         Collection&lt;TouchPoint&gt; points = m.getPoints();
-<a name="l00064"></a>00064                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>[] pts = <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>[points.size()];
-<a name="l00065"></a>00065                         pts = points.toArray(pts);
-<a name="l00066"></a>00066                         
-<a name="l00067"></a>00067                         <span class="keywordtype">double</span> lastCurve = 0;
-<a name="l00068"></a>00068                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> temp2 = <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>();
-<a name="l00069"></a>00069                         temp2.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[0]);
-<a name="l00070"></a>00070                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; pts.length-1; i++) {
-<a name="l00071"></a>00071                                 temp2.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[i]);
-<a name="l00072"></a>00072                                 <span class="keywordtype">float</span> x1, y1;
-<a name="l00073"></a>00073                                 <span class="keywordtype">float</span> x2, y2;
-<a name="l00074"></a>00074                                 x1 = pts[i-1].x - pts[i].x;
-<a name="l00075"></a>00075                                 y1 = pts[i-1].y - pts[i].y;
-<a name="l00076"></a>00076                                 x2 = pts[i+1].x - pts[i].x;
-<a name="l00077"></a>00077                                 y2 = pts[i+1].y - pts[i].y;
-<a name="l00078"></a>00078                                 
-<a name="l00079"></a>00079                                 <span class="comment">//Winkel</span>
-<a name="l00080"></a>00080                                 <span class="keywordtype">double</span> cos = (x1 * x2 + y1 * y2) / 
-<a name="l00081"></a>00081                                         (Math.sqrt(x1*x1 + y1*y1) * Math.sqrt(x2*x2 + y2*y2));
-<a name="l00082"></a>00082         
-<a name="l00083"></a>00083                                 <span class="keywordflow">if</span>(lastCurve == 0) {
-<a name="l00084"></a>00084                                         lastCurve = cos;
-<a name="l00085"></a>00085                                 }
-<a name="l00086"></a>00086                                 <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cos &gt; -0.1 &amp;&amp; Math.abs(cos - lastCurve) &gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a17536b25d63e07e0c5c776e017a4b29c">tolerance</a>) {
-<a name="l00087"></a>00087                                         temp2.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[i]);
-<a name="l00088"></a>00088         
-<a name="l00089"></a>00089                                         result.add(temp2);
-<a name="l00090"></a>00090                                         
-<a name="l00091"></a>00091                                         <span class="keywordflow">if</span> (i != pts.length-1) {
-<a name="l00092"></a>00092                                                 temp2 = <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>();
-<a name="l00093"></a>00093                                                 temp2.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[i]);
-<a name="l00094"></a>00094                                         }
-<a name="l00095"></a>00095                                         lastCurve = 0;
-<a name="l00096"></a>00096                                 }
-<a name="l00097"></a>00097                                 <span class="keywordflow">else</span> {
-<a name="l00098"></a>00098                                         lastCurve = cos;
-<a name="l00099"></a>00099                                 }
-<a name="l00100"></a>00100                         }
-<a name="l00101"></a>00101                         temp2.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[pts.length -1]);
-<a name="l00102"></a>00102                         result.add(temp2);
-<a name="l00103"></a>00103                 }
-<a name="l00104"></a>00104                 
-<a name="l00105"></a>00105                 <span class="keywordflow">return</span> result;
-<a name="l00106"></a>00106         }
-<a name="l00107"></a>00107 }
+<a name="l00062"></a>00062                 Collection&lt;MicroGesture&gt; result = <span class="keyword">new</span> ArrayList&lt;MicroGesture&gt;();
+<a name="l00063"></a>00063                 
+<a name="l00064"></a>00064                 <span class="keywordflow">for</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> m : microGestures) {
+<a name="l00065"></a>00065                         Collection&lt;TouchPoint&gt; points = m.getPoints();
+<a name="l00066"></a>00066                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>[] pts = <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a>[points.size()];
+<a name="l00067"></a>00067                         pts = points.toArray(pts);
+<a name="l00068"></a>00068                         
+<a name="l00070"></a>00070                         <span class="keywordflow">if</span> (microGestures.size() == 1 &amp;&amp; pts.length &lt; 5) {
+<a name="l00071"></a>00071                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> dot = <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>();
+<a name="l00072"></a>00072                                 dot.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a71ef1e00c42a00874e551707d73de579">setPoints</a>(points);
+<a name="l00073"></a>00073                                 dot.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ae7f33d544189f7cf99710d8694beec56">setType</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>.TYPE_DOT);
+<a name="l00074"></a>00074                                 result.add(dot);
+<a name="l00075"></a>00075                                 <span class="keywordflow">break</span>;
+<a name="l00076"></a>00076                         }
+<a name="l00077"></a>00077                         
+<a name="l00079"></a>00079                         
+<a name="l00080"></a>00080                         <span class="keywordtype">double</span> lastCos = 0;
+<a name="l00081"></a>00081                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> newGesture = <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>();
+<a name="l00082"></a>00082                         newGesture.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[0]);
+<a name="l00083"></a>00083                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; pts.length-1; i++) {
+<a name="l00084"></a>00084                                 newGesture.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[i]);
+<a name="l00085"></a>00085                                 <span class="keywordtype">float</span> x1, y1;
+<a name="l00086"></a>00086                                 <span class="keywordtype">float</span> x2, y2;
+<a name="l00087"></a>00087                                 x1 = pts[i-1].x - pts[i].x;
+<a name="l00088"></a>00088                                 y1 = pts[i-1].y - pts[i].y;
+<a name="l00089"></a>00089                                 x2 = pts[i+1].x - pts[i].x;
+<a name="l00090"></a>00090                                 y2 = pts[i+1].y - pts[i].y;
+<a name="l00091"></a>00091                                 
+<a name="l00092"></a>00092                                 <span class="comment">//Winkel</span>
+<a name="l00093"></a>00093                                 <span class="keywordtype">double</span> cos = (x1 * x2 + y1 * y2) / (Math.sqrt(x1*x1 + y1*y1) * Math.sqrt(x2*x2 + y2*y2));
+<a name="l00094"></a>00094         
+<a name="l00095"></a>00095                                 <span class="keywordflow">if</span>(lastCos == 0) {
+<a name="l00096"></a>00096                                         lastCos = cos;
+<a name="l00097"></a>00097                                 }
+<a name="l00098"></a>00098                                 <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cos &gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a2490c2e49516999b5b3f9da8a9a6b8ba">angleCosinus</a> &amp;&amp; Math.abs(cos - lastCos) &gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyEdges.html#a17536b25d63e07e0c5c776e017a4b29c">tolerance</a>) {
+<a name="l00099"></a>00099                                         newGesture.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[i]);
+<a name="l00100"></a>00100         
+<a name="l00101"></a>00101                                         result.add(newGesture);
+<a name="l00102"></a>00102                                         
+<a name="l00103"></a>00103                                         <span class="keywordflow">if</span> (i != pts.length-1) {
+<a name="l00104"></a>00104                                                 newGesture = <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>();
+<a name="l00105"></a>00105                                                 newGesture.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[i]);
+<a name="l00106"></a>00106                                         }
+<a name="l00107"></a>00107                                         lastCos = 0;
+<a name="l00108"></a>00108                                 }
+<a name="l00109"></a>00109                                 <span class="keywordflow">else</span> {
+<a name="l00110"></a>00110                                         lastCos = cos;
+<a name="l00111"></a>00111                                 }
+<a name="l00112"></a>00112                         }
+<a name="l00113"></a>00113                         newGesture.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(pts[pts.length -1]);
+<a name="l00114"></a>00114                         result.add(newGesture);
+<a name="l00115"></a>00115                 }
+<a name="l00116"></a>00116                 
+<a name="l00117"></a>00117                 <span class="keywordflow">return</span> result;
+<a name="l00118"></a>00118         }
+<a name="l00119"></a>00119 }
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -151,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun May 16 22:50:16 2010 for BA10-bsha-1 by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri May 21 01:42:15 2010 for BA10-bsha-1 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

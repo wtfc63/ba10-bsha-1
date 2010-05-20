@@ -1,0 +1,154 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog}\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}}
+}
+
+
+Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::BaseStrategy}, and \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IPreprocessingStrategy}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_acac70ca9f34f19eb4f6a762895b2ffec}{initialize} ()
+\item 
+\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a4a22fc4b981ca9898e730579f93744fe}{process} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} micro\_\-gesture)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a278aa48e1f1dd64d130fe528d879c632}{getStrategyName} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a9dc4e3fe302e8e318c68e3f2257a8979}{getStrategyDescription} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+File \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a369993f5c6a751d5915b0afceaf930b5}{logFile}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_acb9148bfbd411f6bfae3ac2c6921925d}{TAG} = \char`\"{}PPS\_\-Log\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Example of an implementation of \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy}{IPreprocessingStrategy} which logs the given \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint}s to Logcat and into a log-\/file and returns them unchanged
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+
+Definition at line 25 of file PreprocessingStrategyLog.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a9dc4e3fe302e8e318c68e3f2257a8979}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}!getStrategyDescription@{getStrategyDescription}}
+\index{getStrategyDescription@{getStrategyDescription}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}}
+\subsubsection[{getStrategyDescription}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.getStrategyDescription ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a9dc4e3fe302e8e318c68e3f2257a8979}
+Return a description of the strategy
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 63 of file PreprocessingStrategyLog.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a278aa48e1f1dd64d130fe528d879c632}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}!getStrategyName@{getStrategyName}}
+\index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}}
+\subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a278aa48e1f1dd64d130fe528d879c632}
+Return the strategy's name
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 58 of file PreprocessingStrategyLog.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.initialize().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_acac70ca9f34f19eb4f6a762895b2ffec}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}!initialize@{initialize}}
+\index{initialize@{initialize}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.initialize ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_acac70ca9f34f19eb4f6a762895b2ffec}
+Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_af6ea27835befac71906915236a347450}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 43 of file PreprocessingStrategyLog.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.addArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.getArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.getStrategyName(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.hasArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.logFile, and ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.TAG.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_acac70ca9f34f19eb4f6a762895b2ffec_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a4a22fc4b981ca9898e730579f93744fe}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}!process@{process}}
+\index{process@{process}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf MicroGesture} ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.process ({\bf MicroGesture} {\em micro\_\-gesture})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a4a22fc4b981ca9898e730579f93744fe}
+Logs the \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint}s of the given \hyperlink{}{MicroGesture} to Logcat and into a file and returns the unchanged
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em micro\_\-gesture}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy_a3e3885dce8fda7b79dc514078f11ad62}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IPreprocessingStrategy}.
+
+Definition at line 81 of file PreprocessingStrategyLog.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.logFile, ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.TAG, and ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.toString().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a4a22fc4b981ca9898e730579f93744fe_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a369993f5c6a751d5915b0afceaf930b5}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}!logFile@{logFile}}
+\index{logFile@{logFile}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}}
+\subsubsection[{logFile}]{\setlength{\rightskip}{0pt plus 5cm}File {\bf ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.logFile}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_a369993f5c6a751d5915b0afceaf930b5}
+
+
+Definition at line 34 of file PreprocessingStrategyLog.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.initialize(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.process().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_acb9148bfbd411f6bfae3ac2c6921925d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}!TAG@{TAG}}
+\index{TAG@{TAG}!ch::zhaw::ba10_bsha_1::strategies::PreprocessingStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::PreprocessingStrategyLog}}
+\subsubsection[{TAG}]{\setlength{\rightskip}{0pt plus 5cm}final String {\bf ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.TAG} = \char`\"{}PPS\_\-Log\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PreprocessingStrategyLog_acb9148bfbd411f6bfae3ac2c6921925d}
+
+
+Definition at line 33 of file PreprocessingStrategyLog.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.initialize(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.PreprocessingStrategyLog.process().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/strategies/\hyperlink{PreprocessingStrategyLog_8java}{PreprocessingStrategyLog.java}\end{DoxyCompactItemize}

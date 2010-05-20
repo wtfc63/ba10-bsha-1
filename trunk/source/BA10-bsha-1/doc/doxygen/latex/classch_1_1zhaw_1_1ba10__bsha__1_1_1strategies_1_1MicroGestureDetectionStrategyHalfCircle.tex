@@ -14,12 +14,12 @@ Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrate
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a7f8d7d1b4c366aa2bcb4eade7db4af8f}{initialize} ()
+\item 
 Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a780f7ded471f8e1dbd141518c41c060e}{detectMicroGestures} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ microGestures)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a15793e039b14536d9ddb8dd23e839eac}{initArguments} ()
 \item 
 String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_ab8f20632c110877b3173a3ca6c673bc1}{getStrategyName} ()
 \item 
@@ -32,7 +32,7 @@ void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDe
 \item 
 double \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a41f906c4c42a57ac8d1c6ae417fe6578}{calculateDistance} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} a, double m1, double q1)
 \item 
-float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_abc630df3a07afe93dacdc0fc3c788607}{analyseMicroGestureDirection} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} mg)
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a472dbb75d876bcc2e87a98a0b1afb14c}{analyseMicroGestureDirection} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} mg)
 \end{DoxyCompactItemize}
 
 
@@ -47,16 +47,16 @@ Dominik Giger, Julian Hanhart
 Definition at line 19 of file MicroGestureDetectionStrategyHalfCircle.java.
 
 \subsection{Member Function Documentation}
-\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_abc630df3a07afe93dacdc0fc3c788607}{
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a472dbb75d876bcc2e87a98a0b1afb14c}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}!analyseMicroGestureDirection@{analyseMicroGestureDirection}}
 \index{analyseMicroGestureDirection@{analyseMicroGestureDirection}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}}
-\subsubsection[{analyseMicroGestureDirection}]{\setlength{\rightskip}{0pt plus 5cm}float ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection ({\bf MicroGesture} {\em mg})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_abc630df3a07afe93dacdc0fc3c788607}
+\subsubsection[{analyseMicroGestureDirection}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection ({\bf MicroGesture} {\em mg})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a472dbb75d876bcc2e87a98a0b1afb14c}
 
 
-Definition at line 227 of file MicroGestureDetectionStrategyHalfCircle.java.
+Definition at line 228 of file MicroGestureDetectionStrategyHalfCircle.java.
 
-References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getType(), and ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setDirection2().
+References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getType(), and ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setDirection().
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.detectMicroGestures().
 
@@ -64,7 +64,7 @@ Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=412pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_abc630df3a07afe93dacdc0fc3c788607_cgraph}
+\includegraphics[width=409pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a472dbb75d876bcc2e87a98a0b1afb14c_cgraph}
 \end{center}
 \end{figure}
 \hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a41f906c4c42a57ac8d1c6ae417fe6578}{
@@ -74,7 +74,7 @@ Here is the call graph for this function:\nopagebreak
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a41f906c4c42a57ac8d1c6ae417fe6578}
 
 
-Definition at line 210 of file MicroGestureDetectionStrategyHalfCircle.java.
+Definition at line 211 of file MicroGestureDetectionStrategyHalfCircle.java.
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a780f7ded471f8e1dbd141518c41c060e}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}!detectMicroGestures@{detectMicroGestures}}
@@ -93,9 +93,9 @@ Detect half circles in the \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchP
 
 Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy}.
 
-Definition at line 52 of file MicroGestureDetectionStrategyHalfCircle.java.
+Definition at line 53 of file MicroGestureDetectionStrategyHalfCircle.java.
 
-References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.addPoint(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setDirection(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture().
+References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.addPoint(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture().
 
 Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
@@ -118,7 +118,7 @@ Return a description of the strategy
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 35 of file MicroGestureDetectionStrategyHalfCircle.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_ab8f20632c110877b3173a3ca6c673bc1}{
+Definition at line 36 of file MicroGestureDetectionStrategyHalfCircle.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_ab8f20632c110877b3173a3ca6c673bc1}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}!getStrategyName@{getStrategyName}}
 \index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}}
 \subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
@@ -132,23 +132,23 @@ Return the strategy's name
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 30 of file MicroGestureDetectionStrategyHalfCircle.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a15793e039b14536d9ddb8dd23e839eac}{
-\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}!initArguments@{initArguments}}
-\index{initArguments@{initArguments}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}}
-\subsubsection[{initArguments}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.initArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a15793e039b14536d9ddb8dd23e839eac}
+Definition at line 31 of file MicroGestureDetectionStrategyHalfCircle.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a7f8d7d1b4c366aa2bcb4eade7db4af8f}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}!initialize@{initialize}}
+\index{initialize@{initialize}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.initialize ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a7f8d7d1b4c366aa2bcb4eade7db4af8f}
 Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
 
-Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a0496e8fd0099a5f0f7765322d7e752a9}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_af6ea27835befac71906915236a347450}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 27 of file MicroGestureDetectionStrategyHalfCircle.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_aa8cae44f2d4c56a05d29eb5a1c53abdd}{
+Definition at line 28 of file MicroGestureDetectionStrategyHalfCircle.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_aa8cae44f2d4c56a05d29eb5a1c53abdd}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}!setMicroGesture@{setMicroGesture}}
 \index{setMicroGesture@{setMicroGesture}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyHalfCircle@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyHalfCircle}}
 \subsubsection[{setMicroGesture}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture ({\bf MicroGesture} {\em mg})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_aa8cae44f2d4c56a05d29eb5a1c53abdd}
 
 
-Definition at line 168 of file MicroGestureDetectionStrategyHalfCircle.java.
+Definition at line 169 of file MicroGestureDetectionStrategyHalfCircle.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyHalfCircle.calculateDistance(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), and ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setType().
 

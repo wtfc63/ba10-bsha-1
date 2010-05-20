@@ -14,16 +14,21 @@ Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrate
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_ad9982cce2bbecd3246b3838b28bd95e7}{initialize} ()
+\item 
 Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a5487e41dc2d1b6dbe493b5a8420c050f}{detectMicroGestures} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ microGestures)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_ab23cfbf392bc9eb213a0c8768918d9d2}{initArguments} ()
-\item 
 String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_ad7fdf02bda8daf2d3bd177e23a270f11}{getStrategyName} ()
 \item 
 String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_adf4547ec5056bf340c60f15ba50330bc}{getStrategyDescription} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a06f12711cc267a6f8647dfb6faeb4787}{setMicroGesture} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} mg)
 \end{DoxyCompactItemize}
 
 
@@ -35,7 +40,7 @@ Dominik Giger, Julian Hanhart
 \end{DoxyAuthor}
 
 
-Definition at line 14 of file MicroGestureDetectionStrategyCombine.java.
+Definition at line 16 of file MicroGestureDetectionStrategyCombine.java.
 
 \subsection{Member Function Documentation}
 \hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a5487e41dc2d1b6dbe493b5a8420c050f}{
@@ -55,7 +60,18 @@ Combine \hyperlink{}{MicroGesture}s when needed
 
 Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy}.
 
-Definition at line 47 of file MicroGestureDetectionStrategyCombine.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_adf4547ec5056bf340c60f15ba50330bc}{
+Definition at line 49 of file MicroGestureDetectionStrategyCombine.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.addPoint(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getDirection(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getType(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCombine.setMicroGesture().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a5487e41dc2d1b6dbe493b5a8420c050f_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_adf4547ec5056bf340c60f15ba50330bc}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}!getStrategyDescription@{getStrategyDescription}}
 \index{getStrategyDescription@{getStrategyDescription}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}}
 \subsubsection[{getStrategyDescription}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCombine.getStrategyDescription ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
@@ -69,7 +85,7 @@ Return a description of the strategy
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 30 of file MicroGestureDetectionStrategyCombine.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_ad7fdf02bda8daf2d3bd177e23a270f11}{
+Definition at line 32 of file MicroGestureDetectionStrategyCombine.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_ad7fdf02bda8daf2d3bd177e23a270f11}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}!getStrategyName@{getStrategyName}}
 \index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}}
 \subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCombine.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
@@ -83,16 +99,36 @@ Return the strategy's name
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 25 of file MicroGestureDetectionStrategyCombine.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_ab23cfbf392bc9eb213a0c8768918d9d2}{
-\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}!initArguments@{initArguments}}
-\index{initArguments@{initArguments}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}}
-\subsubsection[{initArguments}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCombine.initArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_ab23cfbf392bc9eb213a0c8768918d9d2}
+Definition at line 27 of file MicroGestureDetectionStrategyCombine.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_ad9982cce2bbecd3246b3838b28bd95e7}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}!initialize@{initialize}}
+\index{initialize@{initialize}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCombine.initialize ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_ad9982cce2bbecd3246b3838b28bd95e7}
 Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
 
-Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a0496e8fd0099a5f0f7765322d7e752a9}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_af6ea27835befac71906915236a347450}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 22 of file MicroGestureDetectionStrategyCombine.java.
+Definition at line 24 of file MicroGestureDetectionStrategyCombine.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a06f12711cc267a6f8647dfb6faeb4787}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}!setMicroGesture@{setMicroGesture}}
+\index{setMicroGesture@{setMicroGesture}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCombine@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCombine}}
+\subsubsection[{setMicroGesture}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCombine.setMicroGesture ({\bf MicroGesture} {\em mg})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a06f12711cc267a6f8647dfb6faeb4787}
+
+
+Definition at line 83 of file MicroGestureDetectionStrategyCombine.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), and ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setType().
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCombine.detectMicroGestures().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=372pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a06f12711cc267a6f8647dfb6faeb4787_cgraph}
+\end{center}
+\end{figure}
+
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

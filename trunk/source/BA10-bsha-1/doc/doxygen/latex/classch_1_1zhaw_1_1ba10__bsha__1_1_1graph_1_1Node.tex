@@ -48,6 +48,8 @@ Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Edge}{Edge
 \item 
 void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_add712262f47c24d3af3b3fa4150566e1}{setOutgoingEdges} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Edge}{Edge} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a130b2d1b8b68b2fe91d3753b23c766e2}{outgoingEdges})
 \item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a898dcdd240251792e45ea79352536dce}{addOutgoingEdge} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} node, float probability, int nr\_\-of\_\-samples)
+\item 
 void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aeb5d29fd379ad2b13cadbac51f880390}{addOutgoingEdge} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node}{Node} node, float probability)
 \item 
 void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aeb360f45f8582ea6cda8ef9b6f074df0}{addOutgoingEdge} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Edge}{Edge} edge)
@@ -69,6 +71,11 @@ Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Edge}{Edge
 \item 
 Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Edge}{Edge} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a130b2d1b8b68b2fe91d3753b23c766e2}{outgoingEdges}
 \end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_abb4e5408b8e351e07fab48d8f45ee50d}{MIN\_\-PROBABILITY} = 0.05f
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -89,7 +96,7 @@ Definition at line 19 of file Node.java.
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_ac83645efc3aceb760b465c38bd3d6083}
 
 
-Definition at line 40 of file Node.java.
+Definition at line 42 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.incomingEdges, ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.label, ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges, and ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.tester.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_afbca65b1cddca6b543f2227031529020}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!Node@{Node}}
@@ -98,14 +105,14 @@ References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.incomingEdges, ch.zhaw.ba10\_\-b
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_afbca65b1cddca6b543f2227031529020}
 
 
-Definition at line 49 of file Node.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a7842c35883c45ad3b56fcdcfe830e738}{
+Definition at line 51 of file Node.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a7842c35883c45ad3b56fcdcfe830e738}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!Node@{Node}}
 \index{Node@{Node}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
 \subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.Node (int {\em id}, \/  String {\em test})}}
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a7842c35883c45ad3b56fcdcfe830e738}
 
 
-Definition at line 53 of file Node.java.
+Definition at line 55 of file Node.java.
 
 \subsection{Member Function Documentation}
 \hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_afbf20aec55572fc6c90d2f2541d7eeed}{
@@ -115,18 +122,18 @@ Definition at line 53 of file Node.java.
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_afbf20aec55572fc6c90d2f2541d7eeed}
 
 
-Definition at line 148 of file Node.java.
+Definition at line 150 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.incomingEdges.
 
-Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endDocument().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aeb360f45f8582ea6cda8ef9b6f074df0}{
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addOutgoingEdge(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endDocument().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aeb360f45f8582ea6cda8ef9b6f074df0}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!addOutgoingEdge@{addOutgoingEdge}}
 \index{addOutgoingEdge@{addOutgoingEdge}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
 \subsubsection[{addOutgoingEdge}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addOutgoingEdge ({\bf Edge} {\em edge})}}
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aeb360f45f8582ea6cda8ef9b6f074df0}
 
 
-Definition at line 170 of file Node.java.
+Definition at line 177 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aeb5d29fd379ad2b13cadbac51f880390}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!addOutgoingEdge@{addOutgoingEdge}}
@@ -135,11 +142,38 @@ References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges.\hypertarget{class
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aeb5d29fd379ad2b13cadbac51f880390}
 
 
-Definition at line 165 of file Node.java.
+Definition at line 173 of file Node.java.
 
-References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges.
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addOutgoingEdge().
 
-Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.buildGraph(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphFactoryDummy.createRoot(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endDocument().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a985b135e0ae7c0453985cd1dacdc4bc7}{
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aeb5d29fd379ad2b13cadbac51f880390_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a898dcdd240251792e45ea79352536dce}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!addOutgoingEdge@{addOutgoingEdge}}
+\index{addOutgoingEdge@{addOutgoingEdge}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
+\subsubsection[{addOutgoingEdge}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addOutgoingEdge ({\bf Node} {\em node}, \/  float {\em probability}, \/  int {\em nr\_\-of\_\-samples})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a898dcdd240251792e45ea79352536dce}
+
+
+Definition at line 167 of file Node.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addIncomingEdge(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addOutgoingEdge(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.buildGraph(), ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphFactoryDummy.createRoot(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLParser.endDocument().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a898dcdd240251792e45ea79352536dce_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a985b135e0ae7c0453985cd1dacdc4bc7}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!consume@{consume}}
 \index{consume@{consume}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
 \subsubsection[{consume}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf Character}$>$ ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.consume (Collection$<$ {\bf MicroGesture} $>$ {\em micro\_\-gestures}, \/  float {\em probability})}}
@@ -151,9 +185,9 @@ Feed \hyperlink{}{MicroGesture}s to \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_
 \item[{\em micro\_\-gestures}]\item[{\em probability}]\end{DoxyParams}
 
 
-Definition at line 69 of file Node.java.
+Definition at line 71 of file Node.java.
 
-References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.character, ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges, ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.tester, and ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGestureTester.validate().
+References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.character, ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.MIN\_\-PROBABILITY, ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges, ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.tester, and ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGestureTester.validate().
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.detectCharacter(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyDummyGraph.detectCharacter().
 
@@ -171,7 +205,7 @@ Here is the call graph for this function:\nopagebreak
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a0e84a9cb9ac03506d3a46af0a8f288f5}
 
 
-Definition at line 131 of file Node.java.
+Definition at line 133 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.character.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a725596466df160f7aa65009dbd29e3d8}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!getId@{getId}}
@@ -180,7 +214,7 @@ References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.character.\hypertarget{classch_1
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a725596466df160f7aa65009dbd29e3d8}
 
 
-Definition at line 104 of file Node.java.
+Definition at line 106 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.id.
 
@@ -191,7 +225,7 @@ Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.endTag().\hypert
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a315d8069f8d2d0b8d50bbc2b5e57144b}
 
 
-Definition at line 140 of file Node.java.
+Definition at line 142 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.incomingEdges.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a0175cf0a68d3cb8e43579638f4ccc264}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!getLabel@{getLabel}}
@@ -200,7 +234,7 @@ References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.incomingEdges.\hypertarget{class
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a0175cf0a68d3cb8e43579638f4ccc264}
 
 
-Definition at line 113 of file Node.java.
+Definition at line 115 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.label.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a6261a952f89dfff7e010c3ddc4a730d8}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!getOutgoingEdges@{getOutgoingEdges}}
@@ -209,7 +243,7 @@ References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.label.\hypertarget{classch_1_1zh
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a6261a952f89dfff7e010c3ddc4a730d8}
 
 
-Definition at line 157 of file Node.java.
+Definition at line 159 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a25060c21d8718f9c9685ed20446e4611}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!getTester@{getTester}}
@@ -218,7 +252,7 @@ References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges.\hypertarget{class
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a25060c21d8718f9c9685ed20446e4611}
 
 
-Definition at line 122 of file Node.java.
+Definition at line 124 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.tester.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aa309007d5babe035612662009aa65471}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!removeIncomingEdge@{removeIncomingEdge}}
@@ -227,7 +261,7 @@ References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.tester.\hypertarget{classch_1_1z
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_aa309007d5babe035612662009aa65471}
 
 
-Definition at line 152 of file Node.java.
+Definition at line 154 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.incomingEdges.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_ad31d9211d2a1fa2984f02f2faa37c6f1}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!removeOutgoingEdge@{removeOutgoingEdge}}
@@ -236,7 +270,7 @@ References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.incomingEdges.\hypertarget{class
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_ad31d9211d2a1fa2984f02f2faa37c6f1}
 
 
-Definition at line 174 of file Node.java.
+Definition at line 181 of file Node.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_ad1c94b7c86ad5fd14bf0aee9d52189e4}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!setCharacter@{setCharacter}}
@@ -245,7 +279,7 @@ References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges.\hypertarget{class
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_ad1c94b7c86ad5fd14bf0aee9d52189e4}
 
 
-Definition at line 135 of file Node.java.
+Definition at line 137 of file Node.java.
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a2d145e592a040c0c608caf33a59e0007}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!setId@{setId}}
@@ -254,35 +288,37 @@ Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hy
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a2d145e592a040c0c608caf33a59e0007}
 
 
-Definition at line 108 of file Node.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a18364ede156d636e492a64eeb5306d36}{
+Definition at line 110 of file Node.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a18364ede156d636e492a64eeb5306d36}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!setIncomingEdges@{setIncomingEdges}}
 \index{setIncomingEdges@{setIncomingEdges}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
 \subsubsection[{setIncomingEdges}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.setIncomingEdges (Collection$<$ {\bf Edge} $>$ {\em incomingEdges})}}
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a18364ede156d636e492a64eeb5306d36}
 
 
-Definition at line 144 of file Node.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a1a6b348d6dba34a3f7b6ec9f742952f6}{
+Definition at line 146 of file Node.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a1a6b348d6dba34a3f7b6ec9f742952f6}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!setLabel@{setLabel}}
 \index{setLabel@{setLabel}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
 \subsubsection[{setLabel}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.setLabel (String {\em label})}}
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a1a6b348d6dba34a3f7b6ec9f742952f6}
 
 
-Definition at line 117 of file Node.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_add712262f47c24d3af3b3fa4150566e1}{
+Definition at line 119 of file Node.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_add712262f47c24d3af3b3fa4150566e1}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!setOutgoingEdges@{setOutgoingEdges}}
 \index{setOutgoingEdges@{setOutgoingEdges}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
 \subsubsection[{setOutgoingEdges}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.setOutgoingEdges (Collection$<$ {\bf Edge} $>$ {\em outgoingEdges})}}
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_add712262f47c24d3af3b3fa4150566e1}
 
 
-Definition at line 161 of file Node.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a6dcb93d4c25e370c84741db17e59d2af}{
+Definition at line 163 of file Node.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a6dcb93d4c25e370c84741db17e59d2af}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!setTester@{setTester}}
 \index{setTester@{setTester}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
 \subsubsection[{setTester}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.setTester ({\bf MicroGestureTester} {\em tester})}}
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a6dcb93d4c25e370c84741db17e59d2af}
 
 
-Definition at line 126 of file Node.java.
+Definition at line 128 of file Node.java.
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().
 
@@ -294,7 +330,7 @@ Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.GraphMLPullParser.handleText().
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_ab6bd424b381dc0f19d9f49d0b2cb56fc}
 
 
-Definition at line 30 of file Node.java.
+Definition at line 32 of file Node.java.
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.consume(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.getCharacter().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a6ac4c87055132ff5de2f303d64baf0ba}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!id@{id}}
@@ -303,7 +339,7 @@ Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.consume(), and ch.zhaw.ba10\_
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a6ac4c87055132ff5de2f303d64baf0ba}
 
 
-Definition at line 27 of file Node.java.
+Definition at line 29 of file Node.java.
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.getId().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a588bea1c6cceb5f66e5e25115b9b12be}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!incomingEdges@{incomingEdges}}
@@ -312,7 +348,7 @@ Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.getId().\hypertarget{classch_
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a588bea1c6cceb5f66e5e25115b9b12be}
 
 
-Definition at line 31 of file Node.java.
+Definition at line 33 of file Node.java.
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addIncomingEdge(), ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.getIncomingEdges(), ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.Node(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.removeIncomingEdge().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a02527090afc270a47397d31fedb70375}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!label@{label}}
@@ -321,16 +357,25 @@ Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addIncomingEdge(), ch.zhaw.ba
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a02527090afc270a47397d31fedb70375}
 
 
-Definition at line 28 of file Node.java.
+Definition at line 30 of file Node.java.
 
-Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.getLabel(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.Node().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a130b2d1b8b68b2fe91d3753b23c766e2}{
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.getLabel(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.Node().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_abb4e5408b8e351e07fab48d8f45ee50d}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!MIN\_\-PROBABILITY@{MIN\_\-PROBABILITY}}
+\index{MIN\_\-PROBABILITY@{MIN\_\-PROBABILITY}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
+\subsubsection[{MIN\_\-PROBABILITY}]{\setlength{\rightskip}{0pt plus 5cm}final float {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.MIN\_\-PROBABILITY} = 0.05f\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_abb4e5408b8e351e07fab48d8f45ee50d}
+
+
+Definition at line 27 of file Node.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.consume().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a130b2d1b8b68b2fe91d3753b23c766e2}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!outgoingEdges@{outgoingEdges}}
 \index{outgoingEdges@{outgoingEdges}!ch::zhaw::ba10_bsha_1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}}
 \subsubsection[{outgoingEdges}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf Edge}$>$ {\bf ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.outgoingEdges}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_a130b2d1b8b68b2fe91d3753b23c766e2}
 
 
-Definition at line 32 of file Node.java.
+Definition at line 34 of file Node.java.
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addOutgoingEdge(), ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.consume(), ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.getOutgoingEdges(), ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.Node(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.removeOutgoingEdge().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_abec03ba4df889f23c0d30d70edee59f6}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node@{ch::zhaw::ba10\_\-bsha\_\-1::graph::Node}!tester@{tester}}
@@ -339,7 +384,7 @@ Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.addOutgoingEdge(), ch.zhaw.ba
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node_abec03ba4df889f23c0d30d70edee59f6}
 
 
-Definition at line 29 of file Node.java.
+Definition at line 31 of file Node.java.
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.consume(), ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.getTester(), and ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.Node().
 

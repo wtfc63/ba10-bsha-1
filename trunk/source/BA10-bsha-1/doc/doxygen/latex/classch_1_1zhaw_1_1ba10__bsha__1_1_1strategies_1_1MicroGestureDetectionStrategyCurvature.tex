@@ -14,12 +14,12 @@ Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrate
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a294fbd255e0bcd3e5dd452f1ad8e3f85}{initialize} ()
+\item 
 Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a939545a8c5597d693f4857a8f6195fc9}{detectMicroGestures} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ micro\_\-gestures)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_afc93fdc088cd9449668b5e277bf5c8f6}{initArguments} ()
 \item 
 String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_acd5003f685af87709425848adde5bc0f}{getStrategyName} ()
 \item 
@@ -32,7 +32,15 @@ void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDe
 \item 
 double \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_aa729634754fd1d0e1d5c4f0c5b403500}{calculateDistance} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint}{TouchPoint} a, double m1, double q1)
 \item 
-float \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a7d6da421d9cd91b8eccad94f0755a0f0}{analyseMicroGestureDirection} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} mg)
+int \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a8290d90ed16b0c2e0a14ab7de9cb1493}{analyseMicroGestureDirection} (\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} mg)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_acabafe95c89e97cd87488d70ed074adb}{directionIsUp} (double direction)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a1c4ae8dcc40fa0809afcbc701a5afa65}{directionIsDown} (double direction)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a0e5c080758fc29ddf572ed02f9c749ae}{directionIsRight} (double direction)
+\item 
+boolean \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_aab6c8ffaec46c10a9d15786b95654afd}{directionIsLeft} (double direction)
 \end{DoxyCompactItemize}
 
 
@@ -47,16 +55,16 @@ Dominik Giger, Julian Hanhart
 Definition at line 19 of file MicroGestureDetectionStrategyCurvature.java.
 
 \subsection{Member Function Documentation}
-\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a7d6da421d9cd91b8eccad94f0755a0f0}{
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a8290d90ed16b0c2e0a14ab7de9cb1493}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!analyseMicroGestureDirection@{analyseMicroGestureDirection}}
 \index{analyseMicroGestureDirection@{analyseMicroGestureDirection}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
-\subsubsection[{analyseMicroGestureDirection}]{\setlength{\rightskip}{0pt plus 5cm}float ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.analyseMicroGestureDirection ({\bf MicroGesture} {\em mg})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a7d6da421d9cd91b8eccad94f0755a0f0}
+\subsubsection[{analyseMicroGestureDirection}]{\setlength{\rightskip}{0pt plus 5cm}int ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.analyseMicroGestureDirection ({\bf MicroGesture} {\em mg})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a8290d90ed16b0c2e0a14ab7de9cb1493}
 
 
-Definition at line 200 of file MicroGestureDetectionStrategyCurvature.java.
+Definition at line 220 of file MicroGestureDetectionStrategyCurvature.java.
 
-References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints().
+References ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.directionIsDown(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.directionIsLeft(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.directionIsRight(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.directionIsUp(), and ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints().
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.detectMicroGestures().
 
@@ -64,7 +72,7 @@ Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=403pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a7d6da421d9cd91b8eccad94f0755a0f0_cgraph}
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a8290d90ed16b0c2e0a14ab7de9cb1493_cgraph}
 \end{center}
 \end{figure}
 \hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_aa729634754fd1d0e1d5c4f0c5b403500}{
@@ -74,7 +82,7 @@ Here is the call graph for this function:\nopagebreak
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_aa729634754fd1d0e1d5c4f0c5b403500}
 
 
-Definition at line 183 of file MicroGestureDetectionStrategyCurvature.java.
+Definition at line 203 of file MicroGestureDetectionStrategyCurvature.java.
 
 Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.setMicroGesture().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a939545a8c5597d693f4857a8f6195fc9}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!detectMicroGestures@{detectMicroGestures}}
@@ -93,7 +101,7 @@ Detect \hyperlink{}{MicroGesture}s in the \hyperlink{classch_1_1zhaw_1_1ba10__bs
 
 Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy}.
 
-Definition at line 52 of file MicroGestureDetectionStrategyCurvature.java.
+Definition at line 53 of file MicroGestureDetectionStrategyCurvature.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.addPoint(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.analyseMicroGestureDirection(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setDirection(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.setMicroGesture().
 
@@ -104,7 +112,43 @@ Here is the call graph for this function:\nopagebreak
 \includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a939545a8c5597d693f4857a8f6195fc9_cgraph}
 \end{center}
 \end{figure}
-\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a78946977e95404053d40384e51b889e2}{
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a1c4ae8dcc40fa0809afcbc701a5afa65}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!directionIsDown@{directionIsDown}}
+\index{directionIsDown@{directionIsDown}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
+\subsubsection[{directionIsDown}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.directionIsDown (double {\em direction})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a1c4ae8dcc40fa0809afcbc701a5afa65}
+
+
+Definition at line 253 of file MicroGestureDetectionStrategyCurvature.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.analyseMicroGestureDirection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_aab6c8ffaec46c10a9d15786b95654afd}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!directionIsLeft@{directionIsLeft}}
+\index{directionIsLeft@{directionIsLeft}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
+\subsubsection[{directionIsLeft}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.directionIsLeft (double {\em direction})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_aab6c8ffaec46c10a9d15786b95654afd}
+
+
+Definition at line 263 of file MicroGestureDetectionStrategyCurvature.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.analyseMicroGestureDirection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a0e5c080758fc29ddf572ed02f9c749ae}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!directionIsRight@{directionIsRight}}
+\index{directionIsRight@{directionIsRight}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
+\subsubsection[{directionIsRight}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.directionIsRight (double {\em direction})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a0e5c080758fc29ddf572ed02f9c749ae}
+
+
+Definition at line 258 of file MicroGestureDetectionStrategyCurvature.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.analyseMicroGestureDirection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_acabafe95c89e97cd87488d70ed074adb}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!directionIsUp@{directionIsUp}}
+\index{directionIsUp@{directionIsUp}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
+\subsubsection[{directionIsUp}]{\setlength{\rightskip}{0pt plus 5cm}boolean ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.directionIsUp (double {\em direction})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_acabafe95c89e97cd87488d70ed074adb}
+
+
+Definition at line 248 of file MicroGestureDetectionStrategyCurvature.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.analyseMicroGestureDirection().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a78946977e95404053d40384e51b889e2}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!getStrategyDescription@{getStrategyDescription}}
 \index{getStrategyDescription@{getStrategyDescription}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
 \subsubsection[{getStrategyDescription}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.getStrategyDescription ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
@@ -118,7 +162,7 @@ Return a description of the strategy
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 35 of file MicroGestureDetectionStrategyCurvature.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_acd5003f685af87709425848adde5bc0f}{
+Definition at line 36 of file MicroGestureDetectionStrategyCurvature.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_acd5003f685af87709425848adde5bc0f}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!getStrategyName@{getStrategyName}}
 \index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
 \subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
@@ -132,23 +176,23 @@ Return the strategy's name
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 30 of file MicroGestureDetectionStrategyCurvature.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_afc93fdc088cd9449668b5e277bf5c8f6}{
-\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!initArguments@{initArguments}}
-\index{initArguments@{initArguments}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
-\subsubsection[{initArguments}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.initArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_afc93fdc088cd9449668b5e277bf5c8f6}
+Definition at line 31 of file MicroGestureDetectionStrategyCurvature.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a294fbd255e0bcd3e5dd452f1ad8e3f85}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!initialize@{initialize}}
+\index{initialize@{initialize}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.initialize ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a294fbd255e0bcd3e5dd452f1ad8e3f85}
 Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
 
-Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a0496e8fd0099a5f0f7765322d7e752a9}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_af6ea27835befac71906915236a347450}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 27 of file MicroGestureDetectionStrategyCurvature.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a8e53337041e648e2e5f9c72cc74d7a0e}{
+Definition at line 28 of file MicroGestureDetectionStrategyCurvature.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a8e53337041e648e2e5f9c72cc74d7a0e}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}!setMicroGesture@{setMicroGesture}}
 \index{setMicroGesture@{setMicroGesture}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCurvature@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyCurvature}}
 \subsubsection[{setMicroGesture}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.setMicroGesture ({\bf MicroGesture} {\em mg})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
 \label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCurvature_a8e53337041e648e2e5f9c72cc74d7a0e}
 
 
-Definition at line 141 of file MicroGestureDetectionStrategyCurvature.java.
+Definition at line 161 of file MicroGestureDetectionStrategyCurvature.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyCurvature.calculateDistance(), ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.getPoints(), and ch.zhaw.ba10\_\-bsha\_\-1.service.MicroGesture.setType().
 

@@ -14,14 +14,12 @@ Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrate
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_aac7a339a3686ece943ad17ccc97bc901}{CharacterDetectionStrategyGraph} ()
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_af9451b15c51430529b038840360a21c6}{initialize} ()
 \item 
 Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}{Character} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_af5d1202b6a9878b247cf4c5176102dd5}{detectCharacter} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ micro\_\-gestures)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_ab1ddc7964a2da79d65ca7227423ae8c6}{initArguments} ()
 \item 
 String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_a3d897fb9be39b36575cf7d4630580445}{getStrategyName} ()
 \item 
@@ -44,27 +42,6 @@ Julian Hanhart, Dominik Giger
 
 Definition at line 20 of file CharacterDetectionStrategyGraph.java.
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_aac7a339a3686ece943ad17ccc97bc901}{
-\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph}!CharacterDetectionStrategyGraph@{CharacterDetectionStrategyGraph}}
-\index{CharacterDetectionStrategyGraph@{CharacterDetectionStrategyGraph}!ch::zhaw::ba10_bsha_1::strategies::CharacterDetectionStrategyGraph@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph}}
-\subsubsection[{CharacterDetectionStrategyGraph}]{\setlength{\rightskip}{0pt plus 5cm}ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.CharacterDetectionStrategyGraph ()}}
-\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_aac7a339a3686ece943ad17ccc97bc901}
-
-
-Definition at line 36 of file CharacterDetectionStrategyGraph.java.
-
-References ch.zhaw.ba10\_\-bsha\_\-1.graph.IGraphFactory.createRoot(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.getArgument(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.root.
-
-Here is the call graph for this function:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=409pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_aac7a339a3686ece943ad17ccc97bc901_cgraph}
-\end{center}
-\end{figure}
-
-
 \subsection{Member Function Documentation}
 \hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_af5d1202b6a9878b247cf4c5176102dd5}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph}!detectCharacter@{detectCharacter}}
@@ -83,7 +60,7 @@ Detect \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1Character}{Character}s out
 
 Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1ICharacterDetectionStrategy_a994429a274e75c471d18aca69dce2c1d}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.ICharacterDetectionStrategy}.
 
-Definition at line 77 of file CharacterDetectionStrategyGraph.java.
+Definition at line 69 of file CharacterDetectionStrategyGraph.java.
 
 References ch.zhaw.ba10\_\-bsha\_\-1.graph.Node.consume(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.root.
 
@@ -108,7 +85,7 @@ Return a description of the strategy
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 60 of file CharacterDetectionStrategyGraph.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_a3d897fb9be39b36575cf7d4630580445}{
+Definition at line 52 of file CharacterDetectionStrategyGraph.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_a3d897fb9be39b36575cf7d4630580445}{
 \index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph}!getStrategyName@{getStrategyName}}
 \index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::CharacterDetectionStrategyGraph@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph}}
 \subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
@@ -122,26 +99,26 @@ Return the strategy's name
 
 Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 55 of file CharacterDetectionStrategyGraph.java.
+Definition at line 47 of file CharacterDetectionStrategyGraph.java.
 
-Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.initArguments().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_ab1ddc7964a2da79d65ca7227423ae8c6}{
-\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph}!initArguments@{initArguments}}
-\index{initArguments@{initArguments}!ch::zhaw::ba10_bsha_1::strategies::CharacterDetectionStrategyGraph@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph}}
-\subsubsection[{initArguments}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.initArguments ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_ab1ddc7964a2da79d65ca7227423ae8c6}
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.initialize().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_af9451b15c51430529b038840360a21c6}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph}!initialize@{initialize}}
+\index{initialize@{initialize}!ch::zhaw::ba10_bsha_1::strategies::CharacterDetectionStrategyGraph@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::CharacterDetectionStrategyGraph}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.initialize ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_af9451b15c51430529b038840360a21c6}
 Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
 
-Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a0496e8fd0099a5f0f7765322d7e752a9}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_af6ea27835befac71906915236a347450}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
 
-Definition at line 50 of file CharacterDetectionStrategyGraph.java.
+Definition at line 37 of file CharacterDetectionStrategyGraph.java.
 
-References ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.addArgument(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.getStrategyName().
+References ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.addArgument(), ch.zhaw.ba10\_\-bsha\_\-1.graph.IGraphFactory.createRoot(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.getArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.getStrategyName(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.hasArgument(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.root.
 
 Here is the call graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_ab1ddc7964a2da79d65ca7227423ae8c6_cgraph}
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1CharacterDetectionStrategyGraph_af9451b15c51430529b038840360a21c6_cgraph}
 \end{center}
 \end{figure}
 
@@ -156,7 +133,7 @@ Here is the call graph for this function:\nopagebreak
 
 Definition at line 28 of file CharacterDetectionStrategyGraph.java.
 
-Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.CharacterDetectionStrategyGraph(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.detectCharacter().
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.detectCharacter(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.CharacterDetectionStrategyGraph.initialize().
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
