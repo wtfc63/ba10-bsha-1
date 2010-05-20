@@ -76,14 +76,11 @@ Wie bereits erwähnt, erfolgen nach dem Starten des \emph{PadViews} in der Metho
                     padView.getLastPoints()), true);
               } else {
                 detectionService.endSample();
-              }
-              break;
+              } break;
             case PadView.EVENT_TYPE_SPACE :
-              ic.commitText(" ", 1);
-              break;
+              ic.commitText(" ", 1); break;
             case PadView.EVENT_TYPE_BACKSPACE :
-              handleBackspace();
-              break;
+              handleBackspace(); break;
           }
         } catch (RemoteException ex) {}
       }
@@ -153,10 +150,8 @@ Dies wird im Falle des Leerzeichens beim Start einer neuen Eingabe überprüft, 
       }
     }
     currentInput = new TouchInput();
-    currentInput.add(new TouchPoint(x, y, pressure));
-    //...
+    currentInput.add(new TouchPoint(x, y, pressure)); //...
   }
-
   private void touchUp() {
     if (inputs.size() > 0) {
       TouchInput last = inputs.get(inputs.size() - 1);
@@ -170,9 +165,7 @@ Dies wird im Falle des Leerzeichens beim Start einer neuen Eingabe überprüft, 
       } else {
         inputs.add(currentInput);
         notifyObservers(EVENT_TYPE_TOUCH_UP);
-      }
-      currentInput = null;
-    //...
+      } currentInput = null; //...
     }
   }
 \end{lstlisting}
