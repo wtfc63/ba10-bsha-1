@@ -68,7 +68,7 @@ Auch das Austauschen des Algorithmus zur Zeichen-Erkennung zur Laufzeit soll gru
 
 So können verschiedene Ansätze zur Zeichen-Erkennung anhand der Mikrogesten miteinander verglichen und alternative Erkennungs-Strategien angeboten werden. Neben dem in dieser Arbeit verwendeten Ansatz für eine Erkennung durch einen Graphen, ist etwa eine Erkennung über ein neuronales Netz eine naheliegende Möglichkeit.
 
-Speziell für eine Erkennungs-Ansatz über ein neurales Netz, aber auch für den Graphen-Ansatz, wäre eine Möglichkeit zur Anpassung der zur Erkennung verwendeten Datenbasis von Vorteil. Daher wollen wir auch eine Möglichkeit zur Nachverarbeitung der Daten bieten.
+Speziell für eine Erkennungs-Ansatz über ein neuronales Netz, aber auch für den Graphen-Ansatz, wäre eine Möglichkeit zur Anpassung der zur Erkennung verwendeten Datenbasis von Vorteil. Daher wollen wir auch eine Möglichkeit zur Nachverarbeitung der Daten bieten.
 
 \subsubsection{Nachverarbeitung}
 
@@ -81,7 +81,7 @@ Mögliche Einsatz-Zwecke für Nachverarbeitungs-Algorithmen wäre etwa, wie bere
 
 \subsection{Schnittstellen}\label{lbl_be_intrf}
 
-Wie bereits in \ref{lbl_prozess_art} besprochen, wollen wir für das Backend einen Service definieren. Damit dieser auch wirklich unabhängig (also in einem eigenen Prozess) vom Frontend läuft, soll dieser ein Remote-Service sein. Dies bedeutet, dass wir für die Kommunikation zwischen dem Frontend und dem Backend Schnittstellen definieren müssen, um die Inter-Prozess-Kommunikation abzuwickeln. Android stellt dafür eine eigenen Dialekt der Interface Definition Language bereit, der sich wenig überraschend ''Android Interface Definition Language" (kurz AIDL) nennt.\\
+Wie bereits in \ref{lbl_prozess_art} besprochen, wollen wir für das Backend einen Service definieren. Damit dieser auch wirklich unabhängig (also in einem eigenen Prozess) vom Frontend läuft, soll dieser ein Remote-Service sein. Dies bedeutet, dass wir für die Kommunikation zwischen dem Frontend und dem Backend Schnittstellen definieren müssen, um die Inter-Prozess-Kommunikation abzuwickeln. Android stellt dafür eine eigenen Dialekt der Interface Definition Language bereit, der sich wenig überraschend ``Android Interface Definition Language'' (kurz AIDL) nennt.\\
 \\
 Die Schnittstellen, die wir benötigen werden, lassen sich in zwei Gruppen unterteilen: Die eigentliche Zeichen-Erkennung und die Verwaltung der Erkennungs-Algorithmen und deren Konfiguration.\\
 
@@ -127,7 +127,7 @@ Für die Verwaltung der Erkennungs-Algorithmen stellt das Interface \emph{IDetec
 
 Die Methode \emph{getAvailableStrategies()} gibt alle im Service vorhandenen Algorithmen zurück, während \emph{getActiveStrategies()} nur die momentan aktiven liefert. Ein solcher Algorithmus kann über die Konfigurations-Schnittstellen aktiviert oder deaktiviert werden. Weiter können mit der Methode \emph{reinitializeStrategies()} alle Algorithmen einer bestimmten Phase\footnote{Wird als Type der Phase ein Wert unter Null angegeben, werden alle Algorithmen neu initialisiert.} neu initialisiert werden werden.
 
-\label{lbl_be_enable}Für die Konfiguration der Algorithmen wurde die Klasse \emph{StrategyArgument} entworfen, welche das Interface \emph{Parcelable} des Android-Frameworks implementiert und daher über die Kommunikations-Mechanismen von Android versandt werden kann. Die Klasse repräsentiert ein Argument eines Algorithmus und enthält dessen Namen, den Namen des Argumentes, sowie dessen Wert und Beschreibung. Ein Spezialfall eines solchen Arguments ist die Aktivierung oder Deaktivierung eines Algorithmus. Mit einem \emph{StrategyArgument} mit dem Namen ''enabled'' und dem Wert "false" kann ein Algorithmus deaktiviert werden, alle anderen Wert aktivieren ihn. Mit der Methode \emph{getStrategyConfiguration()} können alle Argumente eines Algorithmus ausgelesen werden. Die Methode \emph{setStrategyConfiguration()} setzt den Wert des übergebenen Arguments in dem im \emph{StrategyArgument} spezifizierten Algorithmus. Weiter ist auch noch die Methode \emph{broadcastArgument()} definiert, welche den Wert des übergebenen Argumentes in allen Algorithmen setzt, welche dieses unterstützen. Diese Methode wird etwa dafür verwendet, die Höhe des jeweiligen Eingabe-Feldes an alle interessierten Algorithmen zu melden.
+\label{lbl_be_enable}Für die Konfiguration der Algorithmen wurde die Klasse \emph{StrategyArgument} entworfen, welche das Interface \emph{Parcelable} des Android-Frameworks implementiert und daher über die Kommunikations-Mechanismen von Android versandt werden kann. Die Klasse repräsentiert ein Argument eines Algorithmus und enthält dessen Namen, den Namen des Argumentes, sowie dessen Wert und Beschreibung. Ein Spezialfall eines solchen Arguments ist die Aktivierung oder Deaktivierung eines Algorithmus. Mit einem \emph{StrategyArgument} mit dem Namen ``enabled'' und dem Wert "false" kann ein Algorithmus deaktiviert werden, alle anderen Wert aktivieren ihn. Mit der Methode \emph{getStrategyConfiguration()} können alle Argumente eines Algorithmus ausgelesen werden. Die Methode \emph{setStrategyConfiguration()} setzt den Wert des übergebenen Arguments in dem im \emph{StrategyArgument} spezifizierten Algorithmus. Weiter ist auch noch die Methode \emph{broadcastArgument()} definiert, welche den Wert des übergebenen Argumentes in allen Algorithmen setzt, welche dieses unterstützen. Diese Methode wird etwa dafür verwendet, die Höhe des jeweiligen Eingabe-Feldes an alle interessierten Algorithmen zu melden.
 
 \subsection{Erkennungs-Alogrithmen}
 
@@ -168,7 +168,7 @@ Da die Strategien aller Phasen ausser den Typen der Ein- und Rückgabewerte der 
 
 \subsubsection{Verwaltung der Strategien}
 
-Alle bekannten Strategien einer Phase werden zur einfachen Auffindbarkeit und Verwaltung durch entsprechenden Manager-Klassen verwaltet. Auf für die Manager der einzelnen Phasen wurde wieder eine verallgemeinerte abstrakte Basis-Klasse entworfen, welche die eigentlichen Verwaltungs-Operationen implementiert. Für die Implementation der Phasen-Manager wurden diese dann nur noch von der Basis-Klasse namens \emph{StrategyManager} abgeleitet und die einzelnen Strategien mussten noch initialisiert und dem Manager hinzugefügt werden (siehe Abbildung \ref{fig:cd_manager}).
+Alle bekannten Strategien einer Phase werden zur einfachen Auffindbarkeit und Verwaltung durch entsprechenden Manager-Klassen verwaltet. Auf für die Manager der einzelnen Phasen wurde wieder eine verallgemeinerte abstrakte Basis-Klasse entworfen, welche die eigentlichen Verwaltungs-Operationen implementiert. Für die Implementation der Phasen-Manager wurden diese dann nur noch von der Basis-Klasse namens \emph{StrategyManager} abgeleitet und die einzelnen Strategien mussten noch initialisiert und dem Manager hinzugefügt werden (siehe Abbildung \ref{fig:cd_manager}). Die konkreten Manager-Klassen implementieren zusätzlich noch das Singleton Design Pattern\cite[S.127-134]{design_patterns}, damit die jeweiligen Strategietypen zentral von einem Objekte verwaltet und angesprochen werden können.
 
 \begin{figure}[bh!]
    \centering
@@ -254,7 +254,7 @@ Die Knoten tragen dabei den grössten Teil der zur Erkennung benötigten Informa
 Bei jedem Durchlauf von \emph{consume()} wird bei der Erkennung jeweils eine \emph{MicroGesture} vom aktuellen Knoten darauf getestet, ob sie sein Test-Kriterium erfüllt. Die Validierung des Kriteriums wird dabei an die Klasse \emph{MicroGestureTester} delegiert. Erfüllt die \emph{MicroGesture} das Kriterium, wird diese aus der Liste der zu konsumierenden \emph{MicroGestures} entfernt und das dem Knoten zugewiesene Zeichen wird, sofern vorhanden, der Liste der erkannten Zeichen angehängt. Danach werden die restlichen \emph{MicroGestures} den dem aktuellen Knoten im Graph folgenden Knoten zum Konsum zugeführt. Die jeweiligen Rekursions-Stufen geben dann jeweils die von ihnen erkannten Zeichen zurück, welche ebenfalls den Rückgabe-Zeichen der aktuellen Stufe angehängt werden.
 
 Jede Rekursions-Stufe erhält auch ihre Erkennungs-Wahrscheinlichkeit übergeben, welche berechnet wird, in dem die Wahrscheinlichkeit der übergeordneten Stufe mit dem Gewicht\footnote{Das Gewicht einer Kante im Graph repräsentiert die Wahrscheinlichkeit des Knotens zu dem die Kante führt.} der zur Stufe führenden Kante multipliziert wird. Die Erkennungs-Wahrscheinlichkeit wird jeweils mit dem erkannten Zeichen in der Klasse \emph{Character} zurückgegen. Die Liste der erkannten Zeichen wird dann vor der Rückgabe an die übergeordnete Stufe nach der Erkennungs-Wahrscheinlichkeit sortiert.
-
+\newpage
 \begin{lstlisting} [caption={Methode zur Zeichen-Erkennung in \emph{Node}},label=node_consume]
 public Collection<Character> consume(
     Collection<MicroGesture> micro_gestures, 
@@ -296,8 +296,7 @@ public Collection<Character> consume(
             (edge.getProbability() * probability)));
       }
     }
-  }
-  //Resultate nach Wahrscheinlichkeit ordnen
+  } //Resultate nach Wahrscheinlichkeit ordnen
   Collections.sort(result);
   return result;
 }
@@ -408,7 +407,7 @@ Neben der eigentlichen Zeichen-Erkennung mussten für den Service natürlich noc
 Neben einer Liste der Eingabe-Punkte, durch welche sich die Erkennung durcharbeiten soll, verfügt \emph{DetectionService} auch noch über eine Buffer, in dem Punkte abgelegt werden können. Die Erkennung kann entweder sofort starten, etwa wenn mehrere \emph{TouchPoints} zusammen übergeben wurden, oder sie kann automatisch starten, wenn der Buffer voll ist. Wird die Erkennung gestartet, werden die Punkte aus dem Buffer in die Liste der Eingabe-Punkte verschoben.
 
 Die verwendeten Erkennungs-Algorithmen werden jeweils nach der gewünschten Reihenfolge geordnet in entsprechende \emph{StrategyQueues} abgelegt, oder bei einstufigen Phasen direkt als Attribut gesetzt. Diese Initialisierung erfolgt in der Methode \emph{initDetection()}.
-
+\newpage
 \begin{lstlisting} [caption={Initialisierung von \emph{DetectionService}},label=service_init]
   private void initDetection() {
     inputPoints = new ArrayList<TouchPoint>();
@@ -474,7 +473,7 @@ Da wir nun die eigentliche Erkennung abgeschlossen haben, müssen wir nun noch d
 
 \subsubsection{Serivce-Lebenszyklus und -Kommunikation}
 
-Neben den zum Konstruktor beziehungsweise Dekonstruktor äquivalenten Methoden zum Service-Lebenszyklus \emph{onCreate()} und \emph{onDestroy()}\footnote{Welche neben der Initialisation der Erkennung nur noch für das Anzeigen einer \emph{Notification} über das Benachrichtigungs-System von Android während der Laufzeit des Service zuständig sind} müssen wir auch noch die Methode \emph{onBind()} implementieren. Diese gibt dem aufrufenden Client einen Stub unserer Kommunikations-Schnittstelle zum Service zurück, der noch implementiert werden musste (siehe Listing \ref{service_stub}). Über diesen Stub wird festgelegt, welche Operationen beim Aufruf der Schnittstellen-Methoden durchgeführt werden.
+Neben den zum Konstruktor beziehungsweise Dekonstruktor äquivalenten Methoden zum Service-Lebenszyklus \emph{onCreate()} und \emph{onDestroy()}\footnote{Welche neben der Initialisation der Erkennung nur noch für das Anzeigen einer \emph{Notification} über das Benachrichtigungs-System von Android während der Laufzeit des Service zuständig sind} müssen wir auch noch die Methode \emph{onBind()} implementieren. Diese gibt dem aufrufenden Client einen Stub\footnote{Ein Stub ist ein lokaler Anknüpfungspunkt um eine auf einem entfernten System erreichbare Komponente einfach anzusprechen.} unserer Kommunikations-Schnittstelle zum Service zurück, der noch implementiert werden musste (siehe Listing \ref{service_stub}). Über diesen Stub wird festgelegt, welche Operationen beim Aufruf der Schnittstellen-Methoden durchgeführt werden.
 
 Neben der genannten Funktionalität umfasst die Klasse \emph{DetectionService} noch ein paar Helfer-Methoden, überwiegend für den \emph{IDetectionService}-Stub.
 
