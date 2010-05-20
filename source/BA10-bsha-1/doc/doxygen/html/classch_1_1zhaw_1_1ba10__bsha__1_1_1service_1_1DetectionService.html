@@ -77,7 +77,6 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.service.DetectionService:</div>
 <tr><td class="memItemLeft" align="right" valign="top">static StrategyManager&lt; <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy.html">IStrategy</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a6ad4b4b98cda7ec8ebfb0420f93e03dd">getManagerByType</a> (int type)</td></tr>
 <tr><td colspan="2"><h2>Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">final int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a9702db5e460b3123f4c475b05ed6942f">BUFFER_SIZE</a> = 10</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">final boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a7595c17917add9e9146a3bee444187c9">DEBUG</a> = true</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ArrayList&lt; <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a6bf9d1f281b4bc5efb555b742f2ad928">inputPoints</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">RingBuffer&lt; <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a9188c843a530615bdd8c2e031879224b">buffer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">StrategyQueue<br class="typebreak"/>
@@ -93,7 +92,6 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.service.DetectionService:</div>
 <tr><td class="memItemLeft" align="right" valign="top">static final int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#acc8c85d6fe896611e64180360f6150b3">STRATEGY_TYPE_MICROGESTURE_DETECTION</a> = 1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static final int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a79f9a08bcebfb07d97dad403931d011d">STRATEGY_TYPE_CHARACTER_DETECTION</a> = 2</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static final int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a0a5532caf09d48e950372c1b0de3e328">STRATEGY_TYPE_POSTPROCESSING</a> = 3</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static final String&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a94d1866b426bddfba5d001cc6bc003fa">TAG</a> = &quot;DetectionService&quot;</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static Context&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a0e249aa466d4da8bcac9f75942129aa6">CONTEXT</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
@@ -120,9 +118,9 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.service.DetectionService:</div>
 <p>Get the Application's <a class="el" href="">Context</a></p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00467">467</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00464">464</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>References <a class="el" href="DetectionService_8java_source.html#l00063">ch.zhaw.ba10_bsha_1.service.DetectionService.CONTEXT</a>.</p>
+<p>References <a class="el" href="DetectionService_8java_source.html#l00062">ch.zhaw.ba10_bsha_1.service.DetectionService.CONTEXT</a>.</p>
 
 </div>
 </div>
@@ -150,7 +148,7 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.service.DetectionService:</div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00435">435</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00432">432</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
 <p>References <a class="el" href="DetectionService_8java_source.html#l00059">ch.zhaw.ba10_bsha_1.service.DetectionService.STRATEGY_TYPE_CHARACTER_DETECTION</a>, <a class="el" href="DetectionService_8java_source.html#l00058">ch.zhaw.ba10_bsha_1.service.DetectionService.STRATEGY_TYPE_MICROGESTURE_DETECTION</a>, <a class="el" href="DetectionService_8java_source.html#l00060">ch.zhaw.ba10_bsha_1.service.DetectionService.STRATEGY_TYPE_POSTPROCESSING</a>, and <a class="el" href="DetectionService_8java_source.html#l00057">ch.zhaw.ba10_bsha_1.service.DetectionService.STRATEGY_TYPE_PREPROCESSING</a>.</p>
 
@@ -172,11 +170,11 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.service.DetectionService:</div>
 <div class="memdoc">
 <p>Initialisation of the detection. This is the place where one can define, which <a class="el" href="namespacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies.html">strategies</a> should be used on the input and in what order they should be applied </p>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00094">94</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00092">92</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>References <a class="el" href="DetectionService_8java_source.html#l00075">ch.zhaw.ba10_bsha_1.service.DetectionService.buffer</a>, <a class="el" href="DetectionService_8java_source.html#l00071">ch.zhaw.ba10_bsha_1.service.DetectionService.BUFFER_SIZE</a>, <a class="el" href="DetectionService_8java_source.html#l00079">ch.zhaw.ba10_bsha_1.service.DetectionService.charDetectionStrategy</a>, <a class="el" href="DetectionService_8java_source.html#l00074">ch.zhaw.ba10_bsha_1.service.DetectionService.inputPoints</a>, <a class="el" href="DetectionService_8java_source.html#l00078">ch.zhaw.ba10_bsha_1.service.DetectionService.mgDetectionSteps</a>, <a class="el" href="DetectionService_8java_source.html#l00080">ch.zhaw.ba10_bsha_1.service.DetectionService.postprocessingStrategy</a>, and <a class="el" href="DetectionService_8java_source.html#l00077">ch.zhaw.ba10_bsha_1.service.DetectionService.preprocessingSteps</a>.</p>
+<p>References <a class="el" href="DetectionService_8java_source.html#l00073">ch.zhaw.ba10_bsha_1.service.DetectionService.buffer</a>, <a class="el" href="DetectionService_8java_source.html#l00070">ch.zhaw.ba10_bsha_1.service.DetectionService.BUFFER_SIZE</a>, <a class="el" href="DetectionService_8java_source.html#l00077">ch.zhaw.ba10_bsha_1.service.DetectionService.charDetectionStrategy</a>, <a class="el" href="DetectionService_8java_source.html#l00072">ch.zhaw.ba10_bsha_1.service.DetectionService.inputPoints</a>, <a class="el" href="DetectionService_8java_source.html#l00076">ch.zhaw.ba10_bsha_1.service.DetectionService.mgDetectionSteps</a>, <a class="el" href="DetectionService_8java_source.html#l00078">ch.zhaw.ba10_bsha_1.service.DetectionService.postprocessingStrategy</a>, and <a class="el" href="DetectionService_8java_source.html#l00075">ch.zhaw.ba10_bsha_1.service.DetectionService.preprocessingSteps</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00211">ch.zhaw.ba10_bsha_1.service.DetectionService.onCreate()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00194">ch.zhaw.ba10_bsha_1.service.DetectionService.onCreate()</a>.</p>
 
 </div>
 </div>
@@ -197,9 +195,9 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.service.DetectionService:</div>
 <div class="memdoc">
 <p>Called when Service is bound to </p>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00240">240</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00223">223</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>References <a class="el" href="DetectionService_8java_source.html#l00253">ch.zhaw.ba10_bsha_1.service.DetectionService.serviceBinder</a>.</p>
+<p>References <a class="el" href="DetectionService_8java_source.html#l00236">ch.zhaw.ba10_bsha_1.service.DetectionService.serviceBinder</a>.</p>
 
 </div>
 </div>
@@ -219,9 +217,9 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.service.DetectionService:</div>
 <div class="memdoc">
 <p>Called when the <a class="el" href="">Service</a> is created </p>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00211">211</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00194">194</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>References <a class="el" href="DetectionService_8java_source.html#l00063">ch.zhaw.ba10_bsha_1.service.DetectionService.CONTEXT</a>, <a class="el" href="DetectionService_8java_source.html#l00094">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, <a class="el" href="DetectionService_8java_source.html#l00082">ch.zhaw.ba10_bsha_1.service.DetectionService.notificationManager</a>, and <a class="el" href="DetectionService_8java_source.html#l00474">ch.zhaw.ba10_bsha_1.service.DetectionService.showNotification()</a>.</p>
+<p>References <a class="el" href="DetectionService_8java_source.html#l00062">ch.zhaw.ba10_bsha_1.service.DetectionService.CONTEXT</a>, <a class="el" href="DetectionService_8java_source.html#l00092">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, <a class="el" href="DetectionService_8java_source.html#l00080">ch.zhaw.ba10_bsha_1.service.DetectionService.notificationManager</a>, and <a class="el" href="DetectionService_8java_source.html#l00471">ch.zhaw.ba10_bsha_1.service.DetectionService.showNotification()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -250,9 +248,9 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 <p>Called when the <a class="el" href="">Service</a> is destroyed </p>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00225">225</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00208">208</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>References <a class="el" href="DetectionService_8java_source.html#l00070">ch.zhaw.ba10_bsha_1.service.DetectionService.callbacks</a>, and <a class="el" href="DetectionService_8java_source.html#l00082">ch.zhaw.ba10_bsha_1.service.DetectionService.notificationManager</a>.</p>
+<p>References <a class="el" href="DetectionService_8java_source.html#l00069">ch.zhaw.ba10_bsha_1.service.DetectionService.callbacks</a>, and <a class="el" href="DetectionService_8java_source.html#l00080">ch.zhaw.ba10_bsha_1.service.DetectionService.notificationManager</a>.</p>
 
 </div>
 </div>
@@ -290,7 +288,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00416">416</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00413">413</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
 <p>References <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy.html#ab1ebc130da7b0792d736a8b5f9cf595d">ch.zhaw.ba10_bsha_1.strategies.IStrategy.getDescription()</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy.html#a64149a1aad4d39dde043d11b2e7cc673">ch.zhaw.ba10_bsha_1.strategies.IStrategy.isEnabled()</a>, and <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy.html#a2b109250e12270545e1c342c9d136bcd">ch.zhaw.ba10_bsha_1.strategies.IStrategy.toString()</a>.</p>
 
@@ -321,11 +319,11 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 <p>Show a <a class="el" href="">Notification</a> while this <a class="el" href="">Service</a> is running. </p>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00474">474</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00471">471</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>References <a class="el" href="DetectionService_8java_source.html#l00082">ch.zhaw.ba10_bsha_1.service.DetectionService.notificationManager</a>.</p>
+<p>References <a class="el" href="DetectionService_8java_source.html#l00080">ch.zhaw.ba10_bsha_1.service.DetectionService.notificationManager</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00211">ch.zhaw.ba10_bsha_1.service.DetectionService.onCreate()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00194">ch.zhaw.ba10_bsha_1.service.DetectionService.onCreate()</a>.</p>
 
 </div>
 </div>
@@ -345,9 +343,9 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 <p>Starts the detection of <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1Character.html">Character</a>s from the input points (the buffer is first emptied) </p>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00124">124</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00127">127</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>References <a class="el" href="DetectionService_8java_source.html#l00075">ch.zhaw.ba10_bsha_1.service.DetectionService.buffer</a>, <a class="el" href="DetectionService_8java_source.html#l00070">ch.zhaw.ba10_bsha_1.service.DetectionService.callbacks</a>, <a class="el" href="DetectionService_8java_source.html#l00079">ch.zhaw.ba10_bsha_1.service.DetectionService.charDetectionStrategy</a>, <a class="el" href="DetectionService_8java_source.html#l00072">ch.zhaw.ba10_bsha_1.service.DetectionService.DEBUG</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1ICharacterDetectionStrategy.html#a994429a274e75c471d18aca69dce2c1d">ch.zhaw.ba10_bsha_1.strategies.ICharacterDetectionStrategy.detectCharacter()</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy.html#a8593331fb67e5d4dc890d3db9f2d1b58">ch.zhaw.ba10_bsha_1.strategies.IMicroGestureDetectionStrategy.detectMicroGestures()</a>, <a class="el" href="DetectionService_8java_source.html#l00074">ch.zhaw.ba10_bsha_1.service.DetectionService.inputPoints</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy.html#a64149a1aad4d39dde043d11b2e7cc673">ch.zhaw.ba10_bsha_1.strategies.IStrategy.isEnabled()</a>, <a class="el" href="DetectionService_8java_source.html#l00078">ch.zhaw.ba10_bsha_1.service.DetectionService.mgDetectionSteps</a>, <a class="el" href="DetectionService_8java_source.html#l00080">ch.zhaw.ba10_bsha_1.service.DetectionService.postprocessingStrategy</a>, <a class="el" href="DetectionService_8java_source.html#l00077">ch.zhaw.ba10_bsha_1.service.DetectionService.preprocessingSteps</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPostprocessingStrategy.html#a0bb435d4c5cb8ce3b3909ad81961d912">ch.zhaw.ba10_bsha_1.strategies.IPostprocessingStrategy.process()</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy.html#a3e3885dce8fda7b79dc514078f11ad62">ch.zhaw.ba10_bsha_1.strategies.IPreprocessingStrategy.process()</a>, and <a class="el" href="DetectionService_8java_source.html#l00062">ch.zhaw.ba10_bsha_1.service.DetectionService.TAG</a>.</p>
+<p>References <a class="el" href="DetectionService_8java_source.html#l00073">ch.zhaw.ba10_bsha_1.service.DetectionService.buffer</a>, <a class="el" href="DetectionService_8java_source.html#l00069">ch.zhaw.ba10_bsha_1.service.DetectionService.callbacks</a>, <a class="el" href="DetectionService_8java_source.html#l00077">ch.zhaw.ba10_bsha_1.service.DetectionService.charDetectionStrategy</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1ICharacterDetectionStrategy.html#a994429a274e75c471d18aca69dce2c1d">ch.zhaw.ba10_bsha_1.strategies.ICharacterDetectionStrategy.detectCharacter()</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy.html#a8593331fb67e5d4dc890d3db9f2d1b58">ch.zhaw.ba10_bsha_1.strategies.IMicroGestureDetectionStrategy.detectMicroGestures()</a>, <a class="el" href="DetectionService_8java_source.html#l00072">ch.zhaw.ba10_bsha_1.service.DetectionService.inputPoints</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy.html#a64149a1aad4d39dde043d11b2e7cc673">ch.zhaw.ba10_bsha_1.strategies.IStrategy.isEnabled()</a>, <a class="el" href="DetectionService_8java_source.html#l00076">ch.zhaw.ba10_bsha_1.service.DetectionService.mgDetectionSteps</a>, <a class="el" href="DetectionService_8java_source.html#l00078">ch.zhaw.ba10_bsha_1.service.DetectionService.postprocessingStrategy</a>, <a class="el" href="DetectionService_8java_source.html#l00075">ch.zhaw.ba10_bsha_1.service.DetectionService.preprocessingSteps</a>, <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPostprocessingStrategy.html#a0bb435d4c5cb8ce3b3909ad81961d912">ch.zhaw.ba10_bsha_1.strategies.IPostprocessingStrategy.process()</a>, and <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IPreprocessingStrategy.html#a3e3885dce8fda7b79dc514078f11ad62">ch.zhaw.ba10_bsha_1.strategies.IPreprocessingStrategy.process()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -372,9 +370,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00075">75</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00073">73</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00094">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00124">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00092">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00127">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
 
 </div>
 </div>
@@ -389,9 +387,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00071">71</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00070">70</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00094">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00092">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>.</p>
 
 </div>
 </div>
@@ -407,9 +405,9 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 <p>This is a list of callbacks that have been registered with the <a class="el" href="namespacech_1_1zhaw_1_1ba10__bsha__1_1_1service.html">service</a>. Note that this is package scoped (instead of private) so that it can be accessed more efficiently from inner classes. </p>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00070">70</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00069">69</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00225">ch.zhaw.ba10_bsha_1.service.DetectionService.onDestroy()</a>, and <a class="el" href="DetectionService_8java_source.html#l00124">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00208">ch.zhaw.ba10_bsha_1.service.DetectionService.onDestroy()</a>, and <a class="el" href="DetectionService_8java_source.html#l00127">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
 
 </div>
 </div>
@@ -424,9 +422,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00079">79</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00077">77</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00094">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00124">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00092">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00127">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
 
 </div>
 </div>
@@ -441,26 +439,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00063">63</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00062">62</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00467">ch.zhaw.ba10_bsha_1.service.DetectionService.getContext()</a>, and <a class="el" href="DetectionService_8java_source.html#l00211">ch.zhaw.ba10_bsha_1.service.DetectionService.onCreate()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7595c17917add9e9146a3bee444187c9"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::service::DetectionService::DEBUG" ref="a7595c17917add9e9146a3bee444187c9" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">final boolean <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a7595c17917add9e9146a3bee444187c9">ch.zhaw.ba10_bsha_1.service.DetectionService.DEBUG</a> = true<code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00072">72</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
-
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00124">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00464">ch.zhaw.ba10_bsha_1.service.DetectionService.getContext()</a>, and <a class="el" href="DetectionService_8java_source.html#l00194">ch.zhaw.ba10_bsha_1.service.DetectionService.onCreate()</a>.</p>
 
 </div>
 </div>
@@ -475,9 +456,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00074">74</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00072">72</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00094">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00124">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00092">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00127">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
 
 </div>
 </div>
@@ -492,9 +473,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00078">78</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00076">76</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00094">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00124">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00092">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00127">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
 
 </div>
 </div>
@@ -509,9 +490,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00082">82</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00080">80</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00211">ch.zhaw.ba10_bsha_1.service.DetectionService.onCreate()</a>, <a class="el" href="DetectionService_8java_source.html#l00225">ch.zhaw.ba10_bsha_1.service.DetectionService.onDestroy()</a>, and <a class="el" href="DetectionService_8java_source.html#l00474">ch.zhaw.ba10_bsha_1.service.DetectionService.showNotification()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00194">ch.zhaw.ba10_bsha_1.service.DetectionService.onCreate()</a>, <a class="el" href="DetectionService_8java_source.html#l00208">ch.zhaw.ba10_bsha_1.service.DetectionService.onDestroy()</a>, and <a class="el" href="DetectionService_8java_source.html#l00471">ch.zhaw.ba10_bsha_1.service.DetectionService.showNotification()</a>.</p>
 
 </div>
 </div>
@@ -526,9 +507,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00080">80</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00078">78</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00094">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00124">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00092">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00127">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
 
 </div>
 </div>
@@ -543,9 +524,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00077">77</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00075">75</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00094">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00124">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00092">ch.zhaw.ba10_bsha_1.service.DetectionService.initDetection()</a>, and <a class="el" href="DetectionService_8java_source.html#l00127">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
 
 </div>
 </div>
@@ -561,9 +542,9 @@ Here is the call graph for this function:</div>
 <div class="memdoc">
 <p>The <a class="el" href="">IDetectionService</a> Interface as defined through AIDL </p>
 
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00253">253</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
+<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00236">236</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00240">ch.zhaw.ba10_bsha_1.service.DetectionService.onBind()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00223">ch.zhaw.ba10_bsha_1.service.DetectionService.onBind()</a>.</p>
 
 </div>
 </div>
@@ -580,7 +561,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00059">59</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00435">ch.zhaw.ba10_bsha_1.service.DetectionService.getManagerByType()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00432">ch.zhaw.ba10_bsha_1.service.DetectionService.getManagerByType()</a>.</p>
 
 </div>
 </div>
@@ -597,7 +578,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00058">58</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00435">ch.zhaw.ba10_bsha_1.service.DetectionService.getManagerByType()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00432">ch.zhaw.ba10_bsha_1.service.DetectionService.getManagerByType()</a>.</p>
 
 </div>
 </div>
@@ -614,7 +595,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00060">60</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00435">ch.zhaw.ba10_bsha_1.service.DetectionService.getManagerByType()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00432">ch.zhaw.ba10_bsha_1.service.DetectionService.getManagerByType()</a>.</p>
 
 </div>
 </div>
@@ -631,24 +612,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00057">57</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
 
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00435">ch.zhaw.ba10_bsha_1.service.DetectionService.getManagerByType()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a94d1866b426bddfba5d001cc6bc003fa"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::service::DetectionService::TAG" ref="a94d1866b426bddfba5d001cc6bc003fa" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">final String <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1DetectionService.html#a94d1866b426bddfba5d001cc6bc003fa">ch.zhaw.ba10_bsha_1.service.DetectionService.TAG</a> = &quot;DetectionService&quot;<code> [static, private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="DetectionService_8java_source.html#l00062">62</a> of file <a class="el" href="DetectionService_8java_source.html">DetectionService.java</a>.</p>
-
-<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00124">ch.zhaw.ba10_bsha_1.service.DetectionService.startDetection()</a>.</p>
+<p>Referenced by <a class="el" href="DetectionService_8java_source.html#l00432">ch.zhaw.ba10_bsha_1.service.DetectionService.getManagerByType()</a>.</p>
 
 </div>
 </div>
@@ -670,7 +634,7 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun May 16 22:50:57 2010 for BA10-bsha-1 by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri May 21 01:42:28 2010 for BA10-bsha-1 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

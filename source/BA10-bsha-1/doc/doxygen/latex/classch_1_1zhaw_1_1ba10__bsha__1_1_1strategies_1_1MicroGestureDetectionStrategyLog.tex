@@ -1,0 +1,154 @@
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog}{
+\section{ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog Class Reference}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog}\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}}
+}
+
+
+Inherits \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::BaseStrategy}, and \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{ch::zhaw::ba10\_\-bsha\_\-1::strategies::IMicroGestureDetectionStrategy}.Collaboration diagram for ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a01832dff2f81e3c73212c6d7c3561e5b}{initialize} ()
+\item 
+Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a52165ea7fe9595afa64e85b511c3ddbd}{detectMicroGestures} (Collection$<$ \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture}{MicroGesture} $>$ micro\_\-gestures)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a29210917e83b9e7d54635993300f8923}{getStrategyName} ()
+\item 
+String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a9acf1884421d95bf09bfea17a9c11b07}{getStrategyDescription} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+File \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a864950c0660460ae511b1b0e8e44bf62}{logFile}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_aca8a670df7feba2931ca2ecc6e2f7802}{TAG} = \char`\"{}MGDS\_\-Log\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Example of an implementation of \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy}{IMicroGestureDetectionStrategy} which logs the given \hyperlink{}{MicroGesture}s to Logcat and into a log-\/file and returns them unchanged
+
+\begin{DoxyAuthor}{Author}
+Julian Hanhart, Dominik Giger 
+\end{DoxyAuthor}
+
+
+Definition at line 25 of file MicroGestureDetectionStrategyLog.java.
+
+\subsection{Member Function Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a52165ea7fe9595afa64e85b511c3ddbd}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}!detectMicroGestures@{detectMicroGestures}}
+\index{detectMicroGestures@{detectMicroGestures}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}}
+\subsubsection[{detectMicroGestures}]{\setlength{\rightskip}{0pt plus 5cm}Collection$<${\bf MicroGesture}$>$ ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.detectMicroGestures (Collection$<$ {\bf MicroGesture} $>$ {\em micro\_\-gestures})}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a52165ea7fe9595afa64e85b511c3ddbd}
+Logs the given \hyperlink{}{MicroGesture}s to Logcat and into a file and returns the unchanged
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em micro\_\-gestures}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy_a8593331fb67e5d4dc890d3db9f2d1b58}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.IMicroGestureDetectionStrategy}.
+
+Definition at line 80 of file MicroGestureDetectionStrategyLog.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.logFile, ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.TAG, and ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.toString().
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a52165ea7fe9595afa64e85b511c3ddbd_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a9acf1884421d95bf09bfea17a9c11b07}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}!getStrategyDescription@{getStrategyDescription}}
+\index{getStrategyDescription@{getStrategyDescription}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}}
+\subsubsection[{getStrategyDescription}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.getStrategyDescription ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a9acf1884421d95bf09bfea17a9c11b07}
+Return a description of the strategy
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_a75fdb36932ad701f6375cc1fe718056b}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 63 of file MicroGestureDetectionStrategyLog.java.\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a29210917e83b9e7d54635993300f8923}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}!getStrategyName@{getStrategyName}}
+\index{getStrategyName@{getStrategyName}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}}
+\subsubsection[{getStrategyName}]{\setlength{\rightskip}{0pt plus 5cm}String ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.getStrategyName ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a29210917e83b9e7d54635993300f8923}
+Return the strategy's name
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_aa0ebed55eed45409bad13d43a0058780}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 58 of file MicroGestureDetectionStrategyLog.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.initialize().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a01832dff2f81e3c73212c6d7c3561e5b}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}!initialize@{initialize}}
+\index{initialize@{initialize}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.initialize ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a01832dff2f81e3c73212c6d7c3561e5b}
+Initialize the strategy's \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument}{StrategyArgument}s 
+
+Implements \hyperlink{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy_af6ea27835befac71906915236a347450}{ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy}.
+
+Definition at line 43 of file MicroGestureDetectionStrategyLog.java.
+
+References ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.addArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.getArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.getStrategyName(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.BaseStrategy.hasArgument(), ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.logFile, and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.TAG.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a01832dff2f81e3c73212c6d7c3561e5b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a864950c0660460ae511b1b0e8e44bf62}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}!logFile@{logFile}}
+\index{logFile@{logFile}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}}
+\subsubsection[{logFile}]{\setlength{\rightskip}{0pt plus 5cm}File {\bf ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.logFile}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_a864950c0660460ae511b1b0e8e44bf62}
+
+
+Definition at line 34 of file MicroGestureDetectionStrategyLog.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.detectMicroGestures(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.initialize().\hypertarget{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_aca8a670df7feba2931ca2ecc6e2f7802}{
+\index{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}!TAG@{TAG}}
+\index{TAG@{TAG}!ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyLog@{ch::zhaw::ba10\_\-bsha\_\-1::strategies::MicroGestureDetectionStrategyLog}}
+\subsubsection[{TAG}]{\setlength{\rightskip}{0pt plus 5cm}final String {\bf ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.TAG} = \char`\"{}MGDS\_\-Log\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyLog_aca8a670df7feba2931ca2ecc6e2f7802}
+
+
+Definition at line 33 of file MicroGestureDetectionStrategyLog.java.
+
+Referenced by ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.detectMicroGestures(), and ch.zhaw.ba10\_\-bsha\_\-1.strategies.MicroGestureDetectionStrategyLog.initialize().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/media/Daten/Studium/BA/source/BA10-\/bsha-\/1/src/ch/zhaw/ba10\_\-bsha\_\-1/strategies/\hyperlink{MicroGestureDetectionStrategyLog_8java}{MicroGestureDetectionStrategyLog.java}\end{DoxyCompactItemize}

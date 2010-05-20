@@ -58,47 +58,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021         <span class="comment">//---------------------------------------------------------------------------</span>
 <a name="l00022"></a>00022         
 <a name="l00023"></a>00023         
-<a name="l00024"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#ac9f904cba7b0ae18e9e6b0d6caefeac9">00024</a>         <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#ac9f904cba7b0ae18e9e6b0d6caefeac9">initArguments</a>() {}
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026         @Override
-<a name="l00027"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a3f53ea1550d9fd947e54fab6150b6ed9">00027</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a3f53ea1550d9fd947e54fab6150b6ed9">getStrategyName</a>() {
-<a name="l00028"></a>00028                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Average&quot;</span>;
-<a name="l00029"></a>00029         }
-<a name="l00030"></a>00030         
-<a name="l00031"></a>00031         @Override
-<a name="l00032"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a153e28cad8f65a4477594ee20598d3cf">00032</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a153e28cad8f65a4477594ee20598d3cf">getStrategyDescription</a>() {
-<a name="l00033"></a>00033                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Smooth by calculating the points&apos; average positions&quot;</span>;
-<a name="l00034"></a>00034         } 
-<a name="l00035"></a>00035 
+<a name="l00024"></a>00024         @Override
+<a name="l00025"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a099125627db9d618ec732fe47250f7f5">00025</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a099125627db9d618ec732fe47250f7f5">initialize</a>() {}
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027         @Override
+<a name="l00028"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a3f53ea1550d9fd947e54fab6150b6ed9">00028</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a3f53ea1550d9fd947e54fab6150b6ed9">getStrategyName</a>() {
+<a name="l00029"></a>00029                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Average&quot;</span>;
+<a name="l00030"></a>00030         }
+<a name="l00031"></a>00031         
+<a name="l00032"></a>00032         @Override
+<a name="l00033"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a153e28cad8f65a4477594ee20598d3cf">00033</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a153e28cad8f65a4477594ee20598d3cf">getStrategyDescription</a>() {
+<a name="l00034"></a>00034                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Smooth by calculating the points&apos; average positions&quot;</span>;
+<a name="l00035"></a>00035         } 
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00038"></a>00038         <span class="comment">// Implementation of IPreprocessingStrategy</span>
-<a name="l00039"></a>00039         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00040"></a>00040         
-<a name="l00041"></a>00041 
-<a name="l00048"></a>00048         @Override
-<a name="l00049"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a1f021ea53245e6ebfa044ca3bb8b0210">00049</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a1f021ea53245e6ebfa044ca3bb8b0210">process</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> micro_gesture) {
-<a name="l00050"></a>00050                 <span class="keywordtype">int</span> M = 5;
-<a name="l00051"></a>00051                 ArrayList&lt;TouchPoint&gt; points = micro_gesture.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5">getPoints</a>();
-<a name="l00052"></a>00052                 ArrayList&lt;TouchPoint&gt; newPoints = <span class="keyword">new</span> ArrayList&lt;TouchPoint&gt;();
-<a name="l00053"></a>00053                 newPoints.add(points.get(0));
-<a name="l00054"></a>00054                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; points.size()-M; i++) {
-<a name="l00055"></a>00055                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> temp = points.get(i);
-<a name="l00056"></a>00056                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt; M; j++) {
-<a name="l00057"></a>00057                                 temp.x += points.get(i+j).x;
-<a name="l00058"></a>00058                                 temp.y += points.get(i+j).y;
-<a name="l00059"></a>00059                         }
-<a name="l00060"></a>00060                         temp.x /= M;
-<a name="l00061"></a>00061                         temp.y /= M;
-<a name="l00062"></a>00062                         
-<a name="l00063"></a>00063                         newPoints.add(temp);
-<a name="l00064"></a>00064                 }
-<a name="l00065"></a>00065                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = points.size()-M; j &lt; points.size(); j ++) {
-<a name="l00066"></a>00066                         newPoints.add(points.get(j));
-<a name="l00067"></a>00067                 }
-<a name="l00068"></a>00068                 <span class="keywordflow">return</span> (<span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>(newPoints));
-<a name="l00069"></a>00069         }
-<a name="l00070"></a>00070 }
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00039"></a>00039         <span class="comment">// Implementation of IPreprocessingStrategy</span>
+<a name="l00040"></a>00040         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00041"></a>00041         
+<a name="l00042"></a>00042 
+<a name="l00049"></a>00049         @Override
+<a name="l00050"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a1f021ea53245e6ebfa044ca3bb8b0210">00050</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1PathSmoothingStrategyAverage.html#a1f021ea53245e6ebfa044ca3bb8b0210">process</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> micro_gesture) {
+<a name="l00051"></a>00051                 <span class="keywordtype">int</span> M = 5;
+<a name="l00052"></a>00052                 ArrayList&lt;TouchPoint&gt; points = micro_gesture.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5">getPoints</a>();
+<a name="l00053"></a>00053                 ArrayList&lt;TouchPoint&gt; newPoints = <span class="keyword">new</span> ArrayList&lt;TouchPoint&gt;();
+<a name="l00054"></a>00054                 newPoints.add(points.get(0));
+<a name="l00055"></a>00055                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; points.size()-M; i++) {
+<a name="l00056"></a>00056                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> temp = points.get(i);
+<a name="l00057"></a>00057                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt; M; j++) {
+<a name="l00058"></a>00058                                 temp.x += points.get(i+j).x;
+<a name="l00059"></a>00059                                 temp.y += points.get(i+j).y;
+<a name="l00060"></a>00060                         }
+<a name="l00061"></a>00061                         temp.x /= M;
+<a name="l00062"></a>00062                         temp.y /= M;
+<a name="l00063"></a>00063                         
+<a name="l00064"></a>00064                         newPoints.add(temp);
+<a name="l00065"></a>00065                 }
+<a name="l00066"></a>00066                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = points.size()-M; j &lt; points.size(); j ++) {
+<a name="l00067"></a>00067                         newPoints.add(points.get(j));
+<a name="l00068"></a>00068                 }
+<a name="l00069"></a>00069                 <span class="keywordflow">return</span> (<span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>(newPoints));
+<a name="l00070"></a>00070         }
+<a name="l00071"></a>00071 }
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -114,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun May 16 22:50:16 2010 for BA10-bsha-1 by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri May 21 01:42:15 2010 for BA10-bsha-1 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

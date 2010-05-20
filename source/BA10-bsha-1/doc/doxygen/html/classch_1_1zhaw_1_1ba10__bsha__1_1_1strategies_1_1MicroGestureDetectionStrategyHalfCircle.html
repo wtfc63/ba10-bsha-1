@@ -60,15 +60,15 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionSt
 <p><a href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#a7f8d7d1b4c366aa2bcb4eade7db4af8f">initialize</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Collection&lt; <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#a780f7ded471f8e1dbd141518c41c060e">detectMicroGestures</a> (Collection&lt; <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> &gt; microGestures)</td></tr>
 <tr><td colspan="2"><h2>Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#a15793e039b14536d9ddb8dd23e839eac">initArguments</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">String&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#ab8f20632c110877b3173a3ca6c673bc1">getStrategyName</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">String&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#afc528d2770f7e921c54321cdf8e82df3">getStrategyDescription</a> ()</td></tr>
 <tr><td colspan="2"><h2>Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#aa8cae44f2d4c56a05d29eb5a1c53abdd">setMicroGesture</a> (<a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> mg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#a41f906c4c42a57ac8d1c6ae417fe6578">calculateDistance</a> (<a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> a, double m1, double q1)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#abc630df3a07afe93dacdc0fc3c788607">analyseMicroGestureDirection</a> (<a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> mg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#a472dbb75d876bcc2e87a98a0b1afb14c">analyseMicroGestureDirection</a> (<a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> mg)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Implementation of <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy.html">IMicroGestureDetectionStrategy</a> which detects half circles in the given <a class="el" href="">MicroGesture</a>s.</p>
@@ -76,12 +76,12 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionSt
 
 <p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00019">19</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="abc630df3a07afe93dacdc0fc3c788607"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyHalfCircle::analyseMicroGestureDirection" ref="abc630df3a07afe93dacdc0fc3c788607" args="(MicroGesture mg)" -->
+<a class="anchor" id="a472dbb75d876bcc2e87a98a0b1afb14c"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyHalfCircle::analyseMicroGestureDirection" ref="a472dbb75d876bcc2e87a98a0b1afb14c" args="(MicroGesture mg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection </td>
+          <td class="memname">void ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>&nbsp;</td>
           <td class="paramname"> <em>mg</em></td>
@@ -92,18 +92,18 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionSt
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00227">227</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00228">228</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
 
-<p>References <a class="el" href="MicroGesture_8java_source.html#l00313">ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints()</a>, <a class="el" href="MicroGesture_8java_source.html#l00252">ch.zhaw.ba10_bsha_1.service.MicroGesture.getType()</a>, and <a class="el" href="MicroGesture_8java_source.html#l00299">ch.zhaw.ba10_bsha_1.service.MicroGesture.setDirection2()</a>.</p>
+<p>References <a class="el" href="MicroGesture_8java_source.html#l00293">ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints()</a>, <a class="el" href="MicroGesture_8java_source.html#l00250">ch.zhaw.ba10_bsha_1.service.MicroGesture.getType()</a>, and <a class="el" href="MicroGesture_8java_source.html#l00279">ch.zhaw.ba10_bsha_1.service.MicroGesture.setDirection()</a>.</p>
 
-<p>Referenced by <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00052">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.detectMicroGestures()</a>.</p>
+<p>Referenced by <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00053">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.detectMicroGestures()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_abc630df3a07afe93dacdc0fc3c788607_cgraph.png" border="0" usemap="#classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_abc630df3a07afe93dacdc0fc3c788607_cgraph_map" alt=""></div>
-<map name="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_abc630df3a07afe93dacdc0fc3c788607_cgraph_map" id="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_abc630df3a07afe93dacdc0fc3c788607_cgraph">
-<area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints" alt="" coords="697,5,1033,35"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getType" alt="" coords="701,59,1029,88"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a0599eb1f4978635f7eed3fa1bb9961dc" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setDirection2" alt="" coords="687,112,1044,141"/></map>
+<div class="center"><img src="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a472dbb75d876bcc2e87a98a0b1afb14c_cgraph.png" border="0" usemap="#classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a472dbb75d876bcc2e87a98a0b1afb14c_cgraph_map" alt=""></div>
+<map name="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a472dbb75d876bcc2e87a98a0b1afb14c_cgraph_map" id="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a472dbb75d876bcc2e87a98a0b1afb14c_cgraph">
+<area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints" alt="" coords="693,5,1029,35"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getType" alt="" coords="697,59,1025,88"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a2bf5f83579721d1ccfc5f36b39eb9ea9" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setDirection" alt="" coords="685,112,1037,141"/></map>
 </div>
 </p>
 
@@ -140,9 +140,9 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00210">210</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00211">211</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
 
-<p>Referenced by <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00168">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture()</a>.</p>
+<p>Referenced by <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00169">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture()</a>.</p>
 
 </div>
 </div>
@@ -172,16 +172,16 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy.html#a8593331fb67e5d4dc890d3db9f2d1b58">ch.zhaw.ba10_bsha_1.strategies.IMicroGestureDetectionStrategy</a>.</p>
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00052">52</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00053">53</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
 
-<p>References <a class="el" href="MicroGesture_8java_source.html#l00322">ch.zhaw.ba10_bsha_1.service.MicroGesture.addPoint()</a>, <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00227">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection()</a>, <a class="el" href="MicroGesture_8java_source.html#l00265">ch.zhaw.ba10_bsha_1.service.MicroGesture.setDirection()</a>, and <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00168">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture()</a>.</p>
+<p>References <a class="el" href="MicroGesture_8java_source.html#l00302">ch.zhaw.ba10_bsha_1.service.MicroGesture.addPoint()</a>, <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00228">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection()</a>, and <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00169">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
 <div class="center"><img src="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a780f7ded471f8e1dbd141518c41c060e_cgraph.png" border="0" usemap="#classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a780f7ded471f8e1dbd141518c41c060e_cgraph_map" alt=""></div>
 <map name="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a780f7ded471f8e1dbd141518c41c060e_cgraph_map" id="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle_a780f7ded471f8e1dbd141518c41c060e_cgraph">
-<area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.addPoint" alt="" coords="783,5,1113,35"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#abc630df3a07afe93dacdc0fc3c788607" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection" alt="" coords="632,59,1264,88"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ab3b057406a8b11af28ec1bb73be22e58" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setDirection" alt="" coords="772,112,1124,141"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#aa8cae44f2d4c56a05d29eb5a1c53abdd" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture" alt="" coords="672,165,1224,195"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints" alt="" coords="1424,112,1760,141"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getType" alt="" coords="1428,5,1756,35"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a0599eb1f4978635f7eed3fa1bb9961dc" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setDirection2" alt="" coords="1413,59,1771,88"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#a41f906c4c42a57ac8d1c6ae417fe6578" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.calculateDistance" alt="" coords="1312,165,1872,195"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ae7f33d544189f7cf99710d8694beec56" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setType" alt="" coords="1428,219,1756,248"/></map>
+<area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.addPoint" alt="" coords="783,19,1113,48"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#a472dbb75d876bcc2e87a98a0b1afb14c" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.analyseMicroGestureDirection" alt="" coords="632,72,1264,101"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#aa8cae44f2d4c56a05d29eb5a1c53abdd" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.setMicroGesture" alt="" coords="672,152,1224,181"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints" alt="" coords="1424,112,1760,141"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getType" alt="" coords="1428,5,1756,35"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a2bf5f83579721d1ccfc5f36b39eb9ea9" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setDirection" alt="" coords="1416,59,1768,88"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyHalfCircle.html#a41f906c4c42a57ac8d1c6ae417fe6578" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.calculateDistance" alt="" coords="1312,165,1872,195"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ae7f33d544189f7cf99710d8694beec56" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setType" alt="" coords="1428,219,1756,248"/></map>
 </div>
 </p>
 
@@ -206,7 +206,7 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a75fdb36932ad701f6375cc1fe718056b">ch.zhaw.ba10_bsha_1.strategies.BaseStrategy</a>.</p>
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00035">35</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00036">36</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
 
 </div>
 </div>
@@ -229,29 +229,29 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#aa0ebed55eed45409bad13d43a0058780">ch.zhaw.ba10_bsha_1.strategies.BaseStrategy</a>.</p>
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00030">30</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00031">31</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a15793e039b14536d9ddb8dd23e839eac"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyHalfCircle::initArguments" ref="a15793e039b14536d9ddb8dd23e839eac" args="()" -->
+<a class="anchor" id="a7f8d7d1b4c366aa2bcb4eade7db4af8f"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyHalfCircle::initialize" ref="a7f8d7d1b4c366aa2bcb4eade7db4af8f" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.initArguments </td>
+          <td class="memname">void ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.initialize </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [protected, virtual]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>Initialize the strategy's <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html">StrategyArgument</a>s </p>
 
-<p>Implements <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a0496e8fd0099a5f0f7765322d7e752a9">ch.zhaw.ba10_bsha_1.strategies.BaseStrategy</a>.</p>
+<p>Implements <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#af6ea27835befac71906915236a347450">ch.zhaw.ba10_bsha_1.strategies.BaseStrategy</a>.</p>
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00027">27</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00028">28</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
 
 </div>
 </div>
@@ -271,11 +271,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00168">168</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00169">169</a> of file <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html">MicroGestureDetectionStrategyHalfCircle.java</a>.</p>
 
-<p>References <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00210">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.calculateDistance()</a>, <a class="el" href="MicroGesture_8java_source.html#l00313">ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints()</a>, and <a class="el" href="MicroGesture_8java_source.html#l00256">ch.zhaw.ba10_bsha_1.service.MicroGesture.setType()</a>.</p>
+<p>References <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00211">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.calculateDistance()</a>, <a class="el" href="MicroGesture_8java_source.html#l00293">ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints()</a>, and <a class="el" href="MicroGesture_8java_source.html#l00254">ch.zhaw.ba10_bsha_1.service.MicroGesture.setType()</a>.</p>
 
-<p>Referenced by <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00052">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.detectMicroGestures()</a>.</p>
+<p>Referenced by <a class="el" href="MicroGestureDetectionStrategyHalfCircle_8java_source.html#l00053">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyHalfCircle.detectMicroGestures()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -306,7 +306,7 @@ Here is the call graph for this function:</div>
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun May 16 22:51:18 2010 for BA10-bsha-1 by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri May 21 01:42:35 2010 for BA10-bsha-1 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

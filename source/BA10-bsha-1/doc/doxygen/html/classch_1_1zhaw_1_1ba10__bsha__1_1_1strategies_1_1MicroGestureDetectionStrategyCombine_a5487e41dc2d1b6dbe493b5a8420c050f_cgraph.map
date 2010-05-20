@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.addPoint" alt="" coords="736,5,1067,35"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a43e707803f3820e6f8cae56d1f1976b7" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getDirection" alt="" coords="725,59,1077,88"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints" alt="" coords="1224,137,1560,167"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getType" alt="" coords="737,163,1065,192"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a06f12711cc267a6f8647dfb6faeb4787" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCombine.setMicroGesture" alt="" coords="628,216,1175,245"/>
+<area shape="rect" href="$classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ae7f33d544189f7cf99710d8694beec56" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setType" alt="" coords="1228,216,1556,245"/>
+</map>

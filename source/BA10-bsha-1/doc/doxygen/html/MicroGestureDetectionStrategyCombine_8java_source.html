@@ -44,43 +44,90 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/media/Daten/Studium/BA/source/BA10-bsha-1/src/ch/zhaw/ba10_bsha_1/strategies/MicroGestureDetectionStrategyCombine.java</h1><a href="MicroGestureDetectionStrategyCombine_8java.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="keyword">package </span>ch.zhaw.ba10_bsha_1.strategies;
 <a name="l00002"></a>00002 
 <a name="l00003"></a>00003 
-<a name="l00004"></a>00004 <span class="keyword">import</span> java.util.Collection;
-<a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.service.MicroGesture;
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008 
-<a name="l00014"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html">00014</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html">MicroGestureDetectionStrategyCombine</a> <span class="keyword">extends</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html">BaseStrategy</a> implements <a class="code" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy.html">IMicroGestureDetectionStrategy</a> {
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00018"></a>00018         <span class="comment">// Implementation of BaseStrategy&apos;s abstract methods</span>
+<a name="l00004"></a>00004 <span class="keyword">import</span> java.util.ArrayList;
+<a name="l00005"></a>00005 <span class="keyword">import</span> java.util.Collection;
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.*;
+<a name="l00008"></a>00008 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.service.MicroGesture;
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 
+<a name="l00016"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html">00016</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html">MicroGestureDetectionStrategyCombine</a> <span class="keyword">extends</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html">BaseStrategy</a> implements <a class="code" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy.html">IMicroGestureDetectionStrategy</a> {
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 
 <a name="l00019"></a>00019         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00020"></a>00020         
-<a name="l00021"></a>00021         
-<a name="l00022"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ab23cfbf392bc9eb213a0c8768918d9d2">00022</a>         <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ab23cfbf392bc9eb213a0c8768918d9d2">initArguments</a>() {}
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024         @Override
-<a name="l00025"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ad7fdf02bda8daf2d3bd177e23a270f11">00025</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ad7fdf02bda8daf2d3bd177e23a270f11">getStrategyName</a>() {
-<a name="l00026"></a>00026                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Combine&quot;</span>;
-<a name="l00027"></a>00027         }
-<a name="l00028"></a>00028         
-<a name="l00029"></a>00029         @Override
-<a name="l00030"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#adf4547ec5056bf340c60f15ba50330bc">00030</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#adf4547ec5056bf340c60f15ba50330bc">getStrategyDescription</a>() {
-<a name="l00031"></a>00031                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Combine MicroGestures where applicable&quot;</span>;
-<a name="l00032"></a>00032         }
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00036"></a>00036         <span class="comment">// Implementation of IMicroGestureDetectionStrategy</span>
+<a name="l00020"></a>00020         <span class="comment">// Implementation of BaseStrategy&apos;s abstract methods</span>
+<a name="l00021"></a>00021         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00022"></a>00022         
+<a name="l00023"></a>00023         
+<a name="l00024"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ad9982cce2bbecd3246b3838b28bd95e7">00024</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ad9982cce2bbecd3246b3838b28bd95e7">initialize</a>() {}
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026         @Override
+<a name="l00027"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ad7fdf02bda8daf2d3bd177e23a270f11">00027</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ad7fdf02bda8daf2d3bd177e23a270f11">getStrategyName</a>() {
+<a name="l00028"></a>00028                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Combine&quot;</span>;
+<a name="l00029"></a>00029         }
+<a name="l00030"></a>00030         
+<a name="l00031"></a>00031         @Override
+<a name="l00032"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#adf4547ec5056bf340c60f15ba50330bc">00032</a>         <span class="keyword">protected</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#adf4547ec5056bf340c60f15ba50330bc">getStrategyDescription</a>() {
+<a name="l00033"></a>00033                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Combine MicroGestures where applicable&quot;</span>;
+<a name="l00034"></a>00034         }
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 
 <a name="l00037"></a>00037         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00038"></a>00038         
-<a name="l00039"></a>00039 
-<a name="l00046"></a>00046         @Override
-<a name="l00047"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a5487e41dc2d1b6dbe493b5a8420c050f">00047</a>         <span class="keyword">public</span> Collection&lt;MicroGesture&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a5487e41dc2d1b6dbe493b5a8420c050f">detectMicroGestures</a>(Collection&lt;MicroGesture&gt; microGestures) {
-<a name="l00048"></a>00048                 <span class="comment">// TODO Auto-generated method stub</span>
-<a name="l00049"></a>00049                 <span class="keywordflow">return</span> null;
-<a name="l00050"></a>00050         }
-<a name="l00051"></a>00051 }
+<a name="l00038"></a>00038         <span class="comment">// Implementation of IMicroGestureDetectionStrategy</span>
+<a name="l00039"></a>00039         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00040"></a>00040         
+<a name="l00041"></a>00041 
+<a name="l00048"></a>00048         @Override
+<a name="l00049"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a5487e41dc2d1b6dbe493b5a8420c050f">00049</a>         <span class="keyword">public</span> Collection&lt;MicroGesture&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a5487e41dc2d1b6dbe493b5a8420c050f">detectMicroGestures</a>(Collection&lt;MicroGesture&gt; microGestures) {
+<a name="l00050"></a>00050                 
+<a name="l00051"></a>00051                 ArrayList&lt;MicroGesture&gt; tempGestures = <span class="keyword">new</span> ArrayList&lt;MicroGesture&gt;(microGestures);
+<a name="l00052"></a>00052                 ArrayList&lt;MicroGesture&gt; result = <span class="keyword">new</span> ArrayList&lt;MicroGesture&gt;();
+<a name="l00053"></a>00053                 
+<a name="l00054"></a>00054                 <span class="keywordflow">if</span> (tempGestures.size() &gt; 0) {
+<a name="l00055"></a>00055                         result.add(tempGestures.get(0));
+<a name="l00056"></a>00056                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> previous = tempGestures.get(0);
+<a name="l00057"></a>00057                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; tempGestures.size(); i++) {
+<a name="l00058"></a>00058                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> current = tempGestures.get(i);
+<a name="l00059"></a>00059                                 <span class="keywordflow">if</span> (current.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5">getPoints</a>().size() &gt; 4) {
+<a name="l00060"></a>00060                                         <span class="keywordflow">if</span> (current.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e">getType</a>() == previous.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e">getType</a>() &amp;&amp; current.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a43e707803f3820e6f8cae56d1f1976b7">getDirection</a>() == previous.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a43e707803f3820e6f8cae56d1f1976b7">getDirection</a>() &amp;&amp; current.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e">getType</a>() == <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>.TYPE_SHORT_LINE) {
+<a name="l00061"></a>00061                                                 ArrayList&lt;TouchPoint&gt; list = current.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5">getPoints</a>();
+<a name="l00062"></a>00062                                                 <span class="keywordflow">for</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> p : list) {
+<a name="l00063"></a>00063                                                         previous.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(p);
+<a name="l00064"></a>00064                                                 }
+<a name="l00065"></a>00065                                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a06f12711cc267a6f8647dfb6faeb4787">setMicroGesture</a>(previous);
+<a name="l00066"></a>00066                                         }
+<a name="l00067"></a>00067                                         <span class="keywordflow">else</span> {
+<a name="l00068"></a>00068                                                 result.add(current);
+<a name="l00069"></a>00069                                                 previous = current;
+<a name="l00070"></a>00070                                         }
+<a name="l00071"></a>00071                                 }
+<a name="l00072"></a>00072                                 <span class="keywordflow">else</span> {
+<a name="l00073"></a>00073                                         ArrayList&lt;TouchPoint&gt; list = current.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5">getPoints</a>();
+<a name="l00074"></a>00074                                         <span class="keywordflow">for</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> p : list) {
+<a name="l00075"></a>00075                                                 previous.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e">addPoint</a>(p);
+<a name="l00076"></a>00076                                         }
+<a name="l00077"></a>00077                                 }
+<a name="l00078"></a>00078                         }
+<a name="l00079"></a>00079                 }
+<a name="l00080"></a>00080                 <span class="keywordflow">return</span> result;
+<a name="l00081"></a>00081         }
+<a name="l00082"></a>00082         
+<a name="l00083"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a06f12711cc267a6f8647dfb6faeb4787">00083</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a06f12711cc267a6f8647dfb6faeb4787">setMicroGesture</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> mg) {
+<a name="l00084"></a>00084                 ArrayList&lt;TouchPoint&gt; points = mg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5">getPoints</a>();
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086                 <span class="keywordflow">if</span> (points.size() &gt; 0) {
+<a name="l00087"></a>00087                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> a = points.get(0);
+<a name="l00088"></a>00088                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1TouchPoint.html">TouchPoint</a> b = points.get(points.size()-1);
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090                         <span class="keywordflow">if</span> (Math.sqrt(Math.pow(b.y - a.y, 2) + Math.pow(b.x - a.x, 2)) &gt; 140) {
+<a name="l00091"></a>00091                                 mg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ae7f33d544189f7cf99710d8694beec56">setType</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>.TYPE_LONG_LINE);
+<a name="l00092"></a>00092                         }
+<a name="l00093"></a>00093                         <span class="keywordflow">else</span> {
+<a name="l00094"></a>00094                                 mg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ae7f33d544189f7cf99710d8694beec56">setType</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>.TYPE_SHORT_LINE);
+<a name="l00095"></a>00095                         }
+<a name="l00096"></a>00096                 }
+<a name="l00097"></a>00097         }
+<a name="l00098"></a>00098 }
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -96,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun May 16 22:50:16 2010 for BA10-bsha-1 by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri May 21 01:42:15 2010 for BA10-bsha-1 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

@@ -269,7 +269,9 @@ public class PadView extends KeyboardView implements IObservable {
      */
 	@Override
 	public void attachObserver(IObserver observer) {
-		observers.add(observer);
+		if (observers.contains(observer)) {
+			observers.add(observer);
+		}
 	}
 
     /**

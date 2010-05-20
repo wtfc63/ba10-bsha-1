@@ -44,36 +44,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/media/Daten/Studium/BA/source/BA10-bsha-1/src/ch/zhaw/ba10_bsha_1/graph/GraphMLPullParser.java</h1><a href="GraphMLPullParser_8java.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="keyword">package </span>ch.zhaw.ba10_bsha_1.graph;
 <a name="l00002"></a>00002 
 <a name="l00003"></a>00003 
-<a name="l00004"></a>00004 <span class="keyword">import</span> android.content.res.XmlResourceParser;
-<a name="l00005"></a>00005 <span class="keyword">import</span> android.util.Log;
-<a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="keyword">import</span> org.xmlpull.v1.XmlPullParser;
-<a name="l00008"></a>00008 <span class="keyword">import</span> org.xmlpull.v1.XmlPullParserException;
-<a name="l00009"></a>00009 <span class="keyword">import</span> org.xmlpull.v1.XmlPullParserFactory;
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="keyword">import</span> java.io.File;
-<a name="l00012"></a>00012 <span class="keyword">import</span> java.io.FileReader;
-<a name="l00013"></a>00013 <span class="keyword">import</span> java.io.IOException;
-<a name="l00014"></a>00014 <span class="keyword">import</span> java.util.ArrayList;
-<a name="l00015"></a>00015 <span class="keyword">import</span> java.util.Hashtable;
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.R;
-<a name="l00018"></a>00018 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.service.DetectionService;
-<a name="l00019"></a>00019 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.service.MicroGestureTester;
+<a name="l00004"></a>00004 <span class="keyword">import</span> android.util.Log;
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 <span class="keyword">import</span> org.xmlpull.v1.XmlPullParser;
+<a name="l00007"></a>00007 <span class="keyword">import</span> org.xmlpull.v1.XmlPullParserException;
+<a name="l00008"></a>00008 <span class="keyword">import</span> org.xmlpull.v1.XmlPullParserFactory;
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="keyword">import</span> java.io.File;
+<a name="l00011"></a>00011 <span class="keyword">import</span> java.io.FileReader;
+<a name="l00012"></a>00012 <span class="keyword">import</span> java.io.IOException;
+<a name="l00013"></a>00013 <span class="keyword">import</span> java.util.ArrayList;
+<a name="l00014"></a>00014 <span class="keyword">import</span> java.util.Hashtable;
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.R;
+<a name="l00017"></a>00017 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.service.DetectionService;
+<a name="l00018"></a>00018 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.service.MicroGestureTester;
+<a name="l00019"></a>00019 
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021 
-<a name="l00027"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html">00027</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html">GraphMLPullParser</a> <span class="keyword">implements</span> <a class="code" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1IGraphMLParser.html">IGraphMLParser</a> {
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029         
-<a name="l00030"></a>00030         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00031"></a>00031         <span class="comment">// Inner Class</span>
-<a name="l00032"></a>00032         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00026"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html">00026</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html">GraphMLPullParser</a> <span class="keyword">implements</span> <a class="code" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1IGraphMLParser.html">IGraphMLParser</a> {
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028         
+<a name="l00029"></a>00029         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00030"></a>00030         <span class="comment">// Inner Class</span>
+<a name="l00031"></a>00031         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00032"></a>00032         
 <a name="l00033"></a>00033         
-<a name="l00034"></a>00034         
-<a name="l00038"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html">00038</a>         <span class="keyword">private</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html">GraphEdge</a> {
-<a name="l00039"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#a8ddd9c31ff9cbe6303c70fa75c7c7a0f">00039</a>                 <span class="keywordtype">int</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#a8ddd9c31ff9cbe6303c70fa75c7c7a0f">src</a>;
-<a name="l00040"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab4607327cafc0923bb9b5d0ca34abe1e">00040</a>                 <span class="keywordtype">int</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab4607327cafc0923bb9b5d0ca34abe1e">tgt</a>;
-<a name="l00041"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab07b6563dfd9148c9097f29edd1e5e03">00041</a>                 <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab07b6563dfd9148c9097f29edd1e5e03">weight</a>;
+<a name="l00037"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html">00037</a>         <span class="keyword">private</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html">GraphEdge</a> {
+<a name="l00038"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#a8ddd9c31ff9cbe6303c70fa75c7c7a0f">00038</a>                 <span class="keywordtype">int</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#a8ddd9c31ff9cbe6303c70fa75c7c7a0f">src</a>;
+<a name="l00039"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab4607327cafc0923bb9b5d0ca34abe1e">00039</a>                 <span class="keywordtype">int</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab4607327cafc0923bb9b5d0ca34abe1e">tgt</a>;
+<a name="l00040"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab07b6563dfd9148c9097f29edd1e5e03">00040</a>                 <span class="keywordtype">float</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab07b6563dfd9148c9097f29edd1e5e03">weight</a>;
+<a name="l00041"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#afd2781d31dd046e4ea2834ed475e8521">00041</a>                 <span class="keywordtype">int</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#afd2781d31dd046e4ea2834ed475e8521">samples</a>;
 <a name="l00042"></a>00042         }
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044         
@@ -125,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00095"></a>00095                                 <span class="keywordtype">int</span> event_type = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a71778cb195f68c6f07c7bc50697f8ec1">parser</a>.getEventType();
 <a name="l00096"></a>00096                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a5a312256806488a510dd5bc2f67535c0">currentKeyType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aaa46f90276e81808deff1bae71e7e97a">KeyType</a>.NONE;
 <a name="l00097"></a>00097                                 <span class="comment">//Iterate through tags</span>
-<a name="l00098"></a>00098                                 <span class="keywordflow">while</span> (event_type != XmlResourceParser.END_DOCUMENT) {
+<a name="l00098"></a>00098                                 <span class="keywordflow">while</span> (event_type != XmlPullParser.END_DOCUMENT) {
 <a name="l00099"></a>00099                                         <span class="keywordflow">switch</span> (event_type) {
 <a name="l00100"></a>00100                                                 <span class="keywordflow">case</span> XmlPullParser.START_TAG :
 <a name="l00101"></a>00101                                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa5ab79571da883a79a97faaed6886f51">handleTag</a>();
@@ -285,91 +285,100 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00278"></a>00278                                 <span class="keywordflow">case</span> EDGE :
 <a name="l00279"></a>00279                                         <span class="keywordflow">switch</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a5a312256806488a510dd5bc2f67535c0">currentKeyType</a>) {
 <a name="l00280"></a>00280                                                 <span class="keywordflow">case</span> WEIGHT :
-<a name="l00281"></a>00281                                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa293c98ba213a9cbe6f6f48c82f5b706">currentEdge</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab07b6563dfd9148c9097f29edd1e5e03">weight</a> = Float.parseFloat(text);
-<a name="l00282"></a>00282                                                         <span class="keywordflow">break</span>;
-<a name="l00283"></a>00283                                                 <span class="keywordflow">case</span> TEST :
-<a name="l00284"></a>00284                                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html#a6dcb93d4c25e370c84741db17e59d2af">setTester</a>(<span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGestureTester.html">MicroGestureTester</a>(text));
-<a name="l00285"></a>00285                                                         <span class="keywordflow">break</span>;
-<a name="l00286"></a>00286                                                 <span class="keywordflow">case</span> CHARACTER :
-<a name="l00287"></a>00287                                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html#ad1c94b7c86ad5fd14bf0aee9d52189e4">setCharacter</a>(text.charAt(0));
-<a name="l00288"></a>00288                                                         <span class="keywordflow">break</span>;
-<a name="l00289"></a>00289                                                 <span class="keywordflow">default</span> :
-<a name="l00290"></a>00290                                                         <span class="keywordflow">break</span>;
-<a name="l00291"></a>00291                                         }
-<a name="l00292"></a>00292                                         <span class="keywordflow">break</span>;
-<a name="l00293"></a>00293                                 <span class="comment">//Otherwise it&apos;s most likely a &lt;data&gt;-element, embedded in the main &lt;graph&gt;-element</span>
-<a name="l00294"></a>00294                                 <span class="keywordflow">default</span> :
-<a name="l00295"></a>00295                                         <span class="keywordflow">switch</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a5a312256806488a510dd5bc2f67535c0">currentKeyType</a>) {
-<a name="l00296"></a>00296                                                 <span class="keywordflow">case</span> VERSION :
-<a name="l00297"></a>00297                                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a212c61eb8990534e883cda1e29c60589">graphVersion</a> = Float.parseFloat(text);
+<a name="l00281"></a>00281                                                         <span class="keywordflow">if</span> (text.matches(<span class="stringliteral">&quot;[0-9]*\\.?[0-9]*/[0-9]+&quot;</span>)) {
+<a name="l00282"></a>00282                                                                 String[] tmp = text.split(<span class="stringliteral">&quot;/&quot;</span>);
+<a name="l00283"></a>00283                                                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa293c98ba213a9cbe6f6f48c82f5b706">currentEdge</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab07b6563dfd9148c9097f29edd1e5e03">weight</a>  = Float.parseFloat(tmp[0]);
+<a name="l00284"></a>00284                                                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa293c98ba213a9cbe6f6f48c82f5b706">currentEdge</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#afd2781d31dd046e4ea2834ed475e8521">samples</a> = Integer.parseInt(tmp[1]);
+<a name="l00285"></a>00285                                                         } <span class="keywordflow">else</span> {
+<a name="l00286"></a>00286                                                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa293c98ba213a9cbe6f6f48c82f5b706">currentEdge</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#ab07b6563dfd9148c9097f29edd1e5e03">weight</a>  = Float.parseFloat(text);
+<a name="l00287"></a>00287                                                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa293c98ba213a9cbe6f6f48c82f5b706">currentEdge</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html#afd2781d31dd046e4ea2834ed475e8521">samples</a> = 1;
+<a name="l00288"></a>00288                                                         }
+<a name="l00289"></a>00289                                                         <span class="keywordflow">break</span>;
+<a name="l00290"></a>00290                                                 <span class="keywordflow">case</span> TEST :
+<a name="l00291"></a>00291                                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html#a1a6b348d6dba34a3f7b6ec9f742952f6">setLabel</a>(text);
+<a name="l00292"></a>00292                                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html#a6dcb93d4c25e370c84741db17e59d2af">setTester</a>(<span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGestureTester.html">MicroGestureTester</a>(text));
+<a name="l00293"></a>00293                                                         <span class="keywordflow">break</span>;
+<a name="l00294"></a>00294                                                 <span class="keywordflow">case</span> CHARACTER :
+<a name="l00295"></a>00295                                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html#ad1c94b7c86ad5fd14bf0aee9d52189e4">setCharacter</a>(text.charAt(0));
+<a name="l00296"></a>00296                                                         <span class="keywordflow">break</span>;
+<a name="l00297"></a>00297                                                 <span class="keywordflow">default</span> :
 <a name="l00298"></a>00298                                                         <span class="keywordflow">break</span>;
-<a name="l00299"></a>00299                                                 <span class="keywordflow">default</span> :
-<a name="l00300"></a>00300                                                         <span class="keywordflow">break</span>;
-<a name="l00301"></a>00301                                         }
-<a name="l00302"></a>00302                                         <span class="keywordflow">break</span>;
-<a name="l00303"></a>00303                         }
-<a name="l00304"></a>00304                 }
-<a name="l00305"></a>00305         }
-<a name="l00306"></a>00306         
-<a name="l00310"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae57851701120dd3a6c241c4057f88f34">00310</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae57851701120dd3a6c241c4057f88f34">endTag</a>() {
-<a name="l00311"></a>00311                 <span class="keywordflow">switch</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a>)  {
-<a name="l00312"></a>00312                         <span class="keywordflow">case</span> KEY :
-<a name="l00313"></a>00313                                 <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;default&quot;</span>)) {
-<a name="l00314"></a>00314                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.KEY;
-<a name="l00315"></a>00315                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = <span class="stringliteral">&quot;key&quot;</span>;
-<a name="l00316"></a>00316                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
-<a name="l00317"></a>00317                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;key&quot;</span>)) {
-<a name="l00318"></a>00318                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.NONE;
-<a name="l00319"></a>00319                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = null;
-<a name="l00320"></a>00320                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
-<a name="l00321"></a>00321                                 }
-<a name="l00322"></a>00322                                 <span class="keywordflow">break</span>;
-<a name="l00323"></a>00323                         <span class="keywordflow">case</span> NODE :
-<a name="l00324"></a>00324                                 <span class="comment">//If it&apos;s a &lt;data&gt;-end-tag, skip and prepare for &lt;node&gt;-end-tag</span>
-<a name="l00325"></a>00325                                 <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;data&quot;</span>)) {
-<a name="l00326"></a>00326                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.NODE;
-<a name="l00327"></a>00327                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = <span class="stringliteral">&quot;node&quot;</span>;
+<a name="l00299"></a>00299                                         }
+<a name="l00300"></a>00300                                         <span class="keywordflow">break</span>;
+<a name="l00301"></a>00301                                 <span class="comment">//Otherwise it&apos;s most likely a &lt;data&gt;-element, embedded in the main &lt;graph&gt;-element</span>
+<a name="l00302"></a>00302                                 <span class="keywordflow">default</span> :
+<a name="l00303"></a>00303                                         <span class="keywordflow">switch</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a5a312256806488a510dd5bc2f67535c0">currentKeyType</a>) {
+<a name="l00304"></a>00304                                                 <span class="keywordflow">case</span> VERSION :
+<a name="l00305"></a>00305                                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a212c61eb8990534e883cda1e29c60589">graphVersion</a> = Float.parseFloat(text);
+<a name="l00306"></a>00306                                                         <span class="keywordflow">break</span>;
+<a name="l00307"></a>00307                                                 <span class="keywordflow">default</span> :
+<a name="l00308"></a>00308                                                         <span class="keywordflow">break</span>;
+<a name="l00309"></a>00309                                         }
+<a name="l00310"></a>00310                                         <span class="keywordflow">break</span>;
+<a name="l00311"></a>00311                         }
+<a name="l00312"></a>00312                 }
+<a name="l00313"></a>00313         }
+<a name="l00314"></a>00314         
+<a name="l00318"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae57851701120dd3a6c241c4057f88f34">00318</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae57851701120dd3a6c241c4057f88f34">endTag</a>() {
+<a name="l00319"></a>00319                 <span class="keywordflow">switch</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a>)  {
+<a name="l00320"></a>00320                         <span class="keywordflow">case</span> KEY :
+<a name="l00321"></a>00321                                 <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;default&quot;</span>)) {
+<a name="l00322"></a>00322                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.KEY;
+<a name="l00323"></a>00323                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = <span class="stringliteral">&quot;key&quot;</span>;
+<a name="l00324"></a>00324                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
+<a name="l00325"></a>00325                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;key&quot;</span>)) {
+<a name="l00326"></a>00326                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.NONE;
+<a name="l00327"></a>00327                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = null;
 <a name="l00328"></a>00328                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
-<a name="l00329"></a>00329                                 <span class="comment">//Otherwise commit Node to Hashtable</span>
-<a name="l00330"></a>00330                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;node&quot;</span>)) {
-<a name="l00331"></a>00331                                         <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#acf2b3dbec13a253bc3667292157150c4">nodes</a>.isEmpty()) {
-<a name="l00332"></a>00332                                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae4185aa59926024ce10f7041d048d56f">rootNode</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>;
-<a name="l00333"></a>00333                                         }
-<a name="l00334"></a>00334                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#acf2b3dbec13a253bc3667292157150c4">nodes</a>.put(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html#a725596466df160f7aa65009dbd29e3d8">getId</a>(), <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>);
-<a name="l00335"></a>00335                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a> = null;
-<a name="l00336"></a>00336                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.NONE;
-<a name="l00337"></a>00337                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = null;
-<a name="l00338"></a>00338                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
-<a name="l00339"></a>00339                                 }
-<a name="l00340"></a>00340                                 <span class="keywordflow">break</span>;
-<a name="l00341"></a>00341                         <span class="keywordflow">case</span> EDGE :
-<a name="l00342"></a>00342                                 <span class="comment">//If it&apos;s a &lt;data&gt;-end-tag, skip and prepare for &lt;edge&gt;-end-tag</span>
-<a name="l00343"></a>00343                                 <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;data&quot;</span>)) {
-<a name="l00344"></a>00344                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.EDGE;
-<a name="l00345"></a>00345                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = <span class="stringliteral">&quot;edge&quot;</span>;
+<a name="l00329"></a>00329                                 }
+<a name="l00330"></a>00330                                 <span class="keywordflow">break</span>;
+<a name="l00331"></a>00331                         <span class="keywordflow">case</span> NODE :
+<a name="l00332"></a>00332                                 <span class="comment">//If it&apos;s a &lt;data&gt;-end-tag, skip and prepare for &lt;node&gt;-end-tag</span>
+<a name="l00333"></a>00333                                 <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;data&quot;</span>)) {
+<a name="l00334"></a>00334                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.NODE;
+<a name="l00335"></a>00335                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = <span class="stringliteral">&quot;node&quot;</span>;
+<a name="l00336"></a>00336                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
+<a name="l00337"></a>00337                                 <span class="comment">//Otherwise commit Node to Hashtable</span>
+<a name="l00338"></a>00338                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;node&quot;</span>)) {
+<a name="l00339"></a>00339                                         <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#acf2b3dbec13a253bc3667292157150c4">nodes</a>.isEmpty()) {
+<a name="l00340"></a>00340                                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae4185aa59926024ce10f7041d048d56f">rootNode</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>;
+<a name="l00341"></a>00341                                         }
+<a name="l00342"></a>00342                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#acf2b3dbec13a253bc3667292157150c4">nodes</a>.put(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html#a725596466df160f7aa65009dbd29e3d8">getId</a>(), <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a>);
+<a name="l00343"></a>00343                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a2281dbf08b291997a372d130efea7d07">currentNode</a> = null;
+<a name="l00344"></a>00344                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.NONE;
+<a name="l00345"></a>00345                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = null;
 <a name="l00346"></a>00346                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
-<a name="l00347"></a>00347                                 <span class="comment">//Otherwise commit Edge to ArrayList</span>
-<a name="l00348"></a>00348                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;edge&quot;</span>)) {
-<a name="l00349"></a>00349                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a181a350c69c351b9f21d914202abaee4">edges</a>.add(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa293c98ba213a9cbe6f6f48c82f5b706">currentEdge</a>);
-<a name="l00350"></a>00350                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa293c98ba213a9cbe6f6f48c82f5b706">currentEdge</a> = null;
-<a name="l00351"></a>00351                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.NONE;
-<a name="l00352"></a>00352                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = null;
-<a name="l00353"></a>00353                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
-<a name="l00354"></a>00354                                 }
-<a name="l00355"></a>00355                                 <span class="keywordflow">break</span>;
-<a name="l00356"></a>00356                         <span class="keywordflow">default</span> :
-<a name="l00357"></a>00357                                 <span class="keywordflow">break</span>;
-<a name="l00358"></a>00358                 }
-<a name="l00359"></a>00359         }
-<a name="l00360"></a>00360         
-<a name="l00366"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a5725aeb6453b75f4a0e7166bf4fe1023">00366</a>         <span class="keyword">private</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html">Node</a> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a5725aeb6453b75f4a0e7166bf4fe1023">buildGraph</a>() {
-<a name="l00367"></a>00367                 <span class="keywordflow">for</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html">GraphEdge</a> gr_edge : <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a181a350c69c351b9f21d914202abaee4">edges</a>) {
-<a name="l00368"></a>00368                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html">Node</a> src = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#acf2b3dbec13a253bc3667292157150c4">nodes</a>.get(gr_edge.src);
-<a name="l00369"></a>00369                         src.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html#aeb5d29fd379ad2b13cadbac51f880390">addOutgoingEdge</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#acf2b3dbec13a253bc3667292157150c4">nodes</a>.get(gr_edge.tgt), gr_edge.weight);
-<a name="l00370"></a>00370                 }
-<a name="l00371"></a>00371                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae4185aa59926024ce10f7041d048d56f">rootNode</a>;
-<a name="l00372"></a>00372         }
-<a name="l00373"></a>00373 }
+<a name="l00347"></a>00347                                 }
+<a name="l00348"></a>00348                                 <span class="keywordflow">break</span>;
+<a name="l00349"></a>00349                         <span class="keywordflow">case</span> EDGE :
+<a name="l00350"></a>00350                                 <span class="comment">//If it&apos;s a &lt;data&gt;-end-tag, skip and prepare for &lt;edge&gt;-end-tag</span>
+<a name="l00351"></a>00351                                 <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;data&quot;</span>)) {
+<a name="l00352"></a>00352                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.EDGE;
+<a name="l00353"></a>00353                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = <span class="stringliteral">&quot;edge&quot;</span>;
+<a name="l00354"></a>00354                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
+<a name="l00355"></a>00355                                 <span class="comment">//Otherwise commit Edge to ArrayList</span>
+<a name="l00356"></a>00356                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a>.equalsIgnoreCase(<span class="stringliteral">&quot;edge&quot;</span>)) {
+<a name="l00357"></a>00357                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a181a350c69c351b9f21d914202abaee4">edges</a>.add(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa293c98ba213a9cbe6f6f48c82f5b706">currentEdge</a>);
+<a name="l00358"></a>00358                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#aa293c98ba213a9cbe6f6f48c82f5b706">currentEdge</a> = null;
+<a name="l00359"></a>00359                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ac17f293b08f00b7bca26c3937d3beae4">currentTagType</a> = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a3a47e280c52cfcf49f188060f23cac7f">TagType</a>.NONE;
+<a name="l00360"></a>00360                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a29497a03af065e9cb3394b2fe8ecc25f">currentTag</a> = null;
+<a name="l00361"></a>00361                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae37f614d6cb7f6ad309e1f6b138f041b">currentAttributes</a> = null;
+<a name="l00362"></a>00362                                 }
+<a name="l00363"></a>00363                                 <span class="keywordflow">break</span>;
+<a name="l00364"></a>00364                         <span class="keywordflow">default</span> :
+<a name="l00365"></a>00365                                 <span class="keywordflow">break</span>;
+<a name="l00366"></a>00366                 }
+<a name="l00367"></a>00367         }
+<a name="l00368"></a>00368         
+<a name="l00374"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a5725aeb6453b75f4a0e7166bf4fe1023">00374</a>         <span class="keyword">private</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html">Node</a> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a5725aeb6453b75f4a0e7166bf4fe1023">buildGraph</a>() {
+<a name="l00375"></a>00375                 <span class="keywordflow">for</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser_1_1GraphEdge.html">GraphEdge</a> gr_edge : <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#a181a350c69c351b9f21d914202abaee4">edges</a>) {
+<a name="l00376"></a>00376                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html">Node</a> src = <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#acf2b3dbec13a253bc3667292157150c4">nodes</a>.get(gr_edge.src);
+<a name="l00377"></a>00377                         src.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1Node.html#a898dcdd240251792e45ea79352536dce">addOutgoingEdge</a>(
+<a name="l00378"></a>00378                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#acf2b3dbec13a253bc3667292157150c4">nodes</a>.get(gr_edge.tgt), gr_edge.weight, gr_edge.samples);
+<a name="l00379"></a>00379                 }
+<a name="l00380"></a>00380                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1graph_1_1GraphMLPullParser.html#ae4185aa59926024ce10f7041d048d56f">rootNode</a>;
+<a name="l00381"></a>00381         }
+<a name="l00382"></a>00382 }
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -385,7 +394,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun May 16 22:50:15 2010 for BA10-bsha-1 by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri May 21 01:42:15 2010 for BA10-bsha-1 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

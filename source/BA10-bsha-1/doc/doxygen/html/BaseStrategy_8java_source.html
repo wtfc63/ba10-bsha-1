@@ -44,104 +44,113 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/media/Daten/Studium/BA/source/BA10-bsha-1/src/ch/zhaw/ba10_bsha_1/strategies/BaseStrategy.java</h1><a href="BaseStrategy_8java.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="namespacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies.html">00001</a> <span class="keyword">package </span>ch.zhaw.ba10_bsha_1.strategies;
 <a name="l00002"></a>00002 
 <a name="l00003"></a>00003 
-<a name="l00004"></a>00004 <span class="keyword">import</span> java.util.Collection;
-<a name="l00005"></a>00005 <span class="keyword">import</span> java.util.Hashtable;
-<a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.StrategyArgument;
-<a name="l00008"></a>00008 
+<a name="l00004"></a>00004 <span class="keyword">import</span> java.util.ArrayList;
+<a name="l00005"></a>00005 <span class="keyword">import</span> java.util.Collection;
+<a name="l00006"></a>00006 <span class="keyword">import</span> java.util.Hashtable;
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="keyword">import</span> ch.zhaw.ba10_bsha_1.StrategyArgument;
 <a name="l00009"></a>00009 
-<a name="l00033"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html">00033</a> <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html">BaseStrategy</a> <span class="keyword">implements</span> <a class="code" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy.html">IStrategy</a> {
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035         
-<a name="l00036"></a>00036         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00037"></a>00037         <span class="comment">// Attributes</span>
-<a name="l00038"></a>00038         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00039"></a>00039         
+<a name="l00010"></a>00010 
+<a name="l00034"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html">00034</a> <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html">BaseStrategy</a> <span class="keyword">implements</span> <a class="code" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IStrategy.html">IStrategy</a> {
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036         
+<a name="l00037"></a>00037         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00038"></a>00038         <span class="comment">// Attributes</span>
+<a name="l00039"></a>00039         <span class="comment">//---------------------------------------------------------------------------</span>
 <a name="l00040"></a>00040         
-<a name="l00041"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">00041</a>         <span class="keyword">private</span> Hashtable&lt;String, StrategyArgument&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>;
-<a name="l00042"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">00042</a>         <span class="keyword">protected</span> <span class="keywordtype">boolean</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a>;
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044         
-<a name="l00045"></a>00045         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00046"></a>00046         <span class="comment">// Constructor</span>
-<a name="l00047"></a>00047         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00048"></a>00048         
+<a name="l00041"></a>00041         
+<a name="l00042"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">00042</a>         <span class="keyword">private</span> Hashtable&lt;String, StrategyArgument&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>;
+<a name="l00043"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">00043</a>         <span class="keyword">protected</span> <span class="keywordtype">boolean</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a>;
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045         
+<a name="l00046"></a>00046         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00047"></a>00047         <span class="comment">// Constructor</span>
+<a name="l00048"></a>00048         <span class="comment">//---------------------------------------------------------------------------</span>
 <a name="l00049"></a>00049         
-<a name="l00050"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a22dc9cd6d939460308ad8d065e4ec646">00050</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a22dc9cd6d939460308ad8d065e4ec646">BaseStrategy</a>() {
-<a name="l00051"></a>00051                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a> = <span class="keyword">new</span> Hashtable&lt;String, StrategyArgument&gt;();
-<a name="l00052"></a>00052                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a>   = <span class="keyword">true</span>;
-<a name="l00053"></a>00053                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a0496e8fd0099a5f0f7765322d7e752a9">initArguments</a>();
-<a name="l00054"></a>00054         }
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056         
-<a name="l00057"></a>00057         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00058"></a>00058         <span class="comment">// Abstract methods to be implemented</span>
-<a name="l00059"></a>00059         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00060"></a>00060         
+<a name="l00050"></a>00050         
+<a name="l00051"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a22dc9cd6d939460308ad8d065e4ec646">00051</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a22dc9cd6d939460308ad8d065e4ec646">BaseStrategy</a>() {
+<a name="l00052"></a>00052                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a> = <span class="keyword">new</span> Hashtable&lt;String, StrategyArgument&gt;();
+<a name="l00053"></a>00053                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a>   = <span class="keyword">true</span>;
+<a name="l00054"></a>00054                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#af6ea27835befac71906915236a347450">initialize</a>();
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         
+<a name="l00058"></a>00058         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00059"></a>00059         <span class="comment">// Abstract methods to be implemented</span>
+<a name="l00060"></a>00060         <span class="comment">//---------------------------------------------------------------------------</span>
 <a name="l00061"></a>00061         
-<a name="l00065"></a>00065         <span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a0496e8fd0099a5f0f7765322d7e752a9">initArguments</a>();
-<a name="l00066"></a>00066         
-<a name="l00072"></a>00072         <span class="keyword">protected</span> <span class="keyword">abstract</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#aa0ebed55eed45409bad13d43a0058780">getStrategyName</a>();
-<a name="l00073"></a>00073         
-<a name="l00079"></a>00079         <span class="keyword">protected</span> <span class="keyword">abstract</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a75fdb36932ad701f6375cc1fe718056b">getStrategyDescription</a>();
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081         
-<a name="l00082"></a>00082         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00083"></a>00083         <span class="comment">// Getter-/Setter-methods</span>
+<a name="l00062"></a>00062         
+<a name="l00066"></a>00066         @Override
+<a name="l00067"></a>00067         <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#af6ea27835befac71906915236a347450">initialize</a>();
+<a name="l00068"></a>00068         
+<a name="l00074"></a>00074         <span class="keyword">protected</span> <span class="keyword">abstract</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#aa0ebed55eed45409bad13d43a0058780">getStrategyName</a>();
+<a name="l00075"></a>00075         
+<a name="l00081"></a>00081         <span class="keyword">protected</span> <span class="keyword">abstract</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a75fdb36932ad701f6375cc1fe718056b">getStrategyDescription</a>();
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083         
 <a name="l00084"></a>00084         <span class="comment">//---------------------------------------------------------------------------</span>
-<a name="l00085"></a>00085         
-<a name="l00086"></a>00086         
-<a name="l00087"></a>00087         @Override
-<a name="l00088"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#adfb24fbd69261e8567269c5d59365e46">00088</a>         <span class="keyword">public</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#adfb24fbd69261e8567269c5d59365e46">toString</a>() {
-<a name="l00089"></a>00089                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#aa0ebed55eed45409bad13d43a0058780">getStrategyName</a>();
-<a name="l00090"></a>00090         }
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092         @Override
-<a name="l00093"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a56e779e4ce93ac1570b34bcde23e7455">00093</a>         <span class="keyword">public</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a56e779e4ce93ac1570b34bcde23e7455">getDescription</a>() {
-<a name="l00094"></a>00094                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a75fdb36932ad701f6375cc1fe718056b">getStrategyDescription</a>();
-<a name="l00095"></a>00095         }
-<a name="l00096"></a>00096         
-<a name="l00097"></a>00097         @Override
-<a name="l00098"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad8e0e57f59a0ca49b27f205a39f2b8ae">00098</a>         <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad8e0e57f59a0ca49b27f205a39f2b8ae">isEnabled</a>() {
-<a name="l00099"></a>00099                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a>;
-<a name="l00100"></a>00100         }
-<a name="l00101"></a>00101         
-<a name="l00102"></a>00102         @Override
-<a name="l00103"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#acfeb454c9eda3e3279c75ce8101d980c">00103</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#acfeb454c9eda3e3279c75ce8101d980c">setEnabled</a>(<span class="keywordtype">boolean</span> enable) {
-<a name="l00104"></a>00104                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a> = enable;
-<a name="l00105"></a>00105         }
-<a name="l00106"></a>00106         
-<a name="l00107"></a>00107         @Override
-<a name="l00108"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a468d38d65e49d18ced35a34962e3f667">00108</a>         <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a468d38d65e49d18ced35a34962e3f667">hasArgument</a>(String name) {
-<a name="l00109"></a>00109                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.containsKey(name.toLowerCase());
-<a name="l00110"></a>00110         }
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112         @Override
-<a name="l00113"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a8c113a7ead0de41b8dbd5e58d66de08e">00113</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html">StrategyArgument</a> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a8c113a7ead0de41b8dbd5e58d66de08e">getArgument</a>(String name) {
-<a name="l00114"></a>00114                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.get(name.toLowerCase());
-<a name="l00115"></a>00115         }
-<a name="l00116"></a>00116 
-<a name="l00117"></a>00117         @Override
-<a name="l00118"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad1b20c8f3f41126c9e6cef52d3f30bbe">00118</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad1b20c8f3f41126c9e6cef52d3f30bbe">setArgument</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html">StrategyArgument</a> arg) {
-<a name="l00119"></a>00119                 <span class="keywordflow">if</span> ((arg != null) 
-<a name="l00120"></a>00120                                 &amp;&amp; arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a20a6d523b6d1e1ba34f3d2de700aa6d2">getStrategyName</a>().equalsIgnoreCase(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#aa0ebed55eed45409bad13d43a0058780">getStrategyName</a>()) 
-<a name="l00121"></a>00121                                 &amp;&amp; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.containsKey(arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a21d958fbf972ae5087f67783e0e39f1c">getArgumentName</a>().toLowerCase())) {
-<a name="l00122"></a>00122                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.get(arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a21d958fbf972ae5087f67783e0e39f1c">getArgumentName</a>().toLowerCase()).setArgumentValue(arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a76a205f94be443d1afa031656caeea23">getArgumentValue</a>());
-<a name="l00123"></a>00123                 }
-<a name="l00124"></a>00124         }
-<a name="l00125"></a>00125         
-<a name="l00126"></a>00126         @Override
-<a name="l00127"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad106d9d501550fe475a4a01032632597">00127</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad106d9d501550fe475a4a01032632597">addArgument</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html">StrategyArgument</a> arg) {
-<a name="l00128"></a>00128                 <span class="keywordflow">if</span> (arg != null) {
-<a name="l00129"></a>00129                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.put(arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a21d958fbf972ae5087f67783e0e39f1c">getArgumentName</a>().toLowerCase(), arg);
-<a name="l00130"></a>00130                 }
-<a name="l00131"></a>00131         }
-<a name="l00132"></a>00132 
-<a name="l00138"></a>00138         @Override
-<a name="l00139"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a38329740106081e084162fb2e2c25f07">00139</a>         <span class="keyword">public</span> Collection&lt;StrategyArgument&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a38329740106081e084162fb2e2c25f07">getConfiguration</a>() {
-<a name="l00140"></a>00140                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.values();
-<a name="l00141"></a>00141         }
-<a name="l00142"></a>00142 }
+<a name="l00085"></a>00085         <span class="comment">// Getter-/Setter-methods</span>
+<a name="l00086"></a>00086         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00087"></a>00087         
+<a name="l00088"></a>00088         
+<a name="l00089"></a>00089         @Override
+<a name="l00090"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#adfb24fbd69261e8567269c5d59365e46">00090</a>         <span class="keyword">public</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#adfb24fbd69261e8567269c5d59365e46">toString</a>() {
+<a name="l00091"></a>00091                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#aa0ebed55eed45409bad13d43a0058780">getStrategyName</a>();
+<a name="l00092"></a>00092         }
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094         @Override
+<a name="l00095"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a56e779e4ce93ac1570b34bcde23e7455">00095</a>         <span class="keyword">public</span> String <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a56e779e4ce93ac1570b34bcde23e7455">getDescription</a>() {
+<a name="l00096"></a>00096                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a75fdb36932ad701f6375cc1fe718056b">getStrategyDescription</a>();
+<a name="l00097"></a>00097         }
+<a name="l00098"></a>00098         
+<a name="l00099"></a>00099         @Override
+<a name="l00100"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad8e0e57f59a0ca49b27f205a39f2b8ae">00100</a>         <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad8e0e57f59a0ca49b27f205a39f2b8ae">isEnabled</a>() {
+<a name="l00101"></a>00101                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a>;
+<a name="l00102"></a>00102         }
+<a name="l00103"></a>00103         
+<a name="l00104"></a>00104         @Override
+<a name="l00105"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#acfeb454c9eda3e3279c75ce8101d980c">00105</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#acfeb454c9eda3e3279c75ce8101d980c">setEnabled</a>(<span class="keywordtype">boolean</span> enable) {
+<a name="l00106"></a>00106                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a> = enable;
+<a name="l00107"></a>00107         }
+<a name="l00108"></a>00108         
+<a name="l00109"></a>00109         @Override
+<a name="l00110"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a468d38d65e49d18ced35a34962e3f667">00110</a>         <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a468d38d65e49d18ced35a34962e3f667">hasArgument</a>(String name) {
+<a name="l00111"></a>00111                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.containsKey(name.toLowerCase());
+<a name="l00112"></a>00112         }
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114         @Override
+<a name="l00115"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a8c113a7ead0de41b8dbd5e58d66de08e">00115</a>         <span class="keyword">public</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html">StrategyArgument</a> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a8c113a7ead0de41b8dbd5e58d66de08e">getArgument</a>(String name) {
+<a name="l00116"></a>00116                 <span class="keywordflow">return</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.get(name.toLowerCase());
+<a name="l00117"></a>00117         }
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119         @Override
+<a name="l00120"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad1b20c8f3f41126c9e6cef52d3f30bbe">00120</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad1b20c8f3f41126c9e6cef52d3f30bbe">setArgument</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html">StrategyArgument</a> arg) {
+<a name="l00121"></a>00121                 <span class="keywordflow">if</span> ((arg != null) &amp;&amp; arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a20a6d523b6d1e1ba34f3d2de700aa6d2">getStrategyName</a>().equalsIgnoreCase(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#aa0ebed55eed45409bad13d43a0058780">getStrategyName</a>())) {
+<a name="l00122"></a>00122                         <span class="keywordflow">if</span> (arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a21d958fbf972ae5087f67783e0e39f1c">getArgumentName</a>().equalsIgnoreCase(<span class="stringliteral">&quot;enabled&quot;</span>)) {
+<a name="l00123"></a>00123                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a> = !arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a76a205f94be443d1afa031656caeea23">getArgumentValue</a>().equalsIgnoreCase(<span class="stringliteral">&quot;false&quot;</span>);
+<a name="l00124"></a>00124                         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.containsKey(arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a21d958fbf972ae5087f67783e0e39f1c">getArgumentName</a>().toLowerCase())) {
+<a name="l00125"></a>00125                                 <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.get(arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a21d958fbf972ae5087f67783e0e39f1c">getArgumentName</a>().toLowerCase()).setArgumentValue(arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a76a205f94be443d1afa031656caeea23">getArgumentValue</a>());
+<a name="l00126"></a>00126                         }
+<a name="l00127"></a>00127                 }
+<a name="l00128"></a>00128         }
+<a name="l00129"></a>00129         
+<a name="l00130"></a>00130         @Override
+<a name="l00131"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad106d9d501550fe475a4a01032632597">00131</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ad106d9d501550fe475a4a01032632597">addArgument</a>(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html">StrategyArgument</a> arg) {
+<a name="l00132"></a>00132                 <span class="keywordflow">if</span> (arg != null) {
+<a name="l00133"></a>00133                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.put(arg.<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html#a21d958fbf972ae5087f67783e0e39f1c">getArgumentName</a>().toLowerCase(), arg);
+<a name="l00134"></a>00134                 }
+<a name="l00135"></a>00135         }
+<a name="l00136"></a>00136 
+<a name="l00142"></a>00142         @Override
+<a name="l00143"></a><a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a38329740106081e084162fb2e2c25f07">00143</a>         <span class="keyword">public</span> Collection&lt;StrategyArgument&gt; <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a38329740106081e084162fb2e2c25f07">getConfiguration</a>() {
+<a name="l00144"></a>00144                 ArrayList&lt;StrategyArgument&gt; config = <span class="keyword">new</span> ArrayList&lt;StrategyArgument&gt;(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.values());
+<a name="l00145"></a>00145                 <span class="keywordflow">if</span> (!<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#ac15d972a209d299069ce7d7940e9322e">arguments</a>.containsKey(<span class="stringliteral">&quot;enabled&quot;</span>)) {
+<a name="l00146"></a>00146                         config.add(0, <span class="keyword">new</span> <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html">StrategyArgument</a>(
+<a name="l00147"></a>00147                                         <a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#aa0ebed55eed45409bad13d43a0058780">getStrategyName</a>(), <span class="stringliteral">&quot;enabled&quot;</span>, Boolean.toString(<a class="code" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a5799e7f094efcf8d18d8788e9c911787">enabled</a>), <span class="stringliteral">&quot;Is strategy enabled or not&quot;</span>));
+<a name="l00148"></a>00148                 }
+<a name="l00149"></a>00149                 <span class="keywordflow">return</span> config;
+<a name="l00150"></a>00150         }
+<a name="l00151"></a>00151 }
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -157,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun May 16 22:50:16 2010 for BA10-bsha-1 by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri May 21 01:42:15 2010 for BA10-bsha-1 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

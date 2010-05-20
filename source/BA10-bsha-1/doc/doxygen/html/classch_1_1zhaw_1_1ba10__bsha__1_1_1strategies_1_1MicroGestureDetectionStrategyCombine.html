@@ -60,17 +60,19 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionSt
 <p><a href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ad9982cce2bbecd3246b3838b28bd95e7">initialize</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Collection&lt; <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a5487e41dc2d1b6dbe493b5a8420c050f">detectMicroGestures</a> (Collection&lt; <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> &gt; microGestures)</td></tr>
 <tr><td colspan="2"><h2>Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ab23cfbf392bc9eb213a0c8768918d9d2">initArguments</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">String&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#ad7fdf02bda8daf2d3bd177e23a270f11">getStrategyName</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">String&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#adf4547ec5056bf340c60f15ba50330bc">getStrategyDescription</a> ()</td></tr>
+<tr><td colspan="2"><h2>Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a06f12711cc267a6f8647dfb6faeb4787">setMicroGesture</a> (<a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a> mg)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Implementation of <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy.html">IMicroGestureDetectionStrategy</a> which combines <a class="el" href="">MicroGesture</a> with others when needed.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Dominik Giger, Julian Hanhart </dd></dl>
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00014">14</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00016">16</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a5487e41dc2d1b6dbe493b5a8420c050f"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCombine::detectMicroGestures" ref="a5487e41dc2d1b6dbe493b5a8420c050f" args="(Collection&lt; MicroGesture &gt; microGestures)" -->
 <div class="memitem">
@@ -98,7 +100,18 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionSt
 
 <p>Implements <a class="el" href="interfacech_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1IMicroGestureDetectionStrategy.html#a8593331fb67e5d4dc890d3db9f2d1b58">ch.zhaw.ba10_bsha_1.strategies.IMicroGestureDetectionStrategy</a>.</p>
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00047">47</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00049">49</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
+
+<p>References <a class="el" href="MicroGesture_8java_source.html#l00302">ch.zhaw.ba10_bsha_1.service.MicroGesture.addPoint()</a>, <a class="el" href="MicroGesture_8java_source.html#l00275">ch.zhaw.ba10_bsha_1.service.MicroGesture.getDirection()</a>, <a class="el" href="MicroGesture_8java_source.html#l00293">ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints()</a>, <a class="el" href="MicroGesture_8java_source.html#l00250">ch.zhaw.ba10_bsha_1.service.MicroGesture.getType()</a>, and <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00083">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCombine.setMicroGesture()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a5487e41dc2d1b6dbe493b5a8420c050f_cgraph.png" border="0" usemap="#classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a5487e41dc2d1b6dbe493b5a8420c050f_cgraph_map" alt=""></div>
+<map name="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a5487e41dc2d1b6dbe493b5a8420c050f_cgraph_map" id="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a5487e41dc2d1b6dbe493b5a8420c050f_cgraph">
+<area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a328c48ead9f14d52e747a54a970fdd9e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.addPoint" alt="" coords="736,5,1067,35"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a43e707803f3820e6f8cae56d1f1976b7" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getDirection" alt="" coords="725,59,1077,88"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints" alt="" coords="1224,137,1560,167"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a010dd89f21ef5ac1ed012ae1f4b7e80e" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getType" alt="" coords="737,163,1065,192"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine.html#a06f12711cc267a6f8647dfb6faeb4787" title="ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCombine.setMicroGesture" alt="" coords="628,216,1175,245"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ae7f33d544189f7cf99710d8694beec56" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setType" alt="" coords="1228,216,1556,245"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -121,7 +134,7 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionSt
 
 <p>Implements <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a75fdb36932ad701f6375cc1fe718056b">ch.zhaw.ba10_bsha_1.strategies.BaseStrategy</a>.</p>
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00030">30</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00032">32</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
 
 </div>
 </div>
@@ -144,29 +157,62 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionSt
 
 <p>Implements <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#aa0ebed55eed45409bad13d43a0058780">ch.zhaw.ba10_bsha_1.strategies.BaseStrategy</a>.</p>
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00025">25</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00027">27</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab23cfbf392bc9eb213a0c8768918d9d2"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCombine::initArguments" ref="ab23cfbf392bc9eb213a0c8768918d9d2" args="()" -->
+<a class="anchor" id="ad9982cce2bbecd3246b3838b28bd95e7"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCombine::initialize" ref="ad9982cce2bbecd3246b3838b28bd95e7" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCombine.initArguments </td>
+          <td class="memname">void ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCombine.initialize </td>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [protected, virtual]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>Initialize the strategy's <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1StrategyArgument.html">StrategyArgument</a>s </p>
 
-<p>Implements <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#a0496e8fd0099a5f0f7765322d7e752a9">ch.zhaw.ba10_bsha_1.strategies.BaseStrategy</a>.</p>
+<p>Implements <a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1BaseStrategy.html#af6ea27835befac71906915236a347450">ch.zhaw.ba10_bsha_1.strategies.BaseStrategy</a>.</p>
 
-<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00022">22</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00024">24</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a06f12711cc267a6f8647dfb6faeb4787"></a><!-- doxytag: member="ch::zhaw::ba10_bsha_1::strategies::MicroGestureDetectionStrategyCombine::setMicroGesture" ref="a06f12711cc267a6f8647dfb6faeb4787" args="(MicroGesture mg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCombine.setMicroGesture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html">MicroGesture</a>&nbsp;</td>
+          <td class="paramname"> <em>mg</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00083">83</a> of file <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html">MicroGestureDetectionStrategyCombine.java</a>.</p>
+
+<p>References <a class="el" href="MicroGesture_8java_source.html#l00293">ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints()</a>, and <a class="el" href="MicroGesture_8java_source.html#l00254">ch.zhaw.ba10_bsha_1.service.MicroGesture.setType()</a>.</p>
+
+<p>Referenced by <a class="el" href="MicroGestureDetectionStrategyCombine_8java_source.html#l00049">ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionStrategyCombine.detectMicroGestures()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a06f12711cc267a6f8647dfb6faeb4787_cgraph.png" border="0" usemap="#classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a06f12711cc267a6f8647dfb6faeb4787_cgraph_map" alt=""></div>
+<map name="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a06f12711cc267a6f8647dfb6faeb4787_cgraph_map" id="classch_1_1zhaw_1_1ba10__bsha__1_1_1strategies_1_1MicroGestureDetectionStrategyCombine_a06f12711cc267a6f8647dfb6faeb4787_cgraph">
+<area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#a919d77a82938af887cff893c7b0f41e5" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.getPoints" alt="" coords="603,5,939,35"/><area shape="rect" href="classch_1_1zhaw_1_1ba10__bsha__1_1_1service_1_1MicroGesture.html#ae7f33d544189f7cf99710d8694beec56" title="ch.zhaw.ba10_bsha_1.service.MicroGesture.setType" alt="" coords="607,59,935,88"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -188,7 +234,7 @@ Collaboration diagram for ch.zhaw.ba10_bsha_1.strategies.MicroGestureDetectionSt
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun May 16 22:51:13 2010 for BA10-bsha-1 by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri May 21 01:42:32 2010 for BA10-bsha-1 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

@@ -129,9 +129,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
      */
     @Override
 	public void onInitializeInterface() {
-    	if (padView == null) {
-    		padView = (PadView) getLayoutInflater().inflate(R.layout.input, null);
-    	}
+    	padView = (PadView) getLayoutInflater().inflate(R.layout.input, null);
         padView.setMinimumWidth(getMaxWidth());
 		padView.attachObserver(this);
         padKeyboard = new LatinKeyboard(this, R.xml.pad);
@@ -149,7 +147,7 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
 		padView.setKeyboard(padKeyboard);
         return padView;
     }
-
+    
 
 	//---------------------------------------------------------------------------
 	// Implementation of the InputMethodService methods (partially)
