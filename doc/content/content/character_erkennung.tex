@@ -12,25 +12,25 @@ Der grösste Aufwand verursacht die Erstellung eines gut funktionierenden Graphe
 Das Vorgehen beim Erstellen des Graphen ist damit:
 \begin{enumerate}
 \item Graph nach theoretischen Überlegungen des Schriftbildes aufbauen. Das heisst man überlegt sich wie sich der Buchstaben aus den Mikrogesten zusammen setzt, ohne dies im Programm zu testen.
-\item Im zweiten Schritt muss man alle Buchstaben durchtesten um die Erkennungsrate zu testen. Generell funktioniert der Theoretische Graph sehr gut für relativ sauber geschriebene Blockschrift und eher weniger für Kursivschrift.
+\item Im zweiten Schritt muss man alle Buchstaben mehrfach eingeben, um die Erkennungsrate zu testen. Generell funktioniert der theoretische Graph sehr gut für relativ sauber geschriebene Blockschrift und eher weniger gut für Kursivschrift.
 \item Die Verbesserung des Graphen basiert dann auf Trial \& Error: Der Buchstaben wird immer wieder getestet und analysiert, weshalb der Graph diesen nun nicht erkannt hat. Anschliessend werden Anpassungen im Graph vorgenommen um diesen Fall zu unterstützen. Dies kann entweder durch Anpassung der Gewichte, oder durch Hinzufügen von Knoten und Kanten geschehen.
 \end{enumerate}
 
 \subsubsection{Mehrere Zeichen erkennen}
-Es soll auch möglich sein, mehrere Zeichen in Kursivschrift einzugeben. Dies wird allerdings vom Graph schon unterstützt: Wenn ein Zeichen erkannt ist, muss bloss eine Verbindung zum Ausgangspunkt erstellt werden und der Algorithmus wird dort automatisch wieder von vorne beginnen um den zweiten Buchstaben zu erkennen.
+Es soll auch möglich sein, mehrere Zeichen in Kursivschrift einzugeben. Dies wird vom Graph schon unterstützt: Wenn ein Zeichen erkannt ist, muss bloss eine Verbindung zum Ausgangspunkt erstellt werden und der Algorithmus wird dort automatisch wieder von vorne beginnen um den zweiten Buchstaben zu erkennen.
 
 \section{Probleme \& Lösungsvorschläge}
 \subsection{Komplexität der Graphenerstellung}
 Das Hauptproblem besteht im enormen Zeitaufwand, um einen Graphen zu erstellen. Das liegt daran, dass der Graph von Hand erstellt werden muss, da wir noch keine guten Algorithmen zur automatischen Erstellung haben.
 
 \subsubsection{Graphenerstellung durch Training}
-Wir haben die Möglichkeit getestet, automatisch einen Graphen zu erstellen. Dazu gibt der Benutzer an, welchen Buchstaben er schreibt und gibt diesen einige Male ein. Anhand der erkannten Mikrogesten-Folge wird dann der Graph erstellt. Durch die automatische Erkennung sieht der Graph dann allerdings aus wie ein Baum und ist völlig unflexibel. 
+Wir haben die Möglichkeit getestet, automatisch einen Graphen zu erstellen. Dazu gibt der Benutzer an, welchen Buchstaben er schreibt und gibt diesen einige Male ein. Anhand der erkannten Mikrogesten-Folge wird dann der Graph erstellt. Durch die automatische Erkennung sieht der Graph dann jedoch aus wie ein Baum und ist völlig unflexibel. 
 
 Allerdings wäre es möglich, den Graph so automatisch zu erstellen und dann von Hand Optimierungen vorzunehmen.
 
 \subsubsection{Automatische Anpassung der Wahrscheinlichkeiten}
 Eine rein theoretische Überlegung ist das automatische anpassen der Wahrscheinlichkeiten. Bei der Erkennung eines Buchstaben kann der Benutzer einen Fehler melden, was dann eine Anpassung der Wahrscheinlichkeiten auslösen würde. 
-Diesen Ansatz haben wir jedoch nicht praktisch getestet.
+Diesen Ansatz haben wir jedoch nicht weiter ausgearbeitet.
 
 \subsection{Schlechte Erkennungsrate}
 Die Erkennungsrate ist bei beiden Varianten eher tief. Das Problem dabei liegt allerdings nicht am Graphen, sondern eher an der schwankenden Qualität der Mikrogesten-Erkennung.

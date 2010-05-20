@@ -94,22 +94,22 @@ Folglich gibt es für jeden Buchstaben zwei Möglichkeiten, geschrieben zu werde
    \hline\noalign{\smallskip}
    \mbox{a} & 
 	 \includegraphics[width=15pt]{./img/a_schwach_uhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}    \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}   & 
-	\bigcirc \; | \\
+	\includegraphics[width=15pt]{./img/b_kreis_klein.pdf}  \includegraphics[width=15pt]{./img/b_gerade_klein.pdf}  \\
    \hline\noalign{\smallskip}
 
     \mbox{b} & 
 		 \includegraphics[width=15pt]{./img/a_schwach_gegenuhrzeiger.pdf}  \includegraphics[width=15pt]{./img/a_schwach_uhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_schwach_gegenuhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_schwach_gegenuhrzeiger.pdf} & 
-		 \includegraphics[width=15pt]{./img/a_gerade.pdf} \; \bigcirc \\ 
+		 \includegraphics[width=15pt]{./img/a_gerade.pdf}  \includegraphics[width=15pt]{./img/b_kreis_klein.pdf} \\ 
   \hline\noalign{\smallskip}
 
     \mbox{c} &
 		 \includegraphics[width=15pt]{./img/a_schwach_uhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}  & 
-		\subset \\ 
+		\includegraphics[width=15pt]{./img/b_halb_rechts.pdf} \\ 
   \hline\noalign{\smallskip}
 
     \mbox{d} & 
 		 \includegraphics[width=15pt]{./img/a_schwach_uhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}   \includegraphics[width=15pt]{./img/a_gerade.pdf}   \includegraphics[width=15pt]{./img/a_stark_gegenuhrzeiger.pdf}  & 
-		\bigcirc \includegraphics[width=15pt]{./img/a_gerade.pdf} \\
+		\includegraphics[width=15pt]{./img/b_kreis_klein.pdf}  \includegraphics[width=15pt]{./img/a_gerade.pdf} \\
    \hline
     \end{array}
 \]
@@ -130,18 +130,18 @@ In Abbildung \ref{beispiel_graph} sieht man einen ganz simplen solchen Graphen.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.5\textwidth]{./img/BeispielGraph.pdf}
+    \includegraphics[width=0.5\textwidth]{./img/BeispielGraph.pdf}F
   \caption{Ein sehr einfacher Graph für die Erkennung des Buchstaben 'e'}
   \label{beispiel_graph}
 \end{figure}
 
 \section{Aufbau}
-Der Graph besitzt einen Eintrittspunkt, den \emph{Root-Node}. Von diesem aus wird jeweils die Buchstaben-Erkennung gestartet. Jedes Mal wenn der Pfad auf dem Graph wieder zurück auf den Root-Node führt, bedeutet dies dass die Buchstaben-Erkennung abgeschlossen ist und ein neuer Buchstaben beginnt. 
+Der Graph besitzt einen Eintrittspunkt, den \emph{Root-Knoten}. Von diesem aus wird jeweils die Buchstaben-Erkennung gestartet. Jedes Mal wenn der Pfad auf dem Graph wieder zurück auf den Root-Knoten führt, bedeutet dies dass die Buchstaben-Erkennung abgeschlossen ist und ein neuer Buchstaben beginnt. 
 
-Die restlichen Nodes beinhalten alle eine bestimmte Mikrogeste und optional ein Zeichen. Die Kanten sind alle gewichtet, um einen Pfad durch den Graphen zu bewerten. Es ist möglich, dass mit einer bestimmten Menge Mikrogesten der Graph auf mehrere Arten beschritten werden kann. Um diese verschiedenen Pfade zu vergleichen wird die Gewichtung der beschrittenen Kanten verglichen.
+Die restlichen Knoten beinhalten alle eine bestimmte Mikrogeste und optional ein Zeichen. Die Kanten sind alle gewichtet, um einen Pfad durch den Graphen zu bewerten. Es ist möglich, dass mit einer bestimmten Menge Mikrogesten der Graph auf mehrere Arten beschritten werden kann. Um diese verschiedenen Pfade zu vergleichen wird die Gewichtung der beschrittenen Kanten verglichen.
 
 \section{Erkennungswahrscheinlichkeit}
-Jeder Node besitzt eine bestimmte Wahrscheinlichkeit. Beim durchlaufen des Pfades werden alle Wahrscheinlichkeiten multipliziert. So können häufige Mikrogesten-Abfolgen gestärkt werden und seltene geschwächt. Die resultierende Pfadwahrscheinlichkeit hilft, die beste Lösung auszuwählen.
+Jeder Knoten besitzt eine bestimmte Wahrscheinlichkeit. Beim durchlaufen des Pfades werden alle Wahrscheinlichkeiten multipliziert. So können häufige Mikrogesten-Abfolgen gestärkt werden und seltene geschwächt. Die resultierende Pfadwahrscheinlichkeit hilft, die beste Lösung auszuwählen.
 
 \section{Erkennung von Zeichen}
 

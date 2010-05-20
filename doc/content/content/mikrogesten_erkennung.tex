@@ -1,6 +1,6 @@
 \chapter{Mikrogesten-Erkennung}
 
-Nach der Sichtung der vorgegangen Projektarbeit haben wir uns entschieden, dass zwei Ansätze zur Erkennung der einzelnen Mikrogesten aus der Eingabe-Menge an Punkten im Prototyp ausprobiert und evaluiert werden sollten. Zum einen sollte die in der Projektarbeit favorisierte Erkennung durch die Änderung der Krümmung zwischen den einzelen Punkten getestet werden, zum Anderen ein Ansatz ausprobiert werden, der auf einer auf dem vorausgehenden Punkt basierenden Voraussage des jeweils als nächstes folgenden Punktes aufbaut.
+Nach der Sichtung der vorgegangen Projektarbeit haben wir uns entschieden, dass zwei Ansätze zur Erkennung der einzelnen Mikrogesten aus der Eingabe-Menge an Punkten im Prototyp ausprobiert und evaluiert werden sollten. Zum einen sollte die in der Projektarbeit favorisierte Erkennung durch die Änderung der Krümmung zwischen den einzelnen Punkten getestet werden, zum Anderen ein Ansatz ausprobiert werden, der auf einer auf dem vorausgehenden Punkt basierenden Voraussage des jeweils als nächstes folgenden Punktes aufbaut.
 
 Der Krümmungs-Ansatz wurde in der vorgängigen Projektarbeit neben einem auf der Änderung der Winkel zwischen Punkten basierenden Ansatz zur Mikrogesten-Erkennung evaluiert und am Ende von den Autoren der Arbeit favorisiert. Dadurch war klar, dass wir diese Art der Erkennung ebenfalls für diese Arbeit evaluieren sollten.
 
@@ -14,7 +14,7 @@ Diese Ansätze bewährten sich für die Variante A der Mikrogesten, jedoch gab e
   \begin{center}
     \begin{tabular}{ m{2.2cm} |  p{10cm} }
     \emph{Kriterium} & Erkennungszuverlässigkeit  \\ \hline
-    \emph{Beschreibung} & Um eine verlässliche Erkennung der Mikrogesten zu ermöglichen, muss ein Ansatz natürlich gewährleisten, dass er die Auftrennung der Mirkogesten zuverlässig vornimmt. \\ \hline
+    \emph{Beschreibung} & Um eine verlässliche Erkennung der Mikrogesten zu ermöglichen, muss ein Ansatz natürlich gewährleisten, dass er die Auftrennung der Mikrogesten zuverlässig vornimmt. \\ \hline
     \emph{Priorität} & Primär  \\
     \end{tabular}
   \end{center}
@@ -55,6 +55,7 @@ Diese Ansätze bewährten sich für die Variante A der Mikrogesten, jedoch gab e
 %================================================
 \section{Verfahren zur Auftrennung des Pfades}
 \subsection{Ansatz: Punkte-Voraussage}
+%TODO Ev. diesen Satz etwas einfacher formulieren
 Grundlage des auf Voraussage des jeweils nächsten Punktes basierenden Ansatzes sollte die Annahme sein, dass man den als nächstes auf einen Punkt einer gleichmässig gekrümmten Kurve folgenden Punkt durch das Spiegeln des jeweils dem Ausgangspunkt vorangehenden Punktes an der Achse des Ausgangspunktes vorherbestimmen können müsste. Weicht der tatsächlich eingegebene Folgepunkt zu sehr vom vorausgesagten Folgepunkt ab, sollte nun angenommen werden, dass dieser Punkt nicht mehr zur aktuellen Mikrogeste gehören und als Ausgangspunkt einer neuen Mikrogeste genommen werden soll.
 
 \subsubsection{Verfahren}
@@ -64,11 +65,11 @@ Grundlage des auf Voraussage des jeweils nächsten Punktes basierenden Ansatzes 
 \subsubsection{Bewertung}
 Die grundsätzliche Trennung der einzelnen Mikrogesten durch das auf Voraussagen basierende Verfahren wurde von uns als durchaus zufriedenstellend bewertet. Das Verfahren ermöglicht die Auftrennung der Eingabepunkte in verschiedene Mikrogesten. Allerdings erkennt das Verfahren unserer Meinung nach leider zu viele einzelne Mikrogesten und ist zu wenig tolerant gegenüber kleineren Abweichungen. Schon kleinere Änderungen in der Linienführung führen dabei zu einer Auftrennung von ansonsten durchaus zusammenhängenden Gesten.
 
-Auch weist das Verfahren Probleme mit ungleichen Punktedichten auf einem Pfad auf. Dies tritt vor allem auf, wenn die Eingabegeschwindigkeit variiert, etwa wenn nach einer Richtungsänderung oder am Anfang einer Geste die Eingabe beschleunigt wird und die späteren Eingabepunkte weiter auseinander liegen als die ersten. Gerade bei unregelmässigen Beschleunigungen kommt es somit häufig vor, dass die ersten Eingabepunkte relativ nahe beieinander liegen, der Abstand zu späteren Punkten dann aber recht gross wird. Die vorausgesagten Punkte mögen dann zwar durchaus auf dem Pfad der Geste liegen, die Eingabepunkte folgend dann allerdingst erst in grösserem Abstand. Diesem Verhalten könnte möglicherweise mit Anpassungen an der Berechnung der vorausgesagten Punkte begegnet werden. Man könnte etwa anstatt eines konkreten Punktes eine Richtung voraussagen. Auch ein normierter Abstand zwischen den Eingabepunkten, wie ihn das Bezier-Glättungsverfahren erzeugt, welches als mögliche Optimierung in \ref{sec:Glaettung} besprochen wird. Eine Glättung der Eingangspunkte sollte auch die Toleranz des voraussagenden Ansatzes verbessern können.
+Auch weist das Verfahren Probleme mit ungleichen Punktedichten auf einem Pfad auf. Dies tritt vor allem auf, wenn die Eingabegeschwindigkeit variiert, etwa wenn nach einer Richtungsänderung oder am Anfang einer Geste die Eingabe beschleunigt wird und die späteren Eingabepunkte weiter auseinander liegen als die ersten. Gerade bei unregelmässigen Beschleunigungen kommt es somit häufig vor, dass die ersten Eingabepunkte relativ nahe beieinander liegen, der Abstand zu späteren Punkten dann aber recht gross wird. Die vorausgesagten Punkte mögen dann zwar durchaus auf dem Pfad der Geste liegen, die Eingabepunkte folgend dann allerdings erst in grösserem Abstand. Diesem Verhalten könnte möglicherweise mit Anpassungen an der Berechnung der vorausgesagten Punkte begegnet werden. Man könnte etwa anstatt eines konkreten Punktes eine Richtung voraussagen. Auch ein normierter Abstand zwischen den Eingabepunkten, wie ihn das Spline-Glättungsverfahren erzeugt, welches als mögliche Optimierung in \ref{sec:Glaettung} besprochen wird. Eine Glättung der Eingangspunkte sollte auch die Toleranz des voraussagenden Ansatzes verbessern können.
 
-Weiter haben wir mit diesem Verfahren Probleme mit zu nahe beieinander liegenden Eingabepunkten festgestellt. Ist die Distanz von einem Punkt zum nächsten kleiner als die Länge des Toleranz-Wertes, fällt der Punkt in jedem Fall innerhalb der Toleranz und es kann keine fundierte Aussage über mehr darüber gemacht werden, ob der Punkt zur selben Mirkogeste gehören soll oder nicht. Daher werden nur Punkte, deren Abstand zum Ausgangspunkt kleiner als die zweifache Länge des Toleranz-Wertes sind, beachtet. Andere Punkte werden als zur aktuellen Mikrogeste gehörig angenommen und zum neuen Ausgangspunkt. Dies führt wiederum zu Problemen mit sehr engen Kurven, wie sie etwa bei Richtungswechseln und sehr engwinkligen Spitzen, da diese eng beieinander liegende Eingabepunkte erzeugen, deren Abstand häufig unterhalb die Toleranzgrenze fällt. Somit wird häufig noch der erste Punkt nach einer solchen Spitze zur vorherigen Mikrogeste zugeordnet.
+Weiter haben wir mit diesem Verfahren Probleme mit zu nahe beieinander liegenden Eingabepunkten festgestellt. Ist die Distanz von einem Punkt zum nächsten kleiner als die Länge des Toleranz-Wertes, fällt der Punkt in jedem Fall innerhalb der Toleranz und es kann keine fundierte Aussage über mehr darüber gemacht werden, ob der Punkt zur selben Mikrogeste gehören soll oder nicht. Daher werden nur Punkte, deren Abstand zum Ausgangspunkt kleiner als die zweifache Länge des Toleranz-Wertes sind, beachtet. Andere Punkte werden als zur aktuellen Mikrogeste gehörig angenommen und zum neuen Ausgangspunkt. Dies führt wiederum zu Problemen mit sehr engen Kurven, wie sie etwa bei Richtungswechseln und sehr eng-winkligen Spitzen, da diese eng beieinander liegende Eingabepunkte erzeugen, deren Abstand häufig unterhalb die Toleranzgrenze fällt. Somit wird häufig noch der erste Punkt nach einer solchen Spitze zur vorherigen Mikrogeste zugeordnet.
 
-Diesen beiden Probleme, welche beide das als substantiell gewertete Bewertungskriterium der Toleranz beinträchtigen, steht steht nur eine gute Performanz durch die relativ simplen Berechnungen, die das Voraussage-Verfahren benötigt, gegenüber. Da das Toleranz-Kriterium von uns aber als signifikant wichtiger eingestuft wurde und vom Krümmungs-Verfahren weit besser erfüllt wird, mussten wir uns am Ende für das auf Krümmungs-Änderungen basierende Verfahren festlegen.
+Diesen beiden Probleme, welche beide das als substantiell gewertete Bewertungskriterium der Toleranz beeinträchtigen, steht steht nur eine gute Performanz durch die relativ simplen Berechnungen, die das Voraussage-Verfahren benötigt, gegenüber. Da das Toleranz-Kriterium von uns aber als signifikant wichtiger eingestuft wurde und vom Krümmungs-Verfahren weit besser erfüllt wird, mussten wir uns am Ende für das auf Krümmungs-Änderungen basierende Verfahren festlegen.
 
 %================================================
 
@@ -102,19 +103,19 @@ Das Verfahren is vor allem gut geeignet um Änderungen in der Drehrichtung zu er
 Dieser Ansatz ist eine Abwandlung des Krümmungs-Verfahrens und so abgeändert, dass Drehrichtungsänderungen möglichst genau erkannt werden können. Der Hintergedanke dabei ist dass man bei Mikrogesten nur noch zwischen Kurven unterscheidet, die in eine andere Richtung drehen, aber nicht mehr die Stärke der Krümmung berücksichtigt.
 
 \subsubsection{Verfahren}
-Das Verfahren funktioniert prinzipiell gleich wie das Krümmungs-Verfahren: Es wird immer für zwei benachbarte Vektoren das Vektorprodukt berechnet. Der errechnete Wert wird immer zu einem Akkumulator addiert und mit dem Punkt abgespeichert. Nach dem der komplette Pfad so durchgerechnet wurde, erhält man eine Akkumulator-Kurve.
+Das Verfahren funktioniert prinzipiell gleich wie das Krümmungs-Verfahren: Es wird immer für zwei benachbarte Vektoren das Vektorprodukt berechnet. Der errechnete Wert wird immer zu einem Akkumulator addiert und mit dem Punkt abgespeichert. Nach dem der komplette Pfad so durchgerechnet wurde, erhält man eine Akkumulator-Kurve. In Abbildung \ref{drehrichtungsBeispiel} ist eine Beispiel-Eingabe gezeigt und in Abbildung \ref{akkumulatorDiagramm} der dazu berechnete Akkumulator-Verlauf. Wie man sieht stellen die Maxima und Minima der Kurve die Richtungswechsel in der Eingabe dar. Die Trennungspunkte können also durch ein einfaches berechnen aller lokalen Maxima und Minima bestimmt werden.
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.67\textwidth]{./img/akkumulator_beispiel.pdf}
-  \caption{Beispiel-Eingabe: rot, Erkannte Trennungen: Farbig}
+  \caption{Beispiel-Eingabe: rot, Erkannte Trennungen: Farbig.}
   \label{drehrichtungBeispiel}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=1.0\textwidth]{./img/akkumulator_diagramm.pdf}
-  \caption{Akkumulator für die Eingabe von Abbildung \ref{drehrichtungBeispiel}}
+  \caption{Akkumulator für die Eingabe von Abbildung \ref{drehrichtungBeispiel}.}
   \label{akkumulatorDiagramm}
 \end{figure}
 
@@ -135,7 +136,7 @@ Es wird der Winkel zwischen den Vektoren berechnet und mit der Toleranz verglich
 \begin{figure}[h!]
   \centering
     \includegraphics[scale=0.75]{./img/edges_beispiel.png}
-  \caption{Beispiel einer Trennung: Jede farbige Linie ist eine erkannte Mikrogeste}
+  \caption{Beispiel einer Trennung: Jede farbige Linie ist eine erkannte Mikrogeste.}
   \label{kanten_trennung}
 \end{figure}
 
@@ -155,7 +156,7 @@ Mit jedem Punkt auf dem Pfad werden alle nachfolgenden Punkte verglichen: Wenn d
 \begin{figure}[h!]
   \centering
     \includegraphics[scale=0.5]{./img/circle_beispiel.png}
-  \caption{Beispiel einer Kreiserkennung: Farbige Linien stellen Mikrogesten dar}
+  \caption{Beispiel einer Kreiserkennung: Farbige Linien stellen Mikrogesten dar.}
   \label{kreis_trennung}
 \end{figure}
 
@@ -173,6 +174,7 @@ Es hat sich gezeigt, dass es nicht sinnvoll ist, sich auf ein einzelnes Verfahre
 Die Erkennung der Mikrogeste kann je nach Form der Mikrogeste unterschiedlich aufwändig sein. Deshalb haben wir für beide Mikrogesten-Varianten eigene Erkennungsalgorithmen erstellt:
 
 \subsection{Variante A}
+%% TODO sollte noch etwas erweitert werden
 Für diese Variante ist die Unterscheidung von Line, schwacher Krümmung und starker Krümmung nötig. Die Erkennung ist deshalb recht einfach: Die Stärke der Krümmung unterscheidet alle Mikrogesten voneinander.
 
 \subsubsection{Kreisradius berechnen}
@@ -184,6 +186,7 @@ Ein einfaches Verfahren zur Kategorisierung ist folgendes: Es wird mit einem Kre
 \end{itemize}
 
 \subsection{Variante B}
+%% TODO MIt einem Flussdiagramm beschreiben
 Für diese Variante läuft die Erkennung in mehreren Schritten ab:
 \begin{enumerate}
 \item Es werden mit dem Kreis-Algorithmus alle Kreise bestimmt.
@@ -202,6 +205,7 @@ Die Richtungsbestimmung einer Geraden ist sehr simpel, da die Steigung der Gerad
 \subsubsection{Richtung der Krümmungen}
 Hier wird eine Gerade an die Krümmung approximiert und so die Richtung bestimmt.
 \subsubsection{Richtung der Halbkreise}
+%% TODO mit einem Diagramm darstellen
 Für die Halbkreise ist die Richtungs-Bestimmung etwas schwieriger. Hier wird bestimmt, in welche Richtung die Öffnung zeigt.
 Dazu wird zuerst bestimmt, ob die Öffnung oben/unten oder links/rechts ist. Wenn beide Endpunkte in etwa gleiche y-Werte haben ist die Öffnung oben/unten, wenn sie etwa gleiche x-Werte haben ist die Öffnung links-rechts.
 Um zu bestimmen ob die Öffnung nun oben oder unten ist, muss nur die Anzahl der Punkte bestimmt werden, deren y-Werte unter denen der beiden Endpunkte liegt. Liegen die meisten Punkte darunter, ist die Öffnung nach oben, sonst nach unten. Für links und rechts kann gleich verfahren werden, einfach mit den x-Werten.
@@ -211,6 +215,7 @@ Um zu bestimmen ob die Öffnung nun oben oder unten ist, muss nur die Anzahl der
 \section{Allgemeine Optimierungen}
 
 \subsection{Normierung der Eingangspunkte}
+%%TODO Diagramm dazu
 Eine Normierung der Eingangspunkte ist nötig, um immer gleiche Voraussetzungen für die Algorithmen zu garantieren. Der durchschnittliche Abstand zwischen den Punkten, die beim schreiben vom Touchpad erfasst werden, ist hauptsächlich von der Schreibgeschwindigkeit, aber auch von der Qualität des Touchpads abhängig. 
 
 \lstinputlisting[caption={Algorithmus zur groben Normierung der Eingangspunkte},label=normierung_algorithmus]{code/normierung.pseudo}
@@ -223,7 +228,9 @@ Für die Erkennung der Mikrogesten ist es von Vorteil, dass der Buchstaben relat
 
 Für die Glättung verwenden wir \emph{rational B-Splines} \cite[S. 454]{smoothing_book} da diese Perfekt für Pfad-Glättung konzipiert sind. Allerdings muss beachtet werden, dass gewisse Kanten im Pfad gewünscht sind, wie zum Beispiel Spitzkehren. Eine Glättung würde diese Merkmale abschwächen und die Erkennung damit verschlechtern. Es ist deshalb von Vorteil wenn nur die Teilpfade zwischen solchen gewünschten Kanten geglättet wird.
 
+Ein nützlicher Nebeneffekt der Splines ist, dass die Resultierende Kurve aus einer beliebig gewählten Anzahl Punkten besteht. Diese Punkte sind bereits gleichmässig verteilt. Eine Punktenormierung ist deshalb durch die Spline-Glättung auch schon durchgeführt.
 
+%%TODO: Zusammenfügen von identischen nacheinander folgenden Mikrogesten
 %================================================
 
 \section{Vergleich der Ansätze}
@@ -232,6 +239,8 @@ Es zeigt sich, dass die Algorithmen sehr stark darauf optimiert werden können, 
 Ein sehr grosses Problem ist hingegen die Toleranz der Algorithmen: Das Ziel wäre es, bei ungefähr gleicher Eingabe immer die gleichen Mikrogesten zu erhalten. Es hat sich jedoch gezeigt, dass dies kaum zu erreichen ist. Gerade bei der Variante A mit den Krümmungen kann es bei der Eingabe eines Buchstabes jedes Mal eine andere Mikrogesten-Folge erkennen. 
 
 Das ist auch der Grund weshalb wir einen zweiten Ansatz entwickelt haben: Man muss Mikrogesten verwenden, die bei unterschiedlicher Schreibweise trotzdem noch erkennbar sind. Der Kreis ist das Paradebeispiel dafür: Es muss nur ein geschlossener Pfad vorhanden sein, egal welche Form er hat. Ausserdem haben wir die Idee verworfen, verschieden starke Krümmungen zu unterscheiden. Das ist zwar sehr einfach umzusetzen, kann aber von Schreibstil zu Schreibstil sehr stark variieren. Einzig ein Richtungswechsel führt noch zu einer neuen Mikrogeste, da dies in den allermeisten Fällen vom Schreibenden auch gewollt gemacht wurde.
+
+Anschliessend deshalb die Vorgehensweisen für beide Varianten:
 
 \subsection{Vorgehen Variante A}
 \begin{enumerate}
