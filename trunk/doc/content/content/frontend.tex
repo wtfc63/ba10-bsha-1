@@ -47,6 +47,8 @@ Um Eingabe-Ereignisse an den Dienst der Eingabe-Methode zurück zu liefern imple
 
 Für die Klasse \emph{HandwritingIME} soll hier die Implementation der Handhabung von Rückmeldungen, sowohl vom Erkennungs-Dienst wie auch von der grafischen Benutzerschnittstelle betrachtet werden. Für \emph{PadView} wollen wir die Reaktion auf Touchscreen-Eingaben erläutern.
 
+Als Grundlage für die Entwicklung des Frontend diente das Beispiel ``SoftKeyboard'', welches mit dem Android SDK mitgeliefert wird. Für das Verständnis der detaillierten Funktionsweise eines \emph{InputMethodServie} wäre es zu empfehlen, dieses zu analysieren.
+
 \subsection{HandwritingIME}
 
 Wie bereits erwähnt, erfolgen nach dem Starten des \emph{PadViews} in der Methode \emph{onStartInputView} desen Rückmeldungen über die Methode \emph{update()}. Je nach dem Typ des gemeldeten Ereignisses werden entweder die neuen Eingabe-Punkte an den Erkennungs-Dienst weiter gereicht, oder es wird direkt eine entsprechende Eingabe an das derzeit aktive Eingabefeld gesendet. Dazu stellt Android die Klasse \emph{InputConnection} zur Verfügung. Die Verbindung mit dem aktiven Feld kann über der Methode \emph{getCurrentInputConnection()} erhalten werden. Über diese Schnittstelle können dann \emph{KeyEvents} erzeugt und an das Eingabefeld gesendet werden, aber auch eine direkte Manipulation des Textes um den Cursor kann vorgenommen werden.
