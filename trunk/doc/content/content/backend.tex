@@ -306,7 +306,7 @@ public Collection<Character> consume(
 
 \subsubsection{Beispiel einer neuen Strategie}
 
-Zur Veranschaulichung wollen wir nun kurz demonstrieren, wie eine neue Strategie in unser System hinzugefügt werden könnte. Als Beispiel wollen wir jeweils eine Strategy implementieren, welche die übergebenen Eingabe-Punkte beziehungsweise die übergebenen Mikrogesten über das Logcat Logging-Interface ausgibt und diese in eine Log-Datei schreibt. Diese könnten etwa als ersten und letzten Schritt der Vorverarbeitung eingebunden werden um deren Effekte zu beobachten, während die Mikrogesten-Erkennungsstrategie die erkannten Mikrogesten ausgeben würde. Die Implementation der beiden Strategie-Typen erfolgt dabei nahezu identisch, das sich die Interfaces \emph{IPreprocessingStrategy} und \emph{IMircoGestureDetectionStrategy} nur in den Typen ihre Parameter und Rückgabewerte unterscheiden. Daher soll hier nur die Implementation \emph{MicroGestureDetectionStrategyLog} explizit gezeigt werden.
+Zur Veranschaulichung wollen wir nun kurz demonstrieren, wie eine neue Strategie in unser System hinzugefügt werden könnte. Als Beispiel wollen wir jeweils eine Strategy implementieren, welche die übergebenen Eingabe-Punkte oder Mikrogesten, beziehungsweise die erkannten Zeichen über das Logcat Logging-Interface ausgibt und diese in eine Log-Datei schreibt. Diese könnten etwa als ersten und letzten Schritt der Vorverarbeitung eingebunden werden um deren Effekte zu beobachten, während die Mikrogesten-Erkennungsstrategie die erkannten Mikrogesten ausgeben würde und eine entsprechende Nachverarbeitungsstrategie die erkannten Zeichen. Die Implementation dieser Strategie-Typen erfolgt dabei nahezu identisch, das sich die Interfaces \emph{IPreprocessingStrategy}, \emph{IMircoGestureDetectionStrategy} und \emph{IPostprocessingStrategy} nur in den Typen ihre Parameter und Rückgabewerte unterscheiden. Daher soll hier nur die Implementation \emph{MicroGestureDetectionStrategyLog} explizit gezeigt werden.
 
 Als erstes müssen wir dabei die abstrakten Methoden der Basis-Klasse \emph{BaseStrategy}, von der wir unsere Strategie ableiten, implementieren. Die beiden Beschreibungs-Methoden sind dabei ziemlich selbsterklärend. Sie geben den Namen beziehungsweise die Beschreibung der Strategie zurück. Die Methode \emph{initialize()} ist, wie ihr Namen vermuten lässt, dafür zuständig, die Strategie und ihre Attribute und Argumente zu initialisieren. In unserem Beispiel müssen wir ein Argument für den Pfad unserer Log-Datei festlegen\footnote{Falls die Strategie zu einem späteren Zeitpunkt neu initialisiert werden sollt, wird das Argument nur festgelegt, wenn es noch nicht vorhanden ist.}. Weiter soll die Log-Datei auch von einem Attribut vom Type \emph{File} repräsentiert und ein \emph{BufferdWriter} soll für das Schreiben in sie erzeugt werden.
 
@@ -440,7 +440,7 @@ Die verwendeten Erkennungs-Algorithmen werden jeweils nach der gewünschten Reih
       getStrategy("Graph");
     postprocessingStrategy = 
       PostprocessingStrategyManager.getInstance().
-      getStrategy("None");
+      getStrategy("Log");
   }
 \end{lstlisting}
 

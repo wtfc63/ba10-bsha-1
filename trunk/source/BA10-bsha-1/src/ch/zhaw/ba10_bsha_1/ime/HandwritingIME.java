@@ -297,7 +297,6 @@ public class HandwritingIME extends InputMethodService implements KeyboardView.O
                     super.handleMessage(msg);
             }
         }
-        
     };
 
 
