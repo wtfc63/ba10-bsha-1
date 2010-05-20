@@ -14,12 +14,12 @@ Die vom Android-SDK bereitgestellte Klasse \emph{InputMethodService} muss uns da
 
 \subsection{Benutzer-Schnittstelle}
 
-Die Benutzer-Schnittstelle zur eingabe der Zeichen soll vollständig auf die Bedienung per Touchscreen ausgelegt werden. Somit sollen keine Klicks auf Buttons den Eingabefluss des Benutzers stören.
+Die Benutzer-Schnittstelle zur Eingabe der Zeichen soll vollständig auf die Bedienung per Touchscreen ausgelegt werden. Somit sollen keine Klicks auf Buttons den Eingabefluss des Benutzers stören.
 %================================================
 
 \section{Design}
 
-Wie bereits festgestellt, müssen wir unsere Eingabe-Methode in Form der Klasse \emph{HandwritingIME} von der Basis-Klasse \emph{InputMethodService} ableiten. Um die grafischen Bedienelemente vom Dienst abzukoppeln definiert die Basis-Klasse Methode zur Erzeugung and Anzeige eines Input-\emph{Views} und bietet auch für diesen eine Basis-Klasse namens \emph{KeyboardView} an, von welcher wir einen eigenen \emph{View} names \emph{PadView} ableiten wollen. Für die Rückmeldung von desen Änderungen an den Dienst wurde das Observer Design Pattern angewendet\cite[S.293-303]{designpatterns}.
+Wie bereits festgestellt, müssen wir unsere Eingabe-Methode in Form der Klasse \emph{HandwritingIME} von der Basis-Klasse \emph{InputMethodService} ableiten. Um die grafischen Bedienelemente vom Dienst abzukoppeln definiert die Basis-Klasse Methode zur Erzeugung and Anzeige eines Input-\emph{Views} und bietet auch für diesen eine Basis-Klasse namens \emph{KeyboardView} an, von welcher wir einen eigenen \emph{View} names \emph{PadView} ableiten wollen. Für die Rückmeldung von dessen Änderungen an den Dienst wurde das Observer Design Pattern angewendet\cite[S.293-303]{designpatterns}.
 
 \begin{figure}[h!]
    \centering
@@ -30,7 +30,7 @@ Wie bereits festgestellt, müssen wir unsere Eingabe-Methode in Form der Klasse 
 
 \subsection{Dienst der Eingabe-Methode}
 
-Die von \emph{InputMethodService} abgeleitete Klasse \emph{HandwritingIME} implementiert das Interface \emph{IObserver} über Änderungen in \emph{PadView} benachrichtigt werden zu können. Ausserdem ist sie für die Kommunikation mit dem Erkennungs-Dienst zuständig und implementiert die Methoden zur Verwaltung des Lebenszyklus des Eingabe-Dienstes. Wenn der Dienst gestartet wird, soll er auch den Dienst zur Zeichen-Erkennung starten und sich an diesen binden. Diese Bindung soll erst aufgehoben werden, wenn der eigene Dienst beendet wird. Das aufstarten von \emph{DetectionService} soll dabei in der Methode \emph{onCreate()}  erfolgen, während in \emph{onStartInputView()}, also wenn das Benutzer-Interface angezeigt wird, zu diesem gebunden werden sollt. Das Aufheben der Bindung soll in der Methode \emph{onDestroy()} erfolgen, der Erkennungs-Dienst soll aber dabei nicht explizit beendet werden um sich desen Initialisierung bei der nächsten Verwendung zu ersparen\footnote{Wird ein \emph{Service} unter Android nicht explizit gestartet vor dem Binden, wir er nach der Aufhebung der letzten Bindung automatisch terminiert. Ansonsten läuft er unter Umständen auch ohne angebundene Clients weiter.}.
+Die von \emph{InputMethodService} abgeleitete Klasse \emph{HandwritingIME} implementiert das Interface \emph{IObserver} über Änderungen in \emph{PadView} benachrichtigt werden zu können. Ausserdem ist sie für die Kommunikation mit dem Erkennungs-Dienst zuständig und implementiert die Methoden zur Verwaltung des Lebenszyklus des Eingabe-Dienstes. Wenn der Dienst gestartet wird, soll er auch den Dienst zur Zeichen-Erkennung starten und sich an diesen binden. Diese Bindung soll erst aufgehoben werden, wenn der eigene Dienst beendet wird. Das Aufstarten von \emph{DetectionService} soll dabei in der Methode \emph{onCreate()}  erfolgen, während in \emph{onStartInputView()}, also wenn das Benutzer-Interface angezeigt wird, zu diesem gebunden werden sollt. Das Aufheben der Bindung soll in der Methode \emph{onDestroy()} erfolgen, der Erkennungs-Dienst soll aber dabei nicht explizit beendet werden um sich dessen Initialisierung bei der nächsten Verwendung zu ersparen\footnote{Wird ein \emph{Service} unter Android nicht explizit gestartet vor dem Binden, wir er nach der Aufhebung der letzten Bindung automatisch terminiert. Ansonsten läuft er unter Umständen auch ohne angebundene Clients weiter.}.
 
 Das Erzeugen des \emph{PadViews} erfolgt in der Methode \emph{onInitializeInterface()} und das Auslesen der Eingabe-Punkte in der Methode \emph{update()} die durch das \emph{IObserver} Interface im Rahmen des Observer Patterns definiert wurde.
 
@@ -51,7 +51,7 @@ Als Grundlage für die Entwicklung des Frontend diente das Beispiel ``SoftKeyboa
 
 \subsection{HandwritingIME}
 
-Wie bereits erwähnt, erfolgen nach dem Starten des \emph{PadViews} in der Methode \emph{onStartInputView} desen Rückmeldungen über die Methode \emph{update()}. Je nach dem Typ des gemeldeten Ereignisses werden entweder die neuen Eingabe-Punkte an den Erkennungs-Dienst weiter gereicht, oder es wird direkt eine entsprechende Eingabe an das derzeit aktive Eingabefeld gesendet. Dazu stellt Android die Klasse \emph{InputConnection} zur Verfügung. Die Verbindung mit dem aktiven Feld kann über der Methode \emph{getCurrentInputConnection()} erhalten werden. Über diese Schnittstelle können dann \emph{KeyEvents} erzeugt und an das Eingabefeld gesendet werden, aber auch eine direkte Manipulation des Textes um den Cursor kann vorgenommen werden.
+Wie bereits erwähnt, erfolgen nach dem Starten des \emph{PadViews} in der Methode \emph{onStartInputView} dessen Rückmeldungen über die Methode \emph{update()}. Je nach dem Typ des gemeldeten Ereignisses werden entweder die neuen Eingabe-Punkte an den Erkennungs-Dienst weiter gereicht, oder es wird direkt eine entsprechende Eingabe an das derzeit aktive Eingabefeld gesendet. Dazu stellt Android die Klasse \emph{InputConnection} zur Verfügung. Die Verbindung mit dem aktiven Feld kann über der Methode \emph{getCurrentInputConnection()} erhalten werden. Über diese Schnittstelle können dann \emph{KeyEvents} erzeugt und an das Eingabefeld gesendet werden, aber auch eine direkte Manipulation des Textes um den Cursor kann vorgenommen werden.
 
 
 \begin{lstlisting} [caption={Reaktion auf Eingaben in \emph{HandwritingIME}},label=ime_update]

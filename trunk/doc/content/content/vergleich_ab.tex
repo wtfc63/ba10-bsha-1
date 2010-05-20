@@ -2,7 +2,7 @@
 Wir haben bereits einige Vor- und Nachteile der einzelnen Mikrogesten-Varianten diskutiert und möchten nun den tatsächlichen Unterschied praktisch testen. Für beide Varianten wird  ein Graph verwendet, um mit den Mikrogesten einen Buchstaben zu erkennen. Da der Graph sehr starr ist, muss die Mikrogesten-Erkennung bei jeder Eingabe eines Buchstaben das gleiche Resultat ergeben. Im Endeffekt besteht der Unterschied der beiden Varianten nur in der Mikrogesten-Erkennung.
 
 \section{Vorgehensweise}
-Die Varianten wuren folgendermassen verglichen:
+Die Varianten wurden folgendermassen verglichen:
 \begin{itemize}
 \item Wahl beliebiger Buchstaben.
 \item Jeden Buchstaben theoretisch mit den beiden Varianten aufbauen.
@@ -43,9 +43,9 @@ In diesem Test wurde die Erkennungsrate des Buchstaben 'k' in kursivschreibweise
 
 Die mittlere Erkennungsrate ist in Tabelle \ref{test_avg} festgehalten und die einzelnen Werte in Abbildung \ref{test_k}. Interessanterweise schneidet der komplexe Buchstabe 'k' besser ab als der einfache Buchstabe 'm'. Dies kann wie folgt erklärt werden: Es gibt eine Reihe von einfachen Buchstaben, die alle aus zwei bis vier Mikrogesten bestehen. Man kann also im Graph nicht viele Varianten eines einzelnen Buchstabens zulassen, da ansonsten schnell Überschneidungen mit anderen Buchstaben entstehen. Wenn nun schon nur eine einzige Mikrogeste falsch erkannt wurde, kann dies bereits zu einem falschen Resultat führen.
 
-Komplexe Buchstaben hingegen unterscheiden sich im Mikrogesten-Aufbau stark von den anderen Buchstaben. Dadurch kann man selbst noch den korrekten Buchstaben finden, wenn einige der Mikrogesten nicht übereinstimmen.
+Komplexe Buchstaben hingegen unterscheiden sich im Mikrogesten-Aufbau stark von den anderen Buchstaben. Dadurch kann man selbst dann noch den korrekten Buchstaben finden, wenn einige der Mikrogesten nicht übereinstimmen.
 
-Bei Variante A schneidete 'k' schlechter ab als 'm', was daran liegt, dass die kursive Version von 'k' sehr viele mögliche Schreibweisen besitzt. Da Variante A zwischen starken und schwachen Krümmungen unterscheidet, ist es bei diesem Buchstaben relativ  zufällig, ob jetzt eine starke oder eine schwache Krümmung erkennt wird. Durch den oben genannten Effekt der komplexen Buchstaben ist eine Erkennung aber trotzdem noch möglich.
+Bei Variante A schnitt 'k' schlechter ab als 'm', was daran liegt, dass die kursive Version von 'k' sehr viele mögliche Schreibweisen besitzt. Da Variante A zwischen starken und schwachen Krümmungen unterscheidet, ist es bei diesem Buchstaben relativ  zufällig, ob jetzt eine starke oder eine schwache Krümmung erkannt wird. Durch den oben genannten Effekt der komplexen Buchstaben ist eine Erkennung aber trotzdem noch möglich.
 
 \begin{figure}[h!]
   \centering
