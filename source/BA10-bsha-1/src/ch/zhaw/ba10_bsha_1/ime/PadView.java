@@ -233,8 +233,12 @@ public class PadView extends KeyboardView implements IObservable {
     private void touchUp() {
     	if (inputs.size() > 0) {
     		TouchInput last = inputs.get(inputs.size() - 1);
+    		//Test if finished input crosses out the last screen and remove all inputs if it does
+    		if ((currentInput.getDimensions().width() >= (0.9 * this.getWidth())) 
+    				&& currentInput.isRightToLeft()) {
+    			clear();
     		//Test if finished input crosses out the last one and remove both if it does
-    		if (currentInput.crosses(last) && currentInput.isRightToLeft()) {
+    		} else if (currentInput.crosses(last) && currentInput.isRightToLeft()) {
     			inputs.remove(last);
     			notifyObservers(EVENT_TYPE_BACKSPACE);
     		//Otherwise, add finished input to other ones and notify observers
@@ -243,6 +247,10 @@ public class PadView extends KeyboardView implements IObservable {
         		notifyObservers(EVENT_TYPE_TOUCH_UP);
     		}
     		currentInput = null;
+    		//Remove oldest if there's to many inputs
+    		if (inputs.size() > 5) {
+    			inputs.remove(0);
+    		}
     	//Commit finished input and notify observers if no others present
     	} else {
     		inputs.add(currentInput);
