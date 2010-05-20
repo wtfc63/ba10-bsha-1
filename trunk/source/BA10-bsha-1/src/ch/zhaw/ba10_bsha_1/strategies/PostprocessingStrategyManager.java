@@ -40,5 +40,6 @@ public class PostprocessingStrategyManager extends StrategyManager<IPostprocessi
 	 */
 	protected void initManager() {
 		addStrategy(new PostprocessingStrategyNone());
+		addStrategy(new PostprocessingStrategyLog());
 	}
 }

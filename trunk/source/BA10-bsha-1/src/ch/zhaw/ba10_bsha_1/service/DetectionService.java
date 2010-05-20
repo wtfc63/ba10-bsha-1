@@ -59,7 +59,6 @@ public class DetectionService extends Service {
     private static final int STRATEGY_TYPE_CHARACTER_DETECTION = 2;
     private static final int STRATEGY_TYPE_POSTPROCESSING = 3;
     
-    private static final String TAG = "DetectionService";
     private static Context CONTEXT;
     
     /**
@@ -69,7 +68,6 @@ public class DetectionService extends Service {
      */
     final RemoteCallbackList<IReturnResults> callbacks = new RemoteCallbackList<IReturnResults>();
     private final int BUFFER_SIZE = 10;
-    private final boolean DEBUG = true; 
     
     private ArrayList<TouchPoint> inputPoints;
     private RingBuffer<TouchPoint> buffer;
@@ -114,7 +112,7 @@ public class DetectionService extends Service {
     	
     	charDetectionStrategy = CharacterDetectionStrategyManager.getInstance().getStrategy("Graph");
     	
-    	postprocessingStrategy = PostprocessingStrategyManager.getInstance().getStrategy("None");
+    	postprocessingStrategy = PostprocessingStrategyManager.getInstance().getStrategy("Log");
     }
 
 
@@ -161,23 +159,10 @@ public class DetectionService extends Service {
     	
     	//Character detection
     	Collection<Character> result = charDetectionStrategy.detectCharacter(tmpMGs);
-    	if (DEBUG) {
-			Log.i(TAG, "Detected: " + result.size() + " Characters");
-	    	for (Character character : result) {
-	    		Log.i(TAG, "Detected Character: " + character.toString());
-			}
-    	}
     	
     	//Postprocessing
     	if (postprocessingStrategy.isEnabled()) {
 	    	result = postprocessingStrategy.process(result);
-	    	if (DEBUG) {
-				Log.i(TAG, "After Postprocessing:");
-				Log.i(TAG, "'-> Detected: " + result.size() + " Characters");
-		    	for (Character character : result) {
-		    		Log.i(TAG, "  > Detected Character: " + character.toString());
-				}
-	    	}
     	}
     	
 		//Broadcast results

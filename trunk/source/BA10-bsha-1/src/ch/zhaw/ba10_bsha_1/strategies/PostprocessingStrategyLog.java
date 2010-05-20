@@ -12,17 +12,17 @@ import java.util.Date;
 
 import android.util.Log;
 
+import ch.zhaw.ba10_bsha_1.Character;
 import ch.zhaw.ba10_bsha_1.StrategyArgument;
-import ch.zhaw.ba10_bsha_1.service.MicroGesture;
 
 
 /**
- * Example of an implementation of {@link IMicroGestureDetectionStrategy} which logs the given
- * {@link MicroGesture}s to Logcat and into a log-file and returns them unchanged
+ * Example of an implementation of {@link IPostprocessingStrategy} which logs the given
+ * {@link Character}s to Logcat and into a log-file and returns them unchanged
  * 
  * @author Julian Hanhart, Dominik Giger
  */
-public class MicroGestureDetectionStrategyLog extends BaseStrategy implements IMicroGestureDetectionStrategy {
+public class PostprocessingStrategyLog extends BaseStrategy implements IPostprocessingStrategy {
 
 	
 	//---------------------------------------------------------------------------
@@ -30,7 +30,7 @@ public class MicroGestureDetectionStrategyLog extends BaseStrategy implements IM
 	//---------------------------------------------------------------------------
 	
 	
-	private static final String TAG = "MGDS_Log";
+	private static final String TAG = "CDS_Log";
 	private File logFile;
 
 	
@@ -61,48 +61,48 @@ public class MicroGestureDetectionStrategyLog extends BaseStrategy implements IM
 	
 	@Override
 	protected String getStrategyDescription() {
-		return "Logs the given MicroGestures into the specified log-file";
-	}
+		return "Logs the given Characters into the specified log-file";
+	} 
 
 
 	//---------------------------------------------------------------------------
-	// Implementation of IMicroGestureDetectionStrategy
+	// Implementation of IPostprocessingStrategy
 	//---------------------------------------------------------------------------
 	
 
 	/**
-	 * Logs the given {@link MicroGesture}s to Logcat and into a file and returns the unchanged
+	 * Logs the given {@link Character}s to Logcat and into a file and returns the unchanged
 	 * 
-	 * @param micro_gestures
+	 * @param chars
 	 * @return
 	 */
 	@Override
-	public Collection<MicroGesture> detectMicroGestures(Collection<MicroGesture> micro_gestures) {
+	public Collection<Character> process(Collection<Character> chars) {
 		try {
-			Log.i(TAG, "Number of MicroGestures detected: " + micro_gestures.size());
+			Log.i(TAG, "Number of Characters detected: " + chars.size());
 			DateFormat format = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 			BufferedWriter writer  = new BufferedWriter(new FileWriter(logFile, true), 8192);
 			writer.append(format.format(new Date()));
 			writer.append(": ");
 			writer.append(TAG);
 			writer.append(", detected ");
-			writer.append(Integer.valueOf(micro_gestures.size()).toString());
-			writer.append(" MicroGestures:\n");
-			for (MicroGesture mg : micro_gestures) {
+			writer.append(Integer.valueOf(chars.size()).toString());
+			writer.append(" Characters:\n");
+			for (Character c : chars) {
 				//Send MicroGesture to Logcat
-				Log.i(TAG, "\t'-MicroGesture: " + mg.toString());
+				Log.i(TAG, "\t'-Character: " + c.toString());
 				//Write MicroGesture to log-file
 				writer.append(format.format(new Date()));
 				writer.append(": \t'-");
 				writer.append(TAG);
-				writer.append(", detected MicroGesture: ");
-				writer.append(mg.toString());
+				writer.append(", detected Character: ");
+				writer.append(c.toString());
 				writer.append('\n');
 			}
 			writer.close();
 		} catch (Exception ex) {
 			Log.e(TAG, ex.getMessage(), ex);
 		}
-		return micro_gestures;
+		return chars;
 	}
 }

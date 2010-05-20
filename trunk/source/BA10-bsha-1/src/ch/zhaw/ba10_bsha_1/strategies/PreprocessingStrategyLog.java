@@ -32,7 +32,6 @@ public class PreprocessingStrategyLog extends BaseStrategy implements IPreproces
 	
 	private static final String TAG = "PPS_Log";
 	private File logFile;
-	private BufferedWriter writer;
 
 	
 	//---------------------------------------------------------------------------
@@ -50,7 +49,6 @@ public class PreprocessingStrategyLog extends BaseStrategy implements IPreproces
 			if (!logFile.exists()) {
 				logFile.createNewFile();
 			}
-			writer  = new BufferedWriter(new FileWriter(logFile, true));
 		} catch (IOException ex) {
 			Log.e(TAG, ex.getMessage(), ex);
 		}
@@ -82,13 +80,21 @@ public class PreprocessingStrategyLog extends BaseStrategy implements IPreproces
 	@Override
 	public MicroGesture process(MicroGesture micro_gesture) {
 		try {
+			Log.i(TAG, "Number of TouchPoints processed: " + micro_gesture.getPoints().size());
 			DateFormat format = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+			BufferedWriter writer  = new BufferedWriter(new FileWriter(logFile, true), 8192);
+			writer.append(format.format(new Date()));
+			writer.append(": ");
+			writer.append(TAG);
+			writer.append(", processed ");
+			writer.append(Integer.valueOf(micro_gesture.getPoints().size()).toString());
+			writer.append(" TouchPoints:\n");
 			for (TouchPoint point : micro_gesture.getPoints()) {
 				//Send MicroGesture to Logcat
-				Log.i(TAG, "TouchPoint: " + point.toString());
+				Log.i(TAG, "\t'-TouchPoint: " + point.toString());
 				//Write MicroGesture to log-file
 				writer.append(format.format(new Date()));
-				writer.append(": ");
+				writer.append(": \t'-");
 				writer.append(TAG);
 				writer.append(", processed TouchPoint: ");
 				writer.append(point.toString());
