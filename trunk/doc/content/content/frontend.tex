@@ -30,7 +30,7 @@ Wie bereits festgestellt, müssen wir unsere Eingabe-Methode in Form der Klasse 
 
 \subsection{Dienst der Eingabe-Methode}
 
-Die von \emph{InputMethodService} abgeleitete Klasse \emph{HandwritingIME} implementiert das Interface \emph{IObserver} über Änderungen in \emph{PadView} benachrichtigt werden zu können. Ausserdem ist sie für die Kommunikation mit dem Erkennungs-Dienst zuständig und implementiert die Methoden zur Verwaltung des Lebenszyklus des Eingabe-Dienstes. Wenn der Dienst gestartet wird, soll er auch den Dienst zur Zeichen-Erkennung starten und sich an diesen binden. Diese Bindung soll erst aufgehoben werden, wenn der eigene Dienst beendet wird. Das aufstarten von \emph{DetectionService} soll dabei in der Methode \emph{onCreate()}  erfolgen, während in \emp{onStartInputView()}, also wenn das Benutzer-Interface angezeigt wird, zu diesem gebunden werden sollt. Das Aufheben der Bindung soll in der Methode \emph{onDestroy()} erfolgen, der Erkennungs-Dienst soll aber dabei nicht explizit beendet werden um sich desen Initialisierung bei der nächsten Verwendung zu ersparen\footnote{Wird ein \emph{Service} unter Android nicht explizit gestartet vor dem Binden, wir er nach der Aufhebung der letzten Bindung automatisch terminiert. Ansonsten läuft er unter Umständen auch ohne angebundene Clients weiter.}.
+Die von \emph{InputMethodService} abgeleitete Klasse \emph{HandwritingIME} implementiert das Interface \emph{IObserver} über Änderungen in \emph{PadView} benachrichtigt werden zu können. Ausserdem ist sie für die Kommunikation mit dem Erkennungs-Dienst zuständig und implementiert die Methoden zur Verwaltung des Lebenszyklus des Eingabe-Dienstes. Wenn der Dienst gestartet wird, soll er auch den Dienst zur Zeichen-Erkennung starten und sich an diesen binden. Diese Bindung soll erst aufgehoben werden, wenn der eigene Dienst beendet wird. Das aufstarten von \emph{DetectionService} soll dabei in der Methode \emph{onCreate()}  erfolgen, während in \emph{onStartInputView()}, also wenn das Benutzer-Interface angezeigt wird, zu diesem gebunden werden sollt. Das Aufheben der Bindung soll in der Methode \emph{onDestroy()} erfolgen, der Erkennungs-Dienst soll aber dabei nicht explizit beendet werden um sich desen Initialisierung bei der nächsten Verwendung zu ersparen\footnote{Wird ein \emph{Service} unter Android nicht explizit gestartet vor dem Binden, wir er nach der Aufhebung der letzten Bindung automatisch terminiert. Ansonsten läuft er unter Umständen auch ohne angebundene Clients weiter.}.
 
 Das Erzeugen des \emph{PadViews} erfolgt in der Methode \emph{onInitializeInterface()} und das Auslesen der Eingabe-Punkte in der Methode \emph{update()} die durch das \emph{IObserver} Interface im Rahmen des Observer Patterns definiert wurde.
 
@@ -57,7 +57,8 @@ Wie bereits erwähnt, erfolgen nach dem Starten des \emph{PadViews} in der Metho
     if (updater instanceof PadView) {
       if (serviceIsBound && (detectionService != null)) {
         try {
-          InputConnection ic = getCurrentInputConnection();
+          InputConnection ic = 
+            getCurrentInputConnection();
           switch (padView.getEventType()) {
             case PadView.EVENT_TYPE_NEW_POINTS :
               //...
@@ -91,12 +92,14 @@ Wie bereits erwähnt, erfolgen nach dem Starten des \emph{PadViews} in der Metho
 Für die Entgegennahme der erkannten Zeichen vom Erkennungs-Dienst muss wiederum zuerst ein Stub der Rückruf-Schnittstelle (siehe Kapitel \ref{lbl_be_intrf}) implementiert werden. Diese reicht dann die erhaltenen Zeichen an einen entsprechenden Handler weiter, der diese über die aktuelle \emph{InputConnection} an das aufrufende Textfeld senden.
 
 \begin{lstlisting} [caption={R\"{u}ckgabe der Resultate in \emph{HandwritingIME}},label=ime_results]
-  private IReturnResults serviceCallback = new IReturnResults.Stub() {
+  private IReturnResults serviceCallback = 
+    new IReturnResults.Stub() {
     public void recognisedCharacters(
       List<ch.zhaw.ba10_bsha_1.Character> characters) 
       throws RemoteException {
-      serviceHandler.sendMessage(serviceHandler.obtainMessage(
-        CHARACTER_RESULT_MSG, characters));
+      serviceHandler.sendMessage(
+        serviceHandler.obtainMessage(
+          CHARACTER_RESULT_MSG, characters));
     }
     //...
   };
@@ -109,11 +112,14 @@ Für die Entgegennahme der erkannten Zeichen vom Erkennungs-Dienst muss wiederum
           ArrayList<Character> chars = 
             (ArrayList<Character>) msg.obj;
           if (chars.size() > 0) {
-            InputConnection conn = getCurrentInputConnection();
+            InputConnection conn = 
+              getCurrentInputConnection();
             StringBuffer text = new StringBuffer();
             for (Character character : chars) {
-              if (!character.toString().startsWith("none")) {
-                text.append(character.getDetectedCharacter());
+              if (!character.toString().startsWith(
+                "none")) {
+                text.append(
+                  character.getDetectedCharacter());
               }
             }
             conn.commitText(text, 1);
@@ -129,15 +135,17 @@ Für die Entgegennahme der erkannten Zeichen vom Erkennungs-Dienst muss wiederum
 
 \subsection{PadView}
 
-Wir wollen nun die Implementation von zwei Spezialfällen von Eingaben betrachten. Zum einen soll, wenn die neue Eingabe einen genügenden Abstand zur letzten hat, die Eingabe eines Leerzeichens an die Observer gemeldet werden. Weiter soll die Eingabe eines Backspaces gemeldet werden, wenn die neue Eingabe die jeweils letzte vollständig und von rechts nach links\footnote{Bei einem Strich von links nach rechts könnte es sich auch um die Mittellinie eines `t' oder `f' handeln.} durchstreicht.
+Wir wollen nun die Implementation von zwei Spezialfällen von Eingaben betrachten. Zum einen soll, wenn die neue Eingabe einen genügenden Abstand zur letzten hat, die Eingabe eines Leerzeichens an die Observer gemeldet werden. Weiter soll die Eingabe eines Backspaces gemeldet werden, wenn die neue Eingabe die jeweils letzte vollständig und von rechts nach links\footnote{Bei einem Strich von links nach rechts könnte es sich auch um die Mittellinie eines 't' oder 'f' handeln.} durchstreicht.
 
 Dies wird im Falle des Leerzeichens beim Start einer neuen Eingabe überprüft, während die Überprüfung beim Löschen beim Absetzen erfolgt.
 
 \begin{lstlisting} [caption={Touchscreen-Eingaben in \emph{PadView}},label=padview_touchevent]
-  private void touchStart(float x, float y, float pressure) {
+  private void touchStart(
+    float x, float y, float pressure) {
     //Rueckmelden, wenn Abstand zum letzten gross genug
     if (inputs.size() > 0) {
-      RectF last = inputs.get(inputs.size() - 1).getDimensions();
+      RectF last = 
+        inputs.get(inputs.size() - 1).getDimensions();
       if (x > (last.right + last.width())) {
         notifyObservers(EVENT_TYPE_SPACE);
       }
