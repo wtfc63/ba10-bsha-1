@@ -1,6 +1,6 @@
 \chapter{Mikrogesten}
 
-Die grundsätzliche Idee zur Handschrifterkennung ist die Unterteilung der Schrift in sogenannte Mikrogesten. Eine Mikrogeste ist eine simple Bewegung, die beim Schreiben ausgeführt wird. Jeder Buchstabe soll dann aus solchen Mikrogesten aufgebaut werden können. 
+Die grundsätzliche Idee zur Handschrifterkennung ist die Unterteilung der Schrift in so genannte Mikrogesten. Eine Mikrogeste ist eine simple Bewegung, die beim Schreiben ausgeführt wird. Jeder Buchstabe soll dann aus solchen Mikrogesten aufgebaut werden können. 
 Es ist nun natürlich möglich diese Mikrogesten auf beliebige Art zu definieren. Die Hauptkriterien sind, dass die Gesten so einfach wie möglich sein sollen (Für eine optimale Erkennung) und sich untereinander möglichst stark unterscheiden. Je weniger solche Gesten man braucht, desto besser. Man kann jedoch nicht beliebig grobe Gesten wählen, da immer noch alle möglichen Zeichen einzigartig aus solchen Gesten zusammen gebaut werden müssen.
 
 \begin{figure}[h!]
@@ -80,7 +80,7 @@ Die Bezeichnungen Kreis und Halbkreis könnten etwas irreführend sein: Die Pfad
 \section{Abbildung von Zeichen}
 Jedes Zeichen muss nun mit den vorgegebenen Mikrogesten aufgebaut werden. Abbildung \ref{beispiel_aufbau} zeigt wie dies theoretisch mit Variante A und B aussieht. Dieses Beispiel berücksichtigt nur Blockschrift. Für die Kursivschrift ist ein anderer Aufbau nötig. Dort kommt die Position der Mikrogesten zum Zuge: Einige Kursivbuchstaben haben zum Beispiel einen Kreis im Oberlängen- oder Unterlängen-Bereich.
 
-Eine weitere Besonderheit der Kursivschrift ist das zusammenhängen von Buchstaben. Dieses Problem kann mit Hilfe von Postfix-Mikrogesten gelöst werden. Damit ist lediglich eine oder mehrere optionale Mikrogesten gemeint, die am Ende der Mikrogesten-Folge angehängt sind. Es müssen mehrere Verbindungsgesten möglich sein, da diese je nach verbundenen Buchstaben anders ist.
+Eine weitere Besonderheit der Kursivschrift ist das Zusammenhängen von Buchstaben. Dieses Problem kann mit Hilfe von Postfix-Mikrogesten gelöst werden. Damit ist lediglich eine oder mehrere optionale Mikrogesten gemeint, die am Ende der Mikrogesten-Folge angehängt sind. Es müssen mehrere Verbindungsgesten möglich sein, da diese je nach verbundenen Buchstaben anders ist.
 
 Für die Variante A wurden von der vorhergehenden Projektgruppe Präfixe verwendet, um die Buchstabenverbindung zu gewährleisten.
 
@@ -118,7 +118,6 @@ Folglich gibt es für jeden Buchstaben zwei Möglichkeiten, geschrieben zu werde
   \label{beispiel_aufbau}
 \end{table}
 
-%% TODO
 Im Anhang befindet sich eine Tabelle mit dem Aufbau aller Buchstaben.
 
 \chapter{Graph}
