@@ -1,0 +1,169 @@
+\chapter{Daten des Vergleichtests der Varianten A und B}
+\label{anhang_vergleich}
+Für die Tests wurde der Buchstabe jeweils von der gleichen Person 20x eingegeben. Anschliessend wurden die Resultate mit einer Referenz-Lösung verglichen. Die Referenzlösung enthält teilweise mit '/' getrennte Mikrogesten. Dies bedeutet, dass die Mikrogeste in beiden Fällen erkannt wird. Dies berücksichtigt, dass auch im Graph jeweils mehrere Pfade für diesen Buchstaben bestehen. Zum Beispiel gibt es beim Buchstaben m der Variante B keine Alternativen. Dies deshalb, weil sonst ein anderer Buchstabe den gleichen Pfad verwenden würde.
+
+\begin{table}[!h]
+  \begin{center}
+    \begin{tabular}{ l | c }
+\emph{Mikrogeste} & \emph{Kürzel} \\ \hline
+Kurze Gerade & s \\ \hline
+Lange Gerade & l \\ \hline
+Schwache Krümmung & w \\ \hline
+Starke Krümmung & n \\ \hline
+Halbkreis & h \\ \hline
+Kreis & c \\ \hline
+
+    \end{tabular}
+  \end{center}
+  \caption{Legende}
+  \label{test_legende}
+\end{table}
+
+\section{Buchstabe k}
+\subsection{Variante A}
+Schema: w, w, ww/n, n, s/w, s/w
+
+\begin{table}[!h]
+  \begin{center}
+    \begin{tabular}{ c c c c c c c c c c c  | c }
+\multicolumn{11}{l}{\emph{Mikrogesten-Folge}}&\emph{Übereinstimmung} \\ \hline
+n&w&w&&&&&&&&&0.17 \\ \hline
+s&w&l&w&w&w&s&&&&&0.33 \\ \hline
+l&w&n&s&n&w&n&&&&&0.33 \\ \hline
+s&w&s&n&n&w&n&s&&&&0.50\\ \hline
+l&n&s&n&w&n&s&&&&&0.33\\ \hline
+l&w&l&n&w&n&n&s&&&&0.67\\ \hline
+l&s&n&n&n&&&&&&&0.33\\ \hline
+s&w&s&n&n&w&w&s&&&&0.67 \\ \hline
+s&w&l&w&s&s&s&n&&&&0.33\\ \hline
+w&l&n&w&w&s&&&&&&0.50\\ \hline
+w&l&n&n&w&s&&&&&&0.50\\ \hline
+w&l&n&w&w&w&s&s&&&&0.50\\ \hline
+s&n&l&n&s&w&s&&&&&0.50\\ \hline
+s&l&l&w&w&s&w&n&&&&0.33\\ \hline
+s&w&s&n&w&w&&&&&&0.67\\ \hline
+s&s&w&l&n&s&n&s&w&s&n&0.50\\ \hline
+s&w&l&n&w&w&&&&&&0.50\\ \hline
+w&s&n&w&n&n&&&&&&0.50\\ \hline
+l&l&w&w&s&s&n&&&&&0.33\\ \hline
+s&s&w&l&w&s&n&s&s&w&s&0.50\\ \hline
+\multicolumn{11}{l|}{\emph{Durchschnitt}}&  0.45 \\ \hline
+
+    \end{tabular}
+  \end{center}
+  \caption{Test: Variante A, Buchstabe 'k' kursiv}
+  \label{test_a_k}
+\end{table}
+
+\subsection{Variante B}
+
+
+Schema:s, c, (s), s, h/c, h/ss
+
+Mikrogesten in ( ) sind optional.
+
+\begin{table}[!h]
+  \begin{center}
+    \begin{tabular}{ c c c c c c c c | c }
+\multicolumn{8}{l}{\emph{Mikrogesten-Folge}}&\emph{Übereinstimmung} \\ \hline
+s&s&s&l&h&h&&&0.6\\ \hline
+s&c&s&h&h&&&&1\\ \hline
+c&s&c&s&s&c&s&s&1\\ \hline
+s&h&l&h&h&&&&0.6\\ \hline
+s&s&l&s&h&h&&&0.4\\ \hline
+s&c&s&s&h&h&&&1\\ \hline
+c&h&h&&&&&&0.8\\ \hline
+s&c&s&s&c&h&&&1\\ \hline
+s&c&s&s&h&h&&&1\\ \hline
+s&c&s&h&s&s&&&1\\ \hline
+s&c&s&c&s&s&&&1\\ \hline
+s&c&s&h&h&s&&&1\\ \hline
+s&c&s&s&c&h&&&1\\ \hline
+s&c&s&s&c&h&&&1\\ \hline
+s&c&s&h&s&h&&&0.8\\ \hline
+s&c&s&h&h&&&&1\\ \hline
+s&c&s&h&s&s&&&1\\ \hline
+s&h&l&h&s&h&&&0.6\\ \hline
+s&c&s&h&s&s&&&1\\ \hline
+h&c&s&h&h&s&&&0.8\\ \hline
+\multicolumn{8}{l|}{\emph{Durchschnitt}}&  0.88 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Test: Variante B, Buchstabe 'k' kursiv}
+  \label{test_b_k}
+\end{table}
+
+
+
+\section{Buchstabe m}
+\subsection{Variante A}
+Schema: s/w, s/w, n/ww, n/ww
+
+\begin{table}[!h]
+  \begin{center}
+    \begin{tabular}{ c c c c c c c  | c }
+\multicolumn{7}{l}{\emph{Mikrogesten-Folge}}&\emph{Übereinstimmung} \\ \hline
+n&n&n&&&&&0.75\\ \hline
+w&s&w&s&s&&&0.25\\ \hline
+n&s&s&s&s&&&0.25\\ \hline
+n&n&s&n&&&&0.5\\ \hline
+w&w&s&w&s&&&0.5\\ \hline
+w&s&w&s&s&&&0.5\\ \hline
+n&w&n&w&s&s&&0.25\\ \hline
+n&s&n&w&s&&&0.5\\ \hline
+s&n&n&n&&&&0.75\\ \hline
+n&s&n&s&s&&&0.5\\ \hline
+n&n&w&s&s&&&0.5\\ \hline
+n&s&s&w&s&s&&0.75\\ \hline
+w&w&s&w&s&s&&0.25\\ \hline
+n&w&s&n&w&s&s&0.5\\ \hline
+w&s&s&n&w&s&&0.75\\ \hline
+w&n&w&&&&&0.5\\ \hline
+n&s&w&s&n&&&0.5\\ \hline
+s&w&s&n&s&&&0.5\\ \hline
+n&w&s&n&s&s&&0.5\\ \hline
+n&s&n&n&&&&0.75\\ \hline
+\multicolumn{7}{l|}{\emph{Durchschnitt}}&  0.5125  \\ \hline
+
+    \end{tabular}
+  \end{center}
+  \caption{Test: Variante A, Buchstabe 'm'}
+  \label{test_a_m}
+\end{table}
+
+\subsection{Variante B}
+
+Schema: s, h, h
+
+\begin{table}[!h]
+  \begin{center}
+    \begin{tabular}{ c c c c c c c c  | c }
+\multicolumn{8}{l}{\emph{Mikrogesten-Folge}}&\emph{Übereinstimmung} \\ \hline
+
+s&c&h&h&s&s&&&0.667\\ \hline
+s&c&h&h&&&&&0.667\\ \hline
+s&h&h&&&&&&1\\ \hline
+s&h&h&s&s&&&&1\\ \hline
+s&h&h&&&&&&1\\ \hline
+s&h&s&s&&&&&0.667\\ \hline
+s&h&s&h&s&&&&0.667\\ \hline
+s&h&h&&&&&&1\\ \hline
+s&h&h&s&s&&&&1\\ \hline
+s&h&c&h&s&&&&0.667\\ \hline
+s&h&h&&&&&&1\\ \hline
+s&h&h&&&&&&1\\ \hline
+s&h&h&&&&&&1\\ \hline
+s&h&s&u&s&h&s&s&0\\ \hline
+s&h&s&h&&&&&0.667\\ \hline
+s&h&h&&&&&&1\\ \hline
+c&s&s&h&h&&&&0.667\\ \hline
+s&s&h&s&h&&&&0.667\\ \hline
+s&s&h&s&c&s&&&0.333\\ \hline
+s&s&h&h&&&&&1\\ \hline
+\multicolumn{8}{l|}{\emph{Durchschnitt}}&  0.783  \\ \hline
+
+    \end{tabular}
+  \end{center}
+  \caption{Test: Variante B, Buchstabe 'm'}
+  \label{test_b_m}
+\end{table}
