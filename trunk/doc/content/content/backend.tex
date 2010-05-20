@@ -168,14 +168,14 @@ Da die Strategien aller Phasen ausser den Typen der Ein- und Rückgabewerte der 
 
 \subsubsection{Verwaltung der Strategien}
 
-Alle bekannten Strategien einer Phase werden zur einfachen Auffindbarkeit und Verwaltung durch entsprechenden Manager-Klassen verwaltet. Auf für die Manager der einzelnen Phasen wurde wieder eine verallgemeinerte abstrakte Basis-Klasse entworfen, welche die eigentlichen Verwaltungs-Operationen implementiert. Für die Implementation der Phasen-Manager wurden diese dann nur noch von der Basis-Klasse namens \emph{StrategyManager} abgeleitet und die einzelnen Strategien mussten noch initialisiert und dem Manager hinzugefügt werden (siehe Abbildung \ref{fig:cd_manager}). Die konkreten Manager-Klassen implementieren zusätzlich noch das Singleton Design Pattern\cite[S.127-134]{design_patterns}, damit die jeweiligen Strategietypen zentral von einem Objekte verwaltet und angesprochen werden können.
-
-\begin{figure}[bh!]
+\begin{figure}[h!]
    \centering
    \includegraphics[width=\textwidth]{img/uml_cd_manager} 
    \caption{Klassen-Diagramm der Manager}
    \label{fig:cd_manager}
 \end{figure}
+
+Alle bekannten Strategien einer Phase werden zur einfachen Auffindbarkeit und Verwaltung durch entsprechenden Manager-Klassen verwaltet. Auf für die Manager der einzelnen Phasen wurde wieder eine verallgemeinerte abstrakte Basis-Klasse entworfen, welche die eigentlichen Verwaltungs-Operationen implementiert. Für die Implementation der Phasen-Manager wurden diese dann nur noch von der Basis-Klasse namens \emph{StrategyManager} abgeleitet und die einzelnen Strategien mussten noch initialisiert und dem Manager hinzugefügt werden (siehe Abbildung \ref{fig:cd_manager}). Die konkreten Manager-Klassen implementieren zusätzlich noch das Singleton Design Pattern\cite[S.127-134]{designpatterns}, damit die jeweiligen Strategietypen zentral von einem Objekte verwaltet und angesprochen werden können.
 
 \subsection{Erkennungs-Service}\label{lbl_be_design_service}
 
