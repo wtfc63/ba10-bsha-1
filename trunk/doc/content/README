@@ -2,15 +2,15 @@ DIRECTORIES
 ----------------------------
 
   * content      - Kapitel
-  * etc          - Latex Einstellungen
+  * etc          - Bibliographie
   * img          - Bilder
   * inc          - Extern eingebundene PDF's
+  * code		 - Code Listings
 
 FILES
 ----------------------------
 
-  * abstract.tex  - Abstract
-  * appendix.tex  - Appendix
   * document.tex  - Maindocument
   * titlepage.tex - Titelseite
+  * examples.tex - Einige Latex-Code-Beispiele
 
