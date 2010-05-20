@@ -174,7 +174,7 @@ public class MicroGestureDetectionStrategyAwesome2 implements IMicroGestureDetec
 				}
 			}
 			else {
-				if (Math.abs(a.x - b.x) < 50 && Math.abs(a.y - b.y) < 50 ) {
+				if (Math.abs(a.x - b.x) < 20 && Math.abs(a.y - b.y) < 20 ) {
 					mg.setType(MicroGesture.TYPE_CIRCLE);
 				}
 				else {

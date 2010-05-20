@@ -79,8 +79,8 @@ public class MicroGestureDetectionStrategyAwesome implements IMicroGestureDetect
 				secondList.addAll(second.detectMicroGestures(m.getPoints()));
 			}
 		}
-		
-		return secondList;
+		 return secondList;
+		//return result;
 	}
 
 	public boolean validateMicroGesture(MicroGesture microGesture) {
