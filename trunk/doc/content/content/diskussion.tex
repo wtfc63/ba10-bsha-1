@@ -1,6 +1,12 @@
 \chapter{Diskussion}
 Zum Abschluss können wir sagen, dass die Idee der Mikrogesten zum erkennen von Handschriften definitiv umsetzbar ist. Jedoch sind wir nicht zu einer perfekten Lösung gelangt. Im Prinzip ist die Umsetzung zwar funktionsfähig, jedoch besteht bei der Erkennung der Mikrogesten noch etwas Verbesserunsbedarf und für die Erstellung des Graphen sind noch bessere Tools nötig um die Lösung für den täglichen Gebrauch praktikabel zu machen.
 
-Dank des modularen Aufbaus unserer Applikation ist es aber sehr einfach die Erkennung mit neuen Algorithmen und Ansätzen zu erweitern oder bestehende Algorithmen zu verbessern.
+Die Entscheidung, zuerst einen Prototypen der Software zu erstellen, hat sich im Nachhinein als sehr wichtig erwiesen. Wir konnten dort dann genau sehen, welche Klassen benötigt werden und die Architektur der Release-Software so passend aufbauen. Zusätzlich konnten wir das Interface des Prototypen so aufbauen, dass alle Informationen zum Erkennungsablauf ausgegeben werden. Dies ist eine grosse Hilfe beim testen der einzelnen Algorithmen. Dank des modularen Aufbaus konnten wir auch sehr einfach andere Algorithmen implementieren und mit den bestehenden vergleichen.
+
+Nachdem wir die Algorithmen der bestehenden Projektarbeit implementiert hatten, zeigte sich, dass die Erkennung dieser kaum brauchbar funktioniert. Die Toleranz gegenüber verschiedenen Schreibweisen war einfach sehr niedrig. Deshalb haben wir uns entschieden, die Probleme dieser Variante zu analysieren und entsprechend eine neue Variante ohne die Probleme zu erstellen.
+
+Dies ist uns nicht zu hundert Prozent gelungen, jedoch konnten wir die Erkennungsrate doch recht steigern. Leider haben wir für das Erstellen der neuen Algorithmen und des neuen Graphen sehr viel Zeit gebraucht, weshalb das Fine-Tuning noch fehlt. Vermutlich kann mit einer Optimierung der Algorithmen und des Graphen nochmals eine bessere Erkennug erreicht werden.
+
+
 
 Die Entwicklung mit Android hat sich als sehr einfach erwiesen: Von Google werden gute Entwicklungs-Werkzeuge bereit gestellt, die auch auf Mac, Windows und Linux verfügbar sind. Die API von Android ist gut dokumentiert und der flexible Aufbau des Betriebssystems erlaubte uns eine einfache Integration unserer Applikation. 

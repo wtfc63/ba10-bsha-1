@@ -4,11 +4,11 @@ Die zur Umsetzung der besprochenen Lösungsansätze entworfene Applikation beste
 
 \section{Komponenten}
 
-Das Backend ist für die eigentliche Zeichen-Erkennung zuständig und soll in einem vom Frontend unabhängigen Prozess laufen. Es liesst den in einer GraphML-Datei gespeicherten Erkennungs-Graphen ein und nimmt vom Frontend Eingabe-Punkte zur Erkennung entgegen. Über diese wird der Erkennungs-Algorithmus angewendet und die erkannten Zeichen werden zurück an das Frontend geschickt.
+Das Backend ist für die eigentliche Zeichen-Erkennung zuständig und soll in einem vom Frontend unabhängigen Prozess laufen. Es liest den in einer GraphML-Datei gespeicherten Erkennungs-Graphen ein und nimmt vom Frontend Eingabe-Punkte zur Erkennung entgegen. Über diese wird der Erkennungs-Algorithmus angewendet und die erkannten Zeichen werden zurück an das Frontend geschickt.
 
-Das Frontend ist die Benutzer-Schnittstelle der Applikation und dient zur Eingabe der Zeichen über den Touchscreen. Es zeichnet bei Eingaben die eingegebenen Punkte auf und sendet diese zur Verarbeitung an das Backend. Danach werden die erkannten Zeichen entgegen genommen und an das aktive Eingabefeld weitergereicht.
+Das Frontend ist die Benutzer-Schnittstelle der Applikation und dient zur Eingabe der Zeichen über den Touchscreen. Es zeichnet die eingegebenen Punkte auf und sendet diese zur Verarbeitung an das Backend. Danach werden die erkannten Zeichen entgegen genommen und an das aktive Eingabefeld weitergereicht.
 
-Zusätzlich existiert für Test-Zwecke noch ein zweiter Client zum Backend. Dieser wurde erstellt um das korrekte Starten, Beenden und Binden zum Dienst des Backend's zu testen.
+Zusätzlich existiert für Test-Zwecke noch ein zweiter Client zum Backend. Dieser wurde erstellt um das korrekte Starten, Beenden und Binden zum Dienst des Backends zu testen.
 
 \section{Projekt-Konfiguration}
 
@@ -60,7 +60,7 @@ Benötigte Berechtigungen:
 
 \subsection{Schnittstellen}
 
-Die für die Kommunikation zwischen Frontend und Backend benötigten Schnittstellen-Definitionen werden vom Precompiler des Android-SDKs eingelesen, um aus ihnen entsprechenden Java-Quelltext generieren zu können. Daher müssen sie in einem speziellen Ordner namens ``aidl'' abgelegt werden. Darin muss die Ordnerstruktur für die \emph{packages} des Quelltext-Ordners eingehalten werden. Auch die Klassen welche über diese Schnittstellen versendet werden sollen und deshalb das \emph{Parcelable} Interface implementieren müssen in diesem Orner entsprechen ausgewiesen werden (siehe Kapitel \ref{lbl_be_intrf}).
+Die für die Kommunikation zwischen Frontend und Backend benötigten Schnittstellen-Definitionen werden vom Precompiler des Android-SDKs eingelesen, um aus ihnen entsprechenden Java-Quelltext generieren zu können. Daher müssen sie in einem speziellen Ordner namens ``aidl'' abgelegt werden. Darin muss die Ordnerstruktur für die \emph{packages} des Quelltext-Ordners eingehalten werden. Auch die Klassen welche über diese Schnittstellen versendet werden sollen und deshalb das \emph{Parcelable} Interface implementieren müssen in diesem Ordner entsprechen ausgewiesen werden (siehe Kapitel \ref{lbl_be_intrf}).
 
 \begin{lstlisting} [caption={Ordnerstruktur des AIDL-Ordners},label=aidl_folder]
 aidl/
